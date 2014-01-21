@@ -31,6 +31,10 @@ To set the theme up per the demo, you will need to install the following plugins
 
 CHANGELOG
 
+* 1.1.2
+
+- Stopped backstretch scripts from loading unless background image is present.
+
 * 1.1.1
 
 - Added media query (max-width: 1139px) for content and site header widget area.
