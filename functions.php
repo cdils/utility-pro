@@ -147,6 +147,11 @@ add_action( 'wp_enqueue_scripts', 'utility_enqueue_scripts' );
  */
 function utility_enqueue_scripts() {
 
+	//* Load scripts only if custom background is being used
+	if ( ! get_background_image() ) {
+		return;
+	}
+
 	wp_enqueue_script( 'utility-backstretch', get_stylesheet_directory_uri() . "/lib/js/backstretch.js", array( 'jquery' ), '2.0.1' );
 	wp_enqueue_script( 'utility-backstretch-args', get_stylesheet_directory_uri()."/lib/js/backstretch.args.js" , array( 'utility-backstretch' ), CHILD_THEME_VERSION );
 
