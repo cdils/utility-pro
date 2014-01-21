@@ -1,0 +1,308 @@
+/*
+	Theme Name: Utility Theme
+	Description: RTL Version
+	Author: Carrie Dils
+	Author URI: http://www.carriedils.com/
+	Version: 1.0.0
+*/
+
+/* Table of Contents
+
+	- Defaults
+		- Typographical Elements
+	- Structure and Layout
+		- Column Widths and Positions
+		- Column Classes
+	- Common Classes
+		- WordPress
+		- Genesis
+		- Jetpack
+	- Site Header
+		- Title Area
+		- Widget Area
+	- Site Navigation
+	- Content Area
+		- Entries
+		- Comments
+	- Footer Widgets
+
+*/
+
+/*
+Defaults
+---------------------------------------------------------------------------------------------------- */
+/* Typographical Elements
+--------------------------------------------- */
+
+blockquote::before {
+	right: auto;
+	left: -20px;
+}
+
+/*
+Structure and Layout
+---------------------------------------------------------------------------------------------------- */
+
+/* Column Widths and Positions
+--------------------------------------------- */
+
+/* Wrapping div for .content and .sidebar-primary */
+
+.content-sidebar-sidebar .content-sidebar-wrap {
+	float: left;
+}
+
+.sidebar-content-sidebar .content-sidebar-wrap,
+.sidebar-sidebar-content .content-sidebar-wrap {
+	float: right;
+}
+
+/* Content  */
+
+.content {
+	float: right;
+}
+
+.content-sidebar .content,
+.content-sidebar-sidebar .content,
+.sidebar-content-sidebar .content {
+	float: left;
+}
+
+/* Primary Sidebar */
+
+.sidebar-primary {
+	float: right;
+}
+
+.sidebar-content .sidebar-primary,
+.sidebar-sidebar-content .sidebar-primary {
+	float: left;
+}
+
+/* Secondary Sidebar */
+
+.sidebar-secondary {
+	float: left;
+}
+
+.content-sidebar-sidebar .sidebar-secondary {
+	float: right;
+}
+
+/* Column Classes
+    Link: http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css
+--------------------------------------------- */
+
+.five-sixths,
+.four-sixths,
+.one-fourth,
+.one-half,
+.one-sixth,
+.one-third,
+.three-fourths,
+.three-sixths,
+.two-fourths,
+.two-sixths,
+.two-thirds {
+	float: left;
+	margin-right: auto;
+	margin-left: 2.564102564102564%;
+}
+
+.first {
+	margin-right: auto;
+	margin-left: 0;
+}
+
+/*
+Common Classes
+---------------------------------------------------------------------------------------------------- */
+
+/* WordPress
+--------------------------------------------- */
+
+.avatar {
+	float: left;
+}
+
+.alignright .avatar {
+	margin-right: 24px;
+	margin-right: 2.4rem;
+	margin-left: auto;
+}
+
+.alignleft .avatar {
+	margin-right: auto;
+	margin-left: 24px;
+	margin-left: 2.4rem;
+}
+
+.alignright {
+	float: left;
+	text-align: left;
+}
+
+.alignleft {
+	float: right;
+	text-align: right;
+}
+
+img.alignright,
+.wp-caption.alignright {
+	margin: 0 24px 24px 0;
+	margin: 0 2.4rem 2.4rem 0;
+}
+
+img.alignleft,
+.wp-caption.alignleft {
+	margin: 0 0 24px 24px;
+	margin: 0 0 2.4rem 2.4rem;
+}
+
+/* Genesis
+--------------------------------------------- */
+
+.author-box .avatar {
+	margin-right: 24px;
+	margin-right: 2.4rem;
+	margin-left: auto;
+}
+
+/*
+Site Header
+---------------------------------------------------------------------------------------------------- */
+
+/* Title Area
+--------------------------------------------- */
+
+.title-area {
+	float: left;
+}
+
+/* Logo, hide text */
+
+.header-image .site-header .wrap {
+	background-position: left;
+}
+
+.header-image .site-title a {
+	float: left;
+}
+
+/* Widget Area
+--------------------------------------------- */
+
+.site-header .widget-area {
+	float: right;
+	text-align: right;
+}
+
+.site-header .search-form {
+	float: right;
+}
+
+/*
+Site Navigation
+---------------------------------------------------------------------------------------------------- */
+
+.genesis-nav-menu .menu-item {
+	text-align: left;
+}
+
+.genesis-nav-menu .sub-menu {
+	left: -9999px;
+	right: auto;
+}
+
+.genesis-nav-menu .sub-menu .sub-menu {
+	margin: -54px 0 0 199px;
+}
+
+.genesis-nav-menu .menu-item:hover > .sub-menu {
+	right: auto;
+	left: auto;
+}
+
+.genesis-nav-menu > .first > a {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.genesis-nav-menu > .last > a {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.genesis-nav-menu > .left {
+	float: right;
+}
+
+.genesis-nav-menu > .rss > a {
+	margin-right: auto;
+	margin-left: 48px;
+	margin-left: 4.8rem;
+}
+
+/*
+Content Area
+---------------------------------------------------------------------------------------------------- */
+
+/* Entries
+--------------------------------------------- */
+
+.entry-content ol li,
+.entry-content ul li {
+	margin-right: auto;
+	margin-left: 40px;
+	margin-left: 4rem;
+}
+
+.entry-meta .entry-comments::before {
+	margin: 0 6px 0 2px;
+	margin: 0 0.6rem 0 0.2rem;
+}
+
+/* Comments
+--------------------------------------------- */
+
+#respond label {
+	margin-right: 12px;
+	margin-right: 1.2rem;
+	margin-left: auto;
+}
+
+.comment-list li li {
+	margin-right: -32px;
+	margin-right: -3.2rem;
+	margin-left: auto;
+}
+
+li.comment {
+	border-right: none;
+	border-left: none;
+}
+
+.comment .avatar {
+	margin: 0 16px 24px 0;
+	margin: 0 1.6rem 2.4rem 0;
+}
+
+/*
+Footer Widgets
+---------------------------------------------------------------------------------------------------- */
+
+.footer-widgets-1 {
+	margin-right: 40px;
+	margin-right: 4rem;
+	margin-left: auto;
+}
+
+.footer-widgets-1,
+.footer-widgets-2 {
+	float: left;
+}
+
+.footer-widgets-3 {
+	float: right;
+}
