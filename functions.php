@@ -136,7 +136,7 @@ add_action( 'wp_enqueue_scripts', 'utility_enqueue_styles' );
  */
 function utility_enqueue_styles() {
 	wp_enqueue_style( 'utility-google-fonts', '//fonts.googleapis.com/css?family=Arvo:400,700|PT+Sans:400,700', array(), CHILD_THEME_VERSION );
-	wp_enqueue_style( 'utility-font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css', array(), '4.0.3' );
+	wp_enqueue_style( 'utility-font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css', array(), '4.1.0' );
 }
 
 
