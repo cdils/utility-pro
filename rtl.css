@@ -17,6 +17,7 @@
 		- WordPress
 		- Genesis
 		- Jetpack
+	- Widgets
 	- Site Header
 		- Title Area
 		- Widget Area
@@ -35,8 +36,8 @@ Defaults
 --------------------------------------------- */
 
 blockquote::before {
-	right: auto;
-	left: -20px;
+	left: auto;
+	right: -20px;
 }
 
 /*
@@ -47,15 +48,6 @@ Structure and Layout
 --------------------------------------------- */
 
 /* Wrapping div for .content and .sidebar-primary */
-
-.content-sidebar-sidebar .content-sidebar-wrap {
-	float: left;
-}
-
-.sidebar-content-sidebar .content-sidebar-wrap,
-.sidebar-sidebar-content .content-sidebar-wrap {
-	float: right;
-}
 
 /* Content  */
 
@@ -105,14 +97,14 @@ Structure and Layout
 .two-fourths,
 .two-sixths,
 .two-thirds {
-	float: left;
-	margin-right: auto;
-	margin-left: 2.564102564102564%;
+	float: right;
+	margin-left: auto;
+	margin-right: 2.564102564102564%;
 }
 
 .first {
-	margin-right: auto;
-	margin-left: 0;
+	margin-left: auto;
+	margin-right: 0;
 }
 
 /*
@@ -169,6 +161,24 @@ img.alignleft,
 	margin-left: auto;
 }
 
+/* Utility Bar
+--------------------------------------------- */
+
+.utility-bar {
+	padding: 0 10px;
+	padding: 0 1rem;
+}
+
+.utility-bar-left {
+	float: right;
+	text-align: right;
+}
+
+.utility-bar-right {
+	float: left;
+	text-align: right;
+}
+
 /*
 Site Header
 ---------------------------------------------------------------------------------------------------- */
@@ -177,7 +187,7 @@ Site Header
 --------------------------------------------- */
 
 .title-area {
-	float: left;
+	float: right;
 }
 
 /* Logo, hide text */
@@ -187,19 +197,19 @@ Site Header
 }
 
 .header-image .site-title a {
-	float: left;
+	float: right;
 }
 
 /* Widget Area
 --------------------------------------------- */
 
 .site-header .widget-area {
-	float: right;
+	float: left;
 	text-align: right;
 }
 
 .site-header .search-form {
-	float: right;
+	float: left;
 }
 
 /*
@@ -263,6 +273,11 @@ Content Area
 	margin: 0 0.6rem 0 0.2rem;
 }
 
+.entry-header .entry-meta {
+    margin: 0 0 24px -4px;
+    margin: 0 0 2.4rem -4rem;
+}
+
 /* Comments
 --------------------------------------------- */
 
@@ -283,9 +298,13 @@ li.comment {
 	border-left: none;
 }
 
+.avatar {
+	float: right;
+}
+
 .comment .avatar {
-	margin: 0 16px 24px 0;
-	margin: 0 1.6rem 2.4rem 0;
+	margin: 0 24px 16px;
+	margin: 0 2.4rem 2.4rem 1.6rem;
 }
 
 /*

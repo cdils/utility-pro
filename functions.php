@@ -9,6 +9,15 @@
  * @license      GPL-2.0+
  */
 
+// Use copy of Genesis Framework language files for upgrade stability
+define( 'GENESIS_LANGUAGES_DIR', get_stylesheet_directory() . '/languages/genesis' );
+
+// Must be added before Genesis Framework /lib/init.php is included
+add_action( 'after_setup_theme', 'utility_genesis_child_setup' );
+function utility_genesis_child_setup() {
+    load_child_theme_textdomain( 'utility', get_stylesheet_directory() . '/languages' );
+}
+
 //* Start the engine
 include_once( get_template_directory() . '/lib/init.php' );
 
@@ -107,7 +116,7 @@ function utility_register_widget_areas() {
 			'id'          => 'utility-home-gallery-4',
 			'name'        => __( 'Home Gallery 4', 'utility' ),
 			'description' => __( 'This is the 4th gallery section in the middle of the home page.', 'utility' ),
-		),						
+		),
 		'call-to-action' => array(
 			'id'          => 'utility-call-to-action',
 			'name'        => __( 'Call to Action', 'utility' ),
