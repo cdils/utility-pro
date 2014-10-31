@@ -279,3 +279,13 @@ function utility_pro_fonts_url() {
 
     return $fonts_url;
 }
+
+//* To-do remove this from final version - demo only
+add_filter('body_class', 'string_body_class');
+function string_body_class( $classes ) {
+	if ( isset( $_GET['color'] ) ) :
+		$classes[] = 'utility-pro-' . sanitize_html_class( $_GET['color'] );
+	endif;
+
+	return $classes;
+}
