@@ -61,6 +61,7 @@
 	- Sidebars
 	- Footer Widgets
 	- Site Footer
+	- Accessibility Extra's
 	- Media Queries
 		- max-width: 1139px
 		- max-width: 1023px
@@ -324,7 +325,7 @@ ul {
 
 blockquote,
 blockquote::before {
-	color: #999;
+	color: #666;
 }
 
 blockquote {
@@ -421,7 +422,7 @@ textarea {
 	background: #fff;
 	border: 1px solid #ddd;
 	box-shadow: 1px 1px 3px #eee inset;
-	color: #999;
+	color: #666;
 	font-size: 14px;
 	padding: 16px;
 	width: 100%;
@@ -434,11 +435,11 @@ textarea:focus {
 }
 
 ::-moz-placeholder {
-	color: #999;
+	color: #666;
 }
 
 ::-webkit-input-placeholder {
-	color: #999;
+	color: #666;
 }
 
 .button,
@@ -455,6 +456,17 @@ input[type="submit"]{
 	padding: 16px 24px;
 	text-transform: uppercase;
 	width: auto;
+}
+
+button:focus,
+input:focus[type="button"],
+input:focus[type="reset"],
+input:focus[type="submit"],
+.button:focus,
+.entry-content .button:focus {
+	background-color: #a00;
+	border: solid #000;
+	text-decoration: underline;
 }
 
 .button {
@@ -965,6 +977,7 @@ Widgets
 }
 
 .call-to-action-bar .button {
+	background: #999;
 	float: right;
 	margin-top: -40px;
 	text-align: center;
@@ -1008,7 +1021,7 @@ Plugins
 --------------------------------------------- */
 
 .enews-widget {
-	color: #999;
+	color: #666;
 }
 
 .enews-widget .widget-title {
@@ -1143,7 +1156,7 @@ Site Header
 }
 
 .site-description {
-	color: #999;
+	color: #666;
 	font-size: 16px;
 	line-height: 1;
 	margin: 0;
@@ -1397,7 +1410,7 @@ Content Area
 
 .entry-meta {
 	clear: both;
-	color: #999;
+	color: #666;
 }
 
 .entry-meta a {
@@ -1543,7 +1556,7 @@ Sidebars
 ---------------------------------------------------------------------------------------------------- */
 
 .sidebar {
-	color: #999;
+	color: #666;
 }
 
 .sidebar a {
@@ -1598,7 +1611,7 @@ Footer Widgets
 
 .footer-widgets {
 	background: #333;
-	color: #999;
+	color: #fff;
 	clear: both;
 	padding: 40px 0 16px;
 }
@@ -1626,8 +1639,8 @@ Footer Widgets
 }
 
 .footer-widgets a {
-	border-bottom: 1px solid #666;
-	color: #999;
+	border-bottom: 1px solid #fff;
+	color: #fff;
 }
 
 .footer-widgets a:hover {
@@ -1679,6 +1692,64 @@ Site Footer
 	margin: 0;
 }
 
+/*
+Accessibility Extra's - Taken from the Leiden theme (genesis-accessible.org)
+---------------------------------------------------------------------------------------------------- */
+
+
+/* Hide visually but not from screen readers and keyboard users */
+.screen-reader-text,
+.screen-reader-text span,
+.search-form label {
+	position: absolute;
+	left: -1000em;
+	top: -1000em;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+
+.screen-reader-shortcut {
+	position: absolute;
+	top: -1000em;
+}
+
+.screen-reader-shortcut:focus {
+	left: 1em;
+	top: 1em;
+	height: auto;
+	width: auto;
+	display: block;
+	font-size: 1em;
+	font-weight: bold;
+	padding: 15px 23px 14px;
+	background: #fff;
+	color: #333;
+	z-index: 100000;
+	line-height: normal;
+	text-decoration: none;
+	-webkit-box-shadow: 0 0 2px 2px rgba(0,0,0,.6);
+	box-shadow: 0 0 2px 2px rgba(0,0,0,.6);
+}
+
+.wpacc-genesis-skip-link li {
+	height: 0;
+	width: 0;
+	list-style: none;
+
+}
+/* Display search button */
+.search-form input[type="search"] {
+	width: auto;
+	margin-right: 10px;
+}
+
+/* Display outline on focus */
+:focus {
+	color: #333;
+	border: 1px solid #333;
+}
 
 /*
 Media Queries
