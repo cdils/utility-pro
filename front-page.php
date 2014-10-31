@@ -1,21 +1,21 @@
 <?php
 /**
- * Utility.
+ * Utility Pro.
  *
- * @package      Utility
- * @link         http://carriedils.com/utility
+ * @package      Utility Pro
+ * @link         http://www.carriedils.com/utility
  * @author       Carrie Dils <carrie@carriedils.com>
  * @copyright    Copyright (c) 2013, Carrie Dils
  * @license      GPL-2.0+
  */
 
-add_action( 'genesis_after_header', 'utility_homepage_widgets' );
+add_action( 'genesis_after_header', 'utility_pro_homepage_widgets' );
 /**
  * Output home page widget areas.
  *
  * @since 1.0.0
  */
-function utility_homepage_widgets() {
+function utility_pro_homepage_widgets() {
 
 		genesis_widget_area( 'utility-home-welcome', array(
 			'before' => '<div class="home-welcome"><div class="wrap">',

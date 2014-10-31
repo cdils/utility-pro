@@ -3,7 +3,7 @@
  * This file adds the Landing template to the Utility Theme.
  *
  * @author Carrie Dils
- * @package Utility
+ * @package Utility Pro
  * @subpackage Customizations
  */
 
