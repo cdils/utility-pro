@@ -23,6 +23,9 @@ function utility_add_body_class( $classes ) {
 //* Force full width content layout
 add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
 
+//* Remove Utility Bar
+remove_action( 'genesis_before_header', 'utility_bar' );
+
 //* Remove site header elements
 remove_action( 'genesis_header', 'genesis_header_markup_open', 5 );
 remove_action( 'genesis_header', 'genesis_do_header' );
@@ -42,6 +45,9 @@ remove_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
 remove_action( 'genesis_footer', 'genesis_footer_markup_open', 5 );
 remove_action( 'genesis_footer', 'genesis_do_footer' );
 remove_action( 'genesis_footer', 'genesis_footer_markup_close', 15 );
+
+//* Remove Custom Utility Copyright
+remove_action( 'genesis_footer', 'utility_custom_footer' );
 
 //* Run the Genesis loop
 genesis();
