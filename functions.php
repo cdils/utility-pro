@@ -9,67 +9,84 @@
  * @license      GPL-2.0+
  */
 
-//* Use copy of Genesis Framework language files for upgrade stability
-define( 'GENESIS_LANGUAGES_DIR', get_stylesheet_directory() . '/languages/genesis' );
-
-// Must be added before Genesis Framework /lib/init.php is included
-add_action( 'after_setup_theme', 'utility_pro_genesis_child_setup' );
-function utility_pro_genesis_child_setup() {
+add_action( 'after_setup_theme', 'utility_pro_i18n' );
+/**
+ * Load the child theme textdomain for internationalization.
+ *
+ * Must be loaded before Genesis Framework /lib/init.php is included.
+ * Translations can be filed in the /languages/ directory.
+ *
+ * @since 1.0.0
+ */
+function utility_pro_i18n() {
     load_child_theme_textdomain( 'utility-pro', get_stylesheet_directory() . '/languages' );
 }
 
-//* Start the engine
-include_once( get_template_directory() . '/lib/init.php' );
+add_action( 'genesis_setup', 'utility_pro_setup', 15 );
+/**
+ * Theme setup.
+ *
+ * Attach all of the site-wide functions to the correct hooks and filters. All
+ * the functions themselves are defined below this setup function.
+ *
+ * @since 1.0.0
+ */
+function utility_pro_setup() {
 
-define( 'CHILD_THEME_NAME', 'utility-pro' );
-define( 'CHILD_THEME_URL', 'http://www.carriedils.com/' );
-define( 'CHILD_THEME_VERSION', '1.1.0' );
+	define( 'CHILD_THEME_NAME', 'utility-pro' );
+	define( 'CHILD_THEME_URL', 'http://www.carriedils.com/' );
+	define( 'CHILD_THEME_VERSION', '1.1.0' );
 
-//* Add HTML5 markup structure
-add_theme_support( 'html5' );
+	//* Add HTML5 markup structure
+	add_theme_support( 'html5', array( 'caption', 'comment-form', 'comment-list', 'gallery', 'search-form' ) );
 
-//* Add viewport meta tag for mobile browsers
-add_theme_support( 'genesis-responsive-viewport' );
+	//* Add viewport meta tag for mobile browsers
+	add_theme_support( 'genesis-responsive-viewport' );
 
-//* Add support for three footer widget areas
-add_theme_support( 'genesis-footer-widgets', 3 );
+	//* Add support for custom background
+	add_theme_support( 'custom-background', array( 'wp-head-callback' => '__return_false' ) );
 
-//* Add support for custom background
-add_theme_support( 'custom-background', array( 'wp-head-callback' => '__return_false' ) );
+	//* Add support for additional color style options
+	add_theme_support( 'genesis-style-selector', array(
+		'utility-purple' =>	__( 'Purple', 'utility-pro' ),
+		'utility-green'  =>	__( 'Green', 'utility-pro' ),
+		'utility-orange' =>	__( 'Orange', 'utility-pro' ),
+		'utility-red'    =>	__( 'Red', 'utility-pro' ),
+	));
 
-//* Add support for additional color style options
-add_theme_support( 'genesis-style-selector', array(
-	'utility-purple' =>	__( 'Purple', 'utility-pro' ),
-	'utility-green'  =>	__( 'Green', 'utility-pro' ),
-	'utility-orange' =>	__( 'Orange', 'utility-pro' ),
-	'utility-red'    =>	__( 'Red', 'utility-pro' ),
-));
+	//* Add support for structural wraps
+	add_theme_support( 'genesis-structural-wraps', array(
+		'footer',
+		'footer-widgets',
+		'header',
+		'home-gallery',
+		'nav',
+		'site-inner',
+		'site-tagline',
+		'subnav'
+	) );
 
-//* Add support for structural wraps
-add_theme_support( 'genesis-structural-wraps', array(
-	'header',
-	'site-tagline',
-	'home-gallery',
-	'nav',
-	'subnav',
-	'site-inner',
-	'footer-widgets',
-	'footer'
-) );
+	//* Add support for three footer widget areas
+	add_theme_support( 'genesis-footer-widgets', 3 );
 
-//* Add custom image sizes
-add_image_size( 'feature-large', 960, 330, true );
+	//* Add custom image sizes
+	add_image_size( 'feature-large', 960, 330, true );
 
-//* Unregister secondary sidebar
-unregister_sidebar( 'sidebar-alt' );
+	//* Unregister secondary sidebar
+	unregister_sidebar( 'sidebar-alt' );
 
-//* Unregister layouts that use secondary sidebar
-genesis_unregister_layout( 'content-sidebar-sidebar' );
-genesis_unregister_layout( 'sidebar-sidebar-content' );
-genesis_unregister_layout( 'sidebar-content-sidebar' );
+	//* Unregister layouts that use secondary sidebar
+	genesis_unregister_layout( 'content-sidebar-sidebar' );
+	genesis_unregister_layout( 'sidebar-sidebar-content' );
+	genesis_unregister_layout( 'sidebar-content-sidebar' );
 
-//* Register the default widget areas
-utility_pro_register_widget_areas();
+	//* Register the default widget areas
+	utility_pro_register_widget_areas();
+
+	//* Queue scripts used for the front end
+	add_action( 'wp_enqueue_scripts', 'utility_pro_enqueue_assets' );
+
+}
 
 /**
  * Register the widget areas enabled by default in Utility.
@@ -135,23 +152,24 @@ function utility_pro_register_widget_areas() {
 	}
 }
 
-
-add_action( 'wp_enqueue_scripts', 'utility_pro_enqueue_scripts' );
 /**
- * Enqueue the Google Web Font and Font Awesome style sheets.
- *
- * Load Backstretch script and prepare images for loading. Enqueue Google fonts and
- * Font Awesome style sheets
+ * Enqueue theme assets.
  *
  * @see utility_pro_fonts_url()
- * @since 1.1.0
+ * @since 1.0.0
  */
-function utility_pro_enqueue_scripts() {
+function utility_pro_enqueue_assets() {
 
-    wp_enqueue_style( 'utility_pro-fonts', utility_pro_fonts_url(), array(), null );
+	//* Load Google fonts
+    wp_enqueue_style( 'utility-pro-fonts', utility_pro_fonts_url(), array(), null );
+
+    //* Load Font Awesome stylsheet
 	wp_enqueue_style( 'utility-font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css', array(), '4.1.0' );
 
-	//* Load scripts only if custom background is being used
+    //* Replace style.css with style-rtl.css for RTL languages
+    wp_style_add_data( 'utility-pro', 'rtl', 'replace' );
+
+	//* Load remaining scripts only if custom background is being used
 	if ( ! get_background_image() ) {
 		return;
 	}
@@ -234,28 +252,25 @@ function remove_comment_form_allowed_tags( $defaults ) {
 }
 
 /**
- * Enqueue Google Fonts.
+ * Build Google fonts URL.
  *
  * This function enqueues Google fonts in such a way that translators can easily turn on/off
  * the fonts if they do not contain the necessary character sets. Hat tip to Frank Klein for
- * showing this to me.
+ * the tutorial.
  *
  * @link http://themeshaper.com/2014/08/13/how-to-add-google-fonts-to-wordpress-themes/
+ *
  * @since  1.0.0
  */
 function utility_pro_fonts_url() {
     $fonts_url = '';
 
     /* Translators: If there are characters in your language that are not
-    * supported by Arvo, translate this to 'off'. Do not translate
+    * supported by these fonts, translate this to 'off'. Do not translate
     * into your own language.
     */
     $arvo = _x( 'on', 'Arvo font: on or off', 'utility-pro' );
 
-    /* Translators: If there are characters in your language that are not
-    * supported by PT Sans, translate this to 'off'. Do not translate
-    * into your own language.
-    */
     $pt_sans = _x( 'on', 'PT Sans font: on or off', 'utility-pro' );
 
     if ( 'off' !== $arvo || 'off' !== $pt_sans ) {

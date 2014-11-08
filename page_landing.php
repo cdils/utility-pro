@@ -20,34 +20,43 @@ function utility_add_body_class( $classes ) {
 
 }
 
-//* Force full width content layout
+// Full width layout
 add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
 
-//* Remove Utility Bar
-remove_action( 'genesis_before_header', 'utility_bar' );
-
-//* Remove site header elements
+// Remove default Genesis elements
 remove_action( 'genesis_header', 'genesis_header_markup_open', 5 );
 remove_action( 'genesis_header', 'genesis_do_header' );
 remove_action( 'genesis_header', 'genesis_header_markup_close', 15 );
-
-//* Remove navigation
 remove_action( 'genesis_after_header', 'genesis_do_nav' );
-remove_action( 'genesis_before_header', 'genesis_do_subnav' );
-
-//* Remove breadcrumbs
+remove_action( 'genesis_after_header', 'genesis_do_subnav' );
 remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
-
-//* Remove site footer widgets
+remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
+remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
+remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_close', 15 );
 remove_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
-
-//* Remove site footer elements
 remove_action( 'genesis_footer', 'genesis_footer_markup_open', 5 );
 remove_action( 'genesis_footer', 'genesis_do_footer' );
 remove_action( 'genesis_footer', 'genesis_footer_markup_close', 15 );
 
-//* Remove Custom Utility Copyright
+// Remove elements specific to Utility Pro
+remove_action( 'genesis_before_header', 'utility_bar' );
 remove_action( 'genesis_footer', 'utility_custom_footer' );
+
+// No Nav Extras in Menu (ex: search)
+add_filter( 'genesis_pre_get_option_nav_extras_enable', '__return_false' );
+
+add_filter( 'sidebars_widgets', 'utility_pro_remove_header_right' );
+/**
+* No Header Right widget area
+*
+* @since 1.0.0
+* @param array $widgets
+* @return array $widgets
+*/
+function utility_pro_remove_header_right( $widgets ) {
+	$widgets['header-right'] = array();
+	return $widgets;
+}
 
 //* Run the Genesis loop
 genesis();
