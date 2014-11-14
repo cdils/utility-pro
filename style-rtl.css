@@ -1,5 +1,5 @@
 /*
-	Theme Name: Utility Pro
+	Theme Name: Utility Pro Theme
 	Description: No-nonsense, functional child theme created for the Genesis Framework.
 	Author: Carrie Dils
 	Author URI: http://www.carriedils.com/
@@ -61,7 +61,7 @@
 	- Sidebars
 	- Footer Widgets
 	- Site Footer
-	- Accessibility Extras
+	- Accessibility Extra's
 	- Media Queries
 		- max-width: 1139px
 		- max-width: 1023px
@@ -338,7 +338,7 @@ blockquote::before {
 	display: block;
 	font-size: 140px;
 	height: 0;
-	left: -50px;
+	right: -50px;
 	position: relative;
 	top: -60px;
 }
@@ -421,7 +421,7 @@ select,
 textarea {
 	background: #fff;
 	border: 1px solid #ddd;
-	box-shadow: 1px 1px 3px #eee inset;
+	box-shadow: -1px 1px 3px #eee inset;
 	color: #666;
 	font-size: 14px;
 	padding: 16px;
@@ -523,12 +523,12 @@ Structure and Layout
 /* Content */
 
 .content {
-	float: right;
+	float: left;
 	width: 740px;
 }
 
 .content-sidebar .content {
-	float: left;
+	float: right;
 }
 
 .full-width-content .content {
@@ -540,12 +540,12 @@ Structure and Layout
 /* Primary Sidebar */
 
 .sidebar-primary {
-	float: right;
+	float: left;
 	width: 360px;
 }
 
 .sidebar-content .sidebar-primary {
-	float: left;
+	float: right;
 }
 
 
@@ -564,8 +564,8 @@ Structure and Layout
 .two-fourths,
 .two-sixths,
 .two-thirds {
-	float: left;
-	margin-left: 2.564102564102564%;
+	float: right;
+	margin-right: 2.564102564102564%;
 }
 
 .one-half,
@@ -602,7 +602,7 @@ Structure and Layout
 
 .first {
 	clear: both;
-	margin-left: 0;
+	margin-right: 0;
 }
 
 
@@ -614,15 +614,15 @@ Common Classes
 --------------------------------------------- */
 
 .avatar {
-	float: left;
+	float: right;
 }
 
 .alignleft .avatar {
-	margin-right: 24px;
+	margin-left: 24px;
 }
 
 .alignright .avatar {
-	margin-left: 24px;
+	margin-right: 24px;
 }
 
 .search-form {
@@ -654,23 +654,23 @@ img.alignnone {
 }
 
 .alignleft {
-	float: left;
-	text-align: left;
-}
-
-.alignright {
 	float: right;
 	text-align: right;
 }
 
+.alignright {
+	float: left;
+	text-align: left;
+}
+
 img.alignleft,
 .wp-caption.alignleft {
-	margin: 0 24px 24px 0;
+	margin: 0 0 24px 24px;
 }
 
 img.alignright,
 .wp-caption.alignright {
-	margin: 0 0 24px 24px;
+	margin: 0 24px 24px 0;
 }
 
 .wp-caption-text {
@@ -729,7 +729,7 @@ img.alignright,
 }
 
 .author-box .avatar {
-	margin-right: 24px;
+	margin-left: 24px;
 }
 
 /* Headings
@@ -777,7 +777,7 @@ table {
 }
 
 th {
-	text-align: left;
+	text-align: right;
 }
 
 .table {
@@ -891,12 +891,12 @@ Widgets
 }
 
 .utility-bar-left {
-	float: left;
+	float: right;
 }
 
 .utility-bar-right {
-	float: right;
-	text-align: right;
+	float: left;
+	text-align: left;
 }
 
 .utility-bar input[type="search"] {
@@ -954,7 +954,7 @@ Widgets
 .home-gallery-2,
 .home-gallery-3,
 .home-gallery-4 {
-	float: left;
+	float: right;
 	text-align: center;
 	width: 25%;
 }
@@ -978,7 +978,7 @@ Widgets
 
 .call-to-action-bar .button {
 	background: #999;
-	float: right;
+	float: left;
 	margin-top: -40px;
 	text-align: center;
 }
@@ -1134,7 +1134,7 @@ Site Header
 .title-area {
 	font-family: 'Arvo', sans-serif;
 	font-weight: 700;
-	float: left;
+	float: right;
 	width: 300px;
 }
 
@@ -1178,12 +1178,12 @@ Site Header
 /* Logo, hide text */
 
 .header-image .site-header .wrap {
-	background: url(images/logo.png) no-repeat left;
+	background: url(images/logo.png) no-repeat right;
 	padding: 0;
 }
 
 .header-image .site-title a {
-	float: left;
+	float: right;
 	min-height: 65px;
 	width: 100%;
 }
@@ -1192,8 +1192,8 @@ Site Header
 --------------------------------------------- */
 
 .site-header .widget-area {
-	float: right;
-	text-align: right;
+	float: left;
+	text-align: left;
 	width: 800px;
 }
 
@@ -1202,7 +1202,7 @@ Site Header
 }
 
 .site-header .search-form {
-	float: right;
+	float: left;
 }
 
 
@@ -1223,7 +1223,7 @@ Site Navigation
 	display: inline-block;
 	margin: 0;
 	padding: 0;
-	text-align: left;
+	text-align: right;
 }
 
 .genesis-nav-menu a {
@@ -1231,7 +1231,7 @@ Site Navigation
 	color: #fff;
 	display: block;
 	letter-spacing: 1px;
-	margin-right: 30px;
+	margin-left: 30px;
 	padding: 12px;
 	position: relative;
 }
@@ -1251,7 +1251,7 @@ Site Navigation
 }
 
 .genesis-nav-menu .sub-menu {
-	left: -9999px;
+	right: -9999px;
 	margin: 0;
 	opacity: 0;
 	padding: 0;
@@ -1277,7 +1277,7 @@ Site Navigation
 }
 
 .genesis-nav-menu .sub-menu .sub-menu {
-	margin: -54px 0 0 199px;
+	margin: -54px 199px 0 0;
 }
 
 .genesis-nav-menu .menu-item:hover {
@@ -1285,21 +1285,21 @@ Site Navigation
 }
 
 .genesis-nav-menu .menu-item:hover > .sub-menu {
-	left: auto;
+	right: auto;
 	opacity: 1;
 }
 
 .genesis-nav-menu > .first > a {
-	padding-left: 0;
+	padding-right: 0;
 }
 
 .genesis-nav-menu > .last > a {
-	padding-right: 0;
+	padding-left: 0;
 }
 
 .genesis-nav-menu > .right {
 	display: inline-block;
-	float: right;
+	float: left;
 	list-style-type: none;
 	padding: 28px 0;
 	text-transform: uppercase;
@@ -1311,7 +1311,7 @@ Site Navigation
 }
 
 .genesis-nav-menu > .rss > a {
-	margin-left: 48px;
+	margin-right: 48px;
 }
 
 .genesis-nav-menu > .search {
@@ -1387,7 +1387,7 @@ Content Area
 
 .entry-content ol li,
 .entry-content ul li {
-	margin-left: 40px;
+	margin-right: 40px;
 }
 
 .entry-content ol li {
@@ -1423,7 +1423,7 @@ Content Area
 	font-size: 12px;
 	margin: 0 -40px 24px;
 	padding: 10px;
-	text-align: right;
+	text-align: left;
 	text-transform: uppercase;
 }
 
@@ -1436,7 +1436,7 @@ Content Area
 
 .entry-comments-link::before {
 	content: "\2014";
-	margin: 0 6px 0 2px;
+	margin: 0 2px 0 6px;
 }
 
 .entry-categories,
@@ -1517,7 +1517,7 @@ Content Area
 
 #respond label {
 	display: block;
-	margin-right: 12px;
+	margin-left: 12px;
 }
 
 .comment-list li,
@@ -1528,17 +1528,17 @@ Content Area
 }
 
 .comment-list li li {
-	margin-right: -32px;
+	margin-left: -32px;
 }
 
 li.comment {
 	background: #f5f5f5;
 	border: 2px solid #fff;
-	border-right: none;
+	border-left: none;
 }
 
 .comment .avatar {
-	margin: 0 16px 24px 0;
+	margin: 0 0 24px 16px;
 }
 
 .bypostauthor {
@@ -1588,7 +1588,7 @@ Sidebars
 
 .sidebar .widget-wrap {
 	border-top: 5px solid #333;
-	margin-left: 4px;
+	margin-right: 4px;
 }
 
 .sidebar .search-form {
@@ -1626,16 +1626,16 @@ Footer Widgets
 }
 
 .footer-widgets-1 {
-	margin-right: 40px;
+	margin-left: 40px;
 }
 
 .footer-widgets-1,
 .footer-widgets-2 {
-	float: left;
+	float: right;
 }
 
 .footer-widgets-3 {
-	float: right;
+	float: left;
 }
 
 .footer-widgets a {
@@ -1693,26 +1693,22 @@ Site Footer
 }
 
 /*
-Accessibility Extras - Taken from the Leiden theme & Genesis Accessible plugin (genesis-accessible.org)
+Accessibility Extra's - Taken from the Leiden theme (genesis-accessible.org)
 ---------------------------------------------------------------------------------------------------- */
 
-/*
-* Skiplinks
-* Hide visually but not from screen readers
-* and keyboard users
---------------------------------------------- */
 
-/*  */
+/* Hide visually but not from screen readers and keyboard users */
 .screen-reader-text,
 .screen-reader-text span,
 .search-form label {
 	position: absolute;
-	left: -1000em;
+	right: -1000em;
 	top: -1000em;
 	height: 1px;
 	width: 1px;
 	overflow: hidden;
 }
+
 
 .screen-reader-shortcut {
 	position: absolute;
@@ -1720,7 +1716,7 @@ Accessibility Extras - Taken from the Leiden theme & Genesis Accessible plugin (
 }
 
 .screen-reader-shortcut:focus {
-	left: 1em;
+	right: 1em;
 	top: 1em;
 	height: auto;
 	width: auto;
@@ -1746,26 +1742,13 @@ Accessibility Extras - Taken from the Leiden theme & Genesis Accessible plugin (
 /* Display search button */
 .search-form input[type="search"] {
 	width: auto;
-	margin-right: 10px;
+	margin-left: 10px;
 }
 
 /* Display outline on focus */
 :focus {
 	color: #333;
 	border: 1px solid #333;
-}
-
-/* Dropdown Menu
---------------------------------------------- */
-
-.menu .menu-item:focus {
-	position: static;
-}
-
-.menu .menu-item > a:focus + ul.sub-menu,
-.menu .menu-item.wpacc-hover > ul.sub-menu {
-	left: auto;
-	opacity: 1;
 }
 
 /*
@@ -1784,7 +1767,7 @@ Media Queries
 	}
 
 	.genesis-nav-menu a {
-		margin-right: 25px;
+		margin-left: 25px;
 	}
 
 	.footer-widgets-1,
@@ -1821,8 +1804,8 @@ Media Queries
 
 	.call-to-action-bar,
 	.site-inner {
-		padding-left: 5%;
 		padding-right: 5%;
+		padding-left: 5%;
 	}
 
 	.archive-description,

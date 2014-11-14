@@ -3,24 +3,14 @@
  * Utility Pro.
  *
  * @package      Utility Pro
- * @link         http://www.carriedils.com/themes/utility
+ * @link         http://store.carriedils.com/utility-pro
  * @author       Carrie Dils
- * @copyright    Copyright (c) 2013, Carrie Dils
+ * @copyright    Copyright (c) 2014, Carrie Dils
  * @license      GPL-2.0+
  */
 
-add_action( 'after_setup_theme', 'utility_pro_i18n' );
-/**
- * Load the child theme textdomain for internationalization.
- *
- * Must be loaded before Genesis Framework /lib/init.php is included.
- * Translations can be filed in the /languages/ directory.
- *
- * @since 1.0.0
- */
-function utility_pro_i18n() {
-    load_child_theme_textdomain( 'utility-pro', get_stylesheet_directory() . '/languages' );
-}
+// Load internationalization components
+require( get_stylesheet_directory() . '/lib/i18n.php' );
 
 add_action( 'genesis_setup', 'utility_pro_setup', 15 );
 /**
@@ -34,19 +24,19 @@ add_action( 'genesis_setup', 'utility_pro_setup', 15 );
 function utility_pro_setup() {
 
 	define( 'CHILD_THEME_NAME', 'utility-pro' );
-	define( 'CHILD_THEME_URL', 'http://www.carriedils.com/' );
-	define( 'CHILD_THEME_VERSION', '1.1.0' );
+	define( 'CHILD_THEME_URL', 'http://store.carriedils.com/utility-pro' );
+	define( 'CHILD_THEME_VERSION', '1.0.0' );
 
-	//* Add HTML5 markup structure
+	// Add HTML5 markup structure
 	add_theme_support( 'html5', array( 'caption', 'comment-form', 'comment-list', 'gallery', 'search-form' ) );
 
-	//* Add viewport meta tag for mobile browsers
+	// Add viewport meta tag for mobile browsers
 	add_theme_support( 'genesis-responsive-viewport' );
 
-	//* Add support for custom background
+	// Add support for custom background
 	add_theme_support( 'custom-background', array( 'wp-head-callback' => '__return_false' ) );
 
-	//* Add support for additional color style options
+	// Add support for additional color style options
 	add_theme_support( 'genesis-style-selector', array(
 		'utility-purple' =>	__( 'Purple', 'utility-pro' ),
 		'utility-green'  =>	__( 'Green', 'utility-pro' ),
@@ -54,7 +44,7 @@ function utility_pro_setup() {
 		'utility-red'    =>	__( 'Red', 'utility-pro' ),
 	));
 
-	//* Add support for structural wraps
+	// Add support for structural wraps
 	add_theme_support( 'genesis-structural-wraps', array(
 		'footer',
 		'footer-widgets',
@@ -66,26 +56,31 @@ function utility_pro_setup() {
 		'subnav'
 	) );
 
-	//* Add support for three footer widget areas
+	// Add support for three footer widget areas
 	add_theme_support( 'genesis-footer-widgets', 3 );
 
-	//* Add custom image sizes
+	// Add custom image sizes
 	add_image_size( 'feature-large', 960, 330, true );
 
-	//* Unregister secondary sidebar
+	// Unregister secondary sidebar
 	unregister_sidebar( 'sidebar-alt' );
 
-	//* Unregister layouts that use secondary sidebar
+	// Unregister layouts that use secondary sidebar
 	genesis_unregister_layout( 'content-sidebar-sidebar' );
 	genesis_unregister_layout( 'sidebar-sidebar-content' );
 	genesis_unregister_layout( 'sidebar-content-sidebar' );
 
-	//* Register the default widget areas
+	// Register the default widget areas
 	utility_pro_register_widget_areas();
 
-	//* Queue scripts used for the front end
+	// Queue scripts used for the front end
 	add_action( 'wp_enqueue_scripts', 'utility_pro_enqueue_assets' );
 
+	// Load skip links
+	include_once( get_stylesheet_directory() . '/lib/skip-links.php' );
+
+	// Load heading fixes for better accessibility
+	include_once( get_stylesheet_directory() . '/lib/headings.php' );
 }
 
 /**
@@ -160,22 +155,22 @@ function utility_pro_register_widget_areas() {
  */
 function utility_pro_enqueue_assets() {
 
-	//* Load Google fonts
+	// Load Google fonts
     wp_enqueue_style( 'utility-pro-fonts', utility_pro_fonts_url(), array(), null );
 
-    //* Load Font Awesome stylsheet
+    // Load Font Awesome stylsheet
 	wp_enqueue_style( 'utility-font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css', array(), '4.1.0' );
 
-    //* Replace style.css with style-rtl.css for RTL languages
+    // Replace style.css with style-rtl.css for RTL languages
     wp_style_add_data( 'utility-pro', 'rtl', 'replace' );
 
-	//* Load remaining scripts only if custom background is being used
+	// Load remaining scripts only if custom background is being used
 	if ( ! get_background_image() ) {
 		return;
 	}
 
 	wp_enqueue_script( 'utility-backstretch', get_stylesheet_directory_uri() . "/lib/js/backstretch.js", array( 'jquery' ), '2.0.1' );
-	wp_enqueue_script( 'utility-backstretch-args', get_stylesheet_directory_uri()."/lib/js/backstretch.args.js" , array( 'utility-backstretch' ), CHILD_THEME_VERSION );
+	wp_enqueue_script( 'utility-backstretch-args', get_stylesheet_directory_uri() . "/lib/js/backstretch.args.js", array( 'utility-backstretch' ), CHILD_THEME_VERSION );
 
 	wp_localize_script( 'utility-backstretch-args', 'utilityL10n', array( 'src' => get_background_image() ) );
 
@@ -215,11 +210,14 @@ add_action( 'genesis_before_entry_content', 'utility_pro_featured_image' );
  */
 function utility_pro_featured_image() {
 
-	if ( ! is_singular( 'post' ) || ! has_post_thumbnail() )
+	if ( ! is_singular( 'post' ) || ! has_post_thumbnail() ) {
 		return;
+	}
+
+	global $post;
 
 	echo '<div class="featured-image">';
-		echo get_the_post_thumbnail( $thumbnail->ID, 'feature-large' );
+		echo get_the_post_thumbnail( $post->ID, 'feature-large' );
 	echo '</div>';
 }
 
@@ -249,50 +247,6 @@ function remove_comment_form_allowed_tags( $defaults ) {
 	$defaults['comment_notes_after'] = '';
 	return $defaults;
 
-}
-
-/**
- * Build Google fonts URL.
- *
- * This function enqueues Google fonts in such a way that translators can easily turn on/off
- * the fonts if they do not contain the necessary character sets. Hat tip to Frank Klein for
- * the tutorial.
- *
- * @link http://themeshaper.com/2014/08/13/how-to-add-google-fonts-to-wordpress-themes/
- *
- * @since  1.0.0
- */
-function utility_pro_fonts_url() {
-    $fonts_url = '';
-
-    /* Translators: If there are characters in your language that are not
-    * supported by these fonts, translate this to 'off'. Do not translate
-    * into your own language.
-    */
-    $arvo = _x( 'on', 'Arvo font: on or off', 'utility-pro' );
-
-    $pt_sans = _x( 'on', 'PT Sans font: on or off', 'utility-pro' );
-
-    if ( 'off' !== $arvo || 'off' !== $pt_sans ) {
-        $font_families = array();
-
-        if ( 'off' !== $arvo ) {
-            $font_families[] = 'Arvo:400,700';
-        }
-
-        if ( 'off' !== $pt_sans ) {
-            $font_families[] = 'PT Sans:400,700';
-        }
-
-        $query_args = array(
-            'family' => urlencode( implode( '|', $font_families ) ),
-            'subset' => urlencode( 'latin,latin-ext' ),
-        );
-
-        $fonts_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
-    }
-
-    return $fonts_url;
 }
 
 //* To-do remove this from final version - demo only
