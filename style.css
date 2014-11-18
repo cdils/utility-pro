@@ -4,7 +4,7 @@
 	Author: Carrie Dils
 	Author URI: http://www.carriedils.com/
 	Version: 0.1.0
-	Tags: black, purple, green, orange, red, one-column, two-columns, fixed-width, custom-menu, full-width-template, sticky-post, theme-options, threaded-comments, rtl-language-support, translation-ready
+	Tags: black, purple, green, blue, red, one-column, two-columns, fixed-width, custom-menu, full-width-template, sticky-post, theme-options, threaded-comments, rtl-language-support, translation-ready
 	Template: genesis
 	License: GPL-2.0+
 	License URI: http://www.opensource.org/licenses/gpl-license.php
@@ -20,7 +20,7 @@
 	- Color Options
 		- Purple
 		- Green
-		- Orange
+		- Blue
 		- Red
 	- Defaults
 		- Typographical Elements
@@ -156,13 +156,13 @@ Color Options
 
 .utility-purple .utility-bar,
 .utility-purple .site-footer {
-	background-color: rgb(50, 14, 96);
-	background-color: rgba(50, 14, 96, 0.8);
+	background-color: rgb(51, 51, 153);
+	background-color: rgba(51, 51, 153, 0.8);
 }
 
 .utility-purple .home-welcome h4,
 .utility-purple .home-welcome p {
-	color: #320E60;
+	color: #333399;
 }
 
 /* Green
@@ -170,7 +170,7 @@ Color Options
 
 .utility-green a,
 .utility-green .entry-content a {
-	color: #99cc33;
+	color: #088254;
 }
 
 .utility-green .button,
@@ -178,48 +178,48 @@ Color Options
 .utility-green input[type="button"],
 .utility-green input[type="reset"],
 .utility-green input[type="submit"] {
-	background:  #99cc33;
+	background:  #088254;
 	color: #FFF;
 }
 
 .utility-green .utility-bar,
 .utility-green .site-footer {
-	background-color: rgb(0, 133, 0);
-	background-color: rgba(0, 133, 0, 0.8);
+	background-color: rgb(8, 130, 84);
+	background-color: rgba(8, 130, 84, 0.8);
 }
 
 .utility-green .home-welcome h4,
 .utility-green .home-welcome p {
-	color: #008500;
+	color: #088254;
 }
 
 
-/* Orange
+/* Blue
 --------------------------------------------- */
 
-.utility-orange a,
-.utility-orange .entry-content a {
-	color: #ff6c00;
+.utility-blue a,
+.utility-blue .entry-content a {
+	color: #0e73e6;
 }
 
-.utility-orange .button,
-.utility-orange button,
-.utility-orange input[type="button"],
-.utility-orange input[type="reset"],
-.utility-orange input[type="submit"] {
-	background:  #ff6c00;
+.utility-blue .button,
+.utility-blue button,
+.utility-blue input[type="button"],
+.utility-blue input[type="reset"],
+.utility-blue input[type="submit"] {
+	background:  #0e73e6;
 	color: #fff;
 }
 
-.utility-orange .utility-bar,
-.utility-orange .site-footer {
-	background-color: rgb(166, 70, 0);
-	background-color: rgba(166, 70, 0, 0.8);
+.utility-blue .utility-bar,
+.utility-blue .site-footer {
+	background-color: rgb(14, 115, 230);
+	background-color: rgba(14, 115, 230, 0.8);
 }
 
-.utility-orange .home-welcome h4,
-.utility-orange .home-welcome p {
-	color: #a64600;
+.utility-blue .home-welcome h4,
+.utility-blue .home-welcome p {
+	color: #0e73e6;
 }
 
 
@@ -228,7 +228,7 @@ Color Options
 
 .utility-red a,
 .utility-red .entry-content a {
-	color: #f03;
+	color: #eb0008;
 }
 
 .utility-red .button,
@@ -236,19 +236,19 @@ Color Options
 .utility-red input[type="button"],
 .utility-red input[type="reset"],
 .utility-red input[type="submit"] {
-	background:  #f03;
+	background:  #eb0008;
 	color: #fff;
 }
 
 .utility-red .utility-bar,
 .utility-red .site-footer {
-	background-color: rgb(166, 0, 33);
-	background-color: rgba(166, 0, 33, 0.8);
+	background-color: rgb(235, 0, 8);
+	background-color: rgba(235, 0, 8, 0.8);
 }
 
 .utility-red .home-welcome h4,
 .utility-red .home-welcome p {
-	color: #a60021;
+	color: #eb0008;
 }
 
 /*
@@ -977,7 +977,7 @@ Widgets
 }
 
 .call-to-action-bar .button {
-	background: #999;
+	background: #ccc;
 	float: right;
 	margin-top: -40px;
 	text-align: center;
@@ -1021,7 +1021,11 @@ Plugins
 --------------------------------------------- */
 
 .enews-widget {
-	color: #666;
+	color: #ccc;
+}
+
+.enews-widget a{
+	color: #ccc;
 }
 
 .enews-widget .widget-title {

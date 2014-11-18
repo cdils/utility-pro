@@ -40,7 +40,7 @@ function utility_pro_setup() {
 	add_theme_support( 'genesis-style-selector', array(
 		'utility-purple' =>	__( 'Purple', 'utility-pro' ),
 		'utility-green'  =>	__( 'Green', 'utility-pro' ),
-		'utility-orange' =>	__( 'Orange', 'utility-pro' ),
+		'utility-orange' =>	__( 'Blue', 'utility-pro' ),
 		'utility-red'    =>	__( 'Red', 'utility-pro' ),
 	));
 

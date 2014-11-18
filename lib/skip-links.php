@@ -28,10 +28,6 @@ function wpaccgen_skip_links() {
 	if ( genesis_get_option( 'menu-secondary' ) == '1' ) $nav2 = true;
 
    	// sidebar?
-	if ( $site_layout == 'sidebar-sidebar-content' || $site_layout == 'content-sidebar-sidebar' || $site_layout == 'sidebar-content-sidebar')  {
-		$sidebar = true;
-    	$sidebar_alt = true;
-   	}
     if ( $site_layout == 'sidebar-content' || $site_layout == 'content-sidebar' )  $sidebar = true;
 
 	// search widget?
@@ -58,19 +54,19 @@ function wpaccgen_skip_links() {
 
 		add_filter( 'genesis_attr_nav-secondary', 'wpacc_genesis_attr_nav_secondary' );
 		function wpacc_genesis_attr_nav_secondary( $attributes ) {
-    		$attributes['id'] = 'wpacc-genesis-secondary';
+    		$attributes['id'] .= 'wpacc-genesis-secondary';
     		return $attributes;
 		}
 
 		add_filter( 'genesis_attr_content', 'wpacc_genesis_attr_content' );
 		function wpacc_genesis_attr_content( $attributes ) {
-    		$attributes['id'] = 'wpacc-genesis-content';
+    		$attributes['id'] .= 'wpacc-genesis-content';
     		return $attributes;
 		}
 
 		add_filter( 'genesis_attr_sidebar-primary', 'wpacc_genesis_attr_sidebar_primary' );
 		function wpacc_genesis_attr_sidebar_primary( $attributes ) {
-    		$attributes['id'] = 'wpacc-sidebar-primary';
+    		$attributes['id'] .= 'wpacc-sidebar-primary';
     		return $attributes;
 		}
 
@@ -88,7 +84,7 @@ function wpaccgen_skip_links() {
 
 			add_filter( 'genesis_attr_footer-widgets', 'wpacc_genesis_attr_footer_widgets' );
 			function wpacc_genesis_attr_footer_widgets( $attributes ) {
-    				$attributes['id'] = 'wpacc-genesis-footer-widgets';
+    				$attributes['id'] .= 'wpacc-genesis-footer-widgets';
     				return $attributes;
 			}
 		}
@@ -113,8 +109,6 @@ function wpaccgen_skip_links() {
 	echo '  <li><a href="#wpacc-genesis-content" class="screen-reader-shortcut">'. __( 'Jump to content', 'utility-pro' ) .'</a></li>' . "\n";
 
 	if ($sidebar) echo '  <li><a href="#wpacc-sidebar-primary" class="screen-reader-shortcut">'. __( 'Jump to primary sidebar', 'utility-pro' ) .'</a></li>' . "\n";
-
-	if ($sidebar_alt) echo '  <li><a href="#wwpacc-sidebar-secondary" class="screen-reader-shortcut">'. __( 'Jump to secondary sidebar', 'utility-pro' ) .'</a></li>' . "\n";
 
 	if ($footer) echo '  <li><a href="#wpacc-genesis-footer-widgets" class="screen-reader-shortcut">'. __( 'Jump to footer', 'utility-pro' ) .'</a></li>' . "\n";
 
