@@ -136,60 +136,60 @@ Color Options
 /* Purple
 --------------------------------------------- */
 
-.utility-purple a,
-.utility-purple .entry-content a {
+.utility-pro-purple a,
+.utility-pro-purple .entry-content a {
 	color: #333399;
 }
 
-.utility-purple .enews a {
+.utility-pro-purple .enews a {
 	color: #fff;
 }
 
-.utility-purple .button,
-.utility-purple button,
-.utility-purple input[type="button"],
-.utility-purple input[type="reset"],
-.utility-purple input[type="submit"] {
+.utility-pro-purple .button,
+.utility-pro-purple button,
+.utility-pro-purple input[type="button"],
+.utility-pro-purple input[type="reset"],
+.utility-pro-purple input[type="submit"] {
 	background:  #333399;
 	color: #fff;
 }
 
-.utility-purple .utility-bar,
-.utility-purple .site-footer {
+.utility-pro-purple .utility-bar,
+.utility-pro-purple .site-footer {
 	background-color: rgb(51, 51, 153);
 	background-color: rgba(51, 51, 153, 0.8);
 }
 
-.utility-purple .home-welcome h4,
-.utility-purple .home-welcome p {
+.utility-pro-purple .home-welcome h4,
+.utility-pro-purple .home-welcome p {
 	color: #333399;
 }
 
 /* Green
 --------------------------------------------- */
 
-.utility-green a,
-.utility-green .entry-content a {
+.utility-pro-green a,
+.utility-pro-green .entry-content a {
 	color: #088254;
 }
 
-.utility-green .button,
-.utility-green button,
-.utility-green input[type="button"],
-.utility-green input[type="reset"],
-.utility-green input[type="submit"] {
+.utility-pro-green .button,
+.utility-pro-green button,
+.utility-pro-green input[type="button"],
+.utility-pro-green input[type="reset"],
+.utility-pro-green input[type="submit"] {
 	background:  #088254;
 	color: #FFF;
 }
 
-.utility-green .utility-bar,
-.utility-green .site-footer {
+.utility-pro-green .utility-bar,
+.utility-pro-green .site-footer {
 	background-color: rgb(8, 130, 84);
 	background-color: rgba(8, 130, 84, 0.8);
 }
 
-.utility-green .home-welcome h4,
-.utility-green .home-welcome p {
+.utility-pro-green .home-welcome h4,
+.utility-pro-green .home-welcome p {
 	color: #088254;
 }
 
@@ -197,28 +197,28 @@ Color Options
 /* Blue
 --------------------------------------------- */
 
-.utility-blue a,
-.utility-blue .entry-content a {
+.utility-pro-blue a,
+.utility-pro-blue .entry-content a {
 	color: #0e73e6;
 }
 
-.utility-blue .button,
-.utility-blue button,
-.utility-blue input[type="button"],
-.utility-blue input[type="reset"],
-.utility-blue input[type="submit"] {
+.utility-pro-blue .button,
+.utility-pro-blue button,
+.utility-pro-blue input[type="button"],
+.utility-pro-blue input[type="reset"],
+.utility-pro-blue input[type="submit"] {
 	background:  #0e73e6;
 	color: #fff;
 }
 
-.utility-blue .utility-bar,
-.utility-blue .site-footer {
+.utility-pro-blue .utility-bar,
+.utility-pro-blue .site-footer {
 	background-color: rgb(14, 115, 230);
 	background-color: rgba(14, 115, 230, 0.8);
 }
 
-.utility-blue .home-welcome h4,
-.utility-blue .home-welcome p {
+.utility-pro-blue .home-welcome h4,
+.utility-pro-blue .home-welcome p {
 	color: #0e73e6;
 }
 
@@ -226,28 +226,28 @@ Color Options
 /* Red
 --------------------------------------------- */
 
-.utility-red a,
-.utility-red .entry-content a {
+.utility-pro-red a,
+.utility-pro-red .entry-content a {
 	color: #eb0008;
 }
 
-.utility-red .button,
-.utility-red button,
-.utility-red input[type="button"],
-.utility-red input[type="reset"],
-.utility-red input[type="submit"] {
+.utility-pro-red .button,
+.utility-pro-red button,
+.utility-pro-red input[type="button"],
+.utility-pro-red input[type="reset"],
+.utility-pro-red input[type="submit"] {
 	background:  #eb0008;
 	color: #fff;
 }
 
-.utility-red .utility-bar,
-.utility-red .site-footer {
+.utility-pro-red .utility-bar,
+.utility-pro-red .site-footer {
 	background-color: rgb(235, 0, 8);
 	background-color: rgba(235, 0, 8, 0.8);
 }
 
-.utility-red .home-welcome h4,
-.utility-red .home-welcome p {
+.utility-pro-red .home-welcome h4,
+.utility-pro-red .home-welcome p {
 	color: #eb0008;
 }
 
