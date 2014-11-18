@@ -199,7 +199,7 @@ Color Options
 
 .utility-pro-blue a,
 .utility-pro-blue .entry-content a {
-	color: #0e73e6;
+	color: #0964DD;
 }
 
 .utility-pro-blue .button,
@@ -207,19 +207,19 @@ Color Options
 .utility-pro-blue input[type="button"],
 .utility-pro-blue input[type="reset"],
 .utility-pro-blue input[type="submit"] {
-	background:  #0e73e6;
+	background:  #0964DD;
 	color: #fff;
 }
 
 .utility-pro-blue .utility-bar,
 .utility-pro-blue .site-footer {
-	background-color: rgb(14, 115, 230);
-	background-color: rgba(14, 115, 230, 0.8);
+	background-color: rgb(12, 108, 187);
+	background-color: rgba(12, 108, 187, 0.8);
 }
 
 .utility-pro-blue .home-welcome h4,
 .utility-pro-blue .home-welcome p {
-	color: #0e73e6;
+	color: #0964DD;
 }
 
 
@@ -228,7 +228,7 @@ Color Options
 
 .utility-pro-red a,
 .utility-pro-red .entry-content a {
-	color: #eb0008;
+	color: #D3131B;
 }
 
 .utility-pro-red .button,
@@ -236,19 +236,19 @@ Color Options
 .utility-pro-red input[type="button"],
 .utility-pro-red input[type="reset"],
 .utility-pro-red input[type="submit"] {
-	background:  #eb0008;
+	background:  #D3131B;
 	color: #fff;
 }
 
 .utility-pro-red .utility-bar,
 .utility-pro-red .site-footer {
-	background-color: rgb(235, 0, 8);
-	background-color: rgba(235, 0, 8, 0.8);
+	background-color: rgb(211, 19, 27);
+	background-color: rgba(211, 19, 27, 0.8);
 }
 
 .utility-pro-red .home-welcome h4,
 .utility-pro-red .home-welcome p {
-	color: #eb0008;
+	color: #D3131B;
 }
 
 /*
@@ -1098,7 +1098,7 @@ div.gform_wrapper .gform_footer input[type="submit"] {
 }
 
 .site-inner .sidebar .gform_widget {
-	background-color: #333;
+	background-color: #111;
 	border-top: 1px solid #fff;
 }
 
@@ -1270,7 +1270,7 @@ Site Navigation
 }
 
 .genesis-nav-menu .sub-menu a {
-	background: #333;
+	background: #111;
 	border: 1px solid #eee;
 	border-top: none;
 	font-size: 14px;
@@ -1341,7 +1341,7 @@ Site Navigation
 --------------------------------------------- */
 
 .nav-primary {
-	background-color: #333;
+	background-color: #111;
 }
 
 .nav-primary a:hover,
@@ -1614,7 +1614,7 @@ Footer Widgets
 ---------------------------------------------------------------------------------------------------- */
 
 .footer-widgets {
-	background: #333;
+	background: #111;
 	color: #fff;
 	clear: both;
 	padding: 40px 0 16px;
