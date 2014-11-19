@@ -145,6 +145,7 @@ Color Options
 	color: #fff;
 }
 
+.utility-pro-purple .call-to-action-bar .button,
 .utility-pro-purple .button,
 .utility-pro-purple button,
 .utility-pro-purple input[type="button"],
@@ -170,15 +171,16 @@ Color Options
 
 .utility-pro-green a,
 .utility-pro-green .entry-content a {
-	color: #088254;
+	color: #107952;
 }
 
+.utility-pro-green .call-to-action-bar .button,
 .utility-pro-green .button,
 .utility-pro-green button,
 .utility-pro-green input[type="button"],
 .utility-pro-green input[type="reset"],
 .utility-pro-green input[type="submit"] {
-	background:  #088254;
+	background:  #107952;
 	color: #FFF;
 }
 
@@ -188,12 +190,6 @@ Color Options
 	background-color: rgba(8, 130, 84, 0.8);
 }
 
-.utility-pro-green .home-welcome h4,
-.utility-pro-green .home-welcome p {
-	color: #088254;
-}
-
-
 /* Blue
 --------------------------------------------- */
 
@@ -202,6 +198,7 @@ Color Options
 	color: #0964DD;
 }
 
+.utility-pro-blue .call-to-action-bar .button,
 .utility-pro-blue .button,
 .utility-pro-blue button,
 .utility-pro-blue input[type="button"],
@@ -217,12 +214,6 @@ Color Options
 	background-color: rgba(12, 108, 187, 0.8);
 }
 
-.utility-pro-blue .home-welcome h4,
-.utility-pro-blue .home-welcome p {
-	color: #0964DD;
-}
-
-
 /* Red
 --------------------------------------------- */
 
@@ -231,6 +222,7 @@ Color Options
 	color: #D3131B;
 }
 
+.utility-pro-red .call-to-action-bar .button,
 .utility-pro-red .button,
 .utility-pro-red button,
 .utility-pro-red input[type="button"],
@@ -246,11 +238,6 @@ Color Options
 	background-color: rgba(211, 19, 27, 0.8);
 }
 
-.utility-pro-red .home-welcome h4,
-.utility-pro-red .home-welcome p {
-	color: #D3131B;
-}
-
 /*
 Defaults
 ---------------------------------------------------------------------------------------------------- */
@@ -259,7 +246,7 @@ Defaults
 --------------------------------------------- */
 
 html {
-	font-size: 62.5%; /* 10px browser default */
+	font-size: 16px;
 }
 
 body {
@@ -452,6 +439,7 @@ input[type="submit"]{
 	box-shadow: none;
 	color: #fff;
 	cursor: pointer;
+	font-size: 16px;
 	letter-spacing: 1px;
 	padding: 16px 24px;
 	text-transform: uppercase;
@@ -867,7 +855,7 @@ Widgets
 	background: rgb(51,51,51);
 	background: rgba(51,51,51,0.8);
 	border-bottom: 1px solid #ddd;
-	color: #ddd;
+	color: #fff;
 	font-size: 12px;
 	padding: 10px 0;
 }
@@ -910,7 +898,7 @@ Widgets
 
 .home-welcome {
 	background-color: rgb(51, 51, 51);
-	background-color: rgba(51, 51, 51, 0.4);
+	background-color: rgba(51, 51, 51, 0.8);
 }
 
 .home-welcome .wrap {
@@ -921,21 +909,14 @@ Widgets
 	margin: 10px 0;
 }
 
-.home-welcome h4,
-.home-welcome p {
-	background-color: rgb(255, 255, 255);
-	background-color: rgba(255, 255, 255, 0.8);
-	display: table;
-	margin: 10px auto;
-	padding: 10px 20px;
-}
-
 .home-welcome h4 {
-	font-size: 40px;
+	color: #fff;
+	font-size: 80px;
 }
 
 .home-welcome p {
-	font-size: 20px;
+	color: #eaeaea;
+	font-size: 40px;
 }
 
 /* Home Gallery
@@ -979,6 +960,7 @@ Widgets
 .call-to-action-bar .button {
 	background: #ccc;
 	float: right;
+	font-size: 16px;
 	margin-top: -40px;
 	text-align: center;
 }

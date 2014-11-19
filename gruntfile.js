@@ -68,6 +68,30 @@ module.exports = function(grunt) {
 		  }
 		},
 		/**
+		 * Exec
+		 */
+		exec: {
+		      get_grunt_sitemap: {
+		        command: 'curl --silent --output sitemap.json http://utility.dev/?show_sitemap'
+		      }
+		},
+		/**
+		 * Uncss
+		 */
+		uncss: {
+		      dist: {
+		        options: {
+		          ignore       : ['.hidden-xs'],
+		          stylesheets  : ['style.css'],
+		          ignoreSheets : [/fonts.googleapis/],
+		          urls         : [], //Overwritten in load_sitemap_and_uncss task
+		        },
+		        files: {
+		          'style.clean.css': ['**/*.php']
+		        }
+		      }
+		},
+		/**
 		 * Watch
 		 */
 		watch: {
@@ -84,6 +108,18 @@ module.exports = function(grunt) {
 	grunt.registerTask('default', [
 		'tenon',
 		'cssjanus',
-		'watch'
+		'watch',
+	]);
+
+	grunt.registerTask('load_sitemap_json',
+		function() {
+			var sitemap_urls = grunt.file.readJSON('./sitemap.json');
+			grunt.config.set('uncss.dist.options.urls', sitemap_urls);
+		}
+	);
+
+	grunt.registerTask('deploy', [
+		'exec:get_grunt_sitemap',
+		'load_sitemap_json','uncss:dist'
 	]);
 };
