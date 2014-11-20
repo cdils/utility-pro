@@ -43,7 +43,6 @@
 		- Featured Page and Featured Post
 	- Plugins
 		- Genesis eNews Extended
-		- Genesis Latest Tweets
 		- Gravity Forms
 		- Jetpack
 	- Site Header
@@ -186,7 +185,7 @@ Color Options
 .utility-pro-green .utility-bar,
 .utility-pro-green .site-footer {
     background-color: rgb(8, 130, 84);
-    background-color: rgba(8, 130, 84, .8);
+    background-color: rgba(8, 130, 84, .9);
 }
 
 /* Red
@@ -216,7 +215,7 @@ Color Options
 .utility-pro-red .utility-bar,
 .utility-pro-red .site-footer {
     background-color: rgb(211, 19, 27);
-    background-color: rgba(211, 19, 27, .8);
+    background-color: rgba(211, 19, 27, .9);
 }
 
 /*
@@ -811,7 +810,7 @@ Widgets
 
 .utility-bar {
     background-color: rgb(12, 108, 187);
-    background-color: rgba(12, 108, 187, .8);
+    background-color: rgba(12, 108, 187, .9);
     border-bottom: 1px solid #ddd;
     color: #fff;
     font-size: 14px;
@@ -989,13 +988,6 @@ Plugins
 .enews-widget input[type='submit'] {
     margin: 0;
     width: 100%;
-}
-
-/* Genesis Latest Tweets
---------------------------------------------- */
-
-.latest-tweets ul li {
-    margin-bottom: 16px;
 }
 
 /* Gravity Forms
@@ -1450,7 +1442,7 @@ Content Area
 }
 
 .pagination li.active a {
-    background: #999;
+    background: #555;
     border: 1px solid #fff;
     color: #fff;
 }

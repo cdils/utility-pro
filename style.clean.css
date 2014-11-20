@@ -1240,7 +1240,7 @@ Content Area
 }
 
 .pagination li.active a {
-  background: #999;
+  background: #555;
   border: 1px solid #fff;
   color: #fff;
 }
