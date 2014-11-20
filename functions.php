@@ -38,10 +38,9 @@ function utility_pro_setup() {
 
 	// Add support for additional color style options
 	add_theme_support( 'genesis-style-selector', array(
-		'utility-purple' =>	__( 'Purple', 'utility-pro' ),
-		'utility-green'  =>	__( 'Green', 'utility-pro' ),
-		'utility-blue' =>	__( 'Blue', 'utility-pro' ),
-		'utility-red'    =>	__( 'Red', 'utility-pro' ),
+		'utility-pro-purple' =>	__( 'Purple', 'utility-pro' ),
+		'utility-pro-green'  =>	__( 'Green', 'utility-pro' ),
+		'utility-pro-red'    =>	__( 'Red', 'utility-pro' ),
 	));
 
 	// Add support for structural wraps
@@ -133,11 +132,6 @@ function utility_pro_register_widget_areas() {
 			'name'        => __( 'Call to Action', 'utility-pro' ),
 			'description' => __( 'This is the CTA section at the bottom of the home page.', 'utility-pro' ),
 		),
-		'copyright' => array(
-			'id'          => 'utility-copyright',
-			'name'        => __( 'Copyright', 'utility-pro' ),
-			'description' => __( 'This is the copyright section at the bottom of the page.', 'utility-pro' ),
-		),
 	);
 
 	$widget_areas = apply_filters( 'utility_pro_default_widget_areas', $widget_areas );
@@ -219,17 +213,6 @@ function utility_pro_featured_image() {
 	echo '<div class="featured-image">';
 		echo get_the_post_thumbnail( $post->ID, 'feature-large' );
 	echo '</div>';
-}
-
-remove_action( 'genesis_footer', 'genesis_do_footer' );
-add_action( 'genesis_footer', 'utility_pro_custom_footer' );
-/**
- * Callback to replace genesis_do_footer.
- *
- * @since 1.0.0
- */
-function utility_pro_custom_footer() {
-	genesis_widget_area( 'utility-copyright' );
 }
 
 add_filter( 'comment_form_defaults', 'remove_comment_form_allowed_tags' );

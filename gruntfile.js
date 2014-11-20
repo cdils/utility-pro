@@ -81,7 +81,7 @@ module.exports = function(grunt) {
 		uncss: {
 		      dist: {
 		        options: {
-		          ignore       : ['.hidden-xs'],
+		          ignore       : [class$='utility-pro-'],
 		          stylesheets  : ['style.css'],
 		          ignoreSheets : [/fonts.googleapis/],
 		          urls         : [], //Overwritten in load_sitemap_and_uncss task
