@@ -661,7 +661,6 @@ img.alignright,
 
 .author-box-title {
     color: #fff;
-    font-size: 16px;
     margin-bottom: 4px;
 }
 
@@ -681,8 +680,6 @@ img.alignright,
 --------------------------------------------- */
 
 .entry-title {
-    font-size: 36px;
-    line-height: 1.2;
     margin-bottom: 40px;
     word-wrap: break-word;
 }
@@ -709,7 +706,6 @@ img.alignright,
 
 .archive-title {
     color: #fff;
-    font-size: 20px;
     margin-bottom: 24px;
 }
 
@@ -1100,7 +1096,6 @@ Site Header
 
 .site-description {
     color: #666;
-    font-size: 16px;
     line-height: 1;
     margin: 0;
 }
@@ -1213,7 +1208,6 @@ Site Navigation
     background: #111;
     border: 1px solid #eee;
     border-top: none;
-    font-size: 14px;
     letter-spacing: 0;
     padding: 16px 20px;
     position: relative;
@@ -1242,7 +1236,6 @@ Site Navigation
 }
 
 .genesis-nav-menu > .right {
-    display: inline-block;
     float: right;
     list-style-type: none;
     padding: 28px 0;
@@ -1369,6 +1362,7 @@ Content Area
 .entry-meta {
     clear: both;
     color: #666;
+    font-size: 14px;
 }
 
 .entry-meta a {
@@ -1377,7 +1371,6 @@ Content Area
 
 .entry-header .entry-meta {
     background-color: #eaeaea;
-    font-size: 12px;
     margin: 0 -40px 24px;
     padding: 10px;
     text-align: right;
@@ -1386,7 +1379,6 @@ Content Area
 
 .entry-footer .entry-meta {
     border-top: 2px solid #f5f5f5;
-    font-size: 14px;
     margin: 0 -40px;
     padding: 32px 40px 8px;
 }
@@ -1503,15 +1495,6 @@ li.comment {
     margin: 0 16px 24px 0;
 }
 
-
-
-.form-allowed-tags {
-    background: #f5f5f5;
-    font-size: 14px;
-    padding: 24px;
-}
-
-
 /*
 Sidebars
 ---------------------------------------------------------------------------------------------------- */
@@ -1588,12 +1571,9 @@ Footer Widgets
 }
 
 .footer-widgets-1,
-.footer-widgets-2 {
-    float: left;
-}
-
+.footer-widgets-2,
 .footer-widgets-3 {
-    float: right;
+    float: left;
 }
 
 .footer-widgets a {
@@ -1638,7 +1618,7 @@ Site Footer
 
 .site-footer {
     background-color: rgb(12, 108, 187);
-    background-color: rgba(12, 108, 187, .8);
+    background-color: rgba(12, 108, 187, .9);
     color: #fff;
     font-size: 14px;
     padding: 40px 0;
@@ -1686,7 +1666,7 @@ Accessibility Extras - Taken from the Leiden theme & Genesis Accessible plugin (
     height: auto;
     width: auto;
     display: block;
-    font-size: 1em;
+    font-size: 10px;
     font-weight: bold;
     padding: 15px 23px 14px;
     background: #fff;
@@ -1694,8 +1674,6 @@ Accessibility Extras - Taken from the Leiden theme & Genesis Accessible plugin (
     z-index: 100000;
     line-height: normal;
     text-decoration: none;
-    -webkit-box-shadow: 0 0 2px 2px rgba(0,0,0,.6);
-            box-shadow: 0 0 2px 2px rgba(0,0,0,.6);
 }
 
 .wpacc-genesis-skip-link li {

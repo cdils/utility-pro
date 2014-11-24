@@ -72,6 +72,9 @@ function utility_pro_setup() {
 	// Register the default widget areas
 	utility_pro_register_widget_areas();
 
+	// Enable shortcodes in widgets
+	add_filter('widget_text', 'do_shortcode');
+
 	// Queue scripts used for the front end
 	add_action( 'wp_enqueue_scripts', 'utility_pro_enqueue_assets' );
 
@@ -151,9 +154,6 @@ function utility_pro_enqueue_assets() {
 
 	// Load Google fonts
     wp_enqueue_style( 'utility-pro-fonts', utility_pro_fonts_url(), array(), null );
-
-    // Load Font Awesome stylsheet
-	wp_enqueue_style( 'utility-font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css', array(), '4.1.0' );
 
     // Replace style.css with style-rtl.css for RTL languages
     wp_style_add_data( 'utility-pro', 'rtl', 'replace' );
