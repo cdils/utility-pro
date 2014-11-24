@@ -808,9 +808,10 @@ Widgets
     background-color: rgb(12, 108, 187);
     background-color: rgba(12, 108, 187, .9);
     border-bottom: 1px solid #ddd;
-    color: #fff;
     font-size: 14px;
+    margin: 0 auto;
     padding: 10px 0;
+    text-align: center;
 }
 
 .utility-bar a {
@@ -821,23 +822,11 @@ Widgets
     color: #ccc;
 }
 
-.utility-bar-left,
-.utility-bar-right {
-    width: 50%;
-}
 
-.utility-bar-left p,
-.utility-bar-right p {
-    margin-bottom: 0;
-}
-
-.utility-bar-left {
-    float: left;
-}
-
-.utility-bar-right {
-    float: right;
-    text-align: right;
+.utility-bar p,
+.utility-bar .widgettitle {
+	color: #fff;
+    margin: 0;
 }
 
 .utility-bar input[type='search'] {

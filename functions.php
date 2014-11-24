@@ -52,7 +52,8 @@ function utility_pro_setup() {
 		'nav',
 		'site-inner',
 		'site-tagline',
-		'subnav'
+		'subnav',
+		'utility-bar'
 	) );
 
 	// Add support for three footer widget areas
@@ -95,15 +96,10 @@ function utility_pro_setup() {
 function utility_pro_register_widget_areas() {
 
 	$widget_areas = array(
-		'utility-bar-left' => array(
-			'id'          => 'utility-bar-left',
-			'name'        => __( 'Utility Bar Left', 'utility-pro' ),
-			'description' => __( 'This is the left side of the utility bar across the top of page.', 'utility-pro' ),
-		),
-		'utility-bar-right' => array(
-			'id'          => 'utility-bar-right',
-			'name'        => __( 'Utility Bar Right', 'utility-pro' ),
-			'description' => __( 'This is the right side of the utility bar across the top of page.', 'utility-pro' ),
+		'utility-bar' => array(
+			'id'          => 'utility-bar',
+			'name'        => __( 'Utility Bar', 'utility-pro' ),
+			'description' => __( 'This is the the utility bar across the top of page.', 'utility-pro' ),
 		),
 		'home-welcome' => array(
 			'id'          => 'utility-home-welcome',
@@ -178,19 +174,10 @@ add_action( 'genesis_before_header', 'utility_pro_bar' );
  */
 function utility_pro_bar() {
 
-		echo '<div class="utility-bar"><div class="wrap">';
-
-		genesis_widget_area( 'utility-bar-left', array(
-			'before' => '<div class="utility-bar-left">',
-			'after' => '</div>',
-		) );
-
-		genesis_widget_area( 'utility-bar-right', array(
-			'before' => '<div class="utility-bar-right">',
-			'after' => '</div>',
-		) );
-
-		echo '</div></div>';
+	genesis_widget_area( 'utility-bar', array(
+		'before' => '<div class="utility-bar">',
+		'after'  => '</div>',
+	) );
 
 }
 
