@@ -64,11 +64,6 @@ function utility_pro_setup() {
 	// Unregister secondary sidebar
 	unregister_sidebar( 'sidebar-alt' );
 
-
-	// Reposition the secondary navigation menu
-	remove_action( 'genesis_after_header', 'genesis_do_subnav' );
-	add_action( 'genesis_before_footer', 'genesis_do_subnav', 15 );
-
 	// Unregister layouts that use secondary sidebar
 	genesis_unregister_layout( 'content-sidebar-sidebar' );
 	genesis_unregister_layout( 'sidebar-sidebar-content' );
@@ -80,14 +75,33 @@ function utility_pro_setup() {
 	// Enable shortcodes in widgets
 	add_filter('widget_text', 'do_shortcode');
 
+	// Reposition the secondary navigation menu
+	remove_action( 'genesis_after_header', 'genesis_do_subnav' );
+	add_action( 'genesis_before_footer', 'genesis_do_subnav', 15 );
+
+	// Reduce the secondary navigation menu to one level depth
+	add_filter( 'wp_nav_menu_args', 'utility_pro_secondary_menu_args' );
+
 	// Queue scripts used for the front end
 	add_action( 'wp_enqueue_scripts', 'utility_pro_enqueue_assets' );
+
+	// Add Utility Bar above header
+	add_action( 'genesis_before_header', 'utility_pro_bar' );
+
+	// Add featured image above posts
+	add_action( 'genesis_before_entry_content', 'utility_pro_featured_image' );
 
 	// Load skip links
 	include_once( get_stylesheet_directory() . '/lib/skip-links.php' );
 
 	// Load heading fixes for better accessibility
 	include_once( get_stylesheet_directory() . '/lib/headings.php' );
+
+	// Load admin files when necessary
+	if ( is_admin() ) {
+		// Plugins
+		include_once( get_stylesheet_directory() . '/lib/plugins/plugins.php' );
+	}
 }
 
 /**
@@ -145,6 +159,23 @@ function utility_pro_register_widget_areas() {
 }
 
 /**
+ * Reduce the secondary navigation menu to one level depth.
+ *
+ * @param  array $args
+ * @return array
+ * @since  1.0.0
+ */
+function utility_pro_secondary_menu_args( $args ){
+
+	if( 'secondary' != $args['theme_location'] ) {
+		return $args;
+	}
+
+	$args['depth'] = 1;
+	return $args;
+}
+
+/**
  * Enqueue theme assets.
  *
  * @see utility_pro_fonts_url()
@@ -154,6 +185,8 @@ function utility_pro_enqueue_assets() {
 
 	// Load Google fonts (see /lib/i18n.php for font family information)
     wp_enqueue_style( 'utility-pro-fonts', utility_pro_fonts_url(), array(), null );
+
+	wp_enqueue_script( 'utility-pro-responsive-menu', get_stylesheet_directory_uri() . '/lib/js/responsive-menu.js', array( 'jquery' ), '1.0.0', true );
 
     // Replace style.css with style-rtl.css for RTL languages
     wp_style_add_data( 'utility-pro', 'rtl', 'replace' );
@@ -170,7 +203,6 @@ function utility_pro_enqueue_assets() {
 
 }
 
-add_action( 'genesis_before_header', 'utility_pro_bar' );
 /**
  * Add utility bar above header.
  *
@@ -185,13 +217,12 @@ function utility_pro_bar() {
 
 }
 
-add_action( 'genesis_before_entry_content', 'utility_pro_featured_image' );
 /**
  * Add featured image above single posts.
  *
- * @since  1.0.0
- *
  * @return null Return early if not a single post or post does not have thumbnail.
+ *
+ * @since  1.0.0
  */
 function utility_pro_featured_image() {
 
@@ -206,23 +237,6 @@ function utility_pro_featured_image() {
 	echo '</div>';
 }
 
-add_filter( 'comment_form_defaults', 'remove_comment_form_allowed_tags' );
-/**
- * Get rid of the comment notes section after comment box.
- *
- * This is the annoying box telling users they can use HTML tags, etc. in comments.
- * Not useful for the average user IMHO. Remove this function entirely if you want
- * it back.
- *
- * @since  1.0.0
- */
-function remove_comment_form_allowed_tags( $defaults ) {
-
-	$defaults['comment_notes_after'] = '';
-	return $defaults;
-
-}
-
 //* To-do remove this from final version - demo only
 add_filter('body_class', 'string_body_class');
 function string_body_class( $classes ) {
@@ -233,16 +247,17 @@ function string_body_class( $classes ) {
 	return $classes;
 }
 
+//* To-do remove this from final version - dev only
 add_action('template_redirect','show_sitemap');
 
 function show_sitemap() {
-if (isset($_GET['show_sitemap'])) {
-$the_query = new WP_Query(array('post_type' => 'any', 'posts_per_page' => '-1', 'post_status' => 'publish'));
-$urls = array();
-while ($the_query->have_posts()) {
-$the_query->the_post();
-$urls[] = get_permalink();
-}
-die(json_encode($urls));
-}
+	if (isset($_GET['show_sitemap'])) {
+		$the_query = new WP_Query(array('post_type' => 'any', 'posts_per_page' => '-1', 'post_status' => 'publish'));
+		$urls = array();
+		while ($the_query->have_posts()) {
+			$the_query->the_post();
+			$urls[] = get_permalink();
+		}
+		die(json_encode($urls));
+	}
 }

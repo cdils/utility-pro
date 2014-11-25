@@ -1,0 +1,440 @@
+# Copyright (C) 2014 Carrie Dils
+# This file is distributed under the GPL-2.0+.
+msgid ""
+msgstr ""
+"Project-Id-Version: Utility Pro 1.0.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
+"POT-Creation-Date: 2014-11-25 20:58:38+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: grunt-wp-i18n 0.4.9\n"
+
+#: functions.php:41
+msgid "Purple"
+msgstr ""
+
+#: functions.php:42
+msgid "Green"
+msgstr ""
+
+#: functions.php:43
+msgid "Red"
+msgstr ""
+
+#: functions.php:119
+msgid "Utility Bar"
+msgstr ""
+
+#: functions.php:120
+msgid "This is the the utility bar across the top of page."
+msgstr ""
+
+#: functions.php:124
+msgid "Home Welcome"
+msgstr ""
+
+#: functions.php:125
+msgid "This is the welcome section at the top of the home page."
+msgstr ""
+
+#: functions.php:129
+msgid "Home Gallery 1"
+msgstr ""
+
+#: functions.php:130
+msgid "This is the 1st gallery section in the middle of the home page."
+msgstr ""
+
+#: functions.php:134
+msgid "Home Gallery 2"
+msgstr ""
+
+#: functions.php:135
+msgid "This is the 2nd gallery section in the middle of the home page."
+msgstr ""
+
+#: functions.php:139
+msgid "Home Gallery 3"
+msgstr ""
+
+#: functions.php:140
+msgid "This is the 3rd gallery section in the middle of the home page."
+msgstr ""
+
+#: functions.php:144
+msgid "Home Gallery 4"
+msgstr ""
+
+#: functions.php:145
+msgid "This is the 4th gallery section in the middle of the home page."
+msgstr ""
+
+#: functions.php:149
+msgid "Call to Action"
+msgstr ""
+
+#: functions.php:150
+msgid "This is the CTA section at the bottom of the home page."
+msgstr ""
+
+#: lib/headings.php:22
+msgid "Main navigation"
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:201 lib/plugins/plugins.php:94
+msgid "Install Required Plugins"
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:202 lib/plugins/plugins.php:95
+msgid "Install Plugins"
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:203 lib/plugins/plugins.php:96
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:204
+msgid "Something went wrong."
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:205 lib/plugins/plugins.php:98
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:206 lib/plugins/plugins.php:99
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:207 lib/plugins/plugins.php:100
+msgid ""
+"Sorry, but you do not have the correct permissions to install the %s "
+"plugin. Contact the administrator of this site for help on getting the "
+"plugin installed."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to install the %s "
+"plugins. Contact the administrator of this site for help on getting the "
+"plugins installed."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:208 lib/plugins/plugins.php:101
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:209 lib/plugins/plugins.php:102
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:210 lib/plugins/plugins.php:103
+msgid ""
+"Sorry, but you do not have the correct permissions to activate the %s "
+"plugin. Contact the administrator of this site for help on getting the "
+"plugin activated."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to activate the %s "
+"plugins. Contact the administrator of this site for help on getting the "
+"plugins activated."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:211 lib/plugins/plugins.php:104
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:212 lib/plugins/plugins.php:105
+msgid ""
+"Sorry, but you do not have the correct permissions to update the %s plugin. "
+"Contact the administrator of this site for help on getting the plugin "
+"updated."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to update the %s "
+"plugins. Contact the administrator of this site for help on getting the "
+"plugins updated."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:213 lib/plugins/plugins.php:106
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:214
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:215 lib/plugins/plugins.php:108
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:216
+msgid "Return to the dashboard"
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:217
+#: lib/plugins/class-tgm-plugin-activation.php:1962 lib/plugins/plugins.php:109
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:218
+#: lib/plugins/class-tgm-plugin-activation.php:1648
+msgid "The following plugin was activated successfully:"
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:219
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:220
+msgid "Dismiss this notice"
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:553
+#: lib/plugins/class-tgm-plugin-activation.php:2179
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:1182
+msgid "Private Repository"
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:1185
+msgid "Pre-Packaged"
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:1190
+msgid "WordPress Repository"
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:1193
+msgid "Required"
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:1193
+msgid "Recommended"
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:1196
+msgid "Not Installed"
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:1198
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:1300
+#: lib/plugins/class-tgm-plugin-activation.php:1408
+msgid "Install"
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:1322
+#: lib/plugins/class-tgm-plugin-activation.php:1409
+msgid "Activate"
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:1371
+msgid ""
+"No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
+"Dashboard\">Return to the Dashboard</a>"
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:1387
+msgid "Plugin"
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:1388
+msgid "Source"
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:1389
+msgid "Type"
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:1390
+msgid "Status"
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:1518
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:1626
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:1945
+msgid "Install package not available."
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:1946
+msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:1947
+msgid "Unpacking the package&#8230;"
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:1948
+msgid "Installing the plugin&#8230;"
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:1949
+msgid "Plugin install failed."
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:1950
+msgid "Plugin installed successfully."
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:1961
+msgid "Plugin activation failed."
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:2075
+msgid ""
+"The installation and activation process is starting. This process may take "
+"a while on some hosts, so please be patient."
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:2076
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:2076
+#: lib/plugins/class-tgm-plugin-activation.php:2085
+msgid "Show Details"
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:2076
+#: lib/plugins/class-tgm-plugin-activation.php:2085
+msgid "Hide Details"
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:2077
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:2078
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:2082
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:2083
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:2084
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:2085
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:2086
+msgid "All installations have been completed."
+msgstr ""
+
+#: lib/plugins/class-tgm-plugin-activation.php:2087
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: lib/plugins/plugins.php:97
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: lib/plugins/plugins.php:107
+msgid "Activate installed plugin"
+msgid_plural "Activate installed plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/plugins/plugins.php:110
+msgid "All plugins installed and activated successfully. %s"
+msgstr ""
+
+#: lib/skip-links.php:113
+msgid "Skip links"
+msgstr ""
+
+#: lib/skip-links.php:117
+msgid "Jump to main navigation"
+msgstr ""
+
+#: lib/skip-links.php:119
+msgid "Jump to search"
+msgstr ""
+
+#: lib/skip-links.php:121
+msgid "Jump to sub navigation"
+msgstr ""
+
+#: lib/skip-links.php:123
+msgid "Jump to content"
+msgstr ""
+
+#: lib/skip-links.php:125
+msgid "Jump to primary sidebar"
+msgstr ""
+
+#: lib/skip-links.php:127
+msgid "Jump to footer"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Utility Pro"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "No-nonsense, functional child theme created for the Genesis Framework."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Carrie Dils"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.carriedils.com/"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Landing"
+msgstr ""
+
+#: lib/i18n.php:42
+#. Translators: If there are characters in your language that are not
+#. * supported by these fonts, translate this to 'off'. Do not translate
+#. * into your own language.
+msgctxt "Arvo font: on or off"
+msgid "on"
+msgstr ""
+
+#: lib/i18n.php:44
+msgctxt "PT Sans font: on or off"
+msgid "on"
+msgstr ""
