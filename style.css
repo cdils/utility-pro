@@ -3,7 +3,7 @@
 	Description: No-nonsense, functional child theme created for the Genesis Framework.
 	Author: Carrie Dils
 	Author URI: http://www.carriedils.com/
-	Version: 0.1.0
+	Version: 1.0.0
 	Tags: black, purple, green, blue, red, one-column, two-columns, fixed-width, custom-menu, full-width-template, sticky-post, theme-options, threaded-comments, rtl-language-support, translation-ready
 	Template: genesis
 	License: GPL-2.0+
@@ -13,6 +13,7 @@
 
 /* Table of Contents
 
+	- Noflip (RTL)
 	- HTML5 Reset
 		- Baseline Reset
 		- Box Sizing
@@ -61,14 +62,23 @@
 	- Site Footer
 	- Accessibility Extras
 	- Media Queries
+		- min-width: 1024px
+		- min-width: 1140px
+
 		- max-width: 1139px
 		- max-width: 1023px
 		- max-width: 767px
-		- max-width: 480px
-		- max-width: 320px
 		- print
 */
 
+
+/* @noflip
+--------------------------------------------- */
+
+body.rtl {
+  direction: rtl;
+  unicode-bidi: embed;
+}
 
 /*
 HTML5 Reset
@@ -131,6 +141,7 @@ Color Options
 /* Purple
 --------------------------------------------- */
 
+.utility-pro-purple .home-gallery .fa,
 .utility-pro-purple a,
 .utility-pro-purple .entry-content a {
     color: #339;
@@ -161,6 +172,7 @@ Color Options
 /* Green
 --------------------------------------------- */
 
+.utility-pro-green .home-gallery .fa,
 .utility-pro-green a,
 .utility-pro-green .entry-content a {
     color: #107952;
@@ -191,6 +203,7 @@ Color Options
 /* Red
 --------------------------------------------- */
 
+.utility-pro-red .home-gallery .fa,
 .utility-pro-red a,
 .utility-pro-red .entry-content a {
     color: #d3131b;
@@ -456,7 +469,8 @@ Structure and Layout
 
 .wrap {
     margin: 0 auto;
-    max-width: 1140px;
+    padding: 0 20px;
+    max-width: 100%;
 }
 
 .site-inner {
@@ -476,18 +490,13 @@ Structure and Layout
 /* Wrapping div for .content and .sidebar-primary */
 
 .sidebar-content-sidebar .content-sidebar-wrap {
-    width: 920px;
+    width: 100%;
 }
 
 /* Content */
 
 .content {
-    float: right;
-    width: 740px;
-}
-
-.content-sidebar .content {
-    float: left;
+    width: 100%;
 }
 
 .full-width-content .content {
@@ -499,18 +508,14 @@ Structure and Layout
 /* Primary Sidebar */
 
 .sidebar-primary {
-    float: right;
-    width: 360px;
-}
-
-.sidebar-content .sidebar-primary {
-    float: left;
+    width: 100%;
 }
 
 /* Column Classes
 	Link: http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css
 --------------------------------------------- */
 
+/* Link: http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css */
 .five-sixths,
 .four-sixths,
 .one-fourth,
@@ -522,45 +527,9 @@ Structure and Layout
 .two-fourths,
 .two-sixths,
 .two-thirds {
-    float: left;
-    margin-left: 2.564102564102564%;
-}
-
-.one-half,
-.three-sixths,
-.two-fourths {
-    width: 48.717948717948715%;
-}
-
-.one-third,
-.two-sixths {
-    width: 31.623931623931625%;
-}
-
-.four-sixths,
-.two-thirds {
-    width: 65.81196581196582%;
-}
-
-.one-fourth {
-    width: 23.076923076923077%;
-}
-
-.three-fourths {
-    width: 74.35897435897436%;
-}
-
-.one-sixth {
-    width: 14.52991452991453%;
-}
-
-.five-sixths {
-    width: 82.90598290598291%;
-}
-
-.first {
-    clear: both;
-    margin-left: 0;
+  float: left;
+  margin: 0;
+  width: 100%;
 }
 
 /*
@@ -580,10 +549,6 @@ Common Classes
 
 .alignright .avatar {
     margin-left: 24px;
-}
-
-.search-form {
-    width: 50%;
 }
 
 .search-form input[type='submit'] {
@@ -812,6 +777,7 @@ Widgets
     margin: 0 auto;
     padding: 10px 0;
     text-align: center;
+    width: 100%;
 }
 
 .utility-bar a {
@@ -829,9 +795,9 @@ Widgets
     margin: 0;
 }
 
-.utility-bar input[type='search'] {
-    background: inherit;
-    padding: 10px 0 0;
+.utility-bar .search-form input[type='search'] {
+    margin: 0;
+    padding: 10px 0;
 }
 
 /* Home Welcome
@@ -841,9 +807,6 @@ Widgets
     background-color: rgb(51, 51, 51);
     background-color: rgba(51, 51, 51, .8);
     padding: 40px 0;
-}
-
-.home-welcome .wrap {
     text-align: center;
 }
 
@@ -853,12 +816,10 @@ Widgets
 
 .home-welcome h4 {
     color: #fff;
-    font-size: 80px;
 }
 
 .home-welcome p {
     color: #eaeaea;
-    font-size: 40px;
 }
 
 /* Home Gallery
@@ -869,6 +830,10 @@ Widgets
     padding: 40px 0 20px;
 }
 
+.home-gallery .fa {
+	color: #0964dd;
+}
+
 .home-gallery .widget {
     padding: 0 20px;
 }
@@ -877,9 +842,8 @@ Widgets
 .home-gallery-2,
 .home-gallery-3,
 .home-gallery-4 {
-    float: left;
     text-align: center;
-    width: 25%;
+    width: 100%;
 }
 
 /* Call to Action
@@ -889,55 +853,32 @@ Widgets
     background: rgb(51, 51, 51);
     background: rgba(51, 51, 51, .8);
     color: #fff;
-    font-size: 18px;
-    padding: 36px 0;
+    padding: 20px 0;
+	text-align: center;
 }
 
-.call-to-action-bar .widgettitle {
-    color: #fff;
+.call-to-action-bar .enews p {
+    margin: 12px 0;
+	width: 100%;
 }
-
-.call-to-action-bar .button {
-    color: #fff;
-    float: right;
-    font-size: 16px;
-    margin-top: -40px;
-    text-align: center;
-}
-
-.call-to-action-bar .button:hover {
-    color: #0964dd;
-}
-
-.call-to-action-bar .alignleft {
-    width: 65.81196581196582%;
-}
-
-.call-to-action-bar .alignright {
-    width: 31.623931623931625%;
-}
-
-
 
 /* Featured Page and Featured Post
 --------------------------------------------- */
 
 .featured-content .entry {
     border-bottom: 2px solid #f5f5f5;
-    margin-bottom: 20px;
-    padding: 0 0 24px;
+    padding: 10px 0;
+}
+
+.sidebar .featured-content .entry {
+	border-bottom: 0;
+	margin-bottom: 10px;
 }
 
 .featured-content .entry-title {
-    border: none;
-    font-size: 24px;
-    line-height: 1.2;
+    font-size: 18px;
+    margin: 10px 0;
 }
-
-.featured-content .entry-title a {
-    border: none;
-}
-
 
 /*
 Plugins
@@ -958,8 +899,9 @@ Plugins
     color: #ccc;
 }
 
-.enews-widget .widget-title {
+.enews-widget .widgettitle {
     color: #fff;
+    margin: 10px 0;
 }
 
 .enews-widget input {
@@ -1062,7 +1004,9 @@ Site Header
     font-family: 'Arvo', sans-serif;
     font-weight: 700;
     float: left;
-    width: 300px;
+  	padding: 0 0 20px;
+    text-align: center;
+    width: 100%;
 }
 
 .header-image .title-area {
@@ -1119,19 +1063,10 @@ Site Header
 --------------------------------------------- */
 
 .site-header .widget-area {
-    float: right;
-    text-align: right;
-    width: 800px;
+  float: right;
+  text-align: center;
+  width: 100%;
 }
-
-.header-image .site-header .widget-area {
-    padding: 40px 0;
-}
-
-.site-header .search-form {
-    float: right;
-}
-
 
 /*
 Site Navigation
@@ -1236,18 +1171,6 @@ Site Navigation
     padding: 0;
 }
 
-.genesis-nav-menu > .rss > a {
-    margin-left: 48px;
-}
-
-.genesis-nav-menu > .search {
-    padding: 14px 0 0;
-}
-
-.genesis-nav-menu .search-form {
-    width: 100%;
-}
-
 /* Site Header Navigation
 --------------------------------------------- */
 
@@ -1259,34 +1182,23 @@ Site Navigation
     margin-top: -55px;
 }
 
-/* Primary Navigation
+/* Primary & Secondary Navigation
 --------------------------------------------- */
 
-.nav-primary {
+.nav-primary,
+.nav-secondary {
     background-color: #111;
+    text-align: center;
 }
 
 .nav-primary a:hover,
-.nav-primary .current-menu-item > a {
-    color: #999;
-}
-
-.nav-primary .sub-menu a:hover {
-    color: #999;
-}
-
-/* Secondary Navigation
---------------------------------------------- */
-
-.nav-secondary {
-    background-color: #333;
-}
-
+.nav-primary .current-menu-item > a,
 .nav-secondary a:hover,
 .nav-secondary .current-menu-item > a {
     color: #999;
 }
 
+.nav-primary .sub-menu a:hover,
 .nav-secondary .sub-menu a:hover {
     color: #999;
 }
@@ -1521,7 +1433,7 @@ Sidebars
     margin-left: 4px;
 }
 
-.sidebar .search-form {
+.sidebar .search-form input[type="search"] {
     width: 100%;
 }
 
@@ -1534,35 +1446,24 @@ Sidebars
     border-top: 5px solid #fff;
 }
 
-
 /*
 Footer Widgets
 ---------------------------------------------------------------------------------------------------- */
 
 .footer-widgets {
-    background: #111;
+    background: #333;
     color: #fff;
     clear: both;
-    padding: 40px 0 16px;
-}
-
-.footer-widgets-1,
-.footer-widgets-3 {
-    width: 350px;
-}
-
-.footer-widgets-2 {
-    width: 360px;
-}
-
-.footer-widgets-1 {
-    margin-right: 40px;
+    font-size: 16px;
+    padding: 40px 0;
 }
 
 .footer-widgets-1,
 .footer-widgets-2,
 .footer-widgets-3 {
     float: left;
+	margin: 0;
+    width: 100%;
 }
 
 .footer-widgets a {
@@ -1592,7 +1493,7 @@ Footer Widgets
     word-wrap: break-word;
 }
 
-.footer-widgets .search-form {
+.footer-widgets .search-form input[type="search"] {
     width: 100%;
 }
 
@@ -1699,41 +1600,181 @@ Accessibility Extras - Taken from the Leiden theme & Genesis Accessible plugin (
 Media Queries
 ---------------------------------------------------------------------------------------------------- */
 
-@media only screen and (max-width: 1139px) {
-    .wrap {
-        max-width: 960px;
-    }
+@media only screen and (min-width: 767px) {
 
-    .content,
+
+	.home-welcome h4 {
+	    font-size: 80px;
+	}
+
+	.home-welcome p {
+	    font-size: 40px;
+	}
+
+}
+
+@media only screen and (min-width: 1023px) {
+
+	.wrap {
+		max-width: 960px;
+	}
+
+	.call-to-action-bar {
+		text-align: left;
+	}
+
+	.call-to-action-bar .enews p {
+	    float: left;
+	    margin-bottom: 0;
+	    width: 35%;
+	}
+
+	.call-to-action-bar .enews-widget input[type="submit"] {
+	    float: right;
+	    margin: -2px 0 0;
+	    width: 35%;
+	}
+
+	.call-to-action-bar .enews form {
+	    float: right;
+    	width: 60%;
+	}
+
+	.call-to-action-bar .enews input[type="email"] {
+		float: left;
+    	width: 60%;
+	}
+
+	.title-area {
+		text-align: left;
+		width: 35%;
+	}
+
     .site-header .widget-area {
-        width: 620px;
+		text-align: right;
+        width: 65%;
     }
 
-    .genesis-nav-menu a {
-        margin-right: 25px;
+    .content {
+        width: 65%;
     }
 
-    .footer-widgets-1,
-    .footer-widgets-2,
-    .footer-widgets-3,
+	.content-sidebar .content,
+	.sidebar-content .sidebar-primary {
+	    float: left;
+	}
+	.sidebar-primary {
+	    float: right;
+	    width: 30%;
+	}
+
+    .home-gallery-1,
+    .home-gallery-2,
+    .home-gallery-3,
+    .home-gallery-4 {
+    	float: left;
+        width: 50%;
+    }
+
+	.footer-widgets-1,
+	.footer-widgets-2,
+	.footer-widgets-3 {
+	    width: 30%;
+	}
+
+	.footer-widgets-1,
+	.footer-widgets-2 {
+	    margin-right: 5%;
+	}
+
+	.five-sixths,
+	.four-sixths,
+	.one-fourth,
+	.one-half,
+	.one-sixth,
+	.one-third,
+	.three-fourths,
+	.three-sixths,
+	.two-fourths,
+	.two-sixths,
+	.two-thirds {
+	    float: left;
+	    margin-left: 2.564102564102564%;
+	}
+
+	.one-half,
+	.three-sixths,
+	.two-fourths {
+	    width: 48.717948717948715%;
+	}
+
+	.one-third,
+	.two-sixths {
+	    width: 31.623931623931625%;
+	}
+
+	.four-sixths,
+	.two-thirds {
+	    width: 65.81196581196582%;
+	}
+
+	.one-fourth {
+	    width: 23.076923076923077%;
+	}
+
+	.three-fourths {
+	    width: 74.35897435897436%;
+	}
+
+	.one-sixth {
+	    width: 14.52991452991453%;
+	}
+
+	.five-sixths {
+	    width: 82.90598290598291%;
+	}
+
+	.first {
+	    clear: both;
+	    margin-left: 0;
+	}
+}
+
+@media only screen and (min-width: 1140px) {
+	.wrap {
+		max-width: 1140px;
+	}
+
+    .home-gallery-1,
+    .home-gallery-2,
+    .home-gallery-3,
+    .home-gallery-4 {
+        width: 25%;
+    }
+
+	.site-header .widget-area {
+	    float: right;
+	    text-align: right;
+	    width: 800px;
+	}
+
     .sidebar-primary,
     .title-area {
-        width: 300px;
+        width: 340px;
     }
 }
 
-@media only screen and (max-width: 1023px) {
+@//media only screen and (max-width: 1023px) {
     .content,
-    .footer-widgets-1,
-    .footer-widgets-2,
-    .footer-widgets-3,
     .full-width-content .content,
     .sidebar-primary,
     .site-header .widget-area,
     .title-area,
-    .wrap {
+    .wrap,,,, {
         width: 100%;
     }
+
+
 
     .header-image .site-header .wrap {
         background-position: center top;
@@ -1743,11 +1784,6 @@ Media Queries
         padding: 0;
     }
 
-    .call-to-action-bar,
-    .site-inner {
-        padding-left: 5%;
-        padding-right: 5%;
-    }
 
     .archive-description,
     .author-box,
@@ -1791,69 +1827,15 @@ Media Queries
         padding-top: 12px;
     }
 
-    .footer-widgets {
-        padding: 40px 5% 16px;
-    }
-
-    .footer-widgets-1 {
-        margin: 0;
-    }
-
     .site-footer {
         padding: 24px 0;
     }
 }
 
-@media only screen and (max-width: 767px) {
-    .home-gallery-1,
-    .home-gallery-2,
-    .home-gallery-3,
-    .home-gallery-4 {
-        width: 50%;
-    }
 
-    .call-to-action-bar .button {
-        float: none;
-        margin-top: 20px;
-        width: 100%;
-    }
-
-    .call-to-action-bar .alignleft,
-    .call-to-action-bar .alignright,
-    .five-sixths,
-    .four-fifths,
-    .four-sixths,
-    .one-fifth,
-    .one-fourth,
-    .one-half,
-    .one-sixth,
-    .one-third,
-    .three-fifths,
-    .three-fourths,
-    .three-sixths,
-    .two-fifths,
-    .two-fourths,
-    .two-sixths,
-    .two-thirds {
-        margin: 0;
-        width: 100%;
-    }
-}
-
-@media only screen and (max-width: 480px) {
-    .home-gallery-1,
-    .home-gallery-2,
-    .home-gallery-3,
-    .home-gallery-4 {
-        width: 100%;
-    }
-
-    .entry {
-        padding: 20px;
-    }
-}
 
 @media print {
+
     * {
         color: #000;
         text-shadow: none;

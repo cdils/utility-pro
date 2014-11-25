@@ -53,7 +53,6 @@ function utility_pro_setup() {
 		'site-inner',
 		'site-tagline',
 		'subnav',
-		'utility-bar'
 	) );
 
 	// Add support for three footer widget areas
@@ -64,6 +63,11 @@ function utility_pro_setup() {
 
 	// Unregister secondary sidebar
 	unregister_sidebar( 'sidebar-alt' );
+
+
+	// Reposition the secondary navigation menu
+	remove_action( 'genesis_after_header', 'genesis_do_subnav' );
+	add_action( 'genesis_before_footer', 'genesis_do_subnav', 15 );
 
 	// Unregister layouts that use secondary sidebar
 	genesis_unregister_layout( 'content-sidebar-sidebar' );
@@ -148,7 +152,7 @@ function utility_pro_register_widget_areas() {
  */
 function utility_pro_enqueue_assets() {
 
-	// Load Google fonts
+	// Load Google fonts (see /lib/i18n.php for font family information)
     wp_enqueue_style( 'utility-pro-fonts', utility_pro_fonts_url(), array(), null );
 
     // Replace style.css with style-rtl.css for RTL languages
@@ -175,8 +179,8 @@ add_action( 'genesis_before_header', 'utility_pro_bar' );
 function utility_pro_bar() {
 
 	genesis_widget_area( 'utility-bar', array(
-		'before' => '<div class="utility-bar">',
-		'after'  => '</div>',
+		'before' => '<div class="utility-bar"><div class="wrap">',
+		'after'  => '</div></div>',
 	) );
 
 }
