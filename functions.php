@@ -91,11 +91,11 @@ function utility_pro_setup() {
 	// Add featured image above posts
 	add_action( 'genesis_before_entry_content', 'utility_pro_featured_image' );
 
+	// Change the footer text
+	add_filter('genesis_footer_creds_text', 'sp_footer_creds_filter');
+
 	// Load skip links
 	include_once( get_stylesheet_directory() . '/lib/skip-links.php' );
-
-	// Load heading fixes for better accessibility
-	include_once( get_stylesheet_directory() . '/lib/headings.php' );
 
 	// Load admin files when necessary
 	if ( is_admin() ) {
@@ -235,6 +235,18 @@ function utility_pro_featured_image() {
 	echo '<div class="featured-image">';
 		echo get_the_post_thumbnail( $post->ID, 'feature-large' );
 	echo '</div>';
+}
+
+/**
+ * Change the footer text.
+ *
+ * @return null Return early if not a single post or post does not have thumbnail.
+ *
+ * @since  1.0.0
+ */
+function sp_footer_creds_filter( $creds ) {
+	$creds = '[footer_copyright] &middot; <a href="http://store.carriedils.com/utility-pro">Utility Pro</a> &middot; Powered by the <a href="http://www.carriedils.com/go/genesis" title="Genesis Framework">Genesis Framework</a> and <a href="http://wordpress.org">WordPress</a>.';
+	return $creds;
 }
 
 //* To-do remove this from final version - demo only

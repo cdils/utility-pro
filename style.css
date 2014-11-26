@@ -419,6 +419,7 @@ textarea:focus {
 }
 
 .button,
+.entry-content .button a,
 input[type='submit'] {
     background: #0964dd;
     border: 1px solid #fff;
@@ -438,7 +439,7 @@ input:focus[type='button'],
 input:focus[type='reset'],
 input:focus[type='submit'],
 .button:focus,
-.entry-content .button:focus {
+.entry-content .button a:focus {
     background-color: #fff;
     border: 1px solid #0964dd;
     color: #0964dd;
@@ -450,6 +451,7 @@ input:focus[type='submit'],
 }
 
 .button:hover,
+.entry-content .button a:hover,
 input:hover[type='submit'] {
     background-color: #fff;
     border: 1px solid #0964dd;
@@ -465,6 +467,7 @@ input[type='search']::-webkit-search-results-button {
 --------------------------------------------- */
 
 table {
+	margin-bottom: 40px;
     max-width: 100%;
 }
 
@@ -589,7 +592,7 @@ Structure and Layout
 .full-width-content .content {
     float: none;
     margin: 0 auto;
-    width: 70%;
+    width: 100%;
 }
 
 /* Primary Sidebar */
@@ -696,7 +699,6 @@ img.alignright,
     margin-bottom: 20px;
 }
 
-.archive-description,
 .author-box {
     background: #333;
     margin-bottom: 40px;
@@ -704,7 +706,10 @@ img.alignright,
 
 .archive-description {
     margin-bottom: 40px;
-    padding: 40px 40px 24px;
+}
+
+.author .archive-description {
+	display: none;
 }
 
 .author-box {
@@ -757,7 +762,7 @@ img.alignright,
 }
 
 .archive-title {
-    color: #fff;
+    color: #333;
     margin-bottom: 24px;
 }
 
@@ -1329,11 +1334,6 @@ Content Area
 	padding: 40px 40px 16px;
 }
 
-
-.entry-comments a {
-    border-bottom: 1px solid #ddd;
-}
-
 .entry-comments .comment-author {
     margin: 0;
 }
@@ -1351,6 +1351,7 @@ Content Area
 
 .comment-list li,
 .ping-list li {
+	list-style-type: none;
     margin-top: 24px;
     padding: 32px;
 }
@@ -1367,6 +1368,10 @@ li.comment {
 
 .comment .avatar {
     margin: 0 16px 24px 0;
+}
+
+.form-allowed-tags {
+	font-size: 14px;
 }
 
 /*
@@ -1429,7 +1434,8 @@ Footer Widgets
 }
 
 .footer-widgets a:hover {
-    color: #ccc©Ω}
+    color: #ccc;
+}
 
 .footer-widgets .widget {
     margin-bottom: 24px;
@@ -1474,6 +1480,10 @@ Site Footer
 
 .site-footer a {
     color: #fff;
+}
+
+.site-footer a:hover {
+    color: #000;
 }
 
 .site-footer p {
