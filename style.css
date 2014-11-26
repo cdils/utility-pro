@@ -419,7 +419,7 @@ textarea:focus {
 }
 
 .button,
-.entry-content .button a,
+.entry-content a.button,
 input[type='submit'] {
     background: #0964dd;
     border: 1px solid #fff;
@@ -439,7 +439,7 @@ input:focus[type='button'],
 input:focus[type='reset'],
 input:focus[type='submit'],
 .button:focus,
-.entry-content .button a:focus {
+.entry-content a.button:focus {
     background-color: #fff;
     border: 1px solid #0964dd;
     color: #0964dd;
@@ -451,7 +451,7 @@ input:focus[type='submit'],
 }
 
 .button:hover,
-.entry-content .button a:hover,
+.entry-content a.button:hover,
 input:hover[type='submit'] {
     background-color: #fff;
     border: 1px solid #0964dd;
