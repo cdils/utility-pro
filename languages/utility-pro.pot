@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Utility Pro 1.0.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2014-11-25 20:58:38+00:00\n"
+"POT-Creation-Date: 2014-11-26 03:19:41+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -79,10 +79,6 @@ msgstr ""
 
 #: functions.php:150
 msgid "This is the CTA section at the bottom of the home page."
-msgstr ""
-
-#: lib/headings.php:22
-msgid "Main navigation"
 msgstr ""
 
 #: lib/plugins/class-tgm-plugin-activation.php:201 lib/plugins/plugins.php:94

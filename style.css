@@ -151,7 +151,7 @@ Color Options
 
 .utility-pro-purple .call-to-action-bar .button,
 .utility-pro-purple .button,
-.utility-pro-purple a.button,
+.utility-pro-purple .entry-content a.button,
 .utility-pro-purple input[type='submit'] {
     background: #339;
     border: 1px solid #fff;
@@ -975,7 +975,6 @@ Site Header
     font-family: 'Arvo', sans-serif;
     font-weight: 700;
     float: left;
-  	padding: 0 0 20px;
     text-align: center;
     width: 100%;
 }

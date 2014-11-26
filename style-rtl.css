@@ -50,6 +50,7 @@
 		- Title Area
 		- Widget Area
 	- Site Navigation
+		- Mobile Menu Toggle
 		- Header Navigation
 		- Primary & Secondary Navigation
 	- Content Area
@@ -150,6 +151,7 @@ Color Options
 
 .utility-pro-purple .call-to-action-bar .button,
 .utility-pro-purple .button,
+.utility-pro-purple .entry-content a.button,
 .utility-pro-purple input[type='submit'] {
     background: #339;
     border: 1px solid #fff;
@@ -158,6 +160,7 @@ Color Options
 
 .utility-pro-purple .call-to-action-bar .button:hover,
 .utility-pro-purple .button:hover,
+.utility-pro-purple .entry-content a.button:hover,
 .utility-pro-purple input[type='submit']:hover {
     background: #fff;
     border: 1px solid #339;
@@ -181,6 +184,7 @@ Color Options
 
 .utility-pro-green .call-to-action-bar .button,
 .utility-pro-green .button,
+.utility-pro-green a.button,
 .utility-pro-green input[type='submit'] {
     background: #107952;
     border: 1px solid #fff;
@@ -189,6 +193,7 @@ Color Options
 
 .utility-pro-green .call-to-action-bar .button:hover,
 .utility-pro-green .button:hover,
+.utility-pro-green .entry-content a.button:hover,
 .utility-pro-green input[type='submit']:hover {
     background: #fff;
     border: 1px solid #107952;
@@ -212,6 +217,7 @@ Color Options
 
 .utility-pro-red .call-to-action-bar .button,
 .utility-pro-red .button,
+.utility-pro-red a.button,
 .utility-pro-red input[type='submit'] {
     background: #d3131b;
     border: 1px solid #fff;
@@ -220,6 +226,7 @@ Color Options
 
 .utility-pro-red .call-to-action-bar .button:hover,
 .utility-pro-red .button:hover,
+.utility-pro-red .entry-content a.button:hover,
 .utility-pro-red input[type='submit']:hover {
     background: #fff;
     border: 1px solid #d3131b;
@@ -418,6 +425,7 @@ textarea:focus {
 }
 
 .button,
+.entry-content a.button,
 input[type='submit'] {
     background: #0964dd;
     border: 1px solid #fff;
@@ -437,7 +445,7 @@ input:focus[type='button'],
 input:focus[type='reset'],
 input:focus[type='submit'],
 .button:focus,
-.entry-content .button:focus {
+.entry-content a.button:focus {
     background-color: #fff;
     border: 1px solid #0964dd;
     color: #0964dd;
@@ -449,6 +457,7 @@ input:focus[type='submit'],
 }
 
 .button:hover,
+.entry-content a.button:hover,
 input:hover[type='submit'] {
     background-color: #fff;
     border: 1px solid #0964dd;
@@ -464,6 +473,7 @@ input[type='search']::-webkit-search-results-button {
 --------------------------------------------- */
 
 table {
+	margin-bottom: 40px;
     max-width: 100%;
 }
 
@@ -588,7 +598,7 @@ Structure and Layout
 .full-width-content .content {
     float: none;
     margin: 0 auto;
-    width: 70%;
+    width: 100%;
 }
 
 /* Primary Sidebar */
@@ -695,24 +705,16 @@ img.alignright,
     margin-bottom: 20px;
 }
 
-.archive-description,
 .author-box {
-    background: #333;
     margin-bottom: 40px;
 }
 
 .archive-description {
     margin-bottom: 40px;
-    padding: 40px 40px 24px;
-}
-
-.author-box {
-    padding: 40px;
 }
 
 .author-box-title {
-    color: #fff;
-    margin-bottom: 4px;
+    margin-bottom: 24px;
 }
 
 .author-box a {
@@ -756,7 +758,7 @@ img.alignright,
 }
 
 .archive-title {
-    color: #fff;
+    color: #333;
     margin-bottom: 24px;
 }
 
@@ -808,7 +810,7 @@ Widgets
     text-align: center;
 }
 
-.home-welcome h4 {
+.home-welcome .widgettitle {
     color: #fff;
 }
 
@@ -911,7 +913,7 @@ Plugins
     width: 100%;
 }
 
-.sidebar .enews-widget {
+.sidebar .widget.enews-widget {
     background-color: #333;
     border-top: 1px solid #fff;
 }
@@ -973,7 +975,6 @@ Site Header
     font-family: 'Arvo', sans-serif;
     font-weight: 700;
     float: right;
-  	padding: 0 0 20px;
     text-align: center;
     width: 100%;
 }
@@ -994,6 +995,7 @@ Site Header
 
 .site-description {
     color: #666;
+    font-size: 16px;
     line-height: 1;
     margin: 0;
 }
@@ -1034,23 +1036,28 @@ Site Header
 Site Navigation
 ---------------------------------------------------------------------------------------------------- */
 
-.genesis-nav-menu {
-    font-size: 14px;
-    width: 100%;
+.genesis-nav-menu > .first > a {
+    padding-right: 0;
+}
+
+.genesis-nav-menu > .last > a {
+    padding-left: 0;
 }
 
 .genesis-nav-menu .menu-item {
-    display: inline-block;
-    text-align: right;
+	display: block;
+	position: relative;
+	text-align: right;
 }
 
 .genesis-nav-menu a {
-    border: 0;
     color: #fff;
     display: inline-block;
+    font-weight: 400;
     letter-spacing: 1px;
     padding: 15px 25px;
     position: relative;
+    width: 100%;
 }
 
 .genesis-nav-menu a:hover,
@@ -1067,48 +1074,81 @@ Site Navigation
     text-transform: uppercase;
 }
 
-.genesis-nav-menu .sub-menu {
-    right: -9999px;
-    margin: 0;
-    opacity: 0;
-    position: absolute;
-    -webkit-transition: opacity .4s ease-in-out;
-       -moz-transition: opacity .4s ease-in-out;
-        -ms-transition: opacity .4s ease-in-out;
-         -o-transition: opacity .4s ease-in-out;
-            transition: opacity .4s ease-in-out;
-    width: 200px;
-    z-index: 99;
-}
-
-.genesis-nav-menu .sub-menu a {
-    background: #111;
-    border: 1px solid #eee;
-    border-top: 0;
-    letter-spacing: 0;
-    position: relative;
-    width: 200px;
-}
-
-.genesis-nav-menu .sub-menu .sub-menu {
-    margin: -54px 199px 0 0;
-}
-
-.genesis-nav-menu .menu-item:hover {
-    position: static;
-}
-
 .genesis-nav-menu .menu-item:hover > .sub-menu {
     right: auto;
     opacity: 1;
 }
 
-.genesis-nav-menu > .first > a {
-    padding-right: 0;
+.genesis-nav-menu .menu-item:hover {
+	position: relative;
 }
 
-.genesis-nav-menu > .last > a {
-    padding-left: 0;
+.genesis-nav-menu .sub-menu {
+	background-color: #333;
+	clear: both;
+	display: none;
+	opacity: 1;
+	position: static;
+}
+
+.genesis-nav-menu .sub-menu a {
+	border: 0;
+}
+
+.genesis-nav-menu .sub-menu a:hover,
+.genesis-nav-menu .sub-menu .sub-menu a:hover {
+	text-decoration: underline;
+}
+
+.genesis-nav-menu .sub-menu .sub-menu a {
+	padding-right: 50px;
+}
+
+/* Mobile Menu Toggle
+--------------------------------------------- */
+
+.menu-primary {
+	display: none;
+	position: relative;
+}
+
+.menu-toggle,
+.sub-menu-toggle {
+	color: #fff;
+	display: block;
+	font-size: 30px;
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 9px;
+	visibility: visible;
+}
+
+button.menu-toggle,
+button.sub-menu-toggle {
+	background-color: transparent;
+	border: 0;
+}
+
+.sub-menu-toggle {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.menu-toggle:before {
+	content: "\2261";
+}
+
+.menu-toggle.activated:before {
+	content: "x";
+}
+
+.sub-menu-toggle:before {
+	content: "+";
+}
+
+.sub-menu-toggle.activated:before {
+	content: "-";
 }
 
 /* Site Header Navigation
@@ -1217,7 +1257,6 @@ Content Area
     margin: 0 -40px 24px;
     padding: 10px;
     text-align: left;
-    text-transform: uppercase;
 }
 
 .entry-footer .entry-meta {
@@ -1284,20 +1323,7 @@ Content Area
 .entry-pings {
     background: #fff;
     padding: 40px;
-}
-
-.comment-respond,
-.entry-pings {
-	padding: 40px 40px 16px;
-}
-
-
-.entry-comments a {
-    border-bottom: 1px solid #ddd;
-}
-
-.entry-comments .comment-author {
-    margin: 0;
+	margin-bottom: 40px;
 }
 
 .comment-respond input[type="email"],
@@ -1313,6 +1339,7 @@ Content Area
 
 .comment-list li,
 .ping-list li {
+	list-style-type: none;
     margin-top: 24px;
     padding: 32px;
 }
@@ -1329,6 +1356,10 @@ li.comment {
 
 .comment .avatar {
     margin: 0 0 24px 16px;
+}
+
+.form-allowed-tags {
+	font-size: 14px;
 }
 
 /*
@@ -1439,6 +1470,10 @@ Site Footer
     color: #fff;
 }
 
+.site-footer a:hover {
+    color: #000;
+}
+
 .site-footer p {
     margin: 0;
 }
@@ -1522,7 +1557,7 @@ Media Queries
 
 @media only screen and (min-width: 768px) {
 
-	.home-welcome h4 {
+	.home-welcome .widgettitle {
 	    font-size: 80px;
 	}
 
@@ -1536,6 +1571,63 @@ Media Queries
 
 	.wrap {
 		max-width: 960px;
+	}
+
+	button.menu-toggle {
+		display: none;
+	}
+
+	.sub-menu-toggle,
+	.menu-toggle {
+		display: block;
+		visibility: hidden;
+	}
+
+	.menu-primary {
+		display: inline-block;
+	}
+
+	.genesis-nav-menu {
+	    font-size: 14px;
+	    width: 100%;
+	}
+
+	.genesis-nav-menu .menu-item {
+	    display: inline-block;
+	    text-align: right;
+	}
+
+	.genesis-nav-menu > .menu-item > a {
+		border-bottom: 0;
+	}
+
+	.genesis-nav-menu .sub-menu {
+		display: block;
+	    right: -9999px;
+	    margin: 0;
+	    opacity: 0;
+	    position: absolute;
+	    -webkit-transition: opacity .4s ease-in-out;
+	       -moz-transition: opacity .4s ease-in-out;
+	        -ms-transition: opacity .4s ease-in-out;
+	         -o-transition: opacity .4s ease-in-out;
+	            transition: opacity .4s ease-in-out;
+	    width: 200px;
+	    z-index: 99;
+	}
+
+	.genesis-nav-menu .sub-menu a {
+	    background: #111;
+	    letter-spacing: 0;
+	    width: 200px;
+	}
+
+	.genesis-nav-menu .sub-menu .sub-menu {
+	    margin: -54px 199px 0 0;
+	}
+
+	.genesis-nav-menu .menu-item:hover {
+	    position: static;
 	}
 
 	.call-to-action-bar {
