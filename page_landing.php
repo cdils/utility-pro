@@ -41,21 +41,5 @@ remove_action( 'genesis_footer', 'genesis_footer_markup_close', 15 );
 // Remove elements specific to Utility Pro
 remove_action( 'genesis_before_header', 'utility_pro_bar' );
 
-// No Nav Extras in Menu (ex: search)
-add_filter( 'genesis_pre_get_option_nav_extras_enable', '__return_false' );
-
-add_filter( 'sidebars_widgets', 'utility_pro_remove_header_right' );
-/**
-* No Header Right widget area
-*
-* @since 1.0.0
-* @param array $widgets
-* @return array $widgets
-*/
-function utility_pro_remove_header_right( $widgets ) {
-	$widgets['header-right'] = array();
-	return $widgets;
-}
-
 //* Run the Genesis loop
 genesis();

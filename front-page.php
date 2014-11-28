@@ -3,55 +3,112 @@
  * Utility Pro.
  *
  * @package      Utility Pro
- * @link         http://www.carriedils.com/utility
+ * @link         http://www.carriedils.com/utility-pro
  * @author       Carrie Dils <carrie@carriedils.com>
- * @copyright    Copyright (c) 2013, Carrie Dils
+ * @copyright    Copyright (c) 2014, Carrie Dils
  * @license      GPL-2.0+
  */
 
-add_action( 'genesis_after_header', 'utility_pro_homepage_widgets' );
+add_action( 'genesis_meta', 'utility_pro_homepage_setup' );
 /**
- * Output home page widget areas.
+ * Set up the homepage layout by conditionally
+ * loading sections when widgets are active
  *
  * @since 1.0.0
  */
-function utility_pro_homepage_widgets() {
+function utility_pro_homepage_setup() {
 
-		genesis_widget_area( 'utility-home-welcome', array(
-			'before' => '<div class="home-welcome"><div class="wrap">',
-			'after' => '</div></div>',
+	$home_sidebars = array(
+		'home_welcome' 	   => is_active_sidebar( 'utility-home-welcome' ),
+		'home_gallery_1'   => is_active_sidebar( 'utility-home-gallery-1' ),
+		'call_to_action'   => is_active_sidebar( 'utility-call-to-action' ),
+	);
+	// Return early if no sidebars are active
+	if ( ! in_array( true, $home_sidebars ) ) {
+		return;
+	}
+
+	// Add home welcome area
+	if ( $home_sidebars['home_welcome'] ) {
+		add_action( 'genesis_after_header', 'utility_home_welcome' );
+	}
+
+	// Add home gallery area if "Home Gallery 1" is active
+	if ( $home_sidebars['home_gallery_1'] ) {
+		add_action( 'genesis_after_header', 'utility_home_gallery' );
+	}
+
+	// Add call to action area
+	if ( $home_sidebars['call_to_action'] ) {
+		add_action( 'genesis_after_header', 'utility_call_to_action' );
+	}
+
+	// remove standard loop and replace with custom
+	remove_action('genesis_loop', 'genesis_do_loop');
+	add_action ('genesis_loop', 'utility_custom_loop' );
+
+	// ditch pagination after posts
+	remove_action( 'genesis_after_endwhile', 'genesis_posts_nav' );
+
+
+}
+
+function utility_custom_loop() {
+
+	global $query_args;
+	genesis_custom_loop( wp_parse_args( $query_args, array( 'post_type' => 'post', ) ) );
+
+}
+
+
+// Display content for the "Home Welcome" section.
+function utility_home_welcome() {
+
+	genesis_widget_area( 'utility-home-welcome', array(
+		'before' => '<div class="home-welcome"><div class="wrap">',
+		'after' => '</div></div>',
+	) );
+
+}
+
+// Display content for the "Home Gallery" section.
+function utility_home_gallery() {
+
+	printf( '<div %s>', genesis_attr( 'home-gallery' ) );
+	genesis_structural_wrap( 'home-gallery' );
+
+		genesis_widget_area( 'utility-home-gallery-1', array(
+			'before'=> '<div class="home-gallery-1 widget-area">',
+			'after'	=> '</div>',
 		) );
 
-		printf( '<div %s>', genesis_attr( 'home-gallery' ) );
-		genesis_structural_wrap( 'home-gallery' );
-
-			genesis_widget_area( 'utility-home-gallery-1', array(
-				'before'=> '<div class="home-gallery-1 widget-area">',
-				'after'	=> '</div>',
-			) );
-
-			genesis_widget_area( 'utility-home-gallery-2', array(
-				'before'=> '<div class="home-gallery-2 widget-area">',
-				'after'	=> '</div>',
-			) );
-
-			genesis_widget_area( 'utility-home-gallery-3', array(
-				'before'=> '<div class="home-gallery-3 widget-area">',
-				'after'	=> '</div>',
-			) );
-
-			genesis_widget_area( 'utility-home-gallery-4', array(
-				'before'=> '<div class="home-gallery-4 widget-area">',
-				'after'	=> '</div>',
-			) );
-
-		genesis_structural_wrap( 'home-gallery', 'close' );
-		echo '</div>'; //* end .home-gallery
-
-		genesis_widget_area( 'utility-call-to-action', array(
-			'before' => '<div class="call-to-action-bar"><div class="wrap">',
-			'after' => '</div></div>',
+		genesis_widget_area( 'utility-home-gallery-2', array(
+			'before'=> '<div class="home-gallery-2 widget-area">',
+			'after'	=> '</div>',
 		) );
+
+		genesis_widget_area( 'utility-home-gallery-3', array(
+			'before'=> '<div class="home-gallery-3 widget-area">',
+			'after'	=> '</div>',
+		) );
+
+		genesis_widget_area( 'utility-home-gallery-4', array(
+			'before'=> '<div class="home-gallery-4 widget-area">',
+			'after'	=> '</div>',
+		) );
+
+	genesis_structural_wrap( 'home-gallery', 'close' );
+	echo '</div>'; //* end .home-gallery
+
+}
+
+// Display content for the "Call to action" section.
+function utility_call_to_action() {
+
+	genesis_widget_area( 'utility-call-to-action', array(
+		'before' => '<div class="call-to-action-bar"><div class="wrap">',
+		'after' => '</div></div>',
+	) );
 
 }
 

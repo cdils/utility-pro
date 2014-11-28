@@ -10,7 +10,7 @@
  */
 
 // Load internationalization components
-require( get_stylesheet_directory() . '/lib/i18n.php' );
+require( get_stylesheet_directory() . '/inc/i18n.php' );
 
 add_action( 'genesis_setup', 'utility_pro_setup', 15 );
 /**
@@ -31,7 +31,7 @@ function utility_pro_setup() {
 	add_theme_support( 'html5', array( 'caption', 'comment-form', 'comment-list', 'gallery', 'search-form' ) );
 
 	// Add viewport meta tag for mobile browsers
-	add_theme_support( 'genesis-responsive-viewport' );
+	add_theme_support( 'genesis-reutility_proonsive-viewport' );
 
 	// Add support for custom background
 	add_theme_support( 'custom-background', array( 'wp-head-callback' => '__return_false' ) );
@@ -72,15 +72,9 @@ function utility_pro_setup() {
 	// Register the default widget areas
 	utility_pro_register_widget_areas();
 
-	// Enable shortcodes in widgets
-	add_filter('widget_text', 'do_shortcode');
-
 	// Reposition the secondary navigation menu
 	remove_action( 'genesis_after_header', 'genesis_do_subnav' );
 	add_action( 'genesis_before_footer', 'genesis_do_subnav', 15 );
-
-	// Reduce the secondary navigation menu to one level depth
-	add_filter( 'wp_nav_menu_args', 'utility_pro_secondary_menu_args' );
 
 	// Queue scripts used for the front end
 	add_action( 'wp_enqueue_scripts', 'utility_pro_enqueue_assets' );
@@ -91,16 +85,13 @@ function utility_pro_setup() {
 	// Add featured image above posts
 	add_action( 'genesis_before_entry_content', 'utility_pro_featured_image' );
 
-	// Change the footer text
-	add_filter('genesis_footer_creds_text', 'sp_footer_creds_filter');
+	// Load skip links (accessibility)
+	include_once( get_stylesheet_directory() . '/inc/skip-links.php' );
 
-	// Load skip links
-	include_once( get_stylesheet_directory() . '/lib/skip-links.php' );
-
-	// Load admin files when necessary
+	// Load files in admin
 	if ( is_admin() ) {
 		// Plugins
-		include_once( get_stylesheet_directory() . '/lib/plugins/plugins.php' );
+		include_once( get_stylesheet_directory() . '/inc/plugins/plugins.php' );
 	}
 }
 
@@ -159,23 +150,6 @@ function utility_pro_register_widget_areas() {
 }
 
 /**
- * Reduce the secondary navigation menu to one level depth.
- *
- * @param  array $args
- * @return array
- * @since  1.0.0
- */
-function utility_pro_secondary_menu_args( $args ){
-
-	if( 'secondary' != $args['theme_location'] ) {
-		return $args;
-	}
-
-	$args['depth'] = 1;
-	return $args;
-}
-
-/**
  * Enqueue theme assets.
  *
  * @see utility_pro_fonts_url()
@@ -186,7 +160,11 @@ function utility_pro_enqueue_assets() {
 	// Load Google fonts (see /lib/i18n.php for font family information)
     wp_enqueue_style( 'utility-pro-fonts', utility_pro_fonts_url(), array(), null );
 
+    // Load mobile responsive menu
 	wp_enqueue_script( 'utility-pro-responsive-menu', get_stylesheet_directory_uri() . '/lib/js/responsive-menu.js', array( 'jquery' ), '1.0.0', true );
+
+	// Load script to fixes issues with keyboard accessibility
+	wp_enqueue_script( 'genwpacc-dropdown', get_stylesheet_directory() . '/lib/js/genwpacc-dropdown.js', array( 'jquery' ), false, true );
 
     // Replace style.css with style-rtl.css for RTL languages
     wp_style_add_data( 'utility-pro', 'rtl', 'replace' );
@@ -237,6 +215,28 @@ function utility_pro_featured_image() {
 	echo '</div>';
 }
 
+add_filter( 'wp_nav_menu_args', 'utility_pro_secondary_menu_args' );
+/**
+ * Reduce the secondary navigation menu to one level depth.
+ *
+ * @param  array $args
+ * @return array
+ * @since  1.0.0
+ */
+function utility_pro_secondary_menu_args( $args ){
+
+	if( 'secondary' != $args['theme_location'] ) {
+		return $args;
+	}
+
+	$args['depth'] = 1;
+	return $args;
+}
+
+// Enable shortcodes in widgets
+add_filter( 'widget_text', 'do_shortcode' );
+
+add_filter( 'genesis_footer_creds_text', 'utility_pro_footer_creds');
 /**
  * Change the footer text.
  *
@@ -244,14 +244,31 @@ function utility_pro_featured_image() {
  *
  * @since  1.0.0
  */
-function sp_footer_creds_filter( $creds ) {
+function utility_pro_footer_creds( $creds ) {
 	$creds = '[footer_copyright] &middot; <a href="http://store.carriedils.com/utility-pro">Utility Pro</a> &middot; Powered by the <a href="http://www.carriedils.com/go/genesis" title="Genesis Framework">Genesis Framework</a> and <a href="http://wordpress.org">WordPress</a>.';
 	return $creds;
 }
 
-//* To-do remove this from final version - demo only
-add_filter('body_class', 'string_body_class');
+/**
+ * Customize the Gravatar size in the author box
+ *
+ * @since 1.0.0
+ */
+add_filter( 'genesis_author_box_gravatar_size', 'utility_pro_author_box_gravatar' );
+	function utility_pro_author_box_gravatar( $size ) {
+	return '96';
+}
+
+/**
+ * Add body class to URL string.
+ *
+ * Display availabile theme color options via the URL.
+ *
+ * @todo  remove this from final version - demo only
+ */
+add_filter( 'body_class', 'string_body_class' );
 function string_body_class( $classes ) {
+
 	if ( isset( $_GET['color'] ) ) :
 		$classes[] = 'utility-pro-' . sanitize_html_class( $_GET['color'] );
 	endif;
@@ -259,14 +276,22 @@ function string_body_class( $classes ) {
 	return $classes;
 }
 
-//* To-do remove this from final version - dev only
-add_action('template_redirect','show_sitemap');
-
+/**
+ * Generate sitemap.
+ *
+ * This sitemap is used in conjunction with grunt-exec and grunt-unccss.
+ *
+ * @todo remove this from final version - dev only
+ */
+add_action( 'template_redirect', 'show_sitemap' );
 function show_sitemap() {
+
 	if (isset($_GET['show_sitemap'])) {
-		$the_query = new WP_Query(array('post_type' => 'any', 'posts_per_page' => '-1', 'post_status' => 'publish'));
+
+		$the_query = new WP_Query( array( 'post_type' => 'any', 'posts_per_page' => '-1', 'post_status' => 'publish' ) );
 		$urls = array();
-		while ($the_query->have_posts()) {
+
+		while ( $the_query->have_posts() ) {
 			$the_query->the_post();
 			$urls[] = get_permalink();
 		}

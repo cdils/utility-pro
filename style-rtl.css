@@ -27,6 +27,7 @@
 		- Headings
 		- Objects
 		- Forms
+		- Gallery
 		- Tables
 	- Structure and Layout
 		- Site Containers
@@ -261,7 +262,8 @@ input:focus,
 input[type='button'],
 input[type='reset'],
 input[type='submit'],
-textarea:focus {
+textarea:focus,
+.gallery img {
     -webkit-transition: all .1s ease-in-out;
        -moz-transition: all .1s ease-in-out;
         -ms-transition: all .1s ease-in-out;
@@ -284,6 +286,7 @@ a {
     border-bottom: 1px dotted;
     font-weight: 700;
     text-decoration: none;
+    word-wrap: break-word;
 }
 
 a img {
@@ -360,6 +363,7 @@ h1 {
 }
 
 h2 {
+	color: #666;
     font-size: 30px;
 }
 
@@ -408,12 +412,6 @@ textarea {
     font-size: 14px;
     padding: 16px;
     width: 100%;
-}
-
-input:focus,
-textarea:focus {
-    border: 1px solid #aaa;
-    outline: none;
 }
 
 ::-moz-placeholder {
@@ -467,6 +465,112 @@ input:hover[type='submit'] {
 input[type='search']::-webkit-search-cancel-button,
 input[type='search']::-webkit-search-results-button {
     display: none;
+}
+
+.search-form {
+	position: relative;
+}
+
+.header-widget-area .search-form {
+	height: 53px;
+	margin: 20px auto 0;
+	width: 30%;
+}
+
+.search-form input[type='submit'] {
+    -webkit-transition: none;
+       -moz-transition: none;
+        -ms-transition: none;
+         -o-transition: none;
+            transition: none;
+}
+
+.search-form input[type='submit'] {
+    background-color: transparent;
+    background: url("images/icon-search.png") no-repeat 14px 20px #fff;
+    border: 1px solid #ddd;
+    height: 53px;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    left: 0;
+    text-indent: -9999px;
+    vertical-align: top;
+    width: 45px;
+}
+
+.search-form input[type="submit"]:focus,
+.search-form input[type="submit"]:hover {
+    background-color: #999;
+	background-position: 1px 20px;
+	text-indent: -9999px;
+}
+
+.search-form input[type="search"] {
+   	box-shadow: none;
+    height: 53px;
+    margin-bottom: 0;
+    padding-left: 55px;
+}
+
+/* Gallery
+--------------------------------------------- */
+
+.gallery {
+	margin: auto;
+}
+
+.gallery-item {
+	float: right;
+	margin-top: 10px;
+	text-align: center;
+}
+
+.gallery-columns-2 .gallery-item {
+	width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+	width: 33%;
+}
+
+.gallery-columns-4 .gallery-item {
+	width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+	width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+	width: 16.6666%;
+}
+
+.gallery-columns-7 .gallery-item {
+width: 14.2857%;
+}
+	.gallery-columns-8 .gallery-item {
+width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+	width: 11.1111%;
+}
+
+.gallery img {
+	border: 1px solid #ddd;
+	height: auto;
+	padding: 4px;
+	width: auto;
+}
+
+.gallery img:hover {
+	border: 1px solid #999;
+}
+
+.gallery-caption {
+	margin-right: 0;
 }
 
 /* Tables
@@ -647,16 +751,6 @@ Common Classes
     margin-right: 24px;
 }
 
-.search-form input[type='submit'] {
-    border: 0;
-    clip: rect(0, 0, 0, 0);
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-}
-
 img.centered,
 .aligncenter {
     display: block;
@@ -705,28 +799,30 @@ img.alignright,
     margin-bottom: 20px;
 }
 
-.author-box {
-    margin-bottom: 40px;
-}
-
+.author-box,
 .archive-description {
+	background-color: #eaeaea;
+	color: #333;
     margin-bottom: 40px;
+    padding: 40px;
 }
 
 .author-box-title {
-    margin-bottom: 24px;
+	font-size: 20px;
+    margin-bottom: 10px;
 }
 
 .author-box a {
     border-bottom: 1px solid #ddd;
 }
 
-.author-box p {
-    margin: 0;
-}
-
 .author-box .avatar {
     margin-left: 24px;
+}
+
+.archive-description p:last-child,
+.author-box p:last-child {
+    margin-bottom: 0;
 }
 
 /* Titles
@@ -941,9 +1037,10 @@ div.gform_wrapper form li {
     margin: 16px 0 0;
 }
 
+.sidebar .gform_wrapper .top_label input.medium,
+.sidebar .gform_wrapper .top_label select.medium,
 .site-inner .gform_wrapper .gform_footer input.button,
 .site-inner .gform_wrapper .gform_footer input[type="submit"] {
-	font-size: 16px;
 	width: 100%;
 }
 
@@ -1528,14 +1625,13 @@ Accessibility Extras - Taken from the Leiden theme & Genesis Accessible plugin (
 }
 /* Display search button */
 .search-form input[type='search'] {
-    width: auto;
     margin-left: 10px;
 }
 
 /* Display outline on focus */
 :focus {
     color: #333;
-    border: 1px solid #333;
+    outline: #aaa dotted thin;
 }
 
 /* Dropdown Menu
@@ -1565,12 +1661,15 @@ Media Queries
 	    font-size: 40px;
 	}
 
-}
-
 @media only screen and (min-width: 1024px) {
 
 	.wrap {
 		max-width: 960px;
+	}
+
+	.header-widget-area .search-form {
+		float: left;
+		margin-top: 0;
 	}
 
 	button.menu-toggle {
@@ -1635,7 +1734,8 @@ Media Queries
 	}
 
 	.call-to-action-bar .enews p {
-	    float: right;
+		clear: right;
+		float: right;
 	    margin-bottom: 0;
 	    width: 35%;
 	}
@@ -1648,12 +1748,16 @@ Media Queries
 
 	.call-to-action-bar .enews form {
 	    float: left;
+	    text-align: left;
     	width: 60%;
 	}
 
 	.call-to-action-bar .enews input[type="email"] {
-		float: right;
-    	width: 60%;
+		height: 56px;
+		margin-left: 3px;
+		position: relative;
+		top: -2px;
+		width: 60%;
 	}
 
 	.header-image .site-title > a {
@@ -1678,9 +1782,10 @@ Media Queries
 	.sidebar-content .sidebar-primary {
 	    float: right;
 	}
+
 	.sidebar-primary {
 	    float: left;
-	    width: 30%;
+	    width: 31.5%;
 	}
 
     .home-gallery-1,
@@ -1756,8 +1861,10 @@ Media Queries
 }
 
 @media only screen and (min-width: 1140px) {
+
 	.wrap {
 		max-width: 1140px;
+		padding: 0;
 	}
 
     .home-gallery-1,
@@ -1767,16 +1874,6 @@ Media Queries
         width: 25%;
     }
 
-	.site-header .widget-area {
-	    float: left;
-	    text-align: left;
-	    width: 800px;
-	}
-
-    .sidebar-primary,
-    .title-area {
-        width: 340px;
-    }
 }
 
 @media print {
