@@ -169,8 +169,8 @@ function utility_pro_enqueue_assets() {
     // Replace style.css with style-rtl.css for RTL languages
     wp_style_add_data( 'utility-pro', 'rtl', 'replace' );
 
-	// Load remaining scripts only if custom background is being used
-	if ( ! get_background_image() ) {
+	// Load remaining scripts only if custom background is being used and we're on the home page
+	if ( ! get_background_image() ||  ! is_front_page() ) {
 		return;
 	}
 
@@ -223,7 +223,7 @@ add_filter( 'wp_nav_menu_args', 'utility_pro_secondary_menu_args' );
  * @return array
  * @since  1.0.0
  */
-function utility_pro_secondary_menu_args( $args ){
+function utility_pro_secondary_menu_args( $args ) {
 
 	if( 'secondary' != $args['theme_location'] ) {
 		return $args;
@@ -236,7 +236,7 @@ function utility_pro_secondary_menu_args( $args ){
 // Enable shortcodes in widgets
 add_filter( 'widget_text', 'do_shortcode' );
 
-add_filter( 'genesis_footer_creds_text', 'utility_pro_footer_creds');
+add_filter( 'genesis_footer_creds_text', 'utility_pro_footer_creds' );
 /**
  * Change the footer text.
  *
@@ -245,7 +245,7 @@ add_filter( 'genesis_footer_creds_text', 'utility_pro_footer_creds');
  * @since  1.0.0
  */
 function utility_pro_footer_creds( $creds ) {
-	$creds = '[footer_copyright] &middot; <a href="http://store.carriedils.com/utility-pro">Utility Pro</a> &middot; Powered by the <a href="http://www.carriedils.com/go/genesis" title="Genesis Framework">Genesis Framework</a> and <a href="http://wordpress.org">WordPress</a>.';
+	$creds = '[footer_copyright] &middot; <a href="http://store.carriedils.com/utility-pro">Utility Pro</a> &middot; Powered by the <a href="http://www.carriedils.com/go/genesis">Genesis Framework</a> and <a href="http://wordpress.org">WordPress</a>.';
 	return $creds;
 }
 
@@ -286,7 +286,7 @@ function string_body_class( $classes ) {
 add_action( 'template_redirect', 'show_sitemap' );
 function show_sitemap() {
 
-	if (isset($_GET['show_sitemap'])) {
+	if ( isset( $_GET['show_sitemap'] ) ) {
 
 		$the_query = new WP_Query( array( 'post_type' => 'any', 'posts_per_page' => '-1', 'post_status' => 'publish' ) );
 		$urls = array();
@@ -295,6 +295,6 @@ function show_sitemap() {
 			$the_query->the_post();
 			$urls[] = get_permalink();
 		}
-		die(json_encode($urls));
+		die( json_encode($urls) );
 	}
 }

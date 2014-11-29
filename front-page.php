@@ -23,6 +23,7 @@ function utility_pro_homepage_setup() {
 		'home_gallery_1'   => is_active_sidebar( 'utility-home-gallery-1' ),
 		'call_to_action'   => is_active_sidebar( 'utility-call-to-action' ),
 	);
+
 	// Return early if no sidebars are active
 	if ( ! in_array( true, $home_sidebars ) ) {
 		return;
@@ -98,7 +99,7 @@ function utility_home_gallery() {
 		) );
 
 	genesis_structural_wrap( 'home-gallery', 'close' );
-	echo '</div>'; //* end .home-gallery
+	echo '</div>'; // end .home-gallery
 
 }
 

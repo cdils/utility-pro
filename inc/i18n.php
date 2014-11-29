@@ -39,19 +39,19 @@ function utility_pro_fonts_url() {
     * supported by these fonts, translate this to 'off'. Do not translate
     * into your own language.
     */
-    $arvo = _x( 'on', 'Arvo font: on or off', 'utility-pro' );
+    $arvo = _x( 'on', 'Enriqueta font: on or off', 'utility-pro' );
 
-    $pt_sans = _x( 'on', 'PT Sans font: on or off', 'utility-pro' );
+    $pt_sans = _x( 'on', 'Open Sans font: on or off', 'utility-pro' );
 
     if ( 'off' !== $arvo || 'off' !== $pt_sans ) {
         $font_families = array();
 
         if ( 'off' !== $arvo ) {
-            $font_families[] = 'Arvo:400,700';
+            $font_families[] = 'Enriqueta:400,700';
         }
 
         if ( 'off' !== $pt_sans ) {
-            $font_families[] = 'PT Sans:400,700';
+            $font_families[] = 'Open Sans:400,700';
         }
 
         $query_args = array(
