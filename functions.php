@@ -92,7 +92,7 @@ function utility_pro_setup() {
 	// Load files in admin
 	if ( is_admin() ) {
 		// Plugins
-		include_once( get_stylesheet_directory() . '/lib/vendors/tgm-plugin/activation/suggested-plugins.php' );
+		include_once( get_stylesheet_directory() . '/lib/vendors/tgm-plugin-activation/suggested-plugins.php' );
 	}
 }
 
