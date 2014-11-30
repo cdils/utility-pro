@@ -32,7 +32,7 @@ function utility_pro_setup() {
 	add_theme_support( 'html5', array( 'caption', 'comment-form', 'comment-list', 'gallery', 'search-form' ) );
 
 	// Add viewport meta tag for mobile browsers
-	add_theme_support( 'genesis-reutility_proonsive-viewport' );
+	add_theme_support( 'genesis-responsive-viewport' );
 
 	// Add support for custom background
 	add_theme_support( 'custom-background', array( 'wp-head-callback' => '__return_false' ) );

@@ -34,6 +34,11 @@ To address accessibility issues in WordPress and the Genesis Framework, the foll
 * Genesis Accessible (https://wordpress.org/plugins/genesis-accessible)
 * WP Accessibility (https://wordpress.org/plugins/wp-accessibility/)
 
+PROPS
+A huge thank you to the following folks for providing translation files for this theme:
+
+
+
 CHANGELOG
 
 * 1.0.0
