@@ -9,14 +9,14 @@ INSTALL
 1. Upload the Utility Pro theme folder via FTP to your wp-content/themes/ directory.
 2. Go to your WordPress dashboard and select Appearance.
 3. Activate the Utility Pro theme.
-4. Inside your WordPress dashboard, go to Genesis > Theme Settings and configure them to your liking. To set up the theme like the demo, please visit http://www.carriedils.com/themes/utility-pro/.
+4. Inside your WordPress dashboard, go to Genesis > Theme Settings and configure them to your liking. To set up the theme like the demo, please visit http://store.carriedils.com/themes/utility-pro/.
 
 WIDGET AREAS
 Primary Sidebar - This is the primary sidebar if you are using the Content/Sidebar or Sidebar/Content Site Layout option.
 Utility Bar - This widgetized area appears above the header.
 Header Right - This is the widgetized area that appears at the top right of the header. If it is active then Genesis style will follow the Partial Header style otherwise it will follow the Full Image Header Style, if image header is selected.
 Home Welcome - This is the welcome area at the top of the home page.
-Home Gallery- This is the gallery area at the middle of the home page.
+Home Galleries #1 through #4 - These are the gallery area at the middle of the home page.
 Call to Action - This is the call to action area at the bottom of the home page.
 Footer #1 - This is the first column of the footer section.
 Footer #2 - This is the second column of the footer section.

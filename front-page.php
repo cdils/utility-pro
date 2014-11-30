@@ -3,7 +3,7 @@
  * Utility Pro.
  *
  * @package      Utility Pro
- * @link         http://www.carriedils.com/utility-pro
+ * @link         http://store.carriedils.com/utility-pro
  * @author       Carrie Dils <carrie@carriedils.com>
  * @copyright    Copyright (c) 2014, Carrie Dils
  * @license      GPL-2.0+
@@ -45,15 +45,15 @@ function utility_pro_homepage_setup() {
 	}
 
 	// remove standard loop and replace with custom
-	remove_action('genesis_loop', 'genesis_do_loop');
-	add_action ('genesis_loop', 'utility_custom_loop' );
+	remove_action( 'genesis_loop', 'genesis_do_loop' );
+	add_action ( 'genesis_loop', 'utility_custom_loop' );
 
 	// ditch pagination after posts
 	remove_action( 'genesis_after_endwhile', 'genesis_posts_nav' );
 
-
 }
 
+// Display latest posts instead of static page
 function utility_custom_loop() {
 
 	global $query_args;
@@ -62,7 +62,7 @@ function utility_custom_loop() {
 }
 
 
-// Display content for the "Home Welcome" section.
+// Display content for the "Home Welcome" section
 function utility_home_welcome() {
 
 	genesis_widget_area( 'utility-home-welcome', array(
@@ -72,7 +72,7 @@ function utility_home_welcome() {
 
 }
 
-// Display content for the "Home Gallery" section.
+// Display content for the "Home Gallery" section
 function utility_home_gallery() {
 
 	printf( '<div %s>', genesis_attr( 'home-gallery' ) );
@@ -103,7 +103,7 @@ function utility_home_gallery() {
 
 }
 
-// Display content for the "Call to action" section.
+// Display content for the "Call to action" section
 function utility_call_to_action() {
 
 	genesis_widget_area( 'utility-call-to-action', array(

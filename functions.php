@@ -10,7 +10,8 @@
  */
 
 // Load internationalization components
-require( get_stylesheet_directory() . '/inc/i18n.php' );
+require( get_stylesheet_directory() . '/inc/text-domain.php' );
+require( get_stylesheet_directory() . '/inc/google-fonts.php' );
 
 add_action( 'genesis_setup', 'utility_pro_setup', 15 );
 /**
@@ -86,12 +87,12 @@ function utility_pro_setup() {
 	add_action( 'genesis_before_entry_content', 'utility_pro_featured_image' );
 
 	// Load skip links (accessibility)
-	include_once( get_stylesheet_directory() . '/inc/skip-links.php' );
+	include_once( get_stylesheet_directory() . '/lib/vendors/genesis-accessible/skip-links.php' );
 
 	// Load files in admin
 	if ( is_admin() ) {
 		// Plugins
-		include_once( get_stylesheet_directory() . '/inc/plugins/plugins.php' );
+		include_once( get_stylesheet_directory() . '/lib/vendors/tgm-plugin/activation/suggested-plugins.php' );
 	}
 }
 
@@ -152,13 +153,9 @@ function utility_pro_register_widget_areas() {
 /**
  * Enqueue theme assets.
  *
- * @see utility_pro_fonts_url()
  * @since 1.0.0
  */
 function utility_pro_enqueue_assets() {
-
-	// Load Google fonts (see /lib/i18n.php for font family information)
-    wp_enqueue_style( 'utility-pro-fonts', utility_pro_fonts_url(), array(), null );
 
     // Load mobile responsive menu
 	wp_enqueue_script( 'utility-pro-responsive-menu', get_stylesheet_directory_uri() . '/lib/js/responsive-menu.js', array( 'jquery' ), '1.0.0', true );
