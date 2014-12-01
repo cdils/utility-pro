@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Utility Pro 1.0.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2014-12-01 14:19:55+00:00\n"
+"POT-Creation-Date: 2014-12-01 22:10:12+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,91 +25,55 @@ msgstr ""
 msgid "Red"
 msgstr ""
 
-#: functions.php:105
-msgid "Home Gallery"
-msgstr ""
-
-#: functions.php:110
+#: functions.php:108
 msgid "Utility Bar"
 msgstr ""
 
-#: functions.php:111
+#: functions.php:109
 msgid "This is the the utility bar across the top of page."
 msgstr ""
 
-#: functions.php:115
+#: functions.php:113
 msgid "Home Welcome"
 msgstr ""
 
-#: functions.php:116
+#: functions.php:114
 msgid "This is the welcome section at the top of the home page."
 msgstr ""
 
-#: functions.php:120
-msgid "%s 1"
-msgstr ""
-
-#: functions.php:121
-msgid "%s 1 "
-msgstr ""
-
-#: functions.php:125
-msgid "%s 2"
-msgstr ""
-
-#: functions.php:126
-msgid "%s 2 widget area on home page."
-msgstr ""
-
-#: functions.php:130
-msgid "%s 3"
-msgstr ""
-
-#: functions.php:131
-msgid "%s 3 widget area on home page."
-msgstr ""
-
-#: functions.php:135
-msgid "%s 4"
-msgstr ""
-
-#: functions.php:136
-msgid "%s 4 widget area on home page."
-msgstr ""
-
-#: functions.php:140
+#: functions.php:137
 msgid "Call to Action"
 msgstr ""
 
-#: functions.php:141
+#: functions.php:138
 msgid "This is the CTA section at the bottom of the home page."
 msgstr ""
 
-#: lib/vendors/genesis-accessible/skip-links.php:112
+#: lib/vendors/genesis-accessible/skip-links.php:52
 msgid "Skip links"
 msgstr ""
 
-#: lib/vendors/genesis-accessible/skip-links.php:116
+#: lib/vendors/genesis-accessible/skip-links.php:57
 msgid "Jump to main navigation"
 msgstr ""
 
-#: lib/vendors/genesis-accessible/skip-links.php:118
+#: lib/vendors/genesis-accessible/skip-links.php:60
 msgid "Jump to search"
 msgstr ""
 
-#: lib/vendors/genesis-accessible/skip-links.php:120
+#: lib/vendors/genesis-accessible/skip-links.php:63
 msgid "Jump to sub navigation"
 msgstr ""
 
-#: lib/vendors/genesis-accessible/skip-links.php:122
+#: lib/vendors/genesis-accessible/skip-links.php:64
 msgid "Jump to content"
 msgstr ""
 
-#: lib/vendors/genesis-accessible/skip-links.php:124
+#: lib/vendors/genesis-accessible/skip-links.php:67
 msgid "Jump to primary sidebar"
 msgstr ""
 
-#: lib/vendors/genesis-accessible/skip-links.php:126
+#: lib/vendors/genesis-accessible/skip-links.php:70
 msgid "Jump to footer"
 msgstr ""
 
@@ -438,6 +402,16 @@ msgstr ""
 
 #. Template Name of the plugin/theme
 msgid "Landing"
+msgstr ""
+
+#: functions.php:118 functions.php:123 functions.php:128 functions.php:132
+msgctxt "Sequential group of widget areas"
+msgid "Home Gallery %d"
+msgstr ""
+
+#: functions.php:119 functions.php:124 functions.php:129 functions.php:133
+msgctxt "widget area description"
+msgid "Home Gallery %d widget area on home page."
 msgstr ""
 
 #: inc/google-fonts.php:39

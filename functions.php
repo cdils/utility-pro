@@ -102,8 +102,6 @@ function utility_pro_setup() {
  */
 function utility_pro_register_widget_areas() {
 
-	$home_gallery_name = __( 'Home Gallery', 'utility-pro' );
-
 	$widget_areas = array(
 		'utility-bar'    => array(
 			'id'          => 'utility-bar',
@@ -117,23 +115,22 @@ function utility_pro_register_widget_areas() {
 		),
 		'home-gallery-1' => array(
 			'id'          => 'utility-home-gallery-1',
-			'name'        => sprintf( __( '%s 1', 'utility-pro' ), $home_gallery_name ),
-			'description' => sprintf( __( '%s 1 ', 'utility-pro' ), $home_gallery_name ),
+			'name'        => sprintf( _x( 'Home Gallery %d', 'Group of Home Gallery widget areas', 'utility-pro' ), 1 ),
+			'description' => sprintf( _x( 'Home Gallery %d widget area on home page.', 'Description of widget area', 'utility-pro' ), 1 ),
 		),
 		'home-gallery-2' => array(
 			'id'          => 'utility-home-gallery-2',
-			'name'        => sprintf( __( '%s 2', 'utility-pro' ), $home_gallery_name ),
-			'description' => sprintf( __( '%s 2 widget area on home page.', 'utility-pro' ), $home_gallery_name ),
+			'name'        => sprintf( _x( 'Home Gallery %d', 'Group of Home Gallery widget areas', 'utility-pro' ), 2 ),
+			'description' => sprintf( _x( 'Home Gallery %d widget area on home page.', 'Description of widget area', 'utility-pro' ), 2 ),
 		),
 		'home-gallery-3' => array(
 			'id'          => 'utility-home-gallery-3',
-			'name'        => sprintf( __( '%s 3', 'utility-pro' ), $home_gallery_name ),
-			'description' => sprintf( __( '%s 3 widget area on home page.', 'utility-pro' ), $home_gallery_name ),
+			'name'        => sprintf( _x( 'Home Gallery %d', 'Group of Home Gallery widget areas', 'utility-pro' ), 3 ),
+			'description' => sprintf( _x( 'Home Gallery %d widget area on home page.', 'Description of widget area', 'utility-pro' ), 3 ),
 		),
 		'home-gallery-4' => array(
-			'id'          => 'utility-home-gallery-4',
-			'name'        => sprintf( __( '%s 4', 'utility-pro' ), $home_gallery_name ),
-			'description' => sprintf( __( '%s 4 widget area on home page.', 'utility-pro' ), $home_gallery_name ),
+			'name'        => sprintf( _x( 'Home Gallery %d', 'Group of Home Gallery widget areas', 'utility-pro' ), 4 ),
+			'description' => sprintf( _x( 'Home Gallery %d widget area on home page.', 'Description of widget area', 'utility-pro' ), 4 ),
 		),
 		'call-to-action' => array(
 			'id'          => 'utility-call-to-action',
@@ -171,8 +168,8 @@ function utility_pro_enqueue_assets() {
 		return;
 	}
 
-	wp_enqueue_script( 'utility-pro-backstretch', get_stylesheet_directory_uri() . "/lib/js/backstretch.js", array( 'jquery' ), '2.0.1' );
-	wp_enqueue_script( 'utility-pro-backstretch-args', get_stylesheet_directory_uri() . "/lib/js/backstretch.args.js", array( 'utility-pro-backstretch' ), CHILD_THEME_VERSION );
+	wp_enqueue_script( 'utility-pro-backstretch', get_stylesheet_directory_uri() . "/lib/js/backstretch.js", array( 'jquery' ), '2.0.1', true );
+	wp_enqueue_script( 'utility-pro-backstretch-args', get_stylesheet_directory_uri() . "/lib/js/backstretch.args.js", array( 'utility-pro-backstretch' ), CHILD_THEME_VERSION, true );
 
 	wp_localize_script( 'utility-pro-backstretch-args', 'utilityL10n', array( 'src' => get_background_image() ) );
 }

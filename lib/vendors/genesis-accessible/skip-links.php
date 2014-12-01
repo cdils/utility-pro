@@ -6,11 +6,13 @@
 *	License: GPLv2 or later
 */
 
-/** Add skiplinks for screen readers and keyboard navigation
-*
-* @since 1.0.0
-*/
 add_action ( 'genesis_before_header', 'utility_skip_links', 5 );
+/**
+ * Add skiplinks for screen readers and keyboard navigation
+ *
+ * @return [type] [description]
+ * @since  1.0.0
+ */
 function utility_skip_links() {
 
     $site_layout = genesis_site_layout();
@@ -40,10 +42,46 @@ function utility_skip_links() {
     		$footer = true;
     }
 
-	// add id's to the elements to jump to
-	// genesis_markup() http://docs.garyjones.co.uk/genesis/2.0.0/source-function-genesis_parse_attr.html#77-100
-	// https://gist.github.com/salcode/7164690
+    // Call function to add IDs to the markup
+	utility_skiplinks_markup();
 
+    // write HTML, skiplinks in a list with a heading
+
+   	?> <!-- skiplinks --><?php
+
+    echo '<h2 class="screen-reader-text">'. __( 'Skip links', 'utility-pro' ) .'</h2>' . "\n";
+
+	echo '<ul class="wpacc-genesis-skip-link">' . "\n";
+
+    if ( $nav )
+    	echo '  <li><a href="#wpacc-genesis-nav" class="screen-reader-shortcut">'. __( 'Jump to main navigation', 'utility-pro' ) .'</a></li>' . "\n";
+
+	if ( $search )
+		echo '  <li><a href="#searchform" class="screen-reader-shortcut">'. __( 'Jump to search', 'utility-pro' ) .'</a></li>' . "\n";
+
+	if ( $nav2 )
+		echo '  <li><a href="#wpacc-genesis-nav" class="screen-reader-shortcut">'. __( 'Jump to sub navigation', 'utility-pro' ) .'</a></li>' . "\n";
+		echo '  <li><a href="#wpacc-genesis-content" class="screen-reader-shortcut">'. __( 'Jump to content', 'utility-pro' ) .'</a></li>' . "\n";
+
+	if ( $sidebar )
+		echo '  <li><a href="#wpacc-sidebar-primary" class="screen-reader-shortcut">'. __( 'Jump to primary sidebar', 'utility-pro' ) .'</a></li>' . "\n";
+
+	if ( $footer )
+		echo '  <li><a href="#wpacc-genesis-footer-widgets" class="screen-reader-shortcut">'. __( 'Jump to footer', 'utility-pro' ) .'</a></li>' . "\n";
+
+	echo '</ul>' . "\n";
+
+}
+
+/**
+ * Add ID markup to the elements to jump to
+ *
+ * @link https://gist.github.com/salcode/7164690
+ * @link genesis_markup() http://docs.garyjones.co.uk/genesis/2.0.0/source-function-genesis_parse_attr.html#77-100
+ * @return array
+ * @since x.x.x
+ */
+function utility_skiplinks_markup() {
 	if ( function_exists( 'genesis_markup' ) ) {
 
 		// Add ID markup if primary nav is assigned to a menu area
@@ -95,45 +133,19 @@ function utility_skip_links() {
 		// Add ID markup if the footer widgets are active
 		add_filter( 'genesis_attr_footer-widgets', 'genesis_attr_footer_widgets' );
 		function genesis_attr_footer_widgets( $attributes ) {
-			if ( is_active_sidebar( 'genesis-footer-widgets' ) ) {
-				$attributes['id'] = 'wpacc-genesis-footer-widgets';
-			}
-
+			$attributes['id'] = 'wpacc-genesis-footer-widgets';
  			return $attributes;
 		}
 
 	}
-
-
-    // write HTML, skiplinks in a list with a heading
-
-   	?> <!-- skiplinks --><?php
-
-    echo '<h2 class="screen-reader-text">'. __( 'Skip links', 'utility-pro' ) .'</h2>' . "\n";
-
-	echo '<ul class="wpacc-genesis-skip-link">' . "\n";
-
-    if ($nav) echo '  <li><a href="#wpacc-genesis-nav" class="screen-reader-shortcut">'. __( 'Jump to main navigation', 'utility-pro' ) .'</a></li>' . "\n";
-
-	if ($search) echo '  <li><a href="#searchform" class="screen-reader-shortcut">'. __( 'Jump to search', 'utility-pro' ) .'</a></li>' . "\n";
-
-	if ($nav2) echo '  <li><a href="#wpacc-genesis-nav" class="screen-reader-shortcut">'. __( 'Jump to sub navigation', 'utility-pro' ) .'</a></li>' . "\n";
-
-	echo '  <li><a href="#wpacc-genesis-content" class="screen-reader-shortcut">'. __( 'Jump to content', 'utility-pro' ) .'</a></li>' . "\n";
-
-	if ($sidebar) echo '  <li><a href="#wpacc-sidebar-primary" class="screen-reader-shortcut">'. __( 'Jump to primary sidebar', 'utility-pro' ) .'</a></li>' . "\n";
-
-	if ($footer) echo '  <li><a href="#wpacc-genesis-footer-widgets" class="screen-reader-shortcut">'. __( 'Jump to footer', 'utility-pro' ) .'</a></li>' . "\n";
-
-	echo '</ul>' . "\n";
-
 }
 
 add_action( 'wp_enqueue_scripts', 'utility_skiplinks_scripts' );
+/**
+ * Enqueue Skiplinks script.
+ *
+ * @since 1.0.0
+ */
 function utility_skiplinks_scripts() {
-
-	wp_enqueue_script( 'genwpacc-skiplinks-js',  get_stylesheet_directory() . '/lib/js/genwpacc-skiplinks.js' );
-
+	wp_enqueue_script( 'genwpacc-skiplinks-js',  get_stylesheet_directory() . '/lib/js/genwpacc-skiplinks.js', array(), '1.0.0', true );
 }
-
-?>
