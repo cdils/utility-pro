@@ -77,9 +77,6 @@ function utility_pro_setup() {
 	remove_action( 'genesis_after_header', 'genesis_do_subnav' );
 	add_action( 'genesis_before_footer', 'genesis_do_subnav', 15 );
 
-	// Queue scripts used for the front end
-	add_action( 'wp_enqueue_scripts', 'utility_pro_enqueue_assets' );
-
 	// Add Utility Bar above header
 	add_action( 'genesis_before_header', 'utility_pro_bar' );
 
@@ -105,36 +102,38 @@ function utility_pro_setup() {
  */
 function utility_pro_register_widget_areas() {
 
+	$home_gallery_name = __( 'Home Gallery', 'utility-pro' );
+
 	$widget_areas = array(
-		'utility-bar' => array(
+		'utility-bar'    => array(
 			'id'          => 'utility-bar',
 			'name'        => __( 'Utility Bar', 'utility-pro' ),
 			'description' => __( 'This is the the utility bar across the top of page.', 'utility-pro' ),
 		),
-		'home-welcome' => array(
+		'home-welcome'   => array(
 			'id'          => 'utility-home-welcome',
 			'name'        => __( 'Home Welcome', 'utility-pro' ),
 			'description' => __( 'This is the welcome section at the top of the home page.', 'utility-pro' ),
 		),
 		'home-gallery-1' => array(
 			'id'          => 'utility-home-gallery-1',
-			'name'        => __( 'Home Gallery 1', 'utility-pro' ),
-			'description' => __( 'This is the 1st gallery section in the middle of the home page.', 'utility-pro' ),
+			'name'        => sprintf( __( '%s 1', 'utility-pro' ), $home_gallery_name ),
+			'description' => sprintf( __( '%s 1 ', 'utility-pro' ), $home_gallery_name ),
 		),
 		'home-gallery-2' => array(
 			'id'          => 'utility-home-gallery-2',
-			'name'        => __( 'Home Gallery 2', 'utility-pro' ),
-			'description' => __( 'This is the 2nd gallery section in the middle of the home page.', 'utility-pro' ),
+			'name'        => sprintf( __( '%s 2', 'utility-pro' ), $home_gallery_name ),
+			'description' => sprintf( __( '%s 2 widget area on home page.', 'utility-pro' ), $home_gallery_name ),
 		),
 		'home-gallery-3' => array(
 			'id'          => 'utility-home-gallery-3',
-			'name'        => __( 'Home Gallery 3', 'utility-pro' ),
-			'description' => __( 'This is the 3rd gallery section in the middle of the home page.', 'utility-pro' ),
+			'name'        => sprintf( __( '%s 3', 'utility-pro' ), $home_gallery_name ),
+			'description' => sprintf( __( '%s 3 widget area on home page.', 'utility-pro' ), $home_gallery_name ),
 		),
 		'home-gallery-4' => array(
 			'id'          => 'utility-home-gallery-4',
-			'name'        => __( 'Home Gallery 4', 'utility-pro' ),
-			'description' => __( 'This is the 4th gallery section in the middle of the home page.', 'utility-pro' ),
+			'name'        => sprintf( __( '%s 4', 'utility-pro' ), $home_gallery_name ),
+			'description' => sprintf( __( '%s 4 widget area on home page.', 'utility-pro' ), $home_gallery_name ),
 		),
 		'call-to-action' => array(
 			'id'          => 'utility-call-to-action',
@@ -150,6 +149,7 @@ function utility_pro_register_widget_areas() {
 	}
 }
 
+add_action( 'wp_enqueue_scripts', 'utility_pro_enqueue_assets' );
 /**
  * Enqueue theme assets.
  *
@@ -175,7 +175,6 @@ function utility_pro_enqueue_assets() {
 	wp_enqueue_script( 'utility-pro-backstretch-args', get_stylesheet_directory_uri() . "/lib/js/backstretch.args.js", array( 'utility-pro-backstretch' ), CHILD_THEME_VERSION );
 
 	wp_localize_script( 'utility-pro-backstretch-args', 'utilityL10n', array( 'src' => get_background_image() ) );
-
 }
 
 /**
@@ -189,7 +188,6 @@ function utility_pro_bar() {
 		'before' => '<div class="utility-bar"><div class="wrap">',
 		'after'  => '</div></div>',
 	) );
-
 }
 
 /**
@@ -242,6 +240,7 @@ add_filter( 'genesis_footer_creds_text', 'utility_pro_footer_creds' );
  * @since  1.0.0
  */
 function utility_pro_footer_creds( $creds ) {
+
 	$creds = '[footer_copyright] &middot; <a href="http://store.carriedils.com/utility-pro">Utility Pro</a> &middot; Powered by the <a href="http://www.carriedils.com/go/genesis">Genesis Framework</a> and <a href="http://wordpress.org">WordPress</a>.';
 	return $creds;
 }
@@ -252,7 +251,7 @@ function utility_pro_footer_creds( $creds ) {
  * @since 1.0.0
  */
 add_filter( 'genesis_author_box_gravatar_size', 'utility_pro_author_box_gravatar' );
-	function utility_pro_author_box_gravatar( $size ) {
+function utility_pro_author_box_gravatar( $size ) {
 	return '96';
 }
 
@@ -282,7 +281,6 @@ function string_body_class( $classes ) {
  */
 add_action( 'template_redirect', 'show_sitemap' );
 function show_sitemap() {
-
 	if ( isset( $_GET['show_sitemap'] ) ) {
 
 		$the_query = new WP_Query( array( 'post_type' => 'any', 'posts_per_page' => '-1', 'post_status' => 'publish' ) );

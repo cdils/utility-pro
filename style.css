@@ -44,6 +44,7 @@
 		- Call to Action
 		- Featured Page and Featured Post
 	- Plugins
+        - Better Font Awesome
 		- Genesis eNews Extended
 		- Gravity Forms
 		- Jetpack
@@ -265,20 +266,20 @@ input[type='submit'],
 textarea:focus,
 .gallery img {
     -webkit-transition: all .1s ease-in-out;
-       -moz-transition: all .1s ease-in-out;
+        -moz-transition: all .1s ease-in-out;
         -ms-transition: all .1s ease-in-out;
          -o-transition: all .1s ease-in-out;
             transition: all .1s ease-in-out;
 }
 
 ::-moz-selection {
-    background: #333;
-    color: #fff;
+    background: #fff248;
+    color: #000;
 }
 
 ::selection {
-    background: #333;
-    color: #fff;
+    background: #fff248;
+    color: #000;
 }
 
 a {
@@ -977,6 +978,13 @@ Widgets
 /*
 Plugins
 ---------------------------------------------------------------------------------------------------- */
+
+/* Better Font Awesome
+--------------------------------------------- */
+
+a > .fa {
+    display: block;
+}
 
 /* Genesis eNews Extended
 --------------------------------------------- */

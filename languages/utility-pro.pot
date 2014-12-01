@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Utility Pro 1.0.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2014-11-30 19:29:22+00:00\n"
+"POT-Creation-Date: 2014-12-01 14:19:55+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,87 +25,91 @@ msgstr ""
 msgid "Red"
 msgstr ""
 
-#: functions.php:111
+#: functions.php:105
+msgid "Home Gallery"
+msgstr ""
+
+#: functions.php:110
 msgid "Utility Bar"
 msgstr ""
 
-#: functions.php:112
+#: functions.php:111
 msgid "This is the the utility bar across the top of page."
 msgstr ""
 
-#: functions.php:116
+#: functions.php:115
 msgid "Home Welcome"
 msgstr ""
 
-#: functions.php:117
+#: functions.php:116
 msgid "This is the welcome section at the top of the home page."
 msgstr ""
 
-#: functions.php:121
-msgid "Home Gallery 1"
+#: functions.php:120
+msgid "%s 1"
 msgstr ""
 
-#: functions.php:122
-msgid "This is the 1st gallery section in the middle of the home page."
+#: functions.php:121
+msgid "%s 1 "
+msgstr ""
+
+#: functions.php:125
+msgid "%s 2"
 msgstr ""
 
 #: functions.php:126
-msgid "Home Gallery 2"
+msgid "%s 2 widget area on home page."
 msgstr ""
 
-#: functions.php:127
-msgid "This is the 2nd gallery section in the middle of the home page."
+#: functions.php:130
+msgid "%s 3"
 msgstr ""
 
 #: functions.php:131
-msgid "Home Gallery 3"
+msgid "%s 3 widget area on home page."
 msgstr ""
 
-#: functions.php:132
-msgid "This is the 3rd gallery section in the middle of the home page."
+#: functions.php:135
+msgid "%s 4"
 msgstr ""
 
 #: functions.php:136
-msgid "Home Gallery 4"
+msgid "%s 4 widget area on home page."
 msgstr ""
 
-#: functions.php:137
-msgid "This is the 4th gallery section in the middle of the home page."
-msgstr ""
-
-#: functions.php:141
+#: functions.php:140
 msgid "Call to Action"
 msgstr ""
 
-#: functions.php:142
+#: functions.php:141
 msgid "This is the CTA section at the bottom of the home page."
 msgstr ""
 
-#: lib/vendors/genesis-accessible/skip-links.php:113
+#: lib/vendors/genesis-accessible/skip-links.php:112
 msgid "Skip links"
 msgstr ""
 
-#: lib/vendors/genesis-accessible/skip-links.php:117
+#: lib/vendors/genesis-accessible/skip-links.php:116
 msgid "Jump to main navigation"
 msgstr ""
 
-#: lib/vendors/genesis-accessible/skip-links.php:119
+#: lib/vendors/genesis-accessible/skip-links.php:118
 msgid "Jump to search"
 msgstr ""
 
-#: lib/vendors/genesis-accessible/skip-links.php:121
+#: lib/vendors/genesis-accessible/skip-links.php:120
 msgid "Jump to sub navigation"
 msgstr ""
 
-#: lib/vendors/genesis-accessible/skip-links.php:123
+#: lib/vendors/genesis-accessible/skip-links.php:122
 msgid "Jump to content"
 msgstr ""
 
-#: lib/vendors/genesis-accessible/skip-links.php:125
+#: lib/vendors/genesis-accessible/skip-links.php:124
 msgid "Jump to primary sidebar"
 msgstr ""
 
-#: lib/vendors/genesis-accessible/skip-links.php:127
+#: lib/vendors/genesis-accessible/skip-links.php:126
 msgid "Jump to footer"
 msgstr ""
 

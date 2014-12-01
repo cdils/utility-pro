@@ -46,61 +46,60 @@ function wpaccgen_skip_links() {
 
 	if ( function_exists( 'genesis_markup' ) ) {
 
-		// Check if primary nav has an assigned menu
-		if ( has_nav_menu( 'primary' ) ) {
-
-			add_filter( 'genesis_attr_nav-primary', 'wpacc_genesis_attr_nav_primary' );
-			function wpacc_genesis_attr_nav_primary( $attributes ) {
+		// Add ID markup if primary nav is assigned to a menu area
+		add_filter( 'genesis_attr_nav-primary', 'wpacc_genesis_attr_nav_primary' );
+		function wpacc_genesis_attr_nav_primary( $attributes ) {
+			if ( has_nav_menu( 'primary' ) ) {
 	    		$attributes['id'] = 'wpacc-genesis-nav';
-	    		return $attributes;
-			}
 
+			}
+			return $attributes;
 		}
 
-		// Check if secondary nav has an assigned menu
-		if ( has_nav_menu( 'secondary' ) ) {
-
-			add_filter( 'genesis_attr_nav-secondary', 'wpacc_genesis_attr_nav_secondary' );
-			function wpacc_genesis_attr_nav_secondary( $attributes ) {
+		// Add ID markup if secondary nav is assigned to a menu area
+		add_filter( 'genesis_attr_nav-secondary', 'wpacc_genesis_attr_nav_secondary' );
+		function wpacc_genesis_attr_nav_secondary( $attributes ) {
+			if ( has_nav_menu( 'secondary' ) ) {
 	    		$attributes['id'] = 'wpacc-genesis-secondary';
-	    		return $attributes;
-			}
 
+			}
+			return $attributes;
 		}
 
-		// Check if there is post content
-		$content = the_content();
-
-		if( ! empty( $content ) ) {
-
-			add_filter( 'genesis_attr_content', 'wpacc_genesis_attr_content' );
-			function wpacc_genesis_attr_content( $attributes ) {
-	    		$attributes['id'] = 'wpacc-genesis-content';
-	    		return $attributes;
-			}
-
+		// Add ID markup to content area
+		add_filter( 'genesis_attr_content', 'wpacc_genesis_attr_content' );
+		function wpacc_genesis_attr_content( $attributes ) {
+    		$attributes['id'] = 'wpacc-genesis-content';
+			return $attributes;
 		}
 
-		// Make sure primary sidebar is active
-		if ( is_active_sidebar( 'sidebar' ) ) {
-
-			add_filter( 'genesis_attr_sidebar-primary', 'wpacc_genesis_attr_sidebar_primary' );
-			function wpacc_genesis_attr_sidebar_primary( $attributes ) {
+		// Add ID markup if the primary sidebar is active
+		add_filter( 'genesis_attr_sidebar-primary', 'wpacc_genesis_attr_sidebar_primary' );
+		function wpacc_genesis_attr_sidebar_primary( $attributes ) {
+			if ( is_active_sidebar( 'sidebar' ) ) {
 	    		$attributes['id'] = 'wpacc-sidebar-primary';
-	    		return $attributes;
-			}
 
+			}
+			return $attributes;
 		}
 
-		if ( is_active_sidebar( 'genesis-footer-widgets' ) ) {
-
-			add_filter( 'genesis_attr_footer-widgets', 'genesis_attr_footer_widgets' );
-			function genesis_attr_footer_widgets( $attributes ) {
-
-					$attributes['id'] = 'wpacc-genesis-footer-widgets';
-     				return $attributes;
-
+		// Add ID markup if the secondary sidebar is active
+		add_filter( 'genesis_attr_sidebar-secondary', 'wpacc_genesis_attr_sidebar_secondary' );
+		function wpacc_genesis_attr_sidebar_secondary( $attributes ) {
+			if ( is_active_sidebar( 'sidebar-alt' ) ) {
+	    		$attributes['id'] = 'wpacc-sidebar-secondary';
 			}
+	    	return $attributes;
+		}
+
+		// Add ID markup if the footer widgets are active
+		add_filter( 'genesis_attr_footer-widgets', 'genesis_attr_footer_widgets' );
+		function genesis_attr_footer_widgets( $attributes ) {
+			if ( is_active_sidebar( 'genesis-footer-widgets' ) ) {
+				$attributes['id'] = 'wpacc-genesis-footer-widgets';
+			}
+
+ 			return $attributes;
 		}
 
 	}
