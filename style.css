@@ -986,6 +986,10 @@ a > .fa {
     display: block;
 }
 
+.li a > .fa {
+    display: inline-block;
+}
+
 /* Genesis eNews Extended
 --------------------------------------------- */
 
