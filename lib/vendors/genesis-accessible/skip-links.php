@@ -10,8 +10,8 @@
 *
 * @since 1.0.0
 */
-add_action ( 'genesis_before_header', 'wpaccgen_skip_links', 5 );
-function wpaccgen_skip_links() {
+add_action ( 'genesis_before_header', 'utility_skip_links', 5 );
+function utility_skip_links() {
 
     $site_layout = genesis_site_layout();
 
@@ -129,13 +129,11 @@ function wpaccgen_skip_links() {
 
 }
 
-add_action( 'wp_enqueue_scripts', 'genwpacc_skiplinks_scripts' );
-function genwpacc_skiplinks_scripts() {
+add_action( 'wp_enqueue_scripts', 'utility_skiplinks_scripts' );
+function utility_skiplinks_scripts() {
 
-	wp_enqueue_script( 'genwpacc-skiplinks-js',  get_stylesheet_directory() . '/js/genwpacc-skiplinks.js' );
+	wp_enqueue_script( 'genwpacc-skiplinks-js',  get_stylesheet_directory() . '/lib/js/genwpacc-skiplinks.js' );
 
 }
-
-
 
 ?>
