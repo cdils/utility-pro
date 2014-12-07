@@ -314,7 +314,7 @@ ul {
 }
 
 blockquote {
-    color: #666;
+    color: #000;
     margin: 0;
     padding: 24px 40px;
 }
@@ -322,6 +322,7 @@ blockquote {
 blockquote::before {
     content: '\201C';
     display: block;
+    font-family: 'Enriqueta', serif;
     font-size: 140px;
     height: 0;
     left: -50px;
@@ -339,6 +340,7 @@ pre {
 
 cite {
     font-style: italic;
+    font-weight: 700;
 }
 
 /* Headings
@@ -982,13 +984,13 @@ Plugins
 /* Better Font Awesome
 --------------------------------------------- */
 
-a > .fa {
+/*a > .fa {
     display: block;
 }
 
 .li a > .fa {
     display: inline-block;
-}
+}*/
 
 /* Genesis eNews Extended
 --------------------------------------------- */
@@ -1598,8 +1600,12 @@ Accessibility Extras - Taken from the Leiden theme & Genesis Accessible plugin (
 .screen-reader-text,
 .screen-reader-text span,
 .search-form label {
-    clip: rect(0px, 0px, 0px, 0px);
     position: absolute;
+    left: -1000em;
+    top: -1000em;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
 }
 
 .screen-reader-shortcut {
@@ -1613,8 +1619,6 @@ Accessibility Extras - Taken from the Leiden theme & Genesis Accessible plugin (
     height: auto;
     width: auto;
     display: block;
-    font-size: 10px;
-    font-weight: bold;
     padding: 15px 23px 14px;
     background: #fff;
     z-index: 100000;
@@ -1622,7 +1626,8 @@ Accessibility Extras - Taken from the Leiden theme & Genesis Accessible plugin (
     text-decoration: none;
 }
 
-.wpacc-genesis-skip-link li {
+.wpacc-genesis-skip-link li,
+.genwpacc-genesis-skip-link li {
     height: 0;
     width: 0;
     list-style: none;

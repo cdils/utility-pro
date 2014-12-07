@@ -9,7 +9,7 @@ INSTALL
 1. Upload the Utility Pro theme folder via FTP to your wp-content/themes/ directory.
 2. Go to your WordPress dashboard and select Appearance.
 3. Activate the Utility Pro theme.
-4. Inside your WordPress dashboard, go to Genesis > Theme Settings and configure them to your liking. To set up the theme like the demo, please visit http://store.carriedils.com/themes/utility-pro/.
+4. Inside your WordPress dashboard, go to Genesis > Theme Settings and configure them to your liking. To set up the theme like the demo, please visit https://store.carriedils.com/themes/utility-pro/.
 
 WIDGET AREAS
 Primary Sidebar - This is the primary sidebar if you are using the Content/Sidebar or Sidebar/Content Site Layout option.

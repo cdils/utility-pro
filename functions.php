@@ -132,6 +132,7 @@ function utility_pro_register_widget_areas() {
 			'description' => sprintf( _x( 'Home Gallery %d widget area on home page.', 'Description of widget area', 'utility-pro' ), 3 ),
 		),
 		'home-gallery-4' => array(
+			'id'          => 'utility-home-gallery-4',
 			'name'        => sprintf( _x( 'Home Gallery %d', 'Group of Home Gallery widget areas', 'utility-pro' ), 4 ),
 			'description' => sprintf( _x( 'Home Gallery %d widget area on home page.', 'Description of widget area', 'utility-pro' ), 4 ),
 		),
@@ -165,6 +166,9 @@ function utility_pro_enqueue_assets() {
 
     // Replace style.css with style-rtl.css for RTL languages
     wp_style_add_data( 'utility-pro', 'rtl', 'replace' );
+
+
+wp_reset_query();
 
 	// Load remaining scripts only if custom background is being used and we're on the home page
 	if ( ! get_background_image() ||  ! is_front_page() ) {

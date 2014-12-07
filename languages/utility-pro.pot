@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Utility Pro 1.0.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2014-12-03 21:59:47+00:00\n"
+"POT-Creation-Date: 2014-12-07 22:14:20+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,28 +25,36 @@ msgstr ""
 msgid "Red"
 msgstr ""
 
-#: functions.php:108
+#: functions.php:111
 msgid "Utility Bar"
 msgstr ""
 
-#: functions.php:109
+#: functions.php:112
 msgid "This is the the utility bar across the top of page."
 msgstr ""
 
-#: functions.php:113
+#: functions.php:116
 msgid "Home Welcome"
 msgstr ""
 
-#: functions.php:114
+#: functions.php:117
 msgid "This is the welcome section at the top of the home page."
 msgstr ""
 
-#: functions.php:137
+#: functions.php:141
 msgid "Call to Action"
 msgstr ""
 
-#: functions.php:138
+#: functions.php:142
 msgid "This is the CTA section at the bottom of the home page."
+msgstr ""
+
+#: includes/vendors/genesis-accessible/forms.php:25
+msgid "Search this website"
+msgstr ""
+
+#: includes/vendors/genesis-accessible/forms.php:27
+msgid "Search"
 msgstr ""
 
 #: includes/vendors/genesis-accessible/skip-links.php:52
@@ -404,12 +412,12 @@ msgstr ""
 msgid "Landing"
 msgstr ""
 
-#: functions.php:118 functions.php:123 functions.php:128 functions.php:132
+#: functions.php:121 functions.php:126 functions.php:131 functions.php:136
 msgctxt "Group of Home Gallery widget areas"
 msgid "Home Gallery %d"
 msgstr ""
 
-#: functions.php:119 functions.php:124 functions.php:129 functions.php:133
+#: functions.php:122 functions.php:127 functions.php:132 functions.php:137
 msgctxt "Description of widget area"
 msgid "Home Gallery %d widget area on home page."
 msgstr ""

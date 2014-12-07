@@ -172,7 +172,7 @@ Color Options
 .utility-pro-purple .utility-bar,
 .utility-pro-purple .site-footer {
     background-color: rgb(51, 51, 153);
-    background-color: rgba(51, 51, 153, .8);
+    background-color: rgba(51, 51, 153, 0.8);
 }
 
 /* Green
@@ -205,7 +205,7 @@ Color Options
 .utility-pro-green .utility-bar,
 .utility-pro-green .site-footer {
     background-color: rgb(8, 130, 84);
-    background-color: rgba(8, 130, 84, .9);
+    background-color: rgba(8, 130, 84, 0.9);
 }
 
 /* Red
@@ -238,7 +238,7 @@ Color Options
 .utility-pro-red .utility-bar,
 .utility-pro-red .site-footer {
     background-color: rgb(211, 19, 27);
-    background-color: rgba(211, 19, 27, .9);
+    background-color: rgba(211, 19, 27, 0.9);
 }
 
 /*
@@ -265,11 +265,11 @@ input[type='reset'],
 input[type='submit'],
 textarea:focus,
 .gallery img {
-    -webkit-transition: all .1s ease-in-out;
-        -moz-transition: all .1s ease-in-out;
-        -ms-transition: all .1s ease-in-out;
-         -o-transition: all .1s ease-in-out;
-            transition: all .1s ease-in-out;
+    -webkit-transition: all 0.1s ease-in-out;
+        -moz-transition: all 0.1s ease-in-out;
+        -ms-transition: all 0.1s ease-in-out;
+         -o-transition: all 0.1s ease-in-out;
+            transition: all 0.1s ease-in-out;
 }
 
 ::-moz-selection {
@@ -314,7 +314,7 @@ ul {
 }
 
 blockquote {
-    color: #666;
+    color: #000;
     margin: 0;
     padding: 24px 40px;
 }
@@ -322,6 +322,7 @@ blockquote {
 blockquote::before {
     content: '\201C';
     display: block;
+    font-family: 'Enriqueta', serif;
     font-size: 140px;
     height: 0;
     right: -50px;
@@ -339,6 +340,7 @@ pre {
 
 cite {
     font-style: italic;
+    font-weight: 700;
 }
 
 /* Headings
@@ -869,7 +871,7 @@ Widgets
 
 .utility-bar {
     background-color: rgb(12, 108, 187);
-    background-color: rgba(12, 108, 187, .9);
+    background-color: rgba(12, 108, 187, 0.9);
     border-bottom: 1px solid #ddd;
     font-size: 14px;
     margin: 0 auto;
@@ -903,7 +905,7 @@ Widgets
 
 .home-welcome {
     background-color: rgb(51, 51, 51);
-    background-color: rgba(51, 51, 51, .8);
+    background-color: rgba(51, 51, 51, 0.8);
     padding: 40px 0;
     text-align: center;
 }
@@ -946,7 +948,7 @@ Widgets
 
 .call-to-action-bar {
     background: rgb(51, 51, 51);
-    background: rgba(51, 51, 51, .8);
+    background: rgba(51, 51, 51, 0.8);
     color: #fff;
     padding: 20px 0;
 	text-align: center;
@@ -982,9 +984,13 @@ Plugins
 /* Better Font Awesome
 --------------------------------------------- */
 
-a > .fa {
+/*a > .fa {
     display: block;
 }
+
+.li a > .fa {
+    display: inline-block;
+}*/
 
 /* Genesis eNews Extended
 --------------------------------------------- */
@@ -1594,8 +1600,12 @@ Accessibility Extras - Taken from the Leiden theme & Genesis Accessible plugin (
 .screen-reader-text,
 .screen-reader-text span,
 .search-form label {
-    clip: rect(0px, 0px, 0px, 0px);
     position: absolute;
+    right: -1000em;
+    top: -1000em;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
 }
 
 .screen-reader-shortcut {
@@ -1609,8 +1619,6 @@ Accessibility Extras - Taken from the Leiden theme & Genesis Accessible plugin (
     height: auto;
     width: auto;
     display: block;
-    font-size: 10px;
-    font-weight: bold;
     padding: 15px 23px 14px;
     background: #fff;
     z-index: 100000;
@@ -1618,7 +1626,8 @@ Accessibility Extras - Taken from the Leiden theme & Genesis Accessible plugin (
     text-decoration: none;
 }
 
-.wpacc-genesis-skip-link li {
+.wpacc-genesis-skip-link li,
+.genwpacc-genesis-skip-link li {
     height: 0;
     width: 0;
     list-style: none;
@@ -1797,11 +1806,11 @@ Media Queries
 	    margin: 0;
 	    opacity: 0;
 	    position: absolute;
-	    -webkit-transition: opacity .4s ease-in-out;
-	       -moz-transition: opacity .4s ease-in-out;
-	        -ms-transition: opacity .4s ease-in-out;
-	         -o-transition: opacity .4s ease-in-out;
-	            transition: opacity .4s ease-in-out;
+	    -webkit-transition: opacity 0.4s ease-in-out;
+	       -moz-transition: opacity 0.4s ease-in-out;
+	        -ms-transition: opacity 0.4s ease-in-out;
+	         -o-transition: opacity 0.4s ease-in-out;
+	            transition: opacity 0.4s ease-in-out;
 	    width: 200px;
 	    z-index: 99;
 	}
