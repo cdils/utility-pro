@@ -10,8 +10,8 @@
  */
 
 // Load internationalization components
-require( get_stylesheet_directory() . '/inc/text-domain.php' );
-require( get_stylesheet_directory() . '/inc/google-fonts.php' );
+require( get_stylesheet_directory() . '/helpers/text-domain.php' );
+require( get_stylesheet_directory() . '/helpers/google-fonts.php' );
 
 add_action( 'genesis_setup', 'utility_pro_setup', 15 );
 /**
@@ -25,7 +25,7 @@ add_action( 'genesis_setup', 'utility_pro_setup', 15 );
 function utility_pro_setup() {
 
 	define( 'CHILD_THEME_NAME', 'utility-pro' );
-	define( 'CHILD_THEME_URL', 'http://store.carriedils.com/utility-pro' );
+	define( 'CHILD_THEME_URL', 'https://store.carriedils.com/utility-pro' );
 	define( 'CHILD_THEME_VERSION', '1.0.0' );
 
 	// Add HTML5 markup structure
@@ -84,12 +84,15 @@ function utility_pro_setup() {
 	add_action( 'genesis_before_entry_content', 'utility_pro_featured_image' );
 
 	// Load skip links (accessibility)
-	include_once( get_stylesheet_directory() . '/lib/vendors/genesis-accessible/skip-links.php' );
+	include_once( get_stylesheet_directory() . '/includes/vendors/genesis-accessible/skip-links.php' );
+
+	// Load form enhancements (accessibility)
+	include_once( get_stylesheet_directory() . '/includes/vendors/genesis-accessible/forms.php' );
 
 	// Load files in admin
 	if ( is_admin() ) {
 		// Plugins
-		include_once( get_stylesheet_directory() . '/lib/vendors/tgm-plugin-activation/suggested-plugins.php' );
+		include_once( get_stylesheet_directory() . '/includes/vendors/tgm-plugin-activation/suggested-plugins.php' );
 	}
 }
 
@@ -155,10 +158,10 @@ add_action( 'wp_enqueue_scripts', 'utility_pro_enqueue_assets' );
 function utility_pro_enqueue_assets() {
 
     // Load mobile responsive menu
-	wp_enqueue_script( 'utility-pro-responsive-menu', get_stylesheet_directory_uri() . '/lib/js/responsive-menu.js', array( 'jquery' ), '1.0.0', true );
+	wp_enqueue_script( 'utility-pro-responsive-menu', get_stylesheet_directory_uri() . '/helpers/js/responsive-menu.js', array( 'jquery' ), '1.0.0', true );
 
-	// Load script to fixes issues with keyboard accessibility
-	wp_enqueue_script( 'genwpacc-dropdown', get_stylesheet_directory() . '/lib/js/genwpacc-dropdown.js', array( 'jquery' ), false, true );
+	// Load dropdown menu keyboard nav (accessibility)
+	wp_enqueue_script( 'genwpacc-dropdown',  get_stylesheet_directory_uri() . '/includes/vendors/genesis-accessible/genwpacc-dropdown.js', array( 'jquery' ), false, true );
 
     // Replace style.css with style-rtl.css for RTL languages
     wp_style_add_data( 'utility-pro', 'rtl', 'replace' );
@@ -168,8 +171,8 @@ function utility_pro_enqueue_assets() {
 		return;
 	}
 
-	wp_enqueue_script( 'utility-pro-backstretch', get_stylesheet_directory_uri() . "/lib/js/backstretch.js", array( 'jquery' ), '2.0.1', true );
-	wp_enqueue_script( 'utility-pro-backstretch-args', get_stylesheet_directory_uri() . "/lib/js/backstretch.args.js", array( 'utility-pro-backstretch' ), CHILD_THEME_VERSION, true );
+	wp_enqueue_script( 'utility-pro-backstretch', get_stylesheet_directory_uri() . "/helpers/js/backstretch.js", array( 'jquery' ), '2.0.1', true );
+	wp_enqueue_script( 'utility-pro-backstretch-args', get_stylesheet_directory_uri() . "/helpers/js/backstretch.args.js", array( 'utility-pro-backstretch' ), CHILD_THEME_VERSION, true );
 
 	wp_localize_script( 'utility-pro-backstretch-args', 'utilityL10n', array( 'src' => get_background_image() ) );
 }
@@ -238,7 +241,7 @@ add_filter( 'genesis_footer_creds_text', 'utility_pro_footer_creds' );
  */
 function utility_pro_footer_creds( $creds ) {
 
-	$creds = '[footer_copyright] &middot; <a href="http://store.carriedils.com/utility-pro">Utility Pro</a> &middot; Powered by the <a href="http://www.carriedils.com/go/genesis">Genesis Framework</a> and <a href="http://wordpress.org">WordPress</a>.';
+	$creds = '[footer_copyright] &middot; <a href="https://store.carriedils.com/utility-pro">Utility Pro</a> &middot; Powered by the <a href="http://www.carriedils.com/go/genesis">Genesis Framework</a> and <a href="http://wordpress.org">WordPress</a>.';
 	return $creds;
 }
 
