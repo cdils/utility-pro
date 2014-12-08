@@ -323,11 +323,11 @@ blockquote::before {
     content: '\201C';
     display: block;
     font-family: 'Enriqueta', serif;
-    font-size: 140px;
+    font-size: 120px;
     height: 0;
-    left: -50px;
+    left: -55px;
     position: relative;
-    top: -60px;
+    top: -55px;
 }
 
 pre {
@@ -984,13 +984,13 @@ Plugins
 /* Better Font Awesome
 --------------------------------------------- */
 
-/*a > .fa {
+a > .fa {
     display: block;
 }
 
-.li a > .fa {
+li a .fa {
     display: inline-block;
-}*/
+}
 
 /* Genesis eNews Extended
 --------------------------------------------- */

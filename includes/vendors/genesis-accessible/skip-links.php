@@ -86,59 +86,59 @@ function utility_skiplinks_markup() {
 		return;
 	}
 
-	add_filter( 'genesis_attr_nav-primary', 'wpacc_genesis_attr_nav_primary' );
-	add_filter( 'genesis_attr_nav-secondary', 'wpacc_genesis_attr_nav_secondary' );
-	add_filter( 'genesis_attr_content', 'wpacc_genesis_attr_content' );
-	add_filter( 'genesis_attr_sidebar-primary', 'wpacc_genesis_attr_sidebar_primary' );
-	add_filter( 'genesis_attr_sidebar-secondary', 'wpacc_genesis_attr_sidebar_secondary' );
+	add_filter( 'genesis_attr_nav-primary', 'utility_pro_genesis_attr_nav_primary' );
+	add_filter( 'genesis_attr_nav-secondary', 'utility_pro_genesis_attr_nav_secondary' );
+	add_filter( 'genesis_attr_content', 'utility_pro_genesis_attr_content' );
+	add_filter( 'genesis_attr_sidebar-primary', 'utility_pro_genesis_attr_sidebar_primary' );
+	add_filter( 'genesis_attr_sidebar-secondary', 'utility_pro_genesis_attr_sidebar_secondary' );
 	add_filter( 'genesis_attr_footer-widgets', 'genesis_attr_footer_widgets' );
 
 }
 
 // Add ID markup if primary nav is assigned to a menu area
-function wpacc_genesis_attr_nav_primary( $attributes ) {
+function utility_pro_genesis_attr_nav_primary( $attributes ) {
 	if ( has_nav_menu( 'primary' ) ) {
-		$attributes['id'] = 'wpacc-genesis-nav';
+		$attributes['id'] = 'wpacc-genesis-nav genwpacc-genesis-nav ';
 
 	}
 	return $attributes;
 }
 
 // Add ID markup if secondary nav is assigned to a menu area
-function wpacc_genesis_attr_nav_secondary( $attributes ) {
+function utility_pro_genesis_attr_nav_secondary( $attributes ) {
 	if ( has_nav_menu( 'secondary' ) ) {
-		$attributes['id'] = 'wpacc-genesis-secondary';
+		$attributes['id'] = 'wpacc-genesis-secondary genwpacc-genesis-secondary';
 
 	}
 	return $attributes;
 }
 
 // Add ID markup to content area
-function wpacc_genesis_attr_content( $attributes ) {
-	$attributes['id'] = 'wpacc-genesis-content';
+function utility_pro_genesis_attr_content( $attributes ) {
+	$attributes['id'] = 'wpacc-genesis-content genwpacc-genesis-content';
 	return $attributes;
 }
 
 // Add ID markup if the primary sidebar is active
-function wpacc_genesis_attr_sidebar_primary( $attributes ) {
+function utility_pro_genesis_attr_sidebar_primary( $attributes ) {
 	if ( is_active_sidebar( 'sidebar' ) ) {
-		$attributes['id'] = 'wpacc-sidebar-primary';
+		$attributes['id'] = 'wpacc-sidebar-primary genwpacc-sidebar-primary';
 
 	}
 	return $attributes;
 }
 
 // Add ID markup if the secondary sidebar is active
-function wpacc_genesis_attr_sidebar_secondary( $attributes ) {
+function utility_pro_genesis_attr_sidebar_secondary( $attributes ) {
 	if ( is_active_sidebar( 'sidebar-alt' ) ) {
-		$attributes['id'] = 'wpacc-sidebar-secondary';
+		$attributes['id'] = 'wpacc-sidebar-secondary genwpacc-sidebar-secondary';
 	}
 	return $attributes;
 }
 
 // Add ID markup if the footer widgets are active
 function genesis_attr_footer_widgets( $attributes ) {
-	$attributes['id'] = 'wpacc-genesis-footer-widgets';
+	$attributes['id'] = 'wpacc-genesis-footer-widgets genwpacc-genesis-footer-widgets';
 	return $attributes;
 }
 
