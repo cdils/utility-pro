@@ -33,11 +33,15 @@ function utility_pro_fonts_url() {
     $fonts_url = '';
 
     /* Translators: If there are characters in your language that are not
-    * supported by these fonts, translate this to 'off'. Do not translate
+    * supported by this font, translate this to 'off'. Do not translate
     * into your own language.
     */
     $arvo = _x( 'on', 'Enriqueta font: on or off', 'utility-pro' );
 
+    /* Translators: If there are characters in your language that are not
+    * supported by this font, translate this to 'off'. Do not translate
+    * into your own language.
+    */
     $pt_sans = _x( 'on', 'Open Sans font: on or off', 'utility-pro' );
 
     if ( 'off' !== $arvo || 'off' !== $pt_sans ) {

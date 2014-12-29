@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Utility Pro 1.0.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2014-12-07 22:14:20+00:00\n"
+"POT-Creation-Date: 2014-12-29 20:33:43+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -424,13 +424,16 @@ msgstr ""
 
 #: helpers/google-fonts.php:39
 #. Translators: If there are characters in your language that are not
-#. * supported by these fonts, translate this to 'off'. Do not translate
+#. * supported by this font, translate this to 'off'. Do not translate
 #. * into your own language.
 msgctxt "Enriqueta font: on or off"
 msgid "on"
 msgstr ""
 
-#: helpers/google-fonts.php:41
+#: helpers/google-fonts.php:45
+#. Translators: If there are characters in your language that are not
+#. * supported by this font, translate this to 'off'. Do not translate
+#. * into your own language.
 msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr ""
