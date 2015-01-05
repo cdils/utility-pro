@@ -37,6 +37,13 @@ To address accessibility issues in WordPress and the Genesis Framework, the foll
 PROPS
 A huge thank you to the following folks for providing translation files for this theme:
 
+* Santiago Barrionuevo (es_ES, es_AR)
+* Rian Reitveld (nl_NL)
+* Vajrasar Goswami (hi_IN)
+* Rosie Rodrigues (pt_BR)
+* Luis Martins (pt_PT)
+* Nir Rosenbaum (he_IL)
+* Morten Rand-Hendriksen
 
 
 CHANGELOG
