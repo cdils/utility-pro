@@ -1,8 +1,8 @@
 ( function( window, $, undefined ) {
 	'use strict';
 
-	$( '.menu-primary' ).before( '<button class="menu-toggle" role="button" aria-pressed="false" aria-label="navigation menu"></button>' ); // Add toggles to menus
-	$( '.sub-menu' ).before( '<button class="sub-menu-toggle" role="button" aria-pressed="false" aria-label="submenu"></button>' ); // Add toggles to sub menus
+	$( '.menu-primary' ).before( '<button class="menu-toggle" role="button" aria-label="navigation menu" aria-pressed="false"></button>' ); // Add toggles to menus
+	$( '.sub-menu' ).before( '<button class="sub-menu-toggle" role="button" aria-pressed="false"></button>' ); // Add toggles to sub menus
 
 	// Show/hide the navigation
 	$( '.menu-toggle, .sub-menu-toggle' ).on( 'click', function() {
