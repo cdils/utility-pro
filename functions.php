@@ -169,9 +169,6 @@ function utility_pro_enqueue_assets() {
     // Replace style.css with style-rtl.css for RTL languages
     wp_style_add_data( 'utility-pro', 'rtl', 'replace' );
 
-
-wp_reset_query();
-
 	// Load remaining scripts only if custom background is being used and we're on the home page
 	if ( ! get_background_image() ||  ! is_front_page() ) {
 		return;
