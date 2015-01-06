@@ -111,7 +111,7 @@ function utility_pro_register_widget_areas() {
 		'utility-bar'    => array(
 			'id'          => 'utility-bar',
 			'name'        => __( 'Utility Bar', 'utility-pro' ),
-			'description' => __( 'This is the the utility bar across the top of page.', 'utility-pro' ),
+			'description' => __( 'This is the utility bar across the top of page.', 'utility-pro' ),
 		),
 		'home-welcome'   => array(
 			'id'          => 'utility-home-welcome',

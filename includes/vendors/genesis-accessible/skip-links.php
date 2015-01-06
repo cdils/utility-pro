@@ -52,17 +52,17 @@ function utility_pro_skip_links() {
 	echo '<ul class="wpacc-genesis-skip-link">' . "\n";
 
     if ( $nav )
-    	echo '  <li><a href="#genwpacc-genesis-nav" class="screen-reader-shortcut">'. __( 'Jump to main navigation', 'utility-pro' ) .'</a></li>' . "\n";
+    	echo '  <li><a href="#genwpacc-genesis-nav" class="screen-reader-shortcut">'. __( 'Skip to main navigation', 'utility-pro' ) .'</a></li>' . "\n";
 
 	if ( $nav2 )
-		echo '  <li><a href="#genwpacc-genesis-nav" class="screen-reader-shortcut">'. __( 'Jump to sub navigation', 'utility-pro' ) .'</a></li>' . "\n";
-		echo '  <li><a href="#genwpacc-genesis-content" class="screen-reader-shortcut">'. __( 'Jump to content', 'utility-pro' ) .'</a></li>' . "\n";
+		echo '  <li><a href="#genwpacc-genesis-nav" class="screen-reader-shortcut">'. __( 'Skip to sub navigation', 'utility-pro' ) .'</a></li>' . "\n";
+		echo '  <li><a href="#genwpacc-genesis-content" class="screen-reader-shortcut">'. __( 'Skip to content', 'utility-pro' ) .'</a></li>' . "\n";
 
 	if ( $sidebar )
-		echo '  <li><a href="#genwpacc-sidebar-primary" class="screen-reader-shortcut">'. __( 'Jump to primary sidebar', 'utility-pro' ) .'</a></li>' . "\n";
+		echo '  <li><a href="#genwpacc-sidebar-primary" class="screen-reader-shortcut">'. __( 'Skip to primary sidebar', 'utility-pro' ) .'</a></li>' . "\n";
 
 	if ( $footer )
-		echo '  <li><a href="#genwpacc-genesis-footer-widgets" class="screen-reader-shortcut">'. __( 'Jump to footer', 'utility-pro' ) .'</a></li>' . "\n";
+		echo '  <li><a href="#genwpacc-genesis-footer-widgets" class="screen-reader-shortcut">'. __( 'Skip to footer', 'utility-pro' ) .'</a></li>' . "\n";
 
 	echo '</ul>' . "\n";
 
