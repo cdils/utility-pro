@@ -15,57 +15,37 @@ add_action ( 'genesis_before_header', 'utility_pro_skip_links', 5 );
  */
 function utility_pro_skip_links() {
 
-    $site_layout = genesis_site_layout();
-
-	// set defaults
-	$nav = false;
-	$nav2 = false;
-    $sidebar = false;
-    $sidebar_alt = false;
-	$footer_widget = false;
-
-   	//  navigation?
-   	if ( genesis_get_option( 'menu-primary' ) == '1' ) $nav = true;
-	if ( genesis_get_option( 'menu-secondary' ) == '1' ) $nav2 = true;
-
-   	// sidebar?
-    if ( $site_layout == 'sidebar-content' || $site_layout == 'content-sidebar' )  $sidebar = true;
-
-	// search widget?
-
-    // footer widgets?
-    if ( current_theme_supports( 'genesis-footer-widgets' ) == '1' ) {
-    	$footer_widgets = get_theme_support( 'genesis-footer-widgets' );
-    	if ( isset( $footer_widgets[0] ) && is_numeric( $footer_widgets[0] ) )
-    		$footer = true;
-    }
-
     // Call function to add IDs to the markup
 	utility_skiplinks_markup();
 
     // write HTML, skiplinks in a list with a heading
-
-   	?> <!-- skiplinks --><?php
-
     echo '<h2 class="screen-reader-text">'. __( 'Skip links', 'utility-pro' ) .'</h2>' . "\n";
 
-	echo '<ul class="wpacc-genesis-skip-link">' . "\n";
+		echo '<ul class="wpacc-genesis-skip-link">' . "\n";
 
-    if ( $nav )
-    	echo '  <li><a href="#genwpacc-genesis-nav" class="screen-reader-shortcut">'. __( 'Jump to main navigation', 'utility-pro' ) .'</a></li>' . "\n";
+	    if ( '1' == genesis_get_option( 'menu-primary' ) ){
+	    	echo '  <li><a href="#genwpacc-genesis-nav" class="screen-reader-shortcut">'. __( 'Jump to main navigation', 'utility-pro' ) .'</a></li>' . "\n";
+	    }
 
-	if ( $nav2 )
-		echo '  <li><a href="#genwpacc-genesis-nav" class="screen-reader-shortcut">'. __( 'Jump to sub navigation', 'utility-pro' ) .'</a></li>' . "\n";
-		echo '  <li><a href="#genwpacc-genesis-content" class="screen-reader-shortcut">'. __( 'Jump to content', 'utility-pro' ) .'</a></li>' . "\n";
+		if ( '1' == genesis_get_option( 'menu-secondary' ) ) {
+			echo '  <li><a href="#genwpacc-genesis-nav" class="screen-reader-shortcut">'. __( 'Jump to sub navigation', 'utility-pro' ) .'</a></li>' . "\n";
+			echo '  <li><a href="#genwpacc-genesis-content" class="screen-reader-shortcut">'. __( 'Jump to content', 'utility-pro' ) .'</a></li>' . "\n";
+		}
 
-	if ( $sidebar )
-		echo '  <li><a href="#genwpacc-sidebar-primary" class="screen-reader-shortcut">'. __( 'Jump to primary sidebar', 'utility-pro' ) .'</a></li>' . "\n";
+		if ( genesis_site_layout('sidebar-content') || genesis_site_layout('content-sidebar') ) {
+			echo '  <li><a href="#genwpacc-sidebar-primary" class="screen-reader-shortcut">'. __( 'Jump to primary sidebar', 'utility-pro' ) .'</a></li>' . "\n";
+		}
 
-	if ( $footer )
-		echo '  <li><a href="#genwpacc-genesis-footer-widgets" class="screen-reader-shortcut">'. __( 'Jump to footer', 'utility-pro' ) .'</a></li>' . "\n";
+		if ( '1' == current_theme_supports( 'genesis-footer-widgets' ) ) {
 
-	echo '</ul>' . "\n";
+    		$footer_widgets = get_theme_support( 'genesis-footer-widgets' );
 
+    		if ( isset( $footer_widgets[0] ) && is_numeric( $footer_widgets[0] ) ) {
+				echo '  <li><a href="#genwpacc-genesis-footer-widgets" class="screen-reader-shortcut">'. __( 'Jump to footer', 'utility-pro' ) .'</a></li>' . "\n";
+			}
+		}
+
+		echo '</ul>' . "\n";
 }
 
 /**
@@ -74,7 +54,7 @@ function utility_pro_skip_links() {
  * @link https://gist.github.com/salcode/7164690
  * @link genesis_markup() http://docs.garyjones.co.uk/genesis/2.0.0/source-function-genesis_parse_attr.html#77-100
  * @return array
- * @since x.x.x
+ * @since 1.0.0
  */
 function utility_skiplinks_markup() {
 	if ( ! function_exists( 'genesis_markup' ) ) {

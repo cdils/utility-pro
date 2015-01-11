@@ -93,7 +93,7 @@ function utility_pro_setup() {
 	if ( is_admin() ) {
 		// Plugins
 		include_once( get_stylesheet_directory() . '/includes/vendors/tgm-plugin-activation/suggested-plugins.php' );
-		// Theme Settings
+		// Theme License
 		include_once( get_stylesheet_directory() . '/helpers/theme-settings/theme-license.php' );
 	}
 }

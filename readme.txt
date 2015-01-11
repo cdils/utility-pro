@@ -38,6 +38,7 @@ PROPS
 A huge thank you to the following folks for providing translation files for this theme:
 
 * Santiago Barrionuevo (es_ES, es_AR)
+* Beth van Koetsveld (es_VE)
 * Rian Reitveld (nl_NL)
 * Vajrasar Goswami (hi_IN)
 * Rosie Rodrigues (pt_BR)

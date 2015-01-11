@@ -94,10 +94,10 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,su
 --------------------------------------------- */
 
 *,
-input[type='search'] {
+input[type="search"] {
     -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 /* Float Clearing
@@ -134,7 +134,7 @@ input[type='search'] {
 .site-inner:after,
 .wrap:after {
     clear: both;
-    content: ' ';
+    content: " ";
     display: table;
 }
 
@@ -154,7 +154,7 @@ Color Options
 .utility-pro-purple .call-to-action-bar .button,
 .utility-pro-purple .button,
 .utility-pro-purple .entry-content a.button,
-.utility-pro-purple input[type='submit'] {
+.utility-pro-purple input[type="submit"] {
     background: #339;
     border: 1px solid #fff;
     color: #fff;
@@ -163,7 +163,7 @@ Color Options
 .utility-pro-purple .call-to-action-bar .button:hover,
 .utility-pro-purple .button:hover,
 .utility-pro-purple .entry-content a.button:hover,
-.utility-pro-purple input[type='submit']:hover {
+.utility-pro-purple input[type="submit"]:hover {
     background: #fff;
     border: 1px solid #339;
     color: #339;
@@ -187,7 +187,7 @@ Color Options
 .utility-pro-green .call-to-action-bar .button,
 .utility-pro-green .button,
 .utility-pro-green a.button,
-.utility-pro-green input[type='submit'] {
+.utility-pro-green input[type="submit"] {
     background: #107952;
     border: 1px solid #fff;
     color: #fff;
@@ -196,7 +196,7 @@ Color Options
 .utility-pro-green .call-to-action-bar .button:hover,
 .utility-pro-green .button:hover,
 .utility-pro-green .entry-content a.button:hover,
-.utility-pro-green input[type='submit']:hover {
+.utility-pro-green input[type="submit"]:hover {
     background: #fff;
     border: 1px solid #107952;
     color: #107952;
@@ -220,7 +220,7 @@ Color Options
 .utility-pro-red .call-to-action-bar .button,
 .utility-pro-red .button,
 .utility-pro-red a.button,
-.utility-pro-red input[type='submit'] {
+.utility-pro-red input[type="submit"] {
     background: #d3131b;
     border: 1px solid #fff;
     color: #fff;
@@ -229,7 +229,7 @@ Color Options
 .utility-pro-red .call-to-action-bar .button:hover,
 .utility-pro-red .button:hover,
 .utility-pro-red .entry-content a.button:hover,
-.utility-pro-red input[type='submit']:hover {
+.utility-pro-red input[type="submit"]:hover {
     background: #fff;
     border: 1px solid #d3131b;
     color: #d3131b;
@@ -251,7 +251,7 @@ Defaults
 body {
     background: #fff;
     color: #666;
-    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 1.625;
@@ -260,16 +260,16 @@ body {
 a,
 button,
 input:focus,
-input[type='button'],
-input[type='reset'],
-input[type='submit'],
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
 textarea:focus,
 .gallery img {
     -webkit-transition: all 0.1s ease-in-out;
-        -moz-transition: all 0.1s ease-in-out;
-        -ms-transition: all 0.1s ease-in-out;
-         -o-transition: all 0.1s ease-in-out;
-            transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
 }
 
 ::-moz-selection {
@@ -320,9 +320,9 @@ blockquote {
 }
 
 blockquote::before {
-    content: '\201C';
+    content: "\201C";
     display: block;
-    font-family: 'Enriqueta', serif;
+    font-family: Enriqueta, serif;
     font-size: 120px;
     height: 0;
     right: -55px;
@@ -353,7 +353,7 @@ h4,
 h5,
 h6 {
     color: #333;
-    font-family: 'Enriqueta', serif;
+    font-family: Enriqueta, serif;
     font-weight: 700;
     line-height: 1.2;
     margin: 0;
@@ -371,7 +371,7 @@ h2 {
 }
 
 h3 {
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 24px;
 }
 
@@ -427,7 +427,7 @@ textarea {
 
 .button,
 .entry-content a.button,
-input[type='submit'] {
+input[type="submit"] {
     background: #0964dd;
     border: 1px solid #fff;
     color: #fff;
@@ -441,9 +441,9 @@ input[type='submit'] {
 }
 
 button:focus,
-input:focus[type='button'],
-input:focus[type='reset'],
-input:focus[type='submit'],
+input:focus[type="button"],
+input:focus[type="reset"],
+input:focus[type="submit"],
 .button:focus,
 .entry-content a.button:focus {
     background-color: #fff;
@@ -456,14 +456,14 @@ input:focus[type='submit'],
 
 .button:hover,
 .entry-content a.button:hover,
-input:hover[type='submit'] {
+input:hover[type="submit"] {
     background-color: #fff;
     border: 1px solid #0964dd;
     color: #0964dd;
 }
 
-input[type='search']::-webkit-search-cancel-button,
-input[type='search']::-webkit-search-results-button {
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button {
     display: none;
 }
 
@@ -477,9 +477,9 @@ input[type='search']::-webkit-search-results-button {
 	width: 300px;
 }
 
-.search-form input[type='submit'] {
+.search-form input[type="submit"] {
     background-color: transparent;
-    background: url("images/icon-search.png") no-repeat 14px 20px #fff;
+    background: url(images/icon-search.png) no-repeat 14px 20px #fff;
     border: 1px solid #ddd;
     box-shadow: none;
     height: 53px;
@@ -492,10 +492,10 @@ input[type='search']::-webkit-search-results-button {
     vertical-align: top;
     width: 45px;
     -webkit-transition: none;
-       -moz-transition: none;
-        -ms-transition: none;
-         -o-transition: none;
-            transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+    transition: none;
 }
 
 .search-form input[type="submit"]:focus,
@@ -864,6 +864,7 @@ Widgets
     background-color: rgb(12, 108, 187);
     background-color: rgba(12, 108, 187, 0.9);
     border-bottom: 1px solid #ddd;
+    color: #fff;
     font-size: 14px;
     margin: 0 auto;
     padding: 10px 0;
@@ -886,7 +887,7 @@ Widgets
     margin: 0;
 }
 
-.utility-bar .search-form input[type='search'] {
+.utility-bar .search-form input[type="search"] {
     margin: 0;
     padding: 10px 0;
 }
@@ -1007,7 +1008,7 @@ li a .fa {
     margin-bottom: 16px;
 }
 
-.enews-widget input[type='submit'] {
+.enews-widget input[type="submit"] {
     margin: 0;
     width: 100%;
 }
@@ -1024,8 +1025,8 @@ li a .fa {
 /* Gravity Forms
 --------------------------------------------- */
 
-div.gform_wrapper input[type='email'],
-div.gform_wrapper input[type='text'],
+div.gform_wrapper input[type="email"],
+div.gform_wrapper input[type="text"],
 div.gform_wrapper textarea,
 div.gform_wrapper .ginput_complex label {
     padding: 16px;
@@ -1094,7 +1095,7 @@ Site Header
 .site-title a:hover {
     border: 0;
     color: #333;
-    font-family: 'Enriqueta', sans-serif;
+    font-family: Enriqueta, sans-serif;
     font-size: 28px;
 }
 
@@ -1372,7 +1373,7 @@ Content Area
 }
 
 .entry-comments-link::before {
-    content: '\2014';
+    content: "\2014";
     margin: 0 2px 0 6px;
 }
 
@@ -1798,10 +1799,10 @@ Media Queries
 	    opacity: 0;
 	    position: absolute;
 	    -webkit-transition: opacity 0.4s ease-in-out;
-	       -moz-transition: opacity 0.4s ease-in-out;
-	        -ms-transition: opacity 0.4s ease-in-out;
-	         -o-transition: opacity 0.4s ease-in-out;
-	            transition: opacity 0.4s ease-in-out;
+	    -moz-transition: opacity 0.4s ease-in-out;
+	    -ms-transition: opacity 0.4s ease-in-out;
+	    -o-transition: opacity 0.4s ease-in-out;
+	    transition: opacity 0.4s ease-in-out;
 	    width: 200px;
 	    z-index: 99;
 	}
