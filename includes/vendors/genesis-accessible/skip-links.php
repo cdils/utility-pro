@@ -23,11 +23,11 @@ function utility_pro_skip_links() {
 
 		echo '<ul class="wpacc-genesis-skip-link">' . "\n";
 
-	    if ( '1' == genesis_get_option( 'menu-primary' ) ){
+	    if ( genesis_get_option( 'menu-primary' ) ){
 	    	echo '  <li><a href="#genwpacc-genesis-nav" class="screen-reader-shortcut">'. __( 'Jump to main navigation', 'utility-pro' ) .'</a></li>' . "\n";
 	    }
 
-		if ( '1' == genesis_get_option( 'menu-secondary' ) ) {
+		if ( 1 == genesis_get_option( 'menu-secondary' ) ) {
 			echo '  <li><a href="#genwpacc-genesis-nav" class="screen-reader-shortcut">'. __( 'Jump to sub navigation', 'utility-pro' ) .'</a></li>' . "\n";
 			echo '  <li><a href="#genwpacc-genesis-content" class="screen-reader-shortcut">'. __( 'Jump to content', 'utility-pro' ) .'</a></li>' . "\n";
 		}
@@ -36,7 +36,7 @@ function utility_pro_skip_links() {
 			echo '  <li><a href="#genwpacc-sidebar-primary" class="screen-reader-shortcut">'. __( 'Jump to primary sidebar', 'utility-pro' ) .'</a></li>' . "\n";
 		}
 
-		if ( '1' == current_theme_supports( 'genesis-footer-widgets' ) ) {
+		if ( 1 == current_theme_supports( 'genesis-footer-widgets' ) ) {
 
     		$footer_widgets = get_theme_support( 'genesis-footer-widgets' );
 

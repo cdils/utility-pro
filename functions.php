@@ -5,7 +5,7 @@
  * @package      Utility Pro
  * @link         http://store.carriedils.com/utility-pro
  * @author       Carrie Dils
- * @copyright    Copyright (c) 2014, Carrie Dils
+ * @copyright    Copyright (c) 2015, Carrie Dils
  * @license      GPL-2.0+
  */
 
