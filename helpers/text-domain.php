@@ -3,9 +3,10 @@
 /**
  * This file loads the child theme text domain.
  *
+ * @package Utility_Pro
  * @author Carrie Dils
- * @package Utility Pro
- * @subpackage Customizations
+ * @license GPL-2.0+
+ *
  */
 
 add_action( 'after_setup_theme', 'utility_pro_i18n' );

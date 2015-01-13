@@ -22,9 +22,21 @@ module.exports = function(grunt) {
 			theme: {
 				options: {
 					domainPath: '/languages',
-					type: 'wp-theme'
+					type: 'wp-theme',
+		            exclude: [
+		                'includes/.*'
+		            ]
 				}
 			}
+		},
+		/**
+		 * colorguard
+		 */
+		colorguard: {
+		    options: {},
+		    files: {
+		    	src: ['style.css'],
+		    },
 		},
 		/**
 		 * CSSJanus

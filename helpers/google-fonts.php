@@ -3,9 +3,10 @@
 /**
  * This file contains elements for theme internationalization.
  *
+ * @package Utility_Pro
  * @author Carrie Dils
- * @package Utility Pro
- * @subpackage Customizations
+ * @license GPL-2.0+
+ *
  */
 
 add_action( 'wp_enqueue_scripts', 'utility_pro_enqueue_fonts' );

@@ -2,15 +2,18 @@
 /**
  * Utility Pro.
  *
- * @package      Utility Pro
- * @link         http://store.carriedils.com/utility-pro
+ * @package      Utility_Pro
+ * @link         http://www.carriedils.com/utility-pro
  * @author       Carrie Dils
  * @copyright    Copyright (c) 2015, Carrie Dils
  * @license      GPL-2.0+
  */
 
-// Load internationalization components
+// Load internationalization components.
+// English users do not need to load the text domain and can comment out or remove
 require( get_stylesheet_directory() . '/helpers/text-domain.php' );
+
+// This file loads the Google fonts used in this theme
 require( get_stylesheet_directory() . '/helpers/google-fonts.php' );
 
 add_action( 'genesis_setup', 'utility_pro_setup', 15 );
@@ -37,27 +40,43 @@ function utility_pro_setup() {
 	// Add support for custom background
 	add_theme_support( 'custom-background', array( 'wp-head-callback' => '__return_false' ) );
 
-	// Add support for additional color style options
-	add_theme_support( 'genesis-style-selector', array(
-		'utility-pro-purple' =>	__( 'Purple', 'utility-pro' ),
-		'utility-pro-green'  =>	__( 'Green', 'utility-pro' ),
-		'utility-pro-red'    =>	__( 'Red', 'utility-pro' ),
-	));
-
-	// Add support for structural wraps
-	add_theme_support( 'genesis-structural-wraps', array(
-		'footer',
-		'footer-widgets',
-		'header',
-		'home-gallery',
-		'nav',
-		'site-inner',
-		'site-tagline',
-		'subnav',
-	) );
-
 	// Add support for three footer widget areas
 	add_theme_support( 'genesis-footer-widgets', 3 );
+
+	// Add support for additional color style options
+	add_theme_support(
+		'genesis-style-selector',
+		array(
+			'utility-pro-purple' =>	__( 'Purple', 'utility-pro' ),
+			'utility-pro-green'  =>	__( 'Green', 'utility-pro' ),
+			'utility-pro-red'    =>	__( 'Red', 'utility-pro' ),
+		)
+	);
+
+	// Add support for structural wraps (all default Genesis wraps unless noted)
+	add_theme_support(
+		'genesis-structural-wraps',
+		array(
+			'footer',
+			'footer-widgets',
+			'footernav', // Custom
+			'menu-footer', // Custom
+			'header',
+			'home-gallery', // Custom
+			'nav',
+			'site-inner',
+			'site-tagline',
+		)
+	);
+
+	// Add support for two navigation areas (theme doesn't use secondary navigation)
+	add_theme_support(
+		'genesis-menus',
+		array(
+			'primary'   => __( 'Primary Navigation Menu', 'utility-pro' ),
+			'footer' 	=> __( 'Footer Navigation Menu', 'utility-pro' ),
+		)
+	);
 
 	// Add custom image sizes
 	add_image_size( 'feature-large', 960, 330, true );
@@ -67,34 +86,39 @@ function utility_pro_setup() {
 
 	// Unregister layouts that use secondary sidebar
 	genesis_unregister_layout( 'content-sidebar-sidebar' );
-	genesis_unregister_layout( 'sidebar-sidebar-content' );
 	genesis_unregister_layout( 'sidebar-content-sidebar' );
+	genesis_unregister_layout( 'sidebar-sidebar-content' );
 
 	// Register the default widget areas
 	utility_pro_register_widget_areas();
 
-	// Reposition the secondary navigation menu
-	remove_action( 'genesis_after_header', 'genesis_do_subnav' );
-	add_action( 'genesis_before_footer', 'genesis_do_subnav', 15 );
-
 	// Add Utility Bar above header
-	add_action( 'genesis_before_header', 'utility_pro_bar' );
+	add_action( 'genesis_before_header', 'utility_pro_add_bar' );
 
 	// Add featured image above posts
 	add_action( 'genesis_before_entry_content', 'utility_pro_featured_image' );
 
-	// Load skip links (accessibility)
-	include_once( get_stylesheet_directory() . '/includes/vendors/genesis-accessible/skip-links.php' );
+	// Add a navigation area above the site footer
+	add_action( 'genesis_before_footer', 'utility_pro_do_footer_nav', 15 );
 
-	// Load form enhancements (accessibility)
-	include_once( get_stylesheet_directory() . '/includes/vendors/genesis-accessible/forms.php' );
+	// Load accesibility components if the Genesis Accessible plugin is not active
+	if ( ! function_exists( 'genwpacc_genesis_init' ) ) {
+
+		// Load skip links (accessibility)
+		include get_stylesheet_directory() . '/helpers/skip-links.php';
+
+		// Load form enhancements (accessibility)
+		include get_stylesheet_directory() . '/helpers/forms.php';
+	}
 
 	// Load files in admin
 	if ( is_admin() ) {
-		// Plugins
-		include_once( get_stylesheet_directory() . '/includes/vendors/tgm-plugin-activation/suggested-plugins.php' );
-		// Theme License
-		include_once( get_stylesheet_directory() . '/helpers/theme-settings/theme-license.php' );
+
+		// Add suggested plugins nag
+		include get_stylesheet_directory() . '/includes/suggested-plugins.php';
+
+		// Add theme license (don't remove, unless you don't want theme support)
+		include get_stylesheet_directory() . '/helpers/theme-settings/theme-updater.php';
 	}
 }
 
@@ -108,46 +132,46 @@ function utility_pro_setup() {
 function utility_pro_register_widget_areas() {
 
 	$widget_areas = array(
-		'utility-bar'    => array(
+		array(
 			'id'          => 'utility-bar',
 			'name'        => __( 'Utility Bar', 'utility-pro' ),
 			'description' => __( 'This is the utility bar across the top of page.', 'utility-pro' ),
 		),
-		'home-welcome'   => array(
+		array(
 			'id'          => 'utility-home-welcome',
 			'name'        => __( 'Home Welcome', 'utility-pro' ),
 			'description' => __( 'This is the welcome section at the top of the home page.', 'utility-pro' ),
 		),
-		'home-gallery-1' => array(
+		array(
 			'id'          => 'utility-home-gallery-1',
 			'name'        => sprintf( _x( 'Home Gallery %d', 'Group of Home Gallery widget areas', 'utility-pro' ), 1 ),
 			'description' => sprintf( _x( 'Home Gallery %d widget area on home page.', 'Description of widget area', 'utility-pro' ), 1 ),
 		),
-		'home-gallery-2' => array(
+		array(
 			'id'          => 'utility-home-gallery-2',
 			'name'        => sprintf( _x( 'Home Gallery %d', 'Group of Home Gallery widget areas', 'utility-pro' ), 2 ),
 			'description' => sprintf( _x( 'Home Gallery %d widget area on home page.', 'Description of widget area', 'utility-pro' ), 2 ),
 		),
-		'home-gallery-3' => array(
+		array(
 			'id'          => 'utility-home-gallery-3',
 			'name'        => sprintf( _x( 'Home Gallery %d', 'Group of Home Gallery widget areas', 'utility-pro' ), 3 ),
 			'description' => sprintf( _x( 'Home Gallery %d widget area on home page.', 'Description of widget area', 'utility-pro' ), 3 ),
 		),
-		'home-gallery-4' => array(
+		array(
 			'id'          => 'utility-home-gallery-4',
 			'name'        => sprintf( _x( 'Home Gallery %d', 'Group of Home Gallery widget areas', 'utility-pro' ), 4 ),
 			'description' => sprintf( _x( 'Home Gallery %d widget area on home page.', 'Description of widget area', 'utility-pro' ), 4 ),
 		),
-		'call-to-action' => array(
+		array(
 			'id'          => 'utility-call-to-action',
 			'name'        => __( 'Call to Action', 'utility-pro' ),
-			'description' => __( 'This is the CTA section at the bottom of the home page.', 'utility-pro' ),
+			'description' => __( 'This is the Call to Action section on the home page.', 'utility-pro' ),
 		),
 	);
 
 	$widget_areas = apply_filters( 'utility_pro_default_widget_areas', $widget_areas );
 
-	foreach( $widget_areas as $widget_area ) {
+	foreach ( $widget_areas as $widget_area ) {
 		genesis_register_sidebar( $widget_area );
 	}
 }
@@ -163,8 +187,10 @@ function utility_pro_enqueue_assets() {
     // Load mobile responsive menu
 	wp_enqueue_script( 'utility-pro-responsive-menu', get_stylesheet_directory_uri() . '/helpers/js/responsive-menu.js', array( 'jquery' ), '1.0.0', true );
 
-	// Load script for keyboard navigation on dropdown menus (accessibility)
-	wp_enqueue_script( 'genwpacc-dropdown',  get_stylesheet_directory_uri() . '/includes/vendors/genesis-accessible/genwpacc-dropdown.js', array( 'jquery' ), false, true );
+	// Load keyboard navigation script only if Genesis Accessible plugin is not active
+	if ( ! function_exists( 'genwpacc_dropdown_scripts' ) ) {
+		wp_enqueue_script( 'genwpacc-dropdown',  get_stylesheet_directory_uri() . '/helpers/js/genwpacc-dropdown.js', array( 'jquery' ), false, true );
+	}
 
     // Replace style.css with style-rtl.css for RTL languages
     wp_style_add_data( 'utility-pro', 'rtl', 'replace' );
@@ -174,30 +200,30 @@ function utility_pro_enqueue_assets() {
 		return;
 	}
 
-	wp_enqueue_script( 'utility-pro-backstretch', get_stylesheet_directory_uri() . '/helpers/js/backstretch.js', array( 'jquery' ), '2.0.1', true );
+	wp_enqueue_script( 'utility-pro-backstretch', get_stylesheet_directory_uri() . '/helpers/js/backstretch.min.js', array( 'jquery' ), '2.0.1', true );
 	wp_enqueue_script( 'utility-pro-backstretch-args', get_stylesheet_directory_uri() . '/helpers/js/backstretch.args.js', array( 'utility-pro-backstretch' ), CHILD_THEME_VERSION, true );
 
 	wp_localize_script( 'utility-pro-backstretch-args', 'utilityL10n', array( 'src' => get_background_image() ) );
 }
 
 /**
- * Add utility bar above header.
+ * Add Utility Bar above header.
  *
  * @since 1.0.0
  */
-function utility_pro_bar() {
+function utility_pro_add_bar() {
 
 	genesis_widget_area( 'utility-bar', array(
 		'before' => '<div class="utility-bar"><div class="wrap">',
 		'after'  => '</div></div>',
 	) );
+
 }
 
 /**
  * Add featured image above single posts.
  *
- * @return null Return early if not a single post or post does not have thumbnail.
- *
+ * @return null Return early if not a single post there is no thumbnail.
  * @since  1.0.0
  */
 function utility_pro_featured_image() {
@@ -206,24 +232,56 @@ function utility_pro_featured_image() {
 		return;
 	}
 
-	global $post;
-
 	echo '<div class="featured-image">';
-		echo get_the_post_thumbnail( $post->ID, 'feature-large' );
+		echo get_the_post_thumbnail( get_the_ID(), 'feature-large' );
 	echo '</div>';
 }
 
-add_filter( 'wp_nav_menu_args', 'utility_pro_secondary_menu_args' );
 /**
- * Reduce the secondary navigation menu to one level depth.
+ * Outputs Footer Navigation Menu
+ *
+ * @return string Navigation menu markup.
+ * @since  1.0.0
+ */
+function utility_pro_do_footer_nav() {
+
+	genesis_nav_menu(
+		array(
+			'menu_class'     => 'menu genesis-nav-menu menu-footer',
+			'theme_location' => 'footer',
+		)
+	);
+}
+
+add_filter( 'genesis_attr_nav-footer', 'utility_pro_markup_nav_footer' );
+/**
+ * Add schema markup to Footer Navigation Menu
+ *
+ * @param  array $attributes Existing attributes.
+ * @return array Amended attributes.
+ * @see  genesis_attr() in Genesis Framework
+ * @since  1.0.0
+ */
+function utility_pro_markup_nav_footer( $attributes ) {
+
+	$attributes['role']      = 'navigation';
+	$attributes['itemscope'] = 'itemscope';
+	$attributes['itemtype']  = 'http://schema.org/SiteNavigationElement';
+
+	return $attributes;
+}
+
+add_filter( 'wp_nav_menu_args', 'utility_pro_footer_menu_args' );
+/**
+ * Reduce the footer navigation menu to one level depth.
  *
  * @param  array $args
  * @return array
  * @since  1.0.0
  */
-function utility_pro_secondary_menu_args( $args ) {
+function utility_pro_footer_menu_args( $args ) {
 
-	if( 'secondary' != $args['theme_location'] ) {
+	if( 'footer' != $args['theme_location'] ) {
 		return $args;
 	}
 
@@ -231,67 +289,28 @@ function utility_pro_secondary_menu_args( $args ) {
 	return $args;
 }
 
-// Enable shortcodes in widgets
-add_filter( 'widget_text', 'do_shortcode' );
-
 add_filter( 'genesis_footer_creds_text', 'utility_pro_footer_creds' );
 /**
  * Change the footer text.
  *
  * @return null Return early if not a single post or post does not have thumbnail.
- *
  * @since  1.0.0
  */
 function utility_pro_footer_creds( $creds ) {
 
-	return '[footer_copyright first="2015"] &middot; <a href="https://store.carriedils.com/utility-pro">Utility Pro</a> &middot; Powered by the <a href="http://www.carriedils.com/go/genesis">Genesis Framework</a> and <a href="http://wordpress.org">WordPress</a>.';
+	return '[footer_copyright first="2015"] &middot; <a href="https://store.carriedils.com/downloads/utility-pro/?utm_source=Utility%20Pro%20Footer%20Credits&utm_medium=Distributed%20Theme&utm_campaign=Utility%20Pro%20Theme">Utility Pro</a>.';
 }
 
+add_filter( 'genesis_author_box_gravatar_size', 'utility_pro_author_box_gravatar_size' );
 /**
- * Customize the Gravatar size in the author box
+ * Customize the Gravatar size in the author box.
  *
+ * @return integer Pixel size of gravatar.
  * @since 1.0.0
  */
-add_filter( 'genesis_author_box_gravatar_size', 'utility_pro_author_box_gravatar' );
-function utility_pro_author_box_gravatar( $size ) {
-	return '96';
+function utility_pro_author_box_gravatar_size( $size ) {
+	return 96;
 }
 
-/**
- * Add body class to URL string.
- *
- * Display availabile theme color options via the URL.
- *
- * @todo  remove this from final version - demo only
- */
-add_filter( 'body_class', 'string_body_class' );
-function string_body_class( $classes ) {
-
-	if ( isset( $_GET['color'] ) ) :
-		$classes[] = 'utility-pro-' . sanitize_html_class( $_GET['color'] );
-	endif;
-
-	return $classes;
-}
-
-/**
- * Generate sitemap.
- *
- * This sitemap is used in conjunction with grunt-exec and grunt-unccss.
- *
- * @todo remove this from final version - dev only
- */
-add_action( 'template_redirect', 'show_sitemap' );
-function show_sitemap() {
-	if ( isset( $_GET['show_sitemap'] ) ) {
-
-		$the_query = new WP_Query( array( 'post_type' => 'any', 'posts_per_page' => '-1', 'post_status' => 'publish' ) );
-		$urls = array();
-
-		while ( $the_query->have_posts() ) {
-			$the_query->the_post();
-			$urls[] = get_permalink();
-		}
-		die( json_encode($urls) );
-	}
-}
+// Enable shortcodes in widgets
+add_filter( 'widget_text', 'do_shortcode' );

@@ -13,7 +13,6 @@
 
 /* Table of Contents
 
-	- Noflip (RTL)
 	- HTML5 Reset
 		- Baseline Normalize
 		- Box Sizing
@@ -71,15 +70,6 @@
 		- print
 */
 
-
-/* @noflip
---------------------------------------------- */
-
-body.rtl {
-  direction: ltr;
-  unicode-bidi: embed;
-}
-
 /*
 HTML5 Reset
 ---------------------------------------------------------------------------------------------------- */
@@ -109,7 +99,7 @@ input[type="search"] {
 .entry-content:before,
 .footer-widgets:before,
 .nav-primary:before,
-.nav-secondary:before,
+.nav-footer:before,
 .pagination:before,
 .site-container:before,
 .site-footer:before,
@@ -126,7 +116,7 @@ input[type="search"] {
 .entry-content:after,
 .footer-widgets:after,
 .nav-primary:after,
-.nav-secondary:after,
+.nav-footer:after,
 .pagination:after,
 .site-container:after,
 .site-footer:after,
@@ -140,6 +130,7 @@ input[type="search"] {
 
 /*
 Color Options
+If you've chosen your favorite color scheme, you can delete the others
 ---------------------------------------------------------------------------------------------------- */
 
 /* Purple
@@ -479,10 +470,10 @@ input[type="search"]::-webkit-search-results-button {
 
 .search-form input[type="submit"] {
     background-color: transparent;
-    background: url(images/icon-search.png) no-repeat 14px 20px #fff;
+    background: url(images/icon-search-rtl.png) no-repeat 25% 53% #fff;
     border: 1px solid #ddd;
     box-shadow: none;
-    height: 53px;
+    height: 54px;
     margin: 0;
     overflow: hidden;
     padding: 0 0 0 42px;
@@ -490,7 +481,7 @@ input[type="search"]::-webkit-search-results-button {
     left: 0;
     text-indent: -9999px;
     vertical-align: top;
-    width: 45px;
+    width: 53px;
     -webkit-transition: none;
     -moz-transition: none;
     -ms-transition: none;
@@ -501,8 +492,9 @@ input[type="search"]::-webkit-search-results-button {
 .search-form input[type="submit"]:focus,
 .search-form input[type="submit"]:hover {
     background-color: #999;
-	background-position: 1px 20px;
-	text-indent: -9999px;
+	background-position: 80% 53%;
+    text-indent: -9999px;
+
 }
 
 /* Gallery
@@ -539,10 +531,11 @@ input[type="search"]::-webkit-search-results-button {
 }
 
 .gallery-columns-7 .gallery-item {
-width: 14.2857%;
+    width: 14.2857%;
 }
-	.gallery-columns-8 .gallery-item {
-width: 12.5%;
+
+.gallery-columns-8 .gallery-item {
+    width: 12.5%;
 }
 
 .gallery-columns-9 .gallery-item {
@@ -703,10 +696,9 @@ Structure and Layout
 }
 
 /* Column Classes
-	Link: http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css
+Link: http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css
 --------------------------------------------- */
 
-/* Link: http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css */
 .five-sixths,
 .four-sixths,
 .one-fourth,
@@ -1115,9 +1107,9 @@ Site Header
 
 .header-image .site-description,
 .header-image .site-title {
-    display: block;
-    margin: 0;
-    text-indent: -9999px;
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
 }
 
 /* Logo, hide text */
@@ -1129,13 +1121,27 @@ Site Header
 	width: 100%;
 }
 
-/* Header RightWidget Area
+/* Header Right Widget Area
 --------------------------------------------- */
 
 .site-header .widget-area {
   float: left;
   text-align: center;
   width: 100%;
+}
+
+.header-widget-area .genesis-nav-menu a {
+    color: #000;
+}
+
+.header-widget-area .genesis-nav-menu a:hover,
+.header-widget-area .genesis-nav-menu .current-menu-item > a,
+.header-widget-area .genesis-nav-menu .sub-menu .current-menu-item > a:hover {
+    color: #666;
+}
+
+.header-widget-area .genesis-nav-menu .sub-menu a {
+    background-color: #eee;
 }
 
 /*
@@ -1246,7 +1252,7 @@ button.sub-menu-toggle {
 	content: "\2261";
 }
 
-.menu-toggle.activated:before {
+.menu-toggle.menu-toggle-activated:before {
 	content: "x";
 }
 
@@ -1254,7 +1260,7 @@ button.sub-menu-toggle {
 	content: "+";
 }
 
-.sub-menu-toggle.activated:before {
+.sub-menu-toggle.menu-toggle-activated:before {
 	content: "-";
 }
 
@@ -1269,24 +1275,23 @@ button.sub-menu-toggle {
     margin-top: -55px;
 }
 
-/* Primary & Secondary Navigation
+/* Primary & Footer Navigation
 --------------------------------------------- */
 
 .nav-primary,
-.nav-secondary {
+.nav-footer {
     background-color: #111;
     text-align: center;
 }
 
 .nav-primary a:hover,
 .nav-primary .current-menu-item > a,
-.nav-secondary a:hover,
-.nav-secondary .current-menu-item > a {
+.nav-footer a:hover,
+.nav-footer .current-menu-item > a {
     color: #999;
 }
 
-.nav-primary .sub-menu a:hover,
-.nav-secondary .sub-menu a:hover {
+.nav-primary .sub-menu a:hover {
     color: #999;
 }
 
@@ -1592,30 +1597,29 @@ Accessibility Extras - Taken from the Leiden theme & Genesis Accessible plugin (
 .screen-reader-text,
 .screen-reader-text span,
 .search-form label {
+    clip: rect(0, 0, 0, 0);
+    height: 0;
     position: absolute;
-    right: -1000em;
-    top: -1000em;
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
+    width: 0;
 }
 
 .screen-reader-shortcut {
+    clip: rect(0, 0, 0, 0);
+    right: 10px;
     position: absolute;
-    top: -1000em;
+    top: 10px;
 }
 
 .screen-reader-shortcut:focus {
-    right: 10px;
-    top: 10px;
-    height: auto;
-    width: auto;
-    display: block;
-    padding: 15px 23px 14px;
     background: #fff;
-    z-index: 100000;
+    clip: auto;
+    display: block;
+    height: auto;
     line-height: normal;
+    padding: 15px 23px 14px;
     text-decoration: none;
+    width: auto;
+    z-index: 100000;
 }
 
 .wpacc-genesis-skip-link li,
@@ -1739,7 +1743,7 @@ Media Queries
 	.header-widget-area .search-form {
 		float: left;
 		margin-top: 0;
-		width: 30%;
+		width: 40%;
 	}
 
 	.header-image .site-title > a {
@@ -1845,7 +1849,7 @@ Media Queries
 	}
 
 	.call-to-action-bar .enews input[type="email"] {
-		height: 56px;
+		height: 57px;
 		margin-left: 3px;
 		position: relative;
 		top: -2px;
@@ -1874,9 +1878,9 @@ Media Queries
 
     * {
         color: #000;
-        text-shadow: none;
         background: transparent;
         box-shadow: none;
+        text-shadow: none;
     }
 
     a,
@@ -1884,18 +1888,28 @@ Media Queries
         text-decoration: underline;
     }
 
-    pre,
-    blockquote {
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after,
+    .site-title > a:after {
+        content: "";
+    }
+
+    blockquote,
+    pre {
         border: 1px solid #999;
         page-break-inside: avoid;
     }
 
-    thead {
-        display: table-header-group;
-    }
-
-    tr,
-    img {
+    img,
+    tr {
         page-break-inside: avoid;
     }
 
@@ -1903,28 +1917,83 @@ Media Queries
         max-width: 100%;
     }
 
-    p,
-    h2,
-    h3 {
+    p {
         orphans: 3;
         widows: 3;
     }
 
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
-
-    nav {
-        display: none;
-    }
-
-    .sidebar {
+    .content,
+    .content-sidebar {
         width: 100%;
     }
 
-    .archive-pagination {
+    button,
+    input,
+    nav,
+    select,
+    textarea,
+    .archive-pagination,
+    .breadcrumb,
+    .comment-edit-link,
+    .comment-form,
+    .comment-list .reply a,
+    .edit-link,
+    .entry-comments-link,
+    .entry-footer,
+    .genesis-box,
+    .header-widget-area,
+    .home-top,
+    .nav-primary,
+    .nav-footer,
+    .post-edit-link,
+    .sidebar,
+    #reply-title,
+    .utility-bar {
         display: none;
+    }
+
+    .title-area {
+        text-align: center;
+        width: 100%;
+    }
+
+    .site-title > a {
+        margin: 0;
+        text-indent: 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        orphans: 3;
+        page-break-after: avoid;
+        page-break-inside: avoid;
+        widows: 3;
+    }
+
+
+    img {
+        page-break-after: avoid;
+        page-break-inside: avoid;
+    }
+
+    blockquote,
+    pre,
+    table {
+        page-break-inside: avoid;
+    }
+
+    dl,
+    ol,
+    ul {
+        page-break-before: avoid;
+    }
+
+    thead {
+        display: table-header-group;
     }
 
     .table td,
@@ -1944,4 +2013,5 @@ Media Queries
     .table-bordered td {
         border: 1px solid #ddd;
     }
+
 }

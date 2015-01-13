@@ -1,0 +1,456 @@
+# Copyright (C) 2014 Carrie Dils
+# This file is distributed under the GPL-2.0+.
+msgid ""
+msgstr ""
+"Project-Id-Version: Utility Pro 1.0.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
+"POT-Creation-Date: 2014-12-29 20:33:43+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2014-12-31 16:08+0200\n"
+"Last-Translator: Nir Rosenbaum <nir@website-traffic.co.il>\n"
+"Language-Team: \n"
+"X-Generator: Poedit 1.7.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: he_IL\n"
+
+#: functions.php:42
+msgid "Purple"
+msgstr "סגול"
+
+#: functions.php:43
+msgid "Green"
+msgstr "ירוק"
+
+#: functions.php:44
+msgid "Red"
+msgstr "אדום"
+
+#: functions.php:111
+msgid "Utility Bar"
+msgstr "סרגל שירותים"
+
+#: functions.php:112
+msgid "This is the the utility bar across the top of page."
+msgstr "זהו סרגל השירותים מעל החלק העליון של העמוד"
+
+#: functions.php:116
+msgid "Home Welcome"
+msgstr "ברוכים הבאים בדף הבית"
+
+#: functions.php:117
+msgid "This is the welcome section at the top of the home page."
+msgstr "זהו החלק של הברוכים הבאים בחלק העליון בדף הבית"
+
+#: functions.php:141
+msgid "Call to Action"
+msgstr "קריאה לפעולה"
+
+#: functions.php:142
+msgid "This is the CTA section at the bottom of the home page."
+msgstr "זהו האזור של הקריאה לפעולה בחלק התחתון של דף הבית"
+
+#: includes/vendors/genesis-accessible/forms.php:25
+msgid "Search this website"
+msgstr "חיפוש באתר"
+
+#: includes/vendors/genesis-accessible/forms.php:27
+msgid "Search"
+msgstr "חיפוש"
+
+#: includes/vendors/genesis-accessible/skip-links.php:52
+msgid "Skip links"
+msgstr "דלג על קישורים"
+
+#: includes/vendors/genesis-accessible/skip-links.php:57
+msgid "Jump to main navigation"
+msgstr "עבור לסרגל הניווט הראשי"
+
+#: includes/vendors/genesis-accessible/skip-links.php:60
+msgid "Jump to search"
+msgstr "עבור לחיפוש"
+
+#: includes/vendors/genesis-accessible/skip-links.php:63
+msgid "Jump to sub navigation"
+msgstr "עבור לסרגל הניווט המשני"
+
+#: includes/vendors/genesis-accessible/skip-links.php:64
+msgid "Jump to content"
+msgstr "עבור אל התוכן"
+
+#: includes/vendors/genesis-accessible/skip-links.php:67
+msgid "Jump to primary sidebar"
+msgstr "עבור אל סרגל הצד הראשי"
+
+#: includes/vendors/genesis-accessible/skip-links.php:70
+msgid "Jump to footer"
+msgstr "עבור אל הפוטר"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:201
+#: includes/vendors/tgm-plugin-activation/suggested-plugins.php:94
+msgid "Install Required Plugins"
+msgstr "התקנת תוספים נחוצים"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:202
+#: includes/vendors/tgm-plugin-activation/suggested-plugins.php:95
+msgid "Install Plugins"
+msgstr "התקנת תוספים"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:203
+#: includes/vendors/tgm-plugin-activation/suggested-plugins.php:96
+msgid "Installing Plugin: %s"
+msgstr "מתקין תוסף: %s"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:204
+msgid "Something went wrong."
+msgstr "משהו השתבש"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:205
+#: includes/vendors/tgm-plugin-activation/suggested-plugins.php:98
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] "תבנית זו דורשת את התוסף הבא: %1$s."
+msgstr[1] "תבנית זו דורשת את התוספים הבאים: %1$s."
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:206
+#: includes/vendors/tgm-plugin-activation/suggested-plugins.php:99
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] "תבנית זו ממליצה על התוסף הבא: %1$s."
+msgstr[1] "תבנית זו ממליצה על התוספים הבאים: %1$s."
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:207
+#: includes/vendors/tgm-plugin-activation/suggested-plugins.php:100
+msgid ""
+"Sorry, but you do not have the correct permissions to install the %s plugin. "
+"Contact the administrator of this site for help on getting the plugin "
+"installed."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to install the %s "
+"plugins. Contact the administrator of this site for help on getting the "
+"plugins installed."
+msgstr[0] ""
+"מצטערים אך אין לך את ההרשאות המתאימות להתקנת תוסף %s. יש לפנות למנהל האתר "
+"להתקנת התוסף."
+msgstr[1] ""
+"מצטערים אך אין לך את ההרשאות המתאימות להתקנת תוספים %s. יש לפנות למנהל האתר "
+"להתקנת התוספים."
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:208
+#: includes/vendors/tgm-plugin-activation/suggested-plugins.php:101
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] "התוסף הנחוץ הבא אינו פעיל כרגע: %1$s."
+msgstr[1] "התוספים הנחוצים הבאים אינם פעילים כרגע: %1$s."
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:209
+#: includes/vendors/tgm-plugin-activation/suggested-plugins.php:102
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] "התוסף המומלץ הבא אינו פעיל כרגע: %1$s."
+msgstr[1] "התוספים המומלצים הבאים אינם פעילים כרגע: %1$s."
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:210
+#: includes/vendors/tgm-plugin-activation/suggested-plugins.php:103
+msgid ""
+"Sorry, but you do not have the correct permissions to activate the %s "
+"plugin. Contact the administrator of this site for help on getting the "
+"plugin activated."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to activate the %s "
+"plugins. Contact the administrator of this site for help on getting the "
+"plugins activated."
+msgstr[0] ""
+"מצטערים אך אין לך את ההרשאות המתאימות על מנת להפעיל את התוסף %s. יש לפנות "
+"למנהל האתר על מנת להפעיל תוסף זה."
+msgstr[1] ""
+"מצטערים אך אין לך את ההרשאות המתאימות על מנת להפעיל את התוספים %s. יש לפנות "
+"למנהל האתר על מנת להפעיל תוספים אלו."
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:211
+#: includes/vendors/tgm-plugin-activation/suggested-plugins.php:104
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] "יש לעדכן תוסף זה לגרסתו האחרונה לתאימות מרבית עם התבנית: %1$s."
+msgstr[1] "יש לעדכן תוספים אלו לגרסתם האחרונה לתאימות מרבית עם התבנית: %1$s."
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:212
+#: includes/vendors/tgm-plugin-activation/suggested-plugins.php:105
+msgid ""
+"Sorry, but you do not have the correct permissions to update the %s plugin. "
+"Contact the administrator of this site for help on getting the plugin "
+"updated."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to update the %s plugins. "
+"Contact the administrator of this site for help on getting the plugins "
+"updated."
+msgstr[0] ""
+"מצטערים אך אין לך את ההרשאות המתאימות לעדכון התוסף %s. יש לפנות למנהל האתר "
+"לעדכון התוסף."
+msgstr[1] ""
+"מצטערים אך אין לך את ההרשאות המתאימות לעדכון התוספים %s. יש לפנות למנהל האתר "
+"לעדכון התוספים."
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:213
+#: includes/vendors/tgm-plugin-activation/suggested-plugins.php:106
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] "מתחיל התקנת תוסף"
+msgstr[1] "מתחיל התקנת תוספים"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:214
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] "מתחיל הפעלת תוסף"
+msgstr[1] "מתחיל הפעלת תוספים"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:215
+#: includes/vendors/tgm-plugin-activation/suggested-plugins.php:108
+msgid "Return to Required Plugins Installer"
+msgstr "חזור להתקנת תוספים נדרשים"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:216
+msgid "Return to the dashboard"
+msgstr "חזרה ללוח הבקרה"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:217
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1962
+#: includes/vendors/tgm-plugin-activation/suggested-plugins.php:109
+msgid "Plugin activated successfully."
+msgstr "התוסף הופעל בהצלחה."
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:218
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1648
+msgid "The following plugin was activated successfully:"
+msgstr "התוסף הבא הופעל בהצלחה:"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:219
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr "כל התוספים הותקנו והופעלו בהצלחה: %1$s"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:220
+msgid "Dismiss this notice"
+msgstr "הסתר הודעה זו"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:553
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2179
+msgid "Return to the Dashboard"
+msgstr "חזרה ללוח הבקרה"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1182
+msgid "Private Repository"
+msgstr "מאגר פרטי"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1185
+msgid "Pre-Packaged"
+msgstr "הוכן מראש"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1190
+msgid "WordPress Repository"
+msgstr "מאגר וורדפרס"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1193
+msgid "Required"
+msgstr "נדרש"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1193
+msgid "Recommended"
+msgstr "מומלץ"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1196
+msgid "Not Installed"
+msgstr "לא מותקן"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1198
+msgid "Installed But Not Activated"
+msgstr "מותקן אך לא מופעל"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1300
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1408
+msgid "Install"
+msgstr "מותקן"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1322
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1409
+msgid "Activate"
+msgstr "מופעל"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1371
+msgid ""
+"No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
+"Dashboard\">Return to the Dashboard</a>"
+msgstr ""
+"אין תוספים להתקנה או הפעלה. <a href=\"%1$s\" title=\"חזרה ללוח הבקרה\">חזרה "
+"ללוח הבקרה</a>"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1387
+msgid "Plugin"
+msgstr "תוסף"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1388
+msgid "Source"
+msgstr "מקור"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1389
+msgid "Type"
+msgstr "סוג"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1390
+msgid "Status"
+msgstr "סטטוס"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1518
+msgid "No plugins are available to be installed at this time."
+msgstr "אין תוספים זמינים כעת להתקנה"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1626
+msgid "No plugins are available to be activated at this time."
+msgstr "אין תוספים זמינים כעת להפעלה"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1945
+msgid "Install package not available."
+msgstr "חבילת ההתקנה אינה זמינה"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1946
+msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
+msgstr "מוריד חבילת התקנה מ <span class=\"code\">%s</span>&#8230;"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1947
+msgid "Unpacking the package&#8230;"
+msgstr "מחלץ חבילה &#8230;"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1948
+msgid "Installing the plugin&#8230;"
+msgstr "מתקין את התוסף &#8230;"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1949
+msgid "Plugin install failed."
+msgstr "התקנת התוסף נכשלה."
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1950
+msgid "Plugin installed successfully."
+msgstr "התקנת התוסף הסתיימה בהצלחה."
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1961
+msgid "Plugin activation failed."
+msgstr "הפעלת התוסף נכשלה."
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2075
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+"תהליך ההתקנה וההפעלה החל. התהליך עלול לקחת זמן מה לכן יש להיאזר בסבלנות."
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2076
+msgid "%1$s installed and activated successfully."
+msgstr "%1$s הותקן והופעל בהצלחה."
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2076
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2085
+msgid "Show Details"
+msgstr "הצג פרטים"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2076
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2085
+msgid "Hide Details"
+msgstr "הסתר פרטים"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2077
+msgid "All installations and activations have been completed."
+msgstr "כל ההתקנות וההפעלות הסתיימו."
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2078
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr "מתקין ומפעיל תוסף %1$s (%2$d/%3$d)"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2082
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr "תהליך ההתקנה מתחיל. התהליך עלול להמשך זמן מה לכן יש להיאזר בסבלנות."
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2083
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr "אירעה תקלה בזעת התקנת %1$s: <strong>%2$s</strong>."
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2084
+msgid "The installation of %1$s failed."
+msgstr "ההתקנה של %1$s נכשלה."
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2085
+msgid "%1$s installed successfully."
+msgstr "%1$s הותקן בהצלחה."
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2086
+msgid "All installations have been completed."
+msgstr "כל ההתקנות הושלמו בהצלחה."
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2087
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr "מתקין תוסף %1$s (%2$d/%3$d)"
+
+#: includes/vendors/tgm-plugin-activation/suggested-plugins.php:97
+msgid "Something went wrong with the plugin API."
+msgstr "משהו השתבש עם ממשק ה API של התוסף."
+
+#: includes/vendors/tgm-plugin-activation/suggested-plugins.php:107
+msgid "Activate installed plugin"
+msgid_plural "Activate installed plugins"
+msgstr[0] "הפעל תוסף מותקן"
+msgstr[1] "הפעל תוספים מותקנים"
+
+#: includes/vendors/tgm-plugin-activation/suggested-plugins.php:110
+msgid "All plugins installed and activated successfully. %s"
+msgstr "כל התוספים הותקנו והופעלו בהצלחה. %s"
+
+#. Theme Name of the plugin/theme
+msgid "Utility Pro"
+msgstr "Utility Pro"
+
+#. Description of the plugin/theme
+msgid "No-nonsense, functional child theme created for the Genesis Framework."
+msgstr "No-nonsense, functional child theme created for the Genesis Framework."
+
+#. Author of the plugin/theme
+msgid "Carrie Dils"
+msgstr "Carrie Dils"
+
+#. Author URI of the plugin/theme
+msgid "http://www.carriedils.com/"
+msgstr "http://www.carriedils.com/"
+
+#. Template Name of the plugin/theme
+msgid "Landing"
+msgstr "Landing"
+
+#: functions.php:121 functions.php:126 functions.php:131 functions.php:136
+msgctxt "Group of Home Gallery widget areas"
+msgid "Home Gallery %d"
+msgstr "גלריית דף הבית %d"
+
+#: functions.php:122 functions.php:127 functions.php:132 functions.php:137
+msgctxt "Description of widget area"
+msgid "Home Gallery %d widget area on home page."
+msgstr "אזור הוידג'ט %d של גלריית דף הבית"
+
+#. Translators: If there are characters in your language that are not
+#. * supported by this font, translate this to 'off'. Do not translate
+#. * into your own language.
+#: helpers/google-fonts.php:39
+msgctxt "Enriqueta font: on or off"
+msgid "on"
+msgstr "on"
+
+#. Translators: If there are characters in your language that are not
+#. * supported by this font, translate this to 'off'. Do not translate
+#. * into your own language.
+#: helpers/google-fonts.php:45
+msgctxt "Open Sans font: on or off"
+msgid "on"
+msgstr "on"

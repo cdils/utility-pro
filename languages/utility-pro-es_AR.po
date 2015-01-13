@@ -1,0 +1,465 @@
+# Copyright (C) 2014 Carrie Dils
+# This file is distributed under the GPL-2.0+.
+msgid ""
+msgstr ""
+"Project-Id-Version: Utility Pro 1.0.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
+"POT-Creation-Date: 2014-12-29 20:33:43+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2014-12-30 15:19-0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 1.7\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: es_AR\n"
+
+#: functions.php:42
+msgid "Purple"
+msgstr "Púrpura"
+
+#: functions.php:43
+msgid "Green"
+msgstr "Verde"
+
+#: functions.php:44
+msgid "Red"
+msgstr "Rojo"
+
+#: functions.php:111
+msgid "Utility Bar"
+msgstr "Barra de Herramientas"
+
+#: functions.php:112
+msgid "This is the the utility bar across the top of page."
+msgstr "Esta es la barra de herramientas en la parte superior de la página."
+
+#: functions.php:116
+msgid "Home Welcome"
+msgstr "Bienvenida"
+
+#: functions.php:117
+msgid "This is the welcome section at the top of the home page."
+msgstr ""
+"Esta es la sección de bienvenida en la parte superior de la página principal."
+
+#: functions.php:141
+msgid "Call to Action"
+msgstr "Llamado a la Acción"
+
+#: functions.php:142
+msgid "This is the CTA section at the bottom of the home page."
+msgstr ""
+"Esta es la sección del Llamado a la Acción (CTA) en la parte inferior de la "
+"página principal."
+
+#: includes/vendors/genesis-accessible/forms.php:25
+msgid "Search this website"
+msgstr "Buscar en el sitio"
+
+#: includes/vendors/genesis-accessible/forms.php:27
+msgid "Search"
+msgstr "Buscar"
+
+#: includes/vendors/genesis-accessible/skip-links.php:52
+msgid "Skip links"
+msgstr "Omitir vínculos"
+
+#: includes/vendors/genesis-accessible/skip-links.php:57
+msgid "Jump to main navigation"
+msgstr "Ir a la navegación principal"
+
+#: includes/vendors/genesis-accessible/skip-links.php:60
+msgid "Jump to search"
+msgstr "Ir a buscar"
+
+#: includes/vendors/genesis-accessible/skip-links.php:63
+msgid "Jump to sub navigation"
+msgstr "Ir a la navegación secundaria"
+
+#: includes/vendors/genesis-accessible/skip-links.php:64
+msgid "Jump to content"
+msgstr "Ir al contenido"
+
+#: includes/vendors/genesis-accessible/skip-links.php:67
+msgid "Jump to primary sidebar"
+msgstr "Ir a la barra lateral primaria"
+
+#: includes/vendors/genesis-accessible/skip-links.php:70
+msgid "Jump to footer"
+msgstr "Ir al pie de página"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:201
+#: includes/vendors/tgm-plugin-activation/suggested-plugins.php:94
+msgid "Install Required Plugins"
+msgstr "Instalar Plugins Requeridos"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:202
+#: includes/vendors/tgm-plugin-activation/suggested-plugins.php:95
+msgid "Install Plugins"
+msgstr "Instalar Plugins"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:203
+#: includes/vendors/tgm-plugin-activation/suggested-plugins.php:96
+msgid "Installing Plugin: %s"
+msgstr "Instalando Plugin: %s"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:204
+msgid "Something went wrong."
+msgstr "Algo salió mal."
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:205
+#: includes/vendors/tgm-plugin-activation/suggested-plugins.php:98
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] "Este tema requiere el siguiente plugin: %1$s."
+msgstr[1] ""
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:206
+#: includes/vendors/tgm-plugin-activation/suggested-plugins.php:99
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] "Este tema recomienda el siguiente plugin: %1$s."
+msgstr[1] ""
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:207
+#: includes/vendors/tgm-plugin-activation/suggested-plugins.php:100
+msgid ""
+"Sorry, but you do not have the correct permissions to install the %s plugin. "
+"Contact the administrator of this site for help on getting the plugin "
+"installed."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to install the %s "
+"plugins. Contact the administrator of this site for help on getting the "
+"plugins installed."
+msgstr[0] ""
+"Lo siento pero no tiene los permisos correctos para instalar el plugin % s. "
+"Póngase en contacto con el administrador de este sitio en busca de ayuda "
+"para conseguir el plugin instalado."
+msgstr[1] ""
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:208
+#: includes/vendors/tgm-plugin-activation/suggested-plugins.php:101
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] "El siguiente plugin requerido está inactivo: %1$s."
+msgstr[1] ""
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:209
+#: includes/vendors/tgm-plugin-activation/suggested-plugins.php:102
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] "El siguiente plugin requerido está inactivo: %1$s."
+msgstr[1] ""
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:210
+#: includes/vendors/tgm-plugin-activation/suggested-plugins.php:103
+msgid ""
+"Sorry, but you do not have the correct permissions to activate the %s "
+"plugin. Contact the administrator of this site for help on getting the "
+"plugin activated."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to activate the %s "
+"plugins. Contact the administrator of this site for help on getting the "
+"plugins activated."
+msgstr[0] ""
+"Lo siento pero usted no tiene los permisos correctos para activar el plugin "
+"% s. Póngase en contacto con el administrador de este sitio en busca de "
+"ayuda para conseguir el plugin activado."
+msgstr[1] ""
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:211
+#: includes/vendors/tgm-plugin-activation/suggested-plugins.php:104
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+"El siguiente plugin necesita ser actualizado a su última versión para "
+"asegurar la máxima compatibilidad con este tema: % 1$s."
+msgstr[1] ""
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:212
+#: includes/vendors/tgm-plugin-activation/suggested-plugins.php:105
+msgid ""
+"Sorry, but you do not have the correct permissions to update the %s plugin. "
+"Contact the administrator of this site for help on getting the plugin "
+"updated."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to update the %s plugins. "
+"Contact the administrator of this site for help on getting the plugins "
+"updated."
+msgstr[0] ""
+"Lo siento pero usted no tiene los permisos correctos para actualizar el "
+"plugin %s. Póngase en contacto con el administrador de este sitio en busca "
+"de ayuda para conseguir el plugin actualizado."
+msgstr[1] ""
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:213
+#: includes/vendors/tgm-plugin-activation/suggested-plugins.php:106
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] "Instalando el plugin"
+msgstr[1] ""
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:214
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] "Activando el plugin"
+msgstr[1] ""
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:215
+#: includes/vendors/tgm-plugin-activation/suggested-plugins.php:108
+msgid "Return to Required Plugins Installer"
+msgstr "Volver al Instalador de Plugins Requeridos."
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:216
+msgid "Return to the dashboard"
+msgstr "Volver al escritorio"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:217
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1962
+#: includes/vendors/tgm-plugin-activation/suggested-plugins.php:109
+msgid "Plugin activated successfully."
+msgstr "Plugin activado con éxito."
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:218
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1648
+msgid "The following plugin was activated successfully:"
+msgstr "El siguiente plugin fue activado con éxito:"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:219
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr "Todos los plugins fueron instalados y activados con éxito. %1$s"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:220
+msgid "Dismiss this notice"
+msgstr "Descartar esta notificación"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:553
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2179
+msgid "Return to the Dashboard"
+msgstr "Volver al Escritorio"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1182
+msgid "Private Repository"
+msgstr "Repositorio Privado"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1185
+msgid "Pre-Packaged"
+msgstr "Pre-Empaquetado"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1190
+msgid "WordPress Repository"
+msgstr "Repositorio de WordPress"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1193
+msgid "Required"
+msgstr "Requerido"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1193
+msgid "Recommended"
+msgstr "Recomendado"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1196
+msgid "Not Installed"
+msgstr "No instalado"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1198
+msgid "Installed But Not Activated"
+msgstr "Instalado Pero No Activado"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1300
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1408
+msgid "Install"
+msgstr "Instalar"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1322
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1409
+msgid "Activate"
+msgstr "Activar"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1371
+msgid ""
+"No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
+"Dashboard\">Return to the Dashboard</a>"
+msgstr ""
+"No hay plugins para instalar o activar. <a href=\"%1$s\" title=\"Volver al "
+"Escritorio\">Volver al Escritorio</a>"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1387
+msgid "Plugin"
+msgstr "Plugin"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1388
+msgid "Source"
+msgstr "Fuente"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1389
+msgid "Type"
+msgstr "Tipo"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1390
+msgid "Status"
+msgstr "Estado"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1518
+msgid "No plugins are available to be installed at this time."
+msgstr "No hay plugins disponibles para ser instalados en este momento."
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1626
+msgid "No plugins are available to be activated at this time."
+msgstr "No hay plugins disponibles para ser activados en este momento."
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1945
+msgid "Install package not available."
+msgstr "Paquete de instalación no disponible."
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1946
+msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
+msgstr ""
+"Descargando paquete de instalación desde <span class=\"code\">%s</"
+"span>&#8230;"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1947
+msgid "Unpacking the package&#8230;"
+msgstr "Descomprimiendo el paquete&#8230;"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1948
+msgid "Installing the plugin&#8230;"
+msgstr "﻿Instalando el plugin&#8230;"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1949
+msgid "Plugin install failed."
+msgstr "Error en la instalación del plugin."
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1950
+msgid "Plugin installed successfully."
+msgstr "Plugin instalado con éxito."
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:1961
+msgid "Plugin activation failed."
+msgstr "Error en la activación del plugin."
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2075
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+"Comenzando el proceso de instalación y activación. En algunos hosts este "
+"proceso puede tardar un tiempo tenga paciencia."
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2076
+msgid "%1$s installed and activated successfully."
+msgstr "%1$s instalado y activado con éxito."
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2076
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2085
+msgid "Show Details"
+msgstr "Mostrar Detalles"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2076
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2085
+msgid "Hide Details"
+msgstr "Ocultar Detalles"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2077
+msgid "All installations and activations have been completed."
+msgstr "Todas las instalaciones y activaciones se han completado."
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2078
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr "Instalando y activando el Plugin %1$s (%2$d/%3$d)"
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2082
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+"Comienza el proceso de instalación. En algunos hosts este proceso puede "
+"tardar un tiempo, tenga paciencia."
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2083
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+"Se produjo un error durante la instalación de %1$s: <strong>%2$s</strong>."
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2084
+msgid "The installation of %1$s failed."
+msgstr "La instalación de %1$s ha fallado."
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2085
+msgid "%1$s installed successfully."
+msgstr "%1$s instalado correctamente."
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2086
+msgid "All installations have been completed."
+msgstr "Se han completado todas las instalaciones."
+
+#: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2087
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr "Instalando el Plugin %1$s (%2$d/%3$d)"
+
+#: includes/vendors/tgm-plugin-activation/suggested-plugins.php:97
+msgid "Something went wrong with the plugin API."
+msgstr "Algo salió mal con la API de plugins."
+
+#: includes/vendors/tgm-plugin-activation/suggested-plugins.php:107
+msgid "Activate installed plugin"
+msgid_plural "Activate installed plugins"
+msgstr[0] "Activar plugin instalado"
+msgstr[1] ""
+
+#: includes/vendors/tgm-plugin-activation/suggested-plugins.php:110
+msgid "All plugins installed and activated successfully. %s"
+msgstr "Todos los plugins fueron instalados y activados con éxito. %s"
+
+#. Theme Name of the plugin/theme
+msgid "Utility Pro"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "No-nonsense, functional child theme created for the Genesis Framework."
+msgstr ""
+"Un tema hijo funcional sin tonterías,  creado para el Framework Génesis."
+
+#. Author of the plugin/theme
+msgid "Carrie Dils"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.carriedils.com/"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Landing"
+msgstr "Página de aterrizaje"
+
+#: functions.php:121 functions.php:126 functions.php:131 functions.php:136
+msgctxt "Group of Home Gallery widget areas"
+msgid "Home Gallery %d"
+msgstr "Galería Principal %d"
+
+#: functions.php:122 functions.php:127 functions.php:132 functions.php:137
+msgctxt "Description of widget area"
+msgid "Home Gallery %d widget area on home page."
+msgstr "Galería Principal %d  area de widget en la página principal."
+
+#. Translators: If there are characters in your language that are not
+#. * supported by this font, translate this to 'off'. Do not translate
+#. * into your own language.
+#: helpers/google-fonts.php:39
+msgctxt "Enriqueta font: on or off"
+msgid "on"
+msgstr "Encendida"
+
+#. Translators: If there are characters in your language that are not
+#. * supported by this font, translate this to 'off'. Do not translate
+#. * into your own language.
+#: helpers/google-fonts.php:45
+msgctxt "Open Sans font: on or off"
+msgid "on"
+msgstr "Encendida"
