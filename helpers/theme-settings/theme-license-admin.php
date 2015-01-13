@@ -112,16 +112,6 @@ class EDD_Theme_Updater_Admin {
 			array( $this, 'license_page' )
 		);
 
-
-	// Add Gary Jones item
-	$menu->add_item( 'gary-jones', array(
-		'parent'   => $genesis,
-		'title'    => 'Gary Jones',
-		'href'     => 'http://garyjones.co.uk/',
-		'position' => 30
-	) );
-
-
 	}
 
 	/**

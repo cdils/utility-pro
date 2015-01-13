@@ -118,7 +118,7 @@ function utility_pro_setup() {
 		include get_stylesheet_directory() . '/includes/suggested-plugins.php';
 
 		// Add theme license (don't remove, unless you don't want theme support)
-		include get_stylesheet_directory() . '/helpers/theme-settings/theme-updater.php';
+		include get_stylesheet_directory() . '/helpers/theme-settings/theme-license.php';
 	}
 }
 
@@ -188,7 +188,7 @@ function utility_pro_enqueue_assets() {
 	wp_enqueue_script( 'utility-pro-responsive-menu', get_stylesheet_directory_uri() . '/helpers/js/responsive-menu.js', array( 'jquery' ), '1.0.0', true );
 
 	// Load keyboard navigation script only if Genesis Accessible plugin is not active
-	if ( ! function_exists( 'genwpacc_dropdown_scripts' ) ) {
+	if ( function_exists( 'genwpacc_dropdown_scripts' ) ) {
 		wp_enqueue_script( 'genwpacc-dropdown',  get_stylesheet_directory_uri() . '/helpers/js/genwpacc-dropdown.js', array( 'jquery' ), false, true );
 	}
 

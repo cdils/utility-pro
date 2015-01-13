@@ -934,7 +934,7 @@ Widgets
     background: rgb(51, 51, 51);
     background: rgba(51, 51, 51, 0.8);
     color: #fff;
-    padding: 20px 0;
+    padding: 40px 0;
 	text-align: center;
 }
 
@@ -993,7 +993,7 @@ li a .fa {
 
 .enews-widget .widgettitle {
     color: #fff;
-    margin: 10px 0;
+    margin: 0;
 }
 
 .enews-widget input {
@@ -1003,6 +1003,10 @@ li a .fa {
 .enews-widget input[type="submit"] {
     margin: 0;
     width: 100%;
+}
+
+.sidebar .enews-widget .widgettitle {
+    margin: 10px 0 24px 0;
 }
 
 .sidebar .widget.enews-widget {
@@ -1660,6 +1664,8 @@ Media Queries
 
 	.home-welcome p {
 	    font-size: 40px;
+        line-height: normal;
+        margin-bottom: 34px;
 	}
 
     .home-gallery-1,
