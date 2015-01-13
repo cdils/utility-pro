@@ -7,7 +7,7 @@
 
 // Includes the files needed for the theme updater
 if ( !class_exists( 'EDD_Theme_Updater_Admin' ) ) {
-	include( dirname( __FILE__ ) . '/theme-updater-admin.php' );
+	include( dirname( __FILE__ ) . '/theme-license-admin.php' );
 }
 
 // Loads the updater classes
