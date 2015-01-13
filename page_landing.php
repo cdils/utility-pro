@@ -31,13 +31,13 @@ remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
 remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
 remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_close', 15 );
 remove_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
-remove_action( 'genesis_before_footer', 'genesis_do_subnav', 15 );
 remove_action( 'genesis_footer', 'genesis_footer_markup_open', 5 );
 remove_action( 'genesis_footer', 'genesis_do_footer' );
 remove_action( 'genesis_footer', 'genesis_footer_markup_close', 15 );
 
 // Remove elements specific to Utility Pro
 remove_action( 'genesis_before_header', 'utility_pro_add_bar' );
+remove_action( 'genesis_before_footer', 'utility_pro_do_footer_nav', 15 );
 
 //* Run the Genesis loop
 genesis();

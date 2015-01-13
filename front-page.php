@@ -3,7 +3,7 @@
  * Front page for the Utility Pro theme
  *
  * @package Utility_Pro
- * @author Carrie Dils
+ * @author  Carrie Dils
  * @license GPL-2.0+
  *
  */
@@ -49,15 +49,6 @@ function utility_pro_homepage_setup() {
 
 	// Remove pagination after posts
 	remove_action( 'genesis_after_endwhile', 'genesis_posts_nav' );
-
-}
-
-// Display latest posts instead of static page
-function utility_pro_custom_loop() {
-
-	global $query_args;
-	genesis_custom_loop( wp_parse_args( $query_args, array( 'post_type' => 'post' ) ) );
-
 }
 
 // Display content for the "Home Welcome" section
@@ -69,7 +60,6 @@ function utility_pro_add_home_welcome() {
 			'after' => '</div></div>',
 		)
 	);
-
 }
 
 // Display content for the "Home Gallery" section
@@ -111,7 +101,6 @@ function utility_pro_add_home_gallery() {
 
 	genesis_structural_wrap( 'home-gallery', 'close' );
 	echo '</div>'; // end .home-gallery
-
 }
 
 // Display content for the "Call to action" section
@@ -124,7 +113,13 @@ function utility_pro_add_call_to_action() {
 			'after' => '</div></div>',
 		)
 	);
+}
 
+// Display latest posts instead of static page
+function utility_pro_custom_loop() {
+
+	global $query_args;
+	genesis_custom_loop( wp_parse_args( $query_args, array( 'post_type' => 'post' ) ) );
 }
 
 genesis();

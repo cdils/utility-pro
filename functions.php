@@ -196,7 +196,7 @@ function utility_pro_enqueue_assets() {
     wp_style_add_data( 'utility-pro', 'rtl', 'replace' );
 
 	// Load remaining scripts only if custom background is being used and we're on the home page
-	if ( ! get_background_image() ||  ! is_front_page() ) {
+	if ( ! get_background_image() && ( ! is_front_page() || ! is_page_template( 'page-template-page_landing' ) ) ) {
 		return;
 	}
 

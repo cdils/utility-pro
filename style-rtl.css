@@ -362,7 +362,6 @@ h2 {
 }
 
 h3 {
-    font-family: "Open Sans", sans-serif;
     font-size: 24px;
 }
 
@@ -664,7 +663,7 @@ Structure and Layout
 }
 
 .utility-landing .site-container {
-    margin: 40px auto 0;
+    margin: 40px auto 40px;
     max-width: 960px;
 }
 
@@ -869,7 +868,7 @@ Widgets
 }
 
 .utility-bar a:hover {
-    color: #ccc;
+    border-bottom: 0;
 }
 
 
@@ -1218,7 +1217,7 @@ Site Navigation
 }
 
 .genesis-nav-menu .sub-menu .sub-menu a {
-	padding-right: 50px;
+	padding-right: 20px;
 }
 
 /* Mobile Menu Toggle
@@ -1461,7 +1460,7 @@ Content Area
 }
 
 .comment-list li li {
-    padding: 0 32px 0 0;
+    padding: 32px 32px 0 0;
 }
 
 li.comment {
@@ -1581,7 +1580,7 @@ Site Footer
 }
 
 .site-footer a:hover {
-    color: #000;
+    border-bottom: 0;
 }
 
 .site-footer p {
@@ -1767,6 +1766,7 @@ Media Queries
     }
 
     .content {
+        float: left;
         width: 65%;
     }
 
@@ -1939,21 +1939,27 @@ Media Queries
     select,
     textarea,
     .archive-pagination,
+    .backstretch,
     .breadcrumb,
+    .call-to-action-bar,
     .comment-edit-link,
     .comment-form,
     .comment-list .reply a,
+    .comment-respond,
     .edit-link,
     .entry-comments-link,
     .entry-footer,
     .genesis-box,
     .header-widget-area,
     .home-top,
+    .home-welcome,
+    .footer-widgets,
     .nav-primary,
     .nav-footer,
     .post-edit-link,
     .sidebar,
-    #reply-title,
+    .site-footer,
+    .site-header,
     .utility-bar {
         display: none;
     }
