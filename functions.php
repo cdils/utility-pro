@@ -184,8 +184,12 @@ add_action( 'wp_enqueue_scripts', 'utility_pro_enqueue_assets' );
  */
 function utility_pro_enqueue_assets() {
 
+
     // Load mobile responsive menu
 	wp_enqueue_script( 'utility-pro-responsive-menu', get_stylesheet_directory_uri() . '/helpers/js/responsive-menu.js', array( 'jquery' ), '1.0.0', true );
+
+	// Localize the responsive menu script (for translation)
+	wp_localize_script( 'utility-pro-responsive-menu', 'responsiveL10n', array( 'button_label' => __( 'Menu', 'utility-pro' ) ) );
 
 	// Load keyboard navigation script only if Genesis Accessible plugin is not active
 	if ( function_exists( 'genwpacc_dropdown_scripts' ) ) {
@@ -253,23 +257,8 @@ function utility_pro_do_footer_nav() {
 	);
 }
 
-add_filter( 'genesis_attr_nav-footer', 'utility_pro_markup_nav_footer' );
-/**
- * Add schema markup to Footer Navigation Menu
- *
- * @param  array $attributes Existing attributes.
- * @return array Amended attributes.
- * @see  genesis_attr() in Genesis Framework
- * @since  1.0.0
- */
-function utility_pro_markup_nav_footer( $attributes ) {
-
-	$attributes['role']      = 'navigation';
-	$attributes['itemscope'] = 'itemscope';
-	$attributes['itemtype']  = 'http://schema.org/SiteNavigationElement';
-
-	return $attributes;
-}
+// Add schema markup to Footer Navigation Menu
+add_filter( 'genesis_attr_nav-footer', 'genesis_attributes_nav' );
 
 add_filter( 'wp_nav_menu_args', 'utility_pro_footer_menu_args' );
 /**

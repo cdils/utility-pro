@@ -44,7 +44,7 @@ module.exports = function(grunt) {
 		cssjanus: {
 			theme: {
 				options: {
-					swapLtrRtlInUrl: false
+					swapLtrRtlInUrl: true
 				},
 				files: [
 					{
