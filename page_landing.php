@@ -37,7 +37,7 @@ remove_action( 'genesis_footer', 'genesis_footer_markup_close', 15 );
 
 // Remove elements specific to Utility Pro
 remove_action( 'genesis_before_header', 'utility_pro_add_bar' );
-remove_action( 'genesis_before_footer', 'utility_pro_do_footer_nav', 15 );
+remove_action( 'genesis_before_footer', 'utility_pro_do_footer_nav' );
 
 //* Run the Genesis loop
 genesis();

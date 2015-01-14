@@ -74,7 +74,7 @@ function utility_pro_setup() {
 		'genesis-menus',
 		array(
 			'primary'   => __( 'Primary Navigation Menu', 'utility-pro' ),
-			'footer' 	=> __( 'Footer Navigation Menu', 'utility-pro' ),
+			'footer'    => __( 'Footer Navigation Menu', 'utility-pro' ),
 		)
 	);
 
@@ -99,7 +99,7 @@ function utility_pro_setup() {
 	add_action( 'genesis_before_entry_content', 'utility_pro_featured_image' );
 
 	// Add a navigation area above the site footer
-	add_action( 'genesis_before_footer', 'utility_pro_do_footer_nav', 15 );
+	add_action( 'genesis_before_footer', 'utility_pro_do_footer_nav' );
 
 	// Load accesibility components if the Genesis Accessible plugin is not active
 	if ( ! function_exists( 'genwpacc_genesis_init' ) ) {

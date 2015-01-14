@@ -469,7 +469,7 @@ input[type="search"]::-webkit-search-results-button {
 
 .search-form input[type="submit"] {
     background-color: transparent;
-    background: url(images/icon-search-rtl.png) no-repeat 25% 53% #fff;
+    background: url(images/icon-search-ltr.png) no-repeat 25% 53% #fff;
     border: 1px solid #ddd;
     box-shadow: none;
     height: 54px;
@@ -663,7 +663,7 @@ Structure and Layout
 }
 
 .utility-landing .site-container {
-    margin: 40px auto 40px;
+    margin: 40px auto;
     max-width: 960px;
 }
 

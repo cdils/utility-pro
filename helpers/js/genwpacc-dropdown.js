@@ -1,5 +1,5 @@
 /*
- This file adds javaScript to dropdown menus
+ This file adds JavaScript to dropdown menus
 
  @package      Utility_Pro
  @author       Rian Rietveld

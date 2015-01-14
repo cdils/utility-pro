@@ -24,32 +24,32 @@ function utility_pro_skip_links() {
     // write HTML, skiplinks in a list with a heading
     echo '<h2 class="screen-reader-text">'. __( 'Skip links', 'utility-pro' ) .'</h2>' . "\n";
 
-		echo '<ul class="wpacc-genesis-skip-link">' . "\n";
+	echo '<ul class="wpacc-genesis-skip-link">' . "\n";
 
-	    if ( has_nav_menu( 'primary' ) ){
-	    	echo '  <li><a href="#genwpacc-genesis-nav-primary" class="screen-reader-shortcut">'. __( 'Jump to primary navigation', 'utility-pro' ) .'</a></li>' . "\n";
-	    }
+    if ( has_nav_menu( 'primary' ) ){
+    	echo '  <li><a href="#genwpacc-genesis-nav-primary" class="screen-reader-shortcut">'. __( 'Jump to primary navigation', 'utility-pro' ) .'</a></li>' . "\n";
+    }
 
-		echo '  <li><a href="#genwpacc-genesis-content" class="screen-reader-shortcut">'. __( 'Jump to content', 'utility-pro' ) .'</a></li>' . "\n";
+	echo '  <li><a href="#genwpacc-genesis-content" class="screen-reader-shortcut">'. __( 'Jump to content', 'utility-pro' ) .'</a></li>' . "\n";
 
-		if ( genesis_site_layout('sidebar-content') || genesis_site_layout('content-sidebar') ) {
-			echo '  <li><a href="#genwpacc-sidebar-primary" class="screen-reader-shortcut">'. __( 'Jump to primary sidebar', 'utility-pro' ) .'</a></li>' . "\n";
+	if ( genesis_site_layout('sidebar-content') || genesis_site_layout('content-sidebar') ) {
+		echo '  <li><a href="#genwpacc-sidebar-primary" class="screen-reader-shortcut">'. __( 'Jump to primary sidebar', 'utility-pro' ) .'</a></li>' . "\n";
+	}
+
+	if ( 1 == current_theme_supports( 'genesis-footer-widgets' ) ) {
+
+		$footer_widgets = get_theme_support( 'genesis-footer-widgets' );
+
+		if ( isset( $footer_widgets[0] ) && is_numeric( $footer_widgets[0] ) ) {
+			echo '  <li><a href="#genwpacc-genesis-footer-widgets" class="screen-reader-shortcut">'. __( 'Jump to footer widgets', 'utility-pro' ) .'</a></li>' . "\n";
 		}
+	}
 
-		if ( 1 == current_theme_supports( 'genesis-footer-widgets' ) ) {
+	if ( has_nav_menu( 'footer' ) ) {
+		echo '  <li><a href="#genwpacc-genesis-nav-footer" class="screen-reader-shortcut">'. __( 'Jump to footer navigation', 'utility-pro' ) .'</a></li>' . "\n";
+	}
 
-    		$footer_widgets = get_theme_support( 'genesis-footer-widgets' );
-
-    		if ( isset( $footer_widgets[0] ) && is_numeric( $footer_widgets[0] ) ) {
-				echo '  <li><a href="#genwpacc-genesis-footer-widgets" class="screen-reader-shortcut">'. __( 'Jump to footer widgets', 'utility-pro' ) .'</a></li>' . "\n";
-			}
-		}
-
-		if ( has_nav_menu( 'footer' ) ) {
-			echo '  <li><a href="#genwpacc-genesis-nav-footer" class="screen-reader-shortcut">'. __( 'Jump to footer navigation', 'utility-pro' ) .'</a></li>' . "\n";
-		}
-
-		echo '</ul>' . "\n";
+	echo '</ul>' . "\n";
 }
 
 /**
@@ -80,10 +80,8 @@ function utility_pro_genesis_attr_nav_primary( $attributes ) {
 
 	if ( has_nav_menu( 'primary' ) ) {
 		$attributes['id'] = 'genwpacc-genesis-nav-primary ';
-
 	}
 	return $attributes;
-
 }
 
 // Add ID markup to content area

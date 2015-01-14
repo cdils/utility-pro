@@ -6,7 +6,7 @@
  * @author       Rian Rietveld
  * @author       Carrie Dils
  * @license      GPL-2.0+
- * @link   	 	 http://genesis-accessible.org/
+ * @link         http://genesis-accessible.org/
  *
  */
 
@@ -27,12 +27,12 @@ add_filter( 'get_search_form', 'utility_pro_get_search_form_uniqueid', 20 );
  */
 function utility_pro_get_search_form_uniqueid() {
 
-	$search_text = get_search_query() ? apply_filters( 'the_search_query', get_search_query() ) : apply_filters( 'genesis_search_text', __( 'Search this website', 'utility-pro' ) . '&#x02026;' );
+	$search_text = get_search_query() ? apply_filters( 'the_search_query', get_search_query() ) : apply_filters( 'genesis_search_text', __( 'Search this website', 'utility-pro' ) );
 
-	$button_text = apply_filters( 'genesis_search_button_text', esc_attr__( 'Search', 'utility-pro' ) );
+	$button_text = apply_filters( 'genesis_search_button_text', __( 'Search', 'utility-pro' ) );
 
-	$onfocus = "if ('" . esc_js( $search_text ) . "' === this.value) {this.value = '';}";
-	$onblur  = "if ('' === this.value) {this.value = '" . esc_js( $search_text ) . "';}";
+	$onfocus = esc_js( "if ('" . $search_text . "' === this.value) {this.value = '';}" );
+	$onblur  = esc_js( "if ('' === this.value) {this.value = '" . $search_text . "';}" );
 
 	// Generate ramdom id for the search field (n case there are more than one search form on the page)
 	$id = uniqid( 'searchform-' );
