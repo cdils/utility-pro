@@ -5,7 +5,7 @@
   * @package      Utility_Pro
   * @author       Rian Rietveld
   * @author       Carrie Dils
-   * @author      Amanda Rush
+  * @author       Amanda Rush
   * @license      GPL-2.0+
   * @link         http://genesis-accessible.org/
   *
