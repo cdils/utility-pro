@@ -77,10 +77,7 @@ function utility_skiplinks_markup() {
 // Add ID markup if primary nav is assigned to a menu area
 // We use have_nav_menu()
 function utility_pro_genesis_attr_nav_primary( $attributes ) {
-
-	if ( has_nav_menu( 'primary' ) ) {
-		$attributes['id'] = 'genwpacc-genesis-nav-primary ';
-	}
+	$attributes['id'] = 'genwpacc-genesis-nav-primary';
 	return $attributes;
 }
 
@@ -92,10 +89,7 @@ function utility_pro_genesis_attr_content( $attributes ) {
 
 // Add ID markup if the primary sidebar is active
 function utility_pro_genesis_attr_sidebar_primary( $attributes ) {
-	if ( is_active_sidebar( 'sidebar' ) ) {
-		$attributes['id'] = 'genwpacc-sidebar-primary';
-
-	}
+	$attributes['id'] = 'genwpacc-sidebar-primary';
 	return $attributes;
 }
 
@@ -107,9 +101,6 @@ function genesis_attr_footer_widgets( $attributes ) {
 
 // Add ID markup if footer nav is assigned to a menu area
 function utility_pro_genesis_attr_nav_footer( $attributes ) {
-	if ( has_nav_menu( 'footer' ) ) {
-		$attributes['id'] = 'genwpacc-genesis-nav-footer';
-
-	}
+	$attributes['id'] = 'genwpacc-genesis-nav-footer';
 	return $attributes;
 }

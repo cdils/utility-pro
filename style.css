@@ -142,6 +142,10 @@ If you've chosen your favorite color scheme, you can delete the others
 	color: #339;
 }
 
+.utility-pro-purple .sticky.entry {
+	border-top: 1px solid #339;
+}
+
 .utility-pro-purple .call-to-action-bar .button,
 .utility-pro-purple .button,
 .utility-pro-purple .entry-content a.button,
@@ -175,6 +179,10 @@ If you've chosen your favorite color scheme, you can delete the others
 	color: #107952;
 }
 
+.utility-pro-green .sticky.entry {
+	border-top: 1px solid #107952;
+}
+
 .utility-pro-green .call-to-action-bar .button,
 .utility-pro-green .button,
 .utility-pro-green a.button,
@@ -206,6 +214,10 @@ If you've chosen your favorite color scheme, you can delete the others
 .utility-pro-red a,
 .utility-pro-red .entry-content a {
 	color: #d3131b;
+}
+
+.utility-pro-red .sticky.entry {
+	border-top: 1px solid #d3131b;
 }
 
 .utility-pro-red .call-to-action-bar .button,
@@ -504,9 +516,10 @@ input[type="search"]::-webkit-search-results-button {
 }
 
 .gallery-item {
-	float: left;
-	margin-top: 10px;
+	display: inline-block;
 	text-align: center;
+	vertical-align: top;
+	width: 100%;
 }
 
 .gallery-columns-2 .gallery-item {
@@ -553,6 +566,7 @@ input[type="search"]::-webkit-search-results-button {
 }
 
 .gallery-caption {
+	display: block;
 	margin-left: 0;
 }
 
@@ -1182,6 +1196,11 @@ Site Navigation
 	color: #999;
 }
 
+.genesis-nav-menu .sub-menu a:hover,
+.genesis-nav-menu .sub-menu a:focus {
+	outline: #aaa dotted thin;
+}
+
 .genesis-nav-menu .sub-menu .current-menu-item > a {
 	color: #999;
 }
@@ -1200,7 +1219,7 @@ Site Navigation
 }
 
 .genesis-nav-menu .sub-menu {
-	background-color: #333;
+	background-color: #111;
 	clear: both;
 	display: none;
 	opacity: 1;
@@ -1209,11 +1228,6 @@ Site Navigation
 
 .genesis-nav-menu .sub-menu a {
 	border: 0;
-}
-
-.genesis-nav-menu .sub-menu a:hover,
-.genesis-nav-menu .sub-menu .sub-menu a:hover {
-	text-decoration: underline;
 }
 
 .genesis-nav-menu .sub-menu .sub-menu a {
@@ -1245,7 +1259,9 @@ button.sub-menu-toggle {
 	border: 0;
 }
 
-.sub-menu-toggle {
+button.sub-menu-toggle {
+	font-size: 14px;
+	padding: 16px;
 	position: absolute;
 	right: 0;
 	top: 0;
@@ -1275,7 +1291,7 @@ button.sub-menu-toggle {
 }
 
 .site-header .sub-menu .sub-menu {
-	margin-top: -55px;
+	margin-top: -53px;
 }
 
 /* Primary & Footer Navigation
@@ -1305,11 +1321,16 @@ Content Area
 /* Entries
 --------------------------------------------- */
 
+.sticky.entry {
+	border-top: 1px solid #0964dd;
+}
+
 .entry {
 	background: #fff;
 	border-top: 1px solid #333;
 	margin-bottom: 40px;
 	padding: 40px 40px 24px;
+	word-wrap: break-word;
 }
 
 .entry-content a {
@@ -1331,16 +1352,23 @@ Content Area
 	margin-bottom: 26px;
 }
 
+.entry-content ol ol,
+.entry-content ul ul,
+.entry-content ol ul,
+.entry-content ul ol,{
+	margin-bottom: 0;
+}
+
 .entry-content ol li,
 .entry-content ul li {
 	margin-left: 40px;
 }
 
-.entry-content ol li {
+.entry-content ol > li {
 	list-style-type: decimal;
 }
 
-.entry-content ul li {
+.entry-content ul > li {
 	list-style-type: disc;
 }
 
@@ -1400,7 +1428,8 @@ Content Area
 /* Pagination
 --------------------------------------------- */
 
-.pagination {
+.pagination,
+.posts-navigation {
 	margin-bottom: 30px;
 }
 
@@ -1418,8 +1447,7 @@ Content Area
 	padding: 8px 12px;
 }
 
-.pagination .nav-links a:hover,
-.pagination .nav-links .current:hover {
+.pagination .nav-links a:hover {
 	background: #fff;
 	border: 1px solid #333;
 	color: #333;
@@ -1429,6 +1457,11 @@ Content Area
 	background: #555;
 	border: 1px solid #fff;
 	color: #fff;
+	cursor: none;
+}
+
+.entry-pagination {
+	margin: 30px 0;
 }
 
 /* Comments
@@ -1453,21 +1486,27 @@ Content Area
 	margin-right: 12px;
 }
 
+.entry-comments ul.children {
+	margin-left: 40px;
+}
+
 .comment-list li,
 .ping-list li {
 	list-style-type: none;
 	margin-top: 24px;
-	padding: 32px;
 }
 
-.comment-list li li {
-	padding: 32px 0 0 32px;
+.comment-meta,
+.entry-comments
+.comment,
+.entry-comments .comment-reply {
+    margin-bottom: 40px;
 }
 
-li.comment {
-	background: #f5f5f5;
-	border: 2px solid #fff;
-	border-right: 0;
+p.form-submit,
+.entry-comments .children .comment,
+.entry-comments .comment-author {
+	margin-bottom: 0;
 }
 
 .comment .avatar {
@@ -1646,6 +1685,10 @@ Accessibility Extras - Taken from the Leiden theme & Genesis Accessible plugin (
 	position: static;
 }
 
+.menu .menu-item.wpacc-hover > ul.sub-menu {
+	border-bottom: 1px solid gold;
+}
+
 .menu .menu-item > a:focus + ul.sub-menu,
 .menu .menu-item.wpacc-hover > ul.sub-menu {
 	left: auto;
@@ -1819,7 +1862,6 @@ Media Queries
 	}
 
 	.genesis-nav-menu .sub-menu a {
-		background: #111;
 		letter-spacing: 0;
 		width: 200px;
 	}
