@@ -11,10 +11,13 @@
 
 // Load internationalization components.
 // English users do not need to load the text domain and can comment out or remove
-require( get_stylesheet_directory() . '/includes/text-domain.php' );
+require get_stylesheet_directory() . '/includes/text-domain.php';
 
-// This file loads the Google fonts used in this theme
-require( get_stylesheet_directory() . '/includes/google-fonts.php' );
+// This file loads the Google fonts used in this theme.
+require get_stylesheet_directory() . '/includes/google-fonts.php';
+
+// This file contains search form improvements.
+require get_stylesheet_directory() . '/includes/class-search-form.php';
 
 add_action( 'genesis_setup', 'utility_pro_setup', 15 );
 /**
@@ -106,10 +109,10 @@ function utility_pro_setup() {
 
 		// Load skip links (accessibility)
 		include get_stylesheet_directory() . '/includes/skip-links.php';
-
-		// Load form enhancements (accessibility)
-		include get_stylesheet_directory() . '/includes/forms.php';
 	}
+
+	// Apply search form enhancements (accessibility)
+	add_filter( 'get_search_form', 'utility_pro_get_search_form', 25 );
 
 	// Load files in admin
 	if ( is_admin() ) {
@@ -190,6 +193,21 @@ add_filter( 'genesis_author_box_gravatar_size', 'utility_pro_author_box_gravatar
 function utility_pro_author_box_gravatar_size( $size ) {
 
 	return 96;
+}
+
+/**
+ * Customize the search form to improve accessibility.
+ *
+ * The instantiation can accept an array of custom strings, should you want
+ * the search form have different strings in different contexts.
+ *
+ * @since 1.0.0
+ *
+ * @return string Search form markup.
+ */
+function utility_pro_get_search_form() {
+	$search = new Utility_Pro_Search_Form;
+	return $search->get_form();
 }
 
 // Enable shortcodes in widgets
