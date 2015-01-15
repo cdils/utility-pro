@@ -472,7 +472,7 @@ input[type="search"]::-webkit-search-results-button {
 	background: url(images/icon-search-ltr.png) no-repeat 75% 53% #fff;
 	border: 1px solid #ddd;
 	box-shadow: none;
-	height: 54px;
+	height: 53px;
 	margin: 0;
 	overflow: hidden;
 	padding: 0 42px 0 0;
