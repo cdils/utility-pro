@@ -467,7 +467,7 @@ input[type="search"]::-webkit-search-results-button {
 	width: 300px;
 }
 
-.search-form input[type="submit"] {
+.search-form [type="submit"] {
     background-color: transparent;
     background: url(images/icon-search-rtl.png) no-repeat 25% 53% #fff;
     border: 1px solid #ddd;
