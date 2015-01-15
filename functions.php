@@ -102,7 +102,7 @@ function utility_pro_setup() {
 	add_action( 'genesis_before_footer', 'utility_pro_do_footer_nav' );
 
 	// Load accesibility components if the Genesis Accessible plugin is not active
-	if ( ! function_exists( 'genwpacc_genesis_init' ) ) {
+	if ( ! utility_pro_genesis_accessible_is_active() ) {
 
 		// Load skip links (accessibility)
 		include get_stylesheet_directory() . '/includes/skip-links.php';
@@ -120,94 +120,7 @@ function utility_pro_setup() {
 		// Add theme license (don't remove, unless you don't want theme support)
 		include get_stylesheet_directory() . '/includes/theme-license.php';
 	}
-}
 
-/**
- * Register the widget areas enabled by default in Utility.
- *
- * Applies the `utility_pro_default_widget_areas` filter.
- *
- * @since 1.0.0
- */
-function utility_pro_register_widget_areas() {
-
-	$widget_areas = array(
-		array(
-			'id'          => 'utility-bar',
-			'name'        => __( 'Utility Bar', 'utility-pro' ),
-			'description' => __( 'This is the utility bar across the top of page.', 'utility-pro' ),
-		),
-		array(
-			'id'          => 'utility-home-welcome',
-			'name'        => __( 'Home Welcome', 'utility-pro' ),
-			'description' => __( 'This is the welcome section at the top of the home page.', 'utility-pro' ),
-		),
-		array(
-			'id'          => 'utility-home-gallery-1',
-			'name'        => sprintf( _x( 'Home Gallery %d', 'Group of Home Gallery widget areas', 'utility-pro' ), 1 ),
-			'description' => sprintf( _x( 'Home Gallery %d widget area on home page.', 'Description of widget area', 'utility-pro' ), 1 ),
-		),
-		array(
-			'id'          => 'utility-home-gallery-2',
-			'name'        => sprintf( _x( 'Home Gallery %d', 'Group of Home Gallery widget areas', 'utility-pro' ), 2 ),
-			'description' => sprintf( _x( 'Home Gallery %d widget area on home page.', 'Description of widget area', 'utility-pro' ), 2 ),
-		),
-		array(
-			'id'          => 'utility-home-gallery-3',
-			'name'        => sprintf( _x( 'Home Gallery %d', 'Group of Home Gallery widget areas', 'utility-pro' ), 3 ),
-			'description' => sprintf( _x( 'Home Gallery %d widget area on home page.', 'Description of widget area', 'utility-pro' ), 3 ),
-		),
-		array(
-			'id'          => 'utility-home-gallery-4',
-			'name'        => sprintf( _x( 'Home Gallery %d', 'Group of Home Gallery widget areas', 'utility-pro' ), 4 ),
-			'description' => sprintf( _x( 'Home Gallery %d widget area on home page.', 'Description of widget area', 'utility-pro' ), 4 ),
-		),
-		array(
-			'id'          => 'utility-call-to-action',
-			'name'        => __( 'Call to Action', 'utility-pro' ),
-			'description' => __( 'This is the Call to Action section on the home page.', 'utility-pro' ),
-		),
-	);
-
-	$widget_areas = apply_filters( 'utility_pro_default_widget_areas', $widget_areas );
-
-	foreach ( $widget_areas as $widget_area ) {
-		genesis_register_sidebar( $widget_area );
-	}
-}
-
-add_action( 'wp_enqueue_scripts', 'utility_pro_enqueue_assets' );
-/**
- * Enqueue theme assets.
- *
- * @since 1.0.0
- */
-function utility_pro_enqueue_assets() {
-
-
-	// Load mobile responsive menu
-	wp_enqueue_script( 'utility-pro-responsive-menu', get_stylesheet_directory_uri() . '/includes/js/responsive-menu.js', array( 'jquery' ), '1.0.0', true );
-
-	// Localize the responsive menu script (for translation)
-	wp_localize_script( 'utility-pro-responsive-menu', 'responsiveL10n', array( 'button_label' => __( 'Menu', 'utility-pro' ) ) );
-
-	// Load keyboard navigation script only if Genesis Accessible plugin is not active
-	if ( ! function_exists( 'genwpacc_dropdown_scripts' ) ) {
-		wp_enqueue_script( 'genwpacc-dropdown',  get_stylesheet_directory_uri() . '/includes/js/genwpacc-dropdown.js', array( 'jquery' ), false, true );
-	}
-
-	// Replace style.css with style-rtl.css for RTL languages
-	wp_style_add_data( 'utility-pro', 'rtl', 'replace' );
-
-	// Load remaining scripts only if custom background is being used and we're on the home page
-	if ( ! get_background_image() && ( ! is_front_page() || ! is_page_template( 'page-template-page_landing' ) ) ) {
-		return;
-	}
-
-	wp_enqueue_script( 'utility-pro-backstretch', get_stylesheet_directory_uri() . '/includes/js/backstretch.min.js', array( 'jquery' ), '2.0.1', true );
-	wp_enqueue_script( 'utility-pro-backstretch-args', get_stylesheet_directory_uri() . '/includes/js/backstretch.args.js', array( 'utility-pro-backstretch' ), CHILD_THEME_VERSION, true );
-
-	wp_localize_script( 'utility-pro-backstretch-args', 'utilityL10n', array( 'src' => get_background_image() ) );
 }
 
 /**
@@ -221,7 +134,6 @@ function utility_pro_add_bar() {
 		'before' => '<div class="utility-bar"><div class="wrap">',
 		'after'  => '</div></div>',
 	) );
-
 }
 
 /**
@@ -242,40 +154,18 @@ function utility_pro_featured_image() {
 }
 
 /**
- * Outputs Footer Navigation Menu
+ * Check whether Genesis Accessible plugin is active.
  *
- * @return string Navigation menu markup.
+ * If the Genesis Accessible plugin is in use, disable certain accessibility
+ * features in Utility Pro and default to plugin settings to avoid unneccessary
+ * scripts from loading.
+ *
+ * @return boolean
  * @since  1.0.0
  */
-function utility_pro_do_footer_nav() {
+function utility_pro_genesis_accessible_is_active() {
 
-	genesis_nav_menu(
-		array(
-			'menu_class'     => 'menu genesis-nav-menu menu-footer',
-			'theme_location' => 'footer',
-		)
-	);
-}
-
-// Add schema markup to Footer Navigation Menu
-add_filter( 'genesis_attr_nav-footer', 'genesis_attributes_nav' );
-
-add_filter( 'wp_nav_menu_args', 'utility_pro_footer_menu_args' );
-/**
- * Reduce the footer navigation menu to one level depth.
- *
- * @param  array $args
- * @return array
- * @since  1.0.0
- */
-function utility_pro_footer_menu_args( $args ) {
-
-	if( 'footer' != $args['theme_location'] ) {
-		return $args;
-	}
-
-	$args['depth'] = 1;
-	return $args;
+   return function_exists( 'genwpacc_genesis_init' );
 }
 
 add_filter( 'genesis_footer_creds_text', 'utility_pro_footer_creds' );
@@ -298,8 +188,18 @@ add_filter( 'genesis_author_box_gravatar_size', 'utility_pro_author_box_gravatar
  * @since 1.0.0
  */
 function utility_pro_author_box_gravatar_size( $size ) {
+
 	return 96;
 }
 
 // Enable shortcodes in widgets
 add_filter( 'widget_text', 'do_shortcode' );
+
+// Add theme widget areas
+include get_stylesheet_directory() . '/includes/widget-areas.php';
+
+// Add footer navigation components
+include get_stylesheet_directory() . '/includes/footer-nav.php';
+
+// Add scripts to enqueue
+include get_stylesheet_directory() . '/includes/enqueue-assets.php';

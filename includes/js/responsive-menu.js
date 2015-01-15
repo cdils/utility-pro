@@ -1,7 +1,7 @@
 ( function( window, $, undefined ) {
 	'use strict';
 
-	$( '.menu-primary' ).before( '<button class="menu-toggle primary-menu-toggle" role="button" aria-pressed="false"><span class="screen-reader-text">' . responsiveL10n.button_label . '</span></button>' ); // Add toggles to menus
+	$( '.menu-primary' ).before( '<button class="menu-toggle primary-menu-toggle" role="button" aria-pressed="false"><span class="screen-reader-text">' . utilityResponsiveL10n.button_label . '</span></button>' ); // Add toggles to menus
 	$( '.sub-menu' ).before( '<button class="menu-toggle menu-toggle-footer" role="button" aria-pressed="false"></button>' ); // Add toggles to sub menus
 
 	// Show/hide the navigation

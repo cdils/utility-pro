@@ -35,7 +35,11 @@ To address accessibility issues in WordPress and the Genesis Framework, the foll
 * WP Accessibility (https://wordpress.org/plugins/wp-accessibility/)
 
 PROPS
-A special thanks to Gary Jones, who audited this code (trust me, if any mistakes remain, they are mine alone - Gary did his best to set me straight). I’m also deeply appreciative of Nir Rosenbaum for teaching me about issues when building themes for Right to Left (RTL) scripts as well as testing Utility Pro with an RTL language. I’d be terribly remiss not to thank Rian Rietveld for her accessibility audit (and graciously letting me borrow much of her Genesis Accessible plugin) and to Amanda Rush, who tested the theme for use with a screen reader and tweaked the theme where it fell short.
+A special thanks to Gary Jones, who audited this code (trust me, if any mistakes remain, they are mine alone - Gary did his best to set me straight).
+
+I’m also deeply appreciative of Nir Rosenbaum for teaching me about issues when building themes for Right to Left (RTL) scripts as well as testing Utility Pro with an RTL language.
+
+I’d be terribly remiss not to thank Rian Rietveld for her accessibility audit (and graciously letting me borrow much of her Genesis Accessible plugin) and to Amanda Rush, who tested the theme for use with a screen reader and made adjustments to improve the experience.
 
 A huge thank you to the following folks for providing translation files for this theme:
 
@@ -47,6 +51,7 @@ A huge thank you to the following folks for providing translation files for this
 * Luis Martins (pt_PT)
 * Nir Rosenbaum (he_IL)
 * Morten Rand-Hendriksen (nb_NO)
+* Grégoire Noyelle (fr_FR)
 
 For more information on translating this theme, please check https://store.carriedils.com/translate/
 
