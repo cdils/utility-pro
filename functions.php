@@ -11,10 +11,10 @@
 
 // Load internationalization components.
 // English users do not need to load the text domain and can comment out or remove
-require( get_stylesheet_directory() . '/helpers/text-domain.php' );
+require( get_stylesheet_directory() . '/includes/text-domain.php' );
 
 // This file loads the Google fonts used in this theme
-require( get_stylesheet_directory() . '/helpers/google-fonts.php' );
+require( get_stylesheet_directory() . '/includes/google-fonts.php' );
 
 add_action( 'genesis_setup', 'utility_pro_setup', 15 );
 /**
@@ -105,10 +105,10 @@ function utility_pro_setup() {
 	if ( ! function_exists( 'genwpacc_genesis_init' ) ) {
 
 		// Load skip links (accessibility)
-		include get_stylesheet_directory() . '/helpers/skip-links.php';
+		include get_stylesheet_directory() . '/includes/skip-links.php';
 
 		// Load form enhancements (accessibility)
-		include get_stylesheet_directory() . '/helpers/forms.php';
+		include get_stylesheet_directory() . '/includes/forms.php';
 	}
 
 	// Load files in admin
@@ -118,7 +118,7 @@ function utility_pro_setup() {
 		include get_stylesheet_directory() . '/includes/suggested-plugins.php';
 
 		// Add theme license (don't remove, unless you don't want theme support)
-		include get_stylesheet_directory() . '/helpers/theme-settings/theme-license.php';
+		include get_stylesheet_directory() . '/includes/theme-license.php';
 	}
 }
 
@@ -185,27 +185,27 @@ add_action( 'wp_enqueue_scripts', 'utility_pro_enqueue_assets' );
 function utility_pro_enqueue_assets() {
 
 
-    // Load mobile responsive menu
-	wp_enqueue_script( 'utility-pro-responsive-menu', get_stylesheet_directory_uri() . '/helpers/js/responsive-menu.js', array( 'jquery' ), '1.0.0', true );
+	// Load mobile responsive menu
+	wp_enqueue_script( 'utility-pro-responsive-menu', get_stylesheet_directory_uri() . '/includes/js/responsive-menu.js', array( 'jquery' ), '1.0.0', true );
 
 	// Localize the responsive menu script (for translation)
 	wp_localize_script( 'utility-pro-responsive-menu', 'responsiveL10n', array( 'button_label' => __( 'Menu', 'utility-pro' ) ) );
 
 	// Load keyboard navigation script only if Genesis Accessible plugin is not active
-	if ( function_exists( 'genwpacc_dropdown_scripts' ) ) {
-		wp_enqueue_script( 'genwpacc-dropdown',  get_stylesheet_directory_uri() . '/helpers/js/genwpacc-dropdown.js', array( 'jquery' ), false, true );
+	if ( ! function_exists( 'genwpacc_dropdown_scripts' ) ) {
+		wp_enqueue_script( 'genwpacc-dropdown',  get_stylesheet_directory_uri() . '/includes/js/genwpacc-dropdown.js', array( 'jquery' ), false, true );
 	}
 
-    // Replace style.css with style-rtl.css for RTL languages
-    wp_style_add_data( 'utility-pro', 'rtl', 'replace' );
+	// Replace style.css with style-rtl.css for RTL languages
+	wp_style_add_data( 'utility-pro', 'rtl', 'replace' );
 
 	// Load remaining scripts only if custom background is being used and we're on the home page
 	if ( ! get_background_image() && ( ! is_front_page() || ! is_page_template( 'page-template-page_landing' ) ) ) {
 		return;
 	}
 
-	wp_enqueue_script( 'utility-pro-backstretch', get_stylesheet_directory_uri() . '/helpers/js/backstretch.min.js', array( 'jquery' ), '2.0.1', true );
-	wp_enqueue_script( 'utility-pro-backstretch-args', get_stylesheet_directory_uri() . '/helpers/js/backstretch.args.js', array( 'utility-pro-backstretch' ), CHILD_THEME_VERSION, true );
+	wp_enqueue_script( 'utility-pro-backstretch', get_stylesheet_directory_uri() . '/includes/js/backstretch.min.js', array( 'jquery' ), '2.0.1', true );
+	wp_enqueue_script( 'utility-pro-backstretch-args', get_stylesheet_directory_uri() . '/includes/js/backstretch.args.js', array( 'utility-pro-backstretch' ), CHILD_THEME_VERSION, true );
 
 	wp_localize_script( 'utility-pro-backstretch-args', 'utilityL10n', array( 'src' => get_background_image() ) );
 }
