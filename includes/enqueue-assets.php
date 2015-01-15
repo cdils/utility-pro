@@ -17,19 +17,24 @@ add_action( 'wp_enqueue_scripts', 'utility_pro_enqueue_assets' );
  */
 function utility_pro_enqueue_assets() {
 
+	// Replace style.css with style-rtl.css for RTL languages
+	wp_style_add_data( 'utility-pro', 'rtl', 'replace' );
+
 	// Load mobile responsive menu
 	wp_enqueue_script( 'utility-pro-responsive-menu', get_stylesheet_directory_uri() . '/js/responsive-menu.js', array( 'jquery' ), '1.0.0', true );
 
 	// Localize the responsive menu script (for translation)
-	//wp_localize_script( 'utility-pro-responsive-menu', 'utilityResponsiveL10n', array( 'button_label' => __( 'Menu', 'utility-pro' ) ) );
+	wp_localize_script( 'utility-pro-responsive-menu', 'utilityResponsiveL10n', array( 'button_label' => __( 'Menu', 'utility-pro' ) ) );
 
-	// Load keyboard navigation script only if Genesis Accessible plugin is not active
+	// Load scripts only if Genesis Accessible plugin is not active
 	if ( ! utility_pro_genesis_accessible_is_active() ) {
-		wp_enqueue_script( 'genwpacc-dropdown',  get_stylesheet_directory_uri() . '/js/genwpacc-dropdown.js', array( 'jquery' ), false, true );
-	}
 
-	// Replace style.css with style-rtl.css for RTL languages
-	wp_style_add_data( 'utility-pro', 'rtl', 'replace' );
+		// Keyboard navigation (dropdown menus) script
+		wp_enqueue_script( 'genwpacc-dropdown',  get_stylesheet_directory_uri() . '/js/genwpacc-dropdown.js', array( 'jquery' ), false, true );
+
+		// Skiplinks script
+		wp_enqueue_script( 'genwpacc-skiplinks-js',  get_stylesheet_directory() . '/js/genwpacc-skiplinks.js', array(), '1.0.0', true );
+	}
 
 	// Load remaining scripts only if custom background is being used
 	// and we're on the home page or a page using the landing page template

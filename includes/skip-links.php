@@ -113,13 +113,3 @@ function utility_pro_genesis_attr_nav_footer( $attributes ) {
 	}
 	return $attributes;
 }
-
-add_action( 'wp_enqueue_scripts', 'utility_skiplinks_scripts' );
-/**
- * Enqueue Skiplinks script.
- *
- * @since 1.0.0
- */
-function utility_skiplinks_scripts() {
-	wp_enqueue_script( 'genwpacc-skiplinks-js',  get_stylesheet_directory() . '/js/genwpacc-skiplinks.js', array(), '1.0.0', true );
-}

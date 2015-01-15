@@ -1404,11 +1404,12 @@ Content Area
 	margin-bottom: 30px;
 }
 
-.archive-pagination li {
+.pagination .nav-links {
 	display: inline;
 }
 
-.archive-pagination li a {
+.pagination .nav-links a,
+.pagination .nav-links .current {
 	background: #333;
 	border: 1px solid #fff;
 	color: #fff;
@@ -1417,14 +1418,14 @@ Content Area
 	padding: 8px 12px;
 }
 
-.archive-pagination li a:hover,
-.archive-pagination li.active a:hover {
+.pagination .nav-links a:hover,
+.pagination .nav-links .current:hover {
 	background: #fff;
 	border: 1px solid #333;
 	color: #333;
 }
 
-.archive-pagination li.active a {
+.pagination .nav-links .current {
 	background: #555;
 	border: 1px solid #fff;
 	color: #fff;
@@ -1938,7 +1939,7 @@ Media Queries
 	nav,
 	select,
 	textarea,
-	.archive-pagination,
+	.pagination,
 	.backstretch,
 	.breadcrumb,
 	.call-to-action-bar,

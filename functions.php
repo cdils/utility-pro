@@ -104,6 +104,12 @@ function utility_pro_setup() {
 	// Add a navigation area above the site footer
 	add_action( 'genesis_before_footer', 'utility_pro_do_footer_nav' );
 
+	// Remove Genesis archive pagination (Genesis pagination settings still apply)
+	remove_action( 'genesis_after_endwhile', 'genesis_posts_nav' );
+
+	// Add WordPress archive pagination (accessibility)
+	add_action( 'genesis_after_endwhile', 'utility_pro_post_pagination' );
+
 	// Load accesibility components if the Genesis Accessible plugin is not active
 	if ( ! utility_pro_genesis_accessible_is_active() ) {
 
@@ -142,8 +148,9 @@ function utility_pro_add_bar() {
 /**
  * Add featured image above single posts.
  *
- * @return null Return early if not a single post there is no thumbnail.
  * @since  1.0.0
+ *
+ * @return null Return early if not a single post there is no thumbnail.
  */
 function utility_pro_featured_image() {
 
@@ -163,8 +170,9 @@ function utility_pro_featured_image() {
  * features in Utility Pro and default to plugin settings to avoid unneccessary
  * scripts from loading.
  *
- * @return boolean
  * @since  1.0.0
+ *
+ * @return boolean
  */
 function utility_pro_genesis_accessible_is_active() {
 
@@ -175,8 +183,9 @@ add_filter( 'genesis_footer_creds_text', 'utility_pro_footer_creds' );
 /**
  * Change the footer text.
  *
- * @return null Return early if not a single post or post does not have thumbnail.
  * @since  1.0.0
+ *
+ * @return null Return early if not a single post or post does not have thumbnail.
  */
 function utility_pro_footer_creds( $creds ) {
 
@@ -187,11 +196,11 @@ add_filter( 'genesis_author_box_gravatar_size', 'utility_pro_author_box_gravatar
 /**
  * Customize the Gravatar size in the author box.
  *
- * @return integer Pixel size of gravatar.
  * @since 1.0.0
+ *
+ * @return integer Pixel size of gravatar.
  */
 function utility_pro_author_box_gravatar_size( $size ) {
-
 	return 96;
 }
 
@@ -208,6 +217,31 @@ function utility_pro_author_box_gravatar_size( $size ) {
 function utility_pro_get_search_form() {
 	$search = new Utility_Pro_Search_Form;
 	return $search->get_form();
+}
+
+/**
+ * Use WordPress archive pagination.
+ *
+ * Return a paginated navigation to next/previous set of posts, when
+ * applicable. Includes screen reader text for better accessibility.
+ *
+ * @since  1.0.0
+ *
+ * @see  the_posts_pagination()
+ * @return string Markup for pagination links.
+ */
+function utility_pro_post_pagination() {
+
+	$args = array(
+		'mid_size' => 2,
+		'before_page_number' => '<span class="screen-reader-text">' . __( 'Page', 'utility-pro' ) . ' </span>',
+	);
+
+	if ( 'numeric' === genesis_get_option( 'posts_nav' ) ) {
+		the_posts_pagination( $args );
+	} else {
+		the_posts_navigation( $args );
+	}
 }
 
 // Enable shortcodes in widgets
