@@ -28,27 +28,31 @@ function utility_pro_homepage_setup() {
 		return;
 	}
 
-	// Add home welcome area if "Home Welcome" widget area is active
-	if ( $home_sidebars['home_welcome'] ) {
-		add_action( 'genesis_after_header', 'utility_pro_add_home_welcome' );
+	// Get static home page number.
+	$page = ( get_query_var( 'page' ) ) ? get_query_var( 'page' ) : 1;
+
+	// Only show home page widgets on page 1.
+	if ( 1 == $page ) {
+
+		// Add home welcome area if "Home Welcome" widget area is active
+		if ( $home_sidebars['home_welcome'] ) {
+			add_action( 'genesis_after_header', 'utility_pro_add_home_welcome' );
+		}
+
+		// Add home gallery area if "Home Gallery 1" widget area is active
+		if ( $home_sidebars['home_gallery_1'] ) {
+			add_action( 'genesis_after_header', 'utility_pro_add_home_gallery' );
+		}
+
+		// Add call to action area if "Call to Action" widget area is active
+		if ( $home_sidebars['call_to_action'] ) {
+			add_action( 'genesis_after_header', 'utility_pro_add_call_to_action' );
+		}
 	}
 
-	// Add home gallery area if "Home Gallery 1" widget area is active
-	if ( $home_sidebars['home_gallery_1'] ) {
-		add_action( 'genesis_after_header', 'utility_pro_add_home_gallery' );
-	}
-
-	// Add call to action area if "Call to Action" widget area is active
-	if ( $home_sidebars['call_to_action'] ) {
-		add_action( 'genesis_after_header', 'utility_pro_add_call_to_action' );
-	}
-
-	// Remove standard loop and replace with custom
+	// Remove standard loop and replace with loop showing Posts, not Page content.
 	remove_action( 'genesis_loop', 'genesis_do_loop' );
-	add_action ( 'genesis_loop', 'utility_pro_custom_loop' );
-
-	// Remove pagination after posts
-	remove_action( 'genesis_after_endwhile', 'genesis_posts_nav' );
+	add_action ( 'genesis_loop', 'utility_pro_front_loop' );
 }
 
 // Display content for the "Home Welcome" section
@@ -116,10 +120,9 @@ function utility_pro_add_call_to_action() {
 }
 
 // Display latest posts instead of static page
-function utility_pro_custom_loop() {
-
+function utility_pro_front_loop() {
 	global $query_args;
-	genesis_custom_loop( wp_parse_args( $query_args, array( 'post_type' => 'post' ) ) );
+	genesis_custom_loop( wp_parse_args( $query_args, array( 'post_type' => 'post', 'paged' => get_query_var( 'page' ) ) ) );
 }
 
 genesis();
