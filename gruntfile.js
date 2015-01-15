@@ -49,6 +49,7 @@ module.exports = function(grunt) {
 		 * Watch
 		 */
 		watch: {
+			files: ['style.css'],
 			tasks: [
 				'cssjanus'
 			]

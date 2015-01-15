@@ -12,9 +12,9 @@
 /**
  * Register the widget areas enabled by default in Utility.
  *
- * Applies the `utility_pro_default_widget_areas` filter.
+ * @since  1.0.0
  *
- * @since 1.0.0
+ * @return string Markup for each sidebar ID
  */
 function utility_pro_register_widget_areas() {
 

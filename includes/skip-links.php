@@ -19,17 +19,17 @@ add_action ( 'genesis_before_header', 'utility_pro_skip_links', 5 );
  */
 function utility_pro_skip_links() {
 
-    // Call function to add IDs to the markup
+	// Call function to add IDs to the markup
 	utility_skiplinks_markup();
 
-    // write HTML, skiplinks in a list with a heading
-    echo '<h2 class="screen-reader-text">'. __( 'Skip links', 'utility-pro' ) .'</h2>' . "\n";
+	// write HTML, skiplinks in a list with a heading
+	echo '<h2 class="screen-reader-text">'. __( 'Skip links', 'utility-pro' ) .'</h2>' . "\n";
 
 	echo '<ul class="wpacc-genesis-skip-link">' . "\n";
 
-    if ( has_nav_menu( 'primary' ) ) {
-    	echo '  <li><a href="#genwpacc-genesis-nav-primary" class="screen-reader-shortcut">'. __( 'Skip to primary navigation', 'utility-pro' ) .'</a></li>' . "\n";
-    }
+	if ( has_nav_menu( 'primary' ) ) {
+		echo '  <li><a href="#genwpacc-genesis-nav-primary" class="screen-reader-shortcut">'. __( 'Skip to primary navigation', 'utility-pro' ) .'</a></li>' . "\n";
+	}
 
 	echo '  <li><a href="#genwpacc-genesis-content" class="screen-reader-shortcut">'. __( 'Skip to content', 'utility-pro' ) .'</a></li>' . "\n";
 
@@ -62,16 +62,11 @@ function utility_pro_skip_links() {
  */
 function utility_skiplinks_markup() {
 
-	if ( ! function_exists( 'genesis_markup' ) ) {
-		return;
-	}
-
 	add_filter( 'genesis_attr_nav-primary', 'utility_pro_genesis_attr_nav_primary' );
 	add_filter( 'genesis_attr_content', 'utility_pro_genesis_attr_content' );
 	add_filter( 'genesis_attr_sidebar-primary', 'utility_pro_genesis_attr_sidebar_primary' );
 	add_filter( 'genesis_attr_footer-widgets', 'genesis_attr_footer_widgets' );
 	add_filter( 'genesis_attr_nav-footer', 'utility_pro_genesis_attr_nav_footer' );
-
 }
 
 // Add ID markup if primary nav is assigned to a menu area

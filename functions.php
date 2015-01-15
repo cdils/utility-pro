@@ -9,14 +9,14 @@
  * @license      GPL-2.0+
  */
 
-// Load internationalization components.
+// Load internationalization components
 // English users do not need to load the text domain and can comment out or remove
 require get_stylesheet_directory() . '/includes/text-domain.php';
 
-// This file loads the Google fonts used in this theme.
+// This file loads the Google fonts used in this theme
 require get_stylesheet_directory() . '/includes/google-fonts.php';
 
-// This file contains search form improvements.
+// This file contains search form improvements
 require get_stylesheet_directory() . '/includes/class-search-form.php';
 
 add_action( 'genesis_setup', 'utility_pro_setup', 15 );
@@ -129,7 +129,6 @@ function utility_pro_setup() {
 		// Add theme license (don't remove, unless you don't want theme support)
 		include get_stylesheet_directory() . '/includes/theme-license.php';
 	}
-
 }
 
 /**
@@ -163,22 +162,6 @@ function utility_pro_featured_image() {
 	echo '</div>';
 }
 
-/**
- * Check whether Genesis Accessible plugin is active.
- *
- * If the Genesis Accessible plugin is in use, disable certain accessibility
- * features in Utility Pro and default to plugin settings to avoid unneccessary
- * scripts from loading.
- *
- * @since  1.0.0
- *
- * @return boolean
- */
-function utility_pro_genesis_accessible_is_active() {
-
-   return function_exists( 'genwpacc_genesis_init' );
-}
-
 add_filter( 'genesis_footer_creds_text', 'utility_pro_footer_creds' );
 /**
  * Change the footer text.
@@ -204,49 +187,6 @@ function utility_pro_author_box_gravatar_size( $size ) {
 	return 96;
 }
 
-/**
- * Customize the search form to improve accessibility.
- *
- * The instantiation can accept an array of custom strings, should you want
- * the search form have different strings in different contexts.
- *
- * @since 1.0.0
- *
- * @return string Search form markup.
- */
-function utility_pro_get_search_form() {
-	$search = new Utility_Pro_Search_Form;
-	return $search->get_form();
-}
-
-/**
- * Use WordPress archive pagination.
- *
- * Return a paginated navigation to next/previous set of posts, when
- * applicable. Includes screen reader text for better accessibility.
- *
- * @since  1.0.0
- *
- * @see  the_posts_pagination()
- * @return string Markup for pagination links.
- */
-function utility_pro_post_pagination() {
-
-	$args = array(
-		'mid_size' => 2,
-		'before_page_number' => '<span class="screen-reader-text">' . __( 'Page', 'utility-pro' ) . ' </span>',
-	);
-
-	if ( 'numeric' === genesis_get_option( 'posts_nav' ) ) {
-		the_posts_pagination( $args );
-	} else {
-		the_posts_navigation( $args );
-	}
-}
-
-// Enable shortcodes in widgets
-add_filter( 'widget_text', 'do_shortcode' );
-
 // Add theme widget areas
 include get_stylesheet_directory() . '/includes/widget-areas.php';
 
@@ -255,3 +195,6 @@ include get_stylesheet_directory() . '/includes/footer-nav.php';
 
 // Add scripts to enqueue
 include get_stylesheet_directory() . '/includes/enqueue-assets.php';
+
+// Miscellaenous functions used in theme configuration
+include get_stylesheet_directory() . '/includes/theme-config.php';

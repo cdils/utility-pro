@@ -143,7 +143,7 @@ If you've chosen your favorite color scheme, you can delete the others
 }
 
 .utility-pro-purple .sticky.entry {
-	border-top: 1px solid #339;
+	border-top-color: #339;
 }
 
 .utility-pro-purple .call-to-action-bar .button,
@@ -180,7 +180,7 @@ If you've chosen your favorite color scheme, you can delete the others
 }
 
 .utility-pro-green .sticky.entry {
-	border-top: 1px solid #107952;
+	border-top-color: #107952;
 }
 
 .utility-pro-green .call-to-action-bar .button,
@@ -217,7 +217,7 @@ If you've chosen your favorite color scheme, you can delete the others
 }
 
 .utility-pro-red .sticky.entry {
-	border-top: 1px solid #d3131b;
+	border-top-color: #d3131b;
 }
 
 .utility-pro-red .call-to-action-bar .button,
@@ -554,6 +554,10 @@ input[type="search"]::-webkit-search-results-button {
 	width: 11.1111%;
 }
 
+.gallery-columns-10 .gallery-item {
+	width: 10%;
+}
+
 .gallery img {
 	border: 1px solid #ddd;
 	height: auto;
@@ -790,6 +794,10 @@ img.alignright,
 
 .wp-caption {
 	max-width: 100%;
+}
+
+.widget_calendar table td {
+	padding: 5px;
 }
 
 /* Genesis
@@ -1500,7 +1508,7 @@ Content Area
 .entry-comments
 .comment,
 .entry-comments .comment-reply {
-    margin-bottom: 40px;
+	margin-bottom: 40px;
 }
 
 p.form-submit,
@@ -1662,7 +1670,7 @@ Accessibility Extras - Taken from the Leiden theme & Genesis Accessible plugin (
 	padding: 15px 23px 14px;
 	text-decoration: none;
 	width: auto;
-	z-index: 100000;
+	z-index: 999;
 }
 
 .wpacc-genesis-skip-link li,
@@ -1683,10 +1691,6 @@ Accessibility Extras - Taken from the Leiden theme & Genesis Accessible plugin (
 
 .menu .menu-item:focus {
 	position: static;
-}
-
-.menu .menu-item.wpacc-hover > ul.sub-menu {
-	border-bottom: 1px solid gold;
 }
 
 .menu .menu-item > a:focus + ul.sub-menu,

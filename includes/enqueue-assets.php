@@ -23,9 +23,6 @@ function utility_pro_enqueue_assets() {
 	// Load mobile responsive menu
 	wp_enqueue_script( 'utility-pro-responsive-menu', get_stylesheet_directory_uri() . '/js/responsive-menu.js', array( 'jquery' ), '1.0.0', true );
 
-	// Localize the responsive menu script (for translation)
-	wp_localize_script( 'utility-pro-responsive-menu', 'utilityResponsiveL10n', array( 'button_label' => __( 'Menu', 'utility-pro' ) ) );
-
 	// Load scripts only if Genesis Accessible plugin is not active
 	if ( ! utility_pro_genesis_accessible_is_active() ) {
 

@@ -38,7 +38,7 @@ add_filter( 'wp_nav_menu_args', 'utility_pro_footer_menu_args' );
  */
 function utility_pro_footer_menu_args( $args ) {
 
-	if( 'footer' != $args['theme_location'] ) {
+	if ( 'footer' != $args['theme_location'] ) {
 		return $args;
 	}
 
