@@ -99,7 +99,7 @@ function utility_pro_setup() {
 	add_action( 'genesis_before_header', 'utility_pro_add_bar' );
 
 	// Add featured image above posts
-	add_action( 'genesis_before_entry_content', 'utility_pro_featured_image' );
+	add_filter( 'the_content', 'utility_pro_featured_image' );
 
 	// Add a navigation area above the site footer
 	add_action( 'genesis_before_footer', 'utility_pro_do_footer_nav' );
@@ -145,21 +145,26 @@ function utility_pro_add_bar() {
 }
 
 /**
- * Add featured image above single posts.
- *
- * @since  1.0.0
- *
- * @return null Return early if not a single post there is no thumbnail.
- */
-function utility_pro_featured_image() {
+* Add featured image above single posts.
+*
+* Outputs image as part of the post content, so it's included in the RSS feed.
+* H/t to Robin Cornett for the suggestion of making image available to RSS.
+*
+* @since 1.0.0
+*
+* @return null Return early if not a single post or there is no thumbnail.
+*/
+function utility_pro_featured_image( $content ) {
 
 	if ( ! is_singular( 'post' ) || ! has_post_thumbnail() ) {
-		return;
+		return $content;
 	}
 
-	echo '<div class="featured-image">';
-		echo get_the_post_thumbnail( get_the_ID(), 'feature-large' );
-	echo '</div>';
+	$image = '<div class="featured-image">';
+	$image .= get_the_post_thumbnail( get_the_ID(), 'feature-large' );
+	$image .= '</div>';
+
+	return $image . $content;
 }
 
 add_filter( 'genesis_footer_creds_text', 'utility_pro_footer_creds' );

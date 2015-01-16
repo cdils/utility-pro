@@ -920,7 +920,8 @@ Widgets
 	text-transform: none;
 }
 
-.home-welcome p {
+.home-welcome p,
+.home-welcome .textwidget {
 	color: #eaeaea;
 }
 
@@ -1425,7 +1426,7 @@ Content Area
 --------------------------------------------- */
 
 .featured-image {
-	margin: 40px 0 20px;
+	margin: 20px 0;
 }
 
 /* Pagination
@@ -1704,7 +1705,8 @@ Media Queries
 		font-size: 80px;
 	}
 
-	.home-welcome p {
+	.home-welcome p,
+	.home-welcome .textwidget {
 		font-size: 40px;
 		line-height: normal;
 		margin-bottom: 34px;

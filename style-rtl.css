@@ -143,7 +143,7 @@ If you've chosen your favorite color scheme, you can delete the others
 }
 
 .utility-pro-purple .sticky.entry {
-	border-top: 1px solid #339;
+	border-top-color: #339;
 }
 
 .utility-pro-purple .call-to-action-bar .button,
@@ -180,7 +180,7 @@ If you've chosen your favorite color scheme, you can delete the others
 }
 
 .utility-pro-green .sticky.entry {
-	border-top: 1px solid #107952;
+	border-top-color: #107952;
 }
 
 .utility-pro-green .call-to-action-bar .button,
@@ -217,7 +217,7 @@ If you've chosen your favorite color scheme, you can delete the others
 }
 
 .utility-pro-red .sticky.entry {
-	border-top: 1px solid #d3131b;
+	border-top-color: #d3131b;
 }
 
 .utility-pro-red .call-to-action-bar .button,
@@ -797,7 +797,7 @@ img.alignright,
 }
 
 .widget_calendar table td {
-    padding: 5px;
+	padding: 5px;
 }
 
 /* Genesis
@@ -920,7 +920,8 @@ Widgets
 	text-transform: none;
 }
 
-.home-welcome p {
+.home-welcome p,
+.home-welcome .textwidget {
 	color: #eaeaea;
 }
 
@@ -1250,8 +1251,7 @@ Site Navigation
 	position: relative;
 }
 
-.menu-toggle,
-.sub-menu-toggle {
+.menu-toggle {
 	color: #fff;
 	display: block;
 	font-size: 30px;
@@ -1259,20 +1259,16 @@ Site Navigation
 	overflow: hidden;
 	padding: 9px;
 	visibility: visible;
-}
-
-button.menu-toggle,
-button.sub-menu-toggle {
 	background-color: transparent;
 	border: 0;
 }
 
-button.sub-menu-toggle {
+.sub-menu-toggle {
+	position: absolute;
+	top: 0;
+	left: 0;
 	font-size: 14px;
 	padding: 16px;
-	position: absolute;
-	left: 0;
-	top: 0;
 }
 
 .menu-toggle:before {
@@ -1430,7 +1426,7 @@ Content Area
 --------------------------------------------- */
 
 .featured-image {
-	margin: 40px 0 20px;
+	margin: 20px 0;
 }
 
 /* Pagination
@@ -1508,7 +1504,7 @@ Content Area
 .entry-comments
 .comment,
 .entry-comments .comment-reply {
-    margin-bottom: 40px;
+	margin-bottom: 40px;
 }
 
 p.form-submit,
@@ -1670,7 +1666,7 @@ Accessibility Extras - Taken from the Leiden theme & Genesis Accessible plugin (
 	padding: 15px 23px 14px;
 	text-decoration: none;
 	width: auto;
-	z-index: 100000;
+	z-index: 999;
 }
 
 .wpacc-genesis-skip-link li,
@@ -1693,10 +1689,6 @@ Accessibility Extras - Taken from the Leiden theme & Genesis Accessible plugin (
 	position: static;
 }
 
-.menu .menu-item.wpacc-hover > ul.sub-menu {
-	border-bottom: 1px solid gold;
-}
-
 .menu .menu-item > a:focus + ul.sub-menu,
 .menu .menu-item.wpacc-hover > ul.sub-menu {
 	right: auto;
@@ -1713,7 +1705,8 @@ Media Queries
 		font-size: 80px;
 	}
 
-	.home-welcome p {
+	.home-welcome p,
+	.home-welcome .textwidget {
 		font-size: 40px;
 		line-height: normal;
 		margin-bottom: 34px;

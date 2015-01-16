@@ -45,7 +45,7 @@ function utility_pro_enqueue_assets() {
 
 	// Load remaining scripts only if custom background is being used
 	// and we're on the home page or a page using the landing page template
-	if ( ! get_background_image() && ( ! is_front_page() || ! is_page_template( 'page-template-page_landing' ) ) ) {
+	if ( ! get_background_image() || ( !  ( is_front_page() || is_page_template( 'page_landing.php' ) ) ) ) {
 		return;
 	}
 

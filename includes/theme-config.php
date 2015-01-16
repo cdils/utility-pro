@@ -12,6 +12,18 @@
 // Enable shortcodes in widgets
 add_filter( 'widget_text', 'do_shortcode' );
 
+add_filter( 'theme_page_templates', 'utility_pro_remove_genesis_page_templates' );
+/**
+ * Remove Genesis Blog page template.
+ *
+ * @param array $page_templates
+ * @return array
+ */
+function utility_pro_remove_genesis_page_templates( $page_templates ) {
+	unset( $page_templates['page_blog.php'] );
+	return $page_templates;
+}
+
 /**
  * Customize the search form to improve accessibility.
  *
@@ -39,7 +51,6 @@ function utility_pro_get_search_form() {
  * @return string Markup for pagination links.
  */
 function utility_pro_post_pagination() {
-
 	$args = array(
 		'mid_size' => 2,
 		'before_page_number' => '<span class="screen-reader-text">' . __( 'Page', 'utility-pro' ) . ' </span>',
