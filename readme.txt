@@ -34,6 +34,16 @@ To address accessibility issues in WordPress and the Genesis Framework, the foll
 * Genesis Accessible (https://wordpress.org/plugins/genesis-accessible)
 * WP Accessibility (https://wordpress.org/plugins/wp-accessibility/)
 
+DOCUMENTATION & SUPPORT
+
+You can find full documentation for Utility Pro at:
+
+https://store.carriedils.com/support/documentation/
+
+If you have questions or issues, please get in touch with our support team here:
+
+https://store.carriedils.com/support/
+
 PROPS
 A special thanks to Gary Jones, who audited this code (trust me, if any mistakes remain, they are mine alone - Gary did his best to set me straight).
 
