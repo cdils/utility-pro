@@ -1250,8 +1250,7 @@ Site Navigation
 	position: relative;
 }
 
-.menu-toggle,
-.sub-menu-toggle {
+.menu-toggle {
 	color: #fff;
 	display: block;
 	font-size: 30px;
@@ -1259,20 +1258,16 @@ Site Navigation
 	overflow: hidden;
 	padding: 9px;
 	visibility: visible;
-}
-
-button.menu-toggle,
-button.sub-menu-toggle {
 	background-color: transparent;
 	border: 0;
 }
 
-button.sub-menu-toggle {
+.sub-menu-toggle {
+	position: absolute;
+	top: 0;
+	right: 0;
 	font-size: 14px;
 	padding: 16px;
-	position: absolute;
-	right: 0;
-	top: 0;
 }
 
 .menu-toggle:before {

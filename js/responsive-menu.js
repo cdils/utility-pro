@@ -1,21 +1,36 @@
+/* global utilityResponsiveL10n:false */
 ( function( window, $, undefined ) {
 	'use strict';
+	var primaryButton, subMenuButton;
 
-	$( '.menu-primary' ).before( '<button class="menu-toggle primary-menu-toggle" role="button" aria-pressed="false" aria-label="primary navigation menu"></button>' ); // Add toggles to menus
-	$( '.sub-menu' ).before( '<button class="menu-toggle sub-menu-toggle" role="button" aria-pressed="false" aria-label="sub-menu navigation"></button>' ); // Add toggles to sub menus
-	$( '.menu-primary' ).before( '<button class="menu-toggle primary-menu-toggle" role="button" aria-pressed="false"><span class="screen-reader-text">' + utilityResponsiveL10n.button_label + '</span></button>' ); // Add toggles to menus
-	$( '.sub-menu' ).before( '<button class="menu-toggle sub-menu-toggle" role="button" aria-pressed="false"></button>' ); // Add toggles to sub menus
+	primaryButton = $( '<button>' + utilityResponsiveL10n.buttonText + '</button>' )
+		.attr( 'role', 'button' )
+		.attr( 'aria-pressed', false )
+		.attr( 'aria-expanded', false )
+		.attr( 'aria-controls', $( '.menu-primary' ).attr( 'id' ) )
+		.attr( 'aria-label', utilityResponsiveL10n.buttonLabel )
+		.attr( 'class', 'menu-toggle menu-toggle-primary' );
+	$( '.menu-primary' ).before( primaryButton );
+
+	// Sub-level menu items
+	subMenuButton = $( '<button>' + utilityResponsiveL10n.subButtonText + '</button>' )
+		.attr( 'role', 'button' )
+		.attr( 'aria-pressed', false )
+		.attr( 'aria-label', utilityResponsiveL10n.subButtonLabel )
+		.attr( 'class', 'menu-toggle sub-menu-toggle' );
+	$( '.sub-menu' ).before( subMenuButton );
 
 	// Show/hide the navigation
 	$( '.menu-toggle, .sub-menu-toggle' ).on( 'click.utility-pro', function() {
-		var $this = $( this );
-		$this.attr( 'aria-pressed', function( index, value ) {
-			return 'false' === value ? 'true' : 'false';
-		});
+		var $button = $( this ),
+			state = 'false' === $button.attr( 'aria-pressed' ) ? true : false;
 
-		$this.toggleClass( 'menu-toggle-activated' );
-		$this.next( '.menu-primary, .sub-menu' ).slideToggle( 'fast' );
+		$button.attr( 'aria-pressed', state).toggleClass( 'menu-toggle-activated' );
+		// Only toggle aria-expanded if top level button
+		if ( $button.is( '[aria-controls]' ) ) {
+			$button.attr( 'aria-expanded', state );
+		}
 
+		$button.next( '.menu-primary, .sub-menu' ).slideToggle( 'fast' ).attr( 'aria-hidden', ! state );
 	});
-
 })( this, jQuery );
