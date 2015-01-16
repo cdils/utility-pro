@@ -3,3 +3,10 @@
 /node_modules
 style.clean.css
 sitemap.json
+.DS_Store
+.DS_Store?
+._*
+.Trashes
+.gitignore
+ehthumbs.db
+Thumbs.db

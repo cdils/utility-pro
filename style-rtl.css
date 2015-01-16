@@ -1666,7 +1666,7 @@ Accessibility Extras - Taken from the Leiden theme & Genesis Accessible plugin (
 	padding: 15px 23px 14px;
 	text-decoration: none;
 	width: auto;
-	z-index: 999;
+	z-index: 100000;
 }
 
 .wpacc-genesis-skip-link li,

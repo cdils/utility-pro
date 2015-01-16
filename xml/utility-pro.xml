@@ -16,7 +16,7 @@
 <!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 <!--    contained in this file into your site. -->
 
-<!-- generator="WordPress/4.1" created="2015-01-15 18:37" -->
+<!-- generator="WordPress/4.1" created="2015-01-16 17:24" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,7 +29,7 @@
 	<title>Utility Pro</title>
 	<link>http://demo.cdils.com/utility-pro</link>
 	<description>Building great things together</description>
-	<pubDate>Thu, 15 Jan 2015 18:37:03 +0000</pubDate>
+	<pubDate>Fri, 16 Jan 2015 17:24:51 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>http://demo.cdils.com/</wp:base_site_url>
@@ -2797,58 +2797,38 @@
 		</wp:postmeta>
 	</item>
 	<item>
-		<title>Author Archive</title>
-		<link>http://demo.cdils.com/utility-pro/author-archive</link>
-		<pubDate>Tue, 13 Jan 2015 22:04:53 +0000</pubDate>
+		<title>accessibleicon-300x300</title>
+		<link>http://demo.cdils.com/utility-pro/utility-pro-features/accessibleicon-300x300</link>
+		<pubDate>Fri, 16 Jan 2015 16:37:35 +0000</pubDate>
 		<dc:creator><![CDATA[allmydemos]]></dc:creator>
-		<guid isPermaLink="false">http://demo.cdils.com/utility-pro/?p=1725</guid>
+		<guid isPermaLink="false">http://demo.cdils.com/utility-pro/wp-content/uploads/sites/3/2015/01/accessibleicon-300x300.png</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>1725</wp:post_id>
-		<wp:post_date>2015-01-13 22:04:53</wp:post_date>
-		<wp:post_date_gmt>2015-01-13 22:04:53</wp:post_date_gmt>
+		<wp:post_id>1741</wp:post_id>
+		<wp:post_date>2015-01-16 10:37:35</wp:post_date>
+		<wp:post_date_gmt>2015-01-16 16:37:35</wp:post_date_gmt>
 		<wp:comment_status>open</wp:comment_status>
 		<wp:ping_status>open</wp:ping_status>
-		<wp:post_name>author-archive</wp:post_name>
-		<wp:status>publish</wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>19</wp:menu_order>
-		<wp:post_type>nav_menu_item</wp:post_type>
+		<wp:post_name>accessibleicon-300x300</wp:post_name>
+		<wp:status>inherit</wp:status>
+		<wp:post_parent>1732</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type>attachment</wp:post_type>
 		<wp:post_password></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-		<category domain="nav_menu" nicename="main-menu"><![CDATA[Main Menu]]></category>
+		<wp:attachment_url>http://demo.cdils.com/utility-pro/wp-content/uploads/sites/3/2015/01/accessibleicon-300x300.png</wp:attachment_url>
 		<wp:postmeta>
-			<wp:meta_key>_menu_item_type</wp:meta_key>
-			<wp:meta_value><![CDATA[custom]]></wp:meta_value>
+			<wp:meta_key>_wp_attached_file</wp:meta_key>
+			<wp:meta_value><![CDATA[2015/01/accessibleicon-300x300.png]]></wp:meta_value>
 		</wp:postmeta>
 		<wp:postmeta>
-			<wp:meta_key>_menu_item_menu_item_parent</wp:meta_key>
-			<wp:meta_value><![CDATA[42]]></wp:meta_value>
+			<wp:meta_key>_wp_attachment_metadata</wp:meta_key>
+			<wp:meta_value><![CDATA[a:5:{s:5:"width";i:300;s:6:"height";i:300;s:4:"file";s:34:"2015/01/accessibleicon-300x300.png";s:5:"sizes";a:2:{s:9:"thumbnail";a:4:{s:4:"file";s:34:"accessibleicon-300x300-150x150.png";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:9:"image/png";}s:6:"medium";a:4:{s:4:"file";s:34:"accessibleicon-300x300-300x300.png";s:5:"width";i:300;s:6:"height";i:300;s:9:"mime-type";s:9:"image/png";}}s:10:"image_meta";a:11:{s:8:"aperture";i:0;s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";i:0;s:9:"copyright";s:0:"";s:12:"focal_length";i:0;s:3:"iso";i:0;s:13:"shutter_speed";i:0;s:5:"title";s:0:"";s:11:"orientation";i:0;}}]]></wp:meta_value>
 		</wp:postmeta>
 		<wp:postmeta>
-			<wp:meta_key>_menu_item_object_id</wp:meta_key>
-			<wp:meta_value><![CDATA[1725]]></wp:meta_value>
-		</wp:postmeta>
-		<wp:postmeta>
-			<wp:meta_key>_menu_item_object</wp:meta_key>
-			<wp:meta_value><![CDATA[custom]]></wp:meta_value>
-		</wp:postmeta>
-		<wp:postmeta>
-			<wp:meta_key>_menu_item_target</wp:meta_key>
-			<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-		<wp:postmeta>
-			<wp:meta_key>_menu_item_classes</wp:meta_key>
-			<wp:meta_value><![CDATA[a:1:{i:0;s:0:"";}]]></wp:meta_value>
-		</wp:postmeta>
-		<wp:postmeta>
-			<wp:meta_key>_menu_item_xfn</wp:meta_key>
-			<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-		<wp:postmeta>
-			<wp:meta_key>_menu_item_url</wp:meta_key>
-			<wp:meta_value><![CDATA[http://demo.cdils.com/utility-pro/author/carrie-dils]]></wp:meta_value>
+			<wp:meta_key>_wp_attachment_image_alt</wp:meta_key>
+			<wp:meta_value><![CDATA[Accessible Icon]]></wp:meta_value>
 		</wp:postmeta>
 	</item>
 	<item>
@@ -2858,7 +2838,9 @@
 		<dc:creator><![CDATA[allmydemos]]></dc:creator>
 		<guid isPermaLink="false">http://demo.cdils.com//utility/-2/?page_id=5</guid>
 		<description></description>
-		<content:encoded><![CDATA[[gravityform id="1" name="Demo Contact Form" title="false"]
+		<content:encoded><![CDATA[*THIS IS JUST A DEMO - NO FORM SUBMISSIONS*
+
+[gravityform id="3" name="Demo Contact" title="false" description="false"]
 
 Want a form like this? Run over to <a href="http://www.carriedils.com/go/gravity-forms/" title="Carrie Dils uses and recommends Gravity Forms" target="_blank">Gravity Forms</a> and buy a license quick as you can!
 
@@ -2881,6 +2863,10 @@ Want a form like this? Run over to <a href="http://www.carriedils.com/go/gravity
 		<wp:postmeta>
 			<wp:meta_key>_wp_page_template</wp:meta_key>
 			<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key>_edit_last</wp:meta_key>
+			<wp:meta_value><![CDATA[2]]></wp:meta_value>
 		</wp:postmeta>
 	</item>
 	<item>
@@ -3470,53 +3456,58 @@ If the site is set to display the Blog Posts Index as the Front Page, then this 
 		</wp:postmeta>
 	</item>
 	<item>
-		<title>Landing Page</title>
-		<link>http://demo.cdils.com/utility-pro/sample-pages/landing-page</link>
-		<pubDate>Tue, 25 Nov 2014 23:11:52 +0000</pubDate>
+		<title>Author Archive</title>
+		<link>http://demo.cdils.com/utility-pro/author-archive</link>
+		<pubDate>Tue, 13 Jan 2015 22:04:53 +0000</pubDate>
 		<dc:creator><![CDATA[allmydemos]]></dc:creator>
-		<guid isPermaLink="false">http://demo.cdils.com/utility-pro/?page_id=1694</guid>
+		<guid isPermaLink="false">http://demo.cdils.com/utility-pro/?p=1725</guid>
 		<description></description>
-		<content:encoded><![CDATA[<div class="site-container">
-<div class="site-inner">
-<div class="content-sidebar-wrap"><article class="post-539 page type-page status-publish entry">
-<div class="entry-content">
-
-This is an example of a WordPress page, you could edit this to put information so readers know where you are coming from. You can create as many pages like this one or sub-pages as you like and manage all of your content inside of WordPress.
-<h4>Reason #1 Why You Should Buy This Theme</h4>
-This is an example of a WordPress page, you could edit this to put information so readers know where you are coming from. You can create as many pages like this one or sub-pages as you like and manage all of your content inside of WordPress. This is an example of a WordPress page, you could edit this to put information so readers know where you are coming from. You can create as many pages as you like and manage all of your content inside of WordPress.
-<h4>Reason #2 Why You Should Buy This Theme</h4>
-This is an example of a WordPress page, you could edit this to put information so readers know where you are coming from. You can create as many pages like this one or sub-pages as you like and manage all of your content inside of WordPress. This is an example of a WordPress page, you could edit this to put information so readers know where you are coming from. You can create as many pages as you like and manage all of your content inside of WordPress.
-<h4>Reason #3 Why You Should Buy This Theme</h4>
-This is an example of a WordPress page, you could edit this to put information so readers know where you are coming from. You can create as many pages like this one or sub-pages as you like and manage all of your content inside of WordPress. This is an example of a WordPress page, you could edit this to put information so readers know where you are coming from. You can create as many pages as you like and manage all of your content inside of WordPress.
-
-</div>
-</article></div>
-</div>
-</div>]]></content:encoded>
+		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>1694</wp:post_id>
-		<wp:post_date>2014-11-25 23:11:52</wp:post_date>
-		<wp:post_date_gmt>2014-11-25 23:11:52</wp:post_date_gmt>
+		<wp:post_id>1725</wp:post_id>
+		<wp:post_date>2015-01-13 22:04:53</wp:post_date>
+		<wp:post_date_gmt>2015-01-13 22:04:53</wp:post_date_gmt>
 		<wp:comment_status>open</wp:comment_status>
 		<wp:ping_status>open</wp:ping_status>
-		<wp:post_name>landing-page</wp:post_name>
+		<wp:post_name>author-archive</wp:post_name>
 		<wp:status>publish</wp:status>
-		<wp:post_parent>1738</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type>page</wp:post_type>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>19</wp:menu_order>
+		<wp:post_type>nav_menu_item</wp:post_type>
 		<wp:post_password></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="nav_menu" nicename="main-menu"><![CDATA[Main Menu]]></category>
 		<wp:postmeta>
-			<wp:meta_key>_edit_last</wp:meta_key>
-			<wp:meta_value><![CDATA[2]]></wp:meta_value>
+			<wp:meta_key>_menu_item_type</wp:meta_key>
+			<wp:meta_value><![CDATA[custom]]></wp:meta_value>
 		</wp:postmeta>
 		<wp:postmeta>
-			<wp:meta_key>_wp_page_template</wp:meta_key>
-			<wp:meta_value><![CDATA[page_landing.php]]></wp:meta_value>
+			<wp:meta_key>_menu_item_menu_item_parent</wp:meta_key>
+			<wp:meta_value><![CDATA[42]]></wp:meta_value>
 		</wp:postmeta>
 		<wp:postmeta>
-			<wp:meta_key>_wpas_done_all</wp:meta_key>
-			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+			<wp:meta_key>_menu_item_object_id</wp:meta_key>
+			<wp:meta_value><![CDATA[1725]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key>_menu_item_object</wp:meta_key>
+			<wp:meta_value><![CDATA[custom]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key>_menu_item_target</wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key>_menu_item_classes</wp:meta_key>
+			<wp:meta_value><![CDATA[a:1:{i:0;s:0:"";}]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key>_menu_item_xfn</wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key>_menu_item_url</wp:meta_key>
+			<wp:meta_value><![CDATA[http://demo.cdils.com/utility-pro/author/carrie-dils]]></wp:meta_value>
 		</wp:postmeta>
 	</item>
 	<item>
@@ -5123,6 +5114,57 @@ This post tests WordPress' <a title="Twitter Embeds" href="http://en.support.wor
 		</wp:postmeta>
 	</item>
 	<item>
+		<title>Landing Page</title>
+		<link>http://demo.cdils.com/utility-pro/sample-pages/landing-page</link>
+		<pubDate>Tue, 25 Nov 2014 23:11:52 +0000</pubDate>
+		<dc:creator><![CDATA[allmydemos]]></dc:creator>
+		<guid isPermaLink="false">http://demo.cdils.com/utility-pro/?page_id=1694</guid>
+		<description></description>
+		<content:encoded><![CDATA[This page uses the Landing page template for the Utility Pro theme.
+<h2>What is a Landing Page?</h2>
+<blockquote>[Think of] a Landing page as being <strong>a standalone web page distinct from your main website</strong> that has been designed for a single focused objective.
+
+This means that your landing page should have no global navigation to tie it to your primary website. The main reason for this is to limit the options available to your visitors, helping to <strong>guide them toward your intended conversion goal</strong>.
+
+<cite>- <a href="http://unbounce.com/landing-page-articles/what-is-a-landing-page/" target="_blank">Unbounce</a></cite></blockquote>
+<h2>A Single, Focused Objective</h2>
+This page exists to highlight the Landing page template in Utility Pro. It's here as an example, not to be a sell-y sales pitch, but...
+
+What an awful landing page example this is if we don't provide an opportunity for action!
+<h2>The Intended Conversion Goal</h2>
+We don't want you to walk away (or click away) feeling as if we didn't want you to purchase this lovely Genesis theme. <em>We do want you to purchase it!</em>
+
+So, please consider yourself formally invited to:
+<p style="text-align: center;"><a class="button" href="https://store.carriedils.com/downloads/utility-pro/" target="_blank">Buy Utility Pro</a></p>
+<p style="text-align: center;"><em>(This is bad form to provide a link out of here,</em>
+<em>but we want to safely get you back to the <a href="http://demo.cdils.com/utility-pro/">theme demo</a>)</em></p>]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>1694</wp:post_id>
+		<wp:post_date>2014-11-25 23:11:52</wp:post_date>
+		<wp:post_date_gmt>2014-11-25 23:11:52</wp:post_date_gmt>
+		<wp:comment_status>open</wp:comment_status>
+		<wp:ping_status>open</wp:ping_status>
+		<wp:post_name>landing-page</wp:post_name>
+		<wp:status>publish</wp:status>
+		<wp:post_parent>1738</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type>page</wp:post_type>
+		<wp:post_password></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<wp:postmeta>
+			<wp:meta_key>_edit_last</wp:meta_key>
+			<wp:meta_value><![CDATA[2]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key>_wp_page_template</wp:meta_key>
+			<wp:meta_value><![CDATA[page_landing.php]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key>_wpas_done_all</wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
 		<title>Columns</title>
 		<link>http://demo.cdils.com/utility-pro/sample-pages/columns</link>
 		<pubDate>Wed, 26 Nov 2014 07:13:40 +0000</pubDate>
@@ -5247,6 +5289,8 @@ This is an example of a WordPress post, you could edit this to put information a
 		<guid isPermaLink="false">http://demo.cdils.com/utility-pro/?p=1708</guid>
 		<description></description>
 		<content:encoded><![CDATA[What you see above this sentence is the post featured image. It appears automagically!
+
+And if you use an RSS to email service like Feedburner or MailChimp, your featured image is part of your RSS feed, too!
 <h2>What about videos?</h2>
 Want to highlight a YouTube video or some other sort of video in a post? It's easy! Just follow the WordPress guidelines for <a href="http://codex.wordpress.org/Embeds" target="_blank">using an embed</a>. For example, below is an episode of the <a href="http://www.carriedils.com/podcast" target="_blank">Genesis Office Hours</a> podcast featuring Brian Gardner.
 
@@ -5279,7 +5323,7 @@ You can do that, too! Just use WordPress' built-in <a href="http://codex.wordpre
 		</wp:postmeta>
 		<wp:postmeta>
 			<wp:meta_key>_oembed_time_972c06d475806c20249ed6814411b777</wp:meta_key>
-			<wp:meta_value><![CDATA[1421188224]]></wp:meta_value>
+			<wp:meta_value><![CDATA[1421426178]]></wp:meta_value>
 		</wp:postmeta>
 		<wp:postmeta>
 			<wp:meta_key>_thumbnail_id</wp:meta_key>
@@ -5510,7 +5554,7 @@ Beyond the usual mobile responsive elements, Utility Pro is a mobile first theme
 <blockquote>[Mobile first means] writing CSS in such a way that smaller (mobile) devices can access their styles without having to wade through styles written for desktop devices. In other words, <strong>writing the mobile styles first</strong>. (“First” means before the media queries that define the look of the site on larger displays – media queries are one of the hallmarks of “responsive design.”) <cite>- Mickey Kay in <a href="http://www.mightyminnow.com/2013/11/what-is-mobile-first-css-and-why-does-it-rock/" target="_blank">What is Mobile First</a></cite></blockquote>
 You may not care about all the nerd speak, but the bottom line is that <strong>Utility Pro performs better than ever on mobile devices</strong>, both in terms of speed and good looks.
 <h2 id="accessibility">Accessibility</h2>
-<img class="alignright  wp-image-1716" src="http://demo.cdils.com/utility-pro/wp-content/uploads/sites/3/2013/09/accessibleicon-300x300.png" alt="Accessible Icon" width="208" height="229" />
+<img class="alignright  wp-image-1741" src="http://demo.cdils.com/utility-pro/wp-content/uploads/sites/3/2015/01/accessibleicon-300x300-300x300.png" alt="Accessible Icon" width="252" height="252" />
 
 Web accessibility is no longer just a nice-to-have feature. A growing number of countries <a href="http://en.wikipedia.org/wiki/Web_accessibility" target="_blank"><em>require</em> web accessibility</a> for business websites.
 
