@@ -63,6 +63,7 @@ A huge thank you to the following folks for providing translation files for this
 * Morten Rand-Hendriksen (nb_NO)
 * Grégoire Noyelle (fr_FR)
 * Gary Jones (en_GB)
+* David Decker (de_DE)
 
 For more information on translating this theme, please check https://store.carriedils.com/translate/
 
@@ -71,7 +72,9 @@ CHANGELOG
 * Unreleased
 
 - Added British English translation.
+- Added German translation.
 - Fixed text domain loading for language files.
+- Fixed backstretch image overflow for RTL.
 
 * 1.0.0 - 2015-01-16
 
