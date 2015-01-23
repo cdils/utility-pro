@@ -36,7 +36,7 @@ function utility_pro_enqueue_assets() {
 	// Keyboard navigation (dropdown menus) script
 	wp_enqueue_script( 'genwpacc-dropdown',  get_stylesheet_directory_uri() . '/js/genwpacc-dropdown.js', array( 'jquery' ), false, true );
 
-	// Load skiplinksscripts only if Genesis Accessible plugin is not active
+	// Load skiplinks script only if Genesis Accessible plugin is not active
 	if ( ! utility_pro_genesis_accessible_is_active() ) {
 		wp_enqueue_script( 'genwpacc-skiplinks-js',  get_stylesheet_directory_uri() . '/js/genwpacc-skiplinks.js', array(), '1.0.0', true );
 	}

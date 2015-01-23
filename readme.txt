@@ -67,6 +67,12 @@ For more information on translating this theme, please check https://store.carri
 
 CHANGELOG
 
+* 1.0.1
+
+- Fixed comment typo in enqueue-assets.php
+- Added German translation files
+- Fixed issue with backstretch image overflowing on RTL sites
+
 * 1.0.0
 
 - Initial Release

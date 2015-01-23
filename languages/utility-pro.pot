@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Utility Pro 1.0.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2015-01-14 16:39:45+00:00\n"
+"POT-Creation-Date: 2015-01-22 20:22:32+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,166 +13,291 @@ msgstr ""
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n 0.4.9\n"
 
-#: functions.php:50
+#: functions.php:53
 msgid "Purple"
 msgstr ""
 
-#: functions.php:51
+#: functions.php:54
 msgid "Green"
 msgstr ""
 
-#: functions.php:52
+#: functions.php:55
 msgid "Red"
 msgstr ""
 
-#: functions.php:76
+#: functions.php:79 includes/enqueue-assets.php:28
 msgid "Primary Navigation Menu"
 msgstr ""
 
-#: functions.php:77
+#: functions.php:80
 msgid "Footer Navigation Menu"
 msgstr ""
 
-#: functions.php:137
-msgid "Utility Bar"
+#: includes/class-search-form.php:32
+msgid "Search site"
 msgstr ""
 
-#: functions.php:138
-msgid "This is the utility bar across the top of page."
-msgstr ""
-
-#: functions.php:142
-msgid "Home Welcome"
-msgstr ""
-
-#: functions.php:143
-msgid "This is the welcome section at the top of the home page."
-msgstr ""
-
-#: functions.php:167
-msgid "Call to Action"
-msgstr ""
-
-#: functions.php:168
-msgid "This is the Call to Action section on the home page."
-msgstr ""
-
-#: helpers/forms.php:30
+#: includes/class-search-form.php:34
 msgid "Search this website"
 msgstr ""
 
-#: helpers/forms.php:32
+#: includes/class-search-form.php:36 includes/class-search-form.php:44
 msgid "Search"
 msgstr ""
 
-#: helpers/skip-links.php:26
+#: includes/enqueue-assets.php:27 includes/enqueue-assets.php:29
+msgid "Menu"
+msgstr ""
+
+#: includes/enqueue-assets.php:30
+msgid "Sub Navigation Menu"
+msgstr ""
+
+#: includes/skip-links.php:26
 msgid "Skip links"
 msgstr ""
 
-#: helpers/skip-links.php:31
+#: includes/skip-links.php:31
 msgid "Skip to primary navigation"
 msgstr ""
 
-#: helpers/skip-links.php:34
+#: includes/skip-links.php:34
 msgid "Skip to content"
 msgstr ""
 
-#: helpers/skip-links.php:37
+#: includes/skip-links.php:37
 msgid "Skip to primary sidebar"
 msgstr ""
 
-#: helpers/skip-links.php:45
+#: includes/skip-links.php:45
 msgid "Skip to footer widgets"
 msgstr ""
 
-#: helpers/skip-links.php:49
+#: includes/skip-links.php:49
 msgid "Skip to footer navigation"
 msgstr ""
 
-#: helpers/theme-settings/theme-license.php:27
+#: includes/suggested-plugins.php:94
+msgid "Install Required Plugins"
+msgstr ""
+
+#: includes/suggested-plugins.php:95
+msgid "Install Plugins"
+msgstr ""
+
+#: includes/suggested-plugins.php:96
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: includes/suggested-plugins.php:97
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: includes/suggested-plugins.php:98
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/suggested-plugins.php:99
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/suggested-plugins.php:100
+msgid ""
+"Sorry, but you do not have the correct permissions to install the %s "
+"plugin. Contact the administrator of this site for help on getting the "
+"plugin installed."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to install the %s "
+"plugins. Contact the administrator of this site for help on getting the "
+"plugins installed."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/suggested-plugins.php:101
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/suggested-plugins.php:102
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/suggested-plugins.php:103
+msgid ""
+"Sorry, but you do not have the correct permissions to activate the %s "
+"plugin. Contact the administrator of this site for help on getting the "
+"plugin activated."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to activate the %s "
+"plugins. Contact the administrator of this site for help on getting the "
+"plugins activated."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/suggested-plugins.php:104
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/suggested-plugins.php:105
+msgid ""
+"Sorry, but you do not have the correct permissions to update the %s plugin. "
+"Contact the administrator of this site for help on getting the plugin "
+"updated."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to update the %s "
+"plugins. Contact the administrator of this site for help on getting the "
+"plugins updated."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/suggested-plugins.php:106
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/suggested-plugins.php:107
+msgid "Activate installed plugin"
+msgid_plural "Activate installed plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/suggested-plugins.php:108
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: includes/suggested-plugins.php:109
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: includes/suggested-plugins.php:110
+msgid "All plugins installed and activated successfully. %s"
+msgstr ""
+
+#: includes/theme-config.php:56
+msgid "Page"
+msgstr ""
+
+#: includes/theme-license.php:29
 msgid "Utility Pro License"
 msgstr ""
 
-#: helpers/theme-settings/theme-license.php:28
+#: includes/theme-license.php:30
 msgid "Enter your theme license key."
 msgstr ""
 
-#: helpers/theme-settings/theme-license.php:29
+#: includes/theme-license.php:31
 msgid "License Key"
 msgstr ""
 
-#: helpers/theme-settings/theme-license.php:30
+#: includes/theme-license.php:32
 msgid "License Action"
 msgstr ""
 
-#: helpers/theme-settings/theme-license.php:31
+#: includes/theme-license.php:33
 msgid "Deactivate License"
 msgstr ""
 
-#: helpers/theme-settings/theme-license.php:32
+#: includes/theme-license.php:34
 msgid "Activate License"
 msgstr ""
 
-#: helpers/theme-settings/theme-license.php:33
-#: helpers/theme-settings/theme-license.php:45
+#: includes/theme-license.php:35 includes/theme-license.php:47
 msgid "License status is unknown."
 msgstr ""
 
-#: helpers/theme-settings/theme-license.php:34
+#: includes/theme-license.php:36
 msgid "Renew?"
 msgstr ""
 
-#: helpers/theme-settings/theme-license.php:35
+#: includes/theme-license.php:37
 msgid "unlimited"
 msgstr ""
 
-#: helpers/theme-settings/theme-license.php:36
+#: includes/theme-license.php:38
 msgid "License key is active."
 msgstr ""
 
-#: helpers/theme-settings/theme-license.php:37
+#: includes/theme-license.php:39
 msgid "Expires %s."
 msgstr ""
 
-#: helpers/theme-settings/theme-license.php:38
+#: includes/theme-license.php:40
 msgid "You have %1$s / %2$s sites activated."
 msgstr ""
 
-#: helpers/theme-settings/theme-license.php:39
+#: includes/theme-license.php:41
 msgid "License key expired %s."
 msgstr ""
 
-#: helpers/theme-settings/theme-license.php:40
+#: includes/theme-license.php:42
 msgid "License key has expired."
 msgstr ""
 
-#: helpers/theme-settings/theme-license.php:41
+#: includes/theme-license.php:43
 msgid "License keys do not match."
 msgstr ""
 
-#: helpers/theme-settings/theme-license.php:42
+#: includes/theme-license.php:44
 msgid "License is inactive."
 msgstr ""
 
-#: helpers/theme-settings/theme-license.php:43
+#: includes/theme-license.php:45
 msgid "License key is disabled."
 msgstr ""
 
-#: helpers/theme-settings/theme-license.php:44
+#: includes/theme-license.php:46
 msgid "Site is inactive."
 msgstr ""
 
-#: helpers/theme-settings/theme-license.php:46
+#: includes/theme-license.php:48
 msgid ""
 "Updating this theme will lose any customizations you have made. 'Cancel' to "
 "stop, 'OK' to update."
 msgstr ""
 
-#: helpers/theme-settings/theme-license.php:47
+#: includes/theme-license.php:49
 msgid ""
 "<strong>%1$s %2$s</strong> is available. <a href=\"%3$s\" "
 "class=\"thickbox\" title=\"%4s\">Check out what's new</a> or <a "
 "href=\"%5$s\"%6$s>update now</a>."
+msgstr ""
+
+#: includes/widget-areas.php:24
+msgid "Utility Bar"
+msgstr ""
+
+#: includes/widget-areas.php:25
+msgid "This is the utility bar across the top of page."
+msgstr ""
+
+#: includes/widget-areas.php:29
+msgid "Home Welcome"
+msgstr ""
+
+#: includes/widget-areas.php:30
+msgid "This is the welcome section at the top of the home page."
+msgstr ""
+
+#: includes/widget-areas.php:54
+msgid "Call to Action"
+msgstr ""
+
+#: includes/widget-areas.php:55
+msgid "This is the Call to Action section on the home page."
 msgstr ""
 
 #. Theme Name of the plugin/theme
@@ -195,17 +320,7 @@ msgstr ""
 msgid "Landing"
 msgstr ""
 
-#: functions.php:147 functions.php:152 functions.php:157 functions.php:162
-msgctxt "Group of Home Gallery widget areas"
-msgid "Home Gallery %d"
-msgstr ""
-
-#: functions.php:148 functions.php:153 functions.php:158 functions.php:163
-msgctxt "Description of widget area"
-msgid "Home Gallery %d widget area on home page."
-msgstr ""
-
-#: helpers/google-fonts.php:40
+#: includes/google-fonts.php:40
 #. Translators: If there are characters in your language that are not
 #. * supported by this font, translate this to 'off'. Do not translate
 #. * into your own language.
@@ -213,10 +328,22 @@ msgctxt "Enriqueta font: on or off"
 msgid "on"
 msgstr ""
 
-#: helpers/google-fonts.php:46
+#: includes/google-fonts.php:46
 #. Translators: If there are characters in your language that are not
 #. * supported by this font, translate this to 'off'. Do not translate
 #. * into your own language.
 msgctxt "Open Sans font: on or off"
 msgid "on"
+msgstr ""
+
+#: includes/widget-areas.php:34 includes/widget-areas.php:39
+#: includes/widget-areas.php:44 includes/widget-areas.php:49
+msgctxt "Group of Home Gallery widget areas"
+msgid "Home Gallery %d"
+msgstr ""
+
+#: includes/widget-areas.php:35 includes/widget-areas.php:40
+#: includes/widget-areas.php:45 includes/widget-areas.php:50
+msgctxt "Description of widget area"
+msgid "Home Gallery %d widget area on home page."
 msgstr ""
