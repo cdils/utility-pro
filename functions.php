@@ -11,7 +11,7 @@
 
 // Load internationalization components
 // English users do not need to load the text domain and can comment out or remove
-require get_stylesheet_directory() . '/includes/text-domain.php';
+load_child_theme_textdomain( 'utility-pro', get_stylesheet_directory() . '/languages' );
 
 // This file loads the Google fonts used in this theme
 require get_stylesheet_directory() . '/includes/google-fonts.php';
