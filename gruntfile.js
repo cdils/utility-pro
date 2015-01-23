@@ -30,6 +30,24 @@ module.exports = function(grunt) {
 			}
 		},
 		/**
+		 * Po to Mo
+		 * https://github.com/axisthemes/grunt-potomo
+		 */
+		potomo: {
+			dist: {
+				files: [
+					{
+						expand: true,
+						cwd: 'languages',
+						src: ['*.po'],
+						dest: 'languages',
+						ext: '.mo',
+						nonull: true
+					}
+				]
+			}
+		},
+		/**
 		 * CSSJanus
 		 */
 		cssjanus: {
