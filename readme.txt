@@ -62,11 +62,16 @@ A huge thank you to the following folks for providing translation files for this
 * Nir Rosenbaum (he_IL)
 * Morten Rand-Hendriksen (nb_NO)
 * Grégoire Noyelle (fr_FR)
+* Gary Jones (en_GB)
 
 For more information on translating this theme, please check https://store.carriedils.com/translate/
 
 CHANGELOG
 
-* 1.0.0
+* Unreleased
+
+- Added British English translation.
+
+* 1.0.0 - 2015-01-16
 
 - Initial Release
