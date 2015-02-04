@@ -33,7 +33,7 @@ function utility_pro_skip_links() {
 
 	echo '  <li><a href="#genwpacc-genesis-content" class="screen-reader-shortcut">'. __( 'Skip to content', 'utility-pro' ) .'</a></li>' . "\n";
 
-	if ( genesis_site_layout('sidebar-content') || genesis_site_layout('content-sidebar') ) {
+	if ( ( 'sidebar-content' === genesis_site_layout() ) || ( 'content-sidebar' === genesis_site_layout() ) ) ) {
 		echo '  <li><a href="#genwpacc-sidebar-primary" class="screen-reader-shortcut">'. __( 'Skip to primary sidebar', 'utility-pro' ) .'</a></li>' . "\n";
 	}
 

@@ -37,22 +37,22 @@ function utility_pro_fonts_url() {
     * supported by this font, translate this to 'off'. Do not translate
     * into your own language.
     */
-    $arvo = _x( 'on', 'Enriqueta font: on or off', 'utility-pro' );
+    $enriqueta = _x( 'on', 'Enriqueta font: on or off', 'utility-pro' );
 
     /* Translators: If there are characters in your language that are not
     * supported by this font, translate this to 'off'. Do not translate
     * into your own language.
     */
-    $pt_sans = _x( 'on', 'Open Sans font: on or off', 'utility-pro' );
+    $open_sans = _x( 'on', 'Open Sans font: on or off', 'utility-pro' );
 
-    if ( 'off' !== $arvo || 'off' !== $pt_sans ) {
+    if ( 'off' !== $enriqueta || 'off' !== $open_sans ) {
         $font_families = array();
 
-        if ( 'off' !== $arvo ) {
+        if ( 'off' !== $enriqueta ) {
             $font_families[] = 'Enriqueta:400,700';
         }
 
-        if ( 'off' !== $pt_sans ) {
+        if ( 'off' !== $open_sans ) {
             $font_families[] = 'Open Sans:400,700';
         }
 

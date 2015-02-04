@@ -1,0 +1,28 @@
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+sftp-config.json
+sftp-config.jsonX
+sitemap.json
+
+# OSX
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+Icon
+ehthumbs.d
+
+
+# Node
+node_modules
+
+# Sass
+.sass-cache
