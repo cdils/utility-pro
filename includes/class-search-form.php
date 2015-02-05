@@ -30,8 +30,9 @@ class Utility_Pro_Search_Form {
 		$default_strings = array(
 			/** This filter is documented in genesis/lib/structure/search.php */
 			'label'        => apply_filters( 'genesis_search_form_label', __( 'Search site', 'utility-pro' ) ),
+			// Placeholder should be empty: http://www.nngroup.com/articles/form-design-placeholders/
 			/** This filter is documented in genesis/lib/structure/search.php */
-			'placeholder'  => apply_filters( 'genesis_search_text', __( 'Search this website', 'utility-pro' ) ),
+			'placeholder'  => apply_filters( 'genesis_search_text', __( '', 'utility-pro' ) ),
 			/** This filter is documented in genesis/lib/structure/search.php */
 			'button'       => apply_filters( 'genesis_search_button_text', __( 'Search', 'utility-pro' ) ),
 			/**
@@ -121,7 +122,7 @@ class Utility_Pro_Search_Form {
 	 */
 	protected function get_button() {
 		return sprintf(
-			'<button type="submit" aria-label="%s"><span>%s</span></button>',
+			'<button type="submit" aria-label="%s"><span class="search-button-text">%s</span></button>',
 			esc_attr( $this->strings( 'button_label' ) ),
 			$this->strings( 'button' )
 		);
@@ -136,7 +137,7 @@ class Utility_Pro_Search_Form {
 	 */
 	protected function get_id() {
 		if ( ! isset( $this->unique_id ) ) {
-			$this->unique_id = uniqid( 'searchform-' );
+			$this->unique_id = 'searchform-' . uniqid( '', true );
 		}
 
 		return $this->unique_id;
