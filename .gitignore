@@ -1,4 +1,1 @@
-
-[core]
-
-	excludesfile = /Users/gary/.gitignore_global
+dist/
