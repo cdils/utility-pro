@@ -71,6 +71,50 @@ module.exports = function(grunt) {
 			tasks: [
 				'cssjanus'
 			]
+		},
+		// https://github.com/gruntjs/grunt-contrib-compress
+		compress: {
+			standard: {
+				options: {
+					archive: 'dist/<%= pkg.name %>-<%= pkg.version %>.zip'
+				},
+				files: [
+					{
+						expand: true,
+						cwd: '',
+						src: [ // Take this...
+							'**',
+							'!gruntfile.js',
+							'!package.json',
+							'!node_modules/**',
+							'!.sass-cache/**',
+							'!dist/**',
+							'!*.sublime*',
+							'!.DS_Store'
+						],
+						dest: '<%= pkg.name %>' // ...put it into this, then zip that up as ^^^
+					}
+				]
+			},
+			dev: {
+				options: {
+					archive: 'dist/<%= pkg.name %>-developer-<%= pkg.version %>.zip'
+				},
+				files: [
+					{
+						expand: true,
+						src: [
+							'**',
+							'!node_modules/**',
+							'!.sass-cache/**',
+							'!dist/**',
+							'!*.sublime*',
+							'!.DS_Store'
+						], // Take this...
+						dest: '<%= pkg.name %>' // ...put it into this, then zip that up as ^^^
+					}
+				]
+			}
 		}
 	});
 
