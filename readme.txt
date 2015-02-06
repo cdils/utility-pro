@@ -69,12 +69,13 @@ For more information on translating this theme, please check https://store.carri
 
 CHANGELOG
 
-* Unreleased
+* 1.0.1 - 2015-02-05
 
 - Added British English translation.
 - Added German translation.
 - Fixed text domain loading for language files.
 - Fixed backstretch image overflow for RTL.
+- Added Accessibility improvements to search form.
 
 * 1.0.0 - 2015-01-16
 

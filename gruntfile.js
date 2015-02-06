@@ -16,7 +16,8 @@ module.exports = function(grunt) {
 		 */
 		pkg: grunt.file.readJSON('package.json'),
 		/**
-		 * makepot
+		 * Makepot
+		 * https://github.com/blazersix/grunt-wp-i18n/
 		 */
 		makepot: {
 			theme: {
@@ -24,9 +25,29 @@ module.exports = function(grunt) {
 					domainPath: '/languages',
 					type: 'wp-theme',
 		            exclude: [
-		                'includes/vendors/.*'
+		                'dist/.*'
 		            ]
 				}
+			}
+		},
+		addtextdomain: {
+			options: {
+				textdomain: 'utility-pro'
+			},
+			add_domain: {
+				src: ['tmp/text-domains/add-domain.php']
+			},
+			update_domains: {
+				options: {
+				updateDomains: ['oldtextdomain', 'vendortextdomain']
+			},
+				src: ['tmp/text-domains/update-domains.php']
+			},
+			update_all_domains: {
+				options: {
+					updateDomains: true
+				},
+				src: ['tmp/text-domains/update-all-domains.php']
 			}
 		},
 		/**
