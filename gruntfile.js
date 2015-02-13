@@ -16,6 +16,22 @@ module.exports = function(grunt) {
 		 */
 		pkg: grunt.file.readJSON('package.json'),
 		/**
+		 * Sass
+		 */
+		sass: {
+			dist: {
+				options: {
+					style: 'expanded',
+					lineNumbers: false,
+					debugInfo: false,
+					compass: false
+				},
+				files: {
+					'style.css' : 'assets/scss/style.scss'
+				}
+			}
+		},
+		/**
 		 * Makepot
 		 * https://github.com/blazersix/grunt-wp-i18n/
 		 */
@@ -30,24 +46,18 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		/**
+		 * Addtextdomain
+		 * https://github.com/blazersix/grunt-wp-i18n/
+		 */
 		addtextdomain: {
 			options: {
 				textdomain: 'utility-pro'
 			},
-			add_domain: {
-				src: ['tmp/text-domains/add-domain.php']
-			},
-			update_domains: {
-				options: {
-				updateDomains: ['oldtextdomain', 'vendortextdomain']
-			},
-				src: ['tmp/text-domains/update-domains.php']
-			},
 			update_all_domains: {
 				options: {
 					updateDomains: true
-				},
-				src: ['tmp/text-domains/update-all-domains.php']
+				}
 			}
 		},
 		/**
@@ -88,10 +98,24 @@ module.exports = function(grunt) {
 		 * Watch
 		 */
 		watch: {
-			files: ['style.css'],
-			tasks: [
-				'cssjanus'
-			]
+			sass: {
+				files: [
+					'assets/scss/*.scss',
+					'assets/scss/**/*.scss',
+					'assets/scss/**/**/*.scss'
+				],
+				tasks: [
+					'sass'
+				]
+			},
+			cssjanus: {
+				files: [
+					'style.css'
+				],
+				tasks: [
+					'cssjanus'
+				]
+			}
 		},
 		// https://github.com/gruntjs/grunt-contrib-compress
 		compress: {
@@ -145,6 +169,7 @@ module.exports = function(grunt) {
 	 */
 	grunt.registerTask('default', [
 		'cssjanus',
+		'sass',
 		'watch',
 	]);
 };
