@@ -1,0 +1,115 @@
+/* ##
+Color Options
+If you've chosen your favorite color scheme, you can delete the others
+---------------------------------------------------------------------------------------------------- */
+
+/* ## Purple
+--------------------------------------------- */
+
+.utility-pro-purple .home-gallery .fa,
+.utility-pro-purple a,
+.utility-pro-purple .entry-content a {
+	color: #339;
+}
+
+.utility-pro-purple .sticky.entry {
+	border-top-color: #339;
+}
+
+.utility-pro-purple .call-to-action-bar .button,
+.utility-pro-purple .button,
+.utility-pro-purple .entry-content a.button,
+.utility-pro-purple input[type="submit"] {
+	background: #339;
+	border: 1px solid #fff;
+	color: #fff;
+}
+
+.utility-pro-purple .call-to-action-bar .button:hover,
+.utility-pro-purple .button:hover,
+.utility-pro-purple .entry-content a.button:hover,
+.utility-pro-purple input[type="submit"]:hover {
+	background: #fff;
+	border: 1px solid #339;
+	color: #339;
+}
+
+.utility-pro-purple .utility-bar,
+.utility-pro-purple .site-footer {
+	background-color: rgb(51, 51, 153);
+	background-color: rgba(51, 51, 153, 0.8);
+}
+
+/* ## Green
+--------------------------------------------- */
+
+.utility-pro-green .home-gallery .fa,
+.utility-pro-green a,
+.utility-pro-green .entry-content a {
+	color: #107952;
+}
+
+.utility-pro-green .sticky.entry {
+	border-top-color: #107952;
+}
+
+.utility-pro-green .call-to-action-bar .button,
+.utility-pro-green .button,
+.utility-pro-green a.button,
+.utility-pro-green input[type="submit"] {
+	background: #107952;
+	border: 1px solid #fff;
+	color: #fff;
+}
+
+.utility-pro-green .call-to-action-bar .button:hover,
+.utility-pro-green .button:hover,
+.utility-pro-green .entry-content a.button:hover,
+.utility-pro-green input[type="submit"]:hover {
+	background: #fff;
+	border: 1px solid #107952;
+	color: #107952;
+}
+
+.utility-pro-green .utility-bar,
+.utility-pro-green .site-footer {
+	background-color: rgb(8, 130, 84);
+	background-color: rgba(8, 130, 84, 0.9);
+}
+
+/* ## Red
+--------------------------------------------- */
+
+.utility-pro-red .home-gallery .fa,
+.utility-pro-red a,
+.utility-pro-red .entry-content a {
+	color: #d3131b;
+}
+
+.utility-pro-red .sticky.entry {
+	border-top-color: #d3131b;
+}
+
+.utility-pro-red .call-to-action-bar .button,
+.utility-pro-red .button,
+.utility-pro-red a.button,
+.utility-pro-red input[type="submit"] {
+	background: #d3131b;
+	border: 1px solid #fff;
+	color: #fff;
+}
+
+.utility-pro-red .call-to-action-bar .button:hover,
+.utility-pro-red .button:hover,
+.utility-pro-red .entry-content a.button:hover,
+.utility-pro-red input[type="submit"]:hover {
+	background: #fff;
+	border: 1px solid #d3131b;
+	color: #d3131b;
+}
+
+.utility-pro-red .utility-bar,
+.utility-pro-red .site-footer {
+	background-color: rgb(211, 19, 27);
+	background-color: rgba(211, 19, 27, 0.9);
+}

@@ -2,3 +2,5 @@ dist/
 
 # OSX
 .DS_Store
+
+.sass-cache/*

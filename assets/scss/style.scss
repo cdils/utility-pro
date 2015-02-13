@@ -1,0 +1,136 @@
+/* #
+	Theme Name: Utility Pro
+	Description: No-nonsense, functional child theme created for the Genesis Framework.
+	Author: Carrie Dils
+	Author URI: http://www.carriedils.com/
+	Version: 1.0.1
+	Tags: black, purple, green, blue, red, one-column, two-columns, fixed-width, custom-menu, full-width-template, sticky-post, theme-options, threaded-comments, rtl-language-support, translation-ready
+	Template: genesis
+	License: GPL-2.0+
+	License URI: http://www.opensource.org/licenses/gpl-license.php
+	Text Domain: utility-pro
+*/
+
+/* # Table of Contents
+
+	- HTML5 Reset
+		- Baseline Normalize
+		- Box Sizing
+		- Float Clearing
+	- Theme Colors
+		- Purple
+		- Green
+		- Red
+	- Defaults
+		- Typographical Elements
+		- Headings
+		- Objects
+		- Forms
+		- Tables
+	- Structure and Layout
+		- Site Containers
+		- Sidebar
+		- Column Widths and Positions
+		- Column Classes
+	- Common Classes
+		- WordPress
+		- Media Gallery
+		- Genesis
+	- Widgets
+		- Utility Bar
+		- Home Welcome
+		- Home Gallery
+		- Call to Action
+		- Featured Page and Featured Post
+		- Footer Widgets
+	- Plugins
+		- Better Font Awesome
+		- Genesis eNews Extended
+		- Gravity Forms
+		- Jetpack
+	- Site Header
+		- Title Area
+		- Widget Area
+	- Site Navigation
+		- Mobile Menu Toggle
+		- Header Navigation
+		- Primary & Secondary Navigation
+	- Content Area
+		- Titles
+		- Entries
+		- Featured Image
+		- Pagination
+		- Comments
+	- Sidebars
+	- Site Footer
+	- Accessibility Extras
+	- Media Queries
+		- min-width: 768px
+		- min-width: 1024px
+		- min-width: 1140px
+		- print
+*/
+
+/* Resets
+---------------------------------------------------------------------------------------------------- */
+@import "partials/reset";
+
+
+/* # Theme Colors
+---------------------------------------------------------------------------------------------------- */
+@import "partials/theme-colors";
+
+
+/* Defaults
+---------------------------------------------------------------------------------------------------- */
+@import "partials/defaults";
+
+
+/* # Structure & Layout
+---------------------------------------------------------------------------------------------------- */
+@import "partials/layout";
+
+
+/* # Common
+---------------------------------------------------------------------------------------------------- */
+@import "partials/common-classes";
+
+
+/* # Widgets
+---------------------------------------------------------------------------------------------------- */
+@import "partials/widgets";
+
+
+/* # Plugins
+---------------------------------------------------------------------------------------------------- */
+@import "partials/plugins";
+
+
+/* # Site Header
+---------------------------------------------------------------------------------------------------- */
+@import "partials/header";
+
+
+/* # Site Navigation
+---------------------------------------------------------------------------------------------------- */
+@import "partials/navigation";
+
+
+/* # Content Area
+---------------------------------------------------------------------------------------------------- */
+@import "partials/content-area";
+
+
+/* Site Footer
+---------------------------------------------------------------------------------------------------- */
+@import "partials/site-footer";
+
+
+/* # Accessibility Extras
+---------------------------------------------------------------------------------------------------- */
+@import "partials/accessibility";
+
+
+/* # Media Queries
+---------------------------------------------------------------------------------------------------- */
+@import "partials/media-queries";

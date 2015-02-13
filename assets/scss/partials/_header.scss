@@ -1,0 +1,90 @@
+/*
+Site Header
+---------------------------------------------------------------------------------------------------- */
+
+.site-header {
+	background: #fff;
+	border-bottom: 1px solid #ddd;
+}
+
+.site-header .wrap {
+	padding: 20px 0;
+}
+
+/* Title Area
+--------------------------------------------- */
+
+.title-area {
+	float: left;
+	font-weight: 700;
+	text-align: center;
+	width: 100%;
+}
+
+.site-title {
+	letter-spacing: 2px;
+	line-height: 1;
+	margin: 0 0 8px;
+	text-transform: uppercase;
+}
+
+.site-title a,
+.site-title a:hover {
+	border: 0;
+	color: #333;
+	font-family: Enriqueta, sans-serif;
+	font-size: 28px;
+}
+
+.site-description {
+	color: #666;
+	font-size: 16px;
+	line-height: 1;
+	margin: 0;
+}
+
+/* Full width header, no widgets */
+
+.header-full-width .title-area,
+.header-full-width .site-title {
+	width: 100%;
+}
+
+.header-image .site-description,
+.header-image .site-title {
+	overflow: hidden;
+	text-indent: 100%;
+	white-space: nowrap;
+}
+
+/* Logo, hide text */
+
+.header-image .site-title > a {
+	background: url(images/logo.png) no-repeat center;
+	float: left;
+	min-height: 60px;
+	width: 100%;
+}
+
+/* Header Right Widget Area
+--------------------------------------------- */
+
+.site-header .widget-area {
+  float: right;
+  text-align: center;
+  width: 100%;
+}
+
+.header-widget-area .genesis-nav-menu a {
+	color: #000;
+}
+
+.header-widget-area .genesis-nav-menu a:hover,
+.header-widget-area .genesis-nav-menu .current-menu-item > a,
+.header-widget-area .genesis-nav-menu .sub-menu .current-menu-item > a:hover {
+	color: #666;
+}
+
+.header-widget-area .genesis-nav-menu .sub-menu a {
+	background-color: #eee;
+}
