@@ -9,10 +9,19 @@ Structure and Layout
 	margin: 0 auto;
 	padding: 0 20px;
 	max-width: 100%;
+
+	@media only screen and (min-width: $width-medium) {
+		max-width: 960px;
+	}
+
+	@media only screen and (min-width: $width-large) {
+		max-width: $width-large;
+		padding: 0;
+	}
 }
 
 .site-inner {
-	background: #f5f5f5;
+	background: lighten($black, 92);
 	padding-top: 40px;
 }
 
@@ -26,7 +35,7 @@ Sidebar
 ---------------------------------------------------------------------------------------------------- */
 
 .sidebar {
-	font-size: 16px;
+	font-size: $base-font-size;
 }
 
 .sidebar p:last-child,
@@ -42,14 +51,14 @@ Sidebar
 }
 
 .sidebar .widget {
-	background: #fff;
-	border-top: 1px solid #333;
+	background: $white;
+	border-top: 1px solid lighten($black, 11);
 	margin-bottom: 40px;
 	padding: 40px;
 }
 
 .sidebar .widget-wrap {
-	border-top: 5px solid #333;
+	border-top: 5px solid lighten($black, 11);
 	margin-left: 4px;
 }
 
@@ -61,6 +70,11 @@ Sidebar
 
 .sidebar-primary {
 	width: 100%;
+
+	@media only screen and (min-width: $width-medium) {
+		float: right;
+		width: 31.5%;
+	}
 }
 
 /* Column Widths and Positions
@@ -68,12 +82,25 @@ Sidebar
 
 .content {
 	width: 100%;
+
+	@media only screen and (min-width: $width-medium) {
+		float: right;
+		width: 65%;
+	}
 }
 
 .full-width-content .content {
 	float: none;
 	margin: 0 auto;
 	width: 100%;
+}
+
+@media only screen and (min-width: $width-medium) {
+
+	.content-sidebar .content,
+	.sidebar-content .sidebar-primary {
+		float: left;
+	}
 }
 
 /* Column Classes
@@ -94,4 +121,49 @@ Link: http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css
   float: left;
   margin: 0;
   width: 100%;
+
+  @media only screen and (min-width: $width-small) {
+  	margin-left: 2.564102564102564%;
+  }
+
+}
+
+@media only screen and (min-width: $width-small) {
+
+	.one-half,
+	.three-sixths,
+	.two-fourths {
+		width: 48.717948717948715%;
+	}
+
+	.one-third,
+	.two-sixths {
+		width: 31.623931623931625%;
+	}
+
+	.four-sixths,
+	.two-thirds {
+		width: 65.81196581196582%;
+	}
+
+	.one-fourth {
+		width: 23.076923076923077%;
+	}
+
+	.three-fourths {
+		width: 74.35897435897436%;
+	}
+
+	.one-sixth {
+		width: 14.52991452991453%;
+	}
+
+	.five-sixths {
+		width: 82.90598290598291%;
+	}
+
+	.first {
+		clear: both;
+		margin-left: 0;
+	}
 }

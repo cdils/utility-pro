@@ -8,8 +8,8 @@ Widgets
 .utility-bar {
 	background-color: rgb(12, 108, 187);
 	background-color: rgba(12, 108, 187, 0.9);
-	border-bottom: 1px solid #ddd;
-	color: #fff;
+	border-bottom: 1px solid lighten($black, 85);
+	color: $white;
 	font-size: 14px;
 	margin: 0 auto;
 	padding: 10px 0;
@@ -18,7 +18,7 @@ Widgets
 }
 
 .utility-bar a {
-	color: #fff;
+	color: $white;
 }
 
 .utility-bar a:hover {
@@ -28,7 +28,7 @@ Widgets
 
 .utility-bar p,
 .utility-bar .widgettitle {
-	color: #fff;
+	color: $white;
 	margin: 0;
 }
 
@@ -48,25 +48,35 @@ Widgets
 }
 
 .home-welcome .widgettitle {
-	color: #fff;
+	color: $white;
 	text-transform: none;
+
+	@media only screen and (min-width: $width-small) {
+		font-size: 80px;
+	}
 }
 
 .home-welcome p,
 .home-welcome .textwidget {
-	color: #eaeaea;
+	color: lighten($black, 92);
+
+	@media only screen and (min-width: $width-small) {
+		font-size: 40px;
+		line-height: normal;
+		margin-bottom: 34px;
+	}
 }
 
 /* Home Gallery
 --------------------------------------------- */
 
 .home-gallery {
-	background: #fff;
+	background: $white;
 	padding: 40px 0 20px;
 }
 
 .home-gallery .fa {
-	color: #0964dd;
+	color: $blue;
 }
 
 .home-gallery .widget {
@@ -79,6 +89,17 @@ Widgets
 .home-gallery-4 {
 	text-align: center;
 	width: 100%;
+
+	@media only screen and (min-width: $width-small) {
+		float: left;
+		width: 50%;
+	}
+
+	@media only screen and (min-width: $width-large) {
+		float: left;
+		width: 25%;
+	}
+
 }
 
 /* Call to Action
@@ -87,21 +108,56 @@ Widgets
 .call-to-action-bar {
 	background: rgb(51, 51, 51);
 	background: rgba(51, 51, 51, 0.8);
-	color: #fff;
+	color: $white;
 	padding: 40px 0;
 	text-align: center;
+
+	@media only screen and (min-width: $width-medium) {
+		text-align: left;
+	}
 }
 
 .call-to-action-bar .enews p {
 	margin: 12px 0;
 	width: 100%;
+
+	@media only screen and (min-width: $width-medium) {
+		clear: left;
+		float: left;
+		margin-bottom: 0;
+		width: 35%;
+	}
+}
+
+@media only screen and (min-width: $width-medium) {
+
+	.call-to-action-bar .enews-widget input[type="submit"] {
+		float: right;
+		margin: -2px 0 0;
+		width: 35%;
+	}
+
+	.call-to-action-bar .enews form {
+		float: right;
+		text-align: right;
+		width: 60%;
+	}
+
+	.call-to-action-bar .enews input[type="email"] {
+		height: 57px;
+		margin-right: 3px;
+		position: relative;
+		top: -2px;
+		width: 60%;
+	}
+
 }
 
 /* Featured Page and Featured Post
 --------------------------------------------- */
 
 .featured-content .entry {
-	border-bottom: 2px solid #f5f5f5;
+	border-bottom: 2px solid lighten($black, 92);
 	padding: 10px 0;
 }
 
@@ -120,8 +176,8 @@ Footer Widgets
 ---------------------------------------------------------------------------------------------------- */
 
 .footer-widgets {
-	background: #333;
-	color: #fff;
+	background: lighten($black, 11);
+	color: $white;
 	padding: 40px 0;
 }
 
@@ -131,14 +187,25 @@ Footer Widgets
 	float: left;
 	margin: 0;
 	width: 100%;
+
+	@media only screen and (min-width: $width-small) {
+		width: 30%;
+	}
+}
+
+.footer-widgets-1,
+.footer-widgets-2 {
+	@media only screen and (min-width: $width-small) {
+		margin-right: 5%;
+	}
 }
 
 .footer-widgets a {
-	color: #fff;
+	color: $white;
 }
 
 .footer-widgets a:hover {
-	color: #ccc;
+	color: lighten($black, 79);
 }
 
 .footer-widgets .widget {
@@ -146,7 +213,7 @@ Footer Widgets
 }
 
 .footer-widgets .widgettitle {
-	color: #fff;
+	color: $white;
 	font-size: 20px;
 }
 

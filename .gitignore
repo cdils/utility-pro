@@ -4,3 +4,4 @@ dist/
 .DS_Store
 
 .sass-cache/*
+page-gridblog.php

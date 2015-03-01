@@ -5,14 +5,14 @@ Site Footer
 .site-footer {
 	background-color: rgb(12, 108, 187);
 	background-color: rgba(12, 108, 187, .9);
-	color: #fff;
+	color: $white;
 	font-size: 14px;
 	padding: 40px 0;
 	text-align: center;
 }
 
 .site-footer a {
-	color: #fff;
+	color: $white;
 }
 
 .site-footer a:hover {

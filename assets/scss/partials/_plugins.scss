@@ -17,19 +17,19 @@ li a .fa {
 --------------------------------------------- */
 
 .enews-widget {
-	color: #ccc;
+	color: lighten($black, 79);
 }
 
 .enews-widget a {
-	color: #fff;
+	color: $white;
 }
 
 .enews-widget a:hover {
-	color: #ccc;
+	color: lighten($black, 79);
 }
 
 .enews-widget .widgettitle {
-	color: #fff;
+	color: $white;
 	margin: 0;
 }
 
@@ -47,12 +47,12 @@ li a .fa {
 }
 
 .sidebar .widget.enews-widget {
-	background-color: #333;
-	border-top: 1px solid #fff;
+	background-color: lighten($black, 11);
+	border-top: 1px solid $white;
 }
 
 .sidebar .enews-widget .widget-wrap {
-	border-top: 5px solid #fff;
+	border-top: 5px solid $white;
 }
 
 /* ## Gravity Forms
@@ -83,7 +83,7 @@ div.gform_wrapper form li {
 
 div.gform_wrapper input:focus,
 div.gform_wrapper textarea:focus {
-	outline: 1px dotted #aaa;
+	outline: 1px dotted lighten($black, 63);
 }
 
 /* ## Jetpack

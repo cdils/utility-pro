@@ -6,12 +6,12 @@ Defaults
 --------------------------------------------- */
 
 body {
-	background: #fff;
-	color: #666;
-	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 16px;
+	background: $white;
+	color: lighten($black, 33);
+	font-family: $sans-serif;
+	font-size: $base-font-size;
 	font-weight: 400;
-	line-height: 1.625;
+	line-height: $base-line-height;
 	overflow-x: hidden;
 }
 
@@ -31,17 +31,17 @@ textarea:focus,
 }
 
 ::-moz-selection {
-	background: #fff248;
-	color: #000;
+	background: $black;
+	color: $white;
 }
 
 ::selection {
-	background: #fff248;
-	color: #000;
+	background: $black;
+	color: $white;
 }
 
 a {
-	color: #0964dd;
+	color: $blue;
 	border-bottom: 1px dotted;
 	font-weight: 700;
 	text-decoration: none;
@@ -53,7 +53,7 @@ a img {
 }
 
 a:hover {
-	color: #666;
+	color: lighten($black, 33);
 }
 
 p {
@@ -72,7 +72,7 @@ ul {
 }
 
 blockquote {
-	color: #000;
+	color: $black;
 	margin: 0;
 	padding: 24px 40px;
 }
@@ -80,7 +80,7 @@ blockquote {
 blockquote::before {
 	content: "\201C";
 	display: block;
-	font-family: Enriqueta, serif;
+	font-family: $serif;
 	font-size: 120px;
 	height: 0;
 	left: -55px;
@@ -89,8 +89,8 @@ blockquote::before {
 }
 
 pre {
-	background: #333;
-	color: #ccc;
+	background: lighten($black, 11);
+	color: lighten($black, 79);
 	overflow: scroll;
 	padding: 0 20px;
 	white-space: pre;
@@ -110,8 +110,8 @@ h3,
 h4,
 h5,
 h6 {
-	color: #333;
-	font-family: Enriqueta, serif;
+	color: lighten($black, 11);
+	font-family: $serif;
 	font-weight: 700;
 	line-height: 1.2;
 	margin: 0;
@@ -124,7 +124,7 @@ h1 {
 }
 
 h2 {
-	color: #666;
+	color: lighten($black, 33);
 	font-size: 32px;
 }
 
@@ -141,7 +141,7 @@ h5 {
 }
 
 h6 {
-	font-size: 16px;
+	font-size: $base-font-size;
 }
 
 /* Objects
@@ -166,30 +166,30 @@ img {
 
 input,
 textarea {
-	background: #fff;
-	border: 1px solid #ddd;
-	color: #666;
+	background: $white;
+	border: 1px solid lighten($black, 85);
+	color: lighten($black, 33);
 	font-size: 14px;
 	padding: 16px;
 	width: 100%;
 }
 
 ::-moz-placeholder {
-	color: #666;
+	color: lighten($black, 33);
 }
 
 ::-webkit-input-placeholder {
-	color: #666;
+	color: lighten($black, 33);
 }
 
 .button,
 .entry-content a.button,
 input[type="submit"] {
-	background: #0964dd;
-	border: 1px solid #fff;
-	color: #fff;
+	background: $blue;
+	border: 1px solid $white;
+	color: $white;
 	cursor: pointer;
-	font-size: 16px;
+	font-size: $base-font-size;
 	font-weight: 700;
 	letter-spacing: 1px;
 	padding: 16px 24px;
@@ -203,8 +203,8 @@ input:focus[type="reset"],
 input:focus[type="submit"],
 .button:focus,
 .entry-content a.button:focus {
-	background-color: #fff;
-	color: #0964dd;
+	background-color: $white;
+	color: $blue;
 }
 
 .button {
@@ -214,9 +214,9 @@ input:focus[type="submit"],
 .button:hover,
 .entry-content a.button:hover,
 input:hover[type="submit"] {
-	background-color: #fff;
-	border: 1px solid #0964dd;
-	color: #0964dd;
+	background-color: $white;
+	border: 1px solid $blue;
+	color: $blue;
 }
 
 input[type="search"]::-webkit-search-cancel-button,
@@ -232,12 +232,18 @@ input[type="search"]::-webkit-search-results-button {
 	height: 53px;
 	margin: 20px auto 0;
 	width: 300px;
+
+	@media only screen and (min-width: $width-medium) {
+		float: right;
+		margin-top: 0;
+		width: 40%;
+	}
 }
 
 .search-form [type="submit"] {
 	background-color: transparent;
-	background: url(images/icon-search-ltr.png) no-repeat 75% 53% #fff;
-	border: 1px solid #ddd;
+	background: url(images/icon-search-ltr.png) no-repeat 75% 53% $white;
+	border: 1px solid lighten($black, 85);
 	box-shadow: none;
 	height: 53px;
 	margin: 0;
@@ -257,7 +263,7 @@ input[type="search"]::-webkit-search-results-button {
 
 .search-form input[type="submit"]:focus,
 .search-form input[type="submit"]:hover {
-	background-color: #999;
+	background-color: lighten($black, 56);
 	background-position: 20% 53%;
 	text-indent: -9999px;
 
@@ -289,12 +295,12 @@ th {
 	padding: 8px;
 	line-height: 1.428571429;
 	vertical-align: top;
-	border-top: 1px solid #ddd;
+	border-top: 1px solid lighten($black, 85);
 }
 
 .table > thead > tr > th {
 	vertical-align: bottom;
-	border-bottom: 2px solid #ddd;
+	border-bottom: 2px solid lighten($black, 85);
 }
 
 .table > caption + thead > tr:first-child > th,
@@ -307,11 +313,11 @@ th {
 }
 
 .table > tbody + tbody {
-	border-top: 2px solid #ddd;
+	border-top: 2px solid lighten($black, 85);
 }
 
 .table .table {
-	background-color: #fff;
+	background-color: $white;
 }
 
 .table-condensed > thead > tr > th,
@@ -324,7 +330,7 @@ th {
 }
 
 .table-bordered {
-	border: 1px solid #ddd;
+	border: 1px solid lighten($black, 85);
 }
 
 .table-bordered > thead > tr > th,
@@ -333,7 +339,7 @@ th {
 .table-bordered > thead > tr > td,
 .table-bordered > tbody > tr > td,
 .table-bordered > tfoot > tr > td {
-	border: 1px solid #ddd;
+	border: 1px solid lighten($black, 85);
 }
 
 .table-bordered > thead > tr > th,
@@ -343,10 +349,10 @@ th {
 
 .table-striped > tbody > tr:nth-child(odd) > td,
 .table-striped > tbody > tr:nth-child(odd) > th {
-	background-color: #eaeaea;
+	background-color: lighten($black, 92);
 }
 
 .table-hover > tbody > tr:hover > td,
 .table-hover > tbody > tr:hover > th {
-	background-color: #f5f5f5;
+	background-color: lighten($black, 92);
 }

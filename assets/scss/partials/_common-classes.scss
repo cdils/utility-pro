@@ -117,14 +117,14 @@ img.alignright,
 }
 
 .gallery img {
-	border: 1px solid #ddd;
+	border: 1px solid lighten($black, 85);
 	height: auto;
 	padding: 4px;
 	width: auto;
 }
 
 .gallery img:hover {
-	border: 1px solid #999;
+	border: 1px solid lighten($black, 56);
 }
 
 .gallery-caption {
@@ -141,8 +141,8 @@ img.alignright,
 
 .author-box,
 .archive-description {
-	background-color: #eaeaea;
-	color: #333;
+	background-color: lighten($black, 92);
+	color: lighten($black, 11);
 	margin-bottom: 40px;
 	padding: 40px;
 }
@@ -153,7 +153,7 @@ img.alignright,
 }
 
 .author-box a {
-	border-bottom: 1px solid #ddd;
+	border-bottom: 1px solid lighten($black, 85);
 }
 
 .author-box .avatar {

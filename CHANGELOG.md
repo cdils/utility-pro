@@ -4,6 +4,7 @@ All notable changes to this project will be documented in this file.
 ## Unreleased
 
 - Changed minimum WordPress version compatability to 4.1 (to accommodate `the_posts_pagination()` )
+- Added Sass.
 
 ## 1.0.1 - 2015-02-05
 

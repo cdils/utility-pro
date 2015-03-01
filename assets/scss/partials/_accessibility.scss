@@ -25,7 +25,7 @@ Accessibility Extras - Taken from the Leiden theme & Genesis Accessible plugin (
 }
 
 .screen-reader-shortcut:focus {
-	background: #fff;
+	background: $white;
 	clip: auto;
 	display: block;
 	height: auto;
@@ -45,6 +45,6 @@ Accessibility Extras - Taken from the Leiden theme & Genesis Accessible plugin (
 
 /* Display outline on focus */
 :focus {
-	color: #333;
-	outline: #aaa dotted thin;
+	color: lighten($black, 11);
+	outline: lighten($black, 63) dotted thin;
 }
