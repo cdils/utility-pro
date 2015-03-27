@@ -1,6 +1,10 @@
 # Change Log for Utility Pro Child Theme
 All notable changes to this project will be documented in this file.
 
+## Unreleased
+
+- Added Sass.
+
 ## 1.0.1 - 2015-02-05
 
 - Fixed text domain loading for language files.

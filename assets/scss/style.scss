@@ -64,16 +64,17 @@
 	- Sidebars
 	- Site Footer
 	- Accessibility Extras
-	- Media Queries
-		- min-width: 768px
-		- min-width: 1024px
-		- min-width: 1140px
-		- print
+	- Print Media Query
 */
 
 /* Resets
 ---------------------------------------------------------------------------------------------------- */
 @import "partials/reset";
+
+
+/* # Variables
+---------------------------------------------------------------------------------------------------- */
+@import "partials/variables";
 
 
 /* # Theme Colors
@@ -131,6 +132,6 @@
 @import "partials/accessibility";
 
 
-/* # Media Queries
+/* # Print Media Query
 ---------------------------------------------------------------------------------------------------- */
 @import "partials/media-queries";

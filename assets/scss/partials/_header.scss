@@ -3,8 +3,8 @@ Site Header
 ---------------------------------------------------------------------------------------------------- */
 
 .site-header {
-	background: #fff;
-	border-bottom: 1px solid #ddd;
+	background: $white;
+	border-bottom: 1px solid lighten($black, 85);
 }
 
 .site-header .wrap {
@@ -19,6 +19,11 @@ Site Header
 	font-weight: 700;
 	text-align: center;
 	width: 100%;
+
+	@media only screen and (min-width: $width-medium) {
+		text-align: left;
+		width: 35%;
+	}
 }
 
 .site-title {
@@ -31,13 +36,13 @@ Site Header
 .site-title a,
 .site-title a:hover {
 	border: 0;
-	color: #333;
-	font-family: Enriqueta, sans-serif;
+	color: lighten($black, 11);
+	font-family: $serif;
 	font-size: 28px;
 }
 
 .site-description {
-	color: #666;
+	color: lighten($black, 33);
 	font-size: 16px;
 	line-height: 1;
 	margin: 0;
@@ -64,6 +69,10 @@ Site Header
 	float: left;
 	min-height: 60px;
 	width: 100%;
+
+	@media only screen and (min-width: $width-medium) {
+		background: url(images/logo.png) no-repeat left;
+	}
 }
 
 /* Header Right Widget Area
@@ -73,18 +82,23 @@ Site Header
   float: right;
   text-align: center;
   width: 100%;
+
+  @media only screen and (min-width: $width-medium) {
+  		text-align: right;
+  		width: 65%;
+  	}
 }
 
 .header-widget-area .genesis-nav-menu a {
-	color: #000;
+	color: $black;
 }
 
 .header-widget-area .genesis-nav-menu a:hover,
 .header-widget-area .genesis-nav-menu .current-menu-item > a,
 .header-widget-area .genesis-nav-menu .sub-menu .current-menu-item > a:hover {
-	color: #666;
+	color: lighten($black, 33);
 }
 
 .header-widget-area .genesis-nav-menu .sub-menu a {
-	background-color: #eee;
+	background-color: lighten($black, 92);
 }

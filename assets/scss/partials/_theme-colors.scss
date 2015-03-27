@@ -9,29 +9,29 @@ If you've chosen your favorite color scheme, you can delete the others
 .utility-pro-purple .home-gallery .fa,
 .utility-pro-purple a,
 .utility-pro-purple .entry-content a {
-	color: #339;
+	color: $purple;
 }
 
 .utility-pro-purple .sticky.entry {
-	border-top-color: #339;
+	border-top-color: $purple;
 }
 
 .utility-pro-purple .call-to-action-bar .button,
 .utility-pro-purple .button,
 .utility-pro-purple .entry-content a.button,
 .utility-pro-purple input[type="submit"] {
-	background: #339;
-	border: 1px solid #fff;
-	color: #fff;
+	background: $purple;
+	border: 1px solid $white;
+	color: $white;
 }
 
 .utility-pro-purple .call-to-action-bar .button:hover,
 .utility-pro-purple .button:hover,
 .utility-pro-purple .entry-content a.button:hover,
 .utility-pro-purple input[type="submit"]:hover {
-	background: #fff;
-	border: 1px solid #339;
-	color: #339;
+	background: $white;
+	border: 1px solid $purple;
+	color: $purple;
 }
 
 .utility-pro-purple .utility-bar,
@@ -46,29 +46,29 @@ If you've chosen your favorite color scheme, you can delete the others
 .utility-pro-green .home-gallery .fa,
 .utility-pro-green a,
 .utility-pro-green .entry-content a {
-	color: #107952;
+	color: $green;
 }
 
 .utility-pro-green .sticky.entry {
-	border-top-color: #107952;
+	border-top-color: $green;
 }
 
 .utility-pro-green .call-to-action-bar .button,
 .utility-pro-green .button,
 .utility-pro-green a.button,
 .utility-pro-green input[type="submit"] {
-	background: #107952;
-	border: 1px solid #fff;
-	color: #fff;
+	background: $green;
+	border: 1px solid $white;
+	color: $white;
 }
 
 .utility-pro-green .call-to-action-bar .button:hover,
 .utility-pro-green .button:hover,
 .utility-pro-green .entry-content a.button:hover,
 .utility-pro-green input[type="submit"]:hover {
-	background: #fff;
-	border: 1px solid #107952;
-	color: #107952;
+	background: $white;
+	border: 1px solid $green;
+	color: $green;
 }
 
 .utility-pro-green .utility-bar,
@@ -83,29 +83,29 @@ If you've chosen your favorite color scheme, you can delete the others
 .utility-pro-red .home-gallery .fa,
 .utility-pro-red a,
 .utility-pro-red .entry-content a {
-	color: #d3131b;
+	color: $red;
 }
 
 .utility-pro-red .sticky.entry {
-	border-top-color: #d3131b;
+	border-top-color: $red;
 }
 
 .utility-pro-red .call-to-action-bar .button,
 .utility-pro-red .button,
 .utility-pro-red a.button,
 .utility-pro-red input[type="submit"] {
-	background: #d3131b;
-	border: 1px solid #fff;
-	color: #fff;
+	background: $red;
+	border: 1px solid $white;
+	color: $white;
 }
 
 .utility-pro-red .call-to-action-bar .button:hover,
 .utility-pro-red .button:hover,
 .utility-pro-red .entry-content a.button:hover,
 .utility-pro-red input[type="submit"]:hover {
-	background: #fff;
-	border: 1px solid #d3131b;
-	color: #d3131b;
+	background: $white;
+	border: 1px solid $red;
+	color: $red;
 }
 
 .utility-pro-red .utility-bar,

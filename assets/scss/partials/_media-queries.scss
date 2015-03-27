@@ -1,236 +1,11 @@
 /*
-Media Queries
+Print Media Query
 ---------------------------------------------------------------------------------------------------- */
-
-@media only screen and (min-width: 768px) {
-
-	.home-welcome .widgettitle {
-		font-size: 80px;
-	}
-
-	.home-welcome p,
-	.home-welcome .textwidget {
-		font-size: 40px;
-		line-height: normal;
-		margin-bottom: 34px;
-	}
-
-	.home-gallery-1,
-	.home-gallery-2,
-	.home-gallery-3,
-	.home-gallery-4 {
-		float: left;
-		width: 50%;
-	}
-
-	.footer-widgets-1,
-	.footer-widgets-2,
-	.footer-widgets-3 {
-		width: 30%;
-	}
-
-	.footer-widgets-1,
-	.footer-widgets-2 {
-		margin-right: 5%;
-	}
-
-	.five-sixths,
-	.four-sixths,
-	.one-fourth,
-	.one-half,
-	.one-sixth,
-	.one-third,
-	.three-fourths,
-	.three-sixths,
-	.two-fourths,
-	.two-sixths,
-	.two-thirds {
-		float: left;
-		margin-left: 2.564102564102564%;
-	}
-
-	.one-half,
-	.three-sixths,
-	.two-fourths {
-		width: 48.717948717948715%;
-	}
-
-	.one-third,
-	.two-sixths {
-		width: 31.623931623931625%;
-	}
-
-	.four-sixths,
-	.two-thirds {
-		width: 65.81196581196582%;
-	}
-
-	.one-fourth {
-		width: 23.076923076923077%;
-	}
-
-	.three-fourths {
-		width: 74.35897435897436%;
-	}
-
-	.one-sixth {
-		width: 14.52991452991453%;
-	}
-
-	.five-sixths {
-		width: 82.90598290598291%;
-	}
-
-	.first {
-		clear: both;
-		margin-left: 0;
-	}
-}
-
-@media only screen and (min-width: 1024px) {
-
-	.wrap {
-		max-width: 960px;
-	}
-
-	.header-widget-area .search-form {
-		float: right;
-		margin-top: 0;
-		width: 40%;
-	}
-
-	.header-image .site-title > a {
-		background: url(images/logo.png) no-repeat left;
-	}
-
-	.title-area {
-		text-align: left;
-		width: 35%;
-	}
-
-	.site-header .widget-area {
-		text-align: right;
-		width: 65%;
-	}
-
-	.content {
-		float: right;
-		width: 65%;
-	}
-
-	.content-sidebar .content,
-	.sidebar-content .sidebar-primary {
-		float: left;
-	}
-
-	.sidebar-primary {
-		float: right;
-		width: 31.5%;
-	}
-
-	button.menu-toggle {
-		display: none;
-	}
-
-	.sub-menu-toggle,
-	.menu-toggle {
-		display: block;
-		visibility: hidden;
-	}
-
-	.menu-primary {
-		display: inline-block;
-	}
-
-	.genesis-nav-menu .menu-item {
-		display: inline-block;
-	}
-
-	.genesis-nav-menu > .menu-item > a {
-		border-bottom: 0;
-	}
-
-	.genesis-nav-menu .sub-menu {
-		display: block;
-		left: -9999px;
-		margin: 0;
-		opacity: 0;
-		position: absolute;
-		-webkit-transition: opacity 0.4s ease-in-out;
-		-moz-transition: opacity 0.4s ease-in-out;
-		-ms-transition: opacity 0.4s ease-in-out;
-		-o-transition: opacity 0.4s ease-in-out;
-		transition: opacity 0.4s ease-in-out;
-		width: 200px;
-		z-index: 99;
-	}
-
-	.genesis-nav-menu .sub-menu a {
-		letter-spacing: 0;
-		width: 200px;
-	}
-
-	.genesis-nav-menu .sub-menu .sub-menu {
-		margin: -54px 0 0 199px;
-	}
-
-	.genesis-nav-menu .menu-item:hover {
-		position: static;
-	}
-
-	.call-to-action-bar {
-		text-align: left;
-	}
-
-	.call-to-action-bar .enews p {
-		clear: left;
-		float: left;
-		margin-bottom: 0;
-		width: 35%;
-	}
-
-	.call-to-action-bar .enews-widget input[type="submit"] {
-		float: right;
-		margin: -2px 0 0;
-		width: 35%;
-	}
-
-	.call-to-action-bar .enews form {
-		float: right;
-		text-align: right;
-		width: 60%;
-	}
-
-	.call-to-action-bar .enews input[type="email"] {
-		height: 57px;
-		margin-right: 3px;
-		position: relative;
-		top: -2px;
-		width: 60%;
-	}
-
-}
-
-@media only screen and (min-width: 1140px) {
-
-	.wrap {
-		max-width: 1140px;
-		padding: 0;
-	}
-
-	.home-gallery-1,
-	.home-gallery-2,
-	.home-gallery-3,
-	.home-gallery-4 {
-		width: 25%;
-	}
-
-}
 
 @media print {
 
 	* {
-		color: #000;
+		color: $black;
 		background: transparent;
 		box-shadow: none;
 		text-shadow: none;
@@ -257,7 +32,7 @@ Media Queries
 
 	blockquote,
 	pre {
-		border: 1px solid #999;
+		border: 1px solid lighten($black, 56);
 		page-break-inside: avoid;
 	}
 
@@ -357,11 +132,11 @@ Media Queries
 
 	.table td,
 	.table th {
-		background-color: #fff;
+		background-color: $white;
 	}
 
 	.label {
-		border: 1px solid #000;
+		border: 1px solid $black;
 	}
 
 	.table {
@@ -370,7 +145,7 @@ Media Queries
 
 	.table-bordered th,
 	.table-bordered td {
-		border: 1px solid #ddd;
+		border: 1px solid lighten($black, 85);
 	}
 
 }
