@@ -422,9 +422,9 @@ body {
   background: white;
   color: #545454;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-size: $base-font-size;
   font-weight: 400;
-  line-height: 1.625;
+  line-height: $base-line-height;
   overflow-x: hidden;
 }
 
@@ -553,7 +553,7 @@ h5 {
 }
 
 h6 {
-  font-size: 16px;
+  font-size: $base-font-size;
 }
 
 /* Objects
@@ -600,7 +600,7 @@ input[type="submit"] {
   border: 1px solid white;
   color: white;
   cursor: pointer;
-  font-size: 16px;
+  font-size: $base-font-size;
   font-weight: 700;
   letter-spacing: 1px;
   padding: 16px 24px;
@@ -805,7 +805,7 @@ Structure and Layout
 Sidebar
 ---------------------------------------------------------------------------------------------------- */
 .sidebar {
-  font-size: 16px;
+  font-size: $base-font-size;
 }
 
 .sidebar p:last-child,
@@ -1486,7 +1486,7 @@ Site Header
 
 .site-description {
   color: #545454;
-  font-size: 16px;
+  font-size: $base-font-size;
   line-height: 1;
   margin: 0;
 }
