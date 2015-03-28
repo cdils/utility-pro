@@ -8,6 +8,7 @@ $green: #107952;
 $red: #d3131b;
 
 // Widths
+$max-width: 1200px;
 $width-large: 1140px;
 $width-medium: 1024px;
 $width-small: 768px;
@@ -32,9 +33,6 @@ $large-screen-up: new-breakpoint(min-width $large-screen 12);
 $base-wrap-max-width: $max-width - 372px; // 768px;
 $wrap-max-width-medium: $max-width - 180px; // 960px
 $wrap-max-width-large: $max-width;
-
-
-$major-second: 1;
 
 // Global Font Families
 //------------------------------------------------------------------------------

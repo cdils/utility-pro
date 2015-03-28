@@ -14,6 +14,7 @@
     "grunt-potomo": "~3.2.0",
     "grunt-wp-i18n": "~0.4.9",
     "grunt-exec": "~0.4.6",
-    "grunt-contrib-compress": "~0.13.0"
+    "grunt-contrib-compress": "~0.13.0",
+    "grunt-bowercopy": "~1.2.0"
   }
 }
