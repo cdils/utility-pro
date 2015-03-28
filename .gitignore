@@ -3,5 +3,8 @@ dist/
 # OSX
 .DS_Store
 
+# sass cache
+**/.sass-cache
+**/.sass-cache/*
 .sass-cache/*
-page-gridblog.php
+/bower_components

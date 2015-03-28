@@ -6,7 +6,6 @@ module.exports = function(grunt) {
 	 * Load Grunt plugins
 	 */
 	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
-
 	/**
 	 * Configuration
 	 */
@@ -15,6 +14,23 @@ module.exports = function(grunt) {
 		 * Get package meta data
 		 */
 		pkg: grunt.file.readJSON('package.json'),
+		/**
+		* Bower Copy
+		*/
+		bowercopy: {
+			options: {
+				srcPrefix: 'bower_components',
+				clean: true
+			},
+			scss: {
+				options: {
+					destPrefix: 'assets/scss/vendor'
+				},
+				files: {
+					'bourbon': 'bourbon'
+				}
+			}
+		},
 		/**
 		 * Sass
 		 */
@@ -168,8 +184,9 @@ module.exports = function(grunt) {
 	 * Run `grunt` on the command line
 	 */
 	grunt.registerTask('default', [
+		'bowercopy',
 		'cssjanus',
 		'sass',
-		'watch',
+		'watch'
 	]);
 };
