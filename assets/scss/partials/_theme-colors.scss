@@ -36,8 +36,7 @@ If you've chosen your favorite color scheme, you can delete the others
 
 .utility-pro-purple .utility-bar,
 .utility-pro-purple .site-footer {
-	background-color: rgb(51, 51, 153);
-	background-color: rgba(51, 51, 153, 0.8);
+	background-color: rgba($purple, 0.8);
 }
 
 /* ## Green
@@ -73,8 +72,7 @@ If you've chosen your favorite color scheme, you can delete the others
 
 .utility-pro-green .utility-bar,
 .utility-pro-green .site-footer {
-	background-color: rgb(8, 130, 84);
-	background-color: rgba(8, 130, 84, 0.9);
+	background-color: rgba($green, 0.9);
 }
 
 /* ## Red
@@ -110,6 +108,5 @@ If you've chosen your favorite color scheme, you can delete the others
 
 .utility-pro-red .utility-bar,
 .utility-pro-red .site-footer {
-	background-color: rgb(211, 19, 27);
-	background-color: rgba(211, 19, 27, 0.9);
+	background-color: rgba($red, 0.9);
 }

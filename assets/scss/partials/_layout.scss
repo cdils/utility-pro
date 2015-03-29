@@ -7,27 +7,42 @@ Structure and Layout
 
 .wrap {
 	margin: 0 auto;
-	padding: 0 20px;
+	padding: 0 5%;
 	max-width: 100%;
+	word-wrap: break-word;
 
-	@media only screen and (min-width: $width-medium) {
-		max-width: 960px;
+	@include media($medium-screen-up) {
+		max-width: $wrap-max-width-medium;
 	}
 
-	@media only screen and (min-width: $width-large) {
-		max-width: $width-large;
+	@include media($large-screen-up) {
+		max-width: $wrap-max-width-large;
 		padding: 0;
 	}
 }
 
 .site-inner {
-	background: lighten($black, 92);
+	background: lighten($black, 96);
 	padding-top: 40px;
 }
 
 .utility-landing .site-container {
 	margin: 40px auto;
-	max-width: 960px;
+	max-width: $wrap-max-width-medium;
+}
+
+/* Content & Primary Sidebar
+--------------------------------------------- */
+
+@include media($medium-screen) {
+
+	.content {
+		@include span-columns(8);
+	}
+	.sidebar-primary {
+		@include span-columns(4);
+	}
+
 }
 
 /*
@@ -47,7 +62,6 @@ Sidebar
 	list-style-type: none;
 	margin-bottom: 6px;
 	padding: 0;
-	word-wrap: break-word;
 }
 
 .sidebar .widget {
@@ -66,28 +80,10 @@ Sidebar
 	width: 100%;
 }
 
-/* Primary Sidebar */
 
-.sidebar-primary {
-	width: 100%;
-
-	@media only screen and (min-width: $width-medium) {
-		float: right;
-		width: 31.5%;
-	}
-}
 
 /* Column Widths and Positions
 --------------------------------------------- */
-
-.content {
-	width: 100%;
-
-	@media only screen and (min-width: $width-medium) {
-		float: right;
-		width: 65%;
-	}
-}
 
 .full-width-content .content {
 	float: none;
@@ -95,7 +91,7 @@ Sidebar
 	width: 100%;
 }
 
-@media only screen and (min-width: $width-medium) {
+@include media($medium-screen-up) {
 
 	.content-sidebar .content,
 	.sidebar-content .sidebar-primary {
@@ -107,63 +103,42 @@ Sidebar
 Link: http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css
 --------------------------------------------- */
 
-.five-sixths,
-.four-sixths,
-.one-fourth,
-.one-half,
-.one-sixth,
-.one-third,
-.three-fourths,
-.three-sixths,
-.two-fourths,
-.two-sixths,
-.two-thirds {
-  float: left;
-  margin: 0;
-  width: 100%;
-
-  @media only screen and (min-width: $width-small) {
-  	margin-left: 2.564102564102564%;
-  }
-
-}
-
-@media only screen and (min-width: $width-small) {
+@include media($small-screen-up) {
 
 	.one-half,
 	.three-sixths,
 	.two-fourths {
-		width: 48.717948717948715%;
+		@include span-columns(6);
 	}
 
 	.one-third,
 	.two-sixths {
-		width: 31.623931623931625%;
+		@include span-columns(4);
 	}
 
 	.four-sixths,
 	.two-thirds {
-		width: 65.81196581196582%;
+		@include span-columns(8);
 	}
 
 	.one-fourth {
-		width: 23.076923076923077%;
+		@include span-columns(3);
 	}
 
 	.three-fourths {
-		width: 74.35897435897436%;
+		@include span-columns(9);
 	}
 
 	.one-sixth {
-		width: 14.52991452991453%;
+		@include span-columns(2);
 	}
 
 	.five-sixths {
-		width: 82.90598290598291%;
+		@include span-columns(10);
 	}
 
-	.first {
-		clear: both;
-		margin-left: 0;
+	.last {
+		@include omega();
+		clear: right;
 	}
 }

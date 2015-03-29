@@ -3,10 +3,9 @@ Site Footer
 ---------------------------------------------------------------------------------------------------- */
 
 .site-footer {
-	background-color: rgb(12, 108, 187);
-	background-color: rgba(12, 108, 187, .9);
+	background-color: rgba($blue, .9);
 	color: $white;
-	font-size: 14px;
+	font-size: $footer-font-size;
 	padding: 40px 0;
 	text-align: center;
 }
