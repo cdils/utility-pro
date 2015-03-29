@@ -20,9 +20,9 @@ Site Header
 	text-align: center;
 	width: 100%;
 
-	@media only screen and (min-width: $width-medium) {
+	@include media($medium-screen-up) {
 		text-align: left;
-		width: 35%;
+		width: 50%;
 	}
 }
 
@@ -38,7 +38,7 @@ Site Header
 	border: 0;
 	color: lighten($black, 11);
 	font-family: $serif;
-	font-size: 28px;
+	font-size: $site-title-font-size;
 }
 
 .site-description {
@@ -70,7 +70,7 @@ Site Header
 	min-height: 60px;
 	width: 100%;
 
-	@media only screen and (min-width: $width-medium) {
+	@include media($medium-screen-up) {
 		background: url(images/logo.png) no-repeat left;
 	}
 }
@@ -83,10 +83,22 @@ Site Header
   text-align: center;
   width: 100%;
 
-  @media only screen and (min-width: $width-medium) {
+  @include media($medium-screen-up) {
   		text-align: right;
-  		width: 65%;
+  		width: 50%;
   	}
+}
+
+.header-widget-area .search-form {
+	height: 53px;
+	margin: 20px auto 0;
+	width: 300px;
+
+	@include media($small-screen-up) {
+		float: right;
+		margin-top: 0;
+		width: 100%
+	}
 }
 
 .header-widget-area .genesis-nav-menu a {

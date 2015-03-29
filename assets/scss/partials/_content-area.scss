@@ -7,7 +7,6 @@ Content Area
 
 .entry-title {
 	margin-bottom: 40px;
-	word-wrap: break-word;
 }
 
 .entry-title a{
@@ -109,7 +108,7 @@ Content Area
 
 .entry-meta {
 	color: lighten($black, 33);
-	font-size: 14px;
+	font-size: $secondary-font-size;
 }
 
 .entry-header .entry-meta {
@@ -171,7 +170,7 @@ Content Area
 }
 
 .pagination .nav-links .current {
-	background: #555;
+	background: lighten($black, 33);
 	border: 1px solid $white;
 	color: $white;
 	cursor: none;
@@ -187,7 +186,7 @@ Content Area
 .comment-respond,
 .entry-comments,
 .entry-pings {
-	background: $white;
+	background: $comments-background-color;
 	padding: 40px;
 	margin-bottom: 40px;
 }
@@ -231,5 +230,5 @@ p.form-submit,
 }
 
 .form-allowed-tags {
-	font-size: 14px;
+	font-size: $secondary-font-size;
 }

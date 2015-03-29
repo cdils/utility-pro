@@ -2,17 +2,14 @@
 Common Classes
 ---------------------------------------------------------------------------------------------------- */
 
-/* WordPress
+/* Avatar
 --------------------------------------------- */
-
-address {
-	margin-bottom: 24px;
-}
 
 .avatar {
 	float: left;
 }
 
+.author-box .avatar,
 .alignleft .avatar {
 	margin-right: 24px;
 }
@@ -21,14 +18,11 @@ address {
 	margin-left: 24px;
 }
 
-img.centered,
-.aligncenter {
-	display: block;
-	margin: 0 auto 24px;
-}
+/* WordPress
+--------------------------------------------- */
 
-img.alignnone {
-	margin-bottom: 12px;
+address {
+	margin-bottom: 24px;
 }
 
 .alignleft {
@@ -51,8 +45,19 @@ img.alignright,
 	margin: 0 0 24px 24px;
 }
 
+img.centered,
+.aligncenter {
+	display: block;
+	margin: 0 auto 24px;
+}
+
+img.alignnone,
+.alignnone {
+	margin-bottom: 24px;
+}
+
 .wp-caption-text {
-	font-size: 14px;
+	font-size: $wp-caption-font-size;
 	font-weight: 700;
 	margin: 0;
 	text-align: center;
@@ -70,66 +75,105 @@ img.alignright,
 --------------------------------------------- */
 
 .gallery {
-	margin: auto;
+	@include outer-container;
 }
 
 .gallery-item {
 	display: inline-block;
+	line-height: 0;
+	list-style: none;
+	margin: 0 0 2.35765%;
+	overflow: hidden;
+	padding: 0;
+	position: relative;
 	text-align: center;
 	vertical-align: top;
 	width: 100%;
-}
 
-.gallery-columns-2 .gallery-item {
-	width: 50%;
-}
+	@include media($small-screen-up) {
 
-.gallery-columns-3 .gallery-item {
-	width: 33%;
-}
+		.gallery-columns-0 &,
+		.gallery-columns-1 &,
+		.gallery-col-0 &,
+		.gallery-col-1 & {
+			@include fill-parent();
+		}
 
-.gallery-columns-4 .gallery-item {
-	width: 25%;
-}
+		.gallery-columns-2 &,
+		.gallery-col-2 & {
+			@include span-columns(6);
+			@include omega(2n);
+		}
 
-.gallery-columns-5 .gallery-item {
-	width: 20%;
-}
+		.gallery-columns-3 &,
+		.gallery-col-3 & {
+			@include span-columns(4);
+			@include omega(3n);
+		}
 
-.gallery-columns-6 .gallery-item {
-	width: 16.6666%;
-}
+		.gallery-columns-4 &,
+		.gallery-col-4 & {
+			@include span-columns(3);
+			@include omega(4n);
+		}
 
-.gallery-columns-7 .gallery-item {
-	width: 14.2857%;
-}
+		.gallery-columns-5 &,
+		.gallery-col-5 & {
+			@include span-columns(2.4);
+			@include omega(5n);
+		}
 
-.gallery-columns-8 .gallery-item {
-	width: 12.5%;
-}
+		.gallery-columns-6 &,
+		.gallery-col-6 & {
+			@include span-columns(2);
+			@include omega(6n);
+		}
 
-.gallery-columns-9 .gallery-item {
-	width: 11.1111%;
-}
+		.gallery-columns-7 &,
+		.gallery-col-7 & {
+			@include span-columns(1.71);
+			@include omega(7n);
+		}
 
-.gallery-columns-10 .gallery-item {
-	width: 10%;
+		.gallery-columns-8 &,
+		.gallery-col-8 & {
+			@include span-columns(1.5);
+			@include omega(8n);
+		}
+
+		.gallery-columns-9 &,
+		.gallery-col-9 & {
+			@include span-columns(1.33);
+			@include omega(9n);
+		}
+	}
+
+	.gallery-caption {
+		@include transition(all, 0.2s ease-in-out);
+		background: transparentize($black, 0.5);
+		color: $white;
+		font-size: $gallery-caption-font-size;
+		line-height: 1.65;
+		max-height: 50%;
+		opacity: 0;
+		overflow: hidden;
+		padding: 10px;
+		position: absolute;
+		visibility: hidden;
+		width: 100%;
+	}
+
+	&:hover .gallery-caption {
+		@include transform(translate(0, -100%));
+		visibility: visible;
+		opacity: 1;
+	}
+
 }
 
 .gallery img {
-	border: 1px solid lighten($black, 85);
-	height: auto;
-	padding: 4px;
-	width: auto;
-}
-
-.gallery img:hover {
-	border: 1px solid lighten($black, 56);
-}
-
-.gallery-caption {
-	display: block;
-	margin-left: 0;
+	width: 100%;
+	margin: 0 auto;
 }
 
 /* Genesis
@@ -141,23 +185,19 @@ img.alignright,
 
 .author-box,
 .archive-description {
-	background-color: lighten($black, 92);
+	background-color: $author-box-background;
 	color: lighten($black, 11);
 	margin-bottom: 40px;
 	padding: 40px;
 }
 
 .author-box-title {
-	font-size: 20px;
+	font-size: $box-title-size;
 	margin-bottom: 10px;
 }
 
 .author-box a {
 	border-bottom: 1px solid lighten($black, 85);
-}
-
-.author-box .avatar {
-	margin-right: 24px;
 }
 
 .archive-description p:last-child,
