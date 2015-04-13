@@ -1,6 +1,6 @@
 /**
  * genesis-accessible skiplinks
- * https://github.com/cdils/utility-pro/blob/develop/js/genwpacc-skiplinks.js
+ * https://github.com/RRWD/genesis-accessible/
  * Version: 1.0
  * License: GPL-2.0+
  * License URI: http://www.opensource.org/licenses/gpl-license.php
