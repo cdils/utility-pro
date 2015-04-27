@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file.
 
 - Changed minimum WordPress version compatability to 4.1 (to accommodate `the_posts_pagination()` )
 - Added Sass.
+- Updated TGMPA to 2.4.2.
 
 ## 1.0.1 - 2015-02-05
 
