@@ -1,0 +1,345 @@
+/*
+Defaults
+---------------------------------------------------------------------------------------------------- */
+
+/* Typographical Elements
+--------------------------------------------- */
+
+body {
+	background: $white;
+	color: lighten($black, 33);
+	font-family: $sans-serif;
+	font-size: $base-font-size;
+	font-weight: 400;
+	line-height: $base-line-height;
+	overflow-x: hidden;
+}
+
+a,
+button,
+input:focus,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+textarea:focus,
+.gallery img {
+	-webkit-transition: all 0.1s ease-in-out;
+	-moz-transition: all 0.1s ease-in-out;
+	-ms-transition: all 0.1s ease-in-out;
+	-o-transition: all 0.1s ease-in-out;
+	transition: all 0.1s ease-in-out;
+}
+
+::-moz-selection {
+	background: $black;
+	color: $white;
+}
+
+::selection {
+	background: $black;
+	color: $white;
+}
+
+a {
+	color: $blue;
+	border-bottom: 1px dotted;
+	font-weight: 700;
+	text-decoration: none;
+	word-wrap: break-word;
+}
+
+a img {
+	margin-bottom: -4px;
+}
+
+a:hover {
+	color: lighten($black, 33);
+}
+
+p {
+	margin: 0 0 24px;
+	padding: 0;
+}
+
+strong {
+	font-weight: 700;
+}
+
+ol,
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+blockquote {
+	color: $black;
+	margin: 0;
+	padding: 24px 40px;
+}
+
+blockquote::before {
+	content: "\201C";
+	display: block;
+	font-family: $serif;
+	font-size: 120px;
+	height: 0;
+	left: -55px;
+	position: relative;
+	top: -55px;
+}
+
+pre {
+	background: lighten($black, 11);
+	color: lighten($black, 79);
+	overflow: scroll;
+	padding: 0 20px;
+	white-space: pre;
+}
+
+cite {
+	font-style: italic;
+	font-weight: 700;
+}
+
+/* Headings
+--------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: lighten($black, 11);
+	font-family: $heading-font-family;
+	font-weight: 700;
+	line-height: $heading-line-height;
+	margin: 0;
+	margin-bottom: 16px;
+	padding: 0;
+}
+
+h1 {
+	font-size: $h1-font-size;
+}
+
+h2 {
+	font-size: $h2-font-size;
+}
+
+h3 {
+	font-size: $h3-font-size;
+}
+
+h4 {
+	font-size: $h4-font-size;
+}
+
+h5 {
+	font-size: $h5-font-size;
+}
+
+h6 {
+	font-size: $h6-font-size;
+}
+
+/* Objects
+--------------------------------------------- */
+
+embed,
+iframe,
+img,
+object,
+video,
+.wp-caption {
+	max-width: 100%;
+}
+
+img {
+	height: auto;
+	width: auto; /* IE8 */
+}
+
+/* Forms
+--------------------------------------------- */
+
+input,
+textarea {
+	background: $white;
+	border: 1px solid lighten($black, 85);
+	color: lighten($black, 33);
+	font-size: $secondary-font-size;
+	padding: 16px;
+	width: 100%;
+}
+
+::-moz-placeholder {
+	color: lighten($black, 33);
+}
+
+::-webkit-input-placeholder {
+	color: lighten($black, 33);
+}
+
+.button,
+.entry-content a.button,
+input[type="submit"] {
+	background: $blue;
+	border: 1px solid $white;
+	color: $white;
+	cursor: pointer;
+	font-size: $base-font-size;
+	font-weight: 700;
+	letter-spacing: 1px;
+	padding: 16px 24px;
+	text-transform: uppercase;
+	width: auto;
+}
+
+button:focus,
+input:focus[type="button"],
+input:focus[type="reset"],
+input:focus[type="submit"],
+.button:focus,
+.entry-content a.button:focus {
+	background-color: $white;
+	color: $blue;
+}
+
+.button {
+	display: inline-block;
+}
+
+.button:hover,
+.entry-content a.button:hover,
+input:hover[type="submit"] {
+	background-color: $white;
+	border: 1px solid $blue;
+	color: $blue;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button {
+	display: none;
+}
+
+.search-form {
+	position: relative;
+}
+
+.search-form [type="submit"] {
+	background-color: transparent;
+	background: url(images/icon-search-ltr.png) no-repeat 75% 53% $white;
+	border: 1px solid lighten($black, 85);
+	box-shadow: none;
+	height: 53px;
+	margin: 0;
+	overflow: hidden;
+	padding: 0 42px 0 0;
+	position: absolute;
+	right: 0;
+	text-indent: -9999px;
+	vertical-align: top;
+	width: 53px;
+	-webkit-transition: none;
+	-moz-transition: none;
+	-ms-transition: none;
+	-o-transition: none;
+	transition: none;
+}
+
+.search-form input[type="submit"]:focus,
+.search-form input[type="submit"]:hover {
+	background-color: lighten($black, 56);
+	background-position: 20% 53%;
+	text-indent: -9999px;
+
+}
+
+/* Tables
+--------------------------------------------- */
+
+table {
+	margin-bottom: 40px;
+	max-width: 100%;
+}
+
+th {
+	text-align: left;
+}
+
+.table {
+	width: 100%;
+	margin-bottom: 40px;
+}
+
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+	padding: 8px;
+	line-height: 1.428571429;
+	vertical-align: top;
+	border-top: 1px solid lighten($black, 85);
+}
+
+.table > thead > tr > th {
+	vertical-align: bottom;
+	border-bottom: 2px solid lighten($black, 85);
+}
+
+.table > caption + thead > tr:first-child > th,
+.table > colgroup + thead > tr:first-child > th,
+.table > thead:first-child > tr:first-child > th,
+.table > caption + thead > tr:first-child > td,
+.table > colgroup + thead > tr:first-child > td,
+.table > thead:first-child > tr:first-child > td {
+	border-top: 0;
+}
+
+.table > tbody + tbody {
+	border-top: 2px solid lighten($black, 85);
+}
+
+.table .table {
+	background-color: $white;
+}
+
+.table-condensed > thead > tr > th,
+.table-condensed > tbody > tr > th,
+.table-condensed > tfoot > tr > th,
+.table-condensed > thead > tr > td,
+.table-condensed > tbody > tr > td,
+.table-condensed > tfoot > tr > td {
+	padding: 5px;
+}
+
+.table-bordered {
+	border: 1px solid lighten($black, 85);
+}
+
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > tbody > tr > td,
+.table-bordered > tfoot > tr > td {
+	border: 1px solid lighten($black, 85);
+}
+
+.table-bordered > thead > tr > th,
+.table-bordered > thead > tr > td {
+	border-bottom-width: 2px;
+}
+
+.table-striped > tbody > tr:nth-child(odd) > td,
+.table-striped > tbody > tr:nth-child(odd) > th {
+	background-color: lighten($black, 92);
+}
+
+.table-hover > tbody > tr:hover > td,
+.table-hover > tbody > tr:hover > th {
+	background-color: lighten($black, 92);
+}

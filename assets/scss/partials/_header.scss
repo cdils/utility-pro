@@ -1,0 +1,116 @@
+/*
+Site Header
+---------------------------------------------------------------------------------------------------- */
+
+.site-header {
+	background: $white;
+	border-bottom: 1px solid lighten($black, 85);
+}
+
+.site-header .wrap {
+	padding: 20px 0;
+}
+
+/* Title Area
+--------------------------------------------- */
+
+.title-area {
+	float: left;
+	font-weight: 700;
+	text-align: center;
+	width: 100%;
+
+	@include media($medium-screen-up) {
+		text-align: left;
+		width: 50%;
+	}
+}
+
+.site-title {
+	letter-spacing: 2px;
+	line-height: 1;
+	margin: 0 0 8px;
+	text-transform: uppercase;
+}
+
+.site-title a,
+.site-title a:hover {
+	border: 0;
+	color: lighten($black, 11);
+	font-family: $serif;
+	font-size: $site-title-font-size;
+}
+
+.site-description {
+	color: lighten($black, 33);
+	font-size: $base-font-size;
+	line-height: 1;
+	margin: 0;
+}
+
+/* Full width header, no widgets */
+
+.header-full-width .title-area,
+.header-full-width .site-title {
+	width: 100%;
+}
+
+.header-image .site-description,
+.header-image .site-title {
+	overflow: hidden;
+	text-indent: 100%;
+	white-space: nowrap;
+}
+
+/* Logo, hide text */
+
+.header-image .site-title > a {
+	background: url(images/logo.png) no-repeat center;
+	float: left;
+	min-height: 60px;
+	width: 100%;
+
+	@include media($medium-screen-up) {
+		background: url(images/logo.png) no-repeat left;
+	}
+}
+
+/* Header Right Widget Area
+--------------------------------------------- */
+
+.site-header .widget-area {
+  float: right;
+  text-align: center;
+  width: 100%;
+
+  @include media($medium-screen-up) {
+  		text-align: right;
+  		width: 50%;
+  	}
+}
+
+.header-widget-area .search-form {
+	height: 53px;
+	margin: 20px auto 0;
+	width: 300px;
+
+	@include media($small-screen-up) {
+		float: right;
+		margin-top: 0;
+		width: 100%
+	}
+}
+
+.header-widget-area .genesis-nav-menu a {
+	color: $black;
+}
+
+.header-widget-area .genesis-nav-menu a:hover,
+.header-widget-area .genesis-nav-menu .current-menu-item > a,
+.header-widget-area .genesis-nav-menu .sub-menu .current-menu-item > a:hover {
+	color: lighten($black, 33);
+}
+
+.header-widget-area .genesis-nav-menu .sub-menu a {
+	background-color: lighten($black, 92);
+}

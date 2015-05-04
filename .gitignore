@@ -2,3 +2,15 @@ dist/
 
 # OSX
 .DS_Store
+
+# sass cache
+**/.sass-cache
+**/.sass-cache/*
+.sass-cache/*
+
+# Bower Stuff
+/bower_components
+**/scss/vendor
+style.css.map
+
+page-gridblog.php

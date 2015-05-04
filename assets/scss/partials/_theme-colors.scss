@@ -1,0 +1,112 @@
+/* ##
+Color Options
+If you've chosen your favorite color scheme, you can delete the others
+---------------------------------------------------------------------------------------------------- */
+
+/* ## Purple
+--------------------------------------------- */
+
+.utility-pro-purple .home-gallery .fa,
+.utility-pro-purple a,
+.utility-pro-purple .entry-content a {
+	color: $purple;
+}
+
+.utility-pro-purple .sticky.entry {
+	border-top-color: $purple;
+}
+
+.utility-pro-purple .call-to-action-bar .button,
+.utility-pro-purple .button,
+.utility-pro-purple .entry-content a.button,
+.utility-pro-purple input[type="submit"] {
+	background: $purple;
+	border: 1px solid $white;
+	color: $white;
+}
+
+.utility-pro-purple .call-to-action-bar .button:hover,
+.utility-pro-purple .button:hover,
+.utility-pro-purple .entry-content a.button:hover,
+.utility-pro-purple input[type="submit"]:hover {
+	background: $white;
+	border: 1px solid $purple;
+	color: $purple;
+}
+
+.utility-pro-purple .utility-bar,
+.utility-pro-purple .site-footer {
+	background-color: rgba($purple, 0.8);
+}
+
+/* ## Green
+--------------------------------------------- */
+
+.utility-pro-green .home-gallery .fa,
+.utility-pro-green a,
+.utility-pro-green .entry-content a {
+	color: $green;
+}
+
+.utility-pro-green .sticky.entry {
+	border-top-color: $green;
+}
+
+.utility-pro-green .call-to-action-bar .button,
+.utility-pro-green .button,
+.utility-pro-green a.button,
+.utility-pro-green input[type="submit"] {
+	background: $green;
+	border: 1px solid $white;
+	color: $white;
+}
+
+.utility-pro-green .call-to-action-bar .button:hover,
+.utility-pro-green .button:hover,
+.utility-pro-green .entry-content a.button:hover,
+.utility-pro-green input[type="submit"]:hover {
+	background: $white;
+	border: 1px solid $green;
+	color: $green;
+}
+
+.utility-pro-green .utility-bar,
+.utility-pro-green .site-footer {
+	background-color: rgba($green, 0.9);
+}
+
+/* ## Red
+--------------------------------------------- */
+
+.utility-pro-red .home-gallery .fa,
+.utility-pro-red a,
+.utility-pro-red .entry-content a {
+	color: $red;
+}
+
+.utility-pro-red .sticky.entry {
+	border-top-color: $red;
+}
+
+.utility-pro-red .call-to-action-bar .button,
+.utility-pro-red .button,
+.utility-pro-red a.button,
+.utility-pro-red input[type="submit"] {
+	background: $red;
+	border: 1px solid $white;
+	color: $white;
+}
+
+.utility-pro-red .call-to-action-bar .button:hover,
+.utility-pro-red .button:hover,
+.utility-pro-red .entry-content a.button:hover,
+.utility-pro-red input[type="submit"]:hover {
+	background: $white;
+	border: 1px solid $red;
+	color: $red;
+}
+
+.utility-pro-red .utility-bar,
+.utility-pro-red .site-footer {
+	background-color: rgba($red, 0.9);
+}

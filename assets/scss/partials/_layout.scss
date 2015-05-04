@@ -1,0 +1,144 @@
+/*
+Structure and Layout
+---------------------------------------------------------------------------------------------------- */
+
+/* Site Containers
+--------------------------------------------- */
+
+.wrap {
+	margin: 0 auto;
+	padding: 0 5%;
+	max-width: 100%;
+	word-wrap: break-word;
+
+	@include media($medium-screen-up) {
+		max-width: $wrap-max-width-medium;
+	}
+
+	@include media($large-screen-up) {
+		max-width: $wrap-max-width-large;
+		padding: 0;
+	}
+}
+
+.site-inner {
+	background: lighten($black, 96);
+	padding-top: 40px;
+}
+
+.utility-landing .site-container {
+	margin: 40px auto;
+	max-width: $wrap-max-width-medium;
+}
+
+/* Content & Primary Sidebar
+--------------------------------------------- */
+
+@include media($medium-screen) {
+
+	.content {
+		@include span-columns(8);
+	}
+	.sidebar-primary {
+		@include span-columns(4);
+	}
+
+}
+
+/*
+Sidebar
+---------------------------------------------------------------------------------------------------- */
+
+.sidebar {
+	font-size: $base-font-size;
+}
+
+.sidebar p:last-child,
+.sidebar ul > li:last-child {
+	margin-bottom: 0;
+}
+
+.sidebar li {
+	list-style-type: none;
+	margin-bottom: 6px;
+	padding: 0;
+}
+
+.sidebar .widget {
+	background: $white;
+	border-top: 1px solid lighten($black, 11);
+	margin-bottom: 40px;
+	padding: 40px;
+}
+
+.sidebar .widget-wrap {
+	border-top: 5px solid lighten($black, 11);
+	margin-left: 4px;
+}
+
+.sidebar .search-form input[type="search"] {
+	width: 100%;
+}
+
+
+
+/* Column Widths and Positions
+--------------------------------------------- */
+
+.full-width-content .content {
+	float: none;
+	margin: 0 auto;
+	width: 100%;
+}
+
+@include media($medium-screen-up) {
+
+	.content-sidebar .content,
+	.sidebar-content .sidebar-primary {
+		float: left;
+	}
+}
+
+/* Column Classes
+Link: http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css
+--------------------------------------------- */
+
+@include media($small-screen-up) {
+
+	.one-half,
+	.three-sixths,
+	.two-fourths {
+		@include span-columns(6);
+	}
+
+	.one-third,
+	.two-sixths {
+		@include span-columns(4);
+	}
+
+	.four-sixths,
+	.two-thirds {
+		@include span-columns(8);
+	}
+
+	.one-fourth {
+		@include span-columns(3);
+	}
+
+	.three-fourths {
+		@include span-columns(9);
+	}
+
+	.one-sixth {
+		@include span-columns(2);
+	}
+
+	.five-sixths {
+		@include span-columns(10);
+	}
+
+	.last {
+		@include omega();
+		clear: right;
+	}
+}

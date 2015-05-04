@@ -1,0 +1,229 @@
+/*
+Widgets
+---------------------------------------------------------------------------------------------------- */
+
+/* Utility Bar
+--------------------------------------------- */
+
+.utility-bar {
+	background-color: rgba($blue, 0.9);
+	border-bottom: 1px solid lighten($black, 85);
+	color: $white;
+	font-size: $secondary-font-size;
+	margin: 0 auto;
+	padding: 10px 0;
+	text-align: center;
+	width: 100%;
+}
+
+.utility-bar a {
+	color: $white;
+}
+
+.utility-bar a:hover {
+	border-bottom: 0;
+}
+
+.utility-bar p,
+.utility-bar .widgettitle {
+	color: $white;
+	margin: 0;
+}
+
+.utility-bar .search-form input[type="search"] {
+	margin: 0;
+	padding: 10px 0;
+}
+
+/* Home Welcome
+--------------------------------------------- */
+
+.home-welcome {
+	background-color: rgba(#333, 0.8);
+	padding: 40px 0;
+	text-align: center;
+}
+
+.home-welcome .widgettitle {
+	color: $white;
+	text-transform: none;
+
+	@include media($smaller-screen-up) {
+		font-size: 80px;
+	}
+}
+
+.home-welcome p,
+.home-welcome .textwidget {
+	color: lighten($black, 92);
+
+	@include media($smaller-screen-up) {
+		font-size: 40px;
+		line-height: normal;
+		margin-bottom: 34px;
+	}
+}
+
+/* Home Gallery
+--------------------------------------------- */
+
+.home-gallery {
+	background: $white;
+	padding: 40px 0 20px;
+}
+
+.home-gallery .fa {
+	color: $blue;
+}
+
+.home-gallery .widget {
+	padding: 0 20px;
+}
+
+.home-gallery-1,
+.home-gallery-2,
+.home-gallery-3,
+.home-gallery-4 {
+	text-align: center;
+	width: 100%;
+
+	@include media($small-screen-up) {
+		float: left;
+		width: 50%;
+	}
+
+	@include media($medium-screen-up) {
+		float: left;
+		width: 25%;
+	}
+
+}
+
+/* Call to Action
+--------------------------------------------- */
+
+.call-to-action-bar {
+	background: rgb(51, 51, 51);
+	background: rgba(51, 51, 51, 0.8);
+	color: $white;
+	padding: 40px 0;
+	text-align: center;
+
+	@include media($medium-screen-up) {
+		text-align: left;
+	}
+}
+
+.call-to-action-bar .enews p {
+	margin: 12px 0;
+	width: 100%;
+
+	@include media($medium-screen-up) {
+		clear: left;
+		float: left;
+		margin-bottom: 0;
+		width: 35%;
+	}
+}
+
+@include media($medium-screen-up) {
+
+	.call-to-action-bar .enews-widget input[type="submit"] {
+		float: right;
+		margin: -2px 0 0;
+		width: 35%;
+	}
+
+	.call-to-action-bar .enews form {
+		float: right;
+		text-align: right;
+		width: 60%;
+	}
+
+	.call-to-action-bar .enews input[type="email"] {
+		height: 57px;
+		margin-right: 3px;
+		position: relative;
+		top: -2px;
+		width: 60%;
+	}
+
+}
+
+/* Featured Page and Featured Post
+--------------------------------------------- */
+
+.featured-content .entry {
+	border-bottom: 2px solid lighten($black, 92);
+	padding: 10px 0;
+}
+
+.sidebar .featured-content .entry {
+	border-bottom: 0;
+	margin-bottom: 10px;
+}
+
+.featured-content .entry-title {
+	font-size: 18px;
+	margin: 10px 0;
+}
+
+/*
+Footer Widgets
+---------------------------------------------------------------------------------------------------- */
+
+.footer-widgets {
+	background: lighten($black, 11);
+	color: $white;
+	padding: 40px 0;
+}
+
+.footer-widgets-1,
+.footer-widgets-2,
+.footer-widgets-3 {
+	float: left;
+	margin: 0;
+	width: 100%;
+
+	@include media($small-screen-up) {
+		width: 30%;
+	}
+}
+
+.footer-widgets-1,
+.footer-widgets-2 {
+	@include media($small-screen-up) {
+		margin-right: 5%;
+	}
+}
+
+.footer-widgets a {
+	color: $white;
+}
+
+.footer-widgets a:hover {
+	color: lighten($black, 79);
+}
+
+.footer-widgets .widget {
+	margin-bottom: 24px;
+}
+
+.footer-widgets .widgettitle {
+	color: $white;
+	font-size: 20px;
+}
+
+.footer-widgets .entry {
+	background: transparent;
+}
+
+.footer-widgets li {
+	list-style-type: none;
+	margin-bottom: 6px;
+	word-wrap: break-word;
+}
+
+.footer-widgets .search-form input[type="search"] {
+	width: 100%;
+}

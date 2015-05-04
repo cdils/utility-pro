@@ -1,0 +1,234 @@
+/*
+Content Area
+---------------------------------------------------------------------------------------------------- */
+
+/* Titles
+--------------------------------------------- */
+
+.entry-title {
+	margin-bottom: 40px;
+}
+
+.entry-title a{
+	border: 0;
+	color: lighten($black, 11);
+}
+
+.entry-title a:hover {
+	color: lighten($black, 33);
+}
+
+.widgettitle {
+	letter-spacing: 1px;
+	margin: 10px 0 24px;
+	text-transform: uppercase;
+}
+
+.sidebar .widgettitle a {
+	border: 0;
+	color: lighten($black, 11);
+}
+
+.archive-title {
+	color: lighten($black, 11);
+	margin-bottom: 24px;
+}
+
+/* Entries
+--------------------------------------------- */
+
+.sticky.entry {
+	border-top: 1px solid $blue;
+}
+
+.entry {
+	background: $white;
+	border-top: 1px solid lighten($black, 11);
+	margin-bottom: 40px;
+	padding: 40px 40px 24px;
+	word-wrap: break-word;
+}
+
+.entry-content a {
+	color: $blue;
+}
+
+.entry-content a:hover {
+	color: lighten($black, 11);
+}
+
+.entry-content .attachment a,
+.entry-content .gallery a {
+	border: 0;
+}
+
+.entry-content ol,
+.entry-content ul,
+.quote-caption {
+	margin-bottom: 26px;
+}
+
+.entry-content ol ol,
+.entry-content ul ul,
+.entry-content ol ul,
+.entry-content ul ol,{
+	margin-bottom: 0;
+}
+
+.entry-content ol li,
+.entry-content ul li {
+	margin-left: 40px;
+}
+
+.entry-content ol > li {
+	list-style-type: decimal;
+}
+
+.entry-content ul > li {
+	list-style-type: disc;
+}
+
+.entry-content ul.icons-ul > li {
+	list-style-type: none;
+}
+
+.entry-content ol ol,
+.entry-content ul ul,
+.entry-content .wp-caption p {
+	margin-bottom: 0;
+}
+
+.entry-content code {
+	background-color: lighten($black, 11);
+	color: lighten($black, 85);
+}
+
+/* ## Entry Meta
+--------------------------------------------- */
+
+.entry-meta {
+	color: lighten($black, 33);
+	font-size: $secondary-font-size;
+}
+
+.entry-header .entry-meta {
+	background-color: lighten($black, 92);
+	margin: 0 -40px 24px;
+	padding: 10px;
+	text-align: right;
+}
+
+.entry-footer .entry-meta {
+	border-top: 2px solid lighten($black, 92);
+	margin: 0 -40px;
+	padding: 32px 40px 8px;
+}
+
+.entry-comments-link::before {
+	content: "\2014";
+	margin: 0 6px 0 2px;
+}
+
+.entry-categories,
+.entry-tags {
+	display: block;
+}
+
+/* Featured Image
+--------------------------------------------- */
+
+.featured-image {
+	margin: 20px 0;
+}
+
+/* Pagination
+--------------------------------------------- */
+
+.pagination,
+.posts-navigation {
+	margin-bottom: 30px;
+}
+
+.pagination .nav-links {
+	display: inline;
+}
+
+.pagination .nav-links a,
+.pagination .nav-links .current {
+	background: lighten($black, 11);
+	border: 1px solid $white;
+	color: $white;
+	cursor: pointer;
+	display: inline-block;
+	padding: 8px 12px;
+}
+
+.pagination .nav-links a:hover {
+	background: $white;
+	border: 1px solid lighten($black, 11);
+	color: lighten($black, 11);
+}
+
+.pagination .nav-links .current {
+	background: lighten($black, 33);
+	border: 1px solid $white;
+	color: $white;
+	cursor: none;
+}
+
+.entry-pagination {
+	margin: 30px 0;
+}
+
+/* Comments
+--------------------------------------------- */
+
+.comment-respond,
+.entry-comments,
+.entry-pings {
+	background: $comments-background-color;
+	padding: 40px;
+	margin-bottom: 40px;
+}
+
+.comment-respond input[type="email"],
+.comment-respond input[type="text"],
+.comment-respond input[type="url"] {
+	width: 50%;
+}
+
+.comment-respond label {
+	display: block;
+	margin-right: 12px;
+}
+
+.entry-comments ul.children {
+	margin-left: 40px;
+}
+
+.comment-list li,
+.ping-list li {
+	list-style-type: none;
+	margin-top: 24px;
+}
+
+.comment-meta,
+.entry-comments
+.comment,
+.entry-comments .comment-reply {
+	margin-bottom: 40px;
+}
+
+p.form-submit,
+.entry-comments .children .comment,
+.entry-comments .comment-author {
+	margin-bottom: 0;
+}
+
+.comment .avatar {
+	margin: 0 16px 24px 0;
+}
+
+.form-allowed-tags {
+	font-size: $secondary-font-size;
+}
