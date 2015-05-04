@@ -55,7 +55,7 @@ function utility_pro_homepage_setup() {
 
 	// Remove standard loop and replace with loop showing Posts, not Page content.
 	remove_action( 'genesis_loop', 'genesis_do_loop' );
-	//add_action ( 'genesis_loop', 'utility_pro_front_loop' );
+	add_action ( 'genesis_loop', 'utility_pro_front_loop' );
 }
 
 // Display content for the "Home Welcome" section
