@@ -13,6 +13,11 @@
 	<arg name="report" value="summary"/>
 	<arg name="report" value="source"/>
 	<arg value="sp"/>
+	<rule ref="WordPress.XSS.EscapeOutput">
+		<properties>
+		   <property type="array" name="customAutoEscapedFunctions" value="genesis_attr"/>
+		</properties>
+	</rule>
 	<rule ref="WordPress">
 		<!-- <exclude name="WordPress.VIP"/> -->
 		<exclude name="WordPress.Files.FileName.UnderscoresNotAllowed"/>
