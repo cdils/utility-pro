@@ -9,15 +9,15 @@
  * @license      GPL-2.0+
  */
 
-// Enable shortcodes in widgets
+// Enable shortcodes in widgets.
 add_filter( 'widget_text', 'do_shortcode' );
 
 add_filter( 'theme_page_templates', 'utility_pro_remove_genesis_page_templates' );
 /**
  * Remove Genesis Blog page template.
  *
- * @param array $page_templates
- * @return array
+ * @param array $page_templates Existing recognised page templates.
+ * @return array Amended recognised page templates.
  */
 function utility_pro_remove_genesis_page_templates( $page_templates ) {
 	unset( $page_templates['page_blog.php'] );
@@ -47,8 +47,7 @@ function utility_pro_get_search_form() {
  *
  * @since  1.0.0
  *
- * @see  the_posts_pagination()
- * @return string Markup for pagination links.
+ * @see the_posts_pagination()
  */
 function utility_pro_post_pagination() {
 	$args = array(
@@ -75,5 +74,5 @@ function utility_pro_post_pagination() {
  * @return boolean
  */
 function utility_pro_genesis_accessible_is_active() {
-   return function_exists( 'genwpacc_genesis_init' );
+	return function_exists( 'genwpacc_genesis_init' );
 }

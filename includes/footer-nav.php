@@ -10,9 +10,8 @@
  */
 
 /**
- * Outputs Footer Navigation Menu
+ * Output footer navigation menu.
  *
- * @return string Navigation menu markup.
  * @since  1.0.0
  */
 function utility_pro_do_footer_nav() {
@@ -25,20 +24,21 @@ function utility_pro_do_footer_nav() {
 	);
 }
 
-// Add schema markup to Footer Navigation Menu
+// Add schema markup to Footer Navigation Menu.
 add_filter( 'genesis_attr_nav-footer', 'genesis_attributes_nav' );
 
 add_filter( 'wp_nav_menu_args', 'utility_pro_footer_menu_args' );
 /**
  * Reduce the footer navigation menu to one level depth.
  *
- * @param  array $args
- * @return array
  * @since  1.0.0
+ *
+ * @param  array $args Existing footer menu args.
+ * @return array Amended footer menu args.
  */
 function utility_pro_footer_menu_args( $args ) {
 
-	if ( 'footer' != $args['theme_location'] ) {
+	if ( 'footer' !== $args['theme_location'] ) {
 		return $args;
 	}
 
