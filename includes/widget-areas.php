@@ -13,8 +13,6 @@
  * Register the widget areas enabled by default in Utility.
  *
  * @since  1.0.0
- *
- * @return string Markup for each sidebar ID
  */
 function utility_pro_register_widget_areas() {
 

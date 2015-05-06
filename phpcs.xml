@@ -14,7 +14,8 @@
 	<arg name="report" value="source"/>
 	<arg value="sp"/>
 	<rule ref="WordPress">
-		<!-- <exclude name="WordPress.VIP" /> -->
-		<exclude name="WordPress.Files.FileName.UnderscoresNotAllowed" />
+		<!-- <exclude name="WordPress.VIP"/> -->
+		<exclude name="WordPress.Files.FileName.UnderscoresNotAllowed"/>
+		<exclude name="Squiz.Commenting.FileComment.DuplicateAuthorTag"/>
 	</rule>
 </ruleset>

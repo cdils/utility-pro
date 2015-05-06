@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
 - Added Sass.
 - Updated TGMPA to 2.4.2.
 - Added support for PHP_CodeSniffer.
+- Fixed the majority of WordPress Code Standards errors and warnings.
 
 ## 1.0.1 - 2015-02-05
 

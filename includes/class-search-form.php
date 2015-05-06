@@ -16,7 +16,18 @@
  * @author Gary Jones
  */
 class Utility_Pro_Search_Form {
+	/**
+	 * Unique ID for this search field.
+	 *
+	 * @var string
+	 */
 	protected $unique_id;
+
+	/**
+	 * Holds internationalized strings.
+	 *
+	 * @var array
+	 */
 	protected $strings;
 
 	/**
@@ -30,7 +41,7 @@ class Utility_Pro_Search_Form {
 		$default_strings = array(
 			/** This filter is documented in genesis/lib/structure/search.php */
 			'label'        => apply_filters( 'genesis_search_form_label', __( 'Search site', 'utility-pro' ) ),
-			// Placeholder should be empty: http://www.nngroup.com/articles/form-design-placeholders/
+			// Placeholder should be empty: http://www.nngroup.com/articles/form-design-placeholders/.
 			/** This filter is documented in genesis/lib/structure/search.php */
 			'placeholder'  => apply_filters( 'genesis_search_text', __( '', 'utility-pro' ) ),
 			/** This filter is documented in genesis/lib/structure/search.php */
