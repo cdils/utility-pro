@@ -1705,10 +1705,13 @@ Site Navigation
   }
 }
 
+.genesis-nav-menu li {
+  font-size: 14px;
+}
+
 .genesis-nav-menu a {
   color: #fff;
   display: inline-block;
-  font-size: 14px;
   font-weight: 400;
   letter-spacing: 1px;
   padding: 15px 20px;
@@ -2163,10 +2166,26 @@ Site Footer
 Accessibility Extras - Taken from the Leiden theme & Genesis Accessible plugin (genesis-accessible.org)
 ---------------------------------------------------------------------------------------------------- */
 /*
+* Read More Links
+* Show visually if user has Genesis Accessible
+* option enabled.
+--------------------------------------------- */
+.more-link-title.screen-reader-text {
+  clip: unset;
+  height: auto;
+  width: auto;
+  position: unset;
+}
+
+/*
 * Skiplinks
 * Hide visually but not from screen readers
 * and keyboard users
 --------------------------------------------- */
+.more-link {
+  position: relative;
+}
+
 .screen-reader-text,
 .screen-reader-text span,
 .search-form label {

@@ -3,10 +3,27 @@ Accessibility Extras - Taken from the Leiden theme & Genesis Accessible plugin (
 ---------------------------------------------------------------------------------------------------- */
 
 /*
+* Read More Links
+* Show visually if user has Genesis Accessible
+* option enabled.
+--------------------------------------------- */
+
+ .more-link-title.screen-reader-text {
+	 clip: unset;
+	 height: auto;
+	 width: auto;
+	 position: unset;
+ }
+
+/*
 * Skiplinks
 * Hide visually but not from screen readers
 * and keyboard users
 --------------------------------------------- */
+
+.more-link {
+	position: relative;
+}
 
 .screen-reader-text,
 .screen-reader-text span,
