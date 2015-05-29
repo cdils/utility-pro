@@ -147,7 +147,7 @@ Site Navigation
 	position: absolute;
 	top: 0;
 	right: 0;
-	font-size: 14px;
+	font-size: $secondary-font-size;
 	padding: 16px;
 
 	@include media($medium-screen-up) {
