@@ -14,8 +14,10 @@ module.exports = function(grunt) {
 		 * Get package meta data
 		 */
 		pkg: grunt.file.readJSON('package.json'),
+
 		/**
 		* Bower Copy
+		* https://www.npmjs.com/package/grunt-bowercopy
 		*/
 		bowercopy: {
 			options: {
@@ -32,8 +34,10 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+
 		/**
 		 * Sass
+		 * https://github.com/gruntjs/grunt-contrib-sass/
 		 */
 		sass: {
 			dist: {
@@ -41,13 +45,15 @@ module.exports = function(grunt) {
 					style: 'expanded',
 					lineNumbers: false,
 					debugInfo: false,
-					compass: false
+					compass: false,
+					'sourcemap=none': true
 				},
 				files: {
 					'style.css' : 'assets/scss/style.scss'
 				}
 			}
 		},
+
 		/**
 		 * Makepot
 		 * https://github.com/blazersix/grunt-wp-i18n/
@@ -63,6 +69,7 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+
 		/**
 		 * Addtextdomain
 		 * https://github.com/blazersix/grunt-wp-i18n/
@@ -77,6 +84,7 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+
 		/**
 		 * Po to Mo
 		 * https://github.com/axisthemes/grunt-potomo
@@ -95,8 +103,10 @@ module.exports = function(grunt) {
 				]
 			}
 		},
+
 		/**
 		 * CSSJanus
+		 * https://github.com/cssjanus/grunt-cssjanus
 		 */
 		cssjanus: {
 			theme: {
@@ -111,14 +121,14 @@ module.exports = function(grunt) {
 				]
 			}
 		},
+
 		/**
 		 * Watch
+		 * https://github.com/gruntjs/grunt-contrib-watch
 		 */
 		watch: {
 			sass: {
 				files: [
-					'assets/scss/*.scss',
-					'assets/scss/**/*.scss',
 					'assets/scss/**/**/*.scss'
 				],
 				tasks: [
@@ -134,7 +144,11 @@ module.exports = function(grunt) {
 				]
 			}
 		},
-		// https://github.com/gruntjs/grunt-contrib-compress
+
+		/**
+		 * Compile Sass to CSS
+		 * https://github.com/gruntjs/grunt-contrib-sass
+		 */
 		compress: {
 			standard: {
 				options: {

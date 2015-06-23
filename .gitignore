@@ -11,4 +11,3 @@ dist/
 # Bower Stuff
 /bower_components
 **/scss/vendor
-style.css.map
