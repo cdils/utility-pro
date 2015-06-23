@@ -4,7 +4,7 @@
   "description": "Utility Pro is a child theme for the Genesis Framework.",
   "copyright": "2015",
   "author": "Carrie Dils",
-  "license": "GPL2",
+  "license": "GPL-2.0",
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-contrib-sass": "^0.7.3",

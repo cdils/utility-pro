@@ -158,16 +158,20 @@ module.exports = function(grunt) {
 					{
 						expand: true,
 						cwd: '',
-						src: [ // Take this...
+						src: [
 							'**',
-							'!gruntfile.js',
+							'!bower.json',
 							'!package.json',
+							'!gruntfile.js',
+							'!CHANGELOG.md',
+							'!README.md',
 							'!node_modules/**',
 							'!.sass-cache/**',
 							'!dist/**',
+							'!assets/**',
 							'!*.sublime*',
 							'!.DS_Store'
-						],
+						], // Take this...
 						dest: '<%= pkg.name %>' // ...put it into this, then zip that up as ^^^
 					}
 				]
@@ -184,6 +188,7 @@ module.exports = function(grunt) {
 							'!node_modules/**',
 							'!.sass-cache/**',
 							'!dist/**',
+							'!assets/scss/vendor/**',
 							'!*.sublime*',
 							'!.DS_Store'
 						], // Take this...
