@@ -64,6 +64,7 @@ A huge thank you to the following folks for providing translation files for this
 * Grégoire Noyelle (fr_FR)
 * Gary Jones (en_GB)
 * David Decker (de_DE)
+* Fani Vasileva (bg_BG)
 
 For more information on translating this theme, please check https://store.carriedils.com/translate/
 

@@ -29,8 +29,8 @@ module.exports = function(grunt) {
 					destPrefix: 'assets/scss/vendor'
 				},
 				files: {
-					'bourbon': 'bourbon',
-					'neat': 'neat'
+					'bourbon': 'bourbon/app/assets/stylesheets',
+					'neat': 'neat/app/assets/stylesheets'
 				}
 			}
 		},
@@ -103,6 +103,36 @@ module.exports = function(grunt) {
 				]
 			}
 		},
+
+		/**
+		 *  Grunt Clean (run with care)
+		 *  https://github.com/gruntjs/grunt-contrib-clean
+		 */
+		 clean: {
+		   style: {
+		     src: [
+		     	"style-rtl.css",
+		      	"style.css"
+		      ]
+		   },
+		   bower: {
+		     src: [
+		     	"bower_components/",
+		     	"assets/scss/vendor"
+		      ]
+		   },
+		   i18n: {
+		     src: [
+		     	"languages/utility-pro.pot",
+		     	"languages/*.mo"
+		      ]
+		   },
+		   distribution: {
+		     src: [
+		     	"dist/"
+		      ]
+		   }
+		 },
 
 		/**
 		 * CSSJanus
