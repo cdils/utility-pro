@@ -34,15 +34,18 @@ Structure and Layout
 /* Content & Primary Sidebar
 --------------------------------------------- */
 
-@include media($medium-screen) {
+@include media($medium-screen-up) {
 
-	.content {
-		@include span-columns(8);
-	}
-	.sidebar-primary {
-		@include span-columns(4);
-	}
+	@include direction-context(right-to-left) {
+		.content {
+			@include span-columns(8);
+			@include omega;
+		}
 
+		.sidebar-primary {
+			@include span-columns(4);
+		}
+	}
 }
 
 /*

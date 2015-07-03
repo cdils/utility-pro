@@ -798,23 +798,24 @@ Structure and Layout
 --------------------------------------------- */
 @media screen and (min-width: 1023px) {
   .content {
-    float: right;
+    float: left;
     display: block;
-    margin-left: 2.35765%;
+    margin-right: 2.35765%;
     width: 65.88078%;
+    margin-right: 0;
   }
   .content:last-child {
-    margin-left: 0;
+    margin-right: 0;
   }
 
   .sidebar-primary {
-    float: right;
+    float: left;
     display: block;
-    margin-left: 2.35765%;
+    margin-right: 2.35765%;
     width: 31.76157%;
   }
   .sidebar-primary:last-child {
-    margin-left: 0;
+    margin-right: 0;
   }
 }
 /*
