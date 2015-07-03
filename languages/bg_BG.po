@@ -1,8 +1,8 @@
-# Translation of Utility Pro in Spanish (Argentina)
+# Translation of Utility Pro in Bulgarian
 # This file is distributed under the same license as the Utility Pro package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-02-11 21:10:41+0000\n"
+"PO-Revision-Date: 2015-02-26 14:02:05+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -218,444 +218,444 @@ msgstr ""
 
 #: includes/class-search-form.php:43
 msgid "Search site"
-msgstr ""
+msgstr "Търсене в сайта"
 
 #: includes/enqueue-assets.php:27 includes/enqueue-assets.php:29
 msgid "Menu"
-msgstr ""
+msgstr "Меню"
 
 #: includes/enqueue-assets.php:30
 msgid "Sub Navigation Menu"
-msgstr ""
+msgstr "Под навигационно меню"
 
 #: includes/suggested-plugins.php:91
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:305
 msgid "Install Required Plugins"
-msgstr "Instalar Plugins Requeridos"
+msgstr "Инсталирайте необходимите разширения"
 
 #: includes/suggested-plugins.php:92
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:306
 msgid "Install Plugins"
-msgstr "Instalar Plugins"
+msgstr "Инсталиране на разширения"
 
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:307
 msgid "Installing Plugin: %s"
-msgstr "Instalando Plugin: %s"
+msgstr "Инсталиране на разширение: %s"
 
 #: includes/suggested-plugins.php:94
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:308
 msgid "Something went wrong with the plugin API."
-msgstr "Algo salió mal con la API de plugins."
+msgstr "Нещо се обърка с плъгин API."
 
 #: includes/suggested-plugins.php:95
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:309
 msgid "This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
-msgstr[0] "Este tema requiere el siguiente plugin: %1$s."
-msgstr[1] ""
+msgstr[0] "Тази тема изисква следнното разширение: %1$s."
+msgstr[1] "Тази тема изисква следните разширения: %1$s."
 
 #: includes/suggested-plugins.php:96
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:314
 msgid "This theme recommends the following plugin: %1$s."
 msgid_plural "This theme recommends the following plugins: %1$s."
-msgstr[0] "Este tema recomienda el siguiente plugin: %1$s."
-msgstr[1] ""
+msgstr[0] "Тази тема препоръчва следния разширения: %1$s."
+msgstr[1] "Тази тема препоръчва следните разширения: %1$s."
 
 #: includes/suggested-plugins.php:97
 msgid "Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed."
 msgid_plural "Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed."
-msgstr[0] "Lo siento pero no tiene los permisos correctos para instalar el plugin % s. Póngase en contacto con el administrador de este sitio en busca de ayuda para conseguir el plugin instalado."
-msgstr[1] ""
+msgstr[0] "Съжаляваме, но не разполагате с нужните разрешения, за да актуализирате %s  плъгините. Свържете се с администратора на сайта за помощ за подготовка на плъгините за актуализиране."
+msgstr[1] "Съжаляваме, но не разполагате с нужните разрешения, за да актуализирате %s  плъгините. Свържете се с администратора на сайта за помощ за подготовка на плъгините за актуализиране."
 
 #: includes/suggested-plugins.php:98
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:339
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
-msgstr[0] "El siguiente plugin requerido está inactivo: %1$s."
-msgstr[1] ""
+msgstr[0] "Следното задължително разширение в момента не е активно: %1$s."
+msgstr[1] "Следните задължителни разширения в момента не са активни: %1$s."
 
 #: includes/suggested-plugins.php:99
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:344
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
-msgstr[0] "El siguiente plugin requerido está inactivo: %1$s."
-msgstr[1] ""
+msgstr[0] "Следното препоръчително разширение в момента не е активно: %1$s."
+msgstr[1] "Следните препоръчителни разширения в момента не са активни: %1$s."
 
 #: includes/suggested-plugins.php:100
 msgid "Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated."
 msgid_plural "Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated."
-msgstr[0] "Lo siento pero usted no tiene los permisos correctos para activar el plugin % s. Póngase en contacto con el administrador de este sitio en busca de ayuda para conseguir el plugin activado."
-msgstr[1] ""
+msgstr[0] "Съжаляваме, но не разполагате с нужните разрешения, за да актуализирате %s  плъгин. Свържете се с администратора на сайта за помощ за подготовка на плъгина за актуализиране."
+msgstr[1] "Съжаляваме, но не разполагате с нужните разрешения, за да актуализирате %s  плъгините. Свържете се с администратора на сайта за помощ за подготовка на плъгините за актуализиране."
 
 #: includes/suggested-plugins.php:101
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:324
 msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
 msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
-msgstr[0] "El siguiente plugin necesita ser actualizado a su última versión para asegurar la máxima compatibilidad con este tema: % 1$s."
-msgstr[1] ""
+msgstr[0] "Следнатото разширение трябва да бъде актуализирано до последна версия, за да се осигури максимална съвместимост с тази тема: %1$s."
+msgstr[1] "Следните разширения трябва да бъдат актуализирани до последната версия, за да се осигури максимална съвместимост с тази тема: %1$s."
 
 #: includes/suggested-plugins.php:102
 msgid "Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated."
 msgid_plural "Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated."
-msgstr[0] "Lo siento pero usted no tiene los permisos correctos para actualizar el plugin %s. Póngase en contacto con el administrador de este sitio en busca de ayuda para conseguir el plugin actualizado."
-msgstr[1] ""
+msgstr[0] "Съжаляваме, но не разполагате с нужните разрешения, за да актуализирате %s  плъгин. Свържете се с администратора на сайта за помощ за подготовка на плъгина за актуализиране."
+msgstr[1] "Съжаляваме, но не разполагате с нужните разрешения, за да актуализирате %s  плъгините. Свържете се с администратора на сайта за помощ за подготовка на плъгините за актуализиране."
 
 #: includes/suggested-plugins.php:103
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:354
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
-msgstr[0] "Instalando el plugin"
-msgstr[1] ""
+msgstr[0] "Започнете инсталирането на разширението"
+msgstr[1] "Започнете инсталирането на разширенията"
 
 #: includes/suggested-plugins.php:104
 msgid "Activate installed plugin"
 msgid_plural "Activate installed plugins"
-msgstr[0] "Activar plugin instalado"
-msgstr[1] ""
+msgstr[0] "Активирайте инсталираното разширение"
+msgstr[1] "Активирайте инсталираните разширения"
 
 #: includes/suggested-plugins.php:105
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:370
 msgid "Return to Required Plugins Installer"
-msgstr "Volver al Instalador de Plugins Requeridos."
+msgstr "Назад към необходимите разширения за инсталиране"
 
 #: includes/suggested-plugins.php:106
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:372
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:3104
 msgid "Plugin activated successfully."
-msgstr "Plugin activado con éxito."
+msgstr "Плъгинът е активиран успешно."
 
 #: includes/theme-config.php:55
 msgid "Page"
-msgstr ""
+msgstr "Страница"
 
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:364
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
-msgstr[0] "Activando el plugin"
-msgstr[1] ""
+msgstr[0] "Започнете активиране на плъгина"
+msgstr[1] "Започнете активиране на плъгините"
 
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:371
 msgid "Return to the dashboard"
-msgstr "Volver al escritorio"
+msgstr "Връщане към таблото"
 
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:373
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2924
 msgid "The following plugin was activated successfully:"
-msgstr "El siguiente plugin fue activado con éxito:"
+msgstr "Плъгинът е активиран успешно."
 
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:376
 msgid "All plugins installed and activated successfully. %1$s"
-msgstr "Todos los plugins fueron instalados y activados con éxito. %1$s"
+msgstr "Всички плъгини са инсталирани и активирани успешно. %1$s"
 
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:377
 msgid "Dismiss this notice"
-msgstr "Descartar esta notificación"
+msgstr "Отхвърлете това известие"
 
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:813
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:3522
 msgid "Return to the Dashboard"
-msgstr "Volver al Escritorio"
+msgstr "Връщане към таблото"
 
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2253
 msgid "Pre-Packaged"
-msgstr "Pre-Empaquetado"
+msgstr "Предварително опаковани"
 
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2245
 msgid "WordPress Repository"
-msgstr "Repositorio de WordPress"
+msgstr "WordPress хранилище"
 
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2225
 msgid "Required"
-msgstr "Requerido"
+msgstr "Задължителен"
 
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2228
 msgid "Recommended"
-msgstr "Recomendado"
+msgstr "Препоръчани"
 
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2272
 msgid "Not Installed"
-msgstr "No instalado"
+msgstr "Не е инсталиран"
 
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2276
 msgid "Installed But Not Activated"
-msgstr "Instalado Pero No Activado"
+msgstr "Инсталиран, но не е активиран"
 
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2696
 msgid "Install"
-msgstr "Instalar"
+msgstr "Инсталиране"
 
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2705
 msgid "Activate"
-msgstr "Activar"
+msgstr "Активиране"
 
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2520
 msgid "Plugin"
-msgstr "Plugin"
+msgstr "Разширение"
 
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2521
 msgid "Source"
-msgstr "Fuente"
+msgstr "Източник"
 
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2522
 msgid "Type"
-msgstr "Tipo"
+msgstr "Тип"
 
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2527
 msgid "Status"
-msgstr "Estado"
+msgstr "Статус"
 
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2775
 msgid "No plugins are available to be installed at this time."
-msgstr "No hay plugins disponibles para ser instalados en este momento."
+msgstr "Няма налични  плъгини  за инсталиране в този момент."
 
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:2906
 msgid "No plugins are available to be activated at this time."
-msgstr "No hay plugins disponibles para ser activados en este momento."
+msgstr "Няма плъгини на разположение за активиране в този момент."
 
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:3103
 msgid "Plugin activation failed."
-msgstr "Error en la activación del plugin."
+msgstr "Грешка при активиране на разширението."
 
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:3451
 msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
-msgstr "Comenzando el proceso de instalación y activación. En algunos hosts este proceso puede tardar un tiempo tenga paciencia."
+msgstr "Процесът на обновяване и активиране започна. При някои хостове обновяването може да отнеме време – моля за търпение."
 
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:3452
 msgid "%1$s installed and activated successfully."
-msgstr "%1$s instalado y activado con éxito."
+msgstr "%1$s инсталирани и активирани успешно."
 
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:3452
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:3459
 msgid "Show Details"
-msgstr "Mostrar Detalles"
+msgstr "Показване на детайлите"
 
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:3452
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:3459
 msgid "Hide Details"
-msgstr "Ocultar Detalles"
+msgstr "Скриване на детайлите"
 
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:3453
 msgid "All installations and activations have been completed."
-msgstr "Todas las instalaciones y activaciones se han completado."
+msgstr "Всички инсталации и активации са приключили."
 
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:3454
 msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
-msgstr "Instalando y activando el Plugin %1$s (%2$d/%3$d)"
+msgstr "Инсталиране и активиране на плъгин %1$s (%2$d/%3$d)"
 
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:3458
 msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
-msgstr "Comienza el proceso de instalación. En algunos hosts este proceso puede tardar un tiempo, tenga paciencia."
+msgstr "Инсталационният процес започва. Този процес може да отнеме известно време, за някои хостинги, така че моля бъдете търпеливи."
 
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:3446
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
-msgstr "Se produjo un error durante la instalación de %1$s: <strong>%2$s</strong>."
+msgstr "Възникна грешка при инсталирането на %1$s: <strong>%2$s</strong>."
 
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:3447
 msgid "The installation of %1$s failed."
-msgstr "La instalación de %1$s ha fallado."
+msgstr "Грешка при инсталиране на %1$s."
 
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:3459
 msgid "%1$s installed successfully."
-msgstr "%1$s instalado correctamente."
+msgstr "%1$s инсталирани успешно."
 
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:3460
 msgid "All installations have been completed."
-msgstr "Se han completado todas las instalaciones."
+msgstr "Всички инсталации са приключени."
 
 #: includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:3461
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
-msgstr "Instalando el Plugin %1$s (%2$d/%3$d)"
+msgstr "Инсталиране на разширение %1$s (%2$d/%3$d)"
 
 #: functions.php:53
 msgid "Purple"
-msgstr "Púrpura"
+msgstr "Лилав"
 
 #: functions.php:54
 msgid "Green"
-msgstr "Verde"
+msgstr "Зелен"
 
 #: functions.php:55
 msgid "Red"
-msgstr "Rojo"
+msgstr "Червен"
 
 #: functions.php:79 includes/enqueue-assets.php:28
 msgid "Primary Navigation Menu"
-msgstr ""
+msgstr "Основно навигационно меню"
 
 #: functions.php:80
 msgid "Footer Navigation Menu"
-msgstr ""
+msgstr "Футър навигационно меню"
 
 #: includes/widget-areas.php:22
 msgid "Utility Bar"
-msgstr "Barra de Herramientas"
+msgstr "Полезна лента"
 
 #: includes/widget-areas.php:23
 msgid "This is the utility bar across the top of page."
-msgstr ""
+msgstr "Това е полезната лента в горната част на страницата."
 
 #: includes/widget-areas.php:27
 msgid "Home Welcome"
-msgstr "Bienvenida"
+msgstr "Начало добре дошли"
 
 #: includes/widget-areas.php:28
 msgid "This is the welcome section at the top of the home page."
-msgstr "Esta es la sección de bienvenida en la parte superior de la página principal."
+msgstr "Това е  участък добре дошъл в горната част на началната страница."
 
 #: includes/widget-areas.php:52
 msgid "Call to Action"
-msgstr "Llamado a la Acción"
+msgstr "Призив за действие"
 
 #: includes/widget-areas.php:53
 msgid "This is the Call to Action section on the home page."
-msgstr ""
+msgstr "Това е секцията призив за действие на началната страница."
 
 #: includes/class-search-form.php:48 includes/class-search-form.php:56
 msgid "Search"
-msgstr "Buscar"
+msgstr "Търси"
 
 #: includes/skip-links.php:25
 msgid "Skip links"
-msgstr "Omitir vínculos"
+msgstr "Пропусни връзките"
 
 #: includes/skip-links.php:30
 msgid "Skip to primary navigation"
-msgstr ""
+msgstr "Прескачане към основната навигация"
 
 #: includes/skip-links.php:33
 msgid "Skip to content"
-msgstr ""
+msgstr "Прескачане към съдържанието"
 
 #: includes/skip-links.php:36
 msgid "Skip to primary sidebar"
-msgstr ""
+msgstr "Прескачане към основната страничната лента"
 
 #: includes/skip-links.php:44
 msgid "Skip to footer widgets"
-msgstr ""
+msgstr "Прескачане към футър джаджите"
 
 #: includes/skip-links.php:48
 msgid "Skip to footer navigation"
-msgstr ""
+msgstr "Прескачане към футър навигацията"
 
 #: includes/theme-license.php:25
 msgid "Utility Pro License"
-msgstr ""
+msgstr "Utility Pro лиценз"
 
 #: includes/theme-license.php:26
 msgid "Enter your theme license key."
-msgstr ""
+msgstr "Въведете вашия тема лицензен ключ."
 
 #: includes/theme-license.php:27
 msgid "License Key"
-msgstr ""
+msgstr "Лицензен ключ"
 
 #: includes/theme-license.php:28
 msgid "License Action"
-msgstr ""
+msgstr "Лиценз за действие"
 
 #: includes/theme-license.php:29
 msgid "Deactivate License"
-msgstr ""
+msgstr "Деактивиране на лиценза"
 
 #: includes/theme-license.php:30
 msgid "Activate License"
-msgstr ""
+msgstr "Активиране на лиценза"
 
 #: includes/theme-license.php:31 includes/theme-license.php:43
 msgid "License status is unknown."
-msgstr ""
+msgstr "Статуса на лиценза е неизвестен."
 
 #: includes/theme-license.php:32
 msgid "Renew?"
-msgstr ""
+msgstr "Подновете?"
 
 #: includes/theme-license.php:33
 msgid "unlimited"
-msgstr ""
+msgstr "неограничен"
 
 #: includes/theme-license.php:34
 msgid "License key is active."
-msgstr ""
+msgstr "Лиценз ключа е активен."
 
 #: includes/theme-license.php:35
 msgid "Expires %s."
-msgstr ""
+msgstr "Изтича %s."
 
 #: includes/theme-license.php:36
 msgid "You have %1$s / %2$s sites activated."
-msgstr ""
+msgstr "Вие имате %1$s / %2$s активирани сайтове."
 
 #: includes/theme-license.php:37
 msgid "License key expired %s."
-msgstr ""
+msgstr "Лицензния ключ е изтекъл %s."
 
 #: includes/theme-license.php:38
 msgid "License key has expired."
-msgstr ""
+msgstr "Лицензния ключ изтече."
 
 #: includes/theme-license.php:39
 msgid "License keys do not match."
-msgstr ""
+msgstr "Лицензния ключ не съвпада."
 
 #: includes/theme-license.php:40
 msgid "License is inactive."
-msgstr ""
+msgstr "Лиценза е неактивен."
 
 #: includes/theme-license.php:41
 msgid "License key is disabled."
-msgstr ""
+msgstr "Лицензния ключ е деактивиран."
 
 #: includes/theme-license.php:42
 msgid "Site is inactive."
-msgstr ""
+msgstr "Сайтът е неактивен."
 
 #: includes/theme-license.php:44
 msgid "Updating this theme will lose any customizations you have made. 'Cancel' to stop, 'OK' to update."
-msgstr ""
+msgstr "При актуализирането на тази тема ще загубите всички персонализации, които сте направили. 'Отказ' за да се спрете, 'OK' за да актуализирате."
 
 #: includes/theme-license.php:45
 msgid "<strong>%1$s %2$s</strong> is available. <a href=\"%3$s\" class=\"thickbox\" title=\"%4s\">Check out what's new</a> or <a href=\"%5$s\"%6$s>update now</a>."
-msgstr ""
+msgstr "<strong>%1$s %2$s</strong> е наличен. <a href=\"%3$s\" class=\"thickbox\" title=\"%4s\">Вижте какво ново</a> or <a href=\"%5$s\"%6$s>актуализирайте сега</a>."
 
 #. Theme Name of the plugin/theme
 msgid "Utility Pro"
-msgstr ""
+msgstr "Utility Pro"
 
 #. Description of the plugin/theme
 msgid "No-nonsense, functional child theme created for the Genesis Framework."
-msgstr "Un tema hijo funcional sin tonterías,  creado para el Framework Génesis."
+msgstr "Функционалната дете тема е създадена за Genesis Framework."
 
 #. Author of the plugin/theme
 msgid "Carrie Dils"
-msgstr ""
+msgstr "Carrie Dils"
 
 #. Author URI of the plugin/theme
 msgid "http://www.carriedils.com/"
-msgstr ""
+msgstr "http://www.carriedils.com/"
 
 #. Template Name of the plugin/theme
 msgid "Landing"
-msgstr "Página de aterrizaje"
+msgstr "Целева"
 
 #: includes/widget-areas.php:32 includes/widget-areas.php:37
 #: includes/widget-areas.php:42 includes/widget-areas.php:47
 msgctxt "Group of Home Gallery widget areas"
 msgid "Home Gallery %d"
-msgstr "Galería Principal %d"
+msgstr "Начало на галерия %d"
 
 #: includes/widget-areas.php:33 includes/widget-areas.php:38
 #: includes/widget-areas.php:43 includes/widget-areas.php:48
 msgctxt "Description of widget area"
 msgid "Home Gallery %d widget area on home page."
-msgstr "Galería Principal %d  area de widget en la página principal."
+msgstr "Начало на галерия %d джаджа област на началната страница."
 
 #: includes/google-fonts.php:39
 msgctxt "Enriqueta font: on or off"
 msgid "on"
-msgstr "Encendida"
+msgstr "off"
 
 #: includes/google-fonts.php:46
 msgctxt "Open Sans font: on or off"
 msgid "on"
-msgstr "Encendida"
+msgstr "off"
