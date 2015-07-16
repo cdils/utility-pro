@@ -1,11 +1,14 @@
 # Change Log for Utility Pro Child Theme
 All notable changes to this project will be documented in this file.
 
-## 1.1.0 - 2015-07--3
+## UNRELEASED
+- Updated TGMPA to 2.5.2.
+
+## 1.1.0 - 2015-07-03
 - Added Sass, Bourbon, and Neat.
 - Changed minimum WordPress version compatability to 4.1 (to accommodate `the_posts_pagination()` ).
 - Added Bulgarian translation.
-- Updated TGMPA to 2.5.0.
+- Updated TGMPA to 2.5.0-RC.
 - Added support for PHP_CodeSniffer.
 - Fixed the majority of WordPress Code Standards errors and warnings.
 - Changed CSS selector in menu to work with the WP Accessibility plugin toolbar.
