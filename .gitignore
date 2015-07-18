@@ -11,3 +11,6 @@ dist/
 # Bower Stuff
 /bower_components
 **/scss/vendor
+
+# Composer directory
+assets/composer/*

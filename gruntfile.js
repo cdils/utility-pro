@@ -134,6 +134,14 @@ module.exports = function(grunt) {
 		   }
 		 },
 
+		// https://github.com/gruntjs/grunt-contrib-copy
+		copy: {
+			tgmpa: {
+				src: "assets/composer/tgmpa/tgm-plugin-activation/class-tgm-plugin-activation.php",
+				dest: "includes/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php"
+			}
+		},
+
 		/**
 		 * CSSJanus
 		 * https://github.com/cssjanus/grunt-cssjanus
