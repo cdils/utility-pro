@@ -1,6 +1,9 @@
 # Change Log for Utility Pro Child Theme
 All notable changes to this project will be documented in this file.
 
+## Unreleased
+- Removed a forced full-width layout for the front page.
+
 ## 1.1.0 - 2015-07--3
 - Added Sass, Bourbon, and Neat.
 - Changed minimum WordPress version compatability to 4.1 (to accommodate `the_posts_pagination()` ).
