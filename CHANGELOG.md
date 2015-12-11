@@ -1,7 +1,7 @@
 # Change Log for Utility Pro Child Theme
 All notable changes to this project will be documented in this file.
 
-## UNRELEASED
+## 1.1.1 - 2015-12-11
 - Updated TGMPA to 2.5.2.
 - Removed a forced full-width layout for the front page.
 
