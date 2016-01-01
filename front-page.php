@@ -50,7 +50,8 @@ function utility_pro_homepage_setup() {
 	}
 
 	// Full width layout.
-	add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
+	// Uncomment the filter below if you'd like a full-width layout on the front page.
+	// add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
 
 	// Remove standard loop and replace with loop showing Posts, not Page content.
 	remove_action( 'genesis_loop', 'genesis_do_loop' );
