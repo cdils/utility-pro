@@ -8,7 +8,7 @@
  *
  * @package    TGM-Plugin-Activation
  * @subpackage Example
- * @version    2.4.0
+ * @version    2.51
  * @author     Thomas Griffin <thomasgriffinmedia.com>
  * @author     Gary Jones <gamajo.com>
  * @copyright  Copyright (c) 2014, Thomas Griffin
@@ -79,8 +79,7 @@ function utility_pro_register_required_plugins() {
 	$config = array(
 		'domain'           => 'utility-pro',              // Text domain - likely want to be the same as your theme.
 		'default_path'     => '',                         // Default absolute path to pre-packaged plugins.
-		'parent_menu_slug' => 'themes.php',               // Default parent menu slug.
-		'parent_url_slug'  => 'themes.php',               // Default parent URL slug.
+		'parent_slug'      => 'themes.php',               // Default parent menu slug.
 		'menu'             => 'install-required-plugins', // Menu slug.
 		'has_notices'      => true,                       // Show admin notices or not.
 		'dismissable'      => true,                       // If false, a user cannot dismiss the nag message.

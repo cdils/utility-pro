@@ -1660,11 +1660,10 @@ Site Header
   margin: 20px auto 0;
   width: 300px;
 }
-@media screen and (min-width: 810px) {
+@media screen and (min-width: 1023px) {
   .header-widget-area .search-form {
     float: left;
     margin-top: 0;
-    width: 100%;
   }
 }
 
@@ -1927,6 +1926,7 @@ Content Area
 }
 
 .widgettitle {
+  font-size: 22px;
   letter-spacing: 1px;
   margin: 10px 0 24px;
   text-transform: uppercase;
@@ -2203,8 +2203,11 @@ Accessibility Extras - Taken from the Leiden theme & Genesis Accessible plugin (
   z-index: 100000;
 }
 
-.wpacc-genesis-skip-link li,
-.genwpacc-genesis-skip-link li {
+.genesis-skip-link {
+  margin: 0;
+}
+
+.genesis-skip-link li {
   height: 0;
   width: 0;
   list-style: none;

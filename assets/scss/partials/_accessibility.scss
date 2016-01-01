@@ -40,8 +40,11 @@ Accessibility Extras - Taken from the Leiden theme & Genesis Accessible plugin (
 	z-index: 100000;
 }
 
-.wpacc-genesis-skip-link li,
-.genwpacc-genesis-skip-link li {
+.genesis-skip-link {
+	margin: 0;
+}
+
+.genesis-skip-link li {
 	height: 0;
 	width: 0;
 	list-style: none;

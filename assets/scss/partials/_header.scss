@@ -94,10 +94,9 @@ Site Header
 	margin: 20px auto 0;
 	width: 300px;
 
-	@include media($small-screen-up) {
+	@include media($medium-screen-up) {
 		float: right;
 		margin-top: 0;
-		width: 100%
 	}
 }
 

@@ -1,6 +1,14 @@
 # Change Log for Utility Pro Child Theme
 All notable changes to this project will be documented in this file.
 
+## UNRELEASED
+- Added theme support for Genesis Accessibility (Skip Links, Headings).
+- Fixed incorrect variable name resulting from update to TGMPA 2.5.2.
+- Adjusted search form width in the header right widget area.
+- Removed sample content (utility-pro.xml) from theme and relocated to user account area.
+- Updated footer creds to 2016.
+
+
 ## 1.1.1 - 2015-12-11
 - Updated TGMPA to 2.5.2.
 - Removed a forced full-width layout for the front page.

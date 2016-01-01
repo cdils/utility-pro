@@ -43,6 +43,9 @@ function utility_pro_setup() {
 	// Add support for custom background.
 	add_theme_support( 'custom-background', array( 'wp-head-callback' => '__return_false' ) );
 
+	// Add support for accessibility features
+	add_theme_support( 'genesis-accessibility', array( 'skip-links', 'headings' ) );
+
 	// Add support for three footer widget areas.
 	add_theme_support( 'genesis-footer-widgets', 3 );
 
@@ -110,13 +113,6 @@ function utility_pro_setup() {
 	// Add WordPress archive pagination (accessibility).
 	add_action( 'genesis_after_endwhile', 'utility_pro_post_pagination' );
 
-	// Load accesibility components if the Genesis Accessible plugin is not active.
-	if ( ! utility_pro_genesis_accessible_is_active() ) {
-
-		// Load skip links (accessibility).
-		include get_stylesheet_directory() . '/includes/skip-links.php';
-	}
-
 	// Apply search form enhancements (accessibility).
 	add_filter( 'get_search_form', 'utility_pro_get_search_form', 25 );
 
@@ -182,7 +178,7 @@ add_filter( 'genesis_footer_creds_text', 'utility_pro_footer_creds' );
  */
 function utility_pro_footer_creds( $creds ) {
 
-	return '[footer_copyright first="2015"] &middot; <a href="https://store.carriedils.com/downloads/utility-pro/?utm_source=Utility%20Pro%20Footer%20Credits&utm_medium=Distributed%20Theme&utm_campaign=Utility%20Pro%20Theme">Utility Pro</a>.';
+	return '[footer_copyright first="2016"] &middot; <a href="https://store.carriedils.com/downloads/utility-pro/?utm_source=Utility%20Pro%20Footer%20Credits&utm_medium=Distributed%20Theme&utm_campaign=Utility%20Pro%20Theme">Utility Pro</a>.';
 }
 
 add_filter( 'genesis_author_box_gravatar_size', 'utility_pro_author_box_gravatar_size' );
