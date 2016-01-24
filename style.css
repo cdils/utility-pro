@@ -2181,6 +2181,7 @@ Accessibility Extras - Taken from the Leiden theme & Genesis Accessible plugin (
 .search-form label {
   clip: rect(0, 0, 0, 0);
   height: 0;
+  overflow: hidden;
   position: absolute;
   width: 0;
 }
