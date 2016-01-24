@@ -146,12 +146,12 @@ module.exports = function(grunt) {
 		},
 
 		/**
-		 * CSSJanus
-		 * https://github.com/cssjanus/grunt-cssjanus
+		 * RTLCSS
+		 * https://github.com/MohammadYounes/grunt-rtlcss
 		 */
-		cssjanus: {
-			theme: {
-				options: {
+		rtlcss: {
+			options: {
+				config: {
 					swapLtrRtlInUrl: true
 				},
 				files: [
@@ -160,6 +160,11 @@ module.exports = function(grunt) {
 						dest: 'style-rtl.css'
 					}
 				]
+			},
+			theme: {
+				expand: true,
+				ext: '-rtl.css',
+				src: 'style.css'
 			}
 		},
 
@@ -176,12 +181,12 @@ module.exports = function(grunt) {
 					'sass'
 				]
 			},
-			cssjanus: {
+			rtlcss: {
 				files: [
 					'style.css'
 				],
 				tasks: [
-					'cssjanus'
+					'rtlcss'
 				]
 			}
 		},
@@ -246,7 +251,7 @@ module.exports = function(grunt) {
 	 */
 	grunt.registerTask('default', [
 		'bowercopy',
-		'cssjanus',
+		'rtlcss',
 		'sass',
 		'watch'
 	]);
