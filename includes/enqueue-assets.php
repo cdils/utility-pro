@@ -33,9 +33,6 @@ function utility_pro_enqueue_assets() {
 	// Localize the responsive menu script (for translation).
 	wp_localize_script( 'utility-pro-responsive-menu', 'utilityResponsiveL10n', $localize );
 
-	// Keyboard navigation (dropdown menus) script.
-	wp_enqueue_script( 'genwpacc-dropdown',  get_stylesheet_directory_uri() . '/js/genwpacc-dropdown.js', array( 'jquery' ), false, true );
-
 	// Load remaining scripts only if custom background is being used
 	// and we're on the home page or a page using the landing page template.
 	if ( ! get_background_image() || ( ! ( is_front_page() || is_page_template( 'page_landing.php' ) ) ) ) {

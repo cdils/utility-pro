@@ -61,18 +61,3 @@ function utility_pro_post_pagination() {
 		the_posts_navigation( $args );
 	}
 }
-
-/**
- * Check whether Genesis Accessible plugin is active.
- *
- * If the Genesis Accessible plugin is in use, disable certain accessibility
- * features in Utility Pro and default to plugin settings to avoid unneccessary
- * scripts from loading.
- *
- * @since  1.0.0
- *
- * @return boolean
- */
-function utility_pro_genesis_accessible_is_active() {
-	return function_exists( 'genwpacc_genesis_init' );
-}

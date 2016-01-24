@@ -1900,7 +1900,8 @@ Site Navigation
 }
 
 .menu .menu-item > a:focus + ul.sub-menu,
-.menu .menu-item.wpacc-hover > ul.sub-menu {
+.menu .menu-item.sfHover > ul.sub-menu,
+.menu .menu-item.genesis-hover > ul.sub-menu {
   left: auto;
   opacity: 1;
 }

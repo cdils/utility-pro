@@ -1,18 +1,19 @@
 {
-    "name": "cdils/utility-pro",
-    "description": "Child theme for the Genesis Framework for WordPress",
-    "type": "wordpress-theme",
-    "authors": [
-        {
-            "name": "Carrie Dils",
-            "email": "support@carriedils.com"
-        }
-    ],
-    "config": {
-      "vendor-dir": "assets/composer"
-    },
-    "require": {
-      "composer/installers": "^1.0",
-      "tgmpa/tgm-plugin-activation": "^2.5.2"
-    }
+	"name": "cdils/utility-pro",
+	"description": "Child theme for the Genesis Framework for WordPress",
+	"type": "wordpress-theme",
+	"authors": [
+		{
+			"name": "Carrie Dils",
+			"email": "support@carriedils.com",
+			"homepage": "https://store.carriedils.com"
+		}
+	],
+	"config": {
+		"vendor-dir": "assets/composer"
+	},
+	"require": {
+		"composer/installers": "^1.0",
+		"tgmpa/tgm-plugin-activation": "^2.5.2"
+	}
 }

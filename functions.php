@@ -44,7 +44,7 @@ function utility_pro_setup() {
 	add_theme_support( 'custom-background', array( 'wp-head-callback' => '__return_false' ) );
 
 	// Add support for accessibility features
-	add_theme_support( 'genesis-accessibility', array( 'skip-links', 'headings' ) );
+	add_theme_support( 'genesis-accessibility', array( 'drop-down-menu', 'headings', 'skip-links' ) );
 
 	// Add support for three footer widget areas.
 	add_theme_support( 'genesis-footer-widgets', 3 );
@@ -66,9 +66,9 @@ function utility_pro_setup() {
 			'footer',
 			'footer-widgets',
 			'footernav',    // Custom.
-			'menu-footer',  // Custom.
 			'header',
 			'home-gallery', // Custom.
+			'menu-footer',  // Custom.
 			'nav',
 			'site-inner',
 			'site-tagline',
