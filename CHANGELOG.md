@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file.
 
 ## UNRELEASED
 - Added Composer support, specifically for including TGMPA.
+- Added support for PHP_CodeSniffer.
 - Added theme support for Genesis Accessibility (Drop Down Menus, Headings, Skip Links).
 - Fixed incorrect variable name resulting from update to TGMPA 2.5.2.
 - Adjusted search form width in the header right widget area.
@@ -18,7 +19,6 @@ All notable changes to this project will be documented in this file.
 - Changed minimum WordPress version compatability to 4.1 (to accommodate `the_posts_pagination()` ).
 - Added Bulgarian translation.
 - Updated TGMPA to 2.5.0-RC.
-- Added support for PHP_CodeSniffer.
 - Fixed the majority of WordPress Code Standards errors and warnings.
 - Changed CSS selector in menu to work with the WP Accessibility plugin toolbar.
 
