@@ -142,6 +142,10 @@ Link: http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css
 
 	.last {
 		@include omega();
-		clear: right;
 	}
+
+	.last + * {
+		clear: both;
+	}
+
 }

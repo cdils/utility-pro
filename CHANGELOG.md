@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file.
 - Switched from CSSJanus to RTLCSS for style-rtl.css generation.
 - Fixed incorrect variable name resulting from update to TGMPA 2.5.2.
 - Fixed issue with homepage background image sometimes scrolling beyond footer.
+- Fixed issue with content following column classes not float clearing.
 - Adjusted search form width in the header right widget area.
 - Removed sample content (utility-pro.xml) from theme and relocated to user account area.
 - Updated footer creds to 2016.
@@ -23,6 +24,7 @@ All notable changes to this project will be documented in this file.
 - Updated TGMPA to 2.5.0-RC.
 - Fixed the majority of WordPress Code Standards errors and warnings.
 - Changed CSS selector in menu to work with the WP Accessibility plugin toolbar.
+- Added Grunt Clean.
 
 ## 1.0.1 - 2015-02-05
 

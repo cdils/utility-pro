@@ -950,7 +950,10 @@ Link: http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css
 
   .last {
     margin-right: 0;
-    clear: right;
+  }
+
+  .last + * {
+    clear: both;
   }
 }
 /* # Common
