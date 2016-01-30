@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 ## UNRELEASED
 - Added Composer support, specifically for including TGMPA.
 - Added support for PHP_CodeSniffer.
-- Added theme support for Genesis Accessibility (Drop Down Menus, Headings, Skip Links).
+- Added theme support for Genesis Accessibility (404 page, Drop Down Menus, Headings, Skip Links).
 - Switched from CSSJanus to RTLCSS for style-rtl.css generation.
 - Fixed incorrect variable name resulting from update to TGMPA 2.5.2.
 - Fixed issue with homepage background image sometimes scrolling beyond footer.
