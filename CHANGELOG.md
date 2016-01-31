@@ -1,7 +1,7 @@
 # Change Log for Utility Pro Child Theme
 All notable changes to this project will be documented in this file.
 
-## UNRELEASED
+## 1.2.0 - 2016-01-31
 - Added Composer support, specifically for including TGMPA.
 - Added support for PHP_CodeSniffer.
 - Added theme support for Genesis Accessibility (404 page, Drop Down Menus, Headings, Skip Links).
