@@ -11,7 +11,7 @@ All notable changes to this project will be documented in this file.
 - Fixed issue with content following column classes not float clearing.
 - Adjusted search form width in the header right widget area.
 - Removed sample content (utility-pro.xml) from theme and relocated to user account area.
-- Updated footer creds to 2016.
+- Removed copyright reference from footer creds.
 
 ## 1.1.1 - 2015-12-11
 - Updated TGMPA to 2.5.2.

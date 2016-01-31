@@ -174,11 +174,11 @@ add_filter( 'genesis_footer_creds_text', 'utility_pro_footer_creds' );
  *
  * @param string $creds Existing credentials.
  *
- * @return string Footer credentials, as shortcodes.
+ * @return string Footer credentials.
  */
 function utility_pro_footer_creds( $creds ) {
 
-	return '[footer_copyright first="2016"] &middot; <a href="https://store.carriedils.com/downloads/utility-pro/?utm_source=Utility%20Pro%20Footer%20Credits&utm_medium=Distributed%20Theme&utm_campaign=Utility%20Pro%20Theme">Utility Pro</a>.';
+	return 'Powered by WordPress and the <a href="https://store.carriedils.com/downloads/utility-pro/?utm_source=Utility%20Pro%20Footer%20Credits&utm_medium=Distributed%20Theme&utm_campaign=Utility%20Pro%20Theme" rel="nofollow">Utility Pro</a> theme for Genesis Framework.';
 }
 
 add_filter( 'genesis_author_box_gravatar_size', 'utility_pro_author_box_gravatar_size' );
