@@ -53,9 +53,20 @@ function utility_pro_homepage_setup() {
 	// Uncomment the filter below if you'd like a full-width layout on the front page.
 	// add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
 
+	// Make homepage site title an h1
+	add_filter( 'genesis_site_title_wrap', 'utility_pro_h1_for_site_title' );
+	
 	// Remove standard loop and replace with loop showing Posts, not Page content.
 	remove_action( 'genesis_loop', 'genesis_do_loop' );
 	add_action( 'genesis_loop', 'utility_pro_front_loop' );
+}
+
+/**
+ * Use h1 for site title
+ *
+ */
+function utility_pro_h1_for_site_title( $wrap ) {
+	return 'h1';
 }
 
 /**
