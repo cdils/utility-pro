@@ -55,7 +55,7 @@ function utility_pro_homepage_setup() {
 
 	// Filter site title markup to include an h1.
 	add_filter( 'genesis_site_title_wrap', 'utility_pro_return_h1' );
-	
+
 	// Remove standard loop and replace with loop showing Posts, not Page content.
 	remove_action( 'genesis_loop', 'genesis_do_loop' );
 	add_action( 'genesis_loop', 'utility_pro_front_loop' );
@@ -67,7 +67,7 @@ function utility_pro_homepage_setup() {
  * Hat tip to Bill Erickson for the suggestion.
  *
  * @see http://www.billerickson.net/genesis-h1-front-page/
- * 
+ *
  * @since 1.2.0
  */
 function utility_pro_return_h1( $wrap ) {

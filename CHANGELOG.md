@@ -1,7 +1,8 @@
 # Change Log for Utility Pro Child Theme
 All notable changes to this project will be documented in this file.
+
 ## 1.2.0 - 2016-02-06
-- Updated front-page.php to wrap site title in h1 when using static pages for front page and blog page.
+- Added h1 markup to site title on a static front page.
 - Added Composer support, specifically for including TGMPA.
 - Added support for PHP_CodeSniffer.
 - Added theme support for Genesis Accessibility (404 page, Drop Down Menus, Headings, Skip Links).
