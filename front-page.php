@@ -53,8 +53,8 @@ function utility_pro_homepage_setup() {
 	// Uncomment the filter below if you'd like a full-width layout on the front page.
 	// add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
 
-	// Make homepage site title an h1
-	add_filter( 'genesis_site_title_wrap', 'utility_pro_h1_for_site_title' );
+	// Filter site title markup to include an h1.
+	add_filter( 'genesis_site_title_wrap', 'utility_pro_return_h1' );
 	
 	// Remove standard loop and replace with loop showing Posts, not Page content.
 	remove_action( 'genesis_loop', 'genesis_do_loop' );
@@ -62,10 +62,15 @@ function utility_pro_homepage_setup() {
 }
 
 /**
- * Use h1 for site title
+ * Use h1 for site title on a static front page.
  *
+ * Hat tip to Bill Erickson for the suggestion.
+ *
+ * @see http://www.billerickson.net/genesis-h1-front-page/
+ * 
+ * @since 1.2.0
  */
-function utility_pro_h1_for_site_title( $wrap ) {
+function utility_pro_return_h1( $wrap ) {
 	return 'h1';
 }
 
