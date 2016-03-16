@@ -1,6 +1,11 @@
 # Change Log for Utility Pro Child Theme
 All notable changes to this project will be documented in this file.
 
+## UNRELEASED
+- Added skip link footer navigation.
+- Removed theme support for Genesis Drop Down Menus
+- Improved mobile menu
+
 ## 1.2.0 - 2016-02-06
 - Added h1 markup to site title on a static front page.
 - Added Composer support, specifically for including TGMPA.

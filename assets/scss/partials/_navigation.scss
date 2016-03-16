@@ -117,8 +117,15 @@ Site Navigation
 /* Mobile Menu Toggle
 --------------------------------------------- */
 
-.menu-primary {
+nav {
 	display: none;
+
+	@include media($medium-screen-up) {
+		display: inline-block;
+	}
+}
+
+.menu-primary {
 	position: relative;
 
 	@include media($medium-screen-up) {
@@ -127,15 +134,16 @@ Site Navigation
 }
 
 .menu-toggle {
+	background-color: transparent;
+	border: 0;
 	color: $white;
 	display: block;
 	font-size: 30px;
 	margin: 0 auto;
 	overflow: hidden;
 	padding: 9px;
+	position: relative;
 	visibility: visible;
-	background-color: transparent;
-	border: 0;
 
 	@include media($medium-screen-up) {
 		display: block;
@@ -144,20 +152,22 @@ Site Navigation
 }
 
 .sub-menu-toggle {
-	position: absolute;
-	top: 0;
-	right: 0;
 	font-size: $secondary-font-size;
 	padding: 16px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	visibility: visible;
 
 	@include media($medium-screen-up) {
-		display: block;
+		display: none;
 		visibility: hidden;
 	}
 }
 
 .menu-toggle:before {
 	content: "\2261";
+	display: inline-block;
 }
 
 .menu-toggle.menu-toggle-activated:before {
@@ -174,7 +184,8 @@ Site Navigation
 
 @include media($medium-screen-up) {
 
-	button.menu-toggle {
+	button.menu-toggle,
+	button.sub-menu-toggle {
 		display: none;
 	}
 
@@ -198,6 +209,7 @@ Site Navigation
 .nav-footer {
 	background-color: lighten($black, 7);
 	text-align: center;
+	width: 100%;
 }
 
 .nav-primary a:hover,

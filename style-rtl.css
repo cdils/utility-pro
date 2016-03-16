@@ -1707,8 +1707,16 @@ div.gform_wrapper textarea:focus {
     position: static;
   }
 }
-.menu-primary {
+nav {
   display: none;
+}
+@media screen and (min-width: 1023px) {
+  nav {
+    display: inline-block;
+  }
+}
+
+.menu-primary {
   position: relative;
 }
 @media screen and (min-width: 1023px) {
@@ -1718,15 +1726,16 @@ div.gform_wrapper textarea:focus {
 }
 
 .menu-toggle {
+  background-color: transparent;
+  border: 0;
   color: #fff;
   display: block;
   font-size: 30px;
   margin: 0 auto;
   overflow: hidden;
   padding: 9px;
+  position: relative;
   visibility: visible;
-  background-color: transparent;
-  border: 0;
 }
 @media screen and (min-width: 1023px) {
   .menu-toggle {
@@ -1736,21 +1745,23 @@ div.gform_wrapper textarea:focus {
 }
 
 .sub-menu-toggle {
-  position: absolute;
-  top: 0;
-  left: 0;
   font-size: 14px;
   padding: 16px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  visibility: visible;
 }
 @media screen and (min-width: 1023px) {
   .sub-menu-toggle {
-    display: block;
+    display: none;
     visibility: hidden;
   }
 }
 
 .menu-toggle:before {
   content: "\2261";
+  display: inline-block;
 }
 
 .menu-toggle.menu-toggle-activated:before {
@@ -1766,7 +1777,8 @@ div.gform_wrapper textarea:focus {
 }
 
 @media screen and (min-width: 1023px) {
-  button.menu-toggle {
+  button.menu-toggle,
+  button.sub-menu-toggle {
     display: none;
   }
 }
@@ -1781,6 +1793,7 @@ div.gform_wrapper textarea:focus {
 .nav-footer {
   background-color: #121212;
   text-align: center;
+  width: 100%;
 }
 
 .nav-primary a:hover,

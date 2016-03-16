@@ -1804,8 +1804,16 @@ Site Navigation
 }
 /* Mobile Menu Toggle
 --------------------------------------------- */
-.menu-primary {
+nav {
   display: none;
+}
+@media screen and (min-width: 1023px) {
+  nav {
+    display: inline-block;
+  }
+}
+
+.menu-primary {
   position: relative;
 }
 @media screen and (min-width: 1023px) {
@@ -1815,15 +1823,16 @@ Site Navigation
 }
 
 .menu-toggle {
+  background-color: transparent;
+  border: 0;
   color: #fff;
   display: block;
   font-size: 30px;
   margin: 0 auto;
   overflow: hidden;
   padding: 9px;
+  position: relative;
   visibility: visible;
-  background-color: transparent;
-  border: 0;
 }
 @media screen and (min-width: 1023px) {
   .menu-toggle {
@@ -1833,21 +1842,23 @@ Site Navigation
 }
 
 .sub-menu-toggle {
-  position: absolute;
-  top: 0;
-  right: 0;
   font-size: 14px;
   padding: 16px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  visibility: visible;
 }
 @media screen and (min-width: 1023px) {
   .sub-menu-toggle {
-    display: block;
+    display: none;
     visibility: hidden;
   }
 }
 
 .menu-toggle:before {
   content: "\2261";
+  display: inline-block;
 }
 
 .menu-toggle.menu-toggle-activated:before {
@@ -1863,7 +1874,8 @@ Site Navigation
 }
 
 @media screen and (min-width: 1023px) {
-  button.menu-toggle {
+  button.menu-toggle,
+  button.sub-menu-toggle {
     display: none;
   }
 }
@@ -1883,6 +1895,7 @@ Site Navigation
 .nav-footer {
   background-color: #121212;
   text-align: center;
+  width: 100%;
 }
 
 .nav-primary a:hover,

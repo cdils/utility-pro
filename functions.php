@@ -44,7 +44,7 @@ function utility_pro_setup() {
 	add_theme_support( 'custom-background', array( 'wp-head-callback' => '__return_false' ) );
 
 	// Add support for accessibility features
-	add_theme_support( 'genesis-accessibility', array( '404-page', 'drop-down-menu', 'headings', 'skip-links' ) );
+	add_theme_support( 'genesis-accessibility', array( '404-page', 'headings', 'skip-links' ) );
 
 	// Add support for three footer widget areas.
 	add_theme_support( 'genesis-footer-widgets', 3 );
