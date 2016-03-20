@@ -38,7 +38,7 @@ add_filter( 'genesis_attr_nav-footer', 'utility_pro_add_nav_secondary_id' );
  * @return array Merged and filtered attributes.
  */
 function utility_pro_add_nav_secondary_id( $attributes ) {
-	$attributes['id'] = 'nav-footer';
+	$attributes['id'] = 'genesis-nav-footer';
 	return $attributes;
 }
 
@@ -56,7 +56,7 @@ function utility_pro_add_nav_secondary_skip_link( $links ) {
 	array_splice( $new_links, 1 );
 
 	if ( has_nav_menu( 'footer' ) ) {
-		$new_links['nav-footer'] = __( 'Skip to footer navigation', 'utility_pro' );
+		$new_links['genesis-nav-footer'] = __( 'Skip to footer navigation', 'utility_pro' );
 	}
 
 	return array_merge( $new_links, $links );

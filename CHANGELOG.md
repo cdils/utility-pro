@@ -3,7 +3,7 @@ All notable changes to this project will be documented in this file.
 
 ## UNRELEASED
 - Added skip link footer navigation.
-- Removed theme support for Genesis Drop Down Menus
+- Removed theme support for Genesis Drop Down Menus (conflict with Superfish)
 - Improved mobile menu
 
 ## 1.2.0 - 2016-02-06

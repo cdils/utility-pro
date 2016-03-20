@@ -26,8 +26,10 @@ function utility_pro_enqueue_assets() {
 	$localize = array(
 		'buttonText'     => __( 'Menu', 'utility-pro' ),
 		'buttonLabel'    => __( 'Primary Navigation Menu', 'utility-pro' ),
-		'subButtonText'  => __( 'Menu', 'utility-pro' ),
+		'subButtonText'  => __( 'Sub Menu', 'utility-pro' ),
 		'subButtonLabel' => __( 'Sub Navigation Menu', 'utility-pro' ),
+		'footerButtonText'  => __( 'Footer Menu', 'utility-pro' ),
+		'footerButtonLabel' => __( 'Footer Navigation Menu', 'utility-pro' ),
 	);
 
 	// Localize the responsive menu script (for translation).
