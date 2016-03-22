@@ -40,7 +40,7 @@
         };
         $('.nav-primary').before(toggleButtons.menu); // add the main nav button
         $('.nav-primary .sub-menu').before(toggleButtons.submenu); // add the submenu nav button
-        $('.nav-footer').before(toggleButtons.footermenu); // add the footer menu nav button
+        $('.nav-footer').before(toggleButtons.footermenu); // add the footer nav button
         $('.' + mainMenuButtonClass).each( _addClassID);
         $(window).on('resize.utility', _doResize).triggerHandler('resize.utility');
         $('.' + mainMenuButtonClass).on('click.utility-mainbutton', _mainmenuToggle);
@@ -153,7 +153,7 @@
             .removeClass('activated')
             .attr('aria-expanded', false)
             .attr('aria-pressed', false);
-        $('nav, .sub-menu')
+        $('.nav-primary, .sub-menu, .nav-footer')
             .attr('style', '');
     }
 
