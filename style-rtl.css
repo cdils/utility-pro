@@ -1709,14 +1709,14 @@ div.gform_wrapper textarea:focus {
     position: static;
   }
 }
-.menu-primary,
-.menu-footer {
+.nav-primary,
+.nav-footer {
   display: none;
   position: relative;
 }
 @media screen and (min-width: 1023px) {
-  .menu-primary,
-  .menu-footer {
+  .nav-primary,
+  .nav-footer {
     display: inline-block;
   }
 }
