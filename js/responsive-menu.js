@@ -46,6 +46,13 @@
         $('.' + mainMenuButtonClass).on('click.utility-mainbutton', _mainmenuToggle);
         $('.' + subMenuButtonClass).on('click.utility-subbutton', _submenuToggle);
         $('.' + footerMenuButtonClass).on('click.utility-footerbutton', _footermenuToggle);
+        // Give the UL a label, stops Voiceover reading out every item from the parent item.
+        $('.sub-menu').attr('aria-label', 'Sub menu');
+        // Give the LI a label, so Voiceover doesn't repeat the block-level text.
+        $('.menu-item-has-children').attr('aria-label', function(i, val) {
+            return $(this).children('a').text();
+        } );
+
     };
 
     // add nav class and ID to related button
