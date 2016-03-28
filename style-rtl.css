@@ -1651,11 +1651,6 @@ div.gform_wrapper textarea:focus {
   }
 }
 
-.genesis-nav-menu .menu-item:hover > .sub-menu {
-  right: auto;
-  opacity: 1;
-}
-
 @media screen and (min-width: 1023px) {
   .genesis-nav-menu .menu-item:hover {
     position: static;
@@ -1684,6 +1679,12 @@ div.gform_wrapper textarea:focus {
     width: 200px;
     z-index: 99;
   }
+}
+
+.genesis-nav-menu .menu-item:focus > .sub-menu,
+.genesis-nav-menu .menu-item:hover > .sub-menu {
+  right: auto;
+  opacity: 1;
 }
 
 .genesis-nav-menu .sub-menu a {
@@ -1744,6 +1745,9 @@ div.gform_wrapper textarea:focus {
 }
 
 .sub-menu-toggle {
+  background-color: transparent;
+  border: 0;
+  color: #fff;
   font-size: 14px;
   padding: 16px;
   position: absolute;
@@ -1814,8 +1818,7 @@ div.gform_wrapper textarea:focus {
 }
 
 .menu .menu-item > a:focus + ul.sub-menu,
-.menu .menu-item.sfHover > ul.sub-menu,
-.menu .menu-item.genesis-hover > ul.sub-menu {
+.menu .menu-item.wpacc-hover > ul.sub-menu {
   right: auto;
   opacity: 1;
 }

@@ -20,6 +20,9 @@ function utility_pro_enqueue_assets() {
 	// Replace style.css with style-rtl.css for RTL languages.
 	wp_style_add_data( 'utility-pro', 'rtl', 'replace' );
 
+	// Keyboard navigation (dropdown menus) script.
+	wp_enqueue_script( 'genwpacc-dropdown',  get_stylesheet_directory_uri() . '/js/genwpacc-dropdown.js', array( 'jquery' ), false, true );
+
 	// Load mobile responsive menu.
 	wp_enqueue_script( 'utility-pro-responsive-menu', get_stylesheet_directory_uri() . '/js/responsive-menu.js', array( 'jquery' ), '1.0.0', true );
 

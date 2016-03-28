@@ -57,11 +57,6 @@ Site Navigation
 	}
 }
 
-.genesis-nav-menu .menu-item:hover > .sub-menu {
-	left: auto;
-	opacity: 1;
-}
-
 .genesis-nav-menu .menu-item:hover {
 	@include media($medium-screen-up) {
 		position: static;
@@ -89,6 +84,12 @@ Site Navigation
 		width: 200px;
 		z-index: 99;
 	}
+}
+
+.genesis-nav-menu .menu-item:focus > .sub-menu,
+.genesis-nav-menu .menu-item:hover > .sub-menu {
+	left: auto;
+	opacity: 1;
 }
 
 .genesis-nav-menu .sub-menu a {
@@ -150,6 +151,9 @@ Site Navigation
 }
 
 .sub-menu-toggle {
+	background-color: transparent;
+	border: 0;
+	color: $white;
 	font-size: $secondary-font-size;
 	padding: 16px;
 	position: absolute;
@@ -233,8 +237,7 @@ Site Navigation
 }
 
 .menu .menu-item > a:focus + ul.sub-menu,
-.menu .menu-item.sfHover > ul.sub-menu,
-.menu .menu-item.genesis-hover > ul.sub-menu {
+.menu .menu-item.wpacc-hover > ul.sub-menu {
 	left: auto;
 	opacity: 1;
 }
