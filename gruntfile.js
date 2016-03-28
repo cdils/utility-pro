@@ -115,6 +115,9 @@ module.exports = function(grunt) {
 		 				src: [
 		 					'**',
 		 					'!bower.json',
+		 					'!composer.json',
+		 					'!composer.lock',
+		 					'!phpcs.xml',
 		 					'!package.json',
 		 					'!gruntfile.js',
 		 					'!CHANGELOG.md',

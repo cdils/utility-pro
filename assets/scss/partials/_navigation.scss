@@ -57,12 +57,6 @@ Site Navigation
 	}
 }
 
-.genesis-nav-menu .menu-item:hover {
-	@include media($medium-screen-up) {
-		position: static;
-	}
-}
-
 .genesis-nav-menu .sub-menu {
 	background-color: lighten($black, 7);
 	clear: both;
@@ -86,8 +80,8 @@ Site Navigation
 	}
 }
 
-.genesis-nav-menu .menu-item:focus > .sub-menu,
-.genesis-nav-menu .menu-item:hover > .sub-menu {
+.genesis-nav-menu .menu-item:hover > .sub-menu,,
+.genesis-nav-menu .menu-item-hover:hover > .sub-menu {
 	left: auto;
 	opacity: 1;
 }
@@ -111,6 +105,7 @@ Site Navigation
 		margin: -54px 0 0 199px;
 	}
 
+	.genesis-nav-menu .menu-item-hover,
 	.genesis-nav-menu .menu-item:hover {
 		position: static;
 	}

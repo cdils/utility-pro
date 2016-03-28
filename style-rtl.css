@@ -10,61 +10,6 @@
 	License URI: http://www.opensource.org/licenses/gpl-license.php
 	Text Domain: utility-pro
 */
-/* # Table of Contents
-
-	- HTML5 Reset
-		- Baseline Normalize
-		- Box Sizing
-		- Float Clearing
-	- Theme Colors
-		- Purple
-		- Green
-		- Red
-	- Defaults
-		- Typographical Elements
-		- Headings
-		- Objects
-		- Forms
-		- Tables
-	- Structure and Layout
-		- Site Containers
-		- Sidebar
-		- Column Widths and Positions
-		- Column Classes
-	- Common Classes
-		- WordPress
-		- Media Gallery
-		- Genesis
-	- Widgets
-		- Utility Bar
-		- Home Welcome
-		- Home Gallery
-		- Call to Action
-		- Featured Page and Featured Post
-		- Footer Widgets
-	- Plugins
-		- Better Font Awesome
-		- Genesis eNews Extended
-		- Gravity Forms
-		- Jetpack
-	- Site Header
-		- Title Area
-		- Widget Area
-	- Site Navigation
-		- Mobile Menu Toggle
-		- Header Navigation
-		- Primary & Secondary Navigation
-	- Content Area
-		- Titles
-		- Entries
-		- Featured Image
-		- Pagination
-		- Comments
-	- Sidebars
-	- Site Footer
-	- Accessibility Extras
-	- Print Media Query
-*/
 html {
   box-sizing: border-box;
 }
@@ -1651,12 +1596,6 @@ div.gform_wrapper textarea:focus {
   }
 }
 
-@media screen and (min-width: 1023px) {
-  .genesis-nav-menu .menu-item:hover {
-    position: static;
-  }
-}
-
 .genesis-nav-menu .sub-menu {
   background-color: #121212;
   clear: both;
@@ -1681,8 +1620,8 @@ div.gform_wrapper textarea:focus {
   }
 }
 
-.genesis-nav-menu .menu-item:focus > .sub-menu,
-.genesis-nav-menu .menu-item:hover > .sub-menu {
+.genesis-nav-menu .menu-item:hover > .sub-menu,
+.genesis-nav-menu .menu-item-hover:hover > .sub-menu {
   right: auto;
   opacity: 1;
 }
@@ -1706,6 +1645,7 @@ div.gform_wrapper textarea:focus {
     margin: -54px 199px 0 0;
   }
 
+  .genesis-nav-menu .menu-item-hover,
   .genesis-nav-menu .menu-item:hover {
     position: static;
   }
