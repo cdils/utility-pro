@@ -1,8 +1,13 @@
 /* global jQuery:false, window:false, document:false */
 
-// Hat tip to https://john-dugan.com/jquery-plugin-boilerplate-explained/ for the explanations.
-
 /*
+ @package      Utility_Pro
+ @author       Gary Jones
+ @license      GPL-2.0+
+ @link         http://gamajo.com/
+
+ Hat tip to https://john-dugan.com/jquery-plugin-boilerplate-explained/ for the explanations.
+
  The semi-colon before the function invocation is a safety net against
  concatenated scripts and/or other plugins which may not be closed properly.
 
@@ -14,7 +19,7 @@
 
  "window" and "document" are passed as local variables rather than global.
  This (slightly) quickens the resolution process.
- */
+*/
 
 ;(
     function( $, window, document, undefined ) {

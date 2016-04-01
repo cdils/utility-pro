@@ -1,7 +1,14 @@
+/*
+ This file has configuration options for responsive-menu.plugin.js
 
+ @package      Utility_Pro
+ @author       Gary Jones
+ @license      GPL-2.0+
+ @link         http://gamajo.com/
+*/
 
 // The small bit below starts the library. Pass in whatever configurations you need.
-// The defaults are shown, commented out. The l10n is a special option - instead of passing in the individual strings,
+// The l10n is a special option - instead of passing in the individual strings,
 // just give the name of the localized strings object you created when enqueueing your scripts.
 
 jQuery( document ).gamajoResponsiveAccessibleMenu( {

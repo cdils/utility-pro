@@ -24,7 +24,7 @@ function utility_pro_enqueue_assets() {
 	wp_enqueue_script( 'genwpacc-dropdown',  get_stylesheet_directory_uri() . '/js/genwpacc-dropdown.js', array( 'jquery' ), false, true );
 
 	// Load mobile responsive menu.
-	wp_enqueue_script( 'utility-pro-responsive-menu-plugin', get_stylesheet_directory_uri() . '/js/responsive-menu.plugin.js', array( 'jquery' ), '1.0.0', true );
+	wp_enqueue_script( 'utility-pro-responsive-menu-plugin', get_stylesheet_directory_uri() . '/js/responsive-menu.plugin.min.js', array( 'jquery' ), '1.0.0', true );
 	wp_enqueue_script( 'utility-pro-responsive-menu', get_stylesheet_directory_uri() . '/js/responsive-menu.js', array( 'jquery' ), '1.0.0', true );
 
 	$localize_primary = array(

@@ -126,6 +126,7 @@ module.exports = function(grunt) {
 		 					'!.sass-cache/**',
 		 					'!dist/**',
 		 					'!assets/**',
+		 					'!js/responsive-menu-plugin.js',
 		 					'!*.sublime*',
 		 					'!.DS_Store'
 		 				], // Take this...
@@ -146,6 +147,7 @@ module.exports = function(grunt) {
 		 					'!.sass-cache/**',
 		 					'!dist/**',
 		 					'!assets/scss/vendor/**',
+		 					'!js/responsive-menu-plugin.min.js',
 		 					'!*.sublime*',
 		 					'!.DS_Store'
 		 				], // Take this...
