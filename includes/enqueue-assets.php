@@ -24,28 +24,37 @@ function utility_pro_enqueue_assets() {
 	wp_enqueue_script( 'genwpacc-dropdown',  get_stylesheet_directory_uri() . '/js/genwpacc-dropdown.js', array( 'jquery' ), false, true );
 
 	// Load mobile responsive menu.
+	wp_enqueue_script( 'utility-pro-responsive-menu-plugin', get_stylesheet_directory_uri() . '/js/responsive-menu.plugin.js', array( 'jquery' ), '1.0.0', true );
 	wp_enqueue_script( 'utility-pro-responsive-menu', get_stylesheet_directory_uri() . '/js/responsive-menu.js', array( 'jquery' ), '1.0.0', true );
 
-	$localize = array(
+	$localize_primary = array(
 		'buttonText'     => __( 'Menu', 'utility-pro' ),
 		'buttonLabel'    => __( 'Primary Navigation Menu', 'utility-pro' ),
 		'subButtonText'  => __( 'Sub Menu', 'utility-pro' ),
 		'subButtonLabel' => __( 'Sub Menu', 'utility-pro' ),
-		'footerButtonText'  => __( 'Footer Menu', 'utility-pro' ),
-		'footerButtonLabel' => __( 'Footer Navigation Menu', 'utility-pro' ),
+	);
+
+	$localize_footer = array(
+		'buttonText'     => __( 'Footer Menu', 'utility-pro' ),
+		'buttonLabel'    => __( 'Footer Navigation Menu', 'utility-pro' ),
+		'subButtonText'  => __( 'Sub Menu', 'utility-pro' ),
+		'subButtonLabel' => __( 'Sub Menu', 'utility-pro' ),
 	);
 
 	// Localize the responsive menu script (for translation).
-	wp_localize_script( 'utility-pro-responsive-menu', 'utilityResponsiveL10n', $localize );
+	wp_localize_script( 'utility-pro-responsive-menu', 'utilityMenuPrimaryL10n', $localize_primary );
+	wp_localize_script( 'utility-pro-responsive-menu', 'utilityMenuFooterL10n', $localize_footer );
 
-	// Load remaining scripts only if custom background is being used
+	wp_enqueue_script( 'utility-pro', get_stylesheet_directory_uri() . '/js/responsive-menu.args.js', array( 'utility-pro-responsive-menu' ), CHILD_THEME_VERSION, true );
+
+	// Load Backstretch scripts only if custom background is being used
 	// and we're on the home page or a page using the landing page template.
 	if ( ! get_background_image() || ( ! ( is_front_page() || is_page_template( 'page_landing.php' ) ) ) ) {
 		return;
 	}
 
-	wp_enqueue_script( 'utility-pro-backstretch', get_stylesheet_directory_uri() . '/js/backstretch.min.js', array( 'jquery' ), '2.1.0', true );
-	wp_enqueue_script( 'utility-pro-backstretch-args', get_stylesheet_directory_uri() . '/js/backstretch.args.js', array( 'utility-pro-backstretch' ), CHILD_THEME_VERSION, true );
+	wp_enqueue_script( 'utility-pro-backstretch', get_stylesheet_directory_uri() . '/js/backstretch.min.js', array( 'jquery' ), '2.0.1', true );
+	wp_enqueue_script( 'utility-pro', get_stylesheet_directory_uri() . '/js/backstretch.args.js', array( 'utility-pro-backstretch' ), CHILD_THEME_VERSION, true );
+	wp_localize_script( 'utility-pro', 'utilityBackstretchL10n', array( 'src' => get_background_image() ) );
 
-	wp_localize_script( 'utility-pro-backstretch-args', 'utilityBackstretchL10n', array( 'src' => get_background_image() ) );
 }
