@@ -64,14 +64,15 @@ Site Header
 
 /* Logo, hide text */
 
-.header-image .site-title > a {
-	background: url(images/logo.png) no-repeat center;
+.header-image .site-title a {
+	background: url(images/logo.svg) no-repeat center;
 	float: left;
-	min-height: 60px;
+	min-height: 80px;
 	width: 100%;
 
 	@include media($medium-screen-up) {
-		background: url(images/logo.png) no-repeat left;
+		background-position: left center;
+			min-height: 80px;
 	}
 }
 
