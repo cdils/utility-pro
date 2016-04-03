@@ -64,17 +64,34 @@ Site Header
 
 /* Logo, hide text */
 
-.header-image .site-title a {
-	background: url(images/logo.svg) no-repeat center;
-	float: left;
-	min-height: 80px;
-	width: 100%;
+.header-image .site-title > a {
 
-	@include media($medium-screen-up) {
-		background-position: left center;
-			min-height: 80px;
-	}
+    @include retina-image('images/logo', 260px auto, 'png', 'images/logo@2x');
+
+    background-position: center;
+    background-repeat: no-repeat;
+    float: left;
+    min-height: 60px;
+    width: 100%;
+
+    @include media($medium-screen-up) {
+        background-position: left;
+    }
+
 }
+/* If you prefer to use a SVG logo - uncomment the block below */
+
+// .header-image .site-title a {
+// 	background: url(images/logo.svg) no-repeat center;
+// 	float: left;
+// 	min-height: 60px;
+// 	width: 100%;
+
+// 	@include media($medium-screen-up) {
+// 		background-position: left center;
+// 	}
+// }
+
 
 /* Header Right Widget Area
 --------------------------------------------- */
