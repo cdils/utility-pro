@@ -326,7 +326,7 @@ If you've chosen your favorite color scheme, you can delete the others
 
 .utility-pro-purple .call-to-action-bar .button,
 .utility-pro-purple .button,
-.utility-pro-purple .entry-content .button,
+.utility-pro-purple .entry-content a.button,
 .utility-pro-purple input[type="submit"] {
   background: #339;
   border: 1px solid #fff;
@@ -335,7 +335,7 @@ If you've chosen your favorite color scheme, you can delete the others
 
 .utility-pro-purple .call-to-action-bar .button:hover,
 .utility-pro-purple .button:hover,
-.utility-pro-purple .entry-content .button:hover,
+.utility-pro-purple .entry-content a.button:hover,
 .utility-pro-purple input[type="submit"]:hover {
   background: #fff;
   border: 1px solid #339;
@@ -361,7 +361,7 @@ If you've chosen your favorite color scheme, you can delete the others
 
 .utility-pro-green .call-to-action-bar .button,
 .utility-pro-green .button,
-.utility-pro-green .entry-content .button,
+.utility-pro-green a.button,
 .utility-pro-green input[type="submit"] {
   background: #107952;
   border: 1px solid #fff;
@@ -370,7 +370,7 @@ If you've chosen your favorite color scheme, you can delete the others
 
 .utility-pro-green .call-to-action-bar .button:hover,
 .utility-pro-green .button:hover,
-.utility-pro-green .entry-content .button:hover,
+.utility-pro-green .entry-content a.button:hover,
 .utility-pro-green input[type="submit"]:hover {
   background: #fff;
   border: 1px solid #107952;
@@ -396,7 +396,7 @@ If you've chosen your favorite color scheme, you can delete the others
 
 .utility-pro-red .call-to-action-bar .button,
 .utility-pro-red .button,
-.utility-pro-red .entry-content .button,
+.utility-pro-red a.button,
 .utility-pro-red input[type="submit"] {
   background: #d3131b;
   border: 1px solid #fff;
@@ -405,7 +405,7 @@ If you've chosen your favorite color scheme, you can delete the others
 
 .utility-pro-red .call-to-action-bar .button:hover,
 .utility-pro-red .button:hover,
-.utility-pro-red .entry-content .button:hover,
+.utility-pro-red .entry-content a.button:hover,
 .utility-pro-red input[type="submit"]:hover {
   background: #fff;
   border: 1px solid #d3131b;
