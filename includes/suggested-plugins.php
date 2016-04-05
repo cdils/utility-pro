@@ -53,13 +53,6 @@ function utility_pro_register_required_plugins() {
 			'required' 				=> false, // If false, the plugin is only 'recommended' instead of required.
 		),
 
-		// Include Genesis Accesible.
-		array(
-			'name'     				=> 'Genesis Accessible', // The plugin name.
-			'slug'     				=> 'genesis-accessible', // The plugin slug (typically the folder name).
-			'required' 				=> false, // If false, the plugin is only 'recommended' instead of required.
-		),
-
 		// Include WP Accessibility.
 		array(
 			'name'     				=> 'WP Accessibility', // The plugin name.
