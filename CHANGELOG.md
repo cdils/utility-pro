@@ -5,8 +5,10 @@ All notable changes to this project will be documented in this file.
 - Added skip link footer navigation.
 - Removed theme support for Genesis Drop Down Menus (conflict with Superfish).
 - Improved mobile menu experience for non-visual users.
-- Re-organized Grunt tasks to group related tasks.
 - Updated backstretch script to include an alt attribute for the background image.
+- Added support for retina logos.
+- Updated .pot file for translations.
+- Re-organized Grunt tasks to group related tasks.
 
 ## 1.2.0 - 2016-02-06
 - Added h1 markup to site title on a static front page.
