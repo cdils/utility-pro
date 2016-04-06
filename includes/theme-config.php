@@ -24,6 +24,44 @@ function utility_pro_remove_genesis_page_templates( $page_templates ) {
 	return $page_templates;
 }
 
+add_filter( 'genesis_attr_nav-footer', 'utility_pro_add_nav_secondary_id' );
+/**
+ * Add ID to footer nav.
+ *
+ * In order to use skip links with the footer menu, the menu needs an
+ * ID to anchor the link to. Hat tip to Robin Cornett for the tutorial.
+ *
+ * @link http://robincornett.com/genesis-responsive-menu/
+ *
+ * @since 1.2.1
+ * @param array $attributes Optional. Extra attributes to merge with defaults.
+ * @return array Merged and filtered attributes.
+ */
+function utility_pro_add_nav_secondary_id( $attributes ) {
+	$attributes['id'] = 'genesis-nav-footer';
+	return $attributes;
+}
+
+add_filter( 'genesis_skip_links_output', 'utility_pro_add_nav_secondary_skip_link' );
+/**
+ * Add skip link to footer navigation.
+ *
+ * @since 1.2.1
+ *
+ * @param array Default skiplinks.
+ * @return array Amended markup for Genesis skip links.
+ */
+function utility_pro_add_nav_secondary_skip_link( $links ) {
+	$new_links = $links;
+	array_splice( $new_links, 1 );
+
+	if ( has_nav_menu( 'footer' ) ) {
+		$new_links['genesis-nav-footer'] = __( 'Skip to footer navigation', 'utility_pro' );
+	}
+
+	return array_merge( $new_links, $links );
+}
+
 /**
  * Customize the search form to improve accessibility.
  *

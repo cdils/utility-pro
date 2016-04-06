@@ -3,7 +3,7 @@
 	Description: No-nonsense, functional child theme created for the Genesis Framework.
 	Author: Carrie Dils
 	Author URI: http://www.carriedils.com/
-	Version: 1.2.0
+	Version: 1.3.0
 	Tags: black, purple, green, blue, red, one-column, two-columns, fixed-width, custom-menu, full-width-template, sticky-post, theme-options, threaded-comments, rtl-language-support, translation-ready
 	Template: genesis
 	License: GPL-2.0+
@@ -65,7 +65,6 @@
 	- Accessibility Extras
 	- Print Media Query
 */
-/* Import Bourbon, Neat */
 html {
   box-sizing: border-box;
 }
@@ -1633,14 +1632,22 @@ Site Header
 
 /* Logo, hide text */
 .header-image .site-title > a {
-  background: url(images/logo.png) no-repeat center;
+  background-image: url("images/logo.png");
+  background-position: center;
+  background-repeat: no-repeat;
   float: left;
   min-height: 60px;
   width: 100%;
 }
+@media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
+  .header-image .site-title > a {
+    background-image: url("images/logo@2x.png");
+    background-size: 260px auto;
+  }
+}
 @media screen and (min-width: 1023px) {
   .header-image .site-title > a {
-    background: url(images/logo.png) no-repeat left;
+    background-position: left;
   }
 }
 
@@ -1746,15 +1753,6 @@ Site Navigation
   }
 }
 
-.genesis-nav-menu .menu-item:hover > .sub-menu {
-  left: auto;
-  opacity: 1;
-}
-
-.genesis-nav-menu .menu-item:hover {
-  position: relative;
-}
-
 .genesis-nav-menu .sub-menu {
   background-color: #121212;
   clear: both;
@@ -1779,6 +1777,12 @@ Site Navigation
   }
 }
 
+.genesis-nav-menu .menu-item:hover > .sub-menu,
+.genesis-nav-menu .menu-item-hover:hover > .sub-menu {
+  left: auto;
+  opacity: 1;
+}
+
 .genesis-nav-menu .sub-menu a {
   border: 0;
 }
@@ -1798,59 +1802,74 @@ Site Navigation
     margin: -54px 0 0 199px;
   }
 
+  .genesis-nav-menu .menu-item-hover,
   .genesis-nav-menu .menu-item:hover {
     position: static;
   }
 }
 /* Mobile Menu Toggle
 --------------------------------------------- */
-.menu-primary {
+.nav-primary,
+.nav-footer {
   display: none;
   position: relative;
 }
 @media screen and (min-width: 1023px) {
-  .menu-primary {
+  .nav-primary,
+  .nav-footer {
     display: inline-block;
   }
 }
 
-.menu-toggle {
+.menu-toggle,
+.footer-menu-toggle {
+  background-color: transparent;
+  border: 0;
   color: #fff;
   display: block;
-  font-size: 30px;
+  font-size: 18px;
   margin: 0 auto;
   overflow: hidden;
   padding: 9px;
+  position: relative;
+  text-transform: uppercase;
   visibility: visible;
-  background-color: transparent;
-  border: 0;
 }
 @media screen and (min-width: 1023px) {
-  .menu-toggle {
+  .menu-toggle,
+  .footer-menu-toggle {
     display: block;
     visibility: hidden;
   }
 }
 
 .sub-menu-toggle {
-  position: absolute;
-  top: 0;
-  right: 0;
+  background-color: transparent;
+  border: 0;
+  color: #fff;
   font-size: 14px;
   padding: 16px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  visibility: visible;
 }
 @media screen and (min-width: 1023px) {
   .sub-menu-toggle {
-    display: block;
+    display: none;
     visibility: hidden;
   }
 }
 
-.menu-toggle:before {
+.menu-toggle:before,
+.footer-menu-toggle:before {
   content: "\2261";
+  display: inline-block;
+  padding-right: 8px;
 }
 
-.menu-toggle.menu-toggle-activated:before {
+.menu-toggle.menu-toggle-activated:before,
+.footer-menu-toggle.menu-toggle-activated:before {
   content: "x";
 }
 
@@ -1863,7 +1882,9 @@ Site Navigation
 }
 
 @media screen and (min-width: 1023px) {
-  button.menu-toggle {
+  button.menu-toggle,
+  button.sub-menu-toggle,
+  button.footer-menu-toggle {
     display: none;
   }
 }
@@ -1883,6 +1904,7 @@ Site Navigation
 .nav-footer {
   background-color: #121212;
   text-align: center;
+  width: 100%;
 }
 
 .nav-primary a:hover,
@@ -1903,8 +1925,7 @@ Site Navigation
 }
 
 .menu .menu-item > a:focus + ul.sub-menu,
-.menu .menu-item.sfHover > ul.sub-menu,
-.menu .menu-item.genesis-hover > ul.sub-menu {
+.menu .menu-item.wpacc-hover > ul.sub-menu {
   left: auto;
   opacity: 1;
 }

@@ -57,15 +57,6 @@ Site Navigation
 	}
 }
 
-.genesis-nav-menu .menu-item:hover > .sub-menu {
-	left: auto;
-	opacity: 1;
-}
-
-.genesis-nav-menu .menu-item:hover {
-	position: relative;
-}
-
 .genesis-nav-menu .sub-menu {
 	background-color: lighten($black, 7);
 	clear: both;
@@ -89,6 +80,12 @@ Site Navigation
 	}
 }
 
+.genesis-nav-menu .menu-item:hover > .sub-menu,
+.genesis-nav-menu .menu-item-hover:hover > .sub-menu {
+	left: auto;
+	opacity: 1;
+}
+
 .genesis-nav-menu .sub-menu a {
 	border: 0;
 
@@ -108,6 +105,7 @@ Site Navigation
 		margin: -54px 0 0 199px;
 	}
 
+	.genesis-nav-menu .menu-item-hover,
 	.genesis-nav-menu .menu-item:hover {
 		position: static;
 	}
@@ -117,7 +115,8 @@ Site Navigation
 /* Mobile Menu Toggle
 --------------------------------------------- */
 
-.menu-primary {
+.nav-primary,
+.nav-footer {
 	display: none;
 	position: relative;
 
@@ -126,16 +125,19 @@ Site Navigation
 	}
 }
 
-.menu-toggle {
+.menu-toggle,
+.footer-menu-toggle {
+	background-color: transparent;
+	border: 0;
 	color: $white;
 	display: block;
-	font-size: 30px;
+	font-size: 18px;
 	margin: 0 auto;
 	overflow: hidden;
 	padding: 9px;
+	position: relative;
+	text-transform: uppercase;
 	visibility: visible;
-	background-color: transparent;
-	border: 0;
 
 	@include media($medium-screen-up) {
 		display: block;
@@ -144,23 +146,31 @@ Site Navigation
 }
 
 .sub-menu-toggle {
-	position: absolute;
-	top: 0;
-	right: 0;
+	background-color: transparent;
+	border: 0;
+	color: $white;
 	font-size: $secondary-font-size;
 	padding: 16px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	visibility: visible;
 
 	@include media($medium-screen-up) {
-		display: block;
+		display: none;
 		visibility: hidden;
 	}
 }
 
-.menu-toggle:before {
+.menu-toggle:before,
+.footer-menu-toggle:before {
 	content: "\2261";
+	display: inline-block;
+	padding-right: 8px;
 }
 
-.menu-toggle.menu-toggle-activated:before {
+.menu-toggle.menu-toggle-activated:before,
+.footer-menu-toggle.menu-toggle-activated:before {
 	content: "x";
 }
 
@@ -174,7 +184,9 @@ Site Navigation
 
 @include media($medium-screen-up) {
 
-	button.menu-toggle {
+	button.menu-toggle,
+	button.sub-menu-toggle,
+	button.footer-menu-toggle {
 		display: none;
 	}
 
@@ -198,6 +210,7 @@ Site Navigation
 .nav-footer {
 	background-color: lighten($black, 7);
 	text-align: center;
+	width: 100%;
 }
 
 .nav-primary a:hover,
@@ -219,8 +232,7 @@ Site Navigation
 }
 
 .menu .menu-item > a:focus + ul.sub-menu,
-.menu .menu-item.sfHover > ul.sub-menu,
-.menu .menu-item.genesis-hover > ul.sub-menu {
+.menu .menu-item.wpacc-hover > ul.sub-menu {
 	left: auto;
 	opacity: 1;
 }
