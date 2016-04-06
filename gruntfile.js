@@ -146,8 +146,8 @@ module.exports = function(grunt) {
 		 					'!node_modules/**',
 		 					'!.sass-cache/**',
 		 					'!dist/**',
+		 					'!assets/composer/**',
 		 					'!assets/scss/vendor/**',
-		 					'!js/responsive-menu.min.js',
 		 					'!*.sublime*',
 		 					'!.DS_Store'
 		 				], // Take this...
