@@ -1,6 +1,9 @@
 # Change Log for Utility Pro Child Theme
 All notable changes to this project will be documented in this file.
 
+## 1.3.1 - 2016-04-11
+- Fixed incorrect script handle on backstretch arguments.
+
 ## 1.3.0 - 2016-04-6
 - Added skip link footer navigation.
 - Removed theme support for Genesis Drop Down Menus (conflict with Superfish).
