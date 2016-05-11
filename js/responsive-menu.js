@@ -397,7 +397,7 @@
             }
 
             if ( ! isDisplayNone( buttons ) ) {
-                superfishArgs = 'destory';
+                superfishArgs = 'destroy';
             }
 
             $( superfishSelector ).superfish( superfishArgs );
