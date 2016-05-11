@@ -32,7 +32,7 @@ function utility_pro_setup() {
 
 	define( 'CHILD_THEME_NAME', 'utility-pro' );
 	define( 'CHILD_THEME_URL', 'https://store.carriedils.com/utility-pro' );
-	define( 'CHILD_THEME_VERSION', '1.0.0' );
+	define( 'CHILD_THEME_VERSION', '1.3.1' );
 
 	// Add HTML5 markup structure.
 	add_theme_support( 'html5', array( 'caption', 'comment-form', 'comment-list', 'gallery', 'search-form' ) );
