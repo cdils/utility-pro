@@ -23,7 +23,6 @@
 		"source": "https://github.com/cdils/utility-pro"
 	},
 	"config": {
-		"vendor-dir": "assets/composer",
 		"sort-order": true,
 		"optimize-autoloader": true
 	},
