@@ -39,6 +39,8 @@ To set the theme up per the demo, you will need to install the following plugins
 * [Genesis eNews Extended by Brandon Kraft](https://wordpress.org/plugins/genesis-enews-extended/)
 * [Gravity Forms](premium plugin)
 
+For more information on how this plugin installation works, please visit http://tgmpluginactivation.com/.
+
 To address accessibility issues in WordPress and the Genesis Framework, the following plugins are recommended:
 
 * [Genesis Accessible](https://wordpress.org/plugins/genesis-accessible)

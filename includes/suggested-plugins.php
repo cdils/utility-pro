@@ -19,7 +19,7 @@
 /**
  * Include the TGM_Plugin_Activation class.
  */
-require_once dirname( __FILE__ ) . '/../includes-vendors/tgm-plugin-activation/class-tgm-plugin-activation.php';
+require_once dirname( __FILE__ ) . '/../vendor/tgmpa/tgm-plugin-activation/class-tgm-plugin-activation.php';
 
 add_action( 'tgmpa_register', 'utility_pro_register_required_plugins' );
 /**
