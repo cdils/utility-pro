@@ -58,6 +58,9 @@ toolkit.extendConfig( {
 			'style*'
 		]
 	},
+	css: {
+		outputStyle: 'expanded'
+	}
 } );
 
 toolkit.extendTasks( gulp, { /* gulp task overrides */
