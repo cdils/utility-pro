@@ -2,18 +2,37 @@
 	"name": "cdils/utility-pro",
 	"description": "Child theme for the Genesis Framework for WordPress",
 	"type": "wordpress-theme",
+	"license": "GPL-2.0+",
+	"homepage": "https://github.com/cdils/utility-pro",
 	"authors": [
 		{
 			"name": "Carrie Dils",
 			"email": "support@carriedils.com",
-			"homepage": "https://store.carriedils.com"
+			"homepage": "https://store.carriedils.com",
+			"role": "Developer"
+		},
+		{
+			"name": "Gary Jones",
+			"homepage": "https://gamajo.com",
+			"role": "Developer"
 		}
 	],
-	"config": {
-		"vendor-dir": "assets/composer"
+	"support": {
+		"email": "support@carriedils.com",
+		"issues": "https://github.com/cdils/utility-pro/issues",
+		"source": "https://github.com/cdils/utility-pro"
 	},
+	"config": {
+		"vendor-dir": "assets/composer",
+		"sort-order": true,
+		"optimize-autoloader": true
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true,
 	"require": {
-		"composer/installers": "^1.0",
-		"tgmpa/tgm-plugin-activation": "^2.5.2"
+		"php": ">=5.3.4",
+		"composer/installers": "^1.2",
+		"roave/security-advisories": "dev-master",
+		"tgmpa/tgm-plugin-activation": "^2.6.1"
 	}
 }
