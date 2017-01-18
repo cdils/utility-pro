@@ -72,7 +72,7 @@ Content Area
 .entry-content ol ol,
 .entry-content ul ul,
 .entry-content ol ul,
-.entry-content ul ol,{
+.entry-content ul ol {
 	margin-bottom: 0;
 }
 
@@ -214,7 +214,7 @@ Content Area
 }
 
 .comment-meta,
-.entry-comments
+.entry-comments,
 .comment,
 .entry-comments .comment-reply {
 	margin-bottom: 40px;

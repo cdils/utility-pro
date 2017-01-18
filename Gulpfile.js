@@ -16,7 +16,7 @@ toolkit.extendConfig( {
 		version: pkg.version,
 		license: pkg.license,
 		textdomain: pkg.name,
-		template: 'genesis',
+		template: 'genesis'
     },
 	src: {
 		zipuser: [

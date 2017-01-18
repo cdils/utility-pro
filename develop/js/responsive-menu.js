@@ -83,7 +83,7 @@
                 buttonLabel: 'Menu',
                 subMenuLabel: 'Sub Menu',
                 subMenuButtonLabel: 'Menu',
-                subMenuButtonText: 'Sub Menu',
+                subMenuButtonText: 'Sub Menu'
             },
             hoverClass: 'menu-item-hover',
             hoverDelay: 250,
