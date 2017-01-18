@@ -9,13 +9,14 @@ require( 'gulp-stats' )( gulp );
 
 toolkit.extendConfig( {
 	theme: {
-		name: "Utility Pro",
+		name: 'Utility Pro',
 		homepage: pkg.homepage,
 		description: pkg.description,
 		author: pkg.author,
 		version: pkg.version,
 		license: pkg.license,
-		textdomain: pkg.name
+		textdomain: pkg.name,
+		template: 'genesis',
     },
 	src: {
 		zipuser: [
