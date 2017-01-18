@@ -54,7 +54,7 @@ function utility_pro_register_widget_areas() {
 		),
 	);
 
-	$widget_areas = apply_filters( 'utility_pro_default_widget_areas', $widget_areas );
+	$widget_areas = (array) apply_filters( 'utility_pro_default_widget_areas', $widget_areas );
 
 	foreach ( $widget_areas as $widget_area ) {
 		genesis_register_sidebar( $widget_area );
