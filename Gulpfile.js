@@ -66,7 +66,6 @@ toolkit.extendConfig( {
 } );
 
 toolkit.extendTasks( gulp, { /* gulp task overrides */
-	'pre-commit': '',
 	'zip': [[ 'zipuser', 'zipdev' ]],
 	'zipuser': function() {
 		return gulp.src( toolkit.config.src.zipuser, { base: './' } )
