@@ -28,7 +28,7 @@ function utility_pro_homepage_setup() {
 	}
 
 	// Get static home page number.
-	$page = ( get_query_var( 'page' ) ) ? (int) get_query_var( 'page' ) : 1;
+	$page = get_query_var( 'page' ) ? (int) get_query_var( 'page' ) : 1;
 
 	// Only show home page widgets on page 1.
 	if ( 1 === $page ) {
