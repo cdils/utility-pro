@@ -3,10 +3,10 @@
 	<description>The code standard for Utility Pro is WordPress.</description>
 	<file>.</file>
 	<arg name="extensions" value="php"/>
-	<exclude-pattern>assets/*</exclude-pattern>
+	<exclude-pattern>develop/*</exclude-pattern>
 	<exclude-pattern>node_modules/*</exclude-pattern>
 	<exclude-pattern>dist/*</exclude-pattern>
-	<exclude-pattern>includes/vendors/*</exclude-pattern>
+	<exclude-pattern>includes-vendors/**/*</exclude-pattern>
 	<exclude-pattern>js/*</exclude-pattern>
 	<exclude-pattern>xml/*</exclude-pattern>
 	<arg name="report" value="full"/>
