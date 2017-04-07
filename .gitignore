@@ -16,3 +16,6 @@ node_modules/
 
 # Ignore .pot file
 /develop/languages/*.pot
+
+# Ignore local PHPCS config file
+phpcs.xml
