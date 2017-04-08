@@ -9,13 +9,17 @@ require( 'gulp-stats' )( gulp );
 
 toolkit.extendConfig( {
 	theme: {
-		name: 'Utility Pro',
-		homepage: pkg.homepage,
-		description: pkg.description,
-		author: pkg.author,
+		name: pkg.theme.name,
+		themeuri: pkg.homepage,
+		author: pkg.author.name,
+		authoruri: pkg.author.url,
+		description: pkg.theme.description,
 		version: pkg.version,
 		license: pkg.license,
+		licenseuri: pkg.theme.licenseuri,
 		textdomain: pkg.name,
+// 		domainpath: pkg.theme.domainpath, // Defaults to /languages.
+		tags: pkg.theme.tags,
 		template: 'genesis'
     },
 	src: {

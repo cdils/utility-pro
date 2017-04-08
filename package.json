@@ -1,17 +1,38 @@
 {
   "name": "utility-pro",
-  "homepage": "https://store.carriedils.com/downloads/utility-pro/",
   "version": "1.3.1",
   "description": "Utility Pro is a child theme for the Genesis Framework.",
-  "copyright": "2015",
-  "author": "Carrie Dils",
-  "repository": "https://github.com/cdils/utility-pro.git",
+  "homepage": "https://store.carriedils.com/downloads/utility-pro/",
+  "keywords": [
+    "Utility Pro",
+    "Genesis",
+    "WordPress",
+    "child theme"
+  ],
+  "bugs": {
+    "url": "https://github.com/cdils/utility-pro/issues"
+  },
   "license": "GPL-2.0+",
-  "main": "Gulpfile.js",
+  "author": {
+    "name": "Carrie Dils",
+    "url": "https://carriedils.com"
+  },
+  "contributors": [
+    "Gary Jones (https://gamajo.com)"
+  ],
+  "repository": "https://github.com/cdils/utility-pro",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-stats": "^0.0.4",
     "gulp-wp-toolkit": "^1.0.8",
     "gulp-zip": "^3.2.0"
+  },
+  "private": true,
+  "theme": {
+    "name": "Utility Pro",
+    "description": "No-nonsense, functional child theme created for the Genesis Framework.",
+    "tags": "black, purple, green, blue, red, one-column, two-columns, fixed-width, custom-menu, full-width-template, sticky-post, theme-options, threaded-comments, rtl-language-support, translation-ready",
+    "licenseuri": "http://www.opensource.org/licenses/gpl-license.php",
+    "domainpath": "/languages"
   }
 }
