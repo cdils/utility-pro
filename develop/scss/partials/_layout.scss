@@ -7,8 +7,8 @@ Structure and Layout
 
 .wrap {
 	margin: 0 auto;
-	padding: 0 5%;
 	max-width: 100%;
+	padding: 0 5%;
 	word-wrap: break-word;
 
 	@include media($medium-screen-up) {

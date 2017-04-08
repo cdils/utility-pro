@@ -43,13 +43,14 @@ Accessibility Extras - Taken from the Leiden theme & Genesis Accessible plugin (
 
 .genesis-skip-link {
 	margin: 0;
+
+	li {
+		height: 0;
+		list-style: none;
+		width: 0;
+	}
 }
 
-.genesis-skip-link li {
-	height: 0;
-	width: 0;
-	list-style: none;
-}
 
 /* Display outline on focus */
 :focus {

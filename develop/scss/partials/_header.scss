@@ -5,11 +5,12 @@ Site Header
 .site-header {
 	background: $white;
 	border-bottom: 1px solid lighten($black, 85);
+
+	.wrap {
+		padding: 20px 0;
+	}
 }
 
-.site-header .wrap {
-	padding: 20px 0;
-}
 
 /* Title Area
 --------------------------------------------- */
@@ -66,7 +67,7 @@ Site Header
 
 .header-image .site-title > a {
 
-	@include retina-image('images/logo', 260px auto, 'png', 'images/logo@2x');
+	@include retina-image("images/logo", 260px auto, "png", "images/logo@2x");
 
 	background-position: center;
 	background-repeat: no-repeat;
