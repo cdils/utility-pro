@@ -2,24 +2,33 @@
 /**
  * Utility Pro.
  *
- * @package      Utility_Pro
+ * @package      CDils\UtilityPro
  * @link         http://www.carriedils.com/utility-pro
  * @author       Carrie Dils
  * @copyright    Copyright (c) 2015, Carrie Dils
  * @license      GPL-2.0+
  */
 
+declare( strict_types = 1 );
+
+namespace CDils\UtilityPro;
+
 // Load internationalization components.
 // English users do not need to load the text domain and can comment out or remove.
+use BrightNucleus\Config\ConfigFactory;
+use CDils\UtilityPro\GoogleFont\Enriqueta;
+use CDils\UtilityPro\GoogleFont\OpenSans;
+
 load_child_theme_textdomain( 'utility-pro', get_stylesheet_directory() . '/languages' );
 
-// This file loads the Google fonts used in this theme.
-require get_stylesheet_directory() . '/includes/google-fonts.php';
+// Autoload dependencies.
+if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
+	require __DIR__ . '/vendor/autoload.php';
+}
 
-// This file contains search form improvements.
-require get_stylesheet_directory() . '/includes/class-search-form.php';
+define( 'UTILITY_PRO_CONFIG_DIR', __DIR__ . '/config/' );
 
-add_action( 'genesis_setup', 'utility_pro_setup', 15 );
+add_action( 'genesis_setup', __NAMESPACE__ . '\\setup', 15 );
 /**
  * Theme setup.
  *
@@ -28,11 +37,13 @@ add_action( 'genesis_setup', 'utility_pro_setup', 15 );
  *
  * @since 1.0.0
  */
-function utility_pro_setup() {
-
+function setup() {
 	define( 'CHILD_THEME_NAME', 'utility-pro' );
 	define( 'CHILD_THEME_URL', 'https://store.carriedils.com/utility-pro' );
 	define( 'CHILD_THEME_VERSION', '1.3.1' );
+
+	$config_file = UTILITY_PRO_CONFIG_DIR . 'defaults.php';
+	$config = ConfigFactory::createSubConfig($config_file, 'CDils\UtilityPro' );
 
 	// Add HTML5 markup structure.
 	add_theme_support( 'html5', array( 'caption', 'comment-form', 'comment-list', 'gallery', 'search-form' ) );
@@ -41,7 +52,9 @@ function utility_pro_setup() {
 	add_theme_support( 'genesis-responsive-viewport' );
 
 	// Add support for custom background.
-	add_theme_support( 'custom-background', array( 'wp-head-callback' => '__return_false' ) );
+	add_theme_support( 'custom-background', array(
+		'wp-head-callback' => '__return_false',
+	) );
 
 	// Add support for accessibility features.
 	add_theme_support( 'genesis-accessibility', array( '404-page', 'headings', 'skip-links' ) );
@@ -96,35 +109,45 @@ function utility_pro_setup() {
 	genesis_unregister_layout( 'sidebar-sidebar-content' );
 
 	// Register the default widget areas.
-	utility_pro_register_widget_areas();
+	$widget_areas = new WidgetAreas( $config->getSubConfig( 'WidgetAreas' ) );
+	$widget_areas->register();
 
 	// Add Utility Bar above header.
-	add_action( 'genesis_before_header', 'utility_pro_add_bar' );
+	add_action( 'genesis_before_header', __NAMESPACE__ . '\\add_bar' );
 
 	// Add featured image above posts.
-	add_filter( 'the_content', 'utility_pro_featured_image' );
+	add_filter( 'the_content', __NAMESPACE__ . '\\featured_image' );
 
-	// Add a navigation area above the site footer.
-	add_action( 'genesis_before_footer', 'utility_pro_do_footer_nav' );
 
 	// Remove Genesis archive pagination (Genesis pagination settings still apply).
 	remove_action( 'genesis_after_endwhile', 'genesis_posts_nav' );
 
 	// Add WordPress archive pagination (accessibility).
-	add_action( 'genesis_after_endwhile', 'utility_pro_post_pagination' );
+	add_action( 'genesis_after_endwhile', __NAMESPACE__ . '\\post_pagination' );
 
 	// Apply search form enhancements (accessibility).
-	add_filter( 'get_search_form', 'utility_pro_get_search_form', 25 );
+	add_filter( 'get_search_form', __NAMESPACE__ . '\\get_search_form', 25 );
 
 	// Load files in admin.
 	if ( is_admin() ) {
-
-		// Add suggested plugins nag.
-		include get_stylesheet_directory() . '/includes/suggested-plugins.php';
+		// Configure and register TGMPA functionality for suggested plugins.
+		$tgmpa = new Tgmpa( $config->getSubConfig( 'Tgmpa' ) );
+		$tgmpa->register();
 
 		// Add theme license (don't remove, unless you don't want theme support).
 		include get_stylesheet_directory() . '/includes/theme-license.php';
+	} else {
+		// Enqueue Google Fonts.
+		$google_fonts = new GoogleFonts();
+		$google_fonts->add( 'enriqueta', new Enriqueta() );
+		$google_fonts->add( 'opensans', new OpenSans() );
+		$google_fonts->enqueue();
+
+		// Footer nav.
+		$footer_nav = new FooterNav();
+		$footer_nav->apply();
 	}
+
 }
 
 /**
@@ -132,8 +155,7 @@ function utility_pro_setup() {
  *
  * @since 1.0.0
  */
-function utility_pro_add_bar() {
-
+function add_bar() {
 	genesis_widget_area( 'utility-bar', array(
 		'before' => '<div class="utility-bar"><div class="wrap">',
 		'after'  => '</div></div>',
@@ -153,8 +175,7 @@ function utility_pro_add_bar() {
  * @return null|string Return early if not a single post or there is no thumbnail.
  *                     Image and content markup otherwise.
  */
-function utility_pro_featured_image( $content ) {
-
+function featured_image( $content ) {
 	if ( ! is_singular( 'post' ) || ! has_post_thumbnail() ) {
 		return $content;
 	}
@@ -166,43 +187,32 @@ function utility_pro_featured_image( $content ) {
 	return $image . $content;
 }
 
-add_filter( 'genesis_footer_creds_text', 'utility_pro_footer_creds' );
+add_filter( 'genesis_footer_creds_text', __NAMESPACE__ . '\\footer_creds' );
 /**
  * Change the footer text.
  *
  * @since  1.0.0
  *
- * @param string $creds Existing credentials.
- *
  * @return string Footer credentials.
  */
-function utility_pro_footer_creds( $creds ) {
-
+function footer_creds() {
 	return 'Powered by WordPress and the <a href="https://store.carriedils.com/downloads/utility-pro/?utm_source=Utility%20Pro%20Footer%20Credits&utm_medium=Distributed%20Theme&utm_campaign=Utility%20Pro%20Theme" rel="nofollow">Utility Pro</a> theme for Genesis Framework.';
 }
 
-add_filter( 'genesis_author_box_gravatar_size', 'utility_pro_author_box_gravatar_size' );
+add_filter( 'genesis_author_box_gravatar_size', __NAMESPACE__ . '\\author_box_gravatar_size' );
 /**
  * Customize the Gravatar size in the author box.
  *
  * @since 1.0.0
  *
- * @param int $size Existing pixel size of gravatar.
- *
  * @return int Pixel size of gravatar.
  */
-function utility_pro_author_box_gravatar_size( $size ) {
+function author_box_gravatar_size() {
 	return 96;
 }
-
-// Add theme widget areas.
-include get_stylesheet_directory() . '/includes/widget-areas.php';
-
-// Add footer navigation components.
-include get_stylesheet_directory() . '/includes/footer-nav.php';
 
 // Add scripts to enqueue.
 include get_stylesheet_directory() . '/includes/enqueue-assets.php';
 
-// Miscellaenous functions used in theme configuration.
+// Miscellaneous functions used in theme configuration.
 include get_stylesheet_directory() . '/includes/theme-config.php';
