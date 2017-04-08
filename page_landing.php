@@ -4,25 +4,31 @@
  *
  * This file adds a Landing page template to Utility Pro.
  *
- * @package Utility_Pro
- * @author Carrie Dils
- * @license GPL-2.0+
+ * @package      CDils\UtilityPro
+ * @link         http://www.carriedils.com/utility-pro
+ * @author       Carrie Dils
+ * @copyright    Copyright (c) 2015, Carrie Dils
+ * @license      GPL-2.0+
  */
 
-add_filter( 'body_class', 'utility_add_body_class' );
+declare( strict_types = 1 );
+
+namespace CDils\UtilityPro;
+
+add_filter( 'body_class', 'utility_pro_add_body_class' );
 /**
  * Add custom body class.
  *
  * @since 1.1.0
+ * @since 2.0.0 Renamed from utility_add_body_class() to utility_pro_add_body_class().
  *
  * @param array $classes Existing body classes.
  * @return array Amended body classes.
  */
-function utility_add_body_class( $classes ) {
-
+function utility_pro_add_body_class( array $classes ) : array {
 	$classes[] = 'utility-landing';
-	return $classes;
 
+	return $classes;
 }
 
 // Full width layout.
@@ -42,8 +48,8 @@ remove_action( 'genesis_footer', 'genesis_do_footer' );
 remove_action( 'genesis_footer', 'genesis_footer_markup_close', 15 );
 
 // Remove elements specific to Utility Pro.
-remove_action( 'genesis_before_header', 'utility_pro_add_bar' );
-remove_action( 'genesis_before_footer', 'utility_pro_do_footer_nav' );
+remove_action( 'genesis_before_header', __NAMESPACE__ . '\\add_bar' );
+remove_action( 'genesis_before_footer', __NAMESPACE__ . '\\do_footer_nav' );
 
 // Run the Genesis loop.
 genesis();

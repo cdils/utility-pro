@@ -2,29 +2,34 @@
 /**
  * Utility Pro.
  *
- * @package      Utility_Pro
+ * @package      CDils\UtilityPro
  * @link         http://www.carriedils.com/utility-pro
  * @author       Carrie Dils
  * @copyright    Copyright (c) 2015, Carrie Dils
  * @license      GPL-2.0+
  */
 
+declare( strict_types = 1 );
+
+namespace CDils\UtilityPro;
+
 // Enable shortcodes in widgets.
 add_filter( 'widget_text', 'do_shortcode' );
 
-add_filter( 'theme_page_templates', 'utility_pro_remove_genesis_page_templates' );
+add_filter( 'theme_page_templates',  __NAMESPACE__ . '\\remove_genesis_page_templates' );
 /**
  * Remove Genesis Blog page template.
  *
  * @param array $page_templates Existing recognised page templates.
  * @return array Amended recognised page templates.
  */
-function utility_pro_remove_genesis_page_templates( $page_templates ) {
+function remove_genesis_page_templates( array $page_templates ) : array {
 	unset( $page_templates['page_blog.php'] );
+
 	return $page_templates;
 }
 
-add_filter( 'genesis_attr_nav-footer', 'utility_pro_add_nav_secondary_id' );
+add_filter( 'genesis_attr_nav-footer',  __NAMESPACE__ . '\\add_nav_secondary_id' );
 /**
  * Add ID to footer nav.
  *
@@ -37,21 +42,22 @@ add_filter( 'genesis_attr_nav-footer', 'utility_pro_add_nav_secondary_id' );
  * @param array $attributes Optional. Extra attributes to merge with defaults.
  * @return array Merged and filtered attributes.
  */
-function utility_pro_add_nav_secondary_id( $attributes ) {
+function add_nav_secondary_id( array $attributes ) : array {
 	$attributes['id'] = 'genesis-nav-footer';
+
 	return $attributes;
 }
 
-add_filter( 'genesis_skip_links_output', 'utility_pro_add_nav_secondary_skip_link' );
+add_filter( 'genesis_skip_links_output', __NAMESPACE__ . '\\add_nav_secondary_skip_link' );
 /**
  * Add skip link to footer navigation.
  *
  * @since 1.2.1
  *
- * @param array Default skiplinks.
+ * @param array $links Default skiplinks.
  * @return array Amended markup for Genesis skip links.
  */
-function utility_pro_add_nav_secondary_skip_link( $links ) {
+function add_nav_secondary_skip_link( array $links ) : array {
 	$new_links = $links;
 	array_splice( $new_links, 1 );
 
@@ -72,8 +78,9 @@ function utility_pro_add_nav_secondary_skip_link( $links ) {
  *
  * @return string Search form markup.
  */
-function utility_pro_get_search_form() {
-	$search = new Utility_Pro_Search_Form;
+function get_search_form() : string {
+	$search = new SearchForm;
+
 	return $search->get_form();
 }
 
@@ -87,7 +94,7 @@ function utility_pro_get_search_form() {
  *
  * @see the_posts_pagination()
  */
-function utility_pro_post_pagination() {
+function post_pagination() {
 	$args = array(
 		'mid_size' => 2,
 		'before_page_number' => '<span class="screen-reader-text">' . __( 'Page', 'utility-pro' ) . ' </span>',

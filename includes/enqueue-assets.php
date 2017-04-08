@@ -2,20 +2,24 @@
 /**
  * Utility Pro.
  *
- * @package      Utility_Pro
+ * @package      CDils\UtilityPro
  * @link         http://www.carriedils.com/utility-pro
- * @author       Carrie Dils
- * @copyright    Copyright (c) 2015, Carrie Dils
+ * @author       Gary Jones
+ * @copyright    Copyright (c) 2017, Carrie Dils
  * @license      GPL-2.0+
  */
 
-add_action( 'wp_enqueue_scripts', 'utility_pro_enqueue_assets' );
+declare( strict_types = 1 );
+
+namespace CDils\UtilityPro;
+
+add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\enqueue_assets' );
 /**
  * Enqueue theme assets.
  *
  * @since 1.0.0
  */
-function utility_pro_enqueue_assets() {
+function enqueue_assets() {
 
 	// Replace style.css with style-rtl.css for RTL languages.
 	wp_style_add_data( 'utility-pro', 'rtl', 'replace' );
@@ -54,6 +58,7 @@ function utility_pro_enqueue_assets() {
 
 	wp_enqueue_script( 'utility-pro-backstretch', get_stylesheet_directory_uri() . '/js/backstretch.min.js', array( 'jquery' ), '2.0.1', true );
 	wp_enqueue_script( 'utility-pro-backstretch-args', get_stylesheet_directory_uri() . '/js/backstretch.args.js', array( 'utility-pro-backstretch' ), CHILD_THEME_VERSION, true );
-	wp_localize_script( 'utility-pro', 'utilityBackstretchL10n', array( 'src' => get_background_image() ) );
-
+	wp_localize_script( 'utility-pro', 'utilityBackstretchL10n', array(
+		'src' => get_background_image(),
+	) );
 }
