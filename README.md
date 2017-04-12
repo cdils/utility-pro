@@ -56,6 +56,10 @@ If you have questions or issues, please get in touch with our support team here:
 
 https://store.carriedils.com/support/
 
+## CODE OF CONDUCT
+
+Please note that this project is released with a [Contributor Code of Conduct](code-of-conduct.md). By participating in this project you agree to abide by its terms.
+
 ## PROPS
 A special thanks to [Gary Jones](http://gamajo.com), who audited this code (trust me, if any mistakes remain, they are mine alone - Gary did his best to set me straight).
 
