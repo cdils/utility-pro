@@ -47,7 +47,7 @@ class SearchForm {
 			'label'        => apply_filters( 'genesis_search_form_label', __( 'Search site', 'utility-pro' ) ), // WPCS: prefix ok.
 			// Placeholder should be empty: http://www.nngroup.com/articles/form-design-placeholders/.
 			/** This filter is documented in genesis/lib/structure/search.php */
-			'placeholder'  => apply_filters( 'genesis_search_text', __( '', 'utility-pro' ) ), // WPCS: prefix ok.
+			'placeholder'  => apply_filters( 'genesis_search_text', '' ), // WPCS: prefix ok.
 			/** This filter is documented in genesis/lib/structure/search.php */
 			'button'       => apply_filters( 'genesis_search_button_text', __( 'Search', 'utility-pro' ) ), // WPCS: prefix ok.
 			/**

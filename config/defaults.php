@@ -13,10 +13,53 @@ declare( strict_types = 1 );
 
 namespace CDils\UtilityPro;
 
-$utility_pro_setup = [];
+// Configure theme support items here.
+$utility_pro_theme_support = [
+	// Add HTML5 markup structure.
+	'html5' => [ 'caption', 'comment-form', 'comment-list', 'gallery', 'search-form' ],
 
-$utility_pro_search_form = [];
+	// Add viewport meta tag for mobile browsers.
+	'genesis-responsive-viewport' => null,
 
+	// Add support for custom background.
+	'custom-background' => [
+		'wp-head-callback' => '__return_false',
+	],
+
+	// Add support for accessibility features.
+	 'genesis-accessibility' => [ '404-page', 'headings', 'skip-links' ],
+
+	// Add support for three footer widget areas.
+	 'genesis-footer-widgets' => 3,
+
+	// Add support for additional color style options.
+	'genesis-style-selector' => [
+		'utility-pro-purple' => __( 'Purple', 'utility-pro' ),
+		'utility-pro-green'  => __( 'Green', 'utility-pro' ),
+		'utility-pro-red'    => __( 'Red', 'utility-pro' ),
+	],
+
+	 // Add support for structural wraps (all default Genesis wraps unless noted).
+	 'genesis-structural-wraps' => [
+		'footer',
+		'footer-widgets',
+		'footernav',    // Custom.
+		'header',
+		'home-gallery', // Custom.
+		'menu-footer',  // Custom.
+		'nav',
+		'site-inner',
+		'site-tagline',
+	 ],
+
+	 // Add support for two navigation areas (theme doesn't use secondary navigation).
+	 'genesis-menus' => [
+		'primary' => __( 'Primary Navigation Menu', 'utility-pro' ),
+		'footer'  => __( 'Footer Navigation Menu', 'utility-pro' ),
+	 ],
+];
+
+// Configure recommended / required plugins and TGMPA configuration here.
 $utility_pro_tgmpa = [
 	'plugins' => [
 		[
@@ -52,33 +95,33 @@ $utility_pro_tgmpa = [
 			'installing'                      => __( 'Installing Plugin: %s', 'utility-pro' ),
 			'oops'                            => __( 'Something went wrong with the plugin API.', 'utility-pro' ),
 			/* translators: %s: plugin name(s) */
-			'notice_can_install_required'     => _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.' ),
+			'notice_can_install_required'     => _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.', 'utility-pro' ),
 			/* translators: %s: plugin name(s) */
-			'notice_can_install_recommended'  => _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.' ),
+			'notice_can_install_recommended'  => _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.', 'utility-pro' ),
 			/* translators: %s: plugin name(s) */
-			'notice_cannot_install'           => _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.' ),
+			'notice_cannot_install'           => _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.', 'utility-pro' ),
 			/* translators: %s: plugin name(s) */
-			'notice_can_activate_required'    => _n_noop( 'The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.' ),
+			'notice_can_activate_required'    => _n_noop( 'The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.', 'utility-pro' ),
 			/* translators: %s: plugin name(s) */
-			'notice_can_activate_recommended' => _n_noop( 'The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.' ),
+			'notice_can_activate_recommended' => _n_noop( 'The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.', 'utility-pro' ),
 			/* translators: %s: plugin name(s) */
-			'notice_cannot_activate'          => _n_noop( 'Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.' ),
+			'notice_cannot_activate'          => _n_noop( 'Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.', 'utility-pro' ),
 			/* translators: %s: plugin name(s) */
-			'notice_ask_to_update'            => _n_noop( 'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.' ),
+			'notice_ask_to_update'            => _n_noop( 'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.', 'utility-pro' ),
 			/* translators: %s: plugin name(s) */
-			'notice_cannot_update'            => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.' ),
-			'install_link'                    => _n_noop( 'Begin installing plugin', 'Begin installing plugins' ),
-			'activate_link'                   => _n_noop( 'Activate installed plugin', 'Activate installed plugins' ),
+			'notice_cannot_update'            => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.', 'utility-pro' ),
+			'install_link'                    => _n_noop( 'Begin installing plugin', 'Begin installing plugins', 'utility-pro' ),
+			'activate_link'                   => _n_noop( 'Activate installed plugin', 'Activate installed plugins', 'utility-pro' ),
 			'return'                          => __( 'Return to Required Plugins Installer', 'utility-pro' ),
 			'plugin_activated'                => __( 'Plugin activated successfully.', 'utility-pro' ),
 			/* translators: %s: dashboard link */
 			'complete'                        => __( 'All plugins installed and activated successfully. %s', 'utility-pro' ),
 			'nag_type'                        => 'updated', // Determines admin notice type - can only be 'updated' or 'error'.
 		],
-	]
+	],
 ];
 
-
+// Configure widget areas here.
 $utility_pro_widget_areas = [
 	[
 		'id'          => 'utility-bar',
@@ -92,22 +135,30 @@ $utility_pro_widget_areas = [
 	],
 	[
 		'id'          => 'utility-home-gallery-1',
+		/* translators: %d: Number of widget area. */
 		'name'        => sprintf( _x( 'Home Gallery %d', 'Group of Home Gallery widget areas', 'utility-pro' ), 1 ),
+		/* translators: %d: Number of widget area. */
 		'description' => sprintf( _x( 'Home Gallery %d widget area on home page.', 'Description of widget area', 'utility-pro' ), 1 ),
 	],
 	[
 		'id'          => 'utility-home-gallery-2',
+		/* translators: %d: Number of widget area. */
 		'name'        => sprintf( _x( 'Home Gallery %d', 'Group of Home Gallery widget areas', 'utility-pro' ), 2 ),
+		/* translators: %d: Number of widget area. */
 		'description' => sprintf( _x( 'Home Gallery %d widget area on home page.', 'Description of widget area', 'utility-pro' ), 2 ),
 	],
 	[
 		'id'          => 'utility-home-gallery-3',
+		/* translators: %d: Number of widget area. */
 		'name'        => sprintf( _x( 'Home Gallery %d', 'Group of Home Gallery widget areas', 'utility-pro' ), 3 ),
+		/* translators: %d: Number of widget area. */
 		'description' => sprintf( _x( 'Home Gallery %d widget area on home page.', 'Description of widget area', 'utility-pro' ), 3 ),
 	],
 	[
 		'id'          => 'utility-home-gallery-4',
+		/* translators: %d: Number of widget area. */
 		'name'        => sprintf( _x( 'Home Gallery %d', 'Group of Home Gallery widget areas', 'utility-pro' ), 4 ),
+		/* translators: %d: Number of widget area. */
 		'description' => sprintf( _x( 'Home Gallery %d widget area on home page.', 'Description of widget area', 'utility-pro' ), 4 ),
 	],
 	[
@@ -117,6 +168,7 @@ $utility_pro_widget_areas = [
 	],
 ];
 
+// Configure updater / license here.
 $utility_pro_updater = [
 	[
 		'remote_api_url' => 'https://store.carriedils.com', // Site where EDD is hosted.
@@ -154,14 +206,23 @@ $utility_pro_updater = [
 	],
 ];
 
+// Configure footer customisations here.
+$utility_pro_footer = [
+	'creds' => sprintf(
+		/* translators: %s: URL for Utility Pro. */
+		__( 'Powered by WordPress and the <a href="%s" rel="nofollow">Utility Pro</a> theme for Genesis Framework.', 'utility-pro' ),
+		esc_url( 'https://store.carriedils.com/downloads/utility-pro/?utm_source=Utility%20Pro%20Footer%20Credits&utm_medium=Distributed%20Theme&utm_campaign=Utility%20Pro%20Theme' )
+	),
+];
+
 return [
 	'CDils' => [
 		'UtilityPro' => [
-			'Setup'       => $utility_pro_setup,
-			'SearchForm'  => $utility_pro_search_form,
-			'Tgmpa'       => $utility_pro_tgmpa,
-			'WidgetAreas' => $utility_pro_widget_areas,
-			'Updater'     => $utility_pro_updater,
+			'ThemeSupport'      => $utility_pro_theme_support,
+			'Tgmpa'             => $utility_pro_tgmpa,
+			'WidgetAreas'       => $utility_pro_widget_areas,
+			'Updater'           => $utility_pro_updater,
+			'Footer'            => $utility_pro_footer,
 		],
 	],
 ];

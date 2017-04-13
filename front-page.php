@@ -30,7 +30,7 @@ function homepage_setup() {
 	);
 
 	// Return early if no sidebars are active.
-	if ( ! in_array( true, $home_sidebars ) ) {
+	if ( ! in_array( true, $home_sidebars, true ) ) {
 		return;
 	}
 
@@ -56,9 +56,6 @@ function homepage_setup() {
 		}
 	}
 
-	// Full width layout.
-	// Uncomment the filter below if you'd like a full-width layout on the front page.
-	// add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
 	// Filter site title markup to include an h1.
 	add_filter( 'genesis_site_title_wrap', __NAMESPACE__ . '\\return_h1' );
 
@@ -76,7 +73,7 @@ function homepage_setup() {
  *
  * @since 1.2.0
  */
-function return_h1( $wrap ) {
+function return_h1() {
 	return 'h1';
 }
 

@@ -38,64 +38,16 @@ add_action( 'genesis_setup', __NAMESPACE__ . '\\setup', 15 );
  * @since 1.0.0
  */
 function setup() {
-	define( 'CHILD_THEME_NAME', 'utility-pro' );
-	define( 'CHILD_THEME_URL', 'https://store.carriedils.com/utility-pro' );
-	define( 'CHILD_THEME_VERSION', '1.3.1' );
+	define( 'CHILD_THEME_NAME', 'utility-pro' ); // WPCS: prefix ok.
+	define( 'CHILD_THEME_URL', 'https://store.carriedils.com/utility-pro' );  // WPCS: prefix ok.
+	define( 'CHILD_THEME_VERSION', '1.3.1' );  // WPCS: prefix ok.
 
 	$config_file = UTILITY_PRO_CONFIG_DIR . 'defaults.php';
-	$config = ConfigFactory::createSubConfig($config_file, 'CDils\UtilityPro' );
+	$config = ConfigFactory::createSubConfig( $config_file, 'CDils\UtilityPro' );
 
-	// Add HTML5 markup structure.
-	add_theme_support( 'html5', array( 'caption', 'comment-form', 'comment-list', 'gallery', 'search-form' ) );
-
-	// Add viewport meta tag for mobile browsers.
-	add_theme_support( 'genesis-responsive-viewport' );
-
-	// Add support for custom background.
-	add_theme_support( 'custom-background', array(
-		'wp-head-callback' => '__return_false',
-	) );
-
-	// Add support for accessibility features.
-	add_theme_support( 'genesis-accessibility', array( '404-page', 'headings', 'skip-links' ) );
-
-	// Add support for three footer widget areas.
-	add_theme_support( 'genesis-footer-widgets', 3 );
-
-	// Add support for additional color style options.
-	add_theme_support(
-		'genesis-style-selector',
-		array(
-			'utility-pro-purple' => __( 'Purple', 'utility-pro' ),
-			'utility-pro-green'  => __( 'Green', 'utility-pro' ),
-			'utility-pro-red'    => __( 'Red', 'utility-pro' ),
-		)
-	);
-
-	// Add support for structural wraps (all default Genesis wraps unless noted).
-	add_theme_support(
-		'genesis-structural-wraps',
-		array(
-			'footer',
-			'footer-widgets',
-			'footernav',    // Custom.
-			'header',
-			'home-gallery', // Custom.
-			'menu-footer',  // Custom.
-			'nav',
-			'site-inner',
-			'site-tagline',
-		)
-	);
-
-	// Add support for two navigation areas (theme doesn't use secondary navigation).
-	add_theme_support(
-		'genesis-menus',
-		array(
-			'primary' => __( 'Primary Navigation Menu', 'utility-pro' ),
-			'footer'  => __( 'Footer Navigation Menu', 'utility-pro' ),
-		)
-	);
+	// Register theme support items, defined in config/defaults.php.
+	$theme_support = new ThemeSupport( $config->getSubConfig( 'ThemeSupport' ) );
+	$theme_support->register();
 
 	// Add custom image sizes.
 	add_image_size( 'feature-large', 960, 330, true );
@@ -108,25 +60,12 @@ function setup() {
 	genesis_unregister_layout( 'sidebar-content-sidebar' );
 	genesis_unregister_layout( 'sidebar-sidebar-content' );
 
+	add_filter( 'theme_page_templates',  __NAMESPACE__ . '\\remove_genesis_page_templates' );
+
 	// Register the default widget areas.
 	$widget_areas = new WidgetAreas( $config->getSubConfig( 'WidgetAreas' ) );
 	$widget_areas->register();
-
-	// Add Utility Bar above header.
-	add_action( 'genesis_before_header', __NAMESPACE__ . '\\add_bar' );
-
-	// Add featured image above posts.
-	add_filter( 'the_content', __NAMESPACE__ . '\\featured_image' );
-
-
-	// Remove Genesis archive pagination (Genesis pagination settings still apply).
-	remove_action( 'genesis_after_endwhile', 'genesis_posts_nav' );
-
-	// Add WordPress archive pagination (accessibility).
-	add_action( 'genesis_after_endwhile', __NAMESPACE__ . '\\post_pagination' );
-
-	// Apply search form enhancements (accessibility).
-	add_filter( 'get_search_form', __NAMESPACE__ . '\\get_search_form', 25 );
+	add_filter( 'widget_text', 'do_shortcode' );
 
 	// Load files in admin.
 	if ( is_admin() ) {
@@ -135,7 +74,8 @@ function setup() {
 		$tgmpa->register();
 
 		// Add theme license (don't remove, unless you don't want theme support).
-		include get_stylesheet_directory() . '/includes/theme-license.php';
+		$license = new Updater( $config->getSubConfig( 'Updater' ) );
+		$license->register();
 	} else {
 		// Enqueue Google Fonts.
 		$google_fonts = new GoogleFonts();
@@ -146,73 +86,40 @@ function setup() {
 		// Footer nav.
 		$footer_nav = new FooterNav();
 		$footer_nav->apply();
-	}
 
+		// Add Utility Bar above header.
+		$utility_bar = new UtilityBar();
+		$utility_bar->apply();
+
+		// Add accessibility enhancments.
+		$accessibility = new Accessibility();
+		$accessibility->apply();
+
+		// Add customizations for single posts.
+		$single_post = new SinglePost();
+		$single_post->apply();
+
+		// Add customizations to footer.
+		$footer = new Footer( $config->getSubConfig( 'Footer' ) );
+		$footer->apply();
+
+		add_filter( 'genesis_author_box_gravatar_size', function() {
+			return 96;
+		} );
+	}// End if().
 }
 
 /**
- * Add Utility Bar above header.
+ * Remove Genesis Blog page template.
  *
- * @since 1.0.0
+ * @param array $page_templates Existing recognised page templates.
+ * @return array Amended recognised page templates.
  */
-function add_bar() {
-	genesis_widget_area( 'utility-bar', array(
-		'before' => '<div class="utility-bar"><div class="wrap">',
-		'after'  => '</div></div>',
-	) );
-}
+function remove_genesis_page_templates( array $page_templates ) : array {
+	unset( $page_templates['page_blog.php'] );
 
-/**
- * Add featured image above single posts.
- *
- * Outputs image as part of the post content, so it's included in the RSS feed.
- * H/t to Robin Cornett for the suggestion of making image available to RSS.
- *
- * @since 1.0.0
- *
- * @param string $content Post content.
- *
- * @return null|string Return early if not a single post or there is no thumbnail.
- *                     Image and content markup otherwise.
- */
-function featured_image( $content ) {
-	if ( ! is_singular( 'post' ) || ! has_post_thumbnail() ) {
-		return $content;
-	}
-
-	$image = '<div class="featured-image">';
-	$image .= get_the_post_thumbnail( get_the_ID(), 'feature-large' );
-	$image .= '</div>';
-
-	return $image . $content;
-}
-
-add_filter( 'genesis_footer_creds_text', __NAMESPACE__ . '\\footer_creds' );
-/**
- * Change the footer text.
- *
- * @since  1.0.0
- *
- * @return string Footer credentials.
- */
-function footer_creds() {
-	return 'Powered by WordPress and the <a href="https://store.carriedils.com/downloads/utility-pro/?utm_source=Utility%20Pro%20Footer%20Credits&utm_medium=Distributed%20Theme&utm_campaign=Utility%20Pro%20Theme" rel="nofollow">Utility Pro</a> theme for Genesis Framework.';
-}
-
-add_filter( 'genesis_author_box_gravatar_size', __NAMESPACE__ . '\\author_box_gravatar_size' );
-/**
- * Customize the Gravatar size in the author box.
- *
- * @since 1.0.0
- *
- * @return int Pixel size of gravatar.
- */
-function author_box_gravatar_size() {
-	return 96;
+	return $page_templates;
 }
 
 // Add scripts to enqueue.
 include get_stylesheet_directory() . '/includes/enqueue-assets.php';
-
-// Miscellaneous functions used in theme configuration.
-include get_stylesheet_directory() . '/includes/theme-config.php';
