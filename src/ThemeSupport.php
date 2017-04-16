@@ -26,7 +26,7 @@ class ThemeSupport {
 	use ConfigTrait;
 
 	/**
-	 * Initialise Tgmpa object.
+	 * Initialise ThemeSupport object.
 	 *
 	 * @param ConfigInterface $config Config to parametrize the object.
 	 * @throws RuntimeException       If the Config could not be parsed correctly.
@@ -36,7 +36,7 @@ class ThemeSupport {
 	}
 
 	/**
-	 * Register plugins with TGMPA.
+	 * Register theme support items.
 	 */
 	public function register() {
 		foreach ( $this->config->getArrayCopy() as $key => $value ) {

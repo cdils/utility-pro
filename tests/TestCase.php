@@ -14,6 +14,7 @@ declare( strict_types = 1 );
 namespace CDils\UtilityPro\Tests;
 
 use Brain\Monkey;
+use Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
 use PHPUnit\Framework\TestCase as PHPUnitTestCase;
 
 /**
@@ -23,6 +24,8 @@ use PHPUnit\Framework\TestCase as PHPUnitTestCase;
  * @since   1.0.0
  */
 abstract class TestCase extends PHPUnitTestCase {
+
+	use MockeryPHPUnitIntegration;
 
 	/**
 	 * Prepares the test environment before each test.

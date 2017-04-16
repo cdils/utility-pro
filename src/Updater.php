@@ -46,7 +46,7 @@ class Updater {
 	 * Register license page.
 	 */
 	public function register() {
-		if ( ! class_exists( 'EDD_Theme_Updater_Admin' ) ) {
+		if ( ! \class_exists( 'EDD_Theme_Updater_Admin' ) ) {
 			include __DIR__ . '/../includes-vendors/edd-software-licensing/theme-license-admin.php';
 		}
 		$updater = $this->config->getArrayCopy();
@@ -63,9 +63,9 @@ class Updater {
 	 * @author Gary Jones
 	 */
 	public function move_license_page_menu_item() {
-		$page = remove_submenu_page( 'themes.php', 'utility-pro-license' );
-		if ( is_array( $page ) ) {
-			add_submenu_page( 'genesis', $page[3], $page[0], $page[1], $page[2], [ $this->pagehook, 'license_page' ] );
+		$page = \remove_submenu_page( 'themes.php', 'utility-pro-license' );
+		if ( \is_array( $page ) ) {
+			\add_submenu_page( 'genesis', $page[3], $page[0], $page[1], $page[2], [ $this->pagehook, 'license_page' ] );
 		}
 	}
 }

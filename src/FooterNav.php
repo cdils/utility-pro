@@ -40,9 +40,8 @@ class FooterNav {
 	 * @since  1.0.0
 	 */
 	public function do_footer_nav() {
-		echo
-		wp_kses_post(
-			genesis_nav_menu(
+		echo \wp_kses_post(
+			\genesis_get_nav_menu(
 				[
 					'menu_class'     => 'menu genesis-nav-menu menu-footer',
 					'theme_location' => 'footer',

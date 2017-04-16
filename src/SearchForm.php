@@ -41,7 +41,7 @@ class SearchForm {
 	 *
 	 * @param array $strings Optional. Array of strings. Default is an empty array.
 	 */
-	public function __construct( array $strings = [] ) {
+	public function __construct( array $strings = null ) {
 		$default_strings = [
 			/** This filter is documented in genesis/lib/structure/search.php */
 			'label'        => apply_filters( 'genesis_search_form_label', __( 'Search site', 'utility-pro' ) ), // WPCS: prefix ok.
@@ -60,7 +60,7 @@ class SearchForm {
 			'button_label' => apply_filters( 'genesis_search_button_label', __( 'Search', 'utility-pro' ) ), // WPCS: prefix ok.
 		];
 
-		$this->strings = wp_parse_args( $strings, $default_strings );
+		$this->strings = \wp_parse_args( $strings ?? [], $default_strings );
 	}
 
 	/**
@@ -88,9 +88,9 @@ class SearchForm {
 	 * @return string Form markup.
 	 */
 	public function get_form() : string {
-		return sprintf(
+		return \sprintf(
 			'<form method="get" action="%s" role="search" class="search-form">%s</form>',
-			esc_url( home_url( '/' ) ),
+			\esc_url( home_url( '/' ) ),
 			$this->get_label() . $this->get_input() . $this->get_button()
 		);
 	}
@@ -103,10 +103,10 @@ class SearchForm {
 	 * @return string Label markup.
 	 */
 	protected function get_label() : string {
-		return sprintf(
+		return \sprintf(
 			'<label for="%s" class="screen-reader-text">%s</label>',
-			esc_attr( $this->get_id() ),
-			esc_attr( $this->strings( 'label' ) )
+			\esc_attr( $this->get_id() ),
+			\esc_attr( $this->strings( 'label' ) )
 		);
 	}
 
@@ -118,13 +118,13 @@ class SearchForm {
 	 * @return string Input field markup.
 	 */
 	protected function get_input() : string {
-		$value = get_search_query() ? apply_filters( 'the_search_query', get_search_query() ) : ''; // WPCS: prefix ok.
+		$value = \get_search_query() ? apply_filters( 'the_search_query', \get_search_query() ) : ''; // WPCS: prefix ok.
 
-		return sprintf(
+		return \sprintf(
 			'<input type="search" name="s" id="%s" value="%s" placeholder="%s" autocomplete="off" />',
-			esc_attr( $this->get_id() ),
-			esc_attr( $value ),
-			esc_attr( $this->strings( 'placeholder' ) )
+			\esc_attr( $this->get_id() ),
+			\esc_attr( $value ),
+			\esc_attr( $this->strings( 'placeholder' ) )
 		);
 	}
 
@@ -136,9 +136,9 @@ class SearchForm {
 	 * @return string Button markup.
 	 */
 	protected function get_button() : string {
-		return sprintf(
+		return \sprintf(
 			'<button type="submit" aria-label="%s"><span class="search-button-text">%s</span></button>',
-			esc_attr( $this->strings( 'button_label' ) ),
+			\esc_attr( $this->strings( 'button_label' ) ),
 			$this->strings( 'button' )
 		);
 	}
@@ -152,7 +152,7 @@ class SearchForm {
 	 */
 	protected function get_id() : string {
 		if ( null === $this->unique_id ) {
-			$this->unique_id = 'searchform-' . uniqid( '', true );
+			$this->unique_id = 'searchform-' . \uniqid( '', true );
 		}
 
 		return $this->unique_id;

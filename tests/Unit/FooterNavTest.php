@@ -19,7 +19,7 @@ use CDils\UtilityPro\Tests\TestCase;
 
 
 /**
- * Class Footer.
+ * Class FooterNav.
  *
  * @package CDils\UtilityPro\Tests\Unit
  */
@@ -33,10 +33,14 @@ class FooterNavTest extends TestCase {
 
 		( new FooterNav() )->apply();
 
-		$this->assertTrue( has_action( 'genesis_before_footer', 'CDils\UtilityPro\FooterNav->do_footer_nav()' ), 'do_footer_nav() not added' );
-		$this->assertTrue( has_filter( 'wp_nav_menu_args', 'CDils\UtilityPro\FooterNav->footer_menu_args()' ), 'footer_menu_args() not added.' );
-		$this->assertTrue( has_filter( 'genesis_attr_nav-footer', 'genesis_attributes_nav' ), 'genesis_attributes_nav() not added.' );
-		$this->assertTrue( has_filter( 'genesis_attr_nav-footer',  'CDils\UtilityPro\FooterNav->add_nav_secondary_id()' ), 'add_nav_secondary_id() not added.' );
+		static::assertTrue( has_action( 'genesis_before_footer', 'CDils\UtilityPro\FooterNav->do_footer_nav()' ),
+		'do_footer_nav() not added' );
+		static::assertTrue( has_filter( 'wp_nav_menu_args', 'CDils\UtilityPro\FooterNav->footer_menu_args()' ),
+		'footer_menu_args() not added.' );
+		static::assertTrue( has_filter( 'genesis_attr_nav-footer', 'genesis_attributes_nav' ),
+		'genesis_attributes_nav() not added.' );
+		static::assertTrue( has_filter( 'genesis_attr_nav-footer',  'CDils\UtilityPro\FooterNav->add_nav_secondary_id()' ),
+		'add_nav_secondary_id() not added.' );
 	}
 
 	/**
@@ -52,7 +56,7 @@ class FooterNavTest extends TestCase {
 			'depth' => 1,
 		];
 
-		$this->assertSame( $expected, ( new FooterNav() )->footer_menu_args( $args ) );
+		static::assertSame( $expected, ( new FooterNav() )->footer_menu_args( $args ) );
 	}
 
 	/**
@@ -65,7 +69,7 @@ class FooterNavTest extends TestCase {
 
 		$expected = $args;
 
-		$this->assertSame( $expected, ( new FooterNav() )->footer_menu_args( $args ) );
+		static::assertSame( $expected, ( new FooterNav() )->footer_menu_args( $args ) );
 	}
 
 	/**
@@ -78,6 +82,6 @@ class FooterNavTest extends TestCase {
 			'id' => 'genesis-nav-footer',
 		];
 
-		$this->assertSame( $expected, ( new FooterNav() )->add_nav_secondary_id( $attributes ) );
+		static::assertSame( $expected, ( new FooterNav() )->add_nav_secondary_id( $attributes ) );
 	}
 }

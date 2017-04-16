@@ -36,7 +36,7 @@ class GoogleFonts {
 	 * @param GoogleFont $font Registry item.
 	 */
 	public function add( string $id, GoogleFont $font ) {
-		if ( ! in_array( $id, $this->fonts, true ) && $font->is_on() ) {
+		if ( ! \in_array( $id, $this->fonts, true ) && $font->is_on() ) {
 			$this->fonts[ $id ] = $font;
 		}
 	}
@@ -49,7 +49,7 @@ class GoogleFonts {
 			return;
 		}
 
-		wp_enqueue_style( 'utility-pro-fonts', $this->fonts_url(), [], null );
+		\wp_enqueue_style( 'utility-pro-fonts', $this->fonts_url(), [], null );
 	}
 
 	/**
@@ -66,10 +66,10 @@ class GoogleFonts {
 		}
 
 		$query_args = [
-			'family' => rawurlencode( implode( '|', $font_families ) ),
-			'subset' => rawurlencode( 'latin,latin-ext' ),
+			'family' => \rawurlencode( \implode( '|', $font_families ) ),
+			'subset' => \rawurlencode( 'latin,latin-ext' ),
 		];
 
-		return add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+		return \add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
 	}
 }

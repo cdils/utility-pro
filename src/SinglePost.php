@@ -42,12 +42,12 @@ class SinglePost {
 	 *                     Image and content markup otherwise.
 	 */
 	public function featured_image( $content ) {
-		if ( ! is_singular( 'post' ) || ! has_post_thumbnail() ) {
+		if ( ! \is_singular( 'post' ) || ! \has_post_thumbnail() ) {
 			return $content;
 		}
 
 		$image = '<div class="featured-image">';
-		$image .= get_the_post_thumbnail( get_the_ID(), 'feature-large' );
+		$image .= \get_the_post_thumbnail( \get_the_ID(), 'feature-large' );
 		$image .= '</div>';
 
 		return $image . $content;

@@ -32,10 +32,10 @@ class UtilityBar {
 	 *
 	 * @since 1.0.0
 	 */
-	function add_bar() {
-		genesis_widget_area( 'utility-bar', array(
+	public function add_bar() {
+		\genesis_widget_area( 'utility-bar', [
 			'before' => '<div class="utility-bar"><div class="wrap">',
 			'after'  => '</div></div>',
-		) );
+		] );
 	}
 }

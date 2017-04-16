@@ -39,8 +39,13 @@ class Tgmpa {
 	 * Register plugins with TGMPA.
 	 */
 	public function register() {
-		add_action( 'tgmpa_register', function () {
-			tgmpa( $this->config->getKey( 'plugins' ), $this->config->getKey( 'config' ) );
-		} );
+		add_action( 'tgmpa_register', [ $this, 'tgmpa' ] );
+	}
+
+	/**
+	 * Initialise TGMPA.
+	 */
+	public function tgmpa() {
+		\tgmpa( $this->config->getKey( 'plugins' ), $this->config->getKey( 'config' ) );
 	}
 }

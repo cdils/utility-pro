@@ -46,14 +46,14 @@ class Accessibility {
 	 */
 	public function add_nav_secondary_skip_link( array $links ) : array {
 		$new_links = $links;
-		$new_links = array_reverse( $new_links );
-		array_splice( $new_links, 1 );
+		$new_links = \array_reverse( $new_links );
+		\array_splice( $new_links, 1 );
 
-		if ( has_nav_menu( 'footer' ) ) {
+		if ( \has_nav_menu( 'footer' ) ) {
 			$new_links['genesis-nav-footer'] = __( 'Skip to footer navigation', 'utility-pro' );
 		}
 
-		return array_merge( $links, $new_links );
+		return \array_merge( $links, $new_links );
 	}
 
 	/**
@@ -88,10 +88,10 @@ class Accessibility {
 			'before_page_number' => '<span class="screen-reader-text">' . __( 'Page', 'utility-pro' ) . ' </span>',
 		];
 
-		if ( 'numeric' === genesis_get_option( 'posts_nav' ) ) {
-			the_posts_pagination( $args );
+		if ( 'numeric' === \genesis_get_option( 'posts_nav' ) ) {
+			\the_posts_pagination( $args );
 		} else {
-			the_posts_navigation( $args );
+			\the_posts_navigation( $args );
 		}
 	}
 }
