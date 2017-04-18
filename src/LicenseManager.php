@@ -18,7 +18,7 @@ use BrightNucleus\Config\ConfigTrait;
 use BrightNucleus\Exception\RuntimeException;
 
 /**
- * Updater class.
+ * License manager class.
  *
  * @package CDils\UtilityPro
  */
@@ -33,7 +33,7 @@ class LicenseManager {
 	protected $edd_theme_updater_admin;
 
 	/**
-	 * Initialise License object.
+	 * Initialise license manager object.
 	 *
 	 * @param ConfigInterface $config Config to parametrize the object.
 	 * @throws RuntimeException       If the Config could not be parsed correctly.

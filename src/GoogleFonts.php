@@ -42,7 +42,7 @@ class GoogleFonts {
 	}
 
 	/**
-	 * Register widget areas.
+	 * Enqueue Google fonts styles.
 	 */
 	public function enqueue() {
 		if ( empty( $this->fonts ) ) {
@@ -50,6 +50,15 @@ class GoogleFonts {
 		}
 
 		\wp_enqueue_style( 'utility-pro-fonts', $this->fonts_url(), [], null );
+	}
+
+	/**
+	 * Get list of fonts in registry.
+	 *
+	 * @return array Registered fonts.
+	 */
+	public function get_fonts() : array {
+		return $this->fonts;
 	}
 
 	/**
