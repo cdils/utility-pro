@@ -33,27 +33,23 @@ class Accessibility {
 		// Apply search form enhancements (accessibility).
 		add_filter( 'get_search_form', [ $this, 'get_search_form' ], 25 );
 
-		add_filter( 'genesis_skip_links_output', [ $this, 'add_nav_secondary_skip_link' ] );
+		add_filter( 'genesis_skip_links_output', [ $this, 'add_secondary_nav_skip_link' ] );
 	}
 
 	/**
-	 * Add skip link to footer navigation.
+	 * Add skip link for footer navigation.
 	 *
 	 * @since 1.2.1
 	 *
 	 * @param array $links Default skiplinks.
 	 * @return array Amended markup for Genesis skip links.
 	 */
-	public function add_nav_secondary_skip_link( array $links ) : array {
-		$new_links = $links;
-		$new_links = \array_reverse( $new_links );
-		\array_splice( $new_links, 1 );
-
+	public function add_secondary_nav_skip_link( array $links ) : array {
 		if ( \has_nav_menu( 'footer' ) ) {
-			$new_links['genesis-nav-footer'] = __( 'Skip to footer navigation', 'utility-pro' );
+			$links['genesis-nav-footer'] = __( 'Skip to footer navigation', 'utility-pro' );
 		}
 
-		return \array_merge( $links, $new_links );
+		return $links;
 	}
 
 	/**

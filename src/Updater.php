@@ -65,6 +65,7 @@ class Updater {
 	public function move_license_page_menu_item() {
 		$page = \remove_submenu_page( 'themes.php', 'utility-pro-license' );
 		if ( \is_array( $page ) ) {
+			/* @var array $page */
 			\add_submenu_page( 'genesis', $page[3], $page[0], $page[1], $page[2], [ $this->pagehook, 'license_page' ] );
 		}
 	}

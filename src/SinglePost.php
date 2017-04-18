@@ -38,15 +38,15 @@ class SinglePost {
 	 *
 	 * @param string $content Post content.
 	 *
-	 * @return null|string Return early if not a single post or there is no thumbnail.
+	 * @return string Return early if not a single post or there is no thumbnail.
 	 *                     Image and content markup otherwise.
 	 */
-	public function featured_image( $content ) {
+	public function featured_image( string $content ) : string {
 		if ( ! \is_singular( 'post' ) || ! \has_post_thumbnail() ) {
 			return $content;
 		}
 
-		$image = '<div class="featured-image">';
+		$image  = '<div class="featured-image">';
 		$image .= \get_the_post_thumbnail( \get_the_ID(), 'feature-large' );
 		$image .= '</div>';
 

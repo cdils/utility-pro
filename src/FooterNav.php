@@ -58,7 +58,7 @@ class FooterNav {
 	 * @param  array $args Existing footer menu args.
 	 * @return array Amended footer menu args.
 	 */
-	public function footer_menu_args( $args ) {
+	public function footer_menu_args( array $args ) : array {
 		if ( 'footer' !== $args['theme_location'] ) {
 			return $args;
 		}

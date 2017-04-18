@@ -64,20 +64,20 @@ class SearchForm {
 	}
 
 	/**
-	 * Get one or all strings.
+	 * Get one string.
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param string $key Optional. Identifier for which string to return. Default is 'all'.
+	 * @param string $key Identifier for which string to return.
 	 *
-	 * @return string|array String if key is not 'all', and key exists. Array of all strings otherwise.
+	 * @return string String corresponding to key.
 	 */
-	protected function strings( string $key = 'all' ) {
-		if ( 'all' !== $key && isset( $this->strings[ $key ] ) ) {
+	protected function get_string( string $key ) : string {
+		if ( null !== $key && isset( $this->strings[ $key ] ) ) {
 			return $this->strings[ $key ];
 		}
 
-		return $this->strings;
+		return '';
 	}
 
 	/**
@@ -90,7 +90,7 @@ class SearchForm {
 	public function get_form() : string {
 		return \sprintf(
 			'<form method="get" action="%s" role="search" class="search-form">%s</form>',
-			\esc_url( home_url( '/' ) ),
+			\esc_url( \home_url( '/' ) ),
 			$this->get_label() . $this->get_input() . $this->get_button()
 		);
 	}
@@ -106,7 +106,7 @@ class SearchForm {
 		return \sprintf(
 			'<label for="%s" class="screen-reader-text">%s</label>',
 			\esc_attr( $this->get_id() ),
-			\esc_attr( $this->strings( 'label' ) )
+			\esc_attr( $this->get_string( 'label' ) )
 		);
 	}
 
@@ -124,7 +124,7 @@ class SearchForm {
 			'<input type="search" name="s" id="%s" value="%s" placeholder="%s" autocomplete="off" />',
 			\esc_attr( $this->get_id() ),
 			\esc_attr( $value ),
-			\esc_attr( $this->strings( 'placeholder' ) )
+			\esc_attr( $this->get_string( 'placeholder' ) )
 		);
 	}
 
@@ -138,8 +138,8 @@ class SearchForm {
 	protected function get_button() : string {
 		return \sprintf(
 			'<button type="submit" aria-label="%s"><span class="search-button-text">%s</span></button>',
-			\esc_attr( $this->strings( 'button_label' ) ),
-			$this->strings( 'button' )
+			\esc_attr( $this->get_string( 'button_label' ) ),
+			$this->get_string( 'button' )
 		);
 	}
 
