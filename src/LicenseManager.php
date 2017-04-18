@@ -22,7 +22,7 @@ use BrightNucleus\Exception\RuntimeException;
  *
  * @package CDils\UtilityPro
  */
-class Updater {
+class LicenseManager {
 	use ConfigTrait;
 
 	/**
@@ -30,7 +30,7 @@ class Updater {
 	 *
 	 * @var string
 	 */
-	protected $pagehook;
+	protected $edd_theme_updater_admin;
 
 	/**
 	 * Initialise License object.
@@ -50,7 +50,7 @@ class Updater {
 			include __DIR__ . '/../includes-vendors/edd-software-licensing/theme-license-admin.php';
 		}
 		$updater = $this->config->getArrayCopy();
-		$this->pagehook = new \EDD_Theme_Updater_Admin( $updater[0], $updater[1] );
+		$this->edd_theme_updater_admin = new \EDD_Theme_Updater_Admin( $updater[0], $updater[1] );
 		add_action( 'admin_menu', [ $this, 'move_license_page_menu_item' ], 12 );
 	}
 
@@ -66,7 +66,7 @@ class Updater {
 		$page = \remove_submenu_page( 'themes.php', 'utility-pro-license' );
 		if ( \is_array( $page ) ) {
 			/* @var array $page */
-			\add_submenu_page( 'genesis', $page[3], $page[0], $page[1], $page[2], [ $this->pagehook, 'license_page' ] );
+			\add_submenu_page( 'genesis', $page[3], $page[0], $page[1], $page[2], [ $this->edd_theme_updater_admin, 'license_page' ] );
 		}
 	}
 }

@@ -28,7 +28,6 @@ class AccessibilityTest extends TestCase {
 	 * Test that footer nav hooks are applied.
 	 */
 	public function test_footernav_hooks_are_applied() {
-
 		( new Accessibility() )->apply();
 
 		static::assertFalse( has_action( 'genesis_after_endwhile', 'genesis_posts_nav' ),

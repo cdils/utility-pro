@@ -74,7 +74,7 @@ function setup() {
 		$tgmpa->register();
 
 		// Add theme license (don't remove, unless you don't want theme support).
-		$license = new Updater( $config->getSubConfig( 'Updater' ) );
+		$license = new LicenseManager( $config->getSubConfig( 'Updater' ) );
 		$license->register();
 	} else {
 		// Enqueue Google Fonts.
