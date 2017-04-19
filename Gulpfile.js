@@ -66,6 +66,21 @@ toolkit.extendConfig( {
 	},
 	css: {
 		outputStyle: 'expanded'
+	},
+	js: {
+		'utility-pro-backstretch': [
+			'develop/js/backstretch.min.js',
+			'develop/js/backstretch.args.js'
+		],
+		'utility-pro-keyboard-dropdown': [
+			'develop/js/genwpacc-dropdown.js'
+		],
+		'utility-pro-responsive-menu': [
+			'develop/js/responsive-menu.js'
+		],
+		'utility-pro-responsive-menu-args': [
+			'develop/js/responsive-menu.args.js'
+		]
 	}
 } );
 

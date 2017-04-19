@@ -20,45 +20,45 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\enqueue_assets' );
  * @since 1.0.0
  */
 function enqueue_assets() {
+	$suffix = \defined( 'WP_DEBUG' ) && WP_DEBUG ? '.min.js' : '.js';
 
 	// Replace style.css with style-rtl.css for RTL languages.
-	wp_style_add_data( 'utility-pro', 'rtl', 'replace' );
+	\wp_style_add_data( 'utility-pro', 'rtl', 'replace' );
 
 	// Keyboard navigation (dropdown menus) script.
-	wp_enqueue_script( 'genwpacc-dropdown',  get_stylesheet_directory_uri() . '/js/genwpacc-dropdown.js', array( 'jquery' ), false, true );
+	\wp_enqueue_script( 'utility-pro-keyboard-dropdown',  \get_stylesheet_directory_uri() . '/js/keyboard-dropdown' . $suffix, [ 'jquery' ], CHILD_THEME_VERSION, true );
 
 	// Load mobile responsive menu.
-	wp_enqueue_script( 'utility-pro-responsive-menu', get_stylesheet_directory_uri() . '/js/responsive-menu.min.js', array( 'jquery' ), '1.0.0', true );
+	\wp_enqueue_script( 'utility-pro-responsive-menu', \get_stylesheet_directory_uri() . '/js/responsive-menu' . $suffix, [ 'jquery' ], '1.0.0', true );
 
-	$localize_primary = array(
+	$localize_primary = [
 		'buttonText'     => __( 'Menu', 'utility-pro' ),
 		'buttonLabel'    => __( 'Primary Navigation Menu', 'utility-pro' ),
 		'subButtonText'  => __( 'Sub Menu', 'utility-pro' ),
 		'subButtonLabel' => __( 'Sub Menu', 'utility-pro' ),
-	);
+	];
 
-	$localize_footer = array(
+	$localize_footer = [
 		'buttonText'     => __( 'Footer Menu', 'utility-pro' ),
 		'buttonLabel'    => __( 'Footer Navigation Menu', 'utility-pro' ),
 		'subButtonText'  => __( 'Sub Menu', 'utility-pro' ),
 		'subButtonLabel' => __( 'Sub Menu', 'utility-pro' ),
-	);
+	];
 
 	// Localize the responsive menu script (for translation).
-	wp_localize_script( 'utility-pro-responsive-menu', 'utilityMenuPrimaryL10n', $localize_primary );
-	wp_localize_script( 'utility-pro-responsive-menu', 'utilityMenuFooterL10n', $localize_footer );
+	\wp_localize_script( 'utility-pro-responsive-menu', 'utilityProMenuPrimaryL10n', $localize_primary );
+	\wp_localize_script( 'utility-pro-responsive-menu', 'utilityProMenuFooterL10n', $localize_footer );
 
-	wp_enqueue_script( 'utility-pro', get_stylesheet_directory_uri() . '/js/responsive-menu.args.js', array( 'utility-pro-responsive-menu' ), CHILD_THEME_VERSION, true );
+	\wp_enqueue_script( 'utility-pro-responsive-menu-args', \get_stylesheet_directory_uri() . '/js/responsive-menu-args' . $suffix, [ 'utility-pro-responsive-menu' ], CHILD_THEME_VERSION, true );
 
 	// Load Backstretch scripts only if custom background is being used
 	// and we're on the home page or a page using the landing page template.
-	if ( ! get_background_image() || ( ! ( is_front_page() || is_page_template( 'page_landing.php' ) ) ) ) {
+	if ( ! \get_background_image() || ( ! ( \is_front_page() || \is_page_template( 'page_landing.php' ) ) ) ) {
 		return;
 	}
 
-	wp_enqueue_script( 'utility-pro-backstretch', get_stylesheet_directory_uri() . '/js/backstretch.min.js', array( 'jquery' ), '2.0.1', true );
-	wp_enqueue_script( 'utility-pro-backstretch-args', get_stylesheet_directory_uri() . '/js/backstretch.args.js', array( 'utility-pro-backstretch' ), CHILD_THEME_VERSION, true );
-	wp_localize_script( 'utility-pro', 'utilityBackstretchL10n', array(
-		'src' => get_background_image(),
-	) );
+	\wp_enqueue_script( 'utility-pro-backstretch', \get_stylesheet_directory_uri() . '/js/backstretch' . $suffix, [ 'jquery' ], '2.0.1', true );
+	\wp_localize_script( 'utility-pro', 'utilityProBackstretchL10n', [
+		'src' => \get_background_image(),
+	] );
 }

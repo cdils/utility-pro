@@ -5,13 +5,13 @@ jQuery( function( $ ) {
 
     $( '.nav-primary' ).gamajoResponsiveAccessibleMenu(
         {
-            l10n: utilityMenuPrimaryL10n
+            l10n: utilityProMenuPrimaryL10n
         }
     );
 
     $( '.nav-footer' ).gamajoResponsiveAccessibleMenu(
         {
-            l10n: utilityMenuFooterL10n,
+            l10n: utilityProMenuFooterL10n,
             navSelector: '.nav-footer',
             mainMenuButtonClass: 'footer-menu-toggle'
         }
