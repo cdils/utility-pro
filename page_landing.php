@@ -52,4 +52,4 @@ remove_action( 'genesis_before_header', __NAMESPACE__ . '\\add_bar' );
 remove_action( 'genesis_before_footer', __NAMESPACE__ . '\\do_footer_nav' );
 
 // Run the Genesis loop.
-genesis();
+\genesis();

@@ -23,19 +23,19 @@ add_action( 'genesis_meta', __NAMESPACE__ . '\\homepage_setup' );
  * @since 1.0.0
  */
 function homepage_setup() {
-	$home_sidebars = array(
-		'home_welcome' 	   => is_active_sidebar( 'utility-home-welcome' ),
-		'home_gallery_1'   => is_active_sidebar( 'utility-home-gallery-1' ),
-		'call_to_action'   => is_active_sidebar( 'utility-call-to-action' ),
-	);
+	$home_sidebars = [
+		'home_welcome'   => \is_active_sidebar( 'utility-home-welcome' ),
+		'home_gallery_1' => \is_active_sidebar( 'utility-home-gallery-1' ),
+		'call_to_action' => \is_active_sidebar( 'utility-call-to-action' ),
+	];
 
 	// Return early if no sidebars are active.
-	if ( ! in_array( true, $home_sidebars, true ) ) {
+	if ( ! \in_array( true, $home_sidebars, true ) ) {
 		return;
 	}
 
 	// Get static home page number.
-	$page = get_query_var( 'page' ) ? (int) get_query_var( 'page' ) : 1;
+	$page = \get_query_var( 'page' ) ? (int) \get_query_var( 'page' ) : 1;
 
 	// Only show home page widgets on page 1.
 	if ( 1 === $page ) {
@@ -83,11 +83,11 @@ function return_h1() {
  * @since 1.0.0
  */
 function add_home_welcome() {
-	genesis_widget_area( 'utility-home-welcome',
-		array(
+	\genesis_widget_area( 'utility-home-welcome',
+		[
 			'before' => '<div class="home-welcome"><div class="wrap">',
 			'after' => '</div></div>',
-		)
+		]
 	);
 }
 
@@ -97,41 +97,20 @@ function add_home_welcome() {
  * @since 1.0.0
  */
 function add_home_gallery() {
-	printf( '<div %s>', genesis_attr( 'home-gallery' ) );
-	genesis_structural_wrap( 'home-gallery' );
+	\printf( '<div %s>', \genesis_attr( 'home-gallery' ) );
+	\genesis_structural_wrap( 'home-gallery' );
 
-	genesis_widget_area(
-		'utility-home-gallery-1',
-		array(
-			'before' => '<div class="home-gallery-1 widget-area">',
-			'after'  => '</div>',
-		)
-	);
+	foreach ( \range( 1, 4 ) as $widget_area_id ) {
+		\genesis_widget_area(
+			'utility-home-gallery-' . $widget_area_id,
+			[
+				'before' => '<div class="home-gallery-' . $widget_area_id . ' widget-area">',
+				'after'  => '</div>',
+			]
+		);
+	}
 
-	genesis_widget_area(
-		'utility-home-gallery-2',
-		array(
-			'before' => '<div class="home-gallery-2 widget-area">',
-			'after'  => '</div>',
-		)
-	);
-
-	genesis_widget_area(
-		'utility-home-gallery-3',
-		array(
-			'before' => '<div class="home-gallery-3 widget-area">',
-			'after'  => '</div>',
-		)
-	);
-	genesis_widget_area(
-		'utility-home-gallery-4',
-		array(
-			'before' => '<div class="home-gallery-4 widget-area">',
-			'after'  => '</div>',
-		)
-	);
-
-	genesis_structural_wrap( 'home-gallery', 'close' );
+	\genesis_structural_wrap( 'home-gallery', 'close' );
 	echo '</div>';
 }
 
@@ -141,12 +120,12 @@ function add_home_gallery() {
  * @since 1.0.0
  */
 function add_call_to_action() {
-	genesis_widget_area(
+	\genesis_widget_area(
 		'utility-call-to-action',
-		array(
+		[
 			'before' => '<div class="call-to-action-bar"><div class="wrap">',
-			'after' => '</div></div>',
-		)
+			'after'  => '</div></div>',
+		]
 	);
 }
 
@@ -157,10 +136,10 @@ function add_call_to_action() {
  */
 function front_loop() {
 	global $query_args;
-	genesis_custom_loop( wp_parse_args( $query_args, array(
+	\genesis_custom_loop( \wp_parse_args( $query_args, [
 		'post_type' => 'post',
-		'paged' => get_query_var( 'page' ),
-	) ) );
+		'paged'     => \get_query_var( 'page' ),
+	] ) );
 }
 
-genesis();
+\genesis();
