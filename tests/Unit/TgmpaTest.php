@@ -19,7 +19,6 @@ use BrightNucleus\Config\ConfigInterface;
 use CDils\UtilityPro\Tests\TestCase;
 use CDils\UtilityPro\Tgmpa;
 
-
 /**
  * Class TgmpaTest.
  *

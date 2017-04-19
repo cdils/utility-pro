@@ -18,7 +18,6 @@ use BrightNucleus\Config\ConfigInterface;
 use CDils\UtilityPro\Footer;
 use CDils\UtilityPro\Tests\TestCase;
 
-
 /**
  * Class Footer.
  *

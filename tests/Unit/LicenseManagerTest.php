@@ -20,7 +20,6 @@ use CDils\UtilityPro\Tests\TestCase;
 use CDils\UtilityPro\LicenseManager;
 use Mockery;
 
-
 /**
  * Class LicenseManagerTest.
  *

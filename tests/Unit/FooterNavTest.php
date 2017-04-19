@@ -17,7 +17,6 @@ use Brain\Monkey\Functions;
 use CDils\UtilityPro\FooterNav;
 use CDils\UtilityPro\Tests\TestCase;
 
-
 /**
  * Class FooterNav.
  *

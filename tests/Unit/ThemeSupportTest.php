@@ -18,7 +18,6 @@ use BrightNucleus\Config\ConfigFactory;
 use CDils\UtilityPro\ThemeSupport;
 use CDils\UtilityPro\Tests\TestCase;
 
-
 /**
  * Class ThemeSupportTest.
  *

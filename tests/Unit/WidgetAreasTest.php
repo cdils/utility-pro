@@ -20,7 +20,6 @@ use BrightNucleus\Config\ConfigInterface;
 use CDils\UtilityPro\Tests\TestCase;
 use CDils\UtilityPro\WidgetAreas;
 
-
 /**
  * Class WidgetAreasTest.
  *

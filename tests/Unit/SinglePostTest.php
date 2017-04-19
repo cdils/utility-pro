@@ -17,7 +17,6 @@ use Brain\Monkey\Functions;
 use CDils\UtilityPro\SinglePost;
 use CDils\UtilityPro\Tests\TestCase;
 
-
 /**
  * Class SinglePost.
  *

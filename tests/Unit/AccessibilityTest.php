@@ -82,20 +82,6 @@ class AccessibilityTest extends TestCase {
 	}
 
 	/**
-	 * Test get search form.
-	 */
-	public function test_get_search_form() {
-		Functions::when( '__' )->returnArg( 1 );
-		Functions::when( 'wp_parse_args' )->returnArg( 1 );
-		Functions::when( 'esc_url' )->returnArg( 1 );
-		Functions::when( 'esc_attr' )->returnArg( 1 );
-		Functions::when( 'home_url' )->justReturn( 'https://example.com' );
-		Functions::when( 'get_search_query' )->justReturn( 'test' );
-
-		static::assertContains( 'role="search"', ( new Accessibility() )->get_search_form() );
-	}
-
-	/**
 	 * Test post pagination when numeric Genesis option is set.
 	 */
 	public function test_post_pagination_when_numeric() {
