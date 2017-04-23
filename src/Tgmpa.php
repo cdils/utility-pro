@@ -15,7 +15,7 @@ namespace CDils\UtilityPro;
 
 use BrightNucleus\Config\ConfigInterface;
 use BrightNucleus\Config\ConfigTrait;
-use BrightNucleus\Exception\RuntimeException;
+use BrightNucleus\Config\Exception\FailedToProcessConfigException;
 
 /**
  * Class Tgmpa.
@@ -29,7 +29,8 @@ class Tgmpa {
 	 * Initialise Tgmpa object.
 	 *
 	 * @param ConfigInterface $config Config to parametrize the object.
-	 * @throws RuntimeException       If the Config could not be parsed correctly.
+	 *
+	 * @throws FailedToProcessConfigException If the Config could not be parsed correctly.
 	 */
 	public function __construct( ConfigInterface $config ) {
 		$this->processConfig( $config );
