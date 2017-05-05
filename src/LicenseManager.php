@@ -48,7 +48,7 @@ class LicenseManager {
 	 */
 	public function register() {
 		if ( ! \class_exists( 'EDD_Theme_Updater_Admin' ) ) {
-			include __DIR__ . '../vendor-includes/edd-software-licensing/theme-license-admin.php';
+			include __DIR__ . '../../vendor-includes/edd-software-licensing/theme-license-admin.php';
 		}
 		$updater = $this->config->getArrayCopy();
 		$this->edd_theme_updater_admin = new \EDD_Theme_Updater_Admin( $updater[0], $updater[1] );
