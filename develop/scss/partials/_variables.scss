@@ -1,19 +1,22 @@
+// Defaults
+//------------------------------------------------------------------------------
 // Colors
 $black: #000;
 $white: #fff;
-
 $blue: #0964dd;
 $purple: #339;
 $green: #107952;
 $red: #d3131b;
 
-
 $comments-background-color: $white;
 $author-box-background: lighten($black, 92);
 
-
 // Widths
 $max-width: 1140px;
+
+// Margins and Padding
+$base-margin: 40px;
+$base-padding: 40px;
 
 // Global Screen Sizes
 //------------------------------------------------------------------------------
