@@ -6,16 +6,16 @@ Structure and Layout
 --------------------------------------------- */
 
 .wrap {
+
 	margin: 0 auto;
-	max-width: 100%;
 	padding: 0 5%;
 	word-wrap: break-word;
 
-	@include media($medium-screen-up) {
+	@include susy-breakpoint($medium-screen) {
 		max-width: $wrap-max-width-medium;
 	}
 
-	@include media($large-screen-up) {
+	@include susy-breakpoint($large-screen) {
 		max-width: $wrap-max-width-large;
 		padding: 0;
 	}
@@ -34,16 +34,38 @@ Structure and Layout
 /* Content & Primary Sidebar
 --------------------------------------------- */
 
-@include media($medium-screen-up) {
+@include susy-breakpoint($medium-screen) {
 
-	@include direction-context(right-to-left) {
+	.content-sidebar,
+	.sidebar-content {
+
 		.content {
-			@include span-columns(8);
-			@include omega;
+			@include span(8.5 of 12);
 		}
+	}
+
+	.full-width-content .content {
+		@include full;
+	}
+
+	.sidebar-content{
+
+		.content {
+			@include last;
+		}
+	}
+
+
+	/* Primary Sidebar
+	-------------------- */
+	.sidebar-primary {
+		@include span(3.5 of 12);
+	}
+
+	.content-sidebar {
 
 		.sidebar-primary {
-			@include span-columns(4);
+			@include last;
 		}
 	}
 }
@@ -83,65 +105,46 @@ Sidebar
 	width: 100%;
 }
 
-
-
-/* Column Widths and Positions
---------------------------------------------- */
-
-.full-width-content .content {
-	float: none;
-	margin: 0 auto;
-	width: 100%;
-}
-
-@include media($medium-screen-up) {
-
-	.content-sidebar .content,
-	.sidebar-content .sidebar-primary {
-		float: left;
-	}
-}
-
 /* Column Classes
 Link: http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css
 --------------------------------------------- */
 
-@include media($small-screen-up) {
+@include susy-breakpoint($small-screen) {
 
 	.one-half,
 	.three-sixths,
 	.two-fourths {
-		@include span-columns(6);
+		@include span(6);
 	}
 
 	.one-third,
 	.two-sixths {
-		@include span-columns(4);
+		@include span(4);
 	}
 
 	.four-sixths,
 	.two-thirds {
-		@include span-columns(8);
+		@include span(8);
 	}
 
 	.one-fourth {
-		@include span-columns(3);
+		@include span(3);
 	}
 
 	.three-fourths {
-		@include span-columns(9);
+		@include span(9);
 	}
 
 	.one-sixth {
-		@include span-columns(2);
+		@include span(2);
 	}
 
 	.five-sixths {
-		@include span-columns(10);
+		@include span(10);
 	}
 
 	.last {
-		@include omega();
+		@include last();
 	}
 
 	.last + * {
