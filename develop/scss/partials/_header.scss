@@ -21,7 +21,7 @@ Site Header
 	text-align: center;
 	width: 100%;
 
-	@include media($medium-screen-up) {
+	@include susy-breakpoint($medium-screen) {
 		text-align: left;
 		width: 50%;
 	}
@@ -75,7 +75,7 @@ Site Header
 	min-height: 60px;
 	width: 100%;
 
-	@include media($medium-screen-up) {
+	@include susy-breakpoint($medium-screen) {
 		background-position: left;
 	}
 
@@ -89,7 +89,7 @@ Site Header
 // 	min-height: 60px;
 // 	width: 100%;
 
-// 	@include media($medium-screen-up) {
+// 	@include susy-breakpoint($medium-screen) {
 // 		background-position: left center;
 // 	}
 // }
@@ -102,7 +102,7 @@ Site Header
 	text-align: center;
 	width: 100%;
 
-	@include media($medium-screen-up) {
+	@include susy-breakpoint($medium-screen) {
 		text-align: right;
 		width: 50%;
 	}
@@ -113,7 +113,7 @@ Site Header
 	margin: 20px auto 0;
 	width: 300px;
 
-	@include media($medium-screen-up) {
+	@include susy-breakpoint($medium-screen) {
 		float: right;
 		margin-top: 0;
 	}
