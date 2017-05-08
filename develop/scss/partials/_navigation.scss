@@ -15,7 +15,7 @@ Site Navigation
 	position: relative;
 	text-align: left;
 
-	@include media($medium-screen-up) {
+	@include susy-breakpoint($medium-screen) {
 		display: inline-block;
 	}
 }
@@ -52,7 +52,7 @@ Site Navigation
 .genesis-nav-menu > .menu-item > a {
 	text-transform: uppercase;
 
-	@include media($medium-screen-up) {
+	@include susy-breakpoint($medium-screen) {
 		border-bottom: 0;
 	}
 }
@@ -64,7 +64,7 @@ Site Navigation
 	opacity: 1;
 	position: static;
 
-	@include media($medium-screen-up) {
+	@include susy-breakpoint($medium-screen) {
 		display: block;
 		left: -9999px;
 		margin: 0;
@@ -89,7 +89,7 @@ Site Navigation
 .genesis-nav-menu .sub-menu a {
 	border: 0;
 
-	@include media($medium-screen-up) {
+	@include susy-breakpoint($medium-screen) {
 		letter-spacing: 0;
 		width: 200px;
 	}
@@ -99,7 +99,7 @@ Site Navigation
 	padding-left: 20px;
 }
 
-@include media($medium-screen-up) {
+@include susy-breakpoint($medium-screen) {
 
 	.genesis-nav-menu .sub-menu .sub-menu {
 		margin: -54px 0 0 199px;
@@ -120,7 +120,7 @@ Site Navigation
 	display: none;
 	position: relative;
 
-	@include media($medium-screen-up) {
+	@include susy-breakpoint($medium-screen) {
 		display: inline-block;
 	}
 }
@@ -139,7 +139,7 @@ Site Navigation
 	text-transform: uppercase;
 	visibility: visible;
 
-	@include media($medium-screen-up) {
+	@include susy-breakpoint($medium-screen) {
 		display: block;
 		visibility: hidden;
 	}
@@ -156,7 +156,7 @@ Site Navigation
 	top: 0;
 	visibility: visible;
 
-	@include media($medium-screen-up) {
+	@include susy-breakpoint($medium-screen) {
 		display: none;
 		visibility: hidden;
 	}
@@ -182,7 +182,7 @@ Site Navigation
 	content: "-";
 }
 
-@include media($medium-screen-up) {
+@include susy-breakpoint($medium-screen) {
 
 	button.menu-toggle,
 	button.sub-menu-toggle,
