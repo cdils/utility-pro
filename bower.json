@@ -15,6 +15,6 @@
   "devDependencies": {
     "bourbon": "~4.2.6",
     "normalize.scss": "^6",
-    "neat": "~1.7.2"
+    "susy": "^2.2.12"
   }
 }

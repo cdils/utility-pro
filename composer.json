@@ -29,10 +29,15 @@
   "prefer-stable": true,
   "require": {
     "php": "^7.0",
+    "brightnucleus/config": "^0.4",
     "composer/installers": "^1.2",
     "roave/security-advisories": "dev-master",
-    "tgmpa/tgm-plugin-activation": "^2.6",
-    "brightnucleus/config": "^0.4"
+    "tgmpa/tgm-plugin-activation": "^2.6"
+  },
+  "require-dev": {
+    "brain/monkey": "^1.4",
+    "wp-coding-standards/wpcs": "dev-develop",
+    "phpunit/phpunit": "^6.1"
   },
   "autoload": {
     "psr-4": {
@@ -58,10 +63,5 @@
     "post-update-cmd": [
       "@build-theme"
     ]
-  },
-  "require-dev": {
-    "brain/monkey": "^1.4",
-    "wp-coding-standards/wpcs": "dev-develop",
-    "phpunit/phpunit": "^6.1"
   }
 }
