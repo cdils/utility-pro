@@ -61,11 +61,11 @@ https://store.carriedils.com/support/
 Please note that this project is released with a [Contributor Code of Conduct](code-of-conduct.md). By participating in this project you agree to abide by its terms.
 
 ## PROPS
-A special thanks to [Gary Jones](http://gamajo.com), who audited this code (trust me, if any mistakes remain, they are mine alone - Gary did his best to set me straight).
+A special thanks to [Gary Jones](https://gamajo.com), who audited this code (trust me, if any mistakes remain, they are mine alone - Gary did his best to set me straight).
 
-I’m also deeply appreciative of [Nir Rosenbaum](http://www.website-traffic.co.il/nir-rosenbaum) for teaching me about issues when building themes for Right to Left (RTL) scripts as well as testing Utility Pro with an RTL language.
+I’m also deeply appreciative of [Nir Rosenbaum](http://www.premium-websites.co.il/nir-rosenbaum) for teaching me about issues when building themes for Right to Left (RTL) scripts as well as testing Utility Pro with an RTL language.
 
-I’d be terribly remiss not to thank [Rian Rietveld](http://www.rrwd.nl/) for her accessibility audit (and graciously letting me borrow much of her Genesis Accessible plugin) and to [Amanda Rush](http://customerservant.com/), who tested the theme for use with a screen reader and made adjustments to improve the experience.
+I’d be terribly remiss not to thank [Rian Rietveld](https://www.rrwd.nl/) for her accessibility audit (and graciously letting me borrow much of her Genesis Accessible plugin) and to [Amanda Rush](https://www.customerservant.com/), who tested the theme for use with a screen reader and made adjustments to improve the experience.
 
 A huge thank you to the following folks for providing translation files for this theme:
 
