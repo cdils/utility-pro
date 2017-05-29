@@ -59,6 +59,10 @@ $utility_pro_theme_support = [
 	 ],
 ];
 
+$utility_pro_genesis_force_theme_settings = [
+	'posts_nav' => 'numeric',
+];
+
 // Configure recommended / required plugins and TGMPA configuration here.
 $utility_pro_tgmpa = [
 	'plugins' => [
@@ -218,11 +222,12 @@ $utility_pro_footer = [
 return [
 	'CDils' => [
 		'UtilityPro' => [
-			'ThemeSupport'      => $utility_pro_theme_support,
-			'Tgmpa'             => $utility_pro_tgmpa,
-			'WidgetAreas'       => $utility_pro_widget_areas,
-			'Updater'           => $utility_pro_updater,
-			'Footer'            => $utility_pro_footer,
+			'ThemeSupport'              => $utility_pro_theme_support,
+			'GenesisForceThemeSettings' => $utility_pro_genesis_force_theme_settings,
+			'Tgmpa'                     => $utility_pro_tgmpa,
+			'WidgetAreas'               => $utility_pro_widget_areas,
+			'Updater'                   => $utility_pro_updater,
+			'Footer'                    => $utility_pro_footer,
 		],
 	],
 ];
