@@ -27,10 +27,10 @@ $utility_pro_theme_support = [
 	],
 
 	// Add support for accessibility features.
-	 'genesis-accessibility' => [ '404-page', 'headings', 'skip-links' ],
+	'genesis-accessibility' => [ '404-page', 'headings', 'skip-links' ],
 
 	// Add support for three footer widget areas.
-	 'genesis-footer-widgets' => 3,
+	'genesis-footer-widgets' => 3,
 
 	// Add support for additional color style options.
 	'genesis-style-selector' => [
@@ -40,7 +40,7 @@ $utility_pro_theme_support = [
 	],
 
 	 // Add support for structural wraps (all default Genesis wraps unless noted).
-	 'genesis-structural-wraps' => [
+	'genesis-structural-wraps' => [
 		'footer',
 		'footer-widgets',
 		'footernav',    // Custom.
@@ -50,13 +50,13 @@ $utility_pro_theme_support = [
 		'nav',
 		'site-inner',
 		'site-tagline',
-	 ],
+	],
 
 	 // Add support for two navigation areas (theme doesn't use secondary navigation).
-	 'genesis-menus' => [
+	'genesis-menus' => [
 		'primary' => __( 'Primary Navigation Menu', 'utility-pro' ),
 		'footer'  => __( 'Footer Navigation Menu', 'utility-pro' ),
-	 ],
+	],
 ];
 
 $utility_pro_genesis_force_theme_settings = [

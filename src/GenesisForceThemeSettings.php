@@ -50,7 +50,7 @@ class GenesisForceThemeSettings {
 	/**
 	 * Change the theme settings defaults.
 	 *
-	 * @param $defaults array Existing theme settings defaults.
+	 * @param array $defaults Existing theme settings defaults.
 	 * @return array Theme settings defaults.
 	 */
 	public function theme_settings_defaults( $defaults ) : array {

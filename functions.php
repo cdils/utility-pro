@@ -49,7 +49,7 @@ function setup() {
 	$theme_support = new ThemeSupport( $config->getSubConfig( 'ThemeSupport' ) );
 	$theme_support->register();
 
-	// Force specific theme settings
+	// Force specific theme settings.
 	$forced_theme_settings = new GenesisForceThemeSettings( $config->getSubConfig( 'GenesisForceThemeSettings' ) );
 	$forced_theme_settings->apply();
 
