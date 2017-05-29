@@ -11,7 +11,6 @@ Site Header
 	}
 }
 
-
 /* Title Area
 --------------------------------------------- */
 
@@ -20,7 +19,6 @@ Site Header
 	font-weight: 700;
 	text-align: center;
 	width: 100%;
-
 	@include susy-breakpoint($medium-screen) {
 		text-align: left;
 		width: 50%;
@@ -51,8 +49,8 @@ Site Header
 
 /* Full width header, no widgets */
 
-.header-full-width .title-area,
-.header-full-width .site-title {
+.header-full-width .site-title,
+.header-full-width .title-area {
 	width: 100%;
 }
 
@@ -61,12 +59,13 @@ Site Header
 	overflow: hidden;
 	text-indent: 100%;
 	white-space: nowrap;
+	line-height: 0;
+	margin: 0;
 }
 
 /* Logo, hide text */
 
 .header-image .site-title > a {
-
 	@include retina-image("images/logo", 260px auto, "png", "images/logo@2x");
 
 	background-position: center;
@@ -74,7 +73,6 @@ Site Header
 	float: left;
 	min-height: 60px;
 	width: 100%;
-
 	@include susy-breakpoint($medium-screen) {
 		background-position: left;
 	}
@@ -101,7 +99,6 @@ Site Header
 	float: right;
 	text-align: center;
 	width: 100%;
-
 	@include susy-breakpoint($medium-screen) {
 		text-align: right;
 		width: 50%;
@@ -112,7 +109,6 @@ Site Header
 	height: 53px;
 	margin: 20px auto 0;
 	width: 300px;
-
 	@include susy-breakpoint($medium-screen) {
 		float: right;
 		margin-top: 0;
@@ -123,9 +119,9 @@ Site Header
 	color: $black;
 }
 
-.header-widget-area .genesis-nav-menu a:hover,
 .header-widget-area .genesis-nav-menu .current-menu-item > a,
-.header-widget-area .genesis-nav-menu .sub-menu .current-menu-item > a:hover {
+.header-widget-area .genesis-nav-menu .sub-menu .current-menu-item > a:hover,
+.header-widget-area .genesis-nav-menu a:hover {
 	color: lighten($black, 33);
 }
 
