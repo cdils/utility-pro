@@ -33,30 +33,22 @@ class SearchFormTest extends TestCase {
 		Filters\expectApplied( 'genesis_search_form_label' )
 			->once()
 			->with( 'Search site' )
-			->andReturnUsing( function() {
-				return \func_get_arg( 0 ); // Return first arg so other expectations work.
-			} );
+			->andReturnFirstArg();
 
 		Filters\expectApplied( 'genesis_search_text' )
 			->once()
 			->with( '' )
-			->andReturnUsing( function() {
-				return \func_get_arg( 0 ); // Return first arg so other expectations work.
-			} );
+			->andReturnFirstArg();
 
 		Filters\expectApplied( 'genesis_search_button_text' )
 			->once()
 			->with( 'Search' )
-			->andReturnUsing( function() {
-				return \func_get_arg( 0 ); // Return first arg so other expectations work.
-			} );
+			->andReturnFirstArg();
 
 		Filters\expectApplied( 'genesis_search_button_label' )
 			->once()
 			->with( 'Search' )
-			->andReturnUsing( function() {
-				return \func_get_arg( 0 ); // Return first arg so other expectations work.
-			} );
+			->andReturnFirstArg();
 
 		$default_strings = [
 			'label'        => 'Search site',

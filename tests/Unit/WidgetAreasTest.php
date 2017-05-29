@@ -64,9 +64,7 @@ class WidgetAreasTest extends TestCase {
 		Filters\expectApplied( 'utility_pro_default_widget_areas' )
 			->once()
 			->with( $this->config->getAll() )
-			->andReturnUsing( function() {
-				return \func_get_arg( 0 ); // Return first arg so other expectations work.
-			} );
+			->andReturnFirstArg();
 
 		// Registration is done with each set of widget configs.
 		Functions\expect( 'genesis_register_sidebar' )
