@@ -67,12 +67,9 @@ class GoogleFonts {
 	 * @return string URL for Google Font.
 	 */
 	protected function fonts_url() : string {
-		$font_families = '';
-
-		foreach ( $this->fonts as $font ) {
-			/* @var GoogleFont $font */
-			$font_families[] = $font->font_family();
-		}
+		$font_families = array_map( function( GoogleFont $font ) {
+			return $font->font_family();
+		}, $this->fonts);
 
 		$query_args = [
 			'family' => \rawurlencode( \implode( '|', $font_families ) ),
