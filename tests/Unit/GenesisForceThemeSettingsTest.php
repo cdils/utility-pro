@@ -59,7 +59,6 @@ class GenesisForceThemeSettingsTest extends TestCase {
 	 * Test that force theme defaults hooks are applied.
 	 */
 	public function test_forced_value_hooks_are_applied() {
-		$this->markTestIncomplete();
 		( new GenesisForceThemeSettings( $this->config ) )->force_values();
 
 		static::assertTrue( has_filter( 'genesis_pre_get_option_a_key', 'function ()' ), 'Closure not added' );
