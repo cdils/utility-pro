@@ -93,7 +93,7 @@ class GoogleFontsTest extends TestCase {
 	 * Test that no styles are enqueued when registry is empty.
 	 */
 	public function test_no_styles_are_enqueued_when_registry_is_empty() {
-		Functions::expect( 'wp_enqueue_style' )->never();
+		Functions\expect( 'wp_enqueue_style' )->never();
 
 		( new GoogleFonts() )->enqueue();
 	}
@@ -102,8 +102,8 @@ class GoogleFontsTest extends TestCase {
 	 * Test that styles are enqueued when registry is not empty.
 	 */
 	public function test_styles_are_enqueued_when_registry_is_not_empty() {
-		Functions::expect( 'wp_enqueue_style' )->once();
-		Functions::when( 'add_query_arg' )->justReturn( '' );
+		Functions\expect( 'wp_enqueue_style' )->once();
+		Functions\when( 'add_query_arg' )->justReturn( '' );
 
 		$google_fonts = new GoogleFonts();
 		$google_fonts->add( 'fake-font', $this->fake_font );
@@ -121,12 +121,12 @@ class GoogleFontsTest extends TestCase {
 
 		$expected_fonts_url = 'https://fonts.googleapis.com/css?family=font:300|Spaced+font:400,700&subset=latin,latin-ext';
 
-		Functions::expect( 'add_query_arg' )
+		Functions\expect( 'add_query_arg' )
 			->with( $query_args, 'https://fonts.googleapis.com/css' )
 			->once()
 			->andReturn( $expected_fonts_url );
 
-		Functions::expect( 'wp_enqueue_style' )
+		Functions\expect( 'wp_enqueue_style' )
 			->with( 'utility-pro-fonts', $expected_fonts_url, [], null )
 			->once();
 

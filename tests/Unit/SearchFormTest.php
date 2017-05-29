@@ -14,7 +14,7 @@ declare( strict_types = 1 );
 namespace CDils\UtilityPro\Tests\Unit;
 
 use Brain\Monkey\Functions;
-use Brain\Monkey\WP\Filters;
+use Brain\Monkey\Filters;
 use CDils\UtilityPro\SearchForm;
 use CDils\UtilityPro\Tests\TestCase;
 
@@ -28,30 +28,30 @@ class SearchFormTest extends TestCase {
 	 * Test search form is initialised with filters applied to default strings.
 	 */
 	public function test_searchform_is_initialised_with_default_strings() {
-		Functions::when( '__' )->returnArg( 1 );
+		Functions\when( '__' )->returnArg( 1 );
 
-		Filters::expectApplied( 'genesis_search_form_label' )
+		Filters\expectApplied( 'genesis_search_form_label' )
 			->once()
 			->with( 'Search site' )
 			->andReturnUsing( function() {
 				return \func_get_arg( 0 ); // Return first arg so other expectations work.
 			} );
 
-		Filters::expectApplied( 'genesis_search_text' )
+		Filters\expectApplied( 'genesis_search_text' )
 			->once()
 			->with( '' )
 			->andReturnUsing( function() {
 				return \func_get_arg( 0 ); // Return first arg so other expectations work.
 			} );
 
-		Filters::expectApplied( 'genesis_search_button_text' )
+		Filters\expectApplied( 'genesis_search_button_text' )
 			->once()
 			->with( 'Search' )
 			->andReturnUsing( function() {
 				return \func_get_arg( 0 ); // Return first arg so other expectations work.
 			} );
 
-		Filters::expectApplied( 'genesis_search_button_label' )
+		Filters\expectApplied( 'genesis_search_button_label' )
 			->once()
 			->with( 'Search' )
 			->andReturnUsing( function() {
@@ -65,7 +65,7 @@ class SearchFormTest extends TestCase {
 			'button_label' => 'Search',
 		];
 
-		Functions::expect( 'wp_parse_args' )
+		Functions\expect( 'wp_parse_args' )
 			->with( [], $default_strings )
 			->once();
 
@@ -76,7 +76,7 @@ class SearchFormTest extends TestCase {
 	 * Test search form is initialised with filters applied to default strings.
 	 */
 	public function test_searchform_is_initialised_with_custom_strings() {
-		Functions::when( '__' )->returnArg( 1 );
+		Functions\when( '__' )->returnArg( 1 );
 
 		$default_strings = [
 			'label'        => 'Search site',
@@ -92,7 +92,7 @@ class SearchFormTest extends TestCase {
 			'button_label' => 'boom',
 		];
 
-		Functions::expect( 'wp_parse_args' )
+		Functions\expect( 'wp_parse_args' )
 			->with( $custom_strings, $default_strings )
 			->once();
 
@@ -103,12 +103,12 @@ class SearchFormTest extends TestCase {
 	 * Test get search form.
 	 */
 	public function test_get_search_form() {
-		Functions::when( '__' )->returnArg( 1 );
-		Functions::when( 'wp_parse_args' )->returnArg( 1 );
-		Functions::when( 'esc_url' )->returnArg( 1 );
-		Functions::when( 'esc_attr' )->returnArg( 1 );
-		Functions::when( 'home_url' )->justReturn( 'https://example.com' );
-		Functions::when( 'get_search_query' )->justReturn( 'test' );
+		Functions\when( '__' )->returnArg( 1 );
+		Functions\when( 'wp_parse_args' )->returnArg( 1 );
+		Functions\when( 'esc_url' )->returnArg( 1 );
+		Functions\when( 'esc_attr' )->returnArg( 1 );
+		Functions\when( 'home_url' )->justReturn( 'https://example.com' );
+		Functions\when( 'get_search_query' )->justReturn( 'test' );
 
 		static::assertContains( 'role="search"', ( new SearchForm() )->get_form() );
 	}

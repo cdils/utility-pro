@@ -28,7 +28,7 @@ class FooterNavTest extends TestCase {
 	 * Test that footer nav hooks are applied.
 	 */
 	public function test_footernav_hooks_are_applied() {
-		Functions::when( 'genesis_attributes_nav' );
+		Functions\when( 'genesis_attributes_nav' );
 
 		( new FooterNav() )->apply();
 

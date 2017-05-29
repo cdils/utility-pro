@@ -77,7 +77,7 @@ class TgmpaTest extends TestCase {
 	 * Test that TGMPA function `tgmpa()` is called.
 	 */
 	public function test_tgmpa_is_initialised() {
-		Functions::expect( 'tgmpa' )
+		Functions\expect( 'tgmpa' )
 			->once()
 			->with( $this->config->getKey( 'plugins' ), $this->config->getKey( 'config' ) );
 
