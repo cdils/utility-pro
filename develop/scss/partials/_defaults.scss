@@ -18,15 +18,11 @@ body {
 a,
 button,
 input:focus,
-input[type="button"],
-input[type="reset"],
-input[type="submit"],
+[type="button"],
+[type="reset"],
+[type="submit"],
 textarea:focus,
 .gallery img {
-	-webkit-transition: all 0.1s ease-in-out;
-	-moz-transition: all 0.1s ease-in-out;
-	-ms-transition: all 0.1s ease-in-out;
-	-o-transition: all 0.1s ease-in-out;
 	transition: all 0.1s ease-in-out;
 }
 
@@ -241,10 +237,6 @@ input[type="search"]::-webkit-search-results-button {
 	text-indent: -9999px;
 	vertical-align: top;
 	width: 53px;
-	-webkit-transition: none;
-	-moz-transition: none;
-	-ms-transition: none;
-	-o-transition: none;
 	transition: none;
 }
 
