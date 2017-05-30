@@ -67,7 +67,7 @@ class LicenseManagerTest extends TestCase {
 
 		( new LicenseManager( $this->config ) )->register();
 
-		static::assertTrue( has_action( 'admin_menu', 'CDils\UtilityPro\LicenseManager->move_license_page_menu_item()', 12 ),
+		static::assertTrue( has_action( 'admin_menu', 'CDils\UtilityPro\LicenseManager->move_license_page_menu_item()' ),
 		'move_license_page_menu_item() not added' );
 	}
 

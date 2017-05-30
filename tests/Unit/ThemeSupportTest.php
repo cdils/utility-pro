@@ -50,7 +50,7 @@ class ThemeSupportTest extends TestCase {
 	 *
 	 * @return array
 	 */
-	public function dataProvider() {
+	public function dataProvider() : array {
 		return [
 			[
 				'html5',

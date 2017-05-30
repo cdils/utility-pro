@@ -1,8 +1,8 @@
 'use strict';
 
 var gulp    = require( 'gulp' ),
-    pkg     = require( './package.json' ),
-    toolkit = require( 'gulp-wp-toolkit' ),
+	pkg     = require( './package.json' ),
+	toolkit = require( 'gulp-wp-toolkit' ),
 	zip     = require( 'gulp-zip' );
 
 require( 'gulp-stats' )( gulp );
@@ -18,10 +18,10 @@ toolkit.extendConfig( {
 		license: pkg.license,
 		licenseuri: pkg.theme.licenseuri,
 		textdomain: pkg.name,
-// 		domainpath: pkg.theme.domainpath, // Defaults to /languages.
+		// domainpath: pkg.theme.domainpath, // Defaults to /languages.
 		tags: pkg.theme.tags,
 		template: 'genesis'
-    },
+	},
 	src: {
 		zipuser: [
 			'images/*',
