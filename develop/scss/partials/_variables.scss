@@ -58,16 +58,20 @@ $blockquote-font-family: $serif;
 $base-font-size: 16px;
 $base-line-height: 1.625;
 $heading-line-height: 1.25;
-$secondary-font-size: floor(modular-scale(-1, $base-font-size, $major-second));
-$site-title-font-size: floor(modular-scale(5, $base-font-size, $major-second));
+$modularscale: (
+		base: $base-font-size,
+		ratio: 1.125 // Major second.
+);
+$secondary-font-size: ms(-1);
+$site-title-font-size: ms(5);
 // Heading Font Properties
 //------------------------------------------------------------------------------
-$h1-font-size: floor(modular-scale(6, $base-font-size, $major-second));
-$h2-font-size: floor(modular-scale(5, $base-font-size, $major-second));
-$h3-font-size: floor(modular-scale(4, $base-font-size, $major-second));
-$h4-font-size: floor(modular-scale(3, $base-font-size, $major-second));
-$h5-font-size: floor(modular-scale(2, $base-font-size, $major-second));
-$h6-font-size: floor(modular-scale(1, $base-font-size, $major-second));
+$h1-font-size: ms(6);
+$h2-font-size: ms(5);
+$h3-font-size: ms(4);
+$h4-font-size: ms(3);
+$h5-font-size: ms(2);
+$h6-font-size: ms(1);
 // Header Font Properties
 //------------------------------------------------------------------------------
 $header-font-family: $heading-font-family;
