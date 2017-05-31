@@ -43,7 +43,7 @@ class SinglePostTest extends TestCase {
 		$expected = $content;
 
 		// Monkey patch WP function!
-		Functions::when( 'is_singular' )->justReturn( false );
+		Functions\when( 'is_singular' )->justReturn( false );
 
 		static::assertSame( $expected, ( new SinglePost() )->featured_image( $content ) );
 	}
@@ -57,8 +57,8 @@ class SinglePostTest extends TestCase {
 		$expected = $content;
 
 		// Monkey patch WP functions!
-		Functions::when( 'is_singular' )->justReturn( true );
-		Functions::when( 'has_post_thumbnail' )->justReturn( false );
+		Functions\when( 'is_singular' )->justReturn( true );
+		Functions\when( 'has_post_thumbnail' )->justReturn( false );
 
 		static::assertSame( $expected, ( new SinglePost() )->featured_image( $content ) );
 	}
@@ -74,10 +74,10 @@ class SinglePostTest extends TestCase {
 		$expected = $image . $content;
 
 		// Monkey patch WP functions!
-		Functions::when( 'is_singular' )->justReturn( true );
-		Functions::when( 'has_post_thumbnail' )->justReturn( true );
-		Functions::when( 'get_the_ID' )->justReturn();
-		Functions::when( 'get_the_post_thumbnail' )->justReturn( $thumbnail );
+		Functions\when( 'is_singular' )->justReturn( true );
+		Functions\when( 'has_post_thumbnail' )->justReturn( true );
+		Functions\when( 'get_the_ID' )->justReturn();
+		Functions\when( 'get_the_post_thumbnail' )->justReturn( $thumbnail );
 
 		static::assertSame( $expected, ( new SinglePost() )->featured_image( $content ) );
 	}

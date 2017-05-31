@@ -45,7 +45,7 @@ class FooterTest extends TestCase {
 	}
 
 	/**
-	 * Test that utlity bar hooks are applied.
+	 * Test that footer hooks are applied.
 	 */
 	public function test_footer_hooks_are_applied() {
 		( new Footer( $this->config ) )->apply();

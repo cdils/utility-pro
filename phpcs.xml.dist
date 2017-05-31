@@ -11,6 +11,9 @@
 	<arg name="report" value="full"/>
 	<arg name="report" value="summary"/>
 	<arg name="report" value="source"/>
+	<!-- Run against the PHPCompatibility ruleset -->
+	<rule ref="PHPCompatibility" />
+	<config name="testVersion" value="7.0-7.2"/>
 	<rule ref="WordPress">
 		<exclude name="WordPress.VIP"/>
 	</rule>

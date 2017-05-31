@@ -57,8 +57,8 @@ class AccessibilityTest extends TestCase {
 			'genesis-nav-footer' => 'Skip to footer navigation',
 		];
 
-		Functions::when( '__' )->returnArg( 1 );
-		Functions::when( 'has_nav_menu' )->justReturn( true );
+		Functions\when( '__' )->returnArg( 1 );
+		Functions\when( 'has_nav_menu' )->justReturn( true );
 
 		static::assertSame( $expected, ( new Accessibility() )->add_secondary_nav_skip_link( $links ) );
 	}
@@ -75,8 +75,8 @@ class AccessibilityTest extends TestCase {
 
 		$expected = $links;
 
-		Functions::when( '__' )->returnArg( 1 );
-		Functions::when( 'has_nav_menu' )->justReturn( false );
+		Functions\when( '__' )->returnArg( 1 );
+		Functions\when( 'has_nav_menu' )->justReturn( false );
 
 		static::assertSame( $expected, ( new Accessibility() )->add_secondary_nav_skip_link( $links ) );
 	}
@@ -85,9 +85,9 @@ class AccessibilityTest extends TestCase {
 	 * Test post pagination when numeric Genesis option is set.
 	 */
 	public function test_post_pagination_when_numeric() {
-		Functions::when( 'genesis_get_option' )->justReturn( 'numeric' );
-		Functions::when( '__' )->returnArg( 1 );
-		Functions::expect( 'the_posts_pagination' )->once();
+		Functions\when( 'genesis_get_option' )->justReturn( 'numeric' );
+		Functions\when( '__' )->returnArg( 1 );
+		Functions\expect( 'the_posts_pagination' )->once();
 
 		( new Accessibility() )->post_pagination();
 	}
@@ -96,9 +96,9 @@ class AccessibilityTest extends TestCase {
 	 * Test post pagination when numeric Genesis option is not set.
 	 */
 	public function test_post_pagination_when_not_numeric() {
-		Functions::when( 'genesis_get_option' )->justReturn( 'foo' );
-		Functions::when( '__' )->returnArg( 1 );
-		Functions::expect( 'the_posts_navigation' )->once();
+		Functions\when( 'genesis_get_option' )->justReturn( 'foo' );
+		Functions\when( '__' )->returnArg( 1 );
+		Functions\expect( 'the_posts_navigation' )->once();
 
 		( new Accessibility() )->post_pagination();
 	}

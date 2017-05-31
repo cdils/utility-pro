@@ -14,7 +14,7 @@ declare( strict_types = 1 );
 namespace CDils\UtilityPro\Tests\Unit;
 
 use Brain\Monkey\Functions;
-use Brain\Monkey\WP\Filters;
+use Brain\Monkey\Filters;
 use BrightNucleus\Config\ConfigFactory;
 use BrightNucleus\Config\ConfigInterface;
 use CDils\UtilityPro\Tests\TestCase;
@@ -61,15 +61,13 @@ class WidgetAreasTest extends TestCase {
 	 */
 	public function test_widget_areas_registration() {
 		// Filter is applied.
-		Filters::expectApplied( 'utility_pro_default_widget_areas' )
+		Filters\expectApplied( 'utility_pro_default_widget_areas' )
 			->once()
 			->with( $this->config->getAll() )
-			->andReturnUsing( function() {
-				return \func_get_arg( 0 ); // Return first arg so other expectations work.
-			} );
+			->andReturnFirstArg();
 
 		// Registration is done with each set of widget configs.
-		Functions::expect( 'genesis_register_sidebar' )
+		Functions\expect( 'genesis_register_sidebar' )
 			->once()
 			->with( [
 				'id'          => 'utility-bar',
@@ -77,7 +75,7 @@ class WidgetAreasTest extends TestCase {
 				'description' => 'This is the utility bar across the top of page.',
 			] );
 
-		Functions::expect( 'genesis_register_sidebar' )
+		Functions\expect( 'genesis_register_sidebar' )
 			->once()
 			->with( [
 				'id'          => 'utility-home-welcome',

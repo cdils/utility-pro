@@ -35,7 +35,8 @@
     "tgmpa/tgm-plugin-activation": "^2.6"
   },
   "require-dev": {
-    "brain/monkey": "^1.4",
+    "brain/monkey": "^2",
+    "wimg/php-compatibility": "dev-master",
     "wp-coding-standards/wpcs": "dev-develop",
     "phpunit/phpunit": "^6.1"
   },
@@ -57,10 +58,17 @@
       "npm install",
       "@build-theme"
     ],
+    "install-standards": [
+      "\"vendor/bin/phpcs\" --config-set installed_paths ../../wp-coding-standards/wpcs",
+      "rm -rf vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/PHPCompatibility",
+      "cp -r vendor/wimg/php-compatibility vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/PHPCompatibility"
+    ],
     "post-install-cmd": [
+      "@install-standards",
       "@install-and-build-theme"
     ],
     "post-update-cmd": [
+      "@install-standards",
       "@build-theme"
     ]
   }

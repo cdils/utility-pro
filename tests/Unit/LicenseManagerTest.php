@@ -67,7 +67,7 @@ class LicenseManagerTest extends TestCase {
 
 		( new LicenseManager( $this->config ) )->register();
 
-		static::assertTrue( has_action( 'admin_menu', 'CDils\UtilityPro\LicenseManager->move_license_page_menu_item()', 12 ),
+		static::assertTrue( has_action( 'admin_menu', 'CDils\UtilityPro\LicenseManager->move_license_page_menu_item()' ),
 		'move_license_page_menu_item() not added' );
 	}
 
@@ -82,8 +82,8 @@ class LicenseManagerTest extends TestCase {
 			'page title',
 		];
 
-		Functions::when( 'remove_submenu_page' )->justReturn( $page );
-		Functions::expect( 'add_submenu_page' )
+		Functions\when( 'remove_submenu_page' )->justReturn( $page );
+		Functions\expect( 'add_submenu_page' )
 			->once()
 			->with( 'genesis', $page[3], $page[0], $page[1], $page[2], [ null, 'license_page' ] );
 
@@ -94,8 +94,8 @@ class LicenseManagerTest extends TestCase {
 	 * Test that license page menu item is moved when menu item does not exist.
 	 */
 	public function test_move_license_page_menu_item_does_not_exist() {
-		Functions::when( 'remove_submenu_page' )->justReturn( false );
-		Functions::expect( 'add_submenu_page' )->never();
+		Functions\when( 'remove_submenu_page' )->justReturn( false );
+		Functions\expect( 'add_submenu_page' )->never();
 
 		( new LicenseManager( $this->config ) )->move_license_page_menu_item();
 	}

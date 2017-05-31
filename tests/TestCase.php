@@ -13,7 +13,9 @@ declare( strict_types = 1 );
 
 namespace CDils\UtilityPro\Tests;
 
-use Brain\Monkey;
+
+use function Brain\Monkey\setUp;
+use function Brain\Monkey\tearDown;
 use Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
 use PHPUnit\Framework\TestCase as PHPUnitTestCase;
 
@@ -36,7 +38,7 @@ abstract class TestCase extends PHPUnitTestCase {
 	 */
 	protected function setUp() {
 		parent::setUp();
-		Monkey::setUpWP();
+		setUp();
 	}
 
 	/**
@@ -47,7 +49,7 @@ abstract class TestCase extends PHPUnitTestCase {
 	 * @return void
 	 */
 	protected function tearDown() {
-		Monkey::tearDownWP();
+		tearDown();
 		parent::tearDown();
 	}
 }

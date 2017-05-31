@@ -49,6 +49,10 @@ function setup() {
 	$theme_support = new ThemeSupport( $config->getSubConfig( 'ThemeSupport' ) );
 	$theme_support->register();
 
+	// Force specific theme settings.
+	$forced_theme_settings = new GenesisForceThemeSettings( $config->getSubConfig( 'GenesisForceThemeSettings' ) );
+	$forced_theme_settings->apply();
+
 	// Add custom image sizes.
 	\add_image_size( 'feature-large', 960, 330, true );
 
@@ -76,6 +80,10 @@ function setup() {
 		// Add theme license (don't remove, unless you don't want theme support).
 		$license = new LicenseManager( $config->getSubConfig( 'Updater' ) );
 		$license->register();
+
+		// Add admin CSS.
+		$admin_css = new AdminCss();
+		$admin_css->apply();
 	} else {
 		// Enqueue Google Fonts.
 		$google_fonts = new GoogleFonts();

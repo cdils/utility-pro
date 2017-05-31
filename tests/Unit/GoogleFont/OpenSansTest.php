@@ -28,7 +28,7 @@ class OpenSansTest extends TestCase {
 	 * Test font is on when flag is not translated
 	 */
 	public function test_is_on_when_flag_is_not_translated() {
-		Functions::when( '_x' )->returnArg( 1 );
+		Functions\when( '_x' )->returnArg( 1 );
 
 		static::assertTrue( ( new OpenSans() )->is_on() );
 	}
@@ -37,7 +37,7 @@ class OpenSansTest extends TestCase {
 	 * Test font is of when flag is translated.
 	 */
 	public function test_is_off_when_flag_is_translated() {
-		Functions::when( '_x' )->justReturn( 'off' );
+		Functions\when( '_x' )->justReturn( 'off' );
 
 		static::assertFalse( ( new OpenSans() )->is_on() );
 	}

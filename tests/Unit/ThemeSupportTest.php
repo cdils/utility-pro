@@ -38,7 +38,7 @@ class ThemeSupportTest extends TestCase {
 			$key => $value,
 		] );
 
-		Functions::expect( 'add_theme_support' )
+		Functions\expect( 'add_theme_support' )
 			->once()
 			->with( $key, $value );
 
@@ -50,7 +50,7 @@ class ThemeSupportTest extends TestCase {
 	 *
 	 * @return array
 	 */
-	public function dataProvider() {
+	public function dataProvider() : array {
 		return [
 			[
 				'html5',
