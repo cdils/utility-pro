@@ -80,6 +80,10 @@ function setup() {
 		// Add theme license (don't remove, unless you don't want theme support).
 		$license = new LicenseManager( $config->getSubConfig( 'Updater' ) );
 		$license->register();
+
+		// Add admin CSS.
+		$admin_css = new AdminCss();
+		$admin_css->apply();
 	} else {
 		// Enqueue Google Fonts.
 		$google_fonts = new GoogleFonts();
