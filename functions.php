@@ -66,6 +66,8 @@ function setup() {
 
 	add_filter( 'theme_page_templates',  __NAMESPACE__ . '\\remove_genesis_page_templates' );
 
+	add_action( 'toplevel_page_genesis_settings_page_boxes',  __NAMESPACE__ . '\\remove_unwanted_genesis_metaboxes' );
+
 	// Register the default widget areas.
 	$widget_areas = new WidgetAreas( $config->getSubConfig( 'WidgetAreas' ) );
 	$widget_areas->register();
@@ -130,6 +132,19 @@ function remove_genesis_page_templates( array $page_templates ) : array {
 
 	return $page_templates;
 }
+
+/**
+ * Remove the blog page settings metabox from the Genesis Theme Settings
+ * Desired if following the suggestion by Bill Erickson to not use the Blog page template
+ * that comes standard in the Genesis Theme
+ *
+ * @link    http://www.billerickson.net/dont-use-genesis-blog-template/
+ * @link    https://gist.github.com/BeardedGinger/970cacc3bd1c50bb695b881043b84c3f#file-remove-genesis-blogpage-settings-php
+ */
+function remove_unwanted_genesis_metaboxes() {
+	remove_meta_box( 'genesis-theme-settings-blogpage', 'toplevel_page_genesis', 'main' );
+}
+
 
 /**
  * Enqueue theme assets.
