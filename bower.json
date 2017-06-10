@@ -15,6 +15,7 @@
   "devDependencies": {
     "modular-scale": "^3.0.2",
     "normalize.scss": "^7",
-    "susy": "^2.2.12"
+    "susy": "^2.2.12",
+    "breakpoint-sass": "^2.7.1"
   }
 }
