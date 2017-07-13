@@ -42,7 +42,7 @@ class WidgetAreas {
 	public function register() {
 		$widget_areas = (array) apply_filters( 'utility_pro_default_widget_areas', $this->config->getAll() );
 		foreach ( $widget_areas as $widget_area ) {
-			\genesis_register_sidebar( $widget_area );
+			\genesis_register_widget_area( $widget_area );
 		}
 	}
 }
