@@ -15,17 +15,17 @@ declare( strict_types = 1 );
 
 namespace CDils\UtilityPro;
 
-add_filter( 'body_class', 'utility_pro_add_body_class' );
+add_action( 'body_class', __NAMESPACE__ . '\\add_landing_page_body_class' );
 /**
- * Add custom body class.
+ * Add custom body class to landing page.
  *
  * @since 1.1.0
- * @since 2.0.0 Renamed from utility_add_body_class() to utility_pro_add_body_class().
+ * @since 2.0.0 Renamed from utility_add_body_class() to add_landing_page_body_class().
  *
  * @param array $classes Existing body classes.
  * @return array Amended body classes.
  */
-function utility_pro_add_body_class( array $classes ) : array {
+function add_landing_page_body_class( array $classes ) : array {
 	$classes[] = 'utility-landing';
 
 	return $classes;
