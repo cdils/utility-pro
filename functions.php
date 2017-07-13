@@ -38,9 +38,11 @@ add_action( 'genesis_setup', __NAMESPACE__ . '\\setup', 15 );
  * @since 1.0.0
  */
 function setup() {
-	\define( 'CHILD_THEME_NAME', 'utility-pro' ); // WPCS: prefix ok.
-	\define( 'CHILD_THEME_URL', 'https://store.carriedils.com/utility-pro' );  // WPCS: prefix ok.
-	\define( 'CHILD_THEME_VERSION', '1.3.1' );  // WPCS: prefix ok.
+	$child_theme = wp_get_theme();
+
+	\define( 'CHILD_THEME_NAME', $child_theme->get( 'Name' ) );  // WPCS: prefix ok.
+	\define( 'CHILD_THEME_URL', $child_theme->get( 'ThemeURI' ) );  // WPCS: prefix ok.
+	\define( 'CHILD_THEME_VERSION', $child_theme->get( 'Version' ) );  // WPCS: prefix ok.
 
 	$config_file = \UTILITY_PRO_CONFIG_DIR . 'defaults.php';
 	$config = ConfigFactory::createSubConfig( $config_file, 'CDils\UtilityPro' );
@@ -99,7 +101,7 @@ function setup() {
 		$utility_bar = new UtilityBar();
 		$utility_bar->apply();
 
-		// Add accessibility enhancments.
+		// Add accessibility enhancements.
 		$accessibility = new Accessibility();
 		$accessibility->apply();
 
