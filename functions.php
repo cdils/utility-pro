@@ -145,7 +145,7 @@ function enqueue_assets() {
 	// Keyboard navigation (dropdown menus) script.
 	\wp_enqueue_script(
 		'utility-pro-keyboard-dropdown',
-		\get_stylesheet_directory_uri() . '/js/keyboard-dropdown' . $suffix,
+		\get_stylesheet_directory_uri() . '/js/utility-pro-keyboard-dropdown' . $suffix,
 		[ 'jquery' ],
 		\CHILD_THEME_VERSION,
 		true
@@ -154,7 +154,7 @@ function enqueue_assets() {
 	// Load mobile responsive menu.
 	\wp_enqueue_script(
 		'utility-pro-responsive-menu',
-		\get_stylesheet_directory_uri() . '/js/responsive-menu' . $suffix,
+		\get_stylesheet_directory_uri() . '/js/utility-pro-responsive-menu' . $suffix,
 		[ 'jquery' ],
 		'1.0.0', true
 	);
@@ -179,7 +179,7 @@ function enqueue_assets() {
 
 	\wp_enqueue_script(
 		'utility-pro-responsive-menu-args',
-		\get_stylesheet_directory_uri() . '/js/responsive-menu-args' . $suffix,
+		\get_stylesheet_directory_uri() . '/js/utility-pro-responsive-menu-args' . $suffix,
 		[ 'utility-pro-responsive-menu' ],
 		\CHILD_THEME_VERSION,
 		true
@@ -193,7 +193,7 @@ function enqueue_assets() {
 
 	\wp_enqueue_script(
 		'utility-pro-backstretch',
-		\get_stylesheet_directory_uri() . '/js/backstretch' . $suffix,
+		\get_stylesheet_directory_uri() . '/js/utility-pro-backstretch' . $suffix,
 		[ 'jquery' ],
 		'2.0.1',
 		true
