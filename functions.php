@@ -137,7 +137,7 @@ function remove_genesis_page_templates( array $page_templates ) : array {
  * @since 1.0.0
  */
 function enqueue_assets() {
-	$suffix = \defined( 'WP_DEBUG' ) && WP_DEBUG ? '.min.js' : '.js';
+	$suffix = \defined( 'WP_DEBUG' ) && WP_DEBUG ? '.js' : '.min.js';
 
 	// Replace style.css with style-rtl.css for RTL languages.
 	\wp_style_add_data( 'utility-pro', 'rtl', 'replace' );
