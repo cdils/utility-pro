@@ -55,7 +55,7 @@
       "gulp build"
     ],
     "install-and-build-theme": [
-      "npm install",
+      "yarn install --production=false",
       "@build-theme"
     ],
     "install-standards": [
