@@ -52,7 +52,7 @@
   },
   "scripts": {
     "build-theme": [
-      "gulp build"
+      "./node_modules/.bin/gulp build"
     ],
     "install-and-build-theme": [
       "yarn install --production=false",
