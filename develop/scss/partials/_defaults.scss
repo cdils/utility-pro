@@ -235,10 +235,13 @@ input[type="search"]::-webkit-search-results-button {
 		border: none;
 		box-shadow: none;
 		flex-grow: 1;
-		margin-bottom: -5px;
-		padding: 0 20px 0;
-		text-indent: -9999px;
+		height: 11px;
+		padding: 0 15px;
 		transition: none;
+	}
+
+	.search-button-text {
+		display: none;
 	}
 
 }
