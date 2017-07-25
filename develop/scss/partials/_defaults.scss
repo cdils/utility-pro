@@ -220,23 +220,18 @@ input[type="search"]::-webkit-search-results-button {
 }
 
 .search-form {
-
 	display: flex;
 
-	input,
-	button {
-		border: 0;
-	}
-
 	input {
-		background-color: #ddd;
-		box-sizing: border-box;
+		background-color: lighten($black, 85);
+		border: 0;
 		padding: 0.5em;
 	}
 
-	[type="submit"] {
-		background: url(images/icon-search.png) no-repeat 10% $blue;
+	button {
+		background: url(images/icon-search-ltr.png) no-repeat 10% $purple;
 		background-size: 15px 15px;
+		border: 0;
 		color: $white;
 		flex-grow: 1;
 		padding: 0.5em 1em;
@@ -244,12 +239,11 @@ input[type="search"]::-webkit-search-results-button {
 		&:hover {
 			background-color: $black;
 		}
-	}
 
-	.search-button-text {
-		padding-left: 10px;
+		.search-button-text {
+			padding-left: 10px;
+		}
 	}
-
 }
 
 /* Tables

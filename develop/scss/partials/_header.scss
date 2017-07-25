@@ -116,7 +116,6 @@ Site Header
 	width: 300px;
 	@include susy-breakpoint($medium-screen) {
 		float: right;
-		margin-top: 0;
 	}
 }
 
