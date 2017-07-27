@@ -30,12 +30,14 @@ class UtilityBar {
 	/**
 	 * Add Utility Bar above header.
 	 *
+	 * The wrapping div supports grouping of having multiple widgets in the widget area.
+	 *
 	 * @since 1.0.0
 	 */
 	public function add_bar() {
 		\genesis_widget_area( 'utility-bar', [
-			'before' => '<div class="utility-bar"><div class="wrap">',
-			'after'  => '</div></div>',
+			'before' => '<div class="utility-bar">',
+			'after'  => '</div>',
 		] );
 	}
 }

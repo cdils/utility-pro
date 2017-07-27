@@ -87,6 +87,15 @@ function setup() {
 		$admin_css = new AdminCss();
 		$admin_css->apply();
 	} else {
+		remove_theme_support( 'genesis-structural-wraps' );
+
+		add_filter( 'genesis_markup_content-sidebar-wrap', '__return_null' );
+		add_filter( 'genesis_markup_site-inner', '__return_null' );
+
+		// Move skip links outside of site-container.
+		remove_action ( 'genesis_before_header', 'genesis_skip_links', 5 );
+		add_action ( 'genesis_before', 'genesis_skip_links', 5 );
+
 		// Enqueue Google Fonts.
 		$google_fonts = new GoogleFonts();
 		$google_fonts->add( 'enriqueta', new Enriqueta() );
@@ -205,3 +214,5 @@ function enqueue_assets() {
 		'src' => \get_background_image(),
 	] );
 }
+
+// Try to flatten the markup
