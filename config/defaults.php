@@ -39,7 +39,7 @@ $utility_pro_theme_support = [
 		'utility-pro-red'    => __( 'Red', 'utility-pro' ),
 	],
 
-	 // Add support for structural wraps (all default Genesis wraps unless noted).
+	// Add support for structural wraps (all default Genesis wraps unless noted).
 	'genesis-structural-wraps' => [
 		'footer',
 		'footer-widgets',
@@ -52,7 +52,7 @@ $utility_pro_theme_support = [
 		'site-tagline',
 	],
 
-	 // Add support for two navigation areas (theme doesn't use secondary navigation).
+	// Add support for two navigation areas (theme doesn't use secondary navigation).
 	'genesis-menus' => [
 		'primary' => __( 'Primary Navigation Menu', 'utility-pro' ),
 		'footer'  => __( 'Footer Navigation Menu', 'utility-pro' ),
