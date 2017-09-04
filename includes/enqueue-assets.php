@@ -29,15 +29,15 @@ function utility_pro_enqueue_assets() {
 	$localize_primary = array(
 		'buttonText'     => __( 'Menu', 'utility-pro' ),
 		'buttonLabel'    => __( 'Primary Navigation Menu', 'utility-pro' ),
-		'subButtonText'  => __( 'Sub Menu', 'utility-pro' ),
-		'subButtonLabel' => __( 'Sub Menu', 'utility-pro' ),
+		'subMenuButtonText'  => __( 'Sub Menu', 'utility-pro' ),
+		'subMenuButtonLabel' => __( 'Sub Menu', 'utility-pro' ),
 	);
 
 	$localize_footer = array(
 		'buttonText'     => __( 'Footer Menu', 'utility-pro' ),
 		'buttonLabel'    => __( 'Footer Navigation Menu', 'utility-pro' ),
-		'subButtonText'  => __( 'Sub Menu', 'utility-pro' ),
-		'subButtonLabel' => __( 'Sub Menu', 'utility-pro' ),
+		'subMenuButtonText'  => __( 'Sub Menu', 'utility-pro' ),
+		'subMenuButtonLabel' => __( 'Sub Menu', 'utility-pro' ),
 	);
 
 	// Localize the responsive menu script (for translation).
