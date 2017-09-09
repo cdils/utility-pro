@@ -1,6 +1,9 @@
 # Change Log for Utility Pro Child Theme
 All notable changes to this project will be documented in this file.
 
+## 1.3.2 - 2017-09-06
+- Fixed name discrepancies in localized property names for the responsive menu. 
+
 ## 1.3.1 - 2016-04-11
 - Fixed incorrect script handle on backstretch arguments.
 
