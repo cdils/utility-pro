@@ -2,18 +2,8 @@
 
 All notable changes to this project will be documented in this file.
 
-## 2.0.0 - 2017-??-??
-- Make PHP 7.0 the minimum supported version.
-- Declare strict types, and use scalar and return type hints.
-- Use config-driven approach - see `config/defaults.php`.
-- Rewrite customizations logic as object-orientated code.
-- Add unit tests for all the customizations.
-- Update TGMPA to 2.6.1.
-- Pull in TGMPA via Composer.
-- Change how scripts are named and organized.
-- Use Gulp WP Tookit as the build system base.
-- Add Contributor Covenant Code of Conduct.
-- Update `.pot` file for translations.
+## 1.3.2 - 2017-09-06
+- Fixed name discrepancies in localized property names for the responsive menu.
 
 ## 1.3.1 - 2016-04-11
 - Fix incorrect script handle on backstretch arguments.
