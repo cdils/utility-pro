@@ -1,17 +1,49 @@
 {
-  "name": "utility-pro",
-  "homepage": "https://store.carriedils.com/downloads/utility-pro/",
-  "version": "1.3.1",
-  "description": "Utility Pro is a child theme for the Genesis Framework.",
-  "copyright": "2015",
-  "author": "Carrie Dils",
-  "repository": "https://github.com/cdils/utility-pro.git",
-  "license": "GPL-2.0+",
-  "main": "Gulpfile.js",
+  "name": "WPGulp",
+  "author": "ahmadawais",
+  "version": "1.0.3",
+  "license": "GPL-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ahmadawais/WPGulp"
+  },
+  "dependencies": {
+    "eslint-config-wordpress": "^2.0.0",
+    "npm": "^5.8.0"
+  },
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-stats": "^0.0.4",
-    "gulp-wp-toolkit": "^1.2",
-    "gulp-zip": "^3.2.0"
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "browser-sync": "^2.11.1",
+    "eslint": "^4.14.0",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-babel": "^7.0.0",
+    "gulp-cache": "^1.0.2",
+    "gulp-concat": "^2.5.2",
+    "gulp-filter": "^5.1.0",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-line-ending-corrector": "^1.0.1",
+    "gulp-merge-media-queries": "^0.2.1",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-remember": "^1.0.1",
+    "gulp-rename": "^1.2.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sort": "^2.0.0",
+    "gulp-sourcemaps": "^2.6.2",
+    "gulp-uglify": "^3.0.0",
+    "gulp-uglifycss": "^1.0.6",
+    "gulp-wp-pot": "^2.0.7"
+  },
+  "scripts": {
+    "postinstall": "npm run start",
+    "start": "gulp",
+    "styles": "gulp styles",
+    "vendorsJS": "gulp vendorsJS",
+    "customJS": "gulp customJS",
+    "images": "gulp images",
+    "clearCache": "gulp clearCache",
+    "translate": "gulp translate"
   }
 }

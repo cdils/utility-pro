@@ -4,11 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
-    "content-hash": "8fc59fc2a893d3a74dfbff9256b82880",
-=======
     "content-hash": "4ff4eaf71b67a055b244533c8e35d2fc",
->>>>>>> 384cba8... Update composer dependencies
     "packages": [
         {
             "name": "brightnucleus/config",

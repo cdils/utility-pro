@@ -1,23 +1,71 @@
-# Ignore folders with output which is built.
-/dist/
-/images/
-/js/
-/languages/
-vendor/
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.bz2
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.tgz
+*.map
 
-# Ignore node_modules.
-node_modules/
+# Logs and databases #
+######################
+*.log
+*.sql
 
-# Ignore the stylesheet, and map.
-/style.css
-/style.css.map
-/style-rtl.css
-/style-rtl.css.map
+# OS generated files #
+######################
+**.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+._*
 
-# Ignore .pot file
-/develop/languages/*.pot
+# Vim generated files #
+######################
+*.un~
 
-# Ignore local PHPCS config file
-phpcs.xml
+# SASS #
+##########
+**/.sass-cache
+**/.sass-cache/*
+**/.map
 
-tests/
+# Composer #
+##########
+vendors/composer/
+!assets/js/vendor/
+wpcs/
+composer.lock
+
+# Bower #
+##########
+assets/bower_components/*
+
+# Codekit #
+##########
+/codekit-config.json
+*.codekit
+**.codekit-cache/*
+
+# NPM #
+##########
+node_modules
+
+# Compiled Files and Build Dirs #
+##########
+/README.html
+/build/
+
+# PhpStrom Project Files #
+.idea/
+library/vendors/composer
+assets/img/.DS_Store
+assets/sass/HTML
+assets/sass/Rails
+HTML
+Rails
