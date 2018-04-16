@@ -19,3 +19,5 @@ node_modules/
 
 # Ignore local PHPCS config file
 phpcs.xml
+
+tests/
