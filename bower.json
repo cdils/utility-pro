@@ -13,7 +13,8 @@
     "bower_components"
   ],
   "devDependencies": {
-    "bourbon": "~4.2.6",
+    "bourbon": "^4.3",
+    "modular-scale": "^3.0.2",
     "normalize.scss": "^7",
     "susy": "^2.2.12"
   }
