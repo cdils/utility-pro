@@ -19,7 +19,7 @@ module.exports = {
 	// Style options.
 	styleSRC: './develop/scss/style.scss', // Path to main .scss file.
 	styleDestination: './', // Path to place the compiled CSS file. Default set to root folder.
-	outputStyle: 'expanded', // Available options → 'compact' or 'compressed' or 'nested' or 'expanded'
+	outputStyle: 'compact', // Available options → 'compact' or 'compressed' or 'nested' or 'expanded'
 	errLogToConsole: true,
 	precision: 10,
 
@@ -30,13 +30,13 @@ module.exports = {
 
 	// JS Custom options.
 	jsCustomSRC: './develop/js/*.js', // Path to JS custom scripts folder.
-	jsCustomDestination: './src/js/', // Path to place the compiled JS custom scripts file.
+	jsCustomDestination: './js/', // Path to place the compiled JS custom scripts file.
 	jsCustomFile: 'custom', // Compiled JS custom file name. Default set to custom i.e. custom.js.
 
 	// Images options.
 	// imagesSRC: './assets/img/raw/**.{png,jpg,gif,svg}', // Source folder of images which should be optimized.
-	imgSRC: './develop/images*', // Source folder of images which should be optimized and watched.
-	imgDST: './src/images/', // Destination folder of optimized images. Must be different from the imagesSRC folder.
+	imgSRC: './develop/images/*', // Source folder of images which should be optimized and watched.
+	imgDST: './images/', // Destination folder of optimized images. Must be different from the imagesSRC folder.
 
 	// Watch files paths.
 	styleWatchFiles: './develop/scss/**/*.scss', // Path to all *.scss files inside css folder and inside them.
@@ -50,8 +50,8 @@ module.exports = {
 	translationDestination: './develop/languages', // Where to save the translation files.
 	packageName: 'utility-pro', // Package name.
 	bugReport: 'https://AhmadAwais.com/contact/', // Where can users report bugs.
-	lastTranslator: 'Ahmad Awais <your_email@email.com>', // Last translator Email ID.
-	team: 'WPTie <your_email@email.com>', // Team's Email ID.
+	lastTranslator: 'Carrie Dils <carriedils@gmail.com>', // Last translator Email ID.
+	//team: 'WPTie <your_email@email.com>', // Team's Email ID.
 
 	// Browsers you care about for autoprefixing. Browserlist https://github.com/ai/browserslist
 	BROWSERS_LIST: [
