@@ -552,9 +552,6 @@
             "time": "2016-05-19T15:46:51+00:00"
         }
     ],
-<<<<<<< HEAD
-    "packages-dev": [],
-=======
     "packages-dev": [
         {
             "name": "antecedent/patchwork",
