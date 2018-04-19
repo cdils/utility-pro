@@ -11,8 +11,10 @@ node_modules/
 # Ignore the stylesheet, and map.
 /style.css
 /style.css.map
+/style.min.css
 /style-rtl.css
 /style-rtl.css.map
+/style-rtl.min.css
 
 # Ignore .pot file
 /develop/languages/*.pot
