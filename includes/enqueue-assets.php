@@ -21,7 +21,7 @@ function utility_pro_enqueue_assets() {
 	wp_style_add_data( 'utility-pro', 'rtl', 'replace' );
 
 	// Keyboard navigation (dropdown menus) script.
-	wp_enqueue_script( 'genwpacc-dropdown',  get_stylesheet_directory_uri() . '/js/genwpacc-dropdown.js', array( 'jquery' ), false, true );
+	wp_enqueue_script( 'genwpacc-dropdown',  get_stylesheet_directory_uri() . '/js/genwpacc-dropdown.min.js', array( 'jquery' ), false, true );
 
 	// Load mobile responsive menu.
 	wp_enqueue_script( 'utility-pro-responsive-menu', get_stylesheet_directory_uri() . '/js/responsive-menu.min.js', array( 'jquery' ), '1.0.0', true );
@@ -44,7 +44,7 @@ function utility_pro_enqueue_assets() {
 	wp_localize_script( 'utility-pro-responsive-menu', 'utilityMenuPrimaryL10n', $localize_primary );
 	wp_localize_script( 'utility-pro-responsive-menu', 'utilityMenuFooterL10n', $localize_footer );
 
-	wp_enqueue_script( 'utility-pro', get_stylesheet_directory_uri() . '/js/responsive-menu.args.js', array( 'utility-pro-responsive-menu' ), CHILD_THEME_VERSION, true );
+	wp_enqueue_script( 'utility-pro', get_stylesheet_directory_uri() . '/js/responsive-menu.args.min.js', array( 'utility-pro-responsive-menu' ), CHILD_THEME_VERSION, true );
 
 	// Load Backstretch scripts only if custom background is being used
 	// and we're on the home page or a page using the landing page template.
@@ -53,7 +53,7 @@ function utility_pro_enqueue_assets() {
 	}
 
 	wp_enqueue_script( 'utility-pro-backstretch', get_stylesheet_directory_uri() . '/js/backstretch.min.js', array( 'jquery' ), '2.0.1', true );
-	wp_enqueue_script( 'utility-pro-backstretch-args', get_stylesheet_directory_uri() . '/js/backstretch.args.js', array( 'utility-pro-backstretch' ), CHILD_THEME_VERSION, true );
+	wp_enqueue_script( 'utility-pro-backstretch-args', get_stylesheet_directory_uri() . '/js/backstretch.args.min.js', array( 'utility-pro-backstretch' ), CHILD_THEME_VERSION, true );
 	wp_localize_script( 'utility-pro', 'utilityBackstretchL10n', array( 'src' => get_background_image() ) );
 
 }

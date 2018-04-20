@@ -11,7 +11,7 @@ module.exports = {
 	// START Editing Project Variables.
 	// Project options.
 	project: 'Utility Pro', // Project Name.
-	projectURL: '', // Local project URL of your already running WordPress site. Could be something like wpgulp.local or localhost:8888.
+	projectURL: '//updev.test', // Local project URL of your already running WordPress site. Could be something like wpgulp.local or localhost:8888.
 	productURL: './', // Theme/Plugin URL. Leave it like it is, since our gulpfile.js lives in the root folder.
 	browserAutoOpen: false,
 	injectChanges: true,
@@ -31,7 +31,7 @@ module.exports = {
 	// JS Custom options.
 	jsCustomSRC: './develop/js/*.js', // Path to JS custom scripts folder.
 	jsCustomDestination: './js/', // Path to place the compiled JS custom scripts file.
-	jsCustomFile: 'custom', // Compiled JS custom file name. Default set to custom i.e. custom.js.
+	//jsCustomFile: 'custom', // Compiled JS custom file name. Default set to custom i.e. custom.js.
 
 	// Images options.
 	// imagesSRC: './assets/img/raw/**.{png,jpg,gif,svg}', // Source folder of images which should be optimized.

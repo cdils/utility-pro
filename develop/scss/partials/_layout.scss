@@ -1,155 +1,160 @@
-/*
-Structure and Layout
----------------------------------------------------------------------------------------------------- */
+// /*
+// Structure and Layout
+// ---------------------------------------------------------------------------------------------------- */
 
-/* Site Containers
---------------------------------------------- */
-
-.wrap {
-
-	margin: 0 auto;
-	max-width: 100%;
-	padding: 0 5%;
-	word-wrap: break-word;
-
-	@include susy-breakpoint($medium-screen) {
-		max-width: $medium-screen;
-	}
-
-	@include susy-breakpoint($large-screen) {
-		max-width: $large-screen;
-		padding: 0;
-	}
-}
-
-.site-inner {
-	background: lighten($black, 96);
-	padding-top: 40px;
-}
-
-.utility-landing .site-container {
-	margin: 40px auto;
-	max-width: $medium-screen;
-}
-
-/* Content & Primary Sidebar
---------------------------------------------- */
-
-@include susy-breakpoint($medium-screen) {
-
-	.content-sidebar,
-	.sidebar-content {
-
-		.content {
-			@include span(8.5 of 12);
-		}
-	}
-
-	.full-width-content .content {
-		@include full;
-	}
-
-	.sidebar-content{
-
-		.content {
-			@include last;
-		}
-	}
-
-
-	/* Primary Sidebar
-	-------------------- */
-	.sidebar-primary {
-		@include span(3.5 of 12);
-	}
-
-	.content-sidebar {
-
-		.sidebar-primary {
-			@include last;
-		}
-	}
-}
-
-/*
-Sidebar
----------------------------------------------------------------------------------------------------- */
-
-.sidebar {
-	font-size: $base-font-size;
-}
-
-.sidebar p:last-child,
-.sidebar ul > li:last-child {
-	margin-bottom: 0;
-}
-
-.sidebar li {
-	list-style-type: none;
-	margin-bottom: 6px;
-	padding: 0;
-}
-
-.sidebar .widget {
-	background: $white;
-	border-top: 1px solid lighten($black, 11);
-	margin-bottom: 40px;
-	padding: 40px;
-}
-
-.sidebar .widget-wrap {
-	border-top: 5px solid lighten($black, 11);
-	margin-left: 4px;
-}
-
-.sidebar .search-form input[type="search"] {
-	width: 100%;
-}
-
-/* Column Classes
-Link: http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css
---------------------------------------------- */
-
-@include susy-breakpoint($small-screen) {
-
-	.one-half,
-	.three-sixths,
-	.two-fourths {
-		@include span(6);
-	}
-
-	.one-third,
-	.two-sixths {
-		@include span(4);
-	}
-
-	.four-sixths,
-	.two-thirds {
-		@include span(8);
-	}
-
-	.one-fourth {
-		@include span(3);
-	}
-
-	.three-fourths {
-		@include span(9);
-	}
-
-	.one-sixth {
-		@include span(2);
-	}
-
-	.five-sixths {
-		@include span(10);
-	}
-
-	.last {
-		@include last();
-	}
-
-	.last + * {
-		clear: both;
-	}
+@supports (grid-area: auto) {
 
 }
+
+
+// /* Site Containers
+// --------------------------------------------- */
+
+// .wrap {
+
+// 	margin: 0 auto;
+// 	max-width: 100%;
+// 	padding: 0 5%;
+// 	word-wrap: break-word;
+
+// 	@include susy-breakpoint($medium-screen) {
+// 		max-width: $medium-screen;
+// 	}
+
+// 	@include susy-breakpoint($large-screen) {
+// 		max-width: $large-screen;
+// 		padding: 0;
+// 	}
+// }
+
+// .site-inner {
+// 	background: lighten($black, 96);
+// 	padding-top: 40px;
+// }
+
+// .utility-landing .site-container {
+// 	margin: 40px auto;
+// 	max-width: $medium-screen;
+// }
+
+// /* Content & Primary Sidebar
+// --------------------------------------------- */
+
+// @include susy-breakpoint($medium-screen) {
+
+// 	.content-sidebar,
+// 	.sidebar-content {
+
+// 		.content {
+// 			@include span(8.5 of 12);
+// 		}
+// 	}
+
+// 	.full-width-content .content {
+// 		@include full;
+// 	}
+
+// 	.sidebar-content{
+
+// 		.content {
+// 			@include last;
+// 		}
+// 	}
+
+
+// 	/* Primary Sidebar
+// 	-------------------- */
+// 	.sidebar-primary {
+// 		@include span(3.5 of 12);
+// 	}
+
+// 	.content-sidebar {
+
+// 		.sidebar-primary {
+// 			@include last;
+// 		}
+// 	}
+// }
+
+// /*
+// Sidebar
+// ---------------------------------------------------------------------------------------------------- */
+
+// .sidebar {
+// 	font-size: $base-font-size;
+// }
+
+// .sidebar p:last-child,
+// .sidebar ul > li:last-child {
+// 	margin-bottom: 0;
+// }
+
+// .sidebar li {
+// 	list-style-type: none;
+// 	margin-bottom: 6px;
+// 	padding: 0;
+// }
+
+// .sidebar .widget {
+// 	background: $white;
+// 	border-top: 1px solid lighten($black, 11);
+// 	margin-bottom: 40px;
+// 	padding: 40px;
+// }
+
+// .sidebar .widget-wrap {
+// 	border-top: 5px solid lighten($black, 11);
+// 	margin-left: 4px;
+// }
+
+// .sidebar .search-form input[type="search"] {
+// 	width: 100%;
+// }
+
+// /* Column Classes
+// Link: http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css
+// --------------------------------------------- */
+
+// @include susy-breakpoint($small-screen) {
+
+// 	.one-half,
+// 	.three-sixths,
+// 	.two-fourths {
+// 		@include span(6);
+// 	}
+
+// 	.one-third,
+// 	.two-sixths {
+// 		@include span(4);
+// 	}
+
+// 	.four-sixths,
+// 	.two-thirds {
+// 		@include span(8);
+// 	}
+
+// 	.one-fourth {
+// 		@include span(3);
+// 	}
+
+// 	.three-fourths {
+// 		@include span(9);
+// 	}
+
+// 	.one-sixth {
+// 		@include span(2);
+// 	}
+
+// 	.five-sixths {
+// 		@include span(10);
+// 	}
+
+// 	.last {
+// 		@include last();
+// 	}
+
+// 	.last + * {
+// 		clear: both;
+// 	}
+
+// }
