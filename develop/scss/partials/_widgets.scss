@@ -48,7 +48,7 @@ Widgets
 	color: $white;
 	text-transform: none;
 
-	@include susy-breakpoint($smaller-screen) {
+	@include susy-breakpoint($x-small-screen) {
 		font-size: 80px;
 	}
 }
@@ -57,7 +57,7 @@ Widgets
 .home-welcome .textwidget {
 	color: lighten($black, 92);
 
-	@include susy-breakpoint($smaller-screen) {
+	@include susy-breakpoint($x-small-screen) {
 		font-size: 40px;
 		line-height: normal;
 		margin-bottom: 34px;

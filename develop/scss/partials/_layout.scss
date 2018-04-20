@@ -13,11 +13,11 @@ Structure and Layout
 	word-wrap: break-word;
 
 	@include susy-breakpoint($medium-screen) {
-		max-width: $wrap-max-width-medium;
+		max-width: $medium-screen;
 	}
 
 	@include susy-breakpoint($large-screen) {
-		max-width: $wrap-max-width-large;
+		max-width: $large-screen;
 		padding: 0;
 	}
 }
@@ -29,7 +29,7 @@ Structure and Layout
 
 .utility-landing .site-container {
 	margin: 40px auto;
-	max-width: $wrap-max-width-medium;
+	max-width: $medium-screen;
 }
 
 /* Content & Primary Sidebar
