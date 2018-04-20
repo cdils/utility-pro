@@ -75,7 +75,7 @@ Site Header
 	min-height: 60px;
 	width: 100%;
 
-	@include susy-breakpoint($h-idpi) {
+	@include susy-breakpoint($hi-dpi) {
 		background-image: url("images/logo@2x.png");
 		background-size: 260px auto;
 	}

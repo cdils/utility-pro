@@ -119,11 +119,8 @@ function utility_pro_setup() {
 	// Load files in admin.
 	if ( is_admin() ) {
 
-		// Add suggested plugins nag.
-		include get_stylesheet_directory() . '/includes/suggested-plugins.php';
-
 		// Add theme license (don't remove, unless you don't want theme support).
-		include get_stylesheet_directory() . '/includes/theme-license.php';
+		include get_stylesheet_directory() . '/vendor-includes/edd-software-licensing/theme-license-admin.php';
 	}
 }
 
