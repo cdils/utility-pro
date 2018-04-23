@@ -2,20 +2,145 @@
 // Structure and Layout
 // ---------------------------------------------------------------------------------------------------- */
 
-@supports (grid-area: auto) {
+.site-container {
 
+}
+
+.wrap {
+	margin: 0 auto;
+	max-width: $max-width;
+	padding: 0 5%;
+
+	@media screen and (min-width: $small-screen) {
+		padding: 0;
+	}
+}
+
+@supports (grid-area: auto) {
+	@media screen and (min-width: $small-screen) {
+
+		.site-container {
+			display: grid;
+
+			//grid-template-rows: 3;
+			// grid-template-areas:
+			// 	"utility utility"
+			// 	"header header"
+			// 	"menu menu"
+			// 	"sidebar content"
+			// 	"footer-widgets footer-widgets"
+			// 	"footer footer"
+		}
+
+		// .utility-bar {
+		// 	grid-area: utility;
+		// }
+
+		// .site-header {
+		// 	grid-area: header;
+		// }
+
+		// .nav-primary {
+		// 	grid-area: menu;
+		// }
+
+		// .content-sidebar-wrap .content {
+		// 	grid-area: content;
+		// }
+
+		// .content-sidebar-wrap .sidebar-primary {
+		// 	grid-area: sidebar;
+		// }
+
+		// .footer-widgets {
+		// 	grid-area: footer-widgets;
+		// }
+
+		// .site-footer {
+		// 	grid-area: footer;
+		// }
+
+
+		.site-header .wrap {
+			display: grid;
+			grid-gap: 10px;
+			grid-template-columns: minmax(300px, 1fr) 1fr;
+
+			.title-area {
+				align-self: start;
+			}
+
+			.header-widget-area {
+				align-self: center;
+				justify-self: end;
+			}
+		}
+
+		.footer-widgets .wrap {
+			display: grid;
+			grid-gap: 20px;
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr) );
+		}
+	}
+}
+
+@supports (grid-area: auto) {
+	@media screen and (min-width: $medium-screen) {
+
+		.content {
+			grid-area: content;
+		}
+
+		.sidebar-primary {
+			grid-area: sidebar;
+		}
+
+
+		.content-sidebar-wrap {
+			display: grid;
+			grid-gap: 60px;
+			grid-template-columns: 3fr 1fr;
+			grid-template-areas:
+				"content sidebar"
+			;
+		}
+
+		.sidebar-content-wrap {
+			display: grid;
+			grid-gap: 60px;
+			grid-template-columns: 1fr 3fr;
+			grid-template-areas:
+				"sidebar content"
+			;
+		}
+
+		.full-width-content .content-sidebar-wrap,
+		.full-width-content .sidebar-content-wrap {
+			grid-gap: 0;
+			grid-template-columns: 1fr;
+			grid-template-areas:
+				"content"
+			;
+
+			.content {
+				justify-self: center;
+				width: 75%;
+			}
+		}
+
+	}
 }
 
 
 // /* Site Containers
 // --------------------------------------------- */
 
-// .wrap {
+.wrap {
 
-// 	margin: 0 auto;
-// 	max-width: 100%;
-// 	padding: 0 5%;
-// 	word-wrap: break-word;
+	// margin: 0 auto;
+	// max-width: 100%;
+
+	// word-wrap: break-word;
 
 // 	@include susy-breakpoint($medium-screen) {
 // 		max-width: $medium-screen;
@@ -25,20 +150,20 @@
 // 		max-width: $large-screen;
 // 		padding: 0;
 // 	}
-// }
+}
 
-// .site-inner {
-// 	background: lighten($black, 96);
-// 	padding-top: 40px;
-// }
+.site-inner {
+	background: lighten($black, 96);
+	padding-top: 40px;
+}
 
 // .utility-landing .site-container {
 // 	margin: 40px auto;
 // 	max-width: $medium-screen;
 // }
 
-// /* Content & Primary Sidebar
-// --------------------------------------------- */
+/* Content & Primary Sidebar
+--------------------------------------------- */
 
 // @include susy-breakpoint($medium-screen) {
 
@@ -76,40 +201,7 @@
 // 	}
 // }
 
-// /*
-// Sidebar
-// ---------------------------------------------------------------------------------------------------- */
 
-// .sidebar {
-// 	font-size: $base-font-size;
-// }
-
-// .sidebar p:last-child,
-// .sidebar ul > li:last-child {
-// 	margin-bottom: 0;
-// }
-
-// .sidebar li {
-// 	list-style-type: none;
-// 	margin-bottom: 6px;
-// 	padding: 0;
-// }
-
-// .sidebar .widget {
-// 	background: $white;
-// 	border-top: 1px solid lighten($black, 11);
-// 	margin-bottom: 40px;
-// 	padding: 40px;
-// }
-
-// .sidebar .widget-wrap {
-// 	border-top: 5px solid lighten($black, 11);
-// 	margin-left: 4px;
-// }
-
-// .sidebar .search-form input[type="search"] {
-// 	width: 100%;
-// }
 
 // /* Column Classes
 // Link: http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css

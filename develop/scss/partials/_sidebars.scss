@@ -1,0 +1,30 @@
+.sidebar {
+	font-size: $base-font-size;
+}
+
+.sidebar p:last-child,
+.sidebar ul > li:last-child {
+	margin-bottom: 0;
+}
+
+.sidebar li {
+	list-style-type: none;
+	margin-bottom: 6px;
+	padding: 0;
+}
+
+.sidebar .widget {
+	background: $white;
+	border-top: 1px solid lighten($black, 11);
+	margin-bottom: 40px;
+	padding: 40px;
+}
+
+.sidebar .widget-wrap {
+	border-top: 5px solid lighten($black, 11);
+	margin-left: 4px;
+}
+
+.sidebar .search-form input[type="search"] {
+	width: 100%;
+}

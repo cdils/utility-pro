@@ -220,32 +220,30 @@ input[type="search"]::-webkit-search-results-button {
 }
 
 .search-form {
-	position: relative;
-}
+	display: flex;
 
-.search-form [type="submit"] {
-	background-color: transparent;
-	background: url(images/icon-search-ltr.png) no-repeat 75% 53% $white;
-	border: 1px solid lighten($black, 85);
-	box-shadow: none;
-	height: 53px;
-	margin: 0;
-	overflow: hidden;
-	padding: 0 42px 0 0;
-	position: absolute;
-	right: 0;
-	text-indent: -9999px;
-	vertical-align: top;
-	width: 53px;
-	transition: none;
-}
+	input {
+		background-color: lighten($black, 85);
+		border: 0;
+		padding: 0.5em;
+	}
 
-.search-form input[type="submit"]:focus,
-.search-form input[type="submit"]:hover {
-	background-color: lighten($black, 56);
-	background-position: 20% 53%;
-	text-indent: -9999px;
+	button {
+		background: url(images/icon-search-ltr.png) no-repeat 10% $purple;
+		background-size: 15px 15px;
+		border: 0;
+		color: $white;
+		flex-grow: 1;
+		padding: 0.5em 1em;
 
+		&:hover {
+			background-color: $black;
+		}
+
+		.search-button-text {
+			padding-left: 10px;
+		}
+	}
 }
 
 /* Tables

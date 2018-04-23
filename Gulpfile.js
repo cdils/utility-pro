@@ -81,6 +81,8 @@ function browsersync() {
 
 		// Project URL.
 		proxy: config.projectURL,
+		// Use a specific port (instead of the one auto-detected by Browsersync).
+		port: 8000,
 
 		// `true` Automatically open the browser with BrowserSync live server.
 		// `false` Stop the browser from automatically opening.
@@ -88,11 +90,21 @@ function browsersync() {
 
 		// Inject CSS changes.
 		// Comment it to reload browser for every CSS change.
-		injectChanges: config.injectChanges
+		injectChanges: config.injectChanges,
+
+		https: {
+		    key:
+		        '/Users/cdils' +
+		        '/.valet/Certificates/' +
+		        'updev.test.key',
+		    cert:
+		        '/Users/cdils' +
+		        '/.valet/Certificates/' +
+		        'updev.test.crt'
+		}
 	});
 
-	// Use a specific port (instead of the one auto-detected by Browsersync).
-	// port: 7000,
+
 }
 
 // Helper function to allow browser reload with Gulp 4

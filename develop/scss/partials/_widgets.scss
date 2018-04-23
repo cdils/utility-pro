@@ -178,25 +178,6 @@ Footer Widgets
 	padding: 40px 0;
 }
 
-.footer-widgets-1,
-.footer-widgets-2,
-.footer-widgets-3 {
-	float: left;
-	margin: 0;
-	width: 100%;
-
-	@include susy-breakpoint($small-screen) {
-		width: 30%;
-	}
-}
-
-.footer-widgets-1,
-.footer-widgets-2 {
-	@include susy-breakpoint($small-screen) {
-		margin-right: 5%;
-	}
-}
-
 .footer-widgets a {
 	color: $white;
 }

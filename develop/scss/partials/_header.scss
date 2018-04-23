@@ -7,7 +7,7 @@ Site Header
 	border-bottom: 1px solid lighten($black, 85);
 
 	.wrap {
-		padding: 20px 0;
+		padding: 20px 10px;
 	}
 }
 
@@ -16,18 +16,15 @@ Site Header
 --------------------------------------------- */
 
 .title-area {
-	float: left;
-	font-weight: 700;
 	text-align: center;
-	width: 100%;
-	@include susy-breakpoint($medium-screen) {
+	@media screen and (min-width: $small-screen) {
 		text-align: left;
-		width: 50%;
 	}
 }
 
 .site-title {
 	font-size: 28px;
+	font-weight: 700;
 	letter-spacing: 2px;
 	line-height: 1;
 	margin: 0 0 8px;
@@ -51,10 +48,10 @@ Site Header
 
 /* Full width header, no widgets */
 
-.header-full-width .site-title,
-.header-full-width .title-area {
-	width: 100%;
-}
+// .header-full-width .site-title,
+// .header-full-width .title-area {
+// 	width: 100%;
+// }
 
 .header-image .site-description,
 .header-image .site-title {
@@ -102,23 +99,21 @@ Site Header
 /* Header Right Widget Area
 --------------------------------------------- */
 
-.site-header .widget-area {
-	float: right;
-	text-align: center;
-	width: 100%;
-	@include susy-breakpoint($medium-screen) {
-		text-align: right;
-		width: 50%;
-	}
-}
+// .site-header .widget-area {
+// 	float: right;
+// 	text-align: center;
+// 	width: 100%;
+// 	@include susy-breakpoint($medium-screen) {
+// 		text-align: right;
+// 		width: 50%;
+// 	}
+// }
 
 .header-widget-area .search-form {
-	height: 53px;
-	margin: 20px auto 0;
+	margin: 0 auto;
 	width: 300px;
-	@include susy-breakpoint($medium-screen) {
-		float: right;
-		margin-top: 0;
+	@media screen and (min-width: $small-screen) {
+
 	}
 }
 
