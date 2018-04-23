@@ -56,8 +56,7 @@ img.alignnone,
 }
 
 .wp-caption-text {
-	font-size: $wp-caption-font-size;
-	font-weight: 700;
+	font-size: $caption-font-size;
 	margin: 0;
 	text-align: center;
 }
@@ -74,7 +73,10 @@ img.alignnone,
 --------------------------------------------- */
 
 .gallery {
-	@include container(12);
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	margin-bottom: $base-margin;
 
 	img {
 		width: 100%;
@@ -82,7 +84,6 @@ img.alignnone,
 }
 
 .gallery-item {
-	line-height: 0;
 	list-style: none;
 	margin: 0 0 2.35765%;
 	overflow: hidden;
@@ -91,59 +92,12 @@ img.alignnone,
 	text-align: center;
 	vertical-align: top;
 
-	@include susy-breakpoint($small-screen) {
-
-		@include nested(12) {
-			.gallery-columns-2 &,
-			.gallery-col-2 & {
-				@include gallery(6);
-			}
-
-			.gallery-columns-3 &,
-			.gallery-col-3 & {
-				@include gallery(4);
-			}
-
-			.gallery-columns-4 &,
-			.gallery-col-4 & {
-				@include gallery(3);
-			}
-
-			.gallery-columns-5 &,
-			.gallery-col-5 & {
-				@include gallery(2.4);
-			}
-
-			.gallery-columns-6 &,
-			.gallery-col-6 & {
-				@include gallery(2);
-			}
-
-			.gallery-columns-7 &,
-			.gallery-col-7 & {
-				@include gallery(1.71);
-			}
-
-			.gallery-columns-8 &,
-			.gallery-col-8 & {
-				@include gallery(1.5);
-			}
-
-			.gallery-columns-9 &,
-			.gallery-col-9 & {
-				@include gallery(1.33);
-			}
-		}
-	}
-
 	.gallery-caption {
 		background: transparentize($black, 0.5);
 		color: $white;
-		font-size: $gallery-caption-font-size;
-		line-height: 1.65;
-		max-height: 50%;
+		font-size: $caption-font-size;
 		opacity: 0;
-		overflow: hidden;
+		max-height: 90%;
 		padding: 10px;
 		position: absolute;
 		transition: all 0.2s ease-in-out;
@@ -153,8 +107,44 @@ img.alignnone,
 
 	&:hover .gallery-caption {
 		opacity: 1;
+		overflow: visible;
 		transform: translate(0, -100%);
 		visibility: visible;
+	}
+}
+
+@media screen and (min-width: $small-screen) {
+
+	.gallery-columns-2 {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		.gallery-columns-3 {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		.gallery-columns-4 {
+			grid-template-columns: repeat(4, 1fr);
+		}
+
+		.gallery-columns-5 {
+			grid-template-columns: repeat(5, 1fr);
+		}
+
+		.gallery-columns-6 {
+			grid-template-columns: repeat(6, 1fr);
+		}
+
+		.gallery-columns-7 {
+			grid-template-columns: repeat(7, 1fr);
+		}
+
+		.gallery-columns-8 {
+			grid-template-columns: repeat(8, 1fr);
+		}
+
+		.gallery-columns-9 {
+			grid-template-columns: repeat(9, 1fr);
 	}
 
 }
