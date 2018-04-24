@@ -1,4 +1,3 @@
-
 // Hide visually but not from screen readers
 // and keyboard users
 //---------------------------------------------
@@ -22,18 +21,18 @@
 	left: 10px;
 	position: absolute;
 	top: 10px;
-}
 
-.screen-reader-shortcut:focus {
-	background: $white;
-	clip: auto;
-	display: block;
-	height: auto;
-	line-height: normal;
-	padding: 15px 23px 14px;
-	text-decoration: none;
-	width: auto;
-	z-index: 100000;
+	&:focus {
+		background: $white;
+		clip: auto;
+		display: block;
+		height: auto;
+		line-height: normal;
+		padding: 15px 23px 14px;
+		text-decoration: none;
+		width: auto;
+		z-index: 100000;
+	}
 }
 
 .genesis-skip-link {
@@ -49,6 +48,6 @@
 // Display outline on focus
 //---------------------------------------------
 :focus {
-	color: lighten($black, 11);
-	outline: lighten($black, 63) dotted thin;
+	color: $black;
+	outline: lighten($black, 75) dotted thin;
 }

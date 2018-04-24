@@ -1,6 +1,6 @@
 .site-header {
 	background: $white;
-	border-bottom: 1px solid lighten($black, 85);
+	border-bottom: 1px solid lighten($black, 75);
 	padding: 20px 0;
 }
 
@@ -21,18 +21,18 @@
 	line-height: 1;
 	margin: 0 0 8px;
 	text-transform: uppercase;
-}
 
-.site-title a,
-.site-title a:hover {
-	border: 0;
-	color: lighten($black, 11);
-	font-family: $serif;
-	font-size: $site-title-font-size;
+	a,
+	a:hover {
+		border: 0;
+		color: $black;
+		font-family: $serif;
+		font-size: $site-title-font-size;
+	}
 }
 
 .site-description {
-	color: lighten($black, 33);
+	color: lighten($black, 25);
 	font-size: $base-font-size;
 	line-height: 1;
 	margin: 0;
@@ -57,12 +57,12 @@
 	min-height: 60px;
 	width: 100%;
 
-	@include susy-breakpoint($hi-dpi) {
+	@media (min-resolution: 144dpi) {
 		background-image: url("images/logo@2x.png");
 		background-size: 260px auto;
 	}
 
-	@include susy-breakpoint($medium-screen) {
+	@media screen and (min-width: $medium-screen) {
 		background-position: left;
 	}
 
@@ -76,7 +76,7 @@
 // 	min-height: 60px;
 // 	width: 100%;
 
-// 	@include susy-breakpoint($medium-screen) {
+// 	@media screen and (min-width: $medium-screen) {
 // 		background-position: left center;
 // 	}
 // }

@@ -9,7 +9,7 @@
 //---------------------------------------------
 
 address {
-	margin-bottom: 24px;
+	margin-bottom: $base-margin/2;
 }
 
 .alignleft {
@@ -17,7 +17,7 @@ address {
 	text-align: left;
 
 	.avatar {
-		margin-right: 24px;
+		margin-right: $base-margin/2;
 	}
 }
 
@@ -26,29 +26,29 @@ address {
 	text-align: right;
 
 	.avatar {
-		margin-left: 24px;
+		margin-left: $base-margin/2;
 	}
 }
 
 img.alignleft,
 .wp-caption.alignleft {
-	margin: 0 24px 24px 0;
+	margin: 0 $base-margin/2 $base-margin/2 0;
 }
 
 img.alignright,
 .wp-caption.alignright {
-	margin: 0 0 24px 24px;
+	margin: 0 0 $base-margin/2 $base-margin/2;
 }
 
 img.centered,
 .aligncenter {
 	display: block;
-	margin: 0 auto 24px;
+	margin: 0 auto $base-margin/2;
 }
 
 img.alignnone,
 .alignnone {
-	margin-bottom: 24px;
+	margin-bottom: $base-margin/2;
 }
 
 .wp-caption-text {
@@ -81,7 +81,6 @@ img.alignnone,
 
 .gallery-item {
 	list-style: none;
-	margin: 0 0 2.35765%;
 	overflow: hidden;
 	padding: 0;
 	position: relative;
@@ -142,20 +141,19 @@ img.alignnone,
 		.gallery-columns-9 {
 			grid-template-columns: repeat(9, 1fr);
 	}
-
 }
 
 // Genesis
 //---------------------------------------------
 
 .breadcrumb {
-	margin-bottom: 20px;
+	margin-bottom: $base-margin/2;
 }
 
 .author-box,
 .archive-description {
 	background-color: $author-box-background;
-	color: lighten($black, 11);
+	color: $black;
 	margin-bottom: 40px;
 	padding: $base-padding;
 
@@ -169,10 +167,10 @@ img.alignnone,
 	}
 
 	a {
-		border-bottom: 1px solid lighten($black, 85);
+		border-bottom: 1px solid lighten($black, 75);
 	}
 
 	.avatar {
-		margin-right: 24px;
+		margin-right: $base-margin/2;
 	}
 }

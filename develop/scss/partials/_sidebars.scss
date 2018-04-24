@@ -1,33 +1,26 @@
 .sidebar {
 	font-size: $base-font-size;
-}
 
-.sidebar p:last-child,
-.sidebar ul > li:last-child {
-	margin-bottom: 0;
-}
-
-.sidebar li {
-	list-style-type: none;
-	margin-bottom: 6px;
-	padding: 0;
-}
-
-.sidebar .widget {
-	background: $white;
-	//border-top: 1px solid lighten($black, 11);
-	margin-bottom: 40px;
-	padding: $base-padding;
-
-	&.widget_search {
-		background: none;
-		border-top: 0;
+	li {
+		list-style-type: none;
+		margin-bottom: 6px;
 		padding: 0;
-
-		.search-form input[type="search"] {
-			width: 100%;
-		}
 	}
 
-	@extend %box-shadow;
+	.widget {
+		background: $white;
+		margin-bottom: $base-margin;
+		padding: $base-padding;
+
+		&.widget_search {
+			background: none;
+			padding: 0;
+
+			.search-form input[type="search"] {
+				width: 100%;
+			}
+		}
+
+		@extend %box-shadow;
+	}
 }

@@ -13,14 +13,14 @@
 		position: relative;
 		text-align: left;
 
-		@include susy-breakpoint($medium-screen) {
+		@media screen and (min-width: $medium-screen) {
 			display: inline-block;
 		}
 
 		> a {
 			text-transform: uppercase;
 
-			@include susy-breakpoint($medium-screen) {
+			@media screen and (min-width: $medium-screen) {
 				border-bottom: 0;
 			}
 		}
@@ -44,22 +44,17 @@
 	.current-menu-item > a,
 	.sub-menu .current-menu-item > a,
 	.sub-menu .current-menu-item > a:hover {
-		color: lighten($black, 56);
-	}
-
-	.sub-menu a:hover,
-	.sub-menu a:focus {
-		outline: lighten($black, 63) dotted thin;
+		color: lighten($black, 50);
 	}
 
 	.sub-menu {
-		background-color: lighten($black, 7);
+		background-color: $black;
 		clear: both;
 		display: none;
 		opacity: 1;
 		position: static;
 
-		@include susy-breakpoint($medium-screen) {
+		@media screen and (min-width: $medium-screen) {
 			display: block;
 			left: -9999px;
 			margin: 0;
@@ -80,7 +75,7 @@
 	.sub-menu a {
 		border: 0;
 
-		@include susy-breakpoint($medium-screen) {
+		@media screen and (min-width: $medium-screen) {
 			letter-spacing: 0;
 			width: 200px;
 		}
@@ -92,7 +87,7 @@
 
 }
 
-@include susy-breakpoint($medium-screen) {
+@media screen and (min-width: $medium-screen) {
 
 	.genesis-nav-menu .sub-menu .sub-menu {
 		margin: -54px 0 0 199px;
@@ -113,7 +108,7 @@
 	display: none;
 	position: relative;
 
-	@include susy-breakpoint($medium-screen) {
+	@media screen and (min-width: $medium-screen) {
 		display: inline-block;
 	}
 }
@@ -144,7 +139,7 @@
 	}
 
 
-	@include susy-breakpoint($medium-screen) {
+	@media screen and (min-width: $medium-screen) {
 		display: block;
 		visibility: hidden;
 	}
@@ -169,13 +164,13 @@
 		content: "-";
 	}
 
-	@include susy-breakpoint($medium-screen) {
+	@media screen and (min-width: $medium-screen) {
 		display: none;
 		visibility: hidden;
 	}
 }
 
-@include susy-breakpoint($medium-screen) {
+@media screen and (min-width: $medium-screen) {
 
 	button.menu-toggle,
 	button.sub-menu-toggle,
@@ -191,7 +186,7 @@
 .site-header {
 
 	.sub-menu {
-		border-top: 1px solid lighten($black, 92);
+		border-top: 1px solid lighten($black, 75);
 
 		.sub-menu {
 			margin-top: -53px;
@@ -207,13 +202,13 @@
 	}
 
 	.sub-menu a {
-		background-color: lighten($black, 92);
+		background-color: lighten($black, 75);
 	}
 
 	.current-menu-item > a,
 	.sub-menu .current-menu-item > a:hover,
 	a:hover {
-		color: lighten($black, 33);
+		color: lighten($black, 25);
 	}
 }
 
@@ -222,18 +217,18 @@
 
 .nav-primary,
 .nav-footer {
-	background-color: lighten($black, 7);
+	background-color: $black;
 	text-align: center;
 	width: 100%;
 
 	a:hover,
 	.current-menu-item > a {
-		color: lighten($black, 56);
+		color: lighten($black, 50);
 	}
 }
 
 .nav-primary .sub-menu a:hover {
-	color: lighten($black, 56);
+	color: lighten($black, 50);
 }
 
 // Dropdown Menu

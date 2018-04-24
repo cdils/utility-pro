@@ -1,19 +1,21 @@
 .site-footer {
-	background-color: rgba($blue, .9);
+	background-color: $blue;
 	color: $white;
 	font-size: $footer-font-size;
-	padding: 40px 0;
+	padding: $base-padding 0;
 	text-align: center;
+
+	a {
+		color: darken($white, 30);
+
+		&:hover {
+			border-bottom: 0;
+		}
+	}
+
+	p {
+		margin: 0;
+	}
 }
 
-.site-footer a {
-	color: $white;
-}
 
-.site-footer a:hover {
-	border-bottom: 0;
-}
-
-.site-footer p {
-	margin: 0;
-}
