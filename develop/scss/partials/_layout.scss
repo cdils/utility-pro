@@ -1,155 +1,153 @@
-/*
-Structure and Layout
----------------------------------------------------------------------------------------------------- */
-
-/* Site Containers
---------------------------------------------- */
-
-.wrap {
-
-	margin: 0 auto;
-	max-width: 100%;
-	padding: 0 5%;
-	word-wrap: break-word;
-
-	@include susy-breakpoint($medium-screen) {
-		max-width: $wrap-max-width-medium;
-	}
-
-	@include susy-breakpoint($large-screen) {
-		max-width: $wrap-max-width-large;
-		padding: 0;
-	}
-}
+// Structure and Layout
+//------------------------------------------------------------------------------
 
 .site-inner {
 	background: lighten($black, 96);
 	padding-top: 40px;
 }
 
-.utility-landing .site-container {
-	margin: 40px auto;
-	max-width: $wrap-max-width-medium;
-}
+.site-container .wrap {
+	margin: 0 auto;
+	padding: 0 2.5%;
 
-/* Content & Primary Sidebar
---------------------------------------------- */
-
-@include susy-breakpoint($medium-screen) {
-
-	.content-sidebar,
-	.sidebar-content {
-
-		.content {
-			@include span(8.5 of 12);
-		}
-	}
-
-	.full-width-content .content {
-		@include full;
-	}
-
-	.sidebar-content{
-
-		.content {
-			@include last;
-		}
-	}
-
-
-	/* Primary Sidebar
-	-------------------- */
-	.sidebar-primary {
-		@include span(3.5 of 12);
-	}
-
-	.content-sidebar {
-
-		.sidebar-primary {
-			@include last;
-		}
+	@media screen and (min-width: $large-screen) {
+		max-width: $max-width;
+		padding: 0;
 	}
 }
 
-/*
-Sidebar
----------------------------------------------------------------------------------------------------- */
-
-.sidebar {
-	font-size: $base-font-size;
+.site-header .wrap {
+	display: grid;
+	grid-gap: 20px;
 }
 
-.sidebar p:last-child,
-.sidebar ul > li:last-child {
-	margin-bottom: 0;
-}
+// Full width header, no widgets
 
-.sidebar li {
-	list-style-type: none;
-	margin-bottom: 6px;
-	padding: 0;
-}
-
-.sidebar .widget {
-	background: $white;
-	border-top: 1px solid lighten($black, 11);
-	margin-bottom: 40px;
-	padding: 40px;
-}
-
-.sidebar .widget-wrap {
-	border-top: 5px solid lighten($black, 11);
-	margin-left: 4px;
-}
-
-.sidebar .search-form input[type="search"] {
+.header-full-width .site-title,
+.header-full-width .title-area {
 	width: 100%;
 }
 
-/* Column Classes
-Link: http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css
---------------------------------------------- */
+@supports (grid-area: auto) {
+	@media screen and (min-width: $small-screen) {
+		// Header
+		.site-header .wrap {
+			grid-template-columns: minmax(300px, 1fr) 1fr;
 
-@include susy-breakpoint($small-screen) {
+			.title-area {
+				align-self: start;
+			}
 
-	.one-half,
-	.three-sixths,
-	.two-fourths {
-		@include span(6);
+			.header-widget-area {
+				align-self: center;
+				justify-self: end;
+			}
+		}
 	}
 
-	.one-third,
-	.two-sixths {
-		@include span(4);
-	}
+	@media screen and (min-width: $medium-screen) {
 
-	.four-sixths,
-	.two-thirds {
-		@include span(8);
-	}
+		// Content area
+		.content {
+			grid-area: content;
+		}
 
-	.one-fourth {
-		@include span(3);
-	}
+		.sidebar-primary {
+			grid-area: sidebar;
+		}
 
-	.three-fourths {
-		@include span(9);
-	}
+		.content-sidebar .content-sidebar-wrap {
+			display: grid;
+			grid-gap: 40px;
+			grid-template-columns: 3fr 1.25fr;
+			grid-template-areas:
+				"content sidebar"
+			;
+		}
 
-	.one-sixth {
-		@include span(2);
-	}
+		.sidebar-content .content-sidebar-wrap {
+			display: grid;
+			grid-gap: 40px;
+			grid-template-columns: 1.25fr 3fr;
+			grid-template-areas:
+				"sidebar content"
+			;
+		}
 
-	.five-sixths {
-		@include span(10);
-	}
+		.full-width-content .content-sidebar-wrap {
+			display: grid;
+			grid-gap: 0;
+			grid-template-columns: 1fr;
+			grid-template-areas:
+				"content"
+			;
 
-	.last {
-		@include last();
-	}
+			.content {
+				justify-self: center;
+				width: 75%;
+			}
+		}
 
-	.last + * {
-		clear: both;
+		// Footer
+		.footer-widgets .wrap {
+			display: grid;
+			grid-gap: 20px;
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr) );
+		}
 	}
+}
 
+// Column Classes (fallback for those not using Gutenberg columns)
+//------------------------------------------------------------------------------
+
+.five-sixths,
+.four-sixths,
+.one-fourth,
+.one-half,
+.one-sixth,
+.one-third,
+.three-fourths,
+.three-sixths,
+.two-fourths,
+.two-sixths,
+.two-thirds {
+	float: left;
+	margin-left: 2.564102564102564%;
+}
+
+.one-half,
+.three-sixths,
+.two-fourths {
+	width: 48.717948717948715%;
+}
+
+.one-third,
+.two-sixths {
+	width: 31.623931623931625%;
+}
+
+.four-sixths,
+.two-thirds {
+	width: 65.81196581196582%;
+}
+
+.one-fourth {
+	width: 23.076923076923077%;
+}
+
+.three-fourths {
+	width: 74.35897435897436%;
+}
+
+.one-sixth {
+	width: 14.52991452991453%;
+}
+
+.five-sixths {
+	width: 82.90598290598291%;
+}
+
+.first {
+	clear: both;
+	margin-left: 0;
 }
