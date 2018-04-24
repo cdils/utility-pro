@@ -28,7 +28,6 @@
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
-    "breakpoint-sass": "^2.7.1",
     "browser-sync": "^2.23.7",
     "eslint": "^4.14.0",
     "gulp": "github:gulpjs/gulp#4.0",
@@ -52,8 +51,7 @@
     "gulp-uglifycss": "^1.0.6",
     "gulp-wp-pot": "^2.0.7",
     "modularscale-sass": "^3.0.5",
-    "normalize-scss": "^7.0.1",
-    "susy": "^2.2.12"
+    "normalize-scss": "^7.0.1"
   },
   "scripts": {
     "postinstall": "npm run start",
