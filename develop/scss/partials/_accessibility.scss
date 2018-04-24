@@ -1,12 +1,7 @@
-/*
-Accessibility Extras - Taken from the Leiden theme & Genesis Accessible plugin (genesis-accessible.org)
----------------------------------------------------------------------------------------------------- */
 
-/*
-* Skiplinks
-* Hide visually but not from screen readers
-* and keyboard users
---------------------------------------------- */
+// Hide visually but not from screen readers
+// and keyboard users
+//---------------------------------------------
 
 .more-link {
 	position: relative;
@@ -51,8 +46,8 @@ Accessibility Extras - Taken from the Leiden theme & Genesis Accessible plugin (
 	}
 }
 
-
-/* Display outline on focus */
+// Display outline on focus
+//---------------------------------------------
 :focus {
 	color: lighten($black, 11);
 	outline: lighten($black, 63) dotted thin;

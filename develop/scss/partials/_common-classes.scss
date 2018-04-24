@@ -1,16 +1,12 @@
-/*
-Common Classes
----------------------------------------------------------------------------------------------------- */
-
-/* Avatar
---------------------------------------------- */
+// Avatar
+//---------------------------------------------
 
 .avatar {
 	float: left;
 }
 
-/* WordPress
---------------------------------------------- */
+// WordPress
+//---------------------------------------------
 
 address {
 	margin-bottom: 24px;
@@ -69,8 +65,8 @@ img.alignnone,
 	padding: 5px;
 }
 
-/* Media Gallery
---------------------------------------------- */
+// Media Gallery
+//---------------------------------------------
 
 .gallery {
 	display: grid;
@@ -149,8 +145,8 @@ img.alignnone,
 
 }
 
-/* Genesis
---------------------------------------------- */
+// Genesis
+//---------------------------------------------
 
 .breadcrumb {
 	margin-bottom: 20px;
@@ -161,11 +157,9 @@ img.alignnone,
 	background-color: $author-box-background;
 	color: lighten($black, 11);
 	margin-bottom: 40px;
-	padding: 40px;
+	padding: $base-padding;
 
-	p:last-child {
-		margin-bottom: 0;
-	}
+	@extend %box-shadow;
 }
 
 .author-box {

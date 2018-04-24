@@ -1,9 +1,5 @@
-/*
-Defaults
----------------------------------------------------------------------------------------------------- */
-
-/* Typographical Elements
---------------------------------------------- */
+// Typographical Elements
+//---------------------------------------------
 
 body {
 	background: $white;
@@ -55,6 +51,10 @@ a:hover {
 p {
 	margin: 0 0 24px;
 	padding: 0;
+
+	&:last-of-type {
+		margin-bottom: 0;
+	}
 }
 
 strong {
@@ -70,18 +70,18 @@ ul {
 blockquote {
 	color: $black;
 	margin: 0;
-	padding: 24px 40px;
-}
+	padding: $base-margin;
 
-blockquote::before {
-	content: "\201C";
-	display: block;
-	font-family: $serif;
-	font-size: 120px;
-	height: 0;
-	left: -55px;
-	position: relative;
-	top: -55px;
+	&::before {
+		content: "\201C";
+		display: block;
+		font-family: $serif;
+		font-size: 120px;
+		height: 0;
+		left: -55px;
+		position: relative;
+		top: -55px;
+	}
 }
 
 pre {
@@ -97,8 +97,8 @@ cite {
 	font-weight: 700;
 }
 
-/* Headings
---------------------------------------------- */
+// Headings
+//---------------------------------------------
 
 h1,
 h2,
@@ -139,8 +139,8 @@ h6 {
 	font-size: $h6-font-size;
 }
 
-/* Objects
---------------------------------------------- */
+// Objects
+//---------------------------------------------
 
 embed,
 iframe,
@@ -156,8 +156,8 @@ img {
 	width: auto; /* IE8 */
 }
 
-/* Forms
---------------------------------------------- */
+// Forms
+//---------------------------------------------
 
 input,
 textarea {
@@ -223,9 +223,9 @@ input[type="search"]::-webkit-search-results-button {
 	display: flex;
 
 	input {
-		background-color: lighten($black, 85);
+		background-color: lighten($black, 50);
 		border: 0;
-		padding: 0.5em;
+		padding: $base-padding/3;
 	}
 
 	button {
@@ -245,8 +245,8 @@ input[type="search"]::-webkit-search-results-button {
 	}
 }
 
-/* Tables
---------------------------------------------- */
+// Tables
+//---------------------------------------------
 
 table {
 	border-collapse: collapse;
@@ -269,5 +269,5 @@ th {
 }
 
 th {
-	font-weight: 400;
+	font-weight: 700;
 }

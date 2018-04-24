@@ -1,9 +1,5 @@
-/* ##
-Plugins
----------------------------------------------------------------------------------------------------- */
-
-/* ## Better Font Awesome
---------------------------------------------- */
+// Better Font Awesome
+//---------------------------------------------
 
 a > .fa {
 	display: block;
@@ -13,8 +9,8 @@ li a .fa {
 	display: inline-block;
 }
 
-/* ## Genesis eNews Extended
---------------------------------------------- */
+// Genesis eNews Extended
+//---------------------------------------------
 
 .enews-widget {
 	color: lighten($black, 79);
@@ -55,8 +51,8 @@ li a .fa {
 	border-top: 5px solid $white;
 }
 
-/* ## Gravity Forms
---------------------------------------------- */
+// Gravity Forms
+//---------------------------------------------
 
 div.gform_wrapper input[type="email"],
 div.gform_wrapper input[type="text"],
@@ -86,8 +82,8 @@ div.gform_wrapper textarea:focus {
 	outline: 1px dotted lighten($black, 63);
 }
 
-/* ## Jetpack
---------------------------------------------- */
+// Jetpack
+//---------------------------------------------
 
 #wpstats {
 	display: none;

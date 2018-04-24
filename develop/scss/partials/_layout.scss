@@ -1,6 +1,3 @@
-// Structure and Layout
-//------------------------------------------------------------------------------
-
 .site-inner {
 	background: lighten($black, 96);
 	padding-top: 40px;
@@ -22,6 +19,7 @@
 }
 
 // Full width header, no widgets
+//---------------------------------------------
 
 .header-full-width .site-title,
 .header-full-width .title-area {
@@ -97,8 +95,8 @@
 	}
 }
 
-// Column Classes (fallback for those not using Gutenberg columns)
-//------------------------------------------------------------------------------
+// Column Classes (fallback)
+//---------------------------------------------
 
 .five-sixths,
 .four-sixths,

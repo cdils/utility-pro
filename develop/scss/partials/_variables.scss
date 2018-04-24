@@ -36,7 +36,7 @@ $large-screen: 1140px;
 
 // Global Font Families
 $sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$sans-serif-alt: Raleway, "Helvetica Neue", Helvetica, Arial, sans-s;
+$sans-serif-alt: Raleway, "Helvetica Neue", Helvetica, Arial, sans-serif;
 $serif: Enriqueta, serif;
 $mono: "Courier 10 Pitch", Courier, monospace;
 
@@ -70,7 +70,6 @@ $box-title-size: $h4-font-size;
 $widget-title-size: $h6-font-size;
 
 // Menu Font Properties
-$menu-toggle-size: $h2-font-size;
 $nav-font-size: $secondary-font-size;
 $subnav-font-size: $secondary-font-size;
 $pagination-font-size: $secondary-font-size;

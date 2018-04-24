@@ -1,9 +1,5 @@
-/*
-Content Area
----------------------------------------------------------------------------------------------------- */
-
-/* Titles
---------------------------------------------- */
+// Titles
+//---------------------------------------------
 
 .entry-title {
 	margin-bottom: 40px;
@@ -35,8 +31,8 @@ Content Area
 	margin-bottom: 24px;
 }
 
-/* Entries
---------------------------------------------- */
+// Entries
+//---------------------------------------------
 
 .sticky.entry {
 	border-top: 1px solid $blue;
@@ -44,10 +40,11 @@ Content Area
 
 .entry {
 	background: $white;
-	border-top: 1px solid lighten($black, 11);
-	margin-bottom: 40px;
-	padding: 40px 40px 24px;
+	margin-bottom: $base-margin;
+	padding: $base-padding;
 	word-wrap: break-word;
+
+	@extend %box-shadow;
 }
 
 .entry-content a {
@@ -104,8 +101,8 @@ Content Area
 	color: lighten($black, 85);
 }
 
-/* ## Entry Meta
---------------------------------------------- */
+// Entry Meta
+//---------------------------------------------
 
 .entry-meta {
 	color: lighten($black, 33);
@@ -135,15 +132,15 @@ Content Area
 	display: block;
 }
 
-/* Featured Image
---------------------------------------------- */
+// Featured Image
+//---------------------------------------------
 
 .featured-image {
-	margin: 20px 0;
+	margin: $base-margin/2 0;
 }
 
-/* Pagination
---------------------------------------------- */
+// Pagination
+//---------------------------------------------
 
 .pagination,
 .posts-navigation {
@@ -181,15 +178,17 @@ Content Area
 	margin: 30px 0;
 }
 
-/* Comments
---------------------------------------------- */
+// Comments
+//---------------------------------------------
 
 .comment-respond,
 .entry-comments,
 .entry-pings {
 	background: $comments-background-color;
-	padding: 40px;
+	padding: $base-padding;
 	margin-bottom: 40px;
+
+	@extend %box-shadow;
 }
 
 .comment-respond input[type="email"],

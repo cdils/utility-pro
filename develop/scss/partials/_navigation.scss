@@ -1,7 +1,3 @@
-/*
-Site Navigation
----------------------------------------------------------------------------------------------------- */
-
 .genesis-nav-menu {
 
 	> .first > a {
@@ -109,8 +105,8 @@ Site Navigation
 
 }
 
-/* Mobile Menu Toggle
---------------------------------------------- */
+// Mobile Menu Toggle
+//---------------------------------------------
 
 .nav-primary,
 .nav-footer {
@@ -189,8 +185,8 @@ Site Navigation
 
 }
 
-/* Site Header Navigation
---------------------------------------------- */
+// Site Header Navigation
+//---------------------------------------------
 
 .site-header {
 
@@ -203,8 +199,26 @@ Site Navigation
 	}
 }
 
-/* Primary & Footer Navigation
---------------------------------------------- */
+
+.header-widget-area .genesis-nav-menu {
+
+	a {
+		color: $black;
+	}
+
+	.sub-menu a {
+		background-color: lighten($black, 92);
+	}
+
+	.current-menu-item > a,
+	.sub-menu .current-menu-item > a:hover,
+	a:hover {
+		color: lighten($black, 33);
+	}
+}
+
+// Primary & Footer Navigation
+//---------------------------------------------
 
 .nav-primary,
 .nav-footer {
@@ -222,8 +236,8 @@ Site Navigation
 	color: lighten($black, 56);
 }
 
-/* Dropdown Menu
---------------------------------------------- */
+// Dropdown Menu
+//---------------------------------------------
 
 .menu .menu-item:focus {
 	position: static;

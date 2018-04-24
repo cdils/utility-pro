@@ -1,16 +1,11 @@
-/*
-Site Header
----------------------------------------------------------------------------------------------------- */
-
 .site-header {
 	background: $white;
 	border-bottom: 1px solid lighten($black, 85);
 	padding: 20px 0;
 }
 
-
-/* Title Area
---------------------------------------------- */
+// Title Area
+//---------------------------------------------
 
 .title-area {
 	text-align: center;
@@ -86,18 +81,8 @@ Site Header
 // 	}
 // }
 
-/* Header Right Widget Area
---------------------------------------------- */
-
-// .site-header .widget-area {
-// 	float: right;
-// 	text-align: center;
-// 	width: 100%;
-// 	@include susy-breakpoint($medium-screen) {
-// 		text-align: right;
-// 		width: 50%;
-// 	}
-// }
+// Header Right Widget Area
+//---------------------------------------------
 
 .header-widget-area .search-form {
 	margin: 0 auto;
@@ -105,18 +90,4 @@ Site Header
 	@media screen and (min-width: $small-screen) {
 
 	}
-}
-
-.header-widget-area .genesis-nav-menu a {
-	color: $black;
-}
-
-.header-widget-area .genesis-nav-menu .current-menu-item > a,
-.header-widget-area .genesis-nav-menu .sub-menu .current-menu-item > a:hover,
-.header-widget-area .genesis-nav-menu a:hover {
-	color: lighten($black, 33);
-}
-
-.header-widget-area .genesis-nav-menu .sub-menu a {
-	background-color: lighten($black, 92);
 }
