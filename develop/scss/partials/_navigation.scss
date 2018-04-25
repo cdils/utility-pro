@@ -1,3 +1,82 @@
+// Mobile Menu Toggle
+//---------------------------------------------
+
+.nav-primary,
+.nav-footer {
+	display: none;
+	position: relative;
+
+	@extend %box-shadow;
+
+	@media screen and (min-width: $medium-screen) {
+		display: inline-block;
+	}
+}
+
+.menu-toggle,
+.footer-menu-toggle {
+	border: 0;
+	display: block;
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 10px;
+	position: relative;
+	text-transform: uppercase;
+	visibility: visible;
+
+	&:before {
+		content: "\2261";
+		display: inline-block;
+		padding-right: 8px;
+	}
+
+	&.menu-toggle-activated:before,
+	&.menu-toggle-activated:before {
+		content: "x";
+	}
+
+
+	@media screen and (min-width: $medium-screen) {
+		display: block;
+		visibility: hidden;
+	}
+}
+
+.sub-menu-toggle {
+	background-color: transparent;
+	border: 0;
+	color: $white;
+	font-size: $secondary-font-size;
+	padding: 16px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	visibility: visible;
+
+	&:before {
+		content: "+";
+	}
+
+	&.menu-toggle-activated:before {
+		content: "-";
+	}
+
+	@media screen and (min-width: $medium-screen) {
+		display: none;
+		visibility: hidden;
+	}
+}
+
+@media screen and (min-width: $medium-screen) {
+
+	button.menu-toggle,
+	button.sub-menu-toggle,
+	button.footer-menu-toggle {
+		display: none;
+	}
+
+}
+
 .genesis-nav-menu {
 
 	> .first > a {
@@ -26,16 +105,11 @@
 		}
 	}
 
-	li {
-		font-size: 14px;
-	}
-
 	a {
-		color: $white;
 		display: inline-block;
 		font-weight: 400;
-		letter-spacing: 1px;
-		padding: 15px 20px;
+		font-size: $nav-font-size;
+		padding: 10px 20px;
 		position: relative;
 		width: 100%;
 	}
@@ -100,85 +174,7 @@
 
 }
 
-// Mobile Menu Toggle
-//---------------------------------------------
 
-.nav-primary,
-.nav-footer {
-	display: none;
-	position: relative;
-
-	@media screen and (min-width: $medium-screen) {
-		display: inline-block;
-	}
-}
-
-.menu-toggle,
-.footer-menu-toggle {
-	background-color: transparent;
-	border: 0;
-	color: $white;
-	display: block;
-	font-size: 18px;
-	margin: 0 auto;
-	overflow: hidden;
-	padding: 9px;
-	position: relative;
-	text-transform: uppercase;
-	visibility: visible;
-
-	&:before {
-		content: "\2261";
-		display: inline-block;
-		padding-right: 8px;
-	}
-
-	&.menu-toggle-activated:before,
-	&.menu-toggle-activated:before {
-		content: "x";
-	}
-
-
-	@media screen and (min-width: $medium-screen) {
-		display: block;
-		visibility: hidden;
-	}
-}
-
-.sub-menu-toggle {
-	background-color: transparent;
-	border: 0;
-	color: $white;
-	font-size: $secondary-font-size;
-	padding: 16px;
-	position: absolute;
-	right: 0;
-	top: 0;
-	visibility: visible;
-
-	&:before {
-		content: "+";
-	}
-
-	&.menu-toggle-activated:before {
-		content: "-";
-	}
-
-	@media screen and (min-width: $medium-screen) {
-		display: none;
-		visibility: hidden;
-	}
-}
-
-@media screen and (min-width: $medium-screen) {
-
-	button.menu-toggle,
-	button.sub-menu-toggle,
-	button.footer-menu-toggle {
-		display: none;
-	}
-
-}
 
 // Site Header Navigation
 //---------------------------------------------
@@ -186,38 +182,41 @@
 .site-header {
 
 	.sub-menu {
-		border-top: 1px solid lighten($black, 75);
+		border-top: 1px solid $blue;
 
 		.sub-menu {
 			margin-top: -53px;
 		}
 	}
+
+	.genesis-nav-menu {
+
+		a {
+			color: $black;
+		}
+
+		.sub-menu a {
+			background-color: lighten($black, 75);
+		}
+
+		.current-menu-item > a,
+		.sub-menu .current-menu-item > a:hover,
+		a:hover {
+			color: lighten($black, 25);
+		}
+	}
 }
 
 
-.header-widget-area .genesis-nav-menu {
-
-	a {
-		color: $black;
-	}
-
-	.sub-menu a {
-		background-color: lighten($black, 75);
-	}
-
-	.current-menu-item > a,
-	.sub-menu .current-menu-item > a:hover,
-	a:hover {
-		color: lighten($black, 25);
-	}
-}
 
 // Primary & Footer Navigation
 //---------------------------------------------
 
 .nav-primary,
 .nav-footer {
-	background-color: $black;
+	background-color: $white;
+	border-top: 1px solid lighten($black, 75);
+	border-bottom: 1px solid lighten($black, 75);
 	text-align: center;
 	width: 100%;
 

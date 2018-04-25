@@ -1,11 +1,17 @@
 // Colors
 //------------------------------------------------------------------------------
-$black: #222;
+$black: #2d364c;
 $white: #fff;
-$blue: #0964dd;
-$purple: #339;
-$green: #107952;
-$red: #d3131b;
+$blue: #395693;
+$purple: #520099;
+$green: #2a5547;
+$jam: #910048;
+
+// Color scheme #1
+//
+//@mixin get-theme-colors: ( 'blue', 'lime' );
+
+
 
 $comments-background-color: $white;
 $author-box-background: lighten($black, 75);

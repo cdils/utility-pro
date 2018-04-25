@@ -3,3 +3,15 @@
 	-moz-box-shadow: 5px 5px 10px -13px rgba(0,0,0,1);
 	box-shadow: 5px 5px 10px -13px rgba(0,0,0,1);
 }
+
+
+// here are two colors
+// give me 3 variations of each color
+@mixin get-theme-colors( $base, $accent ) {
+	$primary: #{$base}-500;
+	$primary-dark: #{$base}-700;
+	$primary-light: #{$base}-100;
+	$secondary: #{$accent}-A400;
+	$secondary-dark: #{$accent}-A700;
+	$secondary-light: #{$accent}-A100;
+}

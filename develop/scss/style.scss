@@ -38,7 +38,7 @@
 		- Jetpack
 	- Site Header
 		- Title Area
-		- Widget Area
+		- Header Right Widget Area
 	- Site Navigation
 		- Mobile Menu Toggle
 		- Header Navigation
@@ -57,18 +57,19 @@
 
 @import "../../node_modules/modularscale-sass/stylesheets/modularscale";
 @import "../../node_modules/normalize-scss/sass/normalize";
+@import "../../node_modules/sass-md-colors/colors/variables";
 
 /* Resets
 ---------------------------------------------------------------------------------------------------- */
 @import "partials/reset";
 
-/* Variables
----------------------------------------------------------------------------------------------------- */
-@import "partials/variables";
-
 /* Mixins
 ---------------------------------------------------------------------------------------------------- */
 @import "partials/mixins";
+
+/* Variables
+---------------------------------------------------------------------------------------------------- */
+@import "partials/variables";
 
 /* Theme Colors
 ---------------------------------------------------------------------------------------------------- */

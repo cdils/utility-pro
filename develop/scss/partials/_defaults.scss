@@ -110,7 +110,7 @@ h6 {
 	font-family: $heading-font-family;
 	font-weight: 700;
 	line-height: $heading-line-height;
-	margin: 0 0 0 $base-margin/2;
+	margin: 0 0 $base-margin/2;
 	padding: 0;
 }
 
@@ -184,9 +184,8 @@ input[type="submit"] {
 	color: $white;
 	cursor: pointer;
 	font-size: $base-font-size;
-	font-weight: 700;
-	letter-spacing: 1px;
-	padding: 16px 24px;
+	letter-spacing: .5px;
+	padding: 10px 20px;
 	text-transform: uppercase;
 	width: auto;
 }
@@ -222,13 +221,13 @@ input[type="search"]::-webkit-search-results-button {
 	display: flex;
 
 	input {
-		background-color: lighten($black, 50);
+		background-color: lighten($black, 75);
 		border: 0;
 		padding: $base-padding/3;
 	}
 
 	button {
-		background: url(images/icon-search-ltr.png) no-repeat 10% $purple;
+		background: url(images/icon-search-ltr.png) no-repeat 10% $blue;
 		background-size: 15px 15px;
 		border: 0;
 		color: $white;

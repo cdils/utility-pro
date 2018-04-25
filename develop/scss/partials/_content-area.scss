@@ -103,7 +103,7 @@
 
 .entry-header .entry-meta {
 	background-color: lighten($black, 75);
-	margin: 0 -40px 24px;
+	margin: 0 -40px $base-margin;
 	padding: 10px;
 	text-align: right;
 }

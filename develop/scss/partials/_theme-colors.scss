@@ -78,30 +78,30 @@
 	a,
 	.entry-content a,
 	.home-gallery .fa {
-		color: $red;
+		color: $jam;
 	}
 
 	.sticky.entry {
-		border-top-color: $red;
+		border-top-color: $jam;
 	}
 
 	.call-to-action-bar .button,
 	.button,
 	.entry-content .button,
 	input[type="submit"] {
-		background: $red;
+		background: $jam;
 		border: 1px solid $white;
 		color: $white;
 
 		&:hover {
 			background: $white;
-			border: 1px solid $red;
-			color: $red;
+			border: 1px solid $jam;
+			color: $jam;
 		}
 	}
 
 	.utility-bar,
 	.site-footer {
-		background-color: $red;
+		background-color: $jam;
 	}
 }
