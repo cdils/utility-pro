@@ -133,6 +133,7 @@ gulp.task( 'styles', function() {
 		.pipe( sourcemaps.init() )
 		.pipe(
 			sass({
+				includePaths: './node_modules/',
 				errLogToConsole: config.errLogToConsole,
 				outputStyle: config.outputStyle,
 				precision: config.precision

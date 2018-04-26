@@ -55,9 +55,10 @@
 	- Print Media Query
 */
 
-@import "../../node_modules/modularscale-sass/stylesheets/modularscale";
-@import "../../node_modules/normalize-scss/sass/normalize";
-@import "../../node_modules/sass-md-colors/colors/variables";
+@import "modularscale-sass/stylesheets/modularscale";
+@import "normalize-scss/sass/normalize";
+@import "sass-md-colors/colors/variables";
+@import "@material/button/mdc-button";
 
 /* Resets
 ---------------------------------------------------------------------------------------------------- */
