@@ -9,7 +9,7 @@
 		color: $black;
 
 		&:hover {
-			color: lighten($black, 50);
+			color: lighten($black, 50%);
 		}
 	}
 }
@@ -21,14 +21,8 @@
 	text-transform: uppercase;
 }
 
-.sidebar .widgettitle a {
-	border: 0;
-	color: $black;
-}
-
-.archive-title {
-	color: $black;
-	margin-bottom: 24px;
+.archive-description {
+	margin-bottom: $base-margin;
 }
 
 // Entries
@@ -36,11 +30,14 @@
 
 .entry {
 	word-wrap: break-word;
-
 	@extend %content-area;
 }
 
 .entry-content {
+
+	p:last-of-type {
+		margin-bottom: 0;
+	}
 
 	.attachment a,
 	.gallery a {
@@ -48,8 +45,7 @@
 	}
 
 	ol,
-	ul,
-	.quote-caption {
+	ul {
 		margin-bottom: $base-margin/2;
 	}
 
@@ -72,34 +68,23 @@
 	ul > li {
 		list-style-type: disc;
 	}
-
-	ul.icons-ul > li {
-		list-style-type: none;
-	}
-
-	code {
-		background-color: $black;
-		color: $white;
-	}
 }
 
 // Entry Meta
 //---------------------------------------------
 
-.entry-meta {
-	font-size: $secondary-font-size;
-}
-
 .entry-header .entry-meta {
 	background-color: lighten($black, 85%);
+	font-size: $secondary-font-size;
 	margin: 0 -40px $base-margin;
 	padding: 10px;
 	text-align: right;
 }
 
 .entry-footer .entry-meta {
-	margin: 0 -40px;
-	padding: 32px 40px 8px;
+	border-top: 1px solid;
+	font-size: $secondary-font-size;
+	margin-top: $base-margin;
 }
 
 .entry-comments-link::before {
@@ -110,6 +95,7 @@
 .entry-categories,
 .entry-tags {
 	display: block;
+	margin: $base-margin/2;
 }
 
 // Featured Image
@@ -124,25 +110,12 @@
 
 .pagination,
 .posts-navigation {
-	margin-bottom: $base-margin;
-}
-
-.pagination {
-	.nav-links {
-		display: inline;
-
-		a {
-			// make this a button
-		}
-
-		.current {
-			// make this a disabled button
-		}
-	}
-}
-
-.entry-pagination {
+	clear: both;
 	margin: $base-margin 0;
+}
+
+.pagination a {
+	margin: 0 1em;
 }
 
 // Comments
@@ -154,15 +127,10 @@
 	@extend %content-area;
 }
 
-.comment-respond input[type="email"],
-.comment-respond input[type="text"],
-.comment-respond input[type="url"] {
-	width: 50%;
-}
-
 .comment-respond label {
 	display: block;
-	margin-right: 12px;
+	margin-bottom: 12px;
+	text-transform: uppercase;
 }
 
 .entry-comments ul.children {
