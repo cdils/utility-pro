@@ -1,12 +1,12 @@
 .site-footer {
-	background-color: $blue;
-	color: $white;
+	background-color: $default-base;
+	color: $default-base-contrast;
 	font-size: $footer-font-size;
 	padding: $base-padding 0;
 	text-align: center;
 
 	a {
-		color: darken($white, 30);
+		color: $default-base-contrast;
 
 		&:hover {
 			border-bottom: 0;

@@ -8,9 +8,7 @@
 	}
 
 	.widget {
-		background: $white;
-		margin-bottom: $base-margin;
-		padding: $base-padding;
+		@extend %content-area;
 
 		&.widget_search {
 			background: none;
@@ -20,7 +18,5 @@
 				width: 100%;
 			}
 		}
-
-		@extend %box-shadow;
 	}
 }

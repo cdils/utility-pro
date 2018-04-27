@@ -35,22 +35,12 @@
 //---------------------------------------------
 
 .entry {
-	background: $white;
-	margin-bottom: $base-margin;
-	padding: $base-padding;
 	word-wrap: break-word;
 
-	@extend %box-shadow;
+	@extend %content-area;
 }
 
 .entry-content {
-	a {
-		color: $blue;
-
-		&:hover {
-			color: $black;
-		}
-	}
 
 	.attachment a,
 	.gallery a {
@@ -72,7 +62,7 @@
 
 	ol li,
 	ul li {
-		margin-left: 40px;
+		margin-left: $base-margin;
 	}
 
 	ol > li {
@@ -89,7 +79,7 @@
 
 	code {
 		background-color: $black;
-		color: lighten($black, 75);
+		color: $white;
 	}
 }
 
@@ -97,12 +87,11 @@
 //---------------------------------------------
 
 .entry-meta {
-	color: lighten($black, 25);
 	font-size: $secondary-font-size;
 }
 
 .entry-header .entry-meta {
-	background-color: lighten($black, 75);
+	background-color: lighten($black, 85%);
 	margin: 0 -40px $base-margin;
 	padding: 10px;
 	text-align: right;
@@ -138,35 +127,22 @@
 	margin-bottom: $base-margin;
 }
 
-.pagination .nav-links {
-	display: inline;
-}
+.pagination {
+	.nav-links {
+		display: inline;
 
-.pagination .nav-links a,
-.pagination .nav-links .current {
-	background: $black;
-	border: 1px solid $white;
-	color: $white;
-	cursor: pointer;
-	display: inline-block;
-	padding: 8px 12px;
-}
+		a {
+			// make this a button
+		}
 
-.pagination .nav-links a:hover {
-	background: $white;
-	border: 1px solid lighten($black, 25);
-	color: $black;
-}
-
-.pagination .nav-links .current {
-	background: lighten($black, 25);
-	border: 1px solid $white;
-	color: $white;
-	cursor: pointer;
+		.current {
+			// make this a disabled button
+		}
+	}
 }
 
 .entry-pagination {
-	margin: 30px 0;
+	margin: $base-margin 0;
 }
 
 // Comments
@@ -175,11 +151,7 @@
 .comment-respond,
 .entry-comments,
 .entry-pings {
-	background: $comments-background-color;
-	padding: $base-padding;
-	margin-bottom: 40px;
-
-	@extend %box-shadow;
+	@extend %content-area;
 }
 
 .comment-respond input[type="email"],
@@ -194,7 +166,7 @@
 }
 
 .entry-comments ul.children {
-	margin-left: 40px;
+	margin-left: $base-margin;
 }
 
 .comment-list li,
@@ -204,10 +176,9 @@
 }
 
 .comment-meta,
-.entry-comments,
 .comment,
 .entry-comments .comment-reply {
-	margin-bottom: 40px;
+	margin-bottom: $base-margin;
 }
 
 p.form-submit,

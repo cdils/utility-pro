@@ -18,22 +18,13 @@ input:focus,
 [type="reset"],
 [type="submit"],
 textarea:focus,
+.button
 .gallery img {
-	transition: all 0.1s ease-in-out;
-}
-
-::-moz-selection {
-	background: $black;
-	color: $white;
-}
-
-::selection {
-	background: $black;
-	color: $white;
+	transition: all 0.2s ease-in-out;
 }
 
 a {
-	color: $blue;
+	color: $default-base;
 	border-bottom: 1px dotted;
 	font-weight: 700;
 	text-decoration: none;
@@ -41,10 +32,6 @@ a {
 
 	&:hover {
 		color: $black;
-	}
-
-	img {
-		margin-bottom: -4px;
 	}
 }
 
@@ -86,15 +73,22 @@ blockquote {
 
 pre {
 	background: $black;
-	color: lighten($black, 75);
-	overflow: scroll;
-	padding: 0 20px;
-	white-space: pre;
+	color: $white;
+	padding: 10px;
 }
 
 cite {
 	font-style: italic;
 	font-weight: 700;
+}
+
+address {
+	margin-bottom: $base-margin/2;
+}
+
+mark {
+	background-color: $default-accent;
+	color: $default-accent-contrast;
 }
 
 // Headings
@@ -179,8 +173,11 @@ textarea {
 .button,
 .entry-content a.button,
 input[type="submit"] {
-	@include mdc-button-ink-color(red);
-	@include mdc-states(red);
+	@include mdc-button-ink-color($default-accent-contrast);
+	@include mdc-states();
+	@include mdc-button-base_();
+	@include mdc-button--raised_();
+	@include mdc-button-filled-accessible($default-accent)
 	// background: $blue;
 	// border: 1px solid $white;
 	// color: $white;
@@ -192,27 +189,27 @@ input[type="submit"] {
 	// width: auto;
 }
 
-button:focus,
-input:focus[type="button"],
-input:focus[type="reset"],
-input:focus[type="submit"],
-.button:focus,
-.entry-content a.button:focus {
-	background-color: $white;
-	color: $blue;
-}
+// button:focus,
+// input:focus[type="button"],
+// input:focus[type="reset"],
+// input:focus[type="submit"],
+// .button:focus,
+// .entry-content a.button:focus {
+// 	background-color: $white;
+// 	color: $blue;
+// }
 
-.button {
-	display: inline-block;
-}
+// .button {
+// 	display: inline-block;
+// }
 
-.button:hover,
-.entry-content a.button:hover,
-input:hover[type="submit"] {
-	background-color: $white;
-	border: 1px solid $blue;
-	color: $blue;
-}
+// .button:hover,
+// .entry-content a.button:hover,
+// input:hover[type="submit"] {
+// 	background-color: $white;
+// 	border: 1px solid $blue;
+// 	color: $blue;
+// }
 
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button {
@@ -223,23 +220,23 @@ input[type="search"]::-webkit-search-results-button {
 	display: flex;
 
 	input {
-		background-color: lighten($black, 75);
+		background-color: $white;
 		border: 0;
 		padding: $base-padding/3;
 	}
 
 	button {
 
-		@include mdc-button-ink-color(red);
-		@include mdc-states(red);
+		@include mdc-button-ink-color($default-accent-contrast);
+		@include mdc-states();
 		@include mdc-button-base_();
 		@include mdc-button--raised_();
-		@include mdc-button-filled-accessible(yellow)
+		@include mdc-button-filled-accessible($default-accent)
 		// background: url(images/icon-search-ltr.png) no-repeat 10% $blue;
 		// background-size: 15px 15px;
 		// border: 0;
 		// color: $white;
-		// padding: 0.5em 1em;
+		padding: 0.5em 1em;
 
 		// &:hover {
 		// 	background-color: $black;
@@ -264,12 +261,12 @@ table {
 }
 
 tbody {
-	border-bottom: 1px solid;
+	border-bottom: 1px solid $black;
 }
 
 td,
 th {
-	border-top: 1px solid;
+	border-top: 1px solid $black;
 	padding: 10px 0;
 	text-align: left;
 }

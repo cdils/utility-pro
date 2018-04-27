@@ -4,6 +4,16 @@
 	box-shadow: 5px 5px 10px -13px rgba(0,0,0,1);
 }
 
+%content-area {
+	background-color: $white;
+	color: $black;
+	margin-bottom: $base-margin;
+	padding: $base-padding;
+
+	@extend %box-shadow;
+}
+
+
 
 // here are two colors
 // give me 3 variations of each color

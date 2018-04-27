@@ -182,7 +182,6 @@
 .site-header {
 
 	.sub-menu {
-		border-top: 1px solid $blue;
 
 		.sub-menu {
 			margin-top: -53px;
@@ -196,13 +195,14 @@
 		}
 
 		.sub-menu a {
-			background-color: lighten($black, 75);
+			background-color: $white;
+			border: 1px solid $black;
 		}
 
 		.current-menu-item > a,
 		.sub-menu .current-menu-item > a:hover,
 		a:hover {
-			color: lighten($black, 25);
+			color: $default-accent;
 		}
 	}
 }

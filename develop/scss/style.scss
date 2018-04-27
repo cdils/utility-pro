@@ -57,20 +57,20 @@
 
 @import "modularscale-sass/stylesheets/modularscale";
 @import "normalize-scss/sass/normalize";
-@import "sass-md-colors/colors/variables";
 @import "@material/button/mdc-button";
 
 /* Resets
 ---------------------------------------------------------------------------------------------------- */
 @import "partials/reset";
 
-/* Mixins
----------------------------------------------------------------------------------------------------- */
-@import "partials/mixins";
-
 /* Variables
 ---------------------------------------------------------------------------------------------------- */
 @import "partials/variables";
+
+
+/* Mixins
+---------------------------------------------------------------------------------------------------- */
+@import "partials/mixins";
 
 /* Theme Colors
 ---------------------------------------------------------------------------------------------------- */

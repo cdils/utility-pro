@@ -1,20 +1,35 @@
 // Colors
 //------------------------------------------------------------------------------
-$black: #2d364c;
-$white: #fff;
+$black: #102027; // grey-black
+$white: #fff; // off-white
 $blue: #395693;
 $purple: #520099;
 $green: #2a5547;
-$jam: #910048;
 
-// Color scheme #1
-//
-//@mixin get-theme-colors: ( 'blue', 'lime' );
+$cyan: #00BCD4;
+$orange: #DD2C00;
+
+$default-base: $cyan;
+$default-base-contrast: $black;
+$default-accent: $orange;
+$default-accent-contrast: $white;
 
 
+$indigo-base:#3f51b5;
+$indigo-accent: #aeea00;
 
-$comments-background-color: $white;
-$author-box-background: lighten($black, 75);
+$jam-base: #910048;
+$jam-accent: #00b8d4;
+
+$green-base: #66bb6a;
+$green-accent: #29b6f6;
+
+// Each color scheme follows this format: (scheme name, base color, base contrast, accent color, accent contrast)
+$color-schemes:
+	(indigo, $indigo-base, $white, $indigo-accent, $black ),
+	(jam, $jam-base, $white, $jam-accent, $black ),
+	(green, $green-base, $black, $green-accent, $black)
+;
 
 // Layout
 //------------------------------------------------------------------------------
@@ -25,8 +40,6 @@ $max-width: 1140px;
 // Margins and Padding
 $base-margin: 40px;
 $base-padding: 40px;
-
-$base-grid-gap: 40px;
 
 // Retina Breakpoint
 $hi-dpi: min-resolution 1.3dppx; // Device Pixel Ratio of 1:3
@@ -44,7 +57,7 @@ $large-screen: 1140px;
 $sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $sans-serif-alt: Raleway, "Helvetica Neue", Helvetica, Arial, sans-serif;
 $serif: Enriqueta, serif;
-$mono: "Courier 10 Pitch", Courier, monospace;
+$monospace: "Courier 10 Pitch", Courier, monospace;
 
 // Base Font Families
 $base-font-family: $sans-serif;
@@ -59,7 +72,7 @@ $modularscale: (
 		base: $base-font-size,
 		ratio: 1.125 // Major second.
 );
-$secondary-font-size: ms(-1);
+$secondary-font-size: ms(-2);
 $site-title-font-size: ms(5);
 
 // Heading Font Properties
@@ -72,7 +85,6 @@ $h6-font-size: ms(1);
 
 // Title Font Properties
 $loop-title-size: $h1-font-size;
-$box-title-size: $h4-font-size;
 $widget-title-size: $h6-font-size;
 
 // Menu Font Properties

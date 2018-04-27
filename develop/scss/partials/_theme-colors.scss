@@ -2,106 +2,135 @@
 // If you've chosen your favorite color scheme, you can delete the others
 // ----------------------------------------------------------------------------------------------------
 
-// Purple
-//---------------------------------------------
+@each $scheme, $base, $base-contrast, $accent, $accent-contrast in $color-schemes {
 
-.utility-pro-purple {
+	.utility-pro-#{$scheme} {
 
-	a,
-	.entry-content a,
-	.home-gallery .fa {
-		color: $purple;
-	}
-
-	.call-to-action-bar .button,
-	.button,
-	.entry-content .button,
-	input[type="submit"] {
-		background: $purple;
-		border: 1px solid $white;
-		color: $white;
-
-		&:hover {
-			background: $white;
-			border: 1px solid $purple;
-			color: $purple;
+		a,
+		.entry-content a,
+		.home-gallery .fa {
+			color: $base;
 		}
+
+		.call-to-action-bar .button,
+		.button,
+		.entry-content .button,
+		input[type="submit"] {
+			background: $accent;
+			color: $accent-contrast;
+		}
+
+		.utility-bar,
+		.site-footer {
+			background-color: $base;
+		}
+
+
 	}
 
-	.utility-bar,
-	.site-footer {
-		background-color: $purple;
-	}
 }
 
-// Green
-//---------------------------------------------
 
-.utility-pro-green {
+// // Purple
+// //---------------------------------------------
 
-	a,
-	.entry-content a,
-	.home-gallery .fa {
-		color: $green;
-	}
+// .utility-pro-purple {
 
-	.sticky.entry {
-		border-top-color: $green;
-	}
+// 	a,
+// 	.entry-content a,
+// 	.home-gallery .fa {
+// 		color: $purple;
+// 	}
 
-	.call-to-action-bar .button,
-	.button,
-	.entry-content .button,
-	input[type="submit"] {
-		background: $green;
-		border: 1px solid $white;
-		color: $white;
+// 	.call-to-action-bar .button,
+// 	.button,
+// 	.entry-content .button,
+// 	input[type="submit"] {
+// 		background: $purple;
+// 		border: 1px solid $white;
+// 		color: $white;
 
-		&:hover {
-			background: $white;
-			border: 1px solid $green;
-			color: $green;
-		}
-	}
+// 		&:hover {
+// 			background: $white;
+// 			border: 1px solid $purple;
+// 			color: $purple;
+// 		}
+// 	}
 
-	.utility-bar,
-	.site-footer {
-		background-color: $green;
-	}
-}
+// 	.utility-bar,
+// 	.site-footer {
+// 		background-color: $purple;
+// 	}
+// }
 
-// Red
-//---------------------------------------------
+// // Green
+// //---------------------------------------------
 
-.utility-pro-red {
+// .utility-pro-green {
 
-	a,
-	.entry-content a,
-	.home-gallery .fa {
-		color: $jam;
-	}
+// 	a,
+// 	.entry-content a,
+// 	.home-gallery .fa {
+// 		color: $green;
+// 	}
 
-	.sticky.entry {
-		border-top-color: $jam;
-	}
+// 	.sticky.entry {
+// 		border-top-color: $green;
+// 	}
 
-	.call-to-action-bar .button,
-	.button,
-	.entry-content .button,
-	input[type="submit"] {
-		background: $jam;
-		border: 1px solid $white;
-		color: $white;
+// 	.call-to-action-bar .button,
+// 	.button,
+// 	.entry-content .button,
+// 	input[type="submit"] {
+// 		background: $green;
+// 		border: 1px solid $white;
+// 		color: $white;
 
-		&:hover {
-			background: $white;
-			border: 1px solid $jam;
-			color: $jam;
-		}
-	}
+// 		&:hover {
+// 			background: $white;
+// 			border: 1px solid $green;
+// 			color: $green;
+// 		}
+// 	}
 
-	.utility-bar,
-	.site-footer {
-		background-color: $jam;
-	}
-}
+// 	.utility-bar,
+// 	.site-footer {
+// 		background-color: $green;
+// 	}
+// }
+
+// // Red
+// //---------------------------------------------
+
+// .utility-pro-red {
+
+// 	a,
+// 	.entry-content a,
+// 	.home-gallery .fa {
+// 		color: $jam;
+// 	}
+
+// 	.sticky.entry {
+// 		border-top-color: $jam;
+// 	}
+
+// 	.call-to-action-bar .button,
+// 	.button,
+// 	.entry-content .button,
+// 	input[type="submit"] {
+// 		background: $jam;
+// 		border: 1px solid $white;
+// 		color: $white;
+
+// 		&:hover {
+// 			background: $white;
+// 			border: 1px solid $jam;
+// 			color: $jam;
+// 		}
+// 	}
+
+// 	.utility-bar,
+// 	.site-footer {
+// 		background-color: $jam;
+// 	}
+// }
