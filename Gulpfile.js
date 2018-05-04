@@ -28,6 +28,13 @@
 const config = require( './config.js' );
 
 /**
+ * Load Package.json.
+ *
+ * Gives ability to reference Package definitions in this file.
+ */
+var pkg = require( './package.json' );
+
+/**
  * Load Plugins.
  *
  * Load gulp plugins and passing them semantic names.
@@ -61,6 +68,7 @@ var sort = require( 'gulp-sort' ); // Recommended to prevent unnecessary changes
 var cache = require( 'gulp-cache' ); // Cache files in stream for later use
 var remember = require( 'gulp-remember' ); //  Adds all the files it has ever seen back into the stream
 var plumber = require( 'gulp-plumber' ); // Prevent pipe breaking caused by errors from gulp plugins
+var zip = require( 'gulp-zip' ); // Generate zip file from specified sources
 
 /**
  * Task: `browser-sync`.
@@ -378,6 +386,73 @@ gulp.task( 'translate', function() {
 		);
 });
 
+/**
+ * Generate Zip file for the base version of the theme
+ *
+ * * This task does the following:
+ *     1. Gets the source of all the files we want to zip.
+ *     2. Generates Zip file in the 'dist' directory.
+ */
+gulp.task( 'zipuser', function() {
+	return gulp
+		.src( [
+				'images/*',
+				'includes/**/*',
+				'vendor-includes/**/*',
+				'js/*',
+				'languages/*',
+				'front-page.php',
+				'functions.php',
+				'LICENSE.md',
+				'page_landing.php',
+				'readme.txt',
+				'screenshot.png',
+				'style*'
+				], { base: './' }
+		)
+		.pipe( zip( pkg.name + '-' + pkg.version + '.zip' ) )
+		.pipe( gulp.dest( 'dist' ) );
+});
+
+/**
+ * Generate Zip file for developer version of the theme
+ *
+ * * This task does the following:
+ *     1. Gets the source of all the files we want to zip.
+ *     2. Generates Zip file in the 'dist' directory.
+ */
+gulp.task( 'zipdev', function() {
+	return gulp
+		.src( [
+				'develop/assets/images/*',
+				'develop/assets/js/*',
+				'develop/assets/scss/**/*',
+				'develop/languages/*',
+				'images/*',
+				'includes/**/*',
+				'includes-vendors/**/*',
+				'js/*',
+				'languages/*',
+				'CHANGELOG.md',
+				'composer.json',
+				'composer.lock',
+				'front-page.php',
+				'functions.php',
+				'Gulpfile.js',
+				'LICENSE.md',
+				'package.json',
+				'page_landing.php',
+				'readme.txt',
+				'README.md',
+				'screenshot.png',
+				'style*'
+				], { base: './' }
+			)
+		.pipe( zip( pkg.name + '-developer-' + pkg.version + '.zip' ) )
+		.pipe( gulp.dest( 'dist' ) );
+});
+
+// ]
 /**
  * Watch Tasks.
  *
