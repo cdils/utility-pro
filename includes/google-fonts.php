@@ -33,28 +33,23 @@ function utility_pro_fonts_url() {
 
 	/*
 	 * Translators: If there are characters in your language that are not
-	 * supported by this font, translate this to 'off'. Do not translate
+	 * supported by these fonts, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
 	$enriqueta = _x( 'on', 'Enriqueta font: on or off', 'utility-pro' );
-
-	/*
-	 * Translators: If there are characters in your language that are not
-	 * supported by this font, translate this to 'off'. Do not translate
-	 * into your own language.
-	 */
 	$open_sans = _x( 'on', 'Open Sans font: on or off', 'utility-pro' );
 
-	if ( 'off' !== $enriqueta || 'off' !== $open_sans ) {
-		$font_families = array();
+	$font_families = array();
 
-		if ( 'off' !== $enriqueta ) {
-			$font_families[] = 'Enriqueta:400,700';
-		}
+	if ( 'off' !== $enriqueta ) {
+		$font_families[] = 'Enriqueta:400,700';
+	}
 
-		if ( 'off' !== $open_sans ) {
-			$font_families[] = 'Open Sans:400,700';
-		}
+	if ( 'off' !== $open_sans ) {
+		$font_families[] = 'Open Sans:400,700';
+	}
+
+	if ( in_array( 'on', array($enriqueta, $open_sans) ) ) {
 
 		$query_args = array(
 			'family' => urlencode( implode( '|', $font_families ) ),
@@ -62,7 +57,8 @@ function utility_pro_fonts_url() {
 		);
 
 		$fonts_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
+
 	}
 
-	return $fonts_url;
+	return esc_url_raw( $fonts_url );
 }

@@ -13,12 +13,6 @@
 // English users do not need to load the text domain and can comment out or remove.
 load_child_theme_textdomain( 'utility-pro', get_stylesheet_directory() . '/languages' );
 
-// This file loads the Google fonts used in this theme.
-require get_stylesheet_directory() . '/includes/google-fonts.php';
-
-// This file contains search form improvements.
-require get_stylesheet_directory() . '/includes/class-search-form.php';
-
 add_action( 'genesis_setup', 'utility_pro_setup', 15 );
 /**
  * Theme setup.
@@ -95,8 +89,14 @@ function utility_pro_setup() {
 	genesis_unregister_layout( 'sidebar-content-sidebar' );
 	genesis_unregister_layout( 'sidebar-sidebar-content' );
 
+	// Remove unused templates.
+	add_filter( 'theme_page_templates', 'utility_pro_remove_genesis_page_templates' );
+
 	// Register the default widget areas.
 	utility_pro_register_widget_areas();
+
+	// Enable shortcodes in widgets.
+	add_filter( 'widget_text', 'do_shortcode' );
 
 	// Add Utility Bar above header.
 	add_action( 'genesis_before_header', 'utility_pro_add_bar' );
@@ -104,24 +104,42 @@ function utility_pro_setup() {
 	// Add featured image above posts.
 	add_filter( 'the_content', 'utility_pro_featured_image' );
 
-	// Add a navigation area above the site footer.
-	add_action( 'genesis_before_footer', 'utility_pro_do_footer_nav' );
-
-	// Remove Genesis archive pagination (Genesis pagination settings still apply).
-	remove_action( 'genesis_after_endwhile', 'genesis_posts_nav' );
-
-	// Add WordPress archive pagination (accessibility).
-	add_action( 'genesis_after_endwhile', 'utility_pro_post_pagination' );
-
-	// Apply search form enhancements (accessibility).
-	add_filter( 'get_search_form', 'utility_pro_get_search_form', 25 );
-
 	// Load files in admin.
 	if ( is_admin() ) {
-
 		// Add theme license (don't remove, unless you don't want theme support).
 		include get_stylesheet_directory() . '/vendor-includes/edd-software-licensing/theme-license-admin.php';
+	} else {
+
+		// This file loads the Google fonts used in this theme.
+		require get_stylesheet_directory() . '/includes/google-fonts.php';
+
+		// This file contains search form improvements.
+		require get_stylesheet_directory() . '/includes/class-SearchForm.php';
+
+		// Footer nav.
+		include get_stylesheet_directory() . '/includes/class-FooterNav.php';
+
+		// Change the footer text.
+		add_filter( 'genesis_footer_creds_text', 'utility_pro_footer_creds' );
+
+		// Customize the Gravatar size in the author box.
+		add_filter( 'genesis_author_box_gravatar_size', function () {
+			return 96;
+		} );
+
+		add_action( 'wp_enqueue_scripts', 'utility_pro_enqueue_assets' );
 	}
+}
+
+/**
+ * Remove Genesis Blog page template.
+ *
+ * @param array $page_templates Existing recognised page templates.
+ * @return array Amended recognised page templates.
+ */
+function utility_pro_remove_genesis_page_templates( $page_templates ) {
+	unset( $page_templates['page_blog.php'] );
+	return $page_templates;
 }
 
 /**
@@ -163,7 +181,6 @@ function utility_pro_featured_image( $content ) {
 	return $image . $content;
 }
 
-add_filter( 'genesis_footer_creds_text', 'utility_pro_footer_creds' );
 /**
  * Change the footer text.
  *
@@ -178,28 +195,52 @@ function utility_pro_footer_creds( $creds ) {
 	return 'Powered by WordPress and the <a href="https://store.carriedils.com/downloads/utility-pro/?utm_source=Utility%20Pro%20Footer%20Credits&utm_medium=Distributed%20Theme&utm_campaign=Utility%20Pro%20Theme" rel="nofollow">Utility Pro</a> theme for Genesis Framework.';
 }
 
-add_filter( 'genesis_author_box_gravatar_size', 'utility_pro_author_box_gravatar_size' );
 /**
- * Customize the Gravatar size in the author box.
+ * Enqueue theme assets.
  *
  * @since 1.0.0
- *
- * @param int $size Existing pixel size of gravatar.
- *
- * @return int Pixel size of gravatar.
  */
-function utility_pro_author_box_gravatar_size( $size ) {
-	return 96;
+function utility_pro_enqueue_assets() {
+	// Replace style.css with style-rtl.css for RTL languages.
+	wp_style_add_data( 'utility-pro', 'rtl', 'replace' );
+
+	// Keyboard navigation (dropdown menus) script.
+	wp_enqueue_script( 'keyboard-dropdown',  get_stylesheet_directory_uri() . '/js/keyboard-dropdown.min.js', array( 'jquery' ), false, true );
+
+	// Load mobile responsive menu.
+	wp_enqueue_script( 'utility-pro-responsive-menu', get_stylesheet_directory_uri() . '/js/responsive-menu.min.js', array( 'jquery' ),CHILD_THEME_VERSION, true );
+
+	$localize_primary = [
+		'buttonText'     => __( 'Menu', 'utility-pro' ),
+		'buttonLabel'    => __( 'Primary Navigation Menu', 'utility-pro' ),
+		'subMenuButtonText'  => __( 'Sub Menu', 'utility-pro' ),
+		'subMenuButtonLabel' => __( 'Sub Menu', 'utility-pro' ),
+	];
+
+	$localize_footer = [
+		'buttonText'     => __( 'Footer Menu', 'utility-pro' ),
+		'buttonLabel'    => __( 'Footer Navigation Menu', 'utility-pro' ),
+		'subMenuButtonText'  => __( 'Sub Menu', 'utility-pro' ),
+		'subMenuButtonLabel' => __( 'Sub Menu', 'utility-pro' ),
+	];
+
+	// Localize the responsive menu script (for translation).
+	wp_localize_script( 'utility-pro-responsive-menu', 'utilityMenuPrimaryL10n', $localize_primary );
+	wp_localize_script( 'utility-pro-responsive-menu', 'utilityMenuFooterL10n', $localize_footer );
+
+	wp_enqueue_script( 'utility-pro', get_stylesheet_directory_uri() . '/js/responsive-menu.args.min.js', array( 'utility-pro-responsive-menu' ), CHILD_THEME_VERSION, true );
+
+	// Load Backstretch scripts only if custom background is being used
+	// and we're on the home page or a page using the landing page template.
+	if ( ! get_background_image() || ( ! ( is_front_page() || is_page_template( 'page_landing.php' ) ) ) ) {
+		return;
+	}
+
+	wp_enqueue_script( 'utility-pro-backstretch', get_stylesheet_directory_uri() . '/js/backstretch.min.js', array( 'jquery' ), '2.0.1', true );
+	wp_enqueue_script( 'utility-pro-backstretch-args', get_stylesheet_directory_uri() . '/js/backstretch.args.min.js', array( 'utility-pro-backstretch' ), CHILD_THEME_VERSION, true );
+	wp_localize_script( 'utility-pro', 'utilityBackstretchL10n', array( 'src' => get_background_image() ) );
+
 }
 
 // Add theme widget areas.
 include get_stylesheet_directory() . '/includes/widget-areas.php';
-
-// Add footer navigation components.
-include get_stylesheet_directory() . '/includes/footer-nav.php';
-
-// Add scripts to enqueue.
-include get_stylesheet_directory() . '/includes/enqueue-assets.php';
-
-// Miscellaenous functions used in theme configuration.
-include get_stylesheet_directory() . '/includes/theme-config.php';

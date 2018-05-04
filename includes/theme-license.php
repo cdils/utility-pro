@@ -9,19 +9,19 @@
 
 // Includes the files needed for the theme updater.
 if ( ! class_exists( 'EDD_Theme_Updater_Admin' ) ) {
-	include( dirname( __FILE__ ) . '/../includes-vendors/edd-software-licensing/theme-license-admin.php' );
+	include( dirname( __FILE__ ) . '/../vendor-includes/edd-software-licensing/theme-license-admin.php' );
 }
 
 // Loads the updater classes.
 $GLOBALS['updater'] = new EDD_Theme_Updater_Admin(
-	$config = array(
+	$config = [
 		'remote_api_url' => 'https://store.carriedils.com', // Site where EDD is hosted.
 		'item_name'      => 'Utility Pro',                  // Name of theme.
 		'theme_slug'     => 'utility-pro',                  // Theme slug.
-		'version'        => '1.0.0',                        // The current version of this theme.
+		'version'        => '2.0.0',                        // The current version of this theme.
 		'author'         => 'Carrie Dils',                  // The author of this theme.
-	),
-	$strings = array(
+	],
+	$strings = [
 		'theme-license'             => __( 'Utility Pro License', 'utility-pro' ),
 		'enter-key'                 => __( 'Enter your theme license key.', 'utility-pro' ),
 		'license-key'               => __( 'License Key', 'utility-pro' ),
@@ -43,7 +43,7 @@ $GLOBALS['updater'] = new EDD_Theme_Updater_Admin(
 		'license-status-unknown'    => __( 'License status is unknown.', 'utility-pro' ),
 		'update-notice'             => __( "Updating this theme will lose any customizations you have made. 'Cancel' to stop, 'OK' to update.", 'utility-pro' ),
 		'update-available'          => __( '<strong>%1$s %2$s</strong> is available. <a href="%3$s" class="thickbox" title="%4s">Check out what\'s new</a> or <a href="%5$s"%6$s>update now</a>.', 'utility-pro' )
-	)
+	]
 );
 
 add_action( 'admin_menu', 'utility_pro_move_license_page_menu_item', 12 );

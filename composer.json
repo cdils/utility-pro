@@ -1,64 +1,72 @@
 {
-  "name": "cdils/utility-pro",
-  "description": "Child theme for the Genesis Framework for WordPress",
-  "type": "wordpress-theme",
-  "license": "GPL-2.0+",
-  "homepage": "https://github.com/cdils/utility-pro",
-  "authors": [
-    {
-      "name": "Carrie Dils",
-      "email": "support@carriedils.com",
-      "homepage": "https://store.carriedils.com",
-      "role": "Developer"
+    "name": "cdils/utility-pro",
+    "description": "Child theme for the Genesis Framework for WordPress",
+    "type": "wordpress-theme",
+    "license": "GPL-2.0+",
+    "homepage": "https://github.com/cdils/utility-pro",
+    "authors": [
+        {
+            "name": "Carrie Dils",
+            "email": "support@cdils.com",
+            "homepage": "https://store.carriedils.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Gary Jones",
+            "homepage": "https://gamajo.com",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "support@cdils.com",
+        "issues": "https://github.com/cdils/utility-pro/issues",
+        "source": "https://github.com/cdils/utility-pro"
     },
-    {
-      "name": "Gary Jones",
-      "homepage": "https://gamajo.com",
-      "role": "Developer"
+    "config": {
+        "sort-order": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^7.0",
+        "brightnucleus/config": "^0.4",
+        "composer/installers": "^1.2",
+        "roave/security-advisories": "dev-master",
+        "tgmpa/tgm-plugin-activation": "dev-develop"
+    },
+    "require-dev": {
+        "brain/monkey": "^2",
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.4",
+        "phpunit/phpunit": "^6.3",
+        "wimg/php-compatibility": "dev-master",
+        "wp-coding-standards/wpcs": "dev-develop"
+    },
+    "autoload": {
+        "psr-4": {
+            "CDils\\UtilityPro\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CDils\\UtilityPro\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "build-theme": [
+            "./node_modules/.bin/gulp build"
+        ],
+        "install-and-build-theme": [
+            "yarn install --production=false",
+            "@build-theme"
+        ],
+        "install-codestandards": [
+            "Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run"
+        ],
+        "post-install-cmd": [
+            "@install-and-build-theme"
+        ],
+        "post-update-cmd": [
+            "@build-theme"
+        ]
     }
-  ],
-  "support": {
-    "email": "support@carriedils.com",
-    "issues": "https://github.com/cdils/utility-pro/issues",
-    "source": "https://github.com/cdils/utility-pro"
-  },
-  "config": {
-    "sort-order": true
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true,
-  "require": {
-    "php": "^7.0",
-    "brightnucleus/config": "^0.4",
-    "composer/installers": "^1.2",
-    "roave/security-advisories": "dev-master",
-    "tgmpa/tgm-plugin-activation": "^2.6",
-    "brightnucleus/config": "^0.4",
-    "brightnucleus/dependencies": "^0.3"
-  },
-  "require-dev": {
-    "brain/monkey": "^1.4",
-    "wp-coding-standards/wpcs": "dev-develop",
-    "phpunit/phpunit": "^6.1"
-  },
-  "autoload": {
-    "psr-4": {
-      "CDils\\UtilityPro\\": "src/"
-    }
-  },
-  "scripts": {
-    "build-theme": [
-      "gulp build"
-    ],
-    "install-and-build-theme": [
-      "npm install",
-      "@build-theme"
-    ],
-    "post-install-cmd": [
-      "@install-and-build-theme"
-    ],
-    "post-update-cmd": [
-      "@build-theme"
-    ]
-  }
 }
