@@ -25,7 +25,7 @@
  *
  * Customize your project in the config.js file
  */
-const config = require( './config.js' );
+const config = require( './config/project-config.js' );
 
 /**
  * Load Package.json.

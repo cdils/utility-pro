@@ -29,7 +29,6 @@
     "prefer-stable": true,
     "require": {
         "php": "^7.0",
-        "brightnucleus/config": "^0.4",
         "composer/installers": "^1.2",
         "roave/security-advisories": "dev-master",
         "tgmpa/tgm-plugin-activation": "dev-develop"

@@ -2,9 +2,9 @@
 /**
  * Utility Pro.
  *
- * @package      Utility_Pro
+ * @package      CDils\UtilityPro
  * @link         http://www.carriedils.com/utility-pro
- * @author       Carrie Dils
+ * @author       Gary Jones
  * @copyright    Copyright (c) 2015, Carrie Dils
  * @license      GPL-2.0+
  */
@@ -18,7 +18,7 @@ add_action( 'genesis_setup', 'utility_pro_setup', 15 );
  * Theme setup.
  *
  * Attach all of the site-wide functions to the correct hooks and filters. All
- * the functions themselves are defined below this setup function.
+ * theme-specific functions are defined below this setup function.
  *
  * @since 1.0.0
  */
@@ -29,19 +29,45 @@ function utility_pro_setup() {
 	define( 'CHILD_THEME_VERSION', '1.3.1' );
 
 	// Add HTML5 markup structure.
-	add_theme_support( 'html5', array( 'caption', 'comment-form', 'comment-list', 'gallery', 'search-form' ) );
+	add_theme_support(
+		'html5',
+		array(
+			'caption',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'search-form'
+		)
+	);
 
 	// Add viewport meta tag for mobile browsers.
-	add_theme_support( 'genesis-responsive-viewport' );
+	add_theme_support(
+		'genesis-responsive-viewport'
+	);
 
 	// Add support for custom background.
-	add_theme_support( 'custom-background', array( 'wp-head-callback' => '__return_false' ) );
+	add_theme_support(
+		'custom-background',
+		array(
+			'wp-head-callback' => '__return_false'
+		)
+	);
 
 	// Add support for accessibility features.
-	add_theme_support( 'genesis-accessibility', array( '404-page', 'headings', 'skip-links' ) );
+	add_theme_support(
+		'genesis-accessibility',
+		array(
+			'404-page',
+			'headings',
+			'skip-links'
+		)
+	);
 
 	// Add support for three footer widget areas.
-	add_theme_support( 'genesis-footer-widgets', 3 );
+	add_theme_support(
+		'genesis-footer-widgets',
+		3
+	);
 
 	// Add support for additional color style options.
 	add_theme_support(
@@ -148,7 +174,6 @@ function utility_pro_remove_genesis_page_templates( $page_templates ) {
  * @since 1.0.0
  */
 function utility_pro_add_bar() {
-
 	genesis_widget_area( 'utility-bar', array(
 		'before' => '<div class="utility-bar"><div class="wrap">',
 		'after'  => '</div></div>',

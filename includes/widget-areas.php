@@ -29,22 +29,30 @@ function utility_pro_register_widget_areas() {
 		],
 		[
 			'id'          => 'utility-home-gallery-1',
+			/* translators: %d: Number of widget area. */
 			'name'        => sprintf( _x( 'Home Gallery %d', 'Group of Home Gallery widget areas', 'utility-pro' ), 1 ),
+			/* translators: %d: Number of widget area. */
 			'description' => sprintf( _x( 'Home Gallery %d widget area on home page.', 'Description of widget area', 'utility-pro' ), 1 ),
 		],
 		[
 			'id'          => 'utility-home-gallery-2',
+			/* translators: %d: Number of widget area. */
 			'name'        => sprintf( _x( 'Home Gallery %d', 'Group of Home Gallery widget areas', 'utility-pro' ), 2 ),
+			/* translators: %d: Number of widget area. */
 			'description' => sprintf( _x( 'Home Gallery %d widget area on home page.', 'Description of widget area', 'utility-pro' ), 2 ),
 		],
 		[
 			'id'          => 'utility-home-gallery-3',
+			/* translators: %d: Number of widget area. */
 			'name'        => sprintf( _x( 'Home Gallery %d', 'Group of Home Gallery widget areas', 'utility-pro' ), 3 ),
+			/* translators: %d: Number of widget area. */
 			'description' => sprintf( _x( 'Home Gallery %d widget area on home page.', 'Description of widget area', 'utility-pro' ), 3 ),
 		],
 		[
 			'id'          => 'utility-home-gallery-4',
+			/* translators: %d: Number of widget area. */
 			'name'        => sprintf( _x( 'Home Gallery %d', 'Group of Home Gallery widget areas', 'utility-pro' ), 4 ),
+			/* translators: %d: Number of widget area. */
 			'description' => sprintf( _x( 'Home Gallery %d widget area on home page.', 'Description of widget area', 'utility-pro' ), 4 ),
 		],
 		[
