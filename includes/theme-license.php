@@ -32,8 +32,11 @@ $GLOBALS['updater'] = new EDD_Theme_Updater_Admin(
 		'renew'                     => __( 'Renew?', 'utility-pro' ),
 		'unlimited'                 => __( 'unlimited', 'utility-pro' ),
 		'license-key-is-active'     => __( 'License key is active.', 'utility-pro' ),
+		/* translators: %s: expiry date */
 		'expires%s'                 => __( 'Expires %s.', 'utility-pro' ),
+		/* translators: 1: site count, 2: license limit */
 		'%1$s/%2$-sites'            => __( 'You have %1$s / %2$s sites activated.', 'utility-pro' ),
+		/* translators: %s: expiry date */
 		'license-key-expired-%s'    => __( 'License key expired %s.', 'utility-pro' ),
 		'license-key-expired'       => __( 'License key has expired.', 'utility-pro' ),
 		'license-keys-do-not-match' => __( 'License keys do not match.', 'utility-pro' ),
@@ -42,6 +45,7 @@ $GLOBALS['updater'] = new EDD_Theme_Updater_Admin(
 		'site-is-inactive'          => __( 'Site is inactive.', 'utility-pro' ),
 		'license-status-unknown'    => __( 'License status is unknown.', 'utility-pro' ),
 		'update-notice'             => __( "Updating this theme will lose any customizations you have made. 'Cancel' to stop, 'OK' to update.", 'utility-pro' ),
+		/* translators: 1: theme name, 2: new version number, 3: thickbox link, 4: theme name, 5: update URL, 6: onclick attribute */
 		'update-available'          => __( '<strong>%1$s %2$s</strong> is available. <a href="%3$s" class="thickbox" title="%4s">Check out what\'s new</a> or <a href="%5$s"%6$s>update now</a>.', 'utility-pro' )
 	]
 );

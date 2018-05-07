@@ -5,7 +5,7 @@
  * @package      CDils\UtilityPro
  * @link         http://www.carriedils.com/utility-pro
  * @author       Gary Jones
- * @copyright    Copyright (c) 2017, Carrie Dils
+ * @copyright    Copyright (c) 2015, Carrie Dils
  * @license      GPL-2.0+
  */
 

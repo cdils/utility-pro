@@ -9,11 +9,14 @@
  * @license      GPL-2.0+
  */
 
+declare( strict_types = 1 );
+namespace CDils\UtilityPro;
+
 // Load internationalization components.
 // English users do not need to load the text domain and can comment out or remove.
 load_child_theme_textdomain( 'utility-pro', get_stylesheet_directory() . '/languages' );
 
-add_action( 'genesis_setup', 'utility_pro_setup', 15 );
+add_action( 'genesis_setup', __NAMESPACE__ . '\\setup', 15 );
 /**
  * Theme setup.
  *
@@ -22,22 +25,24 @@ add_action( 'genesis_setup', 'utility_pro_setup', 15 );
  *
  * @since 1.0.0
  */
-function utility_pro_setup() {
+function setup() {
 
-	define( 'CHILD_THEME_NAME', 'utility-pro' );
-	define( 'CHILD_THEME_URL', 'https://store.carriedils.com/utility-pro' );
-	define( 'CHILD_THEME_VERSION', '1.3.1' );
+	$child_theme = wp_get_theme();
+
+	define( 'CHILD_THEME_NAME', $child_theme->get( 'Name' ) );
+	define( 'CHILD_THEME_URL', $child_theme->get( 'ThemeURI' ) );
+	define( 'CHILD_THEME_VERSION', $child_theme->get( 'Version' ) );
 
 	// Add HTML5 markup structure.
 	add_theme_support(
 		'html5',
-		array(
+		[
 			'caption',
 			'comment-form',
 			'comment-list',
 			'gallery',
 			'search-form'
-		)
+		]
 	);
 
 	// Add viewport meta tag for mobile browsers.
@@ -48,19 +53,19 @@ function utility_pro_setup() {
 	// Add support for custom background.
 	add_theme_support(
 		'custom-background',
-		array(
+		[
 			'wp-head-callback' => '__return_false'
-		)
+		]
 	);
 
 	// Add support for accessibility features.
 	add_theme_support(
 		'genesis-accessibility',
-		array(
+		[
 			'404-page',
 			'headings',
 			'skip-links'
-		)
+		]
 	);
 
 	// Add support for three footer widget areas.
@@ -72,17 +77,17 @@ function utility_pro_setup() {
 	// Add support for additional color style options.
 	add_theme_support(
 		'genesis-style-selector',
-		array(
+		[
 			'utility-pro-purple' => __( 'Purple', 'utility-pro' ),
 			'utility-pro-green'  => __( 'Green', 'utility-pro' ),
 			'utility-pro-jam'    => __( 'Jazzberry Jam', 'utility-pro' ),
-		)
+		]
 	);
 
 	// Add support for structural wraps (all default Genesis wraps unless noted).
 	add_theme_support(
 		'genesis-structural-wraps',
-		array(
+		[
 			'footer',
 			'footer-widgets',
 			'footernav',    // Custom.
@@ -92,16 +97,16 @@ function utility_pro_setup() {
 			'nav',
 			'site-inner',
 			'site-tagline',
-		)
+		]
 	);
 
 	// Add support for two navigation areas (theme doesn't use secondary navigation).
 	add_theme_support(
 		'genesis-menus',
-		array(
+		[
 			'primary' => __( 'Primary Navigation Menu', 'utility-pro' ),
 			'footer'  => __( 'Footer Navigation Menu', 'utility-pro' ),
-		)
+		]
 	);
 
 	// Add custom image sizes.
@@ -124,26 +129,28 @@ function utility_pro_setup() {
 	// Enable shortcodes in widgets.
 	add_filter( 'widget_text', 'do_shortcode' );
 
-	// Add Utility Bar above header.
-	add_action( 'genesis_before_header', 'utility_pro_add_bar' );
-
 	// Add featured image above posts.
 	add_filter( 'the_content', 'utility_pro_featured_image' );
 
 	// Load files in admin.
 	if ( is_admin() ) {
 		// Add theme license (don't remove, unless you don't want theme support).
-		include get_stylesheet_directory() . '/vendor-includes/edd-software-licensing/theme-license-admin.php';
+		include get_stylesheet_directory() . '/includes/theme-license.php';
 	} else {
 
 		// This file loads the Google fonts used in this theme.
 		require get_stylesheet_directory() . '/includes/google-fonts.php';
 
-		// This file contains search form improvements.
-		require get_stylesheet_directory() . '/includes/class-SearchForm.php';
+		// Add accessibility enhancements.
+		$accessibility = new Accessibility();
+		$accessibility->apply();
 
 		// Footer nav.
-		include get_stylesheet_directory() . '/includes/class-FooterNav.php';
+		$footer_nav = new FooterNav();
+		$footer_nav->apply();
+
+		// Add Utility Bar above header.
+		add_action( 'genesis_before_header', 'utility_pro_add_bar' );
 
 		// Change the footer text.
 		add_filter( 'genesis_footer_creds_text', 'utility_pro_footer_creds' );
@@ -165,6 +172,7 @@ function utility_pro_setup() {
  */
 function utility_pro_remove_genesis_page_templates( $page_templates ) {
 	unset( $page_templates['page_blog.php'] );
+
 	return $page_templates;
 }
 
@@ -216,8 +224,11 @@ function utility_pro_featured_image( $content ) {
  * @return string Footer credentials.
  */
 function utility_pro_footer_creds( $creds ) {
-
-	return 'Powered by WordPress and the <a href="https://store.carriedils.com/downloads/utility-pro/?utm_source=Utility%20Pro%20Footer%20Credits&utm_medium=Distributed%20Theme&utm_campaign=Utility%20Pro%20Theme" rel="nofollow">Utility Pro</a> theme for Genesis Framework.';
+	return sprintf(
+		/* translators: %s: URL for Utility Pro. */
+		__( 'Powered by WordPress and the <a href="%s" rel="nofollow">Utility Pro</a> theme for Genesis Framework.', 'utility-pro' ),
+		esc_url( 'https://store.carriedils.com/downloads/utility-pro/?utm_source=Utility%20Pro%20Footer%20Credits&utm_medium=Distributed%20Theme&utm_campaign=Utility%20Pro%20Theme' )
+	);
 }
 
 /**
