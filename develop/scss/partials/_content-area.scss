@@ -1,3 +1,10 @@
+// Breadcrumbs
+//---------------------------------------------
+
+.breadcrumb {
+	margin-bottom: $base-margin/2;
+}
+
 // Titles
 //---------------------------------------------
 
@@ -162,3 +169,20 @@ p.form-submit,
 .form-allowed-tags {
 	font-size: $secondary-font-size;
 }
+
+// Author Box
+//---------------------------------------------
+
+.author-box {
+	@extend %content-area;
+
+	&-title {
+		font-weight: 700;
+		margin-bottom: 10px;
+	}
+
+	.avatar {
+		margin-right: $base-margin/2;
+	}
+}
+

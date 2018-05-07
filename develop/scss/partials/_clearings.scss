@@ -1,16 +1,4 @@
-@include normalize();
-
-// Box Sizing
-//---------------------------------------------
-
-*,
-[type="search"] {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
-// Float Clearing
+// Clearings
 // ---------------------------------------------
 
 .author-box:before,

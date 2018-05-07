@@ -1,3 +1,5 @@
+// Site containers
+//---------------------------------------------
 .site-inner {
 	background: darken($white, 3);
 	padding-top: 40px;
@@ -18,13 +20,16 @@
 	grid-gap: 20px;
 }
 
-// Full width header, no widgets
+// Full width header (no widget area)
 //---------------------------------------------
 
 .header-full-width .site-title,
 .header-full-width .title-area {
 	width: 100%;
 }
+
+// Header with widget area
+//---------------------------------------------
 
 @supports (grid-area: auto) {
 	@media screen and (min-width: $small-screen) {
@@ -42,7 +47,12 @@
 			}
 		}
 	}
+}
 
+// Content & Sidebar Layout
+//---------------------------------------------
+
+@supports (grid-area: auto) {
 	@media screen and (min-width: $medium-screen) {
 
 		// Content area
@@ -85,13 +95,17 @@
 				width: 75%;
 			}
 		}
+	}
+}
 
-		// Footer
-		.footer-widgets .wrap {
-			display: grid;
-			grid-gap: 20px;
-			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr) );
-		}
+// Footer Layout
+//---------------------------------------------
+
+@supports (grid-area: auto) {
+	.footer-widgets .wrap {
+		display: grid;
+		grid-gap: 20px;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr) );
 	}
 }
 

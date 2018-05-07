@@ -11,6 +11,9 @@
 	@extend %box-shadow;
 }
 
+// Alignments
+//---------------------------------------------
+
 .alignleft {
 	display: inline;
 	float: left;
@@ -109,25 +112,5 @@
 
 	.gallery-columns-9 {
 		grid-template-columns: repeat(9, 1fr);
-	}
-}
-
-// Genesis
-//---------------------------------------------
-
-.breadcrumb {
-	margin-bottom: $base-margin/2;
-}
-
-.author-box {
-	@extend %content-area;
-
-	&-title {
-		font-weight: 700;
-		margin-bottom: 10px;
-	}
-
-	.avatar {
-		margin-right: $base-margin/2;
 	}
 }

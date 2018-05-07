@@ -1,3 +1,6 @@
+// Site Footer
+//---------------------------------------------
+
 .site-footer {
 	background-color: $default-base;
 	color: $default-base-contrast;
@@ -18,4 +21,42 @@
 	}
 }
 
+// Footer widgets
+//---------------------------------------------
 
+.footer-widgets {
+	background: $black;
+	color: $white;
+	padding: 40px 0;
+
+	a {
+		color: $white;
+
+		&:hover {
+			color: lighten($black, 75);
+		}
+	}
+
+	.widget {
+		margin-bottom: 24px;
+	}
+
+	.widgettitle {
+		color: $white;
+		font-size: 20px;
+	}
+
+	.entry {
+		background: transparent;
+	}
+
+	li {
+		list-style-type: none;
+		margin-bottom: 6px;
+		word-wrap: break-word;
+	}
+
+	.search-form input[type="search"] {
+		width: 100%;
+	}
+}

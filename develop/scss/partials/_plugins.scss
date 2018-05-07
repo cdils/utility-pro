@@ -47,34 +47,6 @@ li a .fa {
 	background-color: $black;
 }
 
-// Gravity Forms
-//---------------------------------------------
-
-div.gform_wrapper {
-	input[type="email"],
-	input[type="text"],
-	textarea,
-	.ginput_complex label {
-		padding: 16px;
-	}
-
-	.ginput_complex label {
-		padding: 0;
-	}
-
-	li,
-	form li {
-		margin: 16px 0 0;
-	}
-}
-
-.sidebar .gform_wrapper .top_label input.medium,
-.sidebar .gform_wrapper .top_label select.medium,
-.site-inner .gform_wrapper .gform_footer input.button,
-.site-inner .gform_wrapper .gform_footer input[type="submit"] {
-	width: 100%;
-}
-
 // Jetpack
 //---------------------------------------------
 

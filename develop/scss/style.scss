@@ -1,127 +1,157 @@
+/*
+	Theme Name: Utility Pro
+	Description: No-nonsense, functional child theme created for the Genesis Framework.
+	Author: Carrie Dils
+	Author URI: https://carriedils.com/
+	Version: 2.0.0
+	Tags: black, purple, green, blue, red, one-column, two-columns, fixed-width, custom-menu, full-width-template, sticky-post, theme-options, threaded-comments, rtl-language-support, translation-ready
+	Template: genesis
+	License: GPL-2.0+
+	License URI: http://www.gnu.org/licenses/gpl-2.0.html
+	Text Domain: utility-pro
+*/
 
-/* Table of Contents
-
-	- HTML5 Reset
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+	- Normalize
 		- Baseline Normalize
-		- Box Sizing
-		- Float Clearing
-	- Theme Colors
-		- Purple
-		- Green
-		- Red
-	- Defaults
-		- Typographical Elements
+		- Clearings
+	- Accessibility
+	- Default Elements
+		- Typography
 		- Headings
 		- Objects
 		- Forms
 		- Tables
 	- Structure and Layout
 		- Site Containers
-		- Sidebar
-		- Column Widths and Positions
+		- Header
+		- Content and Sidebar
+		- Footer
 		- Column Classes
 	- Common Classes
 		- WordPress
+		- Alignments
 		- Media Gallery
-		- Genesis
 	- Widgets
 		- Utility Bar
-		- Home Welcome
-		- Home Gallery
-		- Call to Action
+		- Front Page
 		- Featured Page and Featured Post
-		- Footer Widgets
 	- Plugins
 		- Better Font Awesome
 		- Genesis eNews Extended
 		- Gravity Forms
 		- Jetpack
-	- Site Header
+	- Site Headergulp
 		- Title Area
 		- Header Right Widget Area
 	- Site Navigation
-		- Mobile Menu Toggle
+		- Navigation Links
 		- Header Navigation
-		- Primary & Secondary Navigation
+		- Primary & Footer Navigation
+		- Dropdown Menu
+		- Mobile Menu Toggle
 	- Content Area
+		- Breacrumbs
 		- Titles
 		- Entries
 		- Featured Image
 		- Pagination
 		- Comments
+		- Author Box
 	- Sidebars
 	- Site Footer
-	- Accessibility Extras
+		- Footer Widgets
+	- Theme Colors
 	- Print Media Query
-*/
+--------------------------------------------------------------*/
 
+/*--------------------------------------------------------------
+# Vendor
+--------------------------------------------------------------*/
 @import "modularscale-sass/stylesheets/modularscale";
-@import "normalize-scss/sass/normalize";
+
+/*--------------------------------------------------------------
+# Material Design Components
+--------------------------------------------------------------*/
 @import "@material/button/mdc-button";
 @import "@material/form-field/mdc-form-field";
 @import "@material/textfield/mdc-text-field";
 
-/* Resets
----------------------------------------------------------------------------------------------------- */
-@import "partials/reset";
-
-/* Variables
----------------------------------------------------------------------------------------------------- */
+/*--------------------------------------------------------------
+# Variables & Mixins
+--------------------------------------------------------------*/
 @import "partials/variables";
-
-
-/* Mixins
----------------------------------------------------------------------------------------------------- */
 @import "partials/mixins";
 
-/* Theme Colors
----------------------------------------------------------------------------------------------------- */
-@import "partials/theme-colors";
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+@import "normalize-scss/sass/normalize";
+@import "partials/clearings";
 
-/* Defaults
----------------------------------------------------------------------------------------------------- */
-@import "partials/defaults";
-
-/* Structure & Layout
----------------------------------------------------------------------------------------------------- */
-@import "partials/layout";
-
-/* Common Classes
----------------------------------------------------------------------------------------------------- */
-@import "partials/common-classes";
-
-/* Widgets
----------------------------------------------------------------------------------------------------- */
-@import "partials/widgets";
-
-/* Plugins
----------------------------------------------------------------------------------------------------- */
-@import "partials/plugins";
-
-/* Site Header
----------------------------------------------------------------------------------------------------- */
-@import "partials/header";
-
-/* Site Navigation
----------------------------------------------------------------------------------------------------- */
-@import "partials/navigation";
-
-/* Sidebars
----------------------------------------------------------------------------------------------------- */
-@import "partials/sidebars";
-
-/* Content Area
----------------------------------------------------------------------------------------------------- */
-@import "partials/content-area";
-
-/* Site Footer
----------------------------------------------------------------------------------------------------- */
-@import "partials/site-footer";
-
-/* Accessibility Extras
----------------------------------------------------------------------------------------------------- */
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
 @import "partials/accessibility";
 
-/* Print Media Query
----------------------------------------------------------------------------------------------------- */
+/*--------------------------------------------------------------
+# Default Elements
+--------------------------------------------------------------*/
+@import "partials/defaults";
+
+/*--------------------------------------------------------------
+# Structure & Layout
+--------------------------------------------------------------*/
+@import "partials/layout";
+
+/*--------------------------------------------------------------
+# Common Classes
+--------------------------------------------------------------*/
+@import "partials/common-classes";
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+@import "partials/widgets";
+
+/*--------------------------------------------------------------
+# Plugins
+--------------------------------------------------------------*/
+@import "partials/plugins";
+
+/*--------------------------------------------------------------
+# Site Header
+--------------------------------------------------------------*/
+@import "partials/site-header";
+
+/*--------------------------------------------------------------
+# Site Navigation
+--------------------------------------------------------------*/
+@import "partials/site-navigation";
+
+/*--------------------------------------------------------------
+# Sidebar
+--------------------------------------------------------------*/
+@import "partials/sidebar";
+
+/*--------------------------------------------------------------
+# Content Area
+--------------------------------------------------------------*/
+@import "partials/content-area";
+
+/*--------------------------------------------------------------
+# Site Footer
+--------------------------------------------------------------*/
+@import "partials/site-footer";
+
+/*--------------------------------------------------------------
+# Theme Colors
+--------------------------------------------------------------*/
+@import "partials/theme-colors";
+
+/*--------------------------------------------------------------
+# Print Media Queries
+--------------------------------------------------------------*/
 @import "partials/print-media-queries";

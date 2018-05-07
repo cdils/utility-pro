@@ -32,7 +32,7 @@
 	}
 }
 
-// Home Welcome
+// Front Page
 //---------------------------------------------
 
 .home-welcome {
@@ -60,10 +60,6 @@
 		}
 	}
 }
-
-
-// Home Gallery
-//---------------------------------------------
 
 .home-gallery {
 	background: $white;
@@ -96,9 +92,6 @@
 	}
 
 }
-
-// Call to Action
-//---------------------------------------------
 
 .call-to-action-bar {
 	background: lighten($black, 25);
@@ -163,45 +156,5 @@
 .featured-content .entry-title {
 	font-size: $base-font-size + 2;
 	margin: 10px 0;
-}
-
-// Footer widgets
-//---------------------------------------------
-
-.footer-widgets {
-	background: $black;
-	color: $white;
-	padding: 40px 0;
-
-	a {
-		color: $white;
-
-		&:hover {
-			color: lighten($black, 75);
-		}
-	}
-
-	.widget {
-		margin-bottom: 24px;
-	}
-
-	.widgettitle {
-		color: $white;
-		font-size: 20px;
-	}
-
-	.entry {
-		background: transparent;
-	}
-
-	li {
-		list-style-type: none;
-		margin-bottom: 6px;
-		word-wrap: break-word;
-	}
-
-	.search-form input[type="search"] {
-		width: 100%;
-	}
 }
 
