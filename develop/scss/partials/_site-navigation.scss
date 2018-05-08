@@ -47,11 +47,25 @@
 	}
 
 	.sub-menu {
-		background-color: $black;
+		background-color: $white;
 		clear: both;
 		display: none;
 		opacity: 1;
 		position: static;
+
+		@extend %box-shadow;
+
+		a {
+			border: 0;
+
+			.sub-menu a {
+					padding-left: 20px;
+				}
+
+			@media screen and (min-width: $medium-screen) {
+				width: 200px;
+			}
+		}
 
 		@media screen and (min-width: $medium-screen) {
 			display: block;
@@ -69,19 +83,6 @@
 	.menu-item-hover:hover > .sub-menu {
 		left: auto;
 		opacity: 1;
-	}
-
-	.sub-menu a {
-		border: 0;
-
-		@media screen and (min-width: $medium-screen) {
-			letter-spacing: 0;
-			width: 200px;
-		}
-	}
-
-	.sub-menu .sub-menu a {
-		padding-left: 20px;
 	}
 
 }
@@ -136,14 +137,17 @@
 .nav-primary,
 .nav-footer {
 	background-color: $white;
-	border-top: 1px solid lighten($black, 75);
-	border-bottom: 1px solid lighten($black, 75);
-	text-align: center;
-	width: 100%;
 
 	a:hover,
 	.current-menu-item > a {
 		color: lighten($black, 50);
+	}
+
+	@media screen and (min-width: $medium-screen) {
+		border-top: 1px solid lighten($black, 75);
+		border-bottom: 1px solid lighten($black, 75);
+		text-align: center;
+		width: 100%;
 	}
 }
 
@@ -179,13 +183,11 @@
 	}
 }
 
-.menu-toggle,
+button.menu-toggle,
 .footer-menu-toggle {
 	border: 0;
 	display: block;
 	margin: 0 auto;
-	overflow: hidden;
-	padding: 10px;
 	position: relative;
 	text-transform: uppercase;
 	visibility: visible;

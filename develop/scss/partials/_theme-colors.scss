@@ -1,6 +1,5 @@
 // Color Options
-// If you've chosen your favorite color scheme, you can delete the others
-// ----------------------------------------------------------------------------------------------------
+//---------------------------------------------
 
 @each $scheme, $base, $base-contrast, $accent, $accent-contrast in $color-schemes {
 
@@ -12,125 +11,21 @@
 			color: $base;
 		}
 
+		.alert,
 		.call-to-action-bar .button,
 		.button,
 		.entry-content .button,
-		input[type="submit"] {
-			background: $accent;
+		input[type="submit"],
+		button {
+			background-color: $accent;
 			color: $accent-contrast;
 		}
 
 		.utility-bar,
 		.site-footer {
 			background-color: $base;
+			color: $base-contrast;
 		}
 
-
 	}
-
 }
-
-
-// // Purple
-// //---------------------------------------------
-
-// .utility-pro-purple {
-
-// 	a,
-// 	.entry-content a,
-// 	.home-gallery .fa {
-// 		color: $purple;
-// 	}
-
-// 	.call-to-action-bar .button,
-// 	.button,
-// 	.entry-content .button,
-// 	input[type="submit"] {
-// 		background: $purple;
-// 		border: 1px solid $white;
-// 		color: $white;
-
-// 		&:hover {
-// 			background: $white;
-// 			border: 1px solid $purple;
-// 			color: $purple;
-// 		}
-// 	}
-
-// 	.utility-bar,
-// 	.site-footer {
-// 		background-color: $purple;
-// 	}
-// }
-
-// // Green
-// //---------------------------------------------
-
-// .utility-pro-green {
-
-// 	a,
-// 	.entry-content a,
-// 	.home-gallery .fa {
-// 		color: $green;
-// 	}
-
-// 	.sticky.entry {
-// 		border-top-color: $green;
-// 	}
-
-// 	.call-to-action-bar .button,
-// 	.button,
-// 	.entry-content .button,
-// 	input[type="submit"] {
-// 		background: $green;
-// 		border: 1px solid $white;
-// 		color: $white;
-
-// 		&:hover {
-// 			background: $white;
-// 			border: 1px solid $green;
-// 			color: $green;
-// 		}
-// 	}
-
-// 	.utility-bar,
-// 	.site-footer {
-// 		background-color: $green;
-// 	}
-// }
-
-// // Red
-// //---------------------------------------------
-
-// .utility-pro-red {
-
-// 	a,
-// 	.entry-content a,
-// 	.home-gallery .fa {
-// 		color: $jam;
-// 	}
-
-// 	.sticky.entry {
-// 		border-top-color: $jam;
-// 	}
-
-// 	.call-to-action-bar .button,
-// 	.button,
-// 	.entry-content .button,
-// 	input[type="submit"] {
-// 		background: $jam;
-// 		border: 1px solid $white;
-// 		color: $white;
-
-// 		&:hover {
-// 			background: $white;
-// 			border: 1px solid $jam;
-// 			color: $jam;
-// 		}
-// 	}
-
-// 	.utility-bar,
-// 	.site-footer {
-// 		background-color: $jam;
-// 	}
-// }

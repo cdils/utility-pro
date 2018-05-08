@@ -88,10 +88,6 @@ function setup() {
 		// Enqueue Google Fonts.
 		include get_stylesheet_directory() . '/lib/google-fonts.php';
 
-		// Footer nav.
-		$footer_nav = new FooterNav();
-		$footer_nav->apply();
-
 		// Add Utility Bar above header.
 		$utility_bar = new UtilityBar();
 		$utility_bar->apply();
@@ -104,8 +100,12 @@ function setup() {
 		$single_post = new SinglePost();
 		$single_post->apply();
 
+		// Footer nav.
+		$footer_nav = new FooterNav();
+		$footer_nav->apply();
+
 		// Change the footer text.
-		add_filter( 'genesis_footer_creds_text', 'utility_pro_footer_creds' );
+		add_filter( 'genesis_footer_creds_text',  __NAMESPACE__ . '\\footer_creds' );
 
 		add_filter( 'genesis_author_box_gravatar_size', function() {
 			return 96;
@@ -124,7 +124,7 @@ function setup() {
  *
  * @return string Footer credentials.
  */
-function utility_pro_footer_creds( $creds ) {
+function footer_creds( $creds ) {
 	$creds = sprintf(
 		/* translators: %s: URL for Utility Pro. */
 		__( 'Powered by WordPress and the <a href="%s" rel="nofollow">Utility Pro</a> theme for Genesis Framework.', 'utility-pro' ),

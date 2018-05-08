@@ -8,6 +8,7 @@ body {
 	font-size: $base-font-size;
 	font-weight: 400;
 	line-height: $base-line-height;
+	margin: 0;
 	overflow-x: hidden;
 }
 
@@ -178,10 +179,11 @@ input[type="button"] {
 .search-form {
 	display: flex;
 
-	input {
+	button {
 		border: 0;
 
-		background: url(images/icon-search-ltr.png) no-repeat 10% $default-accent;
+		background: url(images/icon-search-ltr.png) no-repeat 10%;
+		background-color: $default-accent;
 		background-size: 13px 13px;
 
 		.search-button-text {

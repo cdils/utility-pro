@@ -34,9 +34,9 @@ $utility_pro_theme_support = [
 
 	// Add support for additional color style options.
 	'genesis-style-selector' => [
-		'utility-pro-purple' => __( 'Purple', 'utility-pro' ),
-		'utility-pro-green'  => __( 'Green', 'utility-pro' ),
-		'utility-pro-red'    => __( 'Red', 'utility-pro' ),
+		'utility-pro-indigo' => __( 'Indigo', 'utility-pro' ),
+		'utility-pro-jam'  => __( 'Jazzberry Jam', 'utility-pro' ),
+		'utility-pro-greener'    => __( 'Greener Grass', 'utility-pro' ),
 	],
 
 	// Add support for structural wraps (all default Genesis wraps unless noted).
