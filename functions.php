@@ -4,164 +4,116 @@
  *
  * @package      CDils\UtilityPro
  * @link         http://www.carriedils.com/utility-pro
- * @author       Gary Jones
+ * @author       Carrie Dils
  * @copyright    Copyright (c) 2015, Carrie Dils
  * @license      GPL-2.0+
  */
 
 declare( strict_types = 1 );
+
 namespace CDils\UtilityPro;
+
+use BrightNucleus\Config\ConfigFactory;
 
 // Load internationalization components.
 // English users do not need to load the text domain and can comment out or remove.
-load_child_theme_textdomain( 'utility-pro', get_stylesheet_directory() . '/languages' );
+\load_child_theme_textdomain( 'utility-pro', \get_stylesheet_directory() . '/languages' );
+
+// Autoload dependencies.
+if ( \file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
+	require __DIR__ . '/vendor/autoload.php';
+}
+
+\define( 'UTILITY_PRO_CONFIG_DIR', __DIR__ . '/config/' );
 
 add_action( 'genesis_setup', __NAMESPACE__ . '\\setup', 15 );
 /**
  * Theme setup.
  *
  * Attach all of the site-wide functions to the correct hooks and filters. All
- * theme-specific functions are defined below this setup function.
+ * the functions themselves are defined below this setup function.
  *
  * @since 1.0.0
  */
 function setup() {
-
 	$child_theme = wp_get_theme();
 
-	define( 'CHILD_THEME_NAME', $child_theme->get( 'Name' ) );
-	define( 'CHILD_THEME_URL', $child_theme->get( 'ThemeURI' ) );
-	define( 'CHILD_THEME_VERSION', $child_theme->get( 'Version' ) );
+	\define( 'CHILD_THEME_NAME', $child_theme->get( 'Name' ) );  // WPCS: prefix ok.
+	\define( 'CHILD_THEME_URL', $child_theme->get( 'ThemeURI' ) );  // WPCS: prefix ok.
+	\define( 'CHILD_THEME_VERSION', $child_theme->get( 'Version' ) );  // WPCS: prefix ok.
 
-	// Add HTML5 markup structure.
-	add_theme_support(
-		'html5',
-		[
-			'caption',
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'search-form'
-		]
-	);
+	$config_file = \UTILITY_PRO_CONFIG_DIR . 'defaults.php';
+	$config = ConfigFactory::createSubConfig( $config_file, 'CDils\UtilityPro' );
 
-	// Add viewport meta tag for mobile browsers.
-	add_theme_support(
-		'genesis-responsive-viewport'
-	);
+	// Register theme support items, defined in config/defaults.php.
+	$theme_support = new ThemeSupport( $config->getSubConfig( 'ThemeSupport' ) );
+	$theme_support->register();
 
-	// Add support for custom background.
-	add_theme_support(
-		'custom-background',
-		[
-			'wp-head-callback' => '__return_false'
-		]
-	);
-
-	// Add support for accessibility features.
-	add_theme_support(
-		'genesis-accessibility',
-		[
-			'404-page',
-			'headings',
-			'skip-links'
-		]
-	);
-
-	// Add support for three footer widget areas.
-	add_theme_support(
-		'genesis-footer-widgets',
-		3
-	);
-
-	// Add support for additional color style options.
-	add_theme_support(
-		'genesis-style-selector',
-		[
-			'utility-pro-purple' => __( 'Purple', 'utility-pro' ),
-			'utility-pro-green'  => __( 'Green', 'utility-pro' ),
-			'utility-pro-jam'    => __( 'Jazzberry Jam', 'utility-pro' ),
-		]
-	);
-
-	// Add support for structural wraps (all default Genesis wraps unless noted).
-	add_theme_support(
-		'genesis-structural-wraps',
-		[
-			'footer',
-			'footer-widgets',
-			'footernav',    // Custom.
-			'header',
-			'home-gallery', // Custom.
-			'menu-footer',  // Custom.
-			'nav',
-			'site-inner',
-			'site-tagline',
-		]
-	);
-
-	// Add support for two navigation areas (theme doesn't use secondary navigation).
-	add_theme_support(
-		'genesis-menus',
-		[
-			'primary' => __( 'Primary Navigation Menu', 'utility-pro' ),
-			'footer'  => __( 'Footer Navigation Menu', 'utility-pro' ),
-		]
-	);
+	// Force specific theme settings.
+	$forced_theme_settings = new GenesisForceThemeSettings( $config->getSubConfig( 'GenesisForceThemeSettings' ) );
+	$forced_theme_settings->apply();
 
 	// Add custom image sizes.
-	add_image_size( 'feature-large', 960, 330, true );
+	\add_image_size( 'feature-large', 960, 330, true );
 
 	// Unregister secondary sidebar.
-	unregister_sidebar( 'sidebar-alt' );
+	\unregister_sidebar( 'sidebar-alt' );
 
 	// Unregister layouts that use secondary sidebar.
-	genesis_unregister_layout( 'content-sidebar-sidebar' );
-	genesis_unregister_layout( 'sidebar-content-sidebar' );
-	genesis_unregister_layout( 'sidebar-sidebar-content' );
+	\genesis_unregister_layout( 'content-sidebar-sidebar' );
+	\genesis_unregister_layout( 'sidebar-content-sidebar' );
+	\genesis_unregister_layout( 'sidebar-sidebar-content' );
 
-	// Remove unused templates.
-	add_filter( 'theme_page_templates', 'utility_pro_remove_genesis_page_templates' );
+	add_filter( 'theme_page_templates',  __NAMESPACE__ . '\\remove_genesis_page_templates' );
 
 	// Register the default widget areas.
-	utility_pro_register_widget_areas();
-
-	// Enable shortcodes in widgets.
+	$widget_areas = new WidgetAreas( $config->getSubConfig( 'WidgetAreas' ) );
+	$widget_areas->register();
 	add_filter( 'widget_text', 'do_shortcode' );
-
-	// Add featured image above posts.
-	add_filter( 'the_content', 'utility_pro_featured_image' );
 
 	// Load files in admin.
 	if ( is_admin() ) {
+		// Configure and register TGMPA functionality for suggested plugins.
+		$tgmpa = new Tgmpa( $config->getSubConfig( 'Tgmpa' ) );
+		$tgmpa->register();
+
 		// Add theme license (don't remove, unless you don't want theme support).
-		include get_stylesheet_directory() . '/includes/theme-license.php';
+		$license = new LicenseManager( $config->getSubConfig( 'Updater' ) );
+		$license->register();
+
+		// Add admin CSS.
+		$admin_css = new AdminCss();
+		$admin_css->apply();
 	} else {
+		// Enqueue Google Fonts.
 
-		// This file loads the Google fonts used in this theme.
-		require get_stylesheet_directory() . '/includes/google-fonts.php';
-
-		// Add accessibility enhancements.
-		$accessibility = new Accessibility();
-		$accessibility->apply();
 
 		// Footer nav.
 		$footer_nav = new FooterNav();
 		$footer_nav->apply();
 
 		// Add Utility Bar above header.
-		add_action( 'genesis_before_header', 'utility_pro_add_bar' );
+		$utility_bar = new UtilityBar();
+		$utility_bar->apply();
 
-		// Change the footer text.
-		add_filter( 'genesis_footer_creds_text', 'utility_pro_footer_creds' );
+		// Add accessibility enhancements.
+		$accessibility = new Accessibility();
+		$accessibility->apply();
 
-		// Customize the Gravatar size in the author box.
-		add_filter( 'genesis_author_box_gravatar_size', function () {
+		// Add customizations for single posts.
+		$single_post = new SinglePost();
+		$single_post->apply();
+
+		// Add customizations to footer.
+		$footer = new Footer( $config->getSubConfig( 'Footer' ) );
+		$footer->apply();
+
+		add_filter( 'genesis_author_box_gravatar_size', function() {
 			return 96;
 		} );
 
-		add_action( 'wp_enqueue_scripts', 'utility_pro_enqueue_assets' );
-	}
+		add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\enqueue_assets' );
+	}// End if().
 }
 
 /**
@@ -170,65 +122,10 @@ function setup() {
  * @param array $page_templates Existing recognised page templates.
  * @return array Amended recognised page templates.
  */
-function utility_pro_remove_genesis_page_templates( $page_templates ) {
+function remove_genesis_page_templates( array $page_templates ) : array {
 	unset( $page_templates['page_blog.php'] );
 
 	return $page_templates;
-}
-
-/**
- * Add Utility Bar above header.
- *
- * @since 1.0.0
- */
-function utility_pro_add_bar() {
-	genesis_widget_area( 'utility-bar', array(
-		'before' => '<div class="utility-bar"><div class="wrap">',
-		'after'  => '</div></div>',
-	) );
-}
-
-/**
- * Add featured image above single posts.
- *
- * Outputs image as part of the post content, so it's included in the RSS feed.
- * H/t to Robin Cornett for the suggestion of making image available to RSS.
- *
- * @since 1.0.0
- *
- * @param string $content Post content.
- *
- * @return null|string Return early if not a single post or there is no thumbnail.
- *                     Image and content markup otherwise.
- */
-function utility_pro_featured_image( $content ) {
-
-	if ( ! is_singular( 'post' ) || ! has_post_thumbnail() ) {
-		return $content;
-	}
-
-	$image = '<div class="featured-image">';
-	$image .= get_the_post_thumbnail( get_the_ID(), 'feature-large' );
-	$image .= '</div>';
-
-	return $image . $content;
-}
-
-/**
- * Change the footer text.
- *
- * @since  1.0.0
- *
- * @param string $creds Existing credentials.
- *
- * @return string Footer credentials.
- */
-function utility_pro_footer_creds( $creds ) {
-	return sprintf(
-		/* translators: %s: URL for Utility Pro. */
-		__( 'Powered by WordPress and the <a href="%s" rel="nofollow">Utility Pro</a> theme for Genesis Framework.', 'utility-pro' ),
-		esc_url( 'https://store.carriedils.com/downloads/utility-pro/?utm_source=Utility%20Pro%20Footer%20Credits&utm_medium=Distributed%20Theme&utm_campaign=Utility%20Pro%20Theme' )
-	);
 }
 
 /**
@@ -236,47 +133,71 @@ function utility_pro_footer_creds( $creds ) {
  *
  * @since 1.0.0
  */
-function utility_pro_enqueue_assets() {
+function enqueue_assets() {
+	// Load unminified JS if WP_DEBUG is enabled in wp-config.php
+	$suffix = \defined( 'WP_DEBUG' ) && WP_DEBUG ? '.js' : '.min.js';
+
 	// Replace style.css with style-rtl.css for RTL languages.
-	wp_style_add_data( 'utility-pro', 'rtl', 'replace' );
+	\wp_style_add_data( 'utility-pro', 'rtl', 'replace' );
 
 	// Keyboard navigation (dropdown menus) script.
-	wp_enqueue_script( 'keyboard-dropdown',  get_stylesheet_directory_uri() . '/js/keyboard-dropdown.min.js', array( 'jquery' ), false, true );
+	\wp_enqueue_script(
+		'utility-pro-keyboard-dropdown',
+		\get_stylesheet_directory_uri() . '/js/utility-pro-keyboard-dropdown' . $suffix,
+		[ 'jquery' ],
+		\CHILD_THEME_VERSION,
+		true
+	);
 
 	// Load mobile responsive menu.
-	wp_enqueue_script( 'utility-pro-responsive-menu', get_stylesheet_directory_uri() . '/js/responsive-menu.min.js', array( 'jquery' ),CHILD_THEME_VERSION, true );
+	\wp_enqueue_script(
+		'utility-pro-responsive-menu',
+		\get_stylesheet_directory_uri() . '/js/utility-pro-responsive-menu' . $suffix,
+		[ 'jquery' ],
+		'1.0.0', true
+	);
 
 	$localize_primary = [
 		'buttonText'     => __( 'Menu', 'utility-pro' ),
 		'buttonLabel'    => __( 'Primary Navigation Menu', 'utility-pro' ),
-		'subMenuButtonText'  => __( 'Sub Menu', 'utility-pro' ),
-		'subMenuButtonLabel' => __( 'Sub Menu', 'utility-pro' ),
+		'subButtonText'  => __( 'Sub Menu', 'utility-pro' ),
+		'subButtonLabel' => __( 'Sub Menu', 'utility-pro' ),
 	];
 
 	$localize_footer = [
 		'buttonText'     => __( 'Footer Menu', 'utility-pro' ),
 		'buttonLabel'    => __( 'Footer Navigation Menu', 'utility-pro' ),
-		'subMenuButtonText'  => __( 'Sub Menu', 'utility-pro' ),
-		'subMenuButtonLabel' => __( 'Sub Menu', 'utility-pro' ),
+		'subButtonText'  => __( 'Sub Menu', 'utility-pro' ),
+		'subButtonLabel' => __( 'Sub Menu', 'utility-pro' ),
 	];
 
 	// Localize the responsive menu script (for translation).
-	wp_localize_script( 'utility-pro-responsive-menu', 'utilityMenuPrimaryL10n', $localize_primary );
-	wp_localize_script( 'utility-pro-responsive-menu', 'utilityMenuFooterL10n', $localize_footer );
+	\wp_localize_script( 'utility-pro-responsive-menu', 'utilityProMenuPrimaryL10n', $localize_primary );
+	\wp_localize_script( 'utility-pro-responsive-menu', 'utilityProMenuFooterL10n', $localize_footer );
 
-	wp_enqueue_script( 'utility-pro', get_stylesheet_directory_uri() . '/js/responsive-menu.args.min.js', array( 'utility-pro-responsive-menu' ), CHILD_THEME_VERSION, true );
+	\wp_enqueue_script(
+		'utility-pro-responsive-menu-args',
+		\get_stylesheet_directory_uri() . '/js/utility-pro-responsive-menu-args' . $suffix,
+		[ 'utility-pro-responsive-menu' ],
+		\CHILD_THEME_VERSION,
+		true
+	);
 
 	// Load Backstretch scripts only if custom background is being used
 	// and we're on the home page or a page using the landing page template.
-	if ( ! get_background_image() || ( ! ( is_front_page() || is_page_template( 'page_landing.php' ) ) ) ) {
+	if ( ! \get_background_image() || ( ! ( \is_front_page() || \is_page_template( 'page_landing.php' ) ) ) ) {
 		return;
 	}
 
-	wp_enqueue_script( 'utility-pro-backstretch', get_stylesheet_directory_uri() . '/js/backstretch.min.js', array( 'jquery' ), '2.0.1', true );
-	wp_enqueue_script( 'utility-pro-backstretch-args', get_stylesheet_directory_uri() . '/js/backstretch.args.min.js', array( 'utility-pro-backstretch' ), CHILD_THEME_VERSION, true );
-	wp_localize_script( 'utility-pro', 'utilityBackstretchL10n', array( 'src' => get_background_image() ) );
+	\wp_enqueue_script(
+		'utility-pro-backstretch',
+		\get_stylesheet_directory_uri() . '/js/utility-pro-backstretch' . $suffix,
+		[ 'jquery' ],
+		'2.0.1',
+		true
+	);
 
+	\wp_localize_script( 'utility-pro', 'utilityProBackstretchL10n', [
+		'src' => \get_background_image(),
+	] );
 }
-
-// Add theme widget areas.
-include get_stylesheet_directory() . '/includes/widget-areas.php';

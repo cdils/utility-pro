@@ -27,10 +27,10 @@ $utility_pro_theme_support = [
 	],
 
 	// Add support for accessibility features.
-	 'genesis-accessibility' => [ '404-page', 'headings', 'skip-links' ],
+	'genesis-accessibility' => [ '404-page', 'headings', 'skip-links' ],
 
 	// Add support for three footer widget areas.
-	 'genesis-footer-widgets' => 3,
+	'genesis-footer-widgets' => 3,
 
 	// Add support for additional color style options.
 	'genesis-style-selector' => [
@@ -39,8 +39,8 @@ $utility_pro_theme_support = [
 		'utility-pro-red'    => __( 'Red', 'utility-pro' ),
 	],
 
-	 // Add support for structural wraps (all default Genesis wraps unless noted).
-	 'genesis-structural-wraps' => [
+	// Add support for structural wraps (all default Genesis wraps unless noted).
+	'genesis-structural-wraps' => [
 		'footer',
 		'footer-widgets',
 		'footernav',    // Custom.
@@ -50,13 +50,17 @@ $utility_pro_theme_support = [
 		'nav',
 		'site-inner',
 		'site-tagline',
-	 ],
+	],
 
-	 // Add support for two navigation areas (theme doesn't use secondary navigation).
-	 'genesis-menus' => [
+	// Add support for two navigation areas (theme doesn't use secondary navigation).
+	'genesis-menus' => [
 		'primary' => __( 'Primary Navigation Menu', 'utility-pro' ),
 		'footer'  => __( 'Footer Navigation Menu', 'utility-pro' ),
-	 ],
+	],
+];
+
+$utility_pro_genesis_force_theme_settings = [
+	'posts_nav' => 'numeric',
 ];
 
 // Configure recommended / required plugins and TGMPA configuration here.
@@ -218,11 +222,12 @@ $utility_pro_footer = [
 return [
 	'CDils' => [
 		'UtilityPro' => [
-			'ThemeSupport'      => $utility_pro_theme_support,
-			'Tgmpa'             => $utility_pro_tgmpa,
-			'WidgetAreas'       => $utility_pro_widget_areas,
-			'Updater'           => $utility_pro_updater,
-			'Footer'            => $utility_pro_footer,
+			'ThemeSupport'              => $utility_pro_theme_support,
+			'GenesisForceThemeSettings' => $utility_pro_genesis_force_theme_settings,
+			'Tgmpa'                     => $utility_pro_tgmpa,
+			'WidgetAreas'               => $utility_pro_widget_areas,
+			'Updater'                   => $utility_pro_updater,
+			'Footer'                    => $utility_pro_footer,
 		],
 	],
 ];
