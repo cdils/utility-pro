@@ -52,21 +52,8 @@
         }
     },
     "scripts": {
-        "build-theme": [
-            "./node_modules/.bin/gulp build"
-        ],
-        "install-and-build-theme": [
-            "yarn install --production=false",
-            "@build-theme"
-        ],
         "install-codestandards": [
             "Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run"
-        ],
-        "post-install-cmd": [
-            "@install-and-build-theme"
-        ],
-        "post-update-cmd": [
-            "@build-theme"
         ]
     }
 }

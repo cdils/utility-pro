@@ -210,15 +210,6 @@ $utility_pro_updater = [
 	],
 ];
 
-// Configure footer customisations here.
-$utility_pro_footer = [
-	'creds' => sprintf(
-		/* translators: %s: URL for Utility Pro. */
-		__( 'Powered by WordPress and the <a href="%s" rel="nofollow">Utility Pro</a> theme for Genesis Framework.', 'utility-pro' ),
-		esc_url( 'https://store.carriedils.com/downloads/utility-pro/?utm_source=Utility%20Pro%20Footer%20Credits&utm_medium=Distributed%20Theme&utm_campaign=Utility%20Pro%20Theme' )
-	),
-];
-
 return [
 	'CDils' => [
 		'UtilityPro' => [
@@ -227,7 +218,6 @@ return [
 			'Tgmpa'                     => $utility_pro_tgmpa,
 			'WidgetAreas'               => $utility_pro_widget_areas,
 			'Updater'                   => $utility_pro_updater,
-			'Footer'                    => $utility_pro_footer,
 		],
 	],
 ];

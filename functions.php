@@ -86,7 +86,7 @@ function setup() {
 		$admin_css->apply();
 	} else {
 		// Enqueue Google Fonts.
-
+		include get_stylesheet_directory() . '/lib/google-fonts.php';
 
 		// Footer nav.
 		$footer_nav = new FooterNav();
@@ -104,9 +104,8 @@ function setup() {
 		$single_post = new SinglePost();
 		$single_post->apply();
 
-		// Add customizations to footer.
-		$footer = new Footer( $config->getSubConfig( 'Footer' ) );
-		$footer->apply();
+		// Change the footer text.
+		add_filter( 'genesis_footer_creds_text', 'utility_pro_footer_creds' );
 
 		add_filter( 'genesis_author_box_gravatar_size', function() {
 			return 96;
@@ -114,6 +113,25 @@ function setup() {
 
 		add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\enqueue_assets' );
 	}// End if().
+}
+
+/**
+ * Customize footer credits.
+ *
+ * @since  1.0.0
+ *
+ * @param string $creds Existing credentials.
+ *
+ * @return string Footer credentials.
+ */
+function utility_pro_footer_creds( $creds ) {
+	$creds = sprintf(
+		/* translators: %s: URL for Utility Pro. */
+		__( 'Powered by WordPress and the <a href="%s" rel="nofollow">Utility Pro</a> theme for Genesis Framework.', 'utility-pro' ),
+		esc_url( 'https://store.carriedils.com/downloads/utility-pro/?utm_source=Utility%20Pro%20Footer%20Credits&utm_medium=Distributed%20Theme&utm_campaign=Utility%20Pro%20Theme' )
+		);
+
+	return $creds;
 }
 
 /**

@@ -14,7 +14,7 @@ declare( strict_types = 1 );
 namespace CDils\UtilityPro;
 
 /**
- * Class SearchForm.
+ * Search form class.
  *
  * @package CDils\UtilityPro
  * @author Gary Jones
