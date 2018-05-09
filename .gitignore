@@ -15,6 +15,9 @@ node_modules/
 /style-rtl.css
 /style-rtl.css.map
 /style-rtl.min.css
+/editor-styles.css
+/editor-styles.css.map
+/editor-styles.min.css
 
 # Ignore .pot file
 /develop/languages/*.pot

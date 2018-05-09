@@ -84,6 +84,9 @@ function setup() {
 		// Add admin CSS.
 		$admin_css = new AdminCss();
 		$admin_css->apply();
+
+		// Add Gutenberg-specific styles to editor.
+		add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\\block_editor_styles' );
 	} else {
 		// Enqueue Google Fonts.
 		include get_stylesheet_directory() . '/lib/google-fonts.php';
@@ -107,11 +110,14 @@ function setup() {
 		// Change the footer text.
 		add_filter( 'genesis_footer_creds_text',  __NAMESPACE__ . '\\footer_creds' );
 
+		// Change default Gravatar size.
 		add_filter( 'genesis_author_box_gravatar_size', function() {
 			return 96;
 		} );
 
+		// Enqueue theme scripts
 		add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\enqueue_assets' );
+
 	}// End if().
 }
 
@@ -219,3 +225,17 @@ function enqueue_assets() {
 		'src' => \get_background_image(),
 	] );
 }
+
+/**
+ * Enqueue block editor styles.
+ *
+ * @since 2.0.0
+ */
+function block_editor_styles() {
+    wp_enqueue_style( 'utility-pro-block-editor-styles',
+    	get_theme_file_uri( '/editor-styles.min.css' ),
+    	false, '1.0.0', 'all'
+    );
+}
+
+

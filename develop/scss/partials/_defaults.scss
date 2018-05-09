@@ -56,24 +56,14 @@ ul {
 }
 
 blockquote {
-	color: $black;
+	color: $default-accent;
+	font-style: italic;
 	margin: 0;
-	padding: $base-margin;
-
-	&::before {
-		content: "\201C";
-		display: block;
-		font-family: $serif;
-		font-size: 120px;
-		height: 0;
-		left: -55px;
-		position: relative;
-		top: -55px;
-	}
+	padding: $base-padding;
 }
 
 cite {
-	font-style: italic;
+
 	font-weight: 700;
 }
 

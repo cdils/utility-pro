@@ -57,6 +57,12 @@ $utility_pro_theme_support = [
 		'primary' => __( 'Primary Navigation Menu', 'utility-pro' ),
 		'footer'  => __( 'Footer Navigation Menu', 'utility-pro' ),
 	],
+
+	// Add support for wide images (Gutenberg).
+	'align-wide' => null,
+
+	// Disable custom colors in block color pallettes (Gutenberg).
+	'disable-custom-colors' => null
 ];
 
 $utility_pro_genesis_force_theme_settings = [
