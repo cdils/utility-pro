@@ -41,8 +41,12 @@ a {
 }
 
 p {
-	margin: 0 0 24px;
+	margin: 0 0 $base-margin/2;
 	padding: 0;
+
+	&.has-background {
+	    padding: $base-padding;
+	}
 }
 
 strong {
@@ -53,37 +57,6 @@ ol,
 ul {
 	margin: 0;
 	padding: 0;
-}
-
-blockquote,
-.wp-block-quote {
-	color: $default-accent;
-	font-style: italic;
-	margin: $base-margin;
-	padding: $base-padding;
-	text-align: center;
-
-	cite,
-	footer {
-	    display: block;
-	    margin-top: $base-margin/2;
-	    font-size: $base-font-size - 2;
-	}
-
-	&.is-large {
-		margin: $base-margin;
-		padding: $base-padding;
-
-		p {
-		    font-size: $base-font-size * 2;
-		}
-
-		cite,
-		footer {
-		    font-size: $base-font-size;
-		    text-align: center;
-		}
-	}
 }
 
 pre {
@@ -107,6 +80,68 @@ mark {
 	color: $default-accent-contrast;
 }
 
+// Blockquote
+//---------------------------------------------
+
+blockquote,
+.wp-block-quote,
+.wp-block-pullquote {
+	color: $default-accent;
+	margin: $base-margin;
+	padding: $base-padding;
+
+	cite,
+	footer {
+	    display: block;
+	    margin-top: $base-margin/2;
+	    font-size: $base-font-size - 2;
+	}
+
+	&.wp-block-quote {
+		border-left: 4px solid $black;
+		padding: 0 0 0 $base-padding;
+	}
+
+	&.wp-block-pullquote {
+		cite {
+			text-transform: none;
+		}
+	}
+
+	&.is-large {
+		border: none;
+		margin: $base-margin;
+		padding: $base-padding;
+
+		p {
+		    font-size: $base-font-size * 2;
+		}
+
+		cite,
+		footer {
+		    font-size: $base-font-size;
+		}
+	}
+
+}
+
+// Horizontal Rule
+//---------------------------------------------
+
+hr,
+hr.wp-block-separator,
+.clear-line,
+img.wp-more-tag {
+
+	border: none;
+	border-top: 1px solid $black;
+	height: 1px;
+	margin: $base-margin 0;
+	max-width: 100%;
+	overflow: hidden;
+	width: 100%;
+}
+
 // Headings
 //---------------------------------------------
 
@@ -116,12 +151,10 @@ h3,
 h4,
 h5,
 h6 {
-	color: $black;
 	font-family: $heading-font-family;
 	font-weight: 700;
 	line-height: $heading-line-height;
 	margin: 0 0 $base-margin/2;
-	padding: 0;
 }
 
 h1 {
