@@ -12,62 +12,54 @@
 }
 
 %form-fields {
-	  @include mdc-typography(body2);
-	  @include mdc-theme-prop(color, text-primary-on-background);
-
-	  display: inline-flex;
-	  align-items: center;
-	  vertical-align: middle;
-
-	  > label {
-	    order: 0;
-	    margin-right: auto;
-	    padding-left: $mdc-form-field-item-spacing;
-	  }
-
-	  @include mdc-rtl {
-	    > label {
-	      margin-left: auto;
-	      padding-right: $mdc-form-field-item-spacing;
-	    }
-	  }
-	}
-
-	.mdc-form-field--align-end {
-	  > label {
-	    order: -1;
-	    margin-left: auto;
-	    padding-right: $mdc-form-field-item-spacing;
-	  }
-
-	  @include mdc-rtl {
-	    > label {
-	      margin-right: auto;
-	      padding-left: $mdc-form-field-item-spacing;
-	    }
-	  }
+	background: $white;
+	border: 1px solid lighten($black, 75%);
+	color: $black;
+	padding: 8px 15px;
+	width: auto;
 }
 
 %button {
-	@include mdc-button-base_;
-	@include mdc-button--raised_();
-	@include mdc-button-corner-radius(2px);
-	@include mdc-button-filled-accessible($default-accent);
-	@include mdc-button-ink-color($default-accent-contrast);
-	@include mdc-states($default-accent);
+	background-color: $default-accent;
+	border: none;
+	border-radius: 3px;
+	color: $default-accent-contrast;
+	cursor: pointer;
+	display: inline-block;
+	font-size: $base-font-size - 2;
+	font-weight: normal;
+	padding: 8px 15px;
+	text-align: center;
+	text-transform: uppercase;
+	transition: all 0.1s ease-in-out;
+	width: auto;
 
-	@include mdc-ripple-surface;
-	@include mdc-states;
-	@include mdc-ripple-radius-bounded;
+	@extend %box-shadow;
 
-	padding: .5em 1.5em;
-	position: relative;
-	outline: none;
-	overflow: hidden;
+	&:hover {
+		background-color: darken( $default-accent, 10%);
+	}
 
-	&[data-mdc-ripple-is-unbounded] {
-	  @include mdc-ripple-radius-unbounded;
+	&:active,
+	&:focus {
+		background-color: lighten( $default-accent, 10%);
+	}
+}
 
-	  overflow: visible;
+@mixin button-styles() {
+
+	.button:not(.components-button) {
+		@extend %button;
+
+		&.button-block {
+			display: block;
+			width: 100%;
+		}
+
+		.wp-core-ui & {
+			line-height: 26px;
+			height: 46px;
+			font-size: 16px;
+		}
 	}
 }

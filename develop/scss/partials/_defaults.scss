@@ -202,11 +202,7 @@ img {
 
 input,
 textarea {
-	background: $white;
-	border: 1px solid lighten($black, 75%);
-	color: $black;
-	padding: .5em 1.5em;
-	width: auto;
+	@extend %form-fields;
 }
 
 button,
@@ -218,12 +214,12 @@ input[type="button"] {
 	@extend %button;
 }
 
+@include button-styles;
+
 .search-form {
 	display: flex;
 
 	button {
-		border: 0;
-
 		background: url(images/icon-search-ltr.png) no-repeat 10%;
 		background-color: $default-accent;
 		background-size: 13px 13px;
