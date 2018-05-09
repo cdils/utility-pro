@@ -115,8 +115,12 @@ function setup() {
 			return 96;
 		} );
 
-		// Enqueue theme scripts
+		// Enqueue theme scripts.
 		add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\enqueue_assets' );
+
+		// Enqueue theme stylesheet after plugins have loaded so that theme styles always "trump" plugin styles.
+		remove_action( 'genesis_meta', 'genesis_load_stylesheet' );
+		add_action( 'wp_enqueue_scripts', 'genesis_enqueue_main_stylesheet', 999 );
 
 	}// End if().
 }
@@ -232,7 +236,8 @@ function enqueue_assets() {
  * @since 2.0.0
  */
 function block_editor_styles() {
-    wp_enqueue_style( 'utility-pro-block-editor-styles',
+    wp_enqueue_style(
+    	'utility-pro-block-editor-styles',
     	get_theme_file_uri( '/editor-styles.min.css' ),
     	false, '1.0.0', 'all'
     );

@@ -55,16 +55,35 @@ ul {
 	padding: 0;
 }
 
-blockquote {
+blockquote,
+.wp-block-quote {
 	color: $default-accent;
 	font-style: italic;
-	margin: 0;
+	margin: $base-margin;
 	padding: $base-padding;
-}
+	text-align: center;
 
-cite {
+	cite,
+	footer {
+	    display: block;
+	    margin-top: $base-margin/2;
+	    font-size: $base-font-size - 2;
+	}
 
-	font-weight: 700;
+	&.is-large {
+		margin: $base-margin;
+		padding: $base-padding;
+
+		p {
+		    font-size: $base-font-size * 2;
+		}
+
+		cite,
+		footer {
+		    font-size: $base-font-size;
+		    text-align: center;
+		}
+	}
 }
 
 pre {

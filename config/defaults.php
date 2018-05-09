@@ -59,10 +59,10 @@ $utility_pro_theme_support = [
 	],
 
 	// Add support for wide images (Gutenberg).
-	'align-wide' => null,
+	'align-wide' => true,
 
 	// Disable custom colors in block color pallettes (Gutenberg).
-	'disable-custom-colors' => null
+	'disable-custom-colors' => true
 ];
 
 $utility_pro_genesis_force_theme_settings = [
