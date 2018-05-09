@@ -85,6 +85,9 @@ function setup() {
 		$admin_css = new AdminCss();
 		$admin_css->apply();
 
+		// Apply some theme styles to visual editor.
+		add_editor_style( get_stylesheet_directory_uri() . '/css/editor-styles.css' );
+
 		// Add Gutenberg-specific styles to editor.
 		add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\\block_editor_styles' );
 	} else {

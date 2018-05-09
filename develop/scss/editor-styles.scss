@@ -1,6 +1,26 @@
-.edit-post-visual-editor {
-	@import "partials/variables";
-	@import "partials/mixins";
-	@import "partials/defaults";
-	@import "partials/blocks";
-}
+/*--------------------------------------------------------------
+# Variables & Mixins
+--------------------------------------------------------------*/
+@import "partials/variables";
+@import "partials/mixins";
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+@import "normalize-scss/sass/normalize";
+@import "partials/clearings";
+
+/*--------------------------------------------------------------
+# Default Elements
+--------------------------------------------------------------*/
+@import "partials/defaults";
+
+/*--------------------------------------------------------------
+# Content Area
+--------------------------------------------------------------*/
+@import "partials/content-area";
+
+/*--------------------------------------------------------------
+# Column Classes
+--------------------------------------------------------------*/
+@import "partials/column-classes";
