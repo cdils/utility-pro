@@ -1,6 +1,8 @@
+
 .edit-post-visual-editor {
-	@import "partials/variables";
-	@import "partials/mixins";
-	@import "partials/defaults";
+	@import "partials/helpers/variables";
+	@import "partials/helpers/mixins";
+	@import "partials/style-guide";
 	@import "partials/blocks";
+	@import "partials/gutenberg";
 }

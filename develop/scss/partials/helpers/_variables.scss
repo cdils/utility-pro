@@ -1,17 +1,12 @@
-/* Modular Scale
----------------------------------*/
-@import "modularscale-sass/stylesheets/modularscale";
-
 // Colors
 //------------------------------------------------------------------------------
 $black: #102027; // grey-black
 $white: #fff; // off-white
-$blue: #395693;
-$purple: #520099;
-$green: #2a5547;
 
-$cyan: #00BCD4;
-$orange: #DD2C00;
+$cyan: #00b8d4;
+$orange: #dd2c00;
+$lime:  #aeea00;
+
 
 $default-base: $cyan;
 $default-base-contrast: $black;
@@ -19,19 +14,35 @@ $default-accent: $orange;
 $default-accent-contrast: $white;
 
 $indigo-base:#3f51b5;
-$indigo-accent: #aeea00;
+$indigo-accent: $lime;
 
 $jam-base: #910048;
-$jam-accent: #00b8d4;
+$jam-accent: $cyan;
 
 $green-base: #66bb6a;
-$green-accent: #29b6f6;
+$green-accent: $cyan;
 
-// Each color scheme follows this format: (scheme name, base color, base contrast, accent color, accent contrast)
-$color-schemes:
-	(indigo, $indigo-base, $white, $indigo-accent, $black ),
-	(jam, $jam-base, $white, $jam-accent, $black ),
-	(greener, $green-base, $black, $green-accent, $black)
+// This color scheme is used for Utility Pro theme color settings.
+// Each color scheme follows this format: (scheme name, base color, base contrast, accent color, accent contrast).
+// //------------------------------------------------------------------------------
+$theme-color-schemes:
+	( indigo, $indigo-base, $white, $indigo-accent, $black ),
+	( jam, $jam-base, $white, $jam-accent, $black ),
+	( greener, $green-base, $black, $green-accent, $black )
+;
+
+// This is a custom color scheme used for styling Gutenberg blocks.
+// Each color scheme follows this format: (scheme name, color)
+//------------------------------------------------------------------------------
+$editor-colors :
+	( white, $white ),
+	( black, $black ),
+	( cyan, $cyan ),
+	( orange, $orange ),
+	( indigo, $indigo-base ),
+	( lime, $lime ),
+	( jam, $jam-base ),
+	( greener, $green-base ),
 ;
 
 // Layout

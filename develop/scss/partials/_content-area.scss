@@ -21,13 +21,6 @@
 	}
 }
 
-.widgettitle {
-	font-size: $h4-font-size;
-	letter-spacing: 1px;
-	margin: 10px 0 24px;
-	text-transform: uppercase;
-}
-
 .archive-description {
 	margin-bottom: $base-margin;
 }
@@ -182,3 +175,85 @@ p.form-submit,
 	}
 }
 
+// Media Gallery
+//---------------------------------------------
+
+.gallery {
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	margin-bottom: $base-margin;
+}
+
+.gallery-item {
+	list-style: none;
+	margin: 0;
+	overflow: hidden;
+	text-align: center;
+	vertical-align: top;
+
+	a img {
+		border: 2px solid lighten($black, 50%);
+
+		&:hover {
+			opacity: .7;
+		}
+	}
+
+	.gallery-caption {
+		font-size: $secondary-font-size - 2;
+		margin-bottom: $base-margin/2;
+	}
+}
+
+@media screen and (min-width: $small-screen) {
+
+	.gallery-columns-1 {
+		grid-template-columns: 1fr;
+	}
+
+	.gallery-columns-2 {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.gallery-columns-3 {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.gallery-columns-4 {
+		grid-template-columns: repeat(4, 1fr);
+	}
+
+	.gallery-columns-5 {
+		grid-template-columns: repeat(5, 1fr);
+	}
+
+	.gallery-columns-6 {
+		grid-template-columns: repeat(6, 1fr);
+	}
+
+	.gallery-columns-7 {
+		grid-template-columns: repeat(7, 1fr);
+	}
+
+	.gallery-columns-8 {
+		grid-template-columns: repeat(8, 1fr);
+	}
+
+	.gallery-columns-9 {
+		grid-template-columns: repeat(9, 1fr);
+	}
+}
+
+// Captions
+//---------------------------------------------
+.wp-caption {
+	font-size: $secondary-font-size - 2;
+	margin: 0;
+	max-width: 100%;
+	text-align: center;
+}
+
+.wp-caption-text {
+	margin: $base-margin/2;
+}

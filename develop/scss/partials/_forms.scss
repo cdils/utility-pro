@@ -1,0 +1,30 @@
+// Forms
+//---------------------------------------------
+
+input,
+textarea {
+	@extend %form-fields;
+}
+
+button,
+.button,
+.entry-content a.button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+	@extend %button;
+}
+
+.search-form {
+	display: flex;
+
+	button {
+		background: url(images/icon-search-ltr.png) no-repeat 10%;
+		background-color: $default-accent;
+		background-size: 13px 13px;
+
+		.search-button-text {
+			padding-left: 20px;
+		}
+	}
+}

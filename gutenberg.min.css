@@ -1,12 +1,11 @@
-.edit-post-visual-editor button,.edit-post-visual-editor .button,.edit-post-visual-editor .entry-content a.button,.edit-post-visual-editor input[type="submit"],.edit-post-visual-editor input[type="reset"],.edit-post-visual-editor input[type="button"],.edit-post-visual-editor .button:not(.components-button),.edit-post-visual-editor .wp-block-button .wp-block-button__link{-webkit-box-shadow:0 5px 15px -15px #102027;box-shadow:0 5px 15px -15px #102027}
-.edit-post-visual-editor input,.edit-post-visual-editor textarea{background:#fff;border:1px solid #cce1ea;color:#102027;padding:8px 15px;width:auto}
-.edit-post-visual-editor button,.edit-post-visual-editor .button,.edit-post-visual-editor .entry-content a.button,.edit-post-visual-editor input[type="submit"],.edit-post-visual-editor input[type="reset"],.edit-post-visual-editor input[type="button"],.edit-post-visual-editor .button:not(.components-button),.edit-post-visual-editor .wp-block-button .wp-block-button__link{background-color:#dd2c00;border:0;border-radius:3px;color:#fff;cursor:pointer;display:inline-block;font-size:14px;font-weight:normal;padding:8px 15px;text-align:center;text-transform:uppercase;-webkit-transition:all .1s ease-in-out;transition:all .1s ease-in-out;width:auto}
-.edit-post-visual-editor button:hover,.edit-post-visual-editor .button:hover,.edit-post-visual-editor .entry-content a.button:hover,.edit-post-visual-editor input:hover[type="submit"],.edit-post-visual-editor input:hover[type="reset"],.edit-post-visual-editor input:hover[type="button"],.edit-post-visual-editor .wp-block-button .wp-block-button__link:hover{background-color:#a20}
-.edit-post-visual-editor button:active,.edit-post-visual-editor .button:active,.edit-post-visual-editor .entry-content a.button:active,.edit-post-visual-editor input:active[type="submit"],.edit-post-visual-editor input:active[type="reset"],.edit-post-visual-editor input:active[type="button"],.edit-post-visual-editor .wp-block-button .wp-block-button__link:active,.edit-post-visual-editor button:focus,.edit-post-visual-editor .button:focus,.edit-post-visual-editor .entry-content a.button:focus,.edit-post-visual-editor input:focus[type="submit"],.edit-post-visual-editor input:focus[type="reset"],.edit-post-visual-editor input:focus[type="button"],.edit-post-visual-editor .wp-block-button .wp-block-button__link:focus{background-color:#ff4011}
-.edit-post-visual-editor body{background:#fff;color:#102027;font-family:"Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;font-size:16px;font-weight:400;line-height:1.625;margin:0;overflow-x:hidden}
+.edit-post-visual-editor body,.edit-post-visual-editor .edit-post-visual-editor,.edit-post-visual-editor a,.edit-post-visual-editor p,.edit-post-visual-editor ul,.edit-post-visual-editor li{background:#fff;color:#102027;font-family:"Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;font-size:16px;font-weight:400;line-height:1.625;margin:0;overflow-x:hidden}
+.edit-post-visual-editor .wp-block-button .wp-block-button__link,.edit-post-visual-editor p.alignfull,.edit-post-visual-editor p.alignwide,.edit-post-visual-editor .alignfull img,.edit-post-visual-editor .alignwide img{-webkit-box-shadow:0 5px 15px -15px #102027;box-shadow:0 5px 15px -15px #102027}
+.edit-post-visual-editor .wp-block-button .wp-block-button__link{background-color:#dd2c00;border:0;border-radius:3px;color:#fff;cursor:pointer;display:inline-block;font-size:14px;font-weight:normal;padding:8px 15px;text-align:center;text-transform:uppercase;width:auto}
+.edit-post-visual-editor .wp-block-button .wp-block-button__link:hover{background-color:#a20}
+.edit-post-visual-editor .wp-block-button .wp-block-button__link:active,.edit-post-visual-editor .wp-block-button .wp-block-button__link:focus{background-color:#ff4011}
 .edit-post-visual-editor a,.edit-post-visual-editor button,.edit-post-visual-editor input:focus,.edit-post-visual-editor [type="button"],.edit-post-visual-editor [type="reset"],.edit-post-visual-editor [type="submit"],.edit-post-visual-editor textarea:focus,.edit-post-visual-editor .button .gallery img{-webkit-transition:all .1s ease-in-out;transition:all .1s ease-in-out}
-.edit-post-visual-editor a{color:#00bcd4;border-bottom:1px dotted;font-weight:700;text-decoration:none;word-wrap:break-word}
-.edit-post-visual-editor a:hover{color:#102027}
+.edit-post-visual-editor a{color:#00b8d4;border-bottom:1px dotted;font-weight:700;text-decoration:none;word-wrap:break-word}
+.edit-post-visual-editor a:hover{border-bottom:0;color:#102027}
 .edit-post-visual-editor a img{border-bottom:0}
 .edit-post-visual-editor p{margin:0 0 20px;padding:0}
 .edit-post-visual-editor p.has-background{padding:40px}
@@ -25,21 +24,40 @@
 .edit-post-visual-editor blockquote.is-large cite,.edit-post-visual-editor blockquote.is-large footer,.edit-post-visual-editor .wp-block-quote.is-large cite,.edit-post-visual-editor .wp-block-quote.is-large footer,.edit-post-visual-editor .wp-block-pullquote.is-large cite,.edit-post-visual-editor .wp-block-pullquote.is-large footer{font-size:16px}
 .edit-post-visual-editor hr,.edit-post-visual-editor hr.wp-block-separator,.edit-post-visual-editor .clear-line,.edit-post-visual-editor img.wp-more-tag{border:0;border-top:1px solid #102027;height:1px;margin:40px 0;max-width:100%;overflow:hidden;width:100%}
 .edit-post-visual-editor h1,.edit-post-visual-editor h2,.edit-post-visual-editor h3,.edit-post-visual-editor h4,.edit-post-visual-editor h5,.edit-post-visual-editor h6{font-family:Enriqueta,serif;font-weight:700;line-height:1.25;margin:0 0 20px}
-.edit-post-visual-editor h1{font-size:32px}
-.edit-post-visual-editor h2{font-size:29px}
-.edit-post-visual-editor h3{font-size:26px}
-.edit-post-visual-editor h4{font-size:23px}
-.edit-post-visual-editor h5{font-size:20px}
-.edit-post-visual-editor h6{font-size:18px}
+.edit-post-visual-editor h1{font-size:ms(6)}
+.edit-post-visual-editor h2{font-size:ms(5)}
+.edit-post-visual-editor h3{font-size:ms(4)}
+.edit-post-visual-editor h4{font-size:ms(3)}
+.edit-post-visual-editor h5{font-size:ms(2)}
+.edit-post-visual-editor h6{font-size:ms(1)}
 .edit-post-visual-editor embed,.edit-post-visual-editor iframe,.edit-post-visual-editor img,.edit-post-visual-editor object,.edit-post-visual-editor video{max-width:100%}
 .edit-post-visual-editor img{height:auto;width:auto}
-.edit-post-visual-editor .button:not(.components-button).button-block{display:block;width:100%}
-.wp-core-ui .edit-post-visual-editor .button:not(.components-button){line-height:26px;height:46px;font-size:16px}
-.edit-post-visual-editor .search-form{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}
-.edit-post-visual-editor .search-form button{background:url(images/icon-search-ltr.png) no-repeat 10%;background-color:#dd2c00;background-size:13px 13px}
-.edit-post-visual-editor .search-form button .search-button-text{padding-left:20px}
 .edit-post-visual-editor table{border-collapse:collapse;border-spacing:0;font-size:.8em;line-height:2;margin-bottom:40px;width:100%;word-break:break-all}
 .edit-post-visual-editor th,.edit-post-visual-editor td{border-top:1px solid #cce1ea;padding:5px;text-align:left}
 .edit-post-visual-editor thead,.edit-post-visual-editor tfoot{background-color:#f0f6f9;font-weight:700}
 .edit-post-visual-editor thead td,.edit-post-visual-editor tfoot td{border:0}
+.edit-post-visual-editor .alignleft{display:inline;float:left;margin-right:20px;text-align:left}
+.edit-post-visual-editor .alignright{display:inline;float:right;margin-left:20px;text-align:right}
+.edit-post-visual-editor .aligncenter{clear:both;display:block;margin:0 auto 20px}
+.edit-post-visual-editor .alignfull,.edit-post-visual-editor .alignwide{width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;text-align:center}
+.edit-post-visual-editor .alignfull img{width:100%}
+.edit-post-visual-editor .alignwide img{max-width:1140px}
 .edit-post-visual-editor .wp-block-button{margin-bottom:40px}
+.edit-post-visual-editor .has-white-color{color:#fff}
+.edit-post-visual-editor .has-white-background-color{background-color:#fff}
+.edit-post-visual-editor .has-black-color{color:#102027}
+.edit-post-visual-editor .has-black-background-color{background-color:#102027}
+.edit-post-visual-editor .has-cyan-color{color:#00b8d4}
+.edit-post-visual-editor .has-cyan-background-color{background-color:#00b8d4}
+.edit-post-visual-editor .has-orange-color{color:#dd2c00}
+.edit-post-visual-editor .has-orange-background-color{background-color:#dd2c00}
+.edit-post-visual-editor .has-indigo-color{color:#3f51b5}
+.edit-post-visual-editor .has-indigo-background-color{background-color:#3f51b5}
+.edit-post-visual-editor .has-lime-color{color:#aeea00}
+.edit-post-visual-editor .has-lime-background-color{background-color:#aeea00}
+.edit-post-visual-editor .has-jam-color{color:#910048}
+.edit-post-visual-editor .has-jam-background-color{background-color:#910048}
+.edit-post-visual-editor .has-greener-color{color:#66bb6a}
+.edit-post-visual-editor .has-greener-background-color{background-color:#66bb6a}
+.edit-post-visual-editor .editor-block-list__block{max-width:1140px}
+.edit-post-visual-editor blockquote,.edit-post-visual-editor .wp-block-quote:not(.is-large),.edit-post-visual-editor .wp-block-freeform.blocks-rich-text__tinymce blockquote,.edit-post-visual-editor .wp-block-freeform.blocks-rich-text__tinymce .wp-block-quote:not(.is-large){border-left:0;padding-left:0}

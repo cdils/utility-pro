@@ -1,3 +1,14 @@
+%base-style {
+	background: $white;
+	color: $black;
+	font-family: $sans-serif;
+	font-size: $base-font-size;
+	font-weight: 400;
+	line-height: $base-line-height;
+	margin: 0;
+	overflow-x: hidden;
+}
+
 %box-shadow {
 	box-shadow: 0px 5px 15px -15px $black;
 }
@@ -31,7 +42,6 @@
 	padding: 8px 15px;
 	text-align: center;
 	text-transform: uppercase;
-	transition: all 0.1s ease-in-out;
 	width: auto;
 
 	@extend %box-shadow;
@@ -43,23 +53,5 @@
 	&:active,
 	&:focus {
 		background-color: lighten( $default-accent, 10%);
-	}
-}
-
-@mixin button-styles() {
-
-	.button:not(.components-button) {
-		@extend %button;
-
-		&.button-block {
-			display: block;
-			width: 100%;
-		}
-
-		.wp-core-ui & {
-			line-height: 26px;
-			height: 46px;
-			font-size: 16px;
-		}
 	}
 }

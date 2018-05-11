@@ -1,8 +1,8 @@
 /*--------------------------------------------------------------
 # Variables & Mixins
 --------------------------------------------------------------*/
-@import "partials/variables";
-@import "partials/mixins";
+@import "partials/helpers/variables";
+@import "partials/helpers/mixins";
 
 /*--------------------------------------------------------------
 # Normalize
@@ -13,7 +13,7 @@
 /*--------------------------------------------------------------
 # Default Elements
 --------------------------------------------------------------*/
-@import "partials/defaults";
+@import "partials/style-guide";
 
 /*--------------------------------------------------------------
 # Content Area

@@ -1,7 +1,4 @@
-// Color Options
-//---------------------------------------------
-
-@each $scheme, $base, $base-contrast, $accent, $accent-contrast in $color-schemes {
+@each $scheme, $base, $base-contrast, $accent, $accent-contrast in $theme-color-schemes {
 
 	.utility-pro-#{$scheme} {
 
@@ -9,22 +6,44 @@
 		.entry-content a,
 		.home-gallery .fa {
 			color: $base;
+
+			&:hover {
+				color: $black;
+			}
 		}
 
-		.alert,
-		.call-to-action-bar .button,
+		button,
 		.button,
-		.entry-content .button,
+		.entry-content a.button,
 		input[type="submit"],
-		button {
+		input[type="reset"],
+		input[type="button"],
+		.wp-block-button__link {
 			background-color: $accent;
 			color: $accent-contrast;
+
+			&:hover {
+				background-color: darken( $accent, 10%);
+			}
+
+			&:active,
+			&:focus {
+				background-color: lighten( $accent, 10%);
+			}
 		}
 
 		.utility-bar,
 		.site-footer {
 			background-color: $base;
 			color: $base-contrast;
+
+			a {
+				color:$base-contrast;
+			}
+		}
+
+		.footer-widgets a {
+			color: $white;
 		}
 
 	}

@@ -1,3 +1,24 @@
+
+/*
+ * Available block selectors:
+ * .wp-block-image
+ * .wp-block-gallery
+ * .wp-block-video
+ * .wp-block-quote
+ * .wp-block-text-columns
+ * .wp-block-cover-text
+ * .wp-block-button
+ * .wp-block-gallery
+ * .wp-block-table
+ * .wp-block-embed
+ * .wp-block-audio
+ * .wp-block-pullquote
+ * .wp-block-preformatted
+ * .wp-block-code
+ * .wp-block-verse
+ */
+
+
 // Button
 //---------------------------------------------
 .wp-block-button {
@@ -8,3 +29,18 @@
 	}
 }
 
+// Gutenberg Block Colors
+// Generates styles for editor and front-end display
+//---------------------------------------------
+
+@each $scheme, $base in $editor-colors {
+
+	.has-#{$scheme}-color {
+		color: $base;
+	}
+
+	.has-#{$scheme}-background-color {
+		background-color: $base;
+	}
+
+}

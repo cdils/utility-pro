@@ -18,23 +18,21 @@
 		- Baseline Normalize
 		- Clearings
 	- Accessibility
-	- Default Elements
+	- Style Guide
 		- Typography
+		- Blockquote
+		- Horizontal Rule
 		- Headings
 		- Objects
-		- Forms
 		- Tables
+		- Alignment
+	- Forms
 	- Structure and Layout
 		- Site Containers
 		- Header
 		- Content and Sidebar
 		- Footer
 		- Column Classes
-	- Common Classes
-		- WordPress
-		- Alignments
-		- Captions
-		- Media Gallery
 	- Widgets
 		- Utility Bar
 		- Front Page
@@ -44,7 +42,7 @@
 		- Genesis eNews Extended
 		- Gravity Forms
 		- Jetpack
-	- Site Headergulp
+	- Site Header
 		- Title Area
 		- Header Right Widget Area
 	- Site Navigation
@@ -54,13 +52,15 @@
 		- Dropdown Menu
 		- Mobile Menu Toggle
 	- Content Area
-		- Breacrumbs
+		- Breadcrumbs
 		- Titles
 		- Entries
 		- Featured Image
 		- Pagination
 		- Comments
 		- Author Box
+		- Media Gallery
+		- Captions
 	- Sidebars
 	- Site Footer
 		- Footer Widgets
@@ -69,10 +69,15 @@
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
+# Modular Scale
+--------------------------------------------------------------*/
+@import "modularscale-sass/stylesheets/modularscale";
+
+/*--------------------------------------------------------------
 # Variables & Mixins
 --------------------------------------------------------------*/
-@import "partials/variables";
-@import "partials/mixins";
+@import "partials/helpers/variables";
+@import "partials/helpers/mixins";
 
 /*--------------------------------------------------------------
 # Normalize
@@ -86,20 +91,20 @@
 @import "partials/accessibility";
 
 /*--------------------------------------------------------------
-# Default Elements
+# Style Guide
 --------------------------------------------------------------*/
-@import "partials/defaults";
+@import "partials/style-guide";
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+@import "partials/forms";
 
 /*--------------------------------------------------------------
 # Structure & Layout
 --------------------------------------------------------------*/
 @import "partials/layout";
 @import "partials/column-classes";
-
-/*--------------------------------------------------------------
-# Common Classes
---------------------------------------------------------------*/
-@import "partials/common-classes";
 
 /*--------------------------------------------------------------
 # Widgets
@@ -132,6 +137,12 @@
 @import "partials/content-area";
 
 /*--------------------------------------------------------------
+## Blocks
+--------------------------------------------------------------*/
+
+@import "partials/blocks";
+
+/*--------------------------------------------------------------
 # Site Footer
 --------------------------------------------------------------*/
 @import "partials/site-footer";
@@ -146,6 +157,3 @@
 --------------------------------------------------------------*/
 @import "partials/print-media-queries";
 
-
-
-@import "partials/blocks";

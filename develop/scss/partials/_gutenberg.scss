@@ -1,0 +1,24 @@
+// These styles are used to overwrite Gutenberg
+// default styles in the visual editor
+//---------------------------------------------
+&,
+& a,
+& p,
+& ul,
+& li {
+	@extend %base-style;
+}
+
+.editor-block-list__block {
+	max-width: $max-width;
+}
+
+&,
+.wp-block-freeform.blocks-rich-text__tinymce {
+
+	blockquote,
+	.wp-block-quote:not(.is-large) {
+		border-left: 0;
+		padding-left: 0;
+	}
+}

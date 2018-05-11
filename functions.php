@@ -71,6 +71,9 @@ function setup() {
 	$widget_areas->register();
 	add_filter( 'widget_text', 'do_shortcode' );
 
+	// Enqueue Google Fonts.
+	include get_stylesheet_directory() . '/lib/google-fonts.php';
+
 	// Load files in admin.
 	if ( is_admin() ) {
 		// Configure and register TGMPA functionality for suggested plugins.
@@ -88,11 +91,11 @@ function setup() {
 		// Apply some theme styles to visual editor.
 		add_editor_style( get_stylesheet_directory_uri() . '/css/editor-styles.css' );
 
-		// Add Gutenberg-specific styles to editor.
+		// Add Gutenberg-specific styles to visual editor.
 		add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\\block_editor_styles' );
+
 	} else {
-		// Enqueue Google Fonts.
-		include get_stylesheet_directory() . '/lib/google-fonts.php';
+
 
 		// Add Utility Bar above header.
 		$utility_bar = new UtilityBar();
@@ -241,7 +244,7 @@ function enqueue_assets() {
 function block_editor_styles() {
     wp_enqueue_style(
     	'utility-pro-block-editor-styles',
-    	get_theme_file_uri( '/editor-styles.min.css' ),
+    	get_theme_file_uri( '/gutenberg.min.css' ),
     	false, '1.0.0', 'all'
     );
 }

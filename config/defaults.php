@@ -62,7 +62,47 @@ $utility_pro_theme_support = [
 	'align-wide' => true,
 
 	// Disable custom colors in block color pallettes (Gutenberg).
-	'disable-custom-colors' => true
+	'disable-custom-colors' => true,
+
+	// Adds support for Gutenberg editor color palette.
+	'editor-color-palette' => [
+		[
+			'name' => 'white',
+			'color' => '#fff', // white
+		],
+		[
+			'name' => 'black',
+			'color' => '#000', // black
+		],
+		[
+			'name' => 'cyan',
+			'color' => '#00bcd4', // cyan
+		],
+		[
+			'name' => 'orange',
+	 		'color' => '#dd2c00', // orange
+	 	],
+	 	[
+			'name' => 'indigo',
+			'color' => '#3f51b5', // indigo
+		],
+		[
+			'name' => 'lime',
+			'color' => '#aeea00', // lime
+		],
+		[
+			'name' => 'jam',
+			'color' => '#910048', // jam (magento)
+		],
+		[
+			'name' => 'green',
+			'color' => '#66bb6a', // green
+		],
+		[
+			'name' => 'blue',
+			'color' => '#29b6f6', // blue
+		]
+	]
 ];
 
 $utility_pro_genesis_force_theme_settings = [
