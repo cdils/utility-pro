@@ -2,12 +2,12 @@
 //---------------------------------------------
 .site-inner {
 	background: darken($white, 3);
-	padding-top: 40px;
+	padding-top: $base-padding;
 }
 
 .site-container .wrap {
 	margin: 0 auto;
-	padding: 0 2.5%;
+	padding: 0 $base-padding/2;
 
 	@media screen and (min-width: $large-screen) {
 		max-width: $max-width;
@@ -22,15 +22,12 @@
 
 // Full width header (no widget area)
 //---------------------------------------------
-
-.header-full-width .site-title,
-.header-full-width .title-area {
-	line-height: 0;
-	margin: 0;
-	overflow: hidden;
-	text-indent: 100%;
-	white-space: nowrap;
-	width: 100%;
+@supports (grid-area: auto) {
+	.header-full-width .site-title,
+	.header-full-width .title-area {
+		grid-column: 1 / -1;
+		text-align: center;
+	}
 }
 
 // Header with widget area

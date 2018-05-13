@@ -72,9 +72,13 @@
 .entry-header .entry-meta {
 	background-color: lighten($black, 85%);
 	font-size: $secondary-font-size;
-	margin: 0 -40px $base-margin;
+	margin: 0 -20px $base-margin;
 	padding: 10px;
 	text-align: right;
+
+	@media screen and (min-width: $medium-screen) {
+		margin: 0 -40px $base-margin;
+	}
 }
 
 .entry-footer .entry-meta {
@@ -125,8 +129,7 @@
 
 .comment-respond label {
 	display: block;
-	margin-bottom: 12px;
-	text-transform: uppercase;
+	margin-bottom: 10px;
 }
 
 .entry-comments ul.children {
@@ -136,7 +139,7 @@
 .comment-list li,
 .ping-list li {
 	list-style-type: none;
-	margin-top: 24px;
+	margin-top: $base-margin/2;
 }
 
 .comment-meta,

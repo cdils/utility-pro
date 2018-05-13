@@ -25,7 +25,7 @@ a {
 	word-wrap: break-word;
 
 	&:hover {
-		border-bottom: none;
+		border-bottom: 0;
 		color: $black;
 	}
 
@@ -86,8 +86,13 @@ blockquote,
 .wp-block-quote,
 .wp-block-pullquote {
 	color: $default-accent;
-	margin: $base-margin;
-	padding: $base-padding;
+	margin: $base-margin 0;
+	padding: $base-padding/2 0;
+
+	@media screen and (min-width: $small-screen) {
+		margin: $base-margin;
+		padding: $base-padding;
+	}
 
 	cite,
 	footer {
@@ -109,8 +114,8 @@ blockquote,
 
 	&.is-large {
 		border: none;
-		margin: $base-margin;
-		padding: $base-padding;
+		margin: $base-margin 0;
+		padding: 0;
 
 		p {
 		    font-size: $base-font-size * 2;

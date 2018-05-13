@@ -4,68 +4,39 @@
 
 .genesis-nav-menu {
 
-	> .first > a {
-		padding-left: 0;
-	}
-
-	> .last > a {
-		padding-right: 0;
-	}
-
 	.menu-item {
 		display: block;
 		position: relative;
 		text-align: left;
+		text-transform: uppercase;
+
+		a {
+			border-bottom: 0;
+			display: block;
+			font-weight: 400;
+			font-size: $secondary-font-size;
+			padding: 10px 20px;
+			position: relative;
+		}
 
 		@media screen and (min-width: $medium-screen) {
 			display: inline-block;
 		}
-
-		> a {
-			text-transform: uppercase;
-
-			@media screen and (min-width: $medium-screen) {
-				border-bottom: 0;
-			}
-		}
-	}
-
-	a {
-		display: inline-block;
-		font-weight: 400;
-		font-size: $secondary-font-size;
-		padding: 10px 20px;
-		position: relative;
-		width: 100%;
-	}
-
-	a:hover,
-	.current-menu-item > a,
-	.sub-menu .current-menu-item > a,
-	.sub-menu .current-menu-item > a:hover {
-		color: lighten($black, 50);
 	}
 
 	.sub-menu {
-		background-color: $white;
+		background-color: lighten($black, 85%);
+		border-radius: 4px;
 		clear: both;
-		display: none;
+		margin-left: $base-margin/2;
 		opacity: 1;
-		position: static;
+		width: 200px;
+
+		.menu-item {
+			display: block;
+		}
 
 		@extend %box-shadow;
-
-		a {
-			border: 0;
-
-			.sub-menu a {
-					padding-left: 20px;
-				}
-
-			@media screen and (min-width: $medium-screen) {
-				width: 200px;
-			}
-		}
 
 		@media screen and (min-width: $medium-screen) {
 			display: block;
@@ -74,8 +45,11 @@
 			opacity: 0;
 			position: absolute;
 			transition: opacity 0.4s ease-in-out;
-			width: 200px;
 			z-index: 99;
+
+			.sub-menu {
+				margin: -54px 0 0 199px;
+			}
 		}
 	}
 
@@ -83,18 +57,6 @@
 	.menu-item-hover:hover > .sub-menu {
 		left: auto;
 		opacity: 1;
-	}
-
-}
-
-@media screen and (min-width: $medium-screen) {
-
-	.genesis-nav-menu .sub-menu .sub-menu {
-		margin: -54px 0 0 199px;
-	}
-
-	.genesis-nav-menu .menu-item-hover,
-	.genesis-nav-menu .menu-item:hover {
 		position: static;
 	}
 
@@ -103,24 +65,12 @@
 // Site Header Navigation
 //---------------------------------------------
 
-.site-header {
-
-	.sub-menu {
-
-		.sub-menu {
-			margin-top: -53px;
-		}
-	}
+.nav-header {
 
 	.genesis-nav-menu {
 
 		a {
 			color: $black;
-		}
-
-		.sub-menu a {
-			background-color: $white;
-			border: 1px solid $black;
 		}
 
 		.current-menu-item > a,
@@ -136,23 +86,25 @@
 
 .nav-primary,
 .nav-footer {
-	background-color: $white;
+	background-color: transparent;
+	display: none;
+	position: relative;
 
 	a:hover,
 	.current-menu-item > a {
-		color: lighten($black, 50);
+		color: $black;
 	}
+
+	@extend %box-shadow;
 
 	@media screen and (min-width: $medium-screen) {
 		border-top: 1px solid lighten($black, 75);
 		border-bottom: 1px solid lighten($black, 75);
+		display: inline-block;
 		text-align: center;
 		width: 100%;
-	}
-}
 
-.nav-primary .sub-menu a:hover {
-	color: lighten($black, 50);
+	}
 }
 
 // Dropdown Menu
@@ -171,74 +123,36 @@
 // Mobile Menu Toggle
 //---------------------------------------------
 
-.nav-primary,
-.nav-footer {
-	display: none;
-	position: relative;
-
-	@extend %box-shadow;
-
-	@media screen and (min-width: $medium-screen) {
-		display: inline-block;
-	}
-}
-
 button.menu-toggle,
-.footer-menu-toggle {
-	border: 0;
+button.footer-menu-toggle {
 	display: block;
 	margin: 0 auto;
-	position: relative;
-	text-transform: uppercase;
-	visibility: visible;
-
-	&:before {
-		content: "\2261";
-		display: inline-block;
-		padding-right: 8px;
-	}
-
-	&.menu-toggle-activated:before,
-	&.menu-toggle-activated:before {
-		content: "x";
-	}
-
-
-	@media screen and (min-width: $medium-screen) {
-		display: block;
-		visibility: hidden;
-	}
 }
 
-.sub-menu-toggle {
+button.sub-menu-toggle {
 	background-color: transparent;
-	border: 0;
-	color: $white;
-	font-size: $secondary-font-size;
-	padding: 16px;
+	font-size: $base-font-size;
+	padding: $base-padding/4;
 	position: absolute;
 	right: 0;
 	top: 0;
+}
+
+button.menu-toggle,
+button.footer-menu-toggle,
+button.sub-menu-toggle {
+	border: 0;
 	visibility: visible;
 
-	&:before {
-		content: "+";
+	&[aria-expanded="false"]:after {
+		content: "\002b"; // +
 	}
 
-	&.menu-toggle-activated:before {
-		content: "-";
+	&[aria-expanded="true"]:after {
+		content: "\00d7"; // x
 	}
 
 	@media screen and (min-width: $medium-screen) {
-		display: none;
-		visibility: hidden;
-	}
-}
-
-@media screen and (min-width: $medium-screen) {
-	button.menu-toggle,
-	button.sub-menu-toggle,
-	button.footer-menu-toggle {
 		display: none;
 	}
 }
