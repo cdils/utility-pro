@@ -12,6 +12,10 @@
 			}
 		}
 
+		.genesis-nav-menu a:hover {
+			color: $base;
+		}
+
 		button,
 		.button,
 		.entry-content a.button,
@@ -30,6 +34,10 @@
 			&:focus {
 				background-color: lighten( $accent, 10%);
 			}
+		}
+
+		.menu-item.menu-button a {
+			color: $accent-contrast;
 		}
 
 		.utility-bar,

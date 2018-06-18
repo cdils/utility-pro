@@ -25,7 +25,11 @@ class SinglePost {
 	 */
 	public function apply() {
 		// Add featured image above posts.
-		add_filter( 'the_content', [ $this, 'featured_image' ] );
+		add_action( 'genesis_entry_header', [ $this, 'featured_image' ], 1 );
+
+		// Reposition post info.
+		add_action( 'genesis_entry_header', 'genesis_post_info', 8 );
+		remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
 	}
 
 	/**
@@ -41,15 +45,15 @@ class SinglePost {
 	 * @return string Return early if not a single post or there is no thumbnail.
 	 *                     Image and content markup otherwise.
 	 */
-	public function featured_image( string $content ) : string {
+	public function featured_image() {
 		if ( ! \is_singular( 'post' ) || ! \has_post_thumbnail() ) {
-			return $content;
+			return;
 		}
 
 		$image  = '<div class="featured-image">';
 		$image .= \get_the_post_thumbnail( \get_the_ID(), 'feature-large' );
 		$image .= '</div>';
 
-		return $image . $content;
+		echo $image;
 	}
 }

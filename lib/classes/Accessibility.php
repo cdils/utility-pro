@@ -28,7 +28,7 @@ class Accessibility {
 		remove_action( 'genesis_after_endwhile', 'genesis_posts_nav' );
 
 		// Add WordPress archive pagination (accessibility).
-		add_action( 'genesis_after_endwhile', [ $this, 'post_pagination' ] );
+		add_action( 'genesis_after_content', [ $this, 'post_pagination' ] );
 
 		// Apply search form enhancements (accessibility).
 		add_filter( 'get_search_form', [ $this, 'get_search_form' ], 25 );

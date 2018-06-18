@@ -1,7 +1,8 @@
 // Site containers
 //---------------------------------------------
 .site-inner {
-	background: darken($white, 3);
+	background: darken($white, 3%);
+	padding-bottom: 0;
 	padding-top: $base-padding;
 }
 
@@ -15,44 +16,42 @@
 	}
 }
 
-.site-header .wrap {
-	display: grid;
-	grid-gap: 20px;
+.site-header > .wrap {
+	display: flex;
 }
 
-// Full width header (no widget area)
+// Header with primary nav
 //---------------------------------------------
-@supports (grid-area: auto) {
-	.header-full-width .site-title,
-	.header-full-width .title-area {
-		grid-column: 1 / -1;
-		text-align: center;
-	}
+
+.title-area,
+.nav-primary {
+	width: 100%;
 }
 
-// Header with widget area
-//---------------------------------------------
+@media screen and (min-width: $small-screen) {
+	// Header
+	.site-header > .wrap {
+		align-items: center;
 
-@supports (grid-area: auto) {
-	@media screen and (min-width: $small-screen) {
-		// Header
-		.site-header .wrap {
-			grid-template-columns: minmax(300px, 1fr) 1fr;
+		.title-area {
+			flex-basis: 25%;
+			flex-grow: 1;
+		}
 
-			.title-area {
-				align-self: start;
-			}
-
-			.header-widget-area {
-				align-self: center;
-				justify-self: end;
-			}
+		.nav-primary {
+			flex-grow: 2;
 		}
 	}
 }
 
 // Content & Sidebar Layout
 //---------------------------------------------
+
+.full-width-content:not(.archive) .content-sidebar-wrap .content {
+	margin: 0 auto;
+	width: 80%;
+	max-width: $max-width;
+}
 
 @supports (grid-area: auto) {
 	@media screen and (min-width: $medium-screen) {
@@ -83,19 +82,29 @@
 				"sidebar content"
 			;
 		}
+	}
+}
 
-		.full-width-content .content-sidebar-wrap {
-			display: grid;
-			grid-gap: 0;
-			grid-template-columns: 1fr;
-			grid-template-areas:
-				"content"
-			;
+// Archive "grid layout"
+//---------------------------------------------
 
-			.content {
-				justify-self: center;
-				width: 75%;
-			}
+
+.archive .content {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	@media screen and (min-width: $small-screen) {
+		.entry {
+			padding: 0;
+			width: 48%;
+		}
+	}
+
+	@media screen and (min-width: $medium-screen) {
+		.entry {
+			padding: 0;
+			width: 31%;
 		}
 	}
 }

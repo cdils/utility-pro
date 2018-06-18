@@ -29,7 +29,6 @@
 
 	p,
 	.widgettitle {
-		color: $white;
 		margin: 0;
 	}
 
@@ -43,8 +42,9 @@
 //---------------------------------------------
 
 .home-welcome {
-	background-color: rgba(#333, 0.8);
-	padding: 40px 0;
+	background: url(images/hero-bg.jpg) no-repeat;
+	background-size: cover;
+	padding: $base-padding*3 0;
 	text-align: center;
 
 	p,
@@ -70,15 +70,20 @@
 
 .home-gallery {
 	background: $white;
-	padding: $base-padding 0 $base-padding/2;
-}
+	padding: $base-padding 0;
 
-.home-gallery .fa {
-	color: $default-accent-contrast;
-}
+	.wrap {
+		display: flex;
+		flex-wrap: wrap;
 
-.home-gallery .widget {
-	padding: 0 $base-padding/2;
+		.widget-area {
+			flex-grow: 1;
+		}
+	}
+
+	.fa {
+		color: $default-accent-contrast;
+	}
 }
 
 .home-gallery-1,
@@ -86,16 +91,12 @@
 .home-gallery-3,
 .home-gallery-4 {
 	text-align: center;
-	width: 100%;
 
 	@media screen and (min-width: $small-screen) {
-		float: left;
-		width: 50%;
+
 	}
 
 	@media screen and (min-width: $medium-screen) {
-		float: left;
-		width: 25%;
 	}
 
 }

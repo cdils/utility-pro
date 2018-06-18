@@ -16,14 +16,9 @@
 %content-area {
 	background-color: $white;
 	color: $black;
-	padding: $base-padding/2;
 	margin-bottom: $base-margin;
 
 	@extend %box-shadow;
-
-	@media screen and (min-width: $small-screen) {
-		padding: $base-padding;
-	}
 }
 
 %button {

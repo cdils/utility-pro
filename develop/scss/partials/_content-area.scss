@@ -9,7 +9,7 @@
 //---------------------------------------------
 
 .entry-title {
-	margin-bottom: $base-margin;
+	margin: $base-margin 0;
 
 	a {
 		border: 0;
@@ -31,6 +31,20 @@
 .entry {
 	word-wrap: break-word;
 	@extend %content-area;
+}
+
+.entry-header {
+	border-top: 1px solid $black;
+}
+
+.entry-header,
+.entry-content,
+.entry-footer {
+	padding: 0 $base-padding/2;
+
+	@media screen and (min-width: $medium-screen) {
+		padding: 0 $base-padding;
+	}
 }
 
 .entry-content {
@@ -72,12 +86,12 @@
 .entry-header .entry-meta {
 	background-color: lighten($black, 85%);
 	font-size: $secondary-font-size;
-	margin: 0 -20px $base-margin;
-	padding: 10px;
-	text-align: right;
+	margin: 0 -20px;
+	padding: 10px 20px;
 
 	@media screen and (min-width: $medium-screen) {
-		margin: 0 -40px $base-margin;
+		margin: 0 -40px;
+		padding: 10px 40px;
 	}
 }
 
@@ -101,8 +115,9 @@
 // Featured Image
 //---------------------------------------------
 
-.featured-image {
-	margin: $base-margin/2 0;
+.featured-image img {
+	display: block;
+	width: 100%;
 }
 
 // Pagination
@@ -110,12 +125,12 @@
 
 .pagination,
 .posts-navigation {
-	clear: both;
-	margin: $base-margin 0;
+	padding: $base-padding 0;
+	text-align: center;
 }
 
-.pagination a {
-	margin: 0 1em;
+.pagination .page-numbers {
+	margin: 0 10px;
 }
 
 // Comments

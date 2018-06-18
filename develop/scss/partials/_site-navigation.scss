@@ -4,6 +4,10 @@
 
 .genesis-nav-menu {
 
+	&.menu-primary {
+		text-align: right;
+	}
+
 	.menu-item {
 		display: block;
 		position: relative;
@@ -12,11 +16,26 @@
 
 		a {
 			border-bottom: 0;
+			color: $black;
 			display: block;
 			font-weight: 400;
 			font-size: $secondary-font-size;
 			padding: 10px 20px;
 			position: relative;
+
+			&:hover {
+				color: $default-base;
+			}
+		}
+
+		&.menu-button {
+			@extend %button;
+			margin-left: 10px;
+
+			a {
+				color: $default-accent-contrast;
+				padding: 0;
+			}
 		}
 
 		@media screen and (min-width: $medium-screen) {
@@ -57,28 +76,9 @@
 	.menu-item-hover:hover > .sub-menu {
 		left: auto;
 		opacity: 1;
-		position: static;
+
 	}
 
-}
-
-// Site Header Navigation
-//---------------------------------------------
-
-.nav-header {
-
-	.genesis-nav-menu {
-
-		a {
-			color: $black;
-		}
-
-		.current-menu-item > a,
-		.sub-menu .current-menu-item > a:hover,
-		a:hover {
-			color: $default-accent;
-		}
-	}
 }
 
 // Primary & Footer Navigation
@@ -95,16 +95,14 @@
 		color: $black;
 	}
 
-	@extend %box-shadow;
-
 	@media screen and (min-width: $medium-screen) {
-		border-top: 1px solid lighten($black, 75);
-		border-bottom: 1px solid lighten($black, 75);
 		display: inline-block;
-		text-align: center;
 		width: 100%;
-
 	}
+}
+
+.nav-footer {
+	text-align: center;
 }
 
 // Dropdown Menu

@@ -1,6 +1,8 @@
 .site-header {
 	background: $white;
 	padding: $base-padding/2 0;
+
+	@extend %box-shadow;
 }
 
 // Title Area
@@ -79,14 +81,3 @@
 // 		background-position: left center;
 // 	}
 // }
-
-// Header Right Widget Area
-//---------------------------------------------
-
-.header-widget-area .search-form {
-	margin: 0 auto;
-	width: 300px;
-	@media screen and (min-width: $small-screen) {
-
-	}
-}

@@ -54,7 +54,11 @@ function setup() {
 	$forced_theme_settings->apply();
 
 	// Add custom image sizes.
-	\add_image_size( 'feature-large', 960, 330, true );
+	\add_image_size( 'feature-grid', 500, 250, true );
+	\add_image_size( 'feature-large', 1000, 500, true );
+
+	// Remove header right widget area.
+	\unregister_sidebar( 'header-right' );
 
 	// Unregister secondary sidebar.
 	\unregister_sidebar( 'sidebar-alt' );
@@ -93,7 +97,6 @@ function setup() {
 
 	} else {
 
-
 		// Add Utility Bar above header.
 		$utility_bar = new UtilityBar();
 		$utility_bar->apply();
@@ -109,6 +112,10 @@ function setup() {
 		// Footer nav.
 		$footer_nav = new FooterNav();
 		$footer_nav->apply();
+
+		// Reposition primary navigation menu.
+		remove_action( 'genesis_after_header', 'genesis_do_nav' );
+		add_action( 'genesis_header', 'genesis_do_nav', 12 );
 
 		// Change the footer text.
 		add_filter( 'genesis_footer_creds_text',  __NAMESPACE__ . '\\footer_creds' );
@@ -174,7 +181,7 @@ function enqueue_assets() {
 	// Keyboard navigation (dropdown menus) script.
 	\wp_enqueue_script(
 		'utility-pro-keyboard-dropdown',
-		\get_stylesheet_directory_uri() . '/js/utility-pro-keyboard-dropdown' . $suffix,
+		\get_stylesheet_directory_uri() . '/js/keyboard-dropdown' . $suffix,
 		[ 'jquery' ],
 		\CHILD_THEME_VERSION,
 		true
@@ -183,7 +190,7 @@ function enqueue_assets() {
 	// Load mobile responsive menu.
 	\wp_enqueue_script(
 		'utility-pro-responsive-menu',
-		\get_stylesheet_directory_uri() . '/js/utility-pro-responsive-menu' . $suffix,
+		\get_stylesheet_directory_uri() . '/js/responsive-menu' . $suffix,
 		[ 'jquery' ],
 		'1.0.0', true
 	);
@@ -208,35 +215,17 @@ function enqueue_assets() {
 
 	\wp_enqueue_script(
 		'utility-pro-responsive-menu-args',
-		\get_stylesheet_directory_uri() . '/js/utility-pro-responsive-menu-args' . $suffix,
+		\get_stylesheet_directory_uri() . '/js/responsive-menu-args' . $suffix,
 		[ 'utility-pro-responsive-menu' ],
 		\CHILD_THEME_VERSION,
 		true
 	);
-
-	// Load Backstretch scripts only if custom background is being used
-	// and we're on the home page or a page using the landing page template.
-	if ( ! \get_background_image() || ( ! ( \is_front_page() || \is_page_template( 'page_landing.php' ) ) ) ) {
-		return;
-	}
-
-	\wp_enqueue_script(
-		'utility-pro-backstretch',
-		\get_stylesheet_directory_uri() . '/js/utility-pro-backstretch' . $suffix,
-		[ 'jquery' ],
-		'2.0.1',
-		true
-	);
-
-	\wp_localize_script( 'utility-pro', 'utilityProBackstretchL10n', [
-		'src' => \get_background_image(),
-	] );
 }
 
 /**
  * Enqueue block editor styles.
  *
- * @since 2.0.0
+ * @since 3.0.0
  */
 function block_editor_styles() {
     wp_enqueue_style(
@@ -245,5 +234,3 @@ function block_editor_styles() {
     	false, '1.0.0', 'all'
     );
 }
-
-
