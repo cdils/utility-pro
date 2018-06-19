@@ -91,7 +91,6 @@ blockquote,
 
 	@media screen and (min-width: $small-screen) {
 		margin: $base-margin;
-		padding: $base-padding;
 	}
 
 	cite,
@@ -126,7 +125,6 @@ blockquote,
 		    font-size: $base-font-size;
 		}
 	}
-
 }
 
 // Horizontal Rule
@@ -256,14 +254,13 @@ tfoot {
 
 .alignfull,
 .alignwide {
-
-	width: 100vw;
+	margin-left: -50vw;
+	margin-right: -50vw;
 	position: relative;
 	left: 50%;
 	right: 50%;
-	margin-left: -50vw;
-	margin-right: -50vw;
 	text-align: center;
+	width: 100vw;
 
 	img {
 		@extend %box-shadow;

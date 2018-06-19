@@ -84,7 +84,8 @@
 //---------------------------------------------
 
 .entry-header .entry-meta {
-	background-color: lighten($black, 85%);
+	background-color: lighten($black, 10%);
+	color: $white;
 	font-size: $secondary-font-size;
 	margin: 0 -20px;
 	padding: 10px 20px;
@@ -92,6 +93,10 @@
 	@media screen and (min-width: $medium-screen) {
 		margin: 0 -40px;
 		padding: 10px 40px;
+	}
+
+	a {
+		color: $white;
 	}
 }
 
@@ -109,7 +114,7 @@
 .entry-categories,
 .entry-tags {
 	display: block;
-	margin: $base-margin/2;
+	margin: $base-margin/2 0;
 }
 
 // Featured Image
@@ -140,6 +145,7 @@
 .entry-comments,
 .entry-pings {
 	@extend %content-area;
+	padding: $base-padding;
 }
 
 .comment-respond label {

@@ -26,21 +26,12 @@ class SinglePost {
 	public function apply() {
 		// Add featured image above posts.
 		add_action( 'genesis_entry_header', [ $this, 'featured_image' ], 1 );
-
-		// Reposition post info.
-		add_action( 'genesis_entry_header', 'genesis_post_info', 8 );
-		remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
 	}
 
 	/**
 	 * Add featured image above single posts.
 	 *
-	 * Outputs image as part of the post content, so it's included in the RSS feed.
-	 * H/t to Robin Cornett for the suggestion of making image available to RSS.
-	 *
 	 * @since 1.0.0
-	 *
-	 * @param string $content Post content.
 	 *
 	 * @return string Return early if not a single post or there is no thumbnail.
 	 *                     Image and content markup otherwise.

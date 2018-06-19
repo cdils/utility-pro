@@ -2,14 +2,14 @@
 //---------------------------------------------
 
 .site-footer {
-	background-color: $default-base;
-	color: $default-base-contrast;
+	background-color: $black;
+	color: $white;
 	font-size: $secondary-font-size;
 	padding: $base-padding 0;
 	text-align: center;
 
 	a {
-		color: $default-base-contrast;
+		color: $white;
 	}
 
 	p {

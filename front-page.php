@@ -59,8 +59,23 @@ function homepage_setup() {
 	// Filter site title markup to include an h1.
 	add_filter( 'genesis_site_title_wrap', __NAMESPACE__ . '\\return_h1' );
 
-	// Remove standard loop that would show Page content.
+	// Remove standard loop and replace with loop showing latest Posts, not Page content.
 	remove_action( 'genesis_loop', 'genesis_do_loop' );
+	add_action( 'genesis_loop', __NAMESPACE__ . '\\front_loop' );
+
+	// Reposition featured image.
+	add_action( 'genesis_entry_header', 'genesis_do_post_image', 4 );
+	remove_action( 'genesis_entry_content', 'genesis_do_post_image', 8 );
+
+	// Reposition post info.
+	add_action( 'genesis_entry_header', 'genesis_post_info', 8 );
+	remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
+
+	// Remove unwanted elements.
+	remove_action( 'genesis_entry_content', 'genesis_do_post_content' );
+	remove_action( 'genesis_entry_footer', 'genesis_entry_footer_markup_open', 5 );
+	remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
+	remove_action( 'genesis_entry_footer', 'genesis_entry_footer_markup_close', 15 );
 }
 
 /**
@@ -126,6 +141,19 @@ function add_call_to_action() {
 			'after'  => '</div></div>',
 		]
 	);
+}
+
+/**
+ * Display latest posts instead of static page.
+ *
+ * @since 1.0.0
+ */
+function front_loop() {
+	global $query_args;
+	\genesis_custom_loop( \wp_parse_args( $query_args, [
+		'post_type' => 'post',
+		'paged'     => \get_query_var( 'page' ),
+	] ) );
 }
 
 \genesis();

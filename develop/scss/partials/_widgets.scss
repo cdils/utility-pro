@@ -75,6 +75,7 @@
 	.wrap {
 		display: flex;
 		flex-wrap: wrap;
+		justify-content: space-between;
 
 		.widget-area {
 			flex-grow: 1;

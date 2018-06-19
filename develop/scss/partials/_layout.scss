@@ -1,8 +1,8 @@
 // Site containers
 //---------------------------------------------
 .site-inner {
-	background: darken($white, 3%);
-	padding-bottom: 0;
+	background: darken($white, 5%);
+	padding-bottom: $base-padding;
 	padding-top: $base-padding;
 }
 
@@ -47,7 +47,7 @@
 // Content & Sidebar Layout
 //---------------------------------------------
 
-.full-width-content:not(.archive) .content-sidebar-wrap .content {
+.full-width-content:not(.archive,.home,.blog) .content-sidebar-wrap .content {
 	margin: 0 auto;
 	width: 80%;
 	max-width: $max-width;
@@ -89,10 +89,16 @@
 //---------------------------------------------
 
 
-.archive .content {
+.archive .content,
+.blog .content,
+.home .content {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
+
+	.archive-description {
+		flex: 0 0 100%; // Break out of grid and span full-width
+	}
 
 	@media screen and (min-width: $small-screen) {
 		.entry {

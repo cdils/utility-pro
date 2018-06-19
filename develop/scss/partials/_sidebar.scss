@@ -9,6 +9,8 @@
 	.widget {
 		@extend %content-area;
 
+		padding: $base-padding;
+
 		&.widget_search {
 			background: none;
 			padding: 0;

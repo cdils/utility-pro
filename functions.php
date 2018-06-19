@@ -68,6 +68,7 @@ function setup() {
 	\genesis_unregister_layout( 'sidebar-content-sidebar' );
 	\genesis_unregister_layout( 'sidebar-sidebar-content' );
 
+	// Remove Genesis Blog page template.
 	add_filter( 'theme_page_templates',  __NAMESPACE__ . '\\remove_genesis_page_templates' );
 
 	// Register the default widget areas.
@@ -76,7 +77,17 @@ function setup() {
 	add_filter( 'widget_text', 'do_shortcode' );
 
 	// Enqueue Google Fonts.
-	include get_stylesheet_directory() . '/lib/google-fonts.php';
+	include \get_stylesheet_directory() . '/lib/google-fonts.php';
+
+	// Add customizations for EDD (if activated).
+	if ( class_exists( 'Easy_Digital_Downloads' ) ) {
+		include \get_stylesheet_directory() .'/lib/classes/EDDCompatability.php';
+	}
+
+	// Add customizations for WooCommerce (if activated).
+	if ( class_exists( 'WooCommerce' ) ) {
+		include \get_stylesheet_directory() .'/lib/classes/WooCompatability.php';
+	}
 
 	// Load files in admin.
 	if ( is_admin() ) {
@@ -109,6 +120,10 @@ function setup() {
 		$single_post = new SinglePost();
 		$single_post->apply();
 
+		// Add customizations for archives.
+		$archives = new Archives();
+		$archives->apply();
+
 		// Footer nav.
 		$footer_nav = new FooterNav();
 		$footer_nav->apply();
@@ -116,6 +131,14 @@ function setup() {
 		// Reposition primary navigation menu.
 		remove_action( 'genesis_after_header', 'genesis_do_nav' );
 		add_action( 'genesis_header', 'genesis_do_nav', 12 );
+
+		// Reposition featured image on archives.
+		add_action( 'genesis_entry_header', 'genesis_do_post_image', 4 );
+		remove_action( 'genesis_entry_content', 'genesis_do_post_image', 8 );
+
+		// Reposition post info.
+		add_action( 'genesis_entry_header', 'genesis_post_info', 8 );
+		remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
 
 		// Change the footer text.
 		add_filter( 'genesis_footer_creds_text',  __NAMESPACE__ . '\\footer_creds' );
