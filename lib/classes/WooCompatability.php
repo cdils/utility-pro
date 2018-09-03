@@ -28,25 +28,44 @@ class Genesis_WooCommerce_Compatability {
 	 */
 	public function __construct() {
 
-		// Add WooCommerce support for Genesis Features
+		// Add WooCommerce support for Genesis Features.
 		add_post_type_support( 'product', array( 'genesis-layouts', 'genesis-seo', 'genesis-scripts', 'genesis-ss' ) );
 
-		// Unhook WooCommerce Sidebar - use Genesis Sidebars instead
+		// Unhook WooCommerce Sidebar - use Genesis Sidebars instead.
 		remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
 
-		// Unhook WooCommerce wrappers
+		// Remove post info & meta.
+		add_action( 'template_redirect', [ $this, 'remove_post_meta' ] );
+
+		// Unhook WooCommerce wrappers.
 		remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
 		remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
 
-		// Hook new functions with Genesis wrappers
+		// Hook new functions with Genesis wrappers.
 		add_action( 'woocommerce_before_main_content', array( $this, 'theme_wrapper_start' ), 10 );
 		add_action( 'woocommerce_after_main_content', array( $this, 'theme_wrapper_end' ), 10 );
 		add_action( 'woocommerce_before_main_content', array( $this, 'shop_page_wrapper_start' ), 15 );
 		add_action( 'woocommerce_after_main_content', array( $this, 'shop_page_wrapper_end' ), 5 );
 
-		// move WooCommerce breadcrumbs in the same location as default Genesis
+		// move WooCommerce breadcrumbs in the same location as default Genesis.
 		add_action( 'init', array( $this,  'reposition_breadcrumbs' ) );
 
+	}
+
+	/**
+	 * Remove default post info & meta.
+	 *
+	 * Only applies to single products and product archives.
+	 *
+	 * @since 3.0.0
+	 */
+	public function remove_post_meta() {
+
+		if ( \is_singular( 'product' ) || \is_archive( 'product' ) ) {
+
+			remove_action( 'genesis_entry_header', 'genesis_post_info', 8 );
+			remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
+		}
 	}
 
 	/**

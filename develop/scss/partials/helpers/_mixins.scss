@@ -47,6 +47,19 @@
 	}
 }
 
+%form-field {
+	background: $white;
+	border: 1px solid lighten($black, 75%);
+	color: $black;
+	font-size: $base-font-size - 2;
+	padding: 10px 15px;
+	width: 85%;
+
+	@media screen and (min-width: $small-screen) {
+		width: auto;
+	}
+}
+
 @mixin inline-icon( $direction ) {
 	display: inline-block;
 	padding-#{$direction}: 8px;

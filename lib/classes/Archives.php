@@ -25,8 +25,6 @@ class Archives {
 	 */
 	public function apply() {
 
-
-
 		// Only apply these changes to archives.
 		if ( \is_archive() || \is_home() ) {
 			echo "This is an archive";

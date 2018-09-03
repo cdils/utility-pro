@@ -3,7 +3,7 @@
 .edit-post-visual-editor .wp-block-button .wp-block-button__link{background-color:#dd2c00;border:0;border-radius:3px;color:#fff;cursor:pointer;display:inline-block;font-size:14px;font-weight:normal;padding:10px 15px;text-align:center;text-transform:uppercase;width:auto}
 .edit-post-visual-editor .wp-block-button .wp-block-button__link:hover{background-color:#a20}
 .edit-post-visual-editor .wp-block-button .wp-block-button__link:active,.edit-post-visual-editor .wp-block-button .wp-block-button__link:focus{background-color:#ff4011}
-.edit-post-visual-editor a,.edit-post-visual-editor button,.edit-post-visual-editor input:focus,.edit-post-visual-editor [type="button"],.edit-post-visual-editor [type="reset"],.edit-post-visual-editor [type="submit"],.edit-post-visual-editor textarea:focus,.edit-post-visual-editor .button .gallery img{-webkit-transition:all .1s ease-in-out;transition:all .1s ease-in-out}
+.edit-post-visual-editor a,.edit-post-visual-editor button,.edit-post-visual-editor input:focus,.edit-post-visual-editor [type="button"],.edit-post-visual-editor [type="reset"],.edit-post-visual-editor [type="submit"],.edit-post-visual-editor textarea:focus,.edit-post-visual-editor .button,.edit-post-visual-editor .gallery img{-webkit-transition:all .1s ease-in-out;transition:all .1s ease-in-out}
 .edit-post-visual-editor a{color:#00b8d4;border-bottom:1px dotted;font-weight:700;text-decoration:none;word-wrap:break-word}
 .edit-post-visual-editor a:hover{border-bottom:0;color:#102027}
 .edit-post-visual-editor a img{border-bottom:0}

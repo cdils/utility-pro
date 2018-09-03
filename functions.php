@@ -121,8 +121,8 @@ function setup() {
 		$single_post->apply();
 
 		// Add customizations for archives.
-		$archives = new Archives();
-		$archives->apply();
+		// $archives = new Archives();
+		// $archives->apply();
 
 		// Footer nav.
 		$footer_nav = new FooterNav();

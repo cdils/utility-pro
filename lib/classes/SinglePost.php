@@ -37,7 +37,7 @@ class SinglePost {
 	 *                     Image and content markup otherwise.
 	 */
 	public function featured_image() {
-		if ( ! \is_singular( 'post' ) || ! \has_post_thumbnail() ) {
+		if ( ! \is_singular() || ! \has_post_thumbnail() ) {
 			return;
 		}
 

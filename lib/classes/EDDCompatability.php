@@ -38,8 +38,8 @@ class Genesis_EDD_Compatibility {
 		// Remove original filter that adds purchase button below download content.
 		remove_filter( 'the_content', 'edd_after_download_content' );
 
-		// Add adjusted filter that includes "is_archive()".
-		add_filter( 'the_content', [ $this, 'custom_edd_after_download_content' ] );
+		// Add purchase button below download content.
+		add_action ( 'genesis_entry_footer', [ $this, 'add_download_button' ] );
 	}
 
 	/**
@@ -95,21 +95,21 @@ class Genesis_EDD_Compatibility {
 	 *
 	 * @link https://github.com/easydigitaldownloads/library/blob/master/_downloads/display-purchase-button-on-download-archives.html
 	 *
-	 * @param string $content Post content.
-	 *
 	 * @return string
 	 */
-	public function custom_edd_after_download_content( $content ) {
+	public function add_download_button() {
 
 		global $post;
 
-		if ( $post && $post->post_type == 'download' && ( \is_singular( 'download' ) || \is_archive( 'download' ) ) && \is_main_query() && ! \post_password_required() ) {
+		$cart_btn = "";
+
+		if ( \is_singular( 'download' ) || \is_archive( 'download' ) ) {
 			ob_start();
 			do_action( 'edd_after_download_content', $post->ID );
-			$content .= ob_get_clean();
+			$cart_btn = ob_get_clean();
 		}
 
-		return $content;
+		echo $cart_btn;
 	}
 }
 new Genesis_EDD_Compatibility;

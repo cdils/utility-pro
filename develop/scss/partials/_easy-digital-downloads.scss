@@ -1,0 +1,26 @@
+.edd_purchase_submit_wrapper {
+	a.edd-add-to-cart,
+	a.edd-submit.button {
+		@extend %button;
+	}
+}
+
+#edd_checkout_form_wrap {
+	input.edd-input,
+	select,
+	textarea {
+		@extend %form-field;
+	}
+}
+
+#edd_checkout_user_info > legend {
+	margin: 0 0 $base-margin;
+}
+
+.edd_form {
+	margin: $base-margin 0;
+
+	#edd-purchase-button {
+		@extend %button;
+	}
+}

@@ -1,0 +1,23 @@
+.woocommerce {
+	#respond input#submit,
+	a.button,
+	.woocommerce button.button,
+	input.button {
+		@extend %button;
+	}
+
+	ul.products li.product {
+		margin-right: 1.5%;
+		padding: 5px;
+	}
+
+	&.full-width-content.woocommerce-page .content-sidebar-wrap .content {
+		width: 100%;
+	}
+
+	li.description_tab a,
+	li.additional_information_tab a {
+		border-bottom: 0;
+	}
+}
+
